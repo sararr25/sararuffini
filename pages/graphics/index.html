@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Visuals Detail with Sticker Navigation V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2460d",
+                        "secondary": "#2d3748",
+                        "accent-yellow": "#fbbf24",
+                        "accent-pink": "#ec4899",
+                        "accent-blue": "#3b82f6",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221410",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'hard': '4px 4px 0px 0px rgba(0,0,0,1)',
+                        'hard-lg': '8px 8px 0px 0px rgba(0,0,0,1)',
+                        'hard-xl': '12px 12px 0px 0px rgba(0,0,0,1)',
+                    }
+                },
+            },
+        }
+    </script>
+<link rel="stylesheet" href="../../styles/graphics.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-display overflow-x-hidden min-h-screen relative flex flex-col">
+<div class="absolute inset-0 z-50 texture-overlay mix-blend-multiply dark:mix-blend-overlay pointer-events-none"></div>
+<div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-primary/30 blur-[120px] rounded-full"></div>
+<div class="absolute top-[40%] left-[30%] w-[30%] h-[30%] bg-yellow-400/20 blur-[80px] rounded-full"></div>
+</div>
+<header class="fixed top-0 left-0 w-full z-40 px-6 py-4 flex justify-between items-center pointer-events-none">
+<a class="pointer-events-auto bg-white dark:bg-black border-2 border-black dark:border-white px-4 py-2 text-xl font-black tracking-tighter uppercase shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all rotate-1" href="#">
+        STUDIO<span class="text-primary">.RAW</span>
+</a>
+<nav class="pointer-events-auto hidden md:flex items-center gap-6 bg-white/80 dark:bg-black/80 backdrop-blur-md px-8 py-3 rounded-full border-2 border-black dark:border-white shadow-hard">
+<a class="font-bold hover:text-primary transition-colors" href="#">Work</a>
+<a class="font-bold hover:text-primary transition-colors" href="#">About</a>
+<a class="font-bold hover:text-primary transition-colors" href="#">Journal</a>
+<a class="font-bold hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-3 pointer-events-auto">
+<a class="group flex items-center gap-2 bg-accent-yellow border-2 border-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition-all duration-300 shadow-hard hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] -rotate-2" href="#">
+<span class="material-icons text-sm">grid_view</span>
+<span class="font-bold text-sm tracking-wide">All Projects</span>
+</a>
+</div>
+</header>
+<main class="w-full flex-grow flex flex-col relative pt-24 pb-32">
+<div class="flex flex-col lg:flex-row w-full h-full">
+<section class="w-full lg:w-1/3 lg:h-auto lg:sticky lg:top-24 z-30 p-8 lg:p-12 flex flex-col justify-start">
+<div class="relative mt-8 lg:mt-16">
+<svg class="absolute -top-16 -left-10 w-32 h-32 text-primary opacity-80 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 100 100">
+<path class="scribble-path" d="M10,50 Q30,10 50,50 T90,50"></path>
+<circle cx="85" cy="15" fill="currentColor" r="5"></circle>
+<circle cx="15" cy="85" fill="currentColor" r="3"></circle>
+</svg>
+<h1 class="text-8xl lg:text-[9rem] leading-[0.8] font-bold tracking-tighter mb-8 relative">
+                    vis<span class="text-primary">u</span>als
+                    <span class="absolute -right-4 top-0 text-xl font-normal tracking-normal border border-black dark:border-white rounded-full w-8 h-8 flex items-center justify-center rotate-12">©</span>
+</h1>
+</div>
+<div class="space-y-8 max-w-md relative z-10">
+<div class="flex flex-wrap gap-3">
+<span class="bg-black text-white dark:bg-white dark:text-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest -rotate-2">Photography</span>
+<span class="bg-primary text-white border border-black px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest rotate-3">Editorial</span>
+<span class="bg-white dark:bg-gray-800 border border-black dark:border-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest -rotate-1">2024</span>
+</div>
+<div class="border-l-4 border-primary pl-6 py-2">
+<h2 class="text-2xl font-bold mb-2">Neon Dreams Campaign</h2>
+<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
+                        An exploration of urban decay meeting digital synthesis. We combined raw 35mm street photography with harsh vector overlays to create a "future-retro" identity for the client.
+                    </p>
+</div>
+<div class="flex items-center gap-4 pt-4">
+<div class="flex -space-x-3">
+<img alt="Member" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900 object-cover" data-alt="Team member portrait 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD27gjQZWn-sirRer9_06xoKcBuIE9QN5LvTxz3AZVeovazR0AUJG5SyI2gNyNwkLMsfYEwjmOto6Rdjrg7OURHhKvYx5UpwBRz_XdPzBDGDvqvamfwilt31S0zuB9KfhOe-x7ejjLnO9U1kMoqYZwXKIU19tRjuYjcAu_P0v8EL0xvxvqwurID1wfQVWsK1bwWLw7Y1cE0PV0V6tCWCZBCYRs_w-BHmOXDGDciqI-hcVrvko6qhdBrz4f8g18ScpzKcCJPMJB0bZxC"/>
+<img alt="Member" class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900 object-cover" data-alt="Team member portrait 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfg4avSXmA9uVTYUiuJhPYEtVmc8IUONmx4AgOpvIh9SQOZB315o97945zwusrqPGnKzGPsKsC6ZXZI52Un_VlmtsdwBrqMztViZLhJmtCcdVTYTBSLi71cZ0lq-s9THYA1cKMFMBxod-RDZ5SaFmTLRyIkkdyMZXC00fGaXur1c1uZJrwMFfHmGbd58WDphXkvnY1fyacR8vzRWXf6AASYT3J82iOBsY8hyrNHIcRiC0fhtPzeWUvyfJj9IWGJbv7YvXd-12H4jdc"/>
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-gray-900 bg-black dark:bg-white text-white dark:text-black flex items-center justify-center text-xs font-bold">+2</div>
+</div>
+<span class="text-sm font-bold text-gray-500 uppercase tracking-wide">Creative Team</span>
+</div>
+</div>
+<div class="hidden lg:flex absolute bottom-[-100px] right-20 w-24 h-24 bg-yellow-400 rounded-full items-center justify-center border-2 border-black shadow-hard rotate-12 animate-pulse pointer-events-none">
+<span class="text-xs font-bold text-center leading-tight">NEW<br/>DROP</span>
+</div>
+</section>
+<section class="w-full lg:w-2/3 ml-auto relative min-h-[1000px] lg:min-h-[1200px] overflow-hidden p-6 lg:p-0">
+<div class="relative w-full h-full flex flex-col gap-12 lg:block">
+<svg class="hidden lg:block absolute top-0 left-0 w-full h-full pointer-events-none z-20" style="overflow: visible;">
+<path d="M100,200 C150,250 200,150 250,250" fill="none" stroke="#f2460d" stroke-dasharray="10,5" stroke-width="3"></path>
+<polygon fill="#f2460d" points="250,250 240,240 245,260 260,245"></polygon>
+<path class="opacity-70" d="M500,600 C480,580 520,550 550,580 S580,650 540,640" fill="none" stroke="#f2460d" stroke-width="2"></path>
+<path class="dark:stroke-white opacity-50" d="M600,100 Q650,50 700,100 T800,100" fill="none" stroke="black" stroke-width="1"></path>
+</svg>
+<div class="lg:absolute lg:top-[10%] lg:left-[5%] z-10 w-full max-w-sm mx-auto lg:w-80 transform lg:-rotate-3 hover:scale-105 hover:z-50 transition-all duration-300">
+<div class="bg-white p-3 pb-12 border-2 border-black dark:border-gray-600 polaroid-shadow relative">
+<img class="w-full aspect-[3/4] object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500 border border-black/10" data-alt="Fashion portrait of a woman with neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6IykU0Z3zfzE_ebn57BQ6NHPkTyYmyafzWwJAMPq6qztQOSM6CCgyCt-C4ee-BjxZ4RDTaIvHPfdIiqxrNDcdvzoYSoO4NbmG_nN03i109v-cwrnbghdRoCL22tptF9q0LkNApbl_72ABnFYmDFa1YKhGCg9jHvfloVnyUUwZ0eIAKsq-_cK-sBnpiZlTsdyAa_0MO7AcaVPeieSmN3_MPtVK6MQ5y0YWmOGythQpC0cl1DwlZpM3HxqJyBiP9klnQVAKaBJflPoF"/>
+<div class="absolute bottom-4 left-4 font-handwriting text-black font-bold -rotate-1">
+                            #summer_vibe_01
+                        </div>
+<img class="absolute -top-4 -right-4 w-12 h-12 rounded-full border-2 border-black spin-slow object-cover" data-alt="Abstract gradient texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJovNDX4f8THIt1C3VPqYpW3bSY-zzXdZVLtVQWP4eAJw7PeatSMPJghInZiIIf_2ZdhEEol958bEerVvnSFP-NGJYYaZY1vCLr_TnDAo9PFl3pMiTTmHgVqee82LCJY4Gx-pw9BdM1BIDTrXG-sllQcOK49PNyS0zZ3s1zT5EhYxQsnKBtWBzqYlxrql2OfGrJWxE2RELCSz97KAgzqHDhDytNt6wNjkBtMDd16qGbgeB_G3141aPJCBL744HBKLX0x4jMeep_ivB"/>
+</div>
+</div>
+<div class="lg:absolute lg:top-[25%] lg:right-[15%] z-0 w-full max-w-md mx-auto lg:w-96 transform lg:rotate-6 hover:scale-105 hover:z-50 transition-all duration-300">
+<div class="bg-primary/10 backdrop-blur-sm p-2 border-2 border-black dark:border-white rounded-lg collage-shadow">
+<img class="w-full h-64 object-cover rounded border border-black/20" data-alt="Close up of retro camera details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYm7hVgXiFJAaHxhZ1ZAtUi0Mu22tRSQUD9CvfFKsA6j4GZQHmZPsQubQG_PmfPg7yJZqYUWbGi444tTcjSkzkyaBm0ndKrzbuE4IMg8iAgx5RRfcinsL6SJb0HvA_NehePprKdpe3hGnzBtA70Er2NDWbmuDiFLscrD-IYYiNChaMjJT4WW65GZLzTM4WeQg3cmvD47hdnjpCr9YWGQD7gEfV3OfvkCO8CGWfBK8QZ5kRSMDYryAHH9qmPq8K6jlks7NDuelMRD0P"/>
+<div class="flex justify-between items-center mt-2 px-1">
+<span class="text-xs font-bold uppercase tracking-widest">Detail Shot</span>
+<span class="material-icons text-sm">north_east</span>
+</div>
+</div>
+</div>
+<div class="lg:absolute lg:top-[50%] lg:left-[20%] z-20 w-full max-w-xs mx-auto lg:w-64 transform lg:rotate-12 hover:scale-105 hover:z-50 transition-all duration-300">
+<div class="bg-black dark:bg-white p-1 collage-shadow rounded-none">
+<img class="w-full aspect-square object-cover border-2 border-white dark:border-black" data-alt="Abstract geometric colorful 3d render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3e7i3NgphueGxLAm4SmbUc_vp_FUMY04IudZ61aFh0Y-MG8qhYnKY1eTCmAapM2nKuS5PD7CZr322QwgEgeohXQdwPvkScNGAgoJGjfnBefQwD9o7epYXan1s6ePmS9FP_ZQXLDBp9EdVeOZbac65pXomQyQeuqk2S6HrFlW5wRIgI3qlelxtMXKBnCmK5-nyTh-Pmsq08U4ybJSEY1AJYT4e9oIV5tOpWxWtA1ribOa4f8Y7p8Wf8GSkr_YZTbE2q0dZpRMiGwUB"/>
+</div>
+<div class="absolute -bottom-4 -left-6 bg-primary text-white px-4 py-2 rounded-full border-2 border-black dark:border-white font-bold transform -rotate-12 shadow-lg">
+                        RAW.
+                    </div>
+</div>
+<div class="lg:absolute lg:top-[5%] lg:right-[5%] z-10 w-full max-w-[150px] mx-auto hidden lg:block transform lg:-rotate-6 hover:scale-105 hover:z-50 transition-all duration-300">
+<div class="flex flex-col gap-2 bg-white dark:bg-gray-800 p-2 border-2 border-black dark:border-white shadow-xl">
+<img class="w-full aspect-square object-cover border border-black/10" data-alt="Neon street sign 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2UNvj5fDXfT5etvQhPhiFVZVAPrnmUuPNnmWv0iX_qGoifjhY4rv9Cgj9W-VJ7pO1CVFy0LUgLHXrJHL6cND1LLknZ08fxrjE5lwxvFDIZJwcgDj9mun2YDWjOPeY1Z-hPOzGX5LmQEW6u1B_TCuKOi2gGQMYTqXau8W8MYB0g7KsJHabmtfVznKUC11pip2oj31W2awukY_dBcpibHZI0eGrfkM4BLoC-BOy1CiOU9p_TV8CUXUTjVLyJn5pDw16KkDBJLrZFECT"/>
+<img class="w-full aspect-square object-cover border border-black/10" data-alt="Neon street sign 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyII9dKCSMCcmk-nosQQN8qA7jIdKgR8UiGo26_ODmginfeaHg5gj0FYSRxlncomtfwXFMWAL5DwpWnSgWFJM4PG1up8DcGXQIcvEa1pqD2EPK3X5OxaTxVEoD7PFu2FKx7x5cmVW0fjdbxnfXJoSW6RiMxE2s5gjtM3v6cTV6a1gXlOgjWe94rjClsP3-_v9GmUYbTj6i6DAHjGTYLIdd-Rf_yUE4onnKJKHg-uDCqG4XmT6Z_z-vumx_zRAp86zO4rdtQLrfrYo0"/>
+<img class="w-full aspect-square object-cover border border-black/10" data-alt="Neon street sign 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7eGUMHLQiZyTizKJ6kTdsDul_sP2v-1m572LKDJOnJMw679a47uWDXlsdXmv8Og19OuJhE38yr7RTMNmPpZyw9Mn292aHQgWeaEgWVbdzh6W1O5ZDWG7LMIclf5uiTC3t0WZszz5nE_FKGSex2Otn8hukJgbrt0ZaUG6JLyF9UAW1-3T7HGdbM8A0yk1baTB-WGrNm2NlzNL6q8c4ILy0k42lZLDc0c3uiJ4qL8MCj92f_5hbJvpkWxDIBfko2IrrHfm_qWNreB0W"/>
+</div>
+</div>
+<div class="lg:absolute lg:bottom-[10%] lg:right-[5%] z-10 w-full max-w-lg mx-auto lg:w-[500px] transform lg:-rotate-2 hover:scale-105 hover:z-50 transition-all duration-300">
+<div class="bg-background-light dark:bg-background-dark p-4 border-2 border-black dark:border-white rounded-xl shadow-[12px_12px_0px_0px_rgba(242,70,13,0.3)]">
+<div class="relative">
+<img class="w-full h-72 object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-700" data-alt="Urban fashion editorial wide shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLSWkvv52g9JvpHhIyWZOLCh_TWjWoSTpEI0pceuZ4MIncak_jK7-GUwdH39QEnyP7HuJybvYR43e1HH-WBW4WNRzu9ceIc6yobfeiNc_ugilGns8WGZtIyrvSMM3RJAi2pLYTcWD8ZUAwxTL4ttoAz67tv3OEczv4RKSSUs0N4AwePOgVSpaLti5GGazYg-iVo-scTxnTP_ChyQIUztLe4K8Hz3-izor_hqiJwimqDVIK4Mdop2PN8fWm6AlQfGvFQONzD4tlfljE"/>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent rounded-b-lg">
+<h3 class="text-white text-3xl font-bold tracking-tighter">THE CITY IS YOURS</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-[40%] right-[40%] pointer-events-none hidden lg:block animate-bounce duration-[3000ms]">
+<span class="material-icons text-6xl text-black/20 dark:text-white/20 rotate-45">star</span>
+</div>
+<div class="absolute bottom-[20%] left-[10%] pointer-events-none hidden lg:block">
+<svg class="animate-spin duration-[10000ms]" fill="none" height="60" viewBox="0 0 60 60" width="60">
+<path d="M30 0L36 24L60 30L36 36L30 60L24 36L0 30L24 24L30 0Z" fill="#f2460d"></path>
+</svg>
+</div>
+</div>
+</section>
+</div>
+<div class="w-full max-w-7xl mx-auto px-6 lg:px-12 pb-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 relative z-30">
+<a class="sticker-nav group relative" href="#">
+<div class="absolute inset-0 bg-black translate-x-1 translate-y-1 rounded-full"></div>
+<div class="relative bg-accent-pink border-2 border-black px-8 py-3 rounded-full flex items-center gap-3 transform -rotate-3 group-hover:-rotate-6 transition-transform">
+<span class="material-icons font-bold">arrow_back</span>
+<div class="flex flex-col">
+<span class="text-xs uppercase font-bold tracking-widest opacity-80">Previous</span>
+<span class="text-xl font-black uppercase">Cyberpunk</span>
+</div>
+</div>
+</a>
+<a class="sticker-nav group relative" href="#">
+<div class="absolute inset-0 bg-black translate-x-1 translate-y-1 rounded-full"></div>
+<div class="relative bg-accent-blue text-white border-2 border-black px-8 py-3 rounded-full flex items-center gap-3 transform rotate-2 group-hover:rotate-4 transition-transform">
+<div class="flex flex-col items-end">
+<span class="text-xs uppercase font-bold tracking-widest opacity-90">Next Project</span>
+<span class="text-xl font-black uppercase">Retro Glitch</span>
+</div>
+<span class="material-icons font-bold">arrow_forward</span>
+</div>
+</a>
+</div>
+</main>
+<footer class="relative z-40 bg-black dark:bg-white text-white dark:text-black py-16 overflow-hidden">
+<div class="absolute inset-0 z-0 texture-overlay opacity-20"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-4">
+<h4 class="text-2xl font-black uppercase tracking-tighter">Studio.Raw</h4>
+<p class="text-gray-400 dark:text-gray-600 font-medium">Creating digital noise since 2018. Based in Tokyo, working worldwide.</p>
+</div>
+<div>
+<h5 class="font-bold uppercase tracking-widest mb-6 text-primary">Sitemap</h5>
+<ul class="space-y-3 font-bold text-lg">
+<li><a class="hover:text-primary transition-colors" href="#">Work</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">About</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Services</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold uppercase tracking-widest mb-6 text-primary">Socials</h5>
+<ul class="space-y-3 font-bold text-lg">
+<li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Twitter / X</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Behance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold uppercase tracking-widest mb-6 text-primary">Newsletter</h5>
+<div class="relative">
+<input class="w-full bg-transparent border-b-2 border-white dark:border-black py-2 placeholder-gray-500 font-bold focus:outline-none focus:border-primary transition-colors" placeholder="YOUR EMAIL" type="email"/>
+<button class="absolute right-0 bottom-2 text-primary hover:text-white dark:hover:text-black transition-colors font-bold uppercase">Join</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 dark:border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-sm text-gray-500 font-bold">© 2024 Studio Raw. All rights reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="text-sm text-gray-500 hover:text-white dark:hover:text-black font-bold" href="#">Privacy Policy</a>
+<a class="text-sm text-gray-500 hover:text-white dark:hover:text-black font-bold" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<button class="fixed bottom-8 right-8 z-50 bg-black dark:bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform border-2 border-white dark:border-black group">
+<span class="material-icons group-hover:rotate-90 transition-transform duration-300">add</span>
+</button>
+
+</body></html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Collaboration | Sara Ruffini</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;700&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#39FFCA", // Teal accent seen in text
+                        "background-light": "#F7F2EB", // Cream color from screenshots
+                        "background-dark": "#1A1A1A", // Dark mode charcoal
+                        "accent-yellow": "#FFFF00", // Yellow highlight from reference
+                        "accent-red": "#FF3333", // Red accent for dark mode or specific details
+                        "text-dark": "#0D0D0D",
+                        "text-light": "#F7F2EB",
+                    },
+                    fontFamily: {
+                        display: ["'Anton'", "sans-serif"],
+                        body: ["'Inter'", "sans-serif"],
+                        marker: ["'Permanent Marker'", "cursive"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    boxShadow: {
+                        'retro': '4px 4px 0px 0px #000000',
+                        'retro-hover': '2px 2px 0px 0px #000000',
+                        'retro-dark': '4px 4px 0px 0px #39FFCA',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+<link rel="stylesheet" href="../../styles/contact.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light font-body transition-colors duration-300 selection:bg-primary selection:text-black">
+<nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-background-light border-b border-black dark:border-white">
+<div class="font-body font-bold text-xl uppercase tracking-wide text-black dark:text-white">
+            Sara Ruffini
+        </div>
+<div class="hidden md:flex space-x-8 font-body text-sm font-medium uppercase tracking-widest text-black dark:text-white items-center">
+<a class="nav-link hover:text-black transition-colors relative" href="#">
+                Home
+                <svg preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+<a class="nav-link hover:text-black transition-colors relative" href="#">
+                Projects
+                <svg preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 25 10 50 5 T 100 5"></path>
+</svg>
+</a>
+<a class="nav-link hover:text-black transition-colors relative" href="#">
+                About
+                <svg preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 20 0 40 5 T 80 5 T 100 5"></path>
+</svg>
+</a>
+<a class="nav-link active text-black relative" href="#">
+                Contact
+                <svg preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+</div>
+<button class="md:hidden">
+<span class="material-icons text-3xl text-black dark:text-white">menu</span>
+</button>
+</nav>
+<main class="pt-32 pb-20 px-4 min-h-screen flex flex-col justify-center relative overflow-hidden">
+<div class="absolute top-40 right-[10%] opacity-20 dark:opacity-10 pointer-events-none animate-wiggle">
+<span class="material-icons text-[200px] text-primary rotate-12">videocam</span>
+</div>
+<div class="absolute bottom-20 left-[5%] opacity-10 dark:opacity-5 pointer-events-none">
+<span class="font-display text-[15rem] leading-none text-black dark:text-white stroke-text">EDIT</span>
+</div>
+<div class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-primary to-accent-yellow rounded-full blur-[120px] opacity-30 dark:opacity-10 pointer-events-none"></div>
+<div class="container mx-auto max-w-6xl relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="relative">
+<h1 class="font-display text-7xl md:text-8xl lg:text-9xl leading-[0.85] uppercase tracking-tighter text-black dark:text-white">
+                        Let's Make<br/>
+                        Some <span class="relative inline-block text-primary dark:text-primary">
+                            SSSHHH*T
+                            <svg class="absolute -bottom-4 left-0 w-full h-6 text-black dark:text-white" preserveAspectRatio="none" viewBox="0 0 100 20">
+<path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" stroke-width="4"></path>
+</svg>
+</span>
+</h1>
+</div>
+<p class="font-body text-xl md:text-2xl font-medium max-w-md leading-relaxed">
+                    Got a story that needs telling? Footage that needs feeling? 
+                    <span class="font-marker bg-accent-yellow text-black px-1 transform -rotate-1 inline-block dark:bg-primary">I'm your editor.</span>
+</p>
+<div class="flex items-center gap-4 pt-4">
+<div class="w-16 h-16 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro dark:shadow-retro-dark transform hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-icons">mail</span>
+</div>
+<div class="w-16 h-16 bg-primary text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro border-2 border-black transform hover:-translate-y-1 transition-transform cursor-pointer">
+<span class="material-icons">smart_display</span>
+</div>
+<div class="w-16 h-16 bg-accent-yellow text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro border-2 border-black transform hover:-translate-y-1 transition-transform cursor-pointer">
+<i class="material-icons">music_note</i>
+</div>
+</div>
+<div class="hidden lg:block mt-12 relative">
+<div class="border-2 border-black dark:border-white bg-white dark:bg-gray-800 p-2 w-64 rotate-3 shadow-retro dark:shadow-[4px_4px_0px_0px_#ffffff]">
+<div class="bg-black text-primary p-1 text-xs font-mono flex justify-between mb-1">
+<span>REC</span>
+<span>00:04:20</span>
+</div>
+<img alt="Abstract retro screen static" class="w-full h-32 object-cover grayscale contrast-125 block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG-b_Fri6IE8U9ZHz_1wT0r4qC1LRJyvvnbOEJNSCbrwBb8MzgzRoT4EgPck_6WoPcyDXswKJaeMQN3-YFbhYArOzPjLnW-_us1ZkYUlJ2vB3Y6vl7xYu7enqWNW9r0VN6F6RnWbdhONqFMu7ANxD7AvOQ-XddIc6YyjKHuDvsKblj1qSNToEBGvrx6GK2Ahvj_zA0F51cHBW0e72WNf1v2Tgg3IG_LfZFBnZrWBL-Ke93AVQhjsZBzsMK_UJJ5-zdxl81A3xadzmp"/>
+<div class="text-center font-display uppercase text-xl mt-2 tracking-widest">
+                             Cam 01
+                         </div>
+</div>
+<div class="absolute -top-10 -right-10 w-24 h-24 animate-bounce-slow">
+<img alt="Retro floppy disk sticker" class="w-full h-full object-contain drop-shadow-lg transform rotate-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9490bpas8DOrcJMMr4xU9pRJrTLantimv-aeeDIYp8hK-TQRUzdcku42LYHUIOMulGwxHx0DNkPASgThE67GeAAW7HHGUPn5o50U5SsHejc2e2Lp_FYBLqc3w8Tts4ekfpfVzNDIW2961A5OobUdspxZN_fzgr403Q5Q85C4JYmLUoKyvqZimtUaIY1OVIdJaKYag7bFXxS4ea_iOoZ4TcUcETEImPUoaQw__GS_9Fmxx8Bv-yBn2Zi6jMCtk66b-LM7LHIbUswOe"/>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="bg-white dark:bg-[#222] border-[3px] border-black dark:border-white p-8 md:p-10 shadow-[8px_8px_0px_0px_#000000] dark:shadow-[8px_8px_0px_0px_#39FFCA] relative">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/80 rotate-2 backdrop-blur-sm z-10 shadow-sm"></div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-display text-xl uppercase tracking-wide" for="name">Name</label>
+<input class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="name" placeholder="Your name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-display text-xl uppercase tracking-wide" for="email">Email</label>
+<input class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="email" placeholder="hello@you.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-display text-xl uppercase tracking-wide" for="subject">Subject</label>
+<select class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all cursor-pointer" id="subject">
+<option>Video Editing Project</option>
+<option>Motion Graphics</option>
+<option>Collaboration</option>
+<option>Just saying hi!</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-display text-xl uppercase tracking-wide" for="message">The Vision</label>
+<textarea class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="message" placeholder="Tell me about your project..." rows="5"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-black font-display text-3xl uppercase tracking-wider py-4 border-2 border-black shadow-retro hover:shadow-retro-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 group relative overflow-hidden" type="submit">
+<span class="relative z-10">Send It!</span>
+<div class="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-0"></div>
+</button>
+</div>
+</form>
+</div>
+<div class="absolute -bottom-12 -right-8 -z-10 w-40 h-40">
+<svg class="w-full h-full text-accent-yellow animate-spin-slow duration-[10s]" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<path d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-4.9C93.5,9.3,82.1,22.9,71.2,34.5C60.3,46.1,49.8,55.8,38.1,64.3C26.4,72.8,13.4,80.1,0.6,79.1C-12.3,78.1,-24.1,68.8,-36.2,60.6C-48.4,52.4,-60.8,45.3,-70.2,34.8C-79.6,24.3,-86,10.3,-84.9,-3.3C-83.8,-16.9,-75.1,-30.1,-65.1,-41.7C-55.1,-53.3,-43.7,-63.3,-31.4,-71.7C-19.1,-80.1,-5.9,-86.9,4.2,-94.2L12.3,-101.5Z" fill="currentColor" transform="translate(100 100)"></path>
+</svg>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-black text-white py-16">
+<div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="space-y-4">
+<div>
+<h2 class="font-display text-5xl uppercase tracking-wide leading-none">Sara Ruffini</h2>
+<p class="font-body text-primary font-bold tracking-widest text-sm mt-1">VIDEO EDITOR - CONTENT CREATOR</p>
+</div>
+<p class="font-body text-gray-400 text-sm">
+                    sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen
+                </p>
+</div>
+<div class="flex flex-col md:items-end space-y-4">
+<div class="flex space-x-8 font-body font-medium uppercase tracking-widest text-sm">
+<a class="hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple dark mode toggle functionality for demo purposes
+        // In a real app, this would check system preferences or local storage
+        const toggleMode = () => {
+            document.documentElement.classList.toggle('dark');
+        }
+        // Add a hidden toggle button for testing
+        const btn = document.createElement('button');
+        btn.innerHTML = '🌓';
+        btn.className = 'fixed bottom-4 left-4 z-50 bg-black text-white dark:bg-white dark:text-black p-3 rounded-full shadow-lg text-xl border-2 border-white dark:border-black hover:scale-110 transition-transform';
+        btn.onclick = toggleMode;
+        document.body.appendChild(btn);
+    </script>
+
+</body></html>

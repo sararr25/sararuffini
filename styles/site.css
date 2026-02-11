@@ -1,0 +1,90 @@
+:root {
+  --bg: #f5efe3;
+  --card: #ffffff;
+  --ink: #121212;
+  --line: #121212;
+  --accent: #3bdec8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 92% 2%, rgba(59, 222, 200, 0.26), transparent 40%),
+    radial-gradient(circle at 8% 98%, rgba(255, 171, 72, 0.2), transparent 42%),
+    var(--bg);
+}
+
+.workspace {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+}
+
+.workspace-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  line-height: 1.02;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  font-size: 1rem;
+  max-width: 70ch;
+}
+
+.page-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.page-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--card);
+  border: 2px solid var(--line);
+  box-shadow: 6px 6px 0 var(--line);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.page-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 var(--line);
+}
+
+.page-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.page-card span {
+  display: block;
+  padding: 10px 12px;
+  font-weight: 700;
+  border-top: 2px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  .workspace {
+    padding-top: 28px;
+  }
+}

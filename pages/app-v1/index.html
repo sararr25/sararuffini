@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>App Logic &amp; Flow V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Reenie+Beanie&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#102222",
+                        "ink": "#1a1a1a",
+                        "paper": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "hand": ["Reenie Beanie", "cursive"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "2xl": "4rem", "full": "9999px"},
+                    boxShadow: {
+                        'retro': '8px 8px 0px 0px rgba(19, 236, 236, 0.2)',
+                        'retro-dark': '8px 8px 0px 0px rgba(16, 34, 34, 0.8)',
+                    }
+                },
+            },
+        }
+    </script>
+<link rel="stylesheet" href="../../styles/app-v1.css"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-ink antialiased selection:bg-primary selection:text-background-dark overflow-x-hidden">
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex justify-between items-center pointer-events-none">
+<div class="pointer-events-auto bg-white/80 backdrop-blur-md border border-primary/20 px-6 py-3 rounded-full shadow-sm flex items-center gap-3">
+<span class="w-3 h-3 bg-primary rounded-full animate-pulse"></span>
+<span class="font-bold tracking-tight text-lg lowercase">sara ruffini</span>
+</div>
+<div class="pointer-events-auto bg-white/80 backdrop-blur-md border border-primary/20 px-2 py-2 rounded-full shadow-sm flex items-center gap-1">
+<button class="px-5 py-2 hover:bg-primary/10 rounded-full transition-colors font-medium text-sm lowercase">work</button>
+<button class="px-5 py-2 hover:bg-primary/10 rounded-full transition-colors font-medium text-sm lowercase">about</button>
+<button class="px-5 py-2 bg-primary text-background-dark font-bold rounded-full hover:bg-primary/80 transition-all text-sm lowercase shadow-retro-dark transform hover:-translate-y-1 hover:shadow-none duration-200">let's talk</button>
+</div>
+</nav>
+<main class="w-full pt-32 pb-40">
+<section class="container mx-auto px-6 mb-32 relative">
+<div class="absolute top-10 left-10 text-primary/30 transform -rotate-12 pointer-events-none hidden lg:block">
+<span class="material-icons text-8xl">auto_awesome</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-4 lg:sticky lg:top-32 space-y-8 z-10">
+<div class="inline-block bg-primary/10 text-background-dark font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest border border-primary/20">
+                    Phase 01
+                </div>
+<h1 class="text-6xl md:text-7xl font-bold leading-[0.9] tracking-tight lowercase">
+                    visual <br/>
+<span class="scribble-underline text-primary/80">language</span>
+</h1>
+<p class="text-xl text-gray-600 leading-relaxed font-light">
+                    We stripped back the interface to its raw essentials. No shadows, just bold strokes and vibrant energy. A digital brutalism that feels warm.
+                </p>
+<div class="pt-8">
+<h3 class="font-hand text-3xl text-primary transform -rotate-2 mb-4">the palette...</h3>
+<div class="flex flex-wrap gap-4">
+<div class="group relative cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-[#13ecec] border-2 border-white shadow-lg transform group-hover:scale-110 transition-transform"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded shadow">#13ECEC</span>
+</div>
+<div class="group relative cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-[#102222] border-2 border-white shadow-lg transform group-hover:scale-110 transition-transform"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded shadow">#102222</span>
+</div>
+<div class="group relative cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-[#f6f8f8] border-2 border-gray-200 shadow-lg transform group-hover:scale-110 transition-transform"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded shadow">#F6F8F8</span>
+</div>
+<div class="group relative cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-[#ff5e5e] border-2 border-white shadow-lg transform group-hover:scale-110 transition-transform rotate-12"></div>
+<span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity bg-white px-2 py-1 rounded shadow">#FF5E5E</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-gray-100 shadow-xl relative overflow-hidden group">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl group-hover:bg-primary/30 transition-colors"></div>
+<div class="flex justify-between items-end mb-4 relative z-10">
+<span class="text-xs font-mono text-gray-400">Main Display</span>
+<span class="text-xs font-mono text-gray-400">Space Grotesk</span>
+</div>
+<div class="text-8xl font-bold leading-none tracking-tighter text-background-dark mb-2 relative z-10">
+                        Aa
+                    </div>
+<div class="text-sm text-gray-500 font-mono relative z-10">
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+                        abcdefghijklmnopqrstuvwxyz<br/>
+                        0123456789
+                    </div>
+</div>
+</div>
+<div class="lg:col-span-8 relative mt-12 lg:mt-0">
+<div class="absolute -top-12 right-20 z-20 hidden lg:block">
+<p class="font-hand text-2xl text-primary transform rotate-6">user profile v1.2</p>
+<svg class="w-12 h-12 text-primary transform rotate-90 ml-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 11l5-5m0 0l5 5m-5-5v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<div class="relative w-full h-[800px] flex justify-center items-center">
+<div class="absolute top-20 left-0 lg:left-10 w-[300px] h-[600px] bg-background-dark rounded-[3rem] border-8 border-gray-900 shadow-2xl transform -rotate-12 z-0 opacity-80 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Abstract dark mobile UI with neon charts" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQehSS-VilEXNEh8xXqCUax_9c4RKfx-MVbfX3whPnJxgUsfVMcxlHlBAWhsXEhL86k4xT29MUonh1BxOLks_HZA7bBmYYdHDIXnUshFq1iQ-IMemXZBc4Auwh3hda0k_v9PlQuOfKvb4FFRNh_CHH85yS1D9UNo8W1Zcojp9UkyTNtGd8xYvDwHK980Vc1rzBCM_NufBWS9buRfDtpvzPZr-ihrXPf1n1OUG10hAjMNYfwTxGI17fJ8jXXrOH3Un7nm4K-jQqqgrV');">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+<div class="absolute top-10 right-0 lg:right-20 w-[300px] h-[600px] bg-white rounded-[3rem] border-8 border-gray-200 shadow-2xl transform rotate-6 z-10 overflow-hidden">
+<div class="w-full h-full p-6 flex flex-col">
+<div class="h-8 w-8 bg-primary rounded-full mb-6"></div>
+<div class="h-4 w-2/3 bg-gray-100 rounded mb-2"></div>
+<div class="h-4 w-1/2 bg-gray-100 rounded mb-8"></div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="h-24 bg-primary/20 rounded-2xl"></div>
+<div class="h-24 bg-gray-50 rounded-2xl"></div>
+</div>
+<div class="flex-1 bg-gray-50 rounded-2xl overflow-hidden relative">
+<img class="object-cover w-full h-full opacity-80" data-alt="Clean minimal dashboard interface detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaPrrqyVqU8fLO3a3VajVyzx-baU7zYx2kzIQCs1LDc_MBH6ac_-XK-4OUyFZMl8_4D_yEU7dP9mrPcTZ6oqOEIvlg9hLr7TG348sY-UfNgcEYyqxTBxRo9-1V6pRnXocRmRf-hHKKZDU-WgJWnleNJU4rY34CC1c6ehRGtyQT4SlEzCN_wpSter79O0ZRNHA9_pZApCSK_h9Xj1jGoLx-Weodww1FQ0idwaPROpFqQ8MfsnCZ-Ij20M5o5CYtTiu_wdQmwU0U6wQD"/>
+</div>
+</div>
+</div>
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[320px] h-[640px] bg-white rounded-[3rem] border-8 border-gray-900 shadow-retro z-20 overflow-hidden">
+<div class="h-12 w-full flex justify-between items-center px-6 pt-2">
+<span class="text-xs font-bold">9:41</span>
+<div class="w-16 h-5 bg-black rounded-full"></div>
+</div>
+<div class="p-6">
+<h3 class="text-3xl font-bold lowercase mb-6 leading-tight">hello,<br/>creator.</h3>
+<div class="w-full h-48 bg-background-dark rounded-2xl mb-6 relative overflow-hidden group">
+<img class="w-full h-full object-cover opacity-60 transition-transform group-hover:scale-110" data-alt="Abstract liquid gradient background in blue and purple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary text-background-dark text-xs font-bold px-3 py-1 rounded-full">Active Project</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 bg-background-light rounded-xl border border-gray-100">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center font-bold">1</div>
+<div>
+<div class="font-bold text-sm">Design System</div>
+<div class="text-xs text-gray-500">Updated 2h ago</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 bg-background-light rounded-xl border border-gray-100 opacity-60">
+<div class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">2</div>
+<div>
+<div class="font-bold text-sm">User Flows</div>
+<div class="text-xs text-gray-500">Pending review</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-0 w-full px-6">
+<button class="w-full py-4 bg-background-dark text-white rounded-full font-bold shadow-lg">New Entry</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="w-full overflow-hidden leading-none rotate-180 mb-20">
+<svg class="relative block w-[calc(100%+1.3px)] h-[80px] text-white" data-name="Layer 1" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#13ecec" fill-opacity="0.1"></path>
+</svg>
+</div>
+<section class="container mx-auto px-6 mb-20">
+<div class="mb-20 text-center relative max-w-4xl mx-auto">
+<div class="inline-block bg-primary/10 text-background-dark font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest border border-primary/20 mb-4">
+                Phase 02
+            </div>
+<h2 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tight lowercase">
+                how it <br/>
+<span class="scribble-underline text-primary/80">works</span>
+</h2>
+<div class="absolute -right-12 top-20 transform rotate-12 hidden md:block">
+<span class="font-hand text-3xl text-gray-500">the blueprint...</span>
+<span class="material-icons text-4xl text-gray-400 block mt-2">subdirectory_arrow_left</span>
+</div>
+</div>
+<div class="relative w-full max-w-6xl mx-auto">
+<div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px border-l-2 border-dashed border-gray-300 transform -translate-x-1/2 z-0"></div>
+<div class="space-y-32 relative z-10">
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="lg:text-right order-2 lg:order-1 relative">
+<div class="bg-white p-6 rounded-2xl border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] inline-block transform hover:-rotate-1 transition-transform duration-300">
+<h3 class="text-2xl font-bold uppercase mb-2">01. Homepage</h3>
+<p class="font-mono text-sm text-gray-600 max-w-xs ml-auto">User lands on dashboard. System fetches recent projects via GraphQL.</p>
+<div class="mt-4 flex justify-end">
+<div class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded border border-green-200">Authenticated</div>
+</div>
+</div>
+<div class="absolute -top-12 right-0 lg:-right-12 lg:top-0 transform -rotate-12">
+<span class="font-hand text-2xl text-[#0d9488] bg-[#ccfbf1] px-2 py-1 shadow-sm">entry point!</span>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex justify-center lg:justify-start relative">
+<div class="w-48 h-48 bg-gray-100 rounded-xl border-[3px] border-black overflow-hidden shadow-lg transform rotate-3 relative group">
+<img alt="Homepage UI Thumbnail" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaPrrqyVqU8fLO3a3VajVyzx-baU7zYx2kzIQCs1LDc_MBH6ac_-XK-4OUyFZMl8_4D_yEU7dP9mrPcTZ6oqOEIvlg9hLr7TG348sY-UfNgcEYyqxTBxRo9-1V6pRnXocRmRf-hHKKZDU-WgJWnleNJU4rY34CC1c6ehRGtyQT4SlEzCN_wpSter79O0ZRNHA9_pZApCSK_h9Xj1jGoLx-Weodww1FQ0idwaPROpFqQ8MfsnCZ-Ij20M5o5CYtTiu_wdQmwU0U6wQD"/>
+<div class="absolute top-2 right-2 w-3 h-3 bg-red-500 rounded-full border border-white"></div>
+</div>
+</div>
+<div class="hidden lg:block absolute left-1/2 top-full w-24 h-24 border-b-[3px] border-r-[3px] border-black rounded-br-[40px] transform translate-x-[-3px] translate-y-[-50px]"></div>
+</div>
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-1 lg:order-1 flex justify-center lg:justify-end relative">
+<div class="w-48 h-48 bg-gray-100 rounded-xl border-[3px] border-black overflow-hidden shadow-lg transform -rotate-2 relative group">
+<img alt="Project Selection UI Thumbnail" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-icons text-4xl text-white drop-shadow-md">touch_app</span>
+</div>
+</div>
+</div>
+<div class="lg:text-left order-2 lg:order-2 relative">
+<div class="bg-white p-6 rounded-2xl border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] inline-block transform hover:rotate-1 transition-transform duration-300">
+<h3 class="text-2xl font-bold uppercase mb-2">02. Selection</h3>
+<p class="font-mono text-sm text-gray-600 max-w-xs">User selects active project. State updates globally via Context API.</p>
+<div class="mt-4 flex justify-start gap-2">
+<div class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded border border-blue-200">Interaction</div>
+</div>
+</div>
+<div class="absolute -bottom-10 left-10 transform rotate-6">
+<span class="font-hand text-2xl text-[#0d9488]">click triggers load...</span>
+<svg class="w-8 h-8 text-[#0d9488] inline-block transform -rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 11l5-5m0 0l5 5m-5-5v12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+</div>
+<div class="hidden lg:block absolute left-1/2 top-full w-24 h-24 border-b-[3px] border-l-[3px] border-black rounded-bl-[40px] transform translate-x-[-100%] translate-y-[-50px]"></div>
+</div>
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="lg:text-right order-2 lg:order-1 relative">
+<div class="bg-white p-6 rounded-2xl border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] inline-block transform hover:-rotate-1 transition-transform duration-300">
+<h3 class="text-2xl font-bold uppercase mb-2">03. The Editor</h3>
+<p class="font-mono text-sm text-gray-600 max-w-xs ml-auto">Canvas renders via WebGL. Real-time collaboration sockets open.</p>
+<div class="mt-4 flex justify-end">
+<div class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-1 rounded border border-purple-200">Heavy Load</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex justify-center lg:justify-start relative">
+<div class="w-48 h-48 bg-gray-800 rounded-xl border-[3px] border-black overflow-hidden shadow-lg transform rotate-3 relative group">
+<div class="w-full h-full p-2 grid grid-cols-3 gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
+<div class="col-span-1 bg-gray-600 rounded"></div>
+<div class="col-span-2 bg-gray-700 rounded relative">
+<div class="absolute top-1/2 left-1/2 w-8 h-8 bg-primary rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+</div>
+</div>
+</div>
+<div class="absolute -top-8 -right-8 transform rotate-12 bg-yellow-200 text-yellow-900 px-3 py-1 font-hand text-xl shadow-sm border border-yellow-400 rounded-sm">
+                            main workspace
+                        </div>
+</div>
+<div class="hidden lg:block absolute left-1/2 top-full w-24 h-24 border-b-[3px] border-r-[3px] border-black rounded-br-[40px] transform translate-x-[-3px] translate-y-[-50px]"></div>
+</div>
+<div class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-1 lg:order-1 flex justify-center lg:justify-end relative">
+<div class="w-48 h-48 bg-white rounded-xl border-[3px] border-black overflow-hidden shadow-lg transform -rotate-1 relative group">
+<div class="w-full h-full flex flex-col items-center justify-center p-4 bg-primary/10">
+<span class="material-icons text-6xl text-background-dark mb-2">shopping_bag</span>
+<div class="w-24 h-6 bg-background-dark rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="lg:text-left order-2 lg:order-2 relative">
+<div class="bg-primary p-6 rounded-2xl border-[3px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] inline-block transform hover:rotate-1 transition-transform duration-300">
+<h3 class="text-2xl font-bold uppercase mb-2 text-background-dark">04. Checkout</h3>
+<p class="font-mono text-sm text-background-dark max-w-xs">Export assets. Payment processing via Stripe API. Delivery.</p>
+<div class="mt-4 flex justify-start gap-2">
+<div class="bg-background-dark text-white text-xs font-bold px-2 py-1 rounded">Secure</div>
+<div class="bg-white/50 text-background-dark text-xs font-bold px-2 py-1 rounded">Final Step</div>
+</div>
+</div>
+<div class="absolute top-1/2 -right-24 transform -translate-y-1/2 rotate-90 lg:rotate-0 hidden md:block">
+<span class="font-hand text-4xl text-gray-400">done!</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-6 left-0 right-0 z-40 px-6 flex justify-center pointer-events-none">
+<div class="pointer-events-auto bg-background-dark/90 backdrop-blur-md text-white px-2 py-2 rounded-full shadow-2xl flex items-center gap-2 border border-white/10 max-w-lg w-full justify-between">
+<button class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+<span class="material-icons text-sm">arrow_back</span>
+</button>
+<div class="flex flex-col items-center px-4">
+<span class="text-[10px] uppercase tracking-widest text-gray-400 font-mono">Next Project</span>
+<span class="text-sm font-bold truncate max-w-[150px]">Neon Commerce V2</span>
+</div>
+<button class="group px-5 py-2 bg-primary text-background-dark font-bold rounded-full hover:bg-white transition-all text-sm flex items-center gap-2">
+<span>View</span>
+<span class="material-icons text-sm transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+
+</body></html>

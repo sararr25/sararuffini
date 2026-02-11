@@ -1,0 +1,53 @@
+        .stroke-text {
+            -webkit-text-stroke: 1px black;
+            color: transparent
+        }
+        .dark .stroke-text {
+            -webkit-text-stroke: 1px white
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite }
+        .animate-float-delayed { animation: float 5s ease-in-out infinite 1s }
+        .animate-float-reverse { animation: float 7s ease-in-out infinite 2s reverse }
+        .scribble-hover {
+            position: relative;
+            text-decoration: none !important;
+        }
+        .scribble-hover svg {
+            position: absolute;
+            bottom: -8px;
+            left: -5%;
+            width: 110%;
+            height: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: scaleX(0);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .scribble-hover:hover svg {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        .scribble-hover.active svg {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-spin-slow {
+            animation: spin 10s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }

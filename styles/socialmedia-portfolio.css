@@ -1,0 +1,68 @@
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scribble-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .scribble-underline::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 6px;
+            background: url("data:image/svg+xml,%3Csvg width='200' height='20' viewBox='0 0 200 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5,15 Q30,5 50,12 T100,10 T150,12 T190,5' fill='none' stroke='%23008080' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x;
+            background-size: contain;
+            pointer-events: none;
+        }.nav-link {
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 8px;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2,5 Q25,2 50,8 T98,5' fill='none' stroke='%23008080' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat;
+            background-size: 100% 100%;
+            pointer-events: none;
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .nav-link:hover::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+        .gradient-blob {
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,105,180,0.15) 0%, rgba(255,127,80,0.1) 40%, rgba(253,251,246,0) 70%);
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(-5%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+            50% {
+                transform: translateY(15%);
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }

@@ -1,0 +1,58 @@
+        .sticker-hover {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .sticker-hover:hover {
+            animation-play-state: paused !important;
+            transform: scale(1.1) rotate(0deg) !important; 
+            z-index: 50 !important;
+        }
+        .scribble-underline path {
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            animation: scribbleDraw 1.2s cubic-bezier(0.37, 0, 0.63, 1) forwards 0.5s;
+        }
+        @keyframes scribbleDraw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .blob-gradient-intense {
+            background: radial-gradient(circle, rgba(255,100,100,0.8) 0%, rgba(236,72,153,0.6) 40%, rgba(236,72,153,0) 70%);
+            filter: blur(100px);
+        }
+        .blob-gradient-secondary {
+             background: radial-gradient(circle, rgba(255,165,0,0.6) 0%, rgba(255,100,100,0.4) 50%, rgba(255,100,100,0) 70%);
+            filter: blur(90px);
+        }.blob-gradient-orange {
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.7) 0%, rgba(255, 140, 0, 0.5) 40%, rgba(255, 200, 100, 0) 70%);
+            filter: blur(90px);
+        }
+        .wavy-text-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .wavy-text {
+            display: inline-block;
+            animation: waveFlow 10s linear infinite;
+        }
+        @keyframes waveFlow {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .scribble-line-path {
+             stroke-dasharray: 1000;
+             stroke-dashoffset: 1000;
+             animation: drawLine 2s ease forwards;
+        }
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }.nav-scribble path {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.4s ease-out;
+        }
+        .group:hover .nav-scribble path {
+            stroke-dashoffset: 0;
+        }
