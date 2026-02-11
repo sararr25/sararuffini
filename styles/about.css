@@ -16,10 +16,13 @@
         .scribble-hover {
             position: relative;
             text-decoration: none !important;
+            display: inline-block;
+            padding-bottom: 4px;
+            z-index: 1;
         }
         .scribble-hover svg {
             position: absolute;
-            bottom: -8px;
+            bottom: -6px;
             left: -5%;
             width: 110%;
             height: 12px;
@@ -27,7 +30,8 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
             transform: scaleX(0);
             pointer-events: none;
-            z-index: -1;
+            z-index: 0;
+            overflow: visible;
         }
         .scribble-hover:hover svg {
             opacity: 1;

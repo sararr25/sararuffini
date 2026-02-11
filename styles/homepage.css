@@ -11,6 +11,12 @@
             stroke-dashoffset: 400;
             animation: scribbleDraw 1.2s cubic-bezier(0.37, 0, 0.63, 1) forwards 0.5s;
         }
+        .word-faster {
+            font-family: "Archivo Black", "Inter", sans-serif;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
         @keyframes scribbleDraw {
             to {
                 stroke-dashoffset: 0;
@@ -35,7 +41,7 @@
         }
         .wavy-text {
             display: inline-block;
-            animation: waveFlow 10s linear infinite;
+            animation: waveFlow 18s linear infinite;
         }
         @keyframes waveFlow {
             0% { transform: translateX(0); }
@@ -48,7 +54,11 @@
         }
         @keyframes drawLine {
             to { stroke-dashoffset: 0; }
-        }.nav-scribble path {
+        }
+        .nav-scribble {
+            overflow: visible;
+        }
+        .nav-scribble path {
             stroke-dasharray: 100;
             stroke-dashoffset: 100;
             transition: stroke-dashoffset 0.4s ease-out;
