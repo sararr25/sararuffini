@@ -34,6 +34,7 @@
         }
     </script>
 <link rel="stylesheet" href="../../styles/video-v1.css"/>
+<link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-retro-black dark:text-background-light font-display min-h-screen selection:bg-primary selection:text-white overflow-x-hidden">
 <div class="grain-overlay"></div>
@@ -42,14 +43,38 @@
 <div class="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-teal-accent/10 rounded-full blur-[100px] mix-blend-multiply dark:mix-blend-screen"></div>
 <div class="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-pink-accent/10 rounded-full blur-[80px] mix-blend-multiply dark:mix-blend-screen"></div>
 </div>
-<nav class="fixed top-0 w-full z-40 px-6 py-4 flex justify-between items-center mix-blend-multiply dark:mix-blend-normal">
-<div class="text-xl font-bold tracking-tighter lowercase">studio<span class="text-primary">v1</span></div>
-<div class="flex gap-6 text-sm font-medium">
-<a class="hover:text-primary transition-colors" href="../portfolio-main/code.html">work</a>
-<a class="hover:text-primary transition-colors" href="../about/index.html">about</a>
-<a class="hover:text-primary transition-colors" href="../contact/index.html">contact</a>
+<nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-background-light border-b-2 border-black sticky top-0 z-50 shared-site-nav">
+<a class="text-2xl font-black uppercase tracking-tight hover:text-primary transition-colors" href="../../index.html">Sara Ruffini</a>
+<div class="hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center text-black">
+<a class="scribble-hover relative inline-block transition-all" href="../../index.html">
+                Home
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+<a class="scribble-hover active relative inline-block transition-all text-primary" href="../portfolio-main/code.html">
+                Projects
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+<a class="scribble-hover relative inline-block transition-all" href="../about/index.html">
+                About
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+<a class="scribble-hover relative inline-block transition-all" href="../contact/index.html">
+                Contact
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
 </div>
+<button aria-label="Open menu" class="md:hidden text-3xl leading-none">☰</button>
 </nav>
+
+
 <main class="relative z-10 pt-24 pb-20 px-4 md:px-8 max-w-[1600px] mx-auto">
 <header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b-2 border-retro-black dark:border-background-light pb-6">
 <div>
@@ -247,19 +272,42 @@
 </div>
 </div>
 </main>
-<footer class="bg-retro-black text-background-light py-12 px-6">
-<div class="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="text-2xl font-bold tracking-tighter lowercase">studio<span class="text-primary">v1</span></div>
-<div class="text-sm opacity-50">© 2023 Studio V1. All rights reserved.</div>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-retro-black transition-colors" href="#">
-<span class="font-bold text-xs">IG</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary hover:text-retro-black transition-colors" href="#">
-<span class="font-bold text-xs">TW</span>
-</a>
+<footer class="bg-black text-white py-16 shared-site-footer">
+<div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="space-y-4">
+<div>
+<h2 class="text-5xl uppercase tracking-wide leading-none font-black">Sara Ruffini</h2>
+<p class="font-bold tracking-widest text-sm mt-1 text-primary">VIDEO EDITOR - CONTENT CREATOR</p>
+</div>
+<p class="text-gray-400 text-sm">
+                    sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen
+                </p>
+</div>
+<div class="flex flex-col md:items-end space-y-4">
+<div class="flex space-x-8 font-medium uppercase tracking-widest text-sm">
+<a class="transition-colors" href="../../index.html">Home</a>
+<a class="transition-colors" href="../portfolio-main/code.html">Projects</a>
+<a class="transition-colors" href="../about/index.html">About</a>
+<a class="transition-colors" href="../contact/index.html">Contact</a>
+</div>
 </div>
 </div>
 </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body></html>

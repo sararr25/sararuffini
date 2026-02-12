@@ -1,0 +1,40 @@
+.shared-site-nav {
+    overflow: visible;
+}
+
+.shared-site-nav .scribble-hover {
+    position: relative;
+    text-decoration: none !important;
+    display: inline-block;
+    padding-bottom: 4px;
+    z-index: 1;
+}
+
+.shared-site-nav .scribble-hover svg {
+    position: absolute;
+    bottom: -6px;
+    left: -5%;
+    width: 110%;
+    height: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: center;
+    pointer-events: none;
+    z-index: 0;
+    overflow: visible;
+}
+
+.shared-site-nav .scribble-hover:hover svg,
+.shared-site-nav .scribble-hover.active svg {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.shared-site-footer a {
+    text-decoration: none;
+}
+
+.shared-site-footer a:hover {
+    color: #39ffca;
+}

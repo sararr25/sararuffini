@@ -43,9 +43,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;family=Playfair+Display:ital,wght@1,400&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../../styles/about.css"/>
+<link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-dark dark:text-light transition-colors duration-300 font-display selection:bg-primary selection:text-black min-h-screen flex flex-col">
-<nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-background-light border-b-2 border-black sticky top-0 z-50">
+<nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-background-light border-b-2 border-black sticky top-0 z-50 shared-site-nav">
 <a class="text-2xl font-black uppercase tracking-tight hover:text-primary transition-colors" href="../../index.html">Sara Ruffini</a>
 <div class="hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center text-black">
 <a class="scribble-hover relative inline-block transition-all" href="../../index.html">
@@ -60,7 +61,7 @@
 <path d="M0 5 Q 50 10 100 5"></path>
 </svg>
 </a>
-<a class="scribble-hover active relative inline-block transition-all text-primary" href="index.html">
+<a class="scribble-hover active relative inline-block transition-all text-primary" href="../about/index.html">
                 About
                 <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
 <path d="M0 5 Q 50 10 100 5"></path>
@@ -73,10 +74,9 @@
 </svg>
 </a>
 </div>
-<button class="md:hidden text-3xl">
-<span class="material-symbols-outlined">menu</span>
-</button>
+<button aria-label="Open menu" class="md:hidden text-3xl leading-none">☰</button>
 </nav>
+
 <main class="flex-grow">
 <section class="flex flex-col lg:flex-row items-center justify-center relative overflow-hidden px-6 md:px-12 py-10 max-w-7xl mx-auto w-full gap-12 lg:gap-20">
 <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-primary/30 to-accent-yellow/30 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
@@ -254,36 +254,28 @@
 </div>
 </section>
 </main>
-<footer class="bg-black text-white w-full py-16 px-6 md:px-12 border-t-2 border-white">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-<div class="flex flex-col gap-4">
-<h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight">Sara Ruffini</h2>
-<p class="text-primary font-bold text-sm tracking-widest uppercase">Video Editor - Content Creator</p>
-<div class="mt-4 flex flex-col gap-2 text-gray-400">
-<a class="hover:text-white transition-colors" href="mailto:hello@sararuffini.com">hello@sararuffini.com</a>
-<p>+45 12 34 56 78</p>
-<p>Copenhagen, Denmark</p>
+<footer class="bg-black text-white py-16 shared-site-footer">
+<div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="space-y-4">
+<div>
+<h2 class="text-5xl uppercase tracking-wide leading-none font-black">Sara Ruffini</h2>
+<p class="font-bold tracking-widest text-sm mt-1 text-primary">VIDEO EDITOR - CONTENT CREATOR</p>
+</div>
+<p class="text-gray-400 text-sm">
+                    sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen
+                </p>
+</div>
+<div class="flex flex-col md:items-end space-y-4">
+<div class="flex space-x-8 font-medium uppercase tracking-widest text-sm">
+<a class="transition-colors" href="../../index.html">Home</a>
+<a class="transition-colors" href="../portfolio-main/code.html">Projects</a>
+<a class="transition-colors" href="../about/index.html">About</a>
+<a class="transition-colors" href="../contact/index.html">Contact</a>
 </div>
 </div>
-<div class="flex flex-col gap-4">
-<h3 class="text-lg font-bold uppercase tracking-wider text-gray-500">Socials</h3>
-<div class="flex gap-6">
-<a class="text-white hover:text-primary transition-colors" href="#">
-<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06h.63zm1.676 5.332c-3.83 0-6.404 2.565-6.404 6.404 0 3.84 2.56 6.404 6.404 6.404 3.832 0 6.404-2.565 6.404-6.404 0-3.832-2.565-6.404-6.404-6.404zm0 2.427c2.197 0 3.977 1.78 3.977 3.977 0 2.192-1.78 3.977-3.977 3.977a3.977 3.977 0 01-3.977-3.977c0-2.192 1.78-3.977 3.977-3.977zm5.392-2.868a1.44 1.44 0 110 2.88 1.44 1.44 0 010-2.88z"></path></svg>
-</a>
-<a class="text-white hover:text-primary transition-colors" href="#">
-<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>
-</a>
-<a class="text-white hover:text-primary transition-colors" href="#">
-<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
-</a>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 flex justify-between items-center text-sm text-gray-500">
-<p>© 2024 Sara Ruffini. All rights reserved.</p>
-<p>Designed with <span class="text-primary">❤</span></p>
 </div>
 </footer>
+
+
 
 </body></html>

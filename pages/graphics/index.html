@@ -37,6 +37,7 @@
         }
     </script>
 <link rel="stylesheet" href="../../styles/graphics.css"/>
+<link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-display overflow-x-hidden min-h-screen relative flex flex-col">
 <div class="absolute inset-0 z-50 texture-overlay mix-blend-multiply dark:mix-blend-overlay pointer-events-none"></div>
@@ -45,23 +46,37 @@
 <div class="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-primary/30 blur-[120px] rounded-full"></div>
 <div class="absolute top-[40%] left-[30%] w-[30%] h-[30%] bg-yellow-400/20 blur-[80px] rounded-full"></div>
 </div>
-<header class="fixed top-0 left-0 w-full z-40 px-6 py-4 flex justify-between items-center pointer-events-none">
-<a class="pointer-events-auto bg-white dark:bg-black border-2 border-black dark:border-white px-4 py-2 text-xl font-black tracking-tighter uppercase shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all rotate-1" href="../../index.html">
-        STUDIO<span class="text-primary">.RAW</span>
+<nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-background-light border-b-2 border-black sticky top-0 z-50 shared-site-nav">
+<a class="text-2xl font-black uppercase tracking-tight hover:text-primary transition-colors" href="../../index.html">Sara Ruffini</a>
+<div class="hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center text-black">
+<a class="scribble-hover relative inline-block transition-all" href="../../index.html">
+                Home
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
 </a>
-<nav class="pointer-events-auto hidden md:flex items-center gap-6 bg-white/80 dark:bg-black/80 backdrop-blur-md px-8 py-3 rounded-full border-2 border-black dark:border-white shadow-hard">
-<a class="font-bold hover:text-primary transition-colors" href="../portfolio-main/code.html">Work</a>
-<a class="font-bold hover:text-primary transition-colors" href="../about/index.html">About</a>
-<a class="font-bold hover:text-primary transition-colors" href="../socialmedia-portfolio/index.html">Journal</a>
-<a class="font-bold hover:text-primary transition-colors" href="../contact/index.html">Contact</a>
-</nav>
-<div class="flex items-center gap-3 pointer-events-auto">
-<a class="group flex items-center gap-2 bg-accent-yellow border-2 border-black px-4 py-2 rounded-full hover:bg-black hover:text-white transition-all duration-300 shadow-hard hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] -rotate-2" href="../portfolio-main/code.html">
-<span class="material-icons text-sm">grid_view</span>
-<span class="font-bold text-sm tracking-wide">All Projects</span>
+<a class="scribble-hover active relative inline-block transition-all text-primary" href="../portfolio-main/code.html">
+                Projects
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+<a class="scribble-hover relative inline-block transition-all" href="../about/index.html">
+                About
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
+</a>
+<a class="scribble-hover relative inline-block transition-all" href="../contact/index.html">
+                Contact
+                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+<path d="M0 5 Q 50 10 100 5"></path>
+</svg>
 </a>
 </div>
-</header>
+<button aria-label="Open menu" class="md:hidden text-3xl leading-none">☰</button>
+</nav>
+
 <main class="w-full flex-grow flex flex-col relative pt-24 pb-32">
 <div class="flex flex-col lg:flex-row w-full h-full">
 <section class="w-full lg:w-1/3 lg:h-auto lg:sticky lg:top-24 z-30 p-8 lg:p-12 flex flex-col justify-start">
@@ -186,49 +201,28 @@
 </a>
 </div>
 </main>
-<footer class="relative z-40 bg-black dark:bg-white text-white dark:text-black py-16 overflow-hidden">
-<div class="absolute inset-0 z-0 texture-overlay opacity-20"></div>
-<div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-<div class="flex flex-col gap-4">
-<h4 class="text-2xl font-black uppercase tracking-tighter">Studio.Raw</h4>
-<p class="text-gray-400 dark:text-gray-600 font-medium">Creating digital noise since 2018. Based in Tokyo, working worldwide.</p>
-</div>
+<footer class="bg-black text-white py-16 shared-site-footer">
+<div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="space-y-4">
 <div>
-<h5 class="font-bold uppercase tracking-widest mb-6 text-primary">Sitemap</h5>
-<ul class="space-y-3 font-bold text-lg">
-<li><a class="hover:text-primary transition-colors" href="../portfolio-main/code.html">Work</a></li>
-<li><a class="hover:text-primary transition-colors" href="../about/index.html">About</a></li>
-<li><a class="hover:text-primary transition-colors" href="../app-v2/index.html">Services</a></li>
-<li><a class="hover:text-primary transition-colors" href="../contact/index.html">Contact</a></li>
-</ul>
+<h2 class="text-5xl uppercase tracking-wide leading-none font-black">Sara Ruffini</h2>
+<p class="font-bold tracking-widest text-sm mt-1 text-primary">VIDEO EDITOR - CONTENT CREATOR</p>
 </div>
-<div>
-<h5 class="font-bold uppercase tracking-widest mb-6 text-primary">Socials</h5>
-<ul class="space-y-3 font-bold text-lg">
-<li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Twitter / X</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Behance</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
-</ul>
+<p class="text-gray-400 text-sm">
+                    sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen
+                </p>
 </div>
-<div>
-<h5 class="font-bold uppercase tracking-widest mb-6 text-primary">Newsletter</h5>
-<div class="relative">
-<input class="w-full bg-transparent border-b-2 border-white dark:border-black py-2 placeholder-gray-500 font-bold focus:outline-none focus:border-primary transition-colors" placeholder="YOUR EMAIL" type="email"/>
-<button class="absolute right-0 bottom-2 text-primary hover:text-white dark:hover:text-black transition-colors font-bold uppercase">Join</button>
-</div>
-</div>
-</div>
-<div class="border-t border-gray-800 dark:border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
-<p class="text-sm text-gray-500 font-bold">© 2024 Studio Raw. All rights reserved.</p>
-<div class="flex gap-4 mt-4 md:mt-0">
-<a class="text-sm text-gray-500 hover:text-white dark:hover:text-black font-bold" href="#">Privacy Policy</a>
-<a class="text-sm text-gray-500 hover:text-white dark:hover:text-black font-bold" href="#">Terms of Service</a>
+<div class="flex flex-col md:items-end space-y-4">
+<div class="flex space-x-8 font-medium uppercase tracking-widest text-sm">
+<a class="transition-colors" href="../../index.html">Home</a>
+<a class="transition-colors" href="../portfolio-main/code.html">Projects</a>
+<a class="transition-colors" href="../about/index.html">About</a>
+<a class="transition-colors" href="../contact/index.html">Contact</a>
 </div>
 </div>
 </div>
 </footer>
+
 <button class="fixed bottom-8 right-8 z-50 bg-black dark:bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform border-2 border-white dark:border-black group">
 <span class="material-icons group-hover:rotate-90 transition-transform duration-300">add</span>
 </button>
