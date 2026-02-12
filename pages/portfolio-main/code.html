@@ -50,7 +50,7 @@
 <link rel="stylesheet" href="../../styles/portfolio-main.css"/>
 <link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-secondary dark:text-white font-body transition-colors duration-300 min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-black flex flex-col">
+<body class="bg-background-light dark:bg-background-dark text-secondary dark:text-white font-body transition-colors duration-300 min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-black flex flex-col" data-cms-page="portfolio-main">
 <div class="fixed top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-pink-400/20 to-purple-500/20 rounded-full blur-[100px] -z-10 pointer-events-none translate-x-1/2 -translate-y-1/2 dark:opacity-10"></div>
 <div class="fixed bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-primary/10 to-accent-yellow/10 rounded-full blur-[120px] -z-10 pointer-events-none -translate-x-1/3 translate-y-1/3 dark:opacity-5"></div>
 <div class="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/noise.png')] opacity-[0.03] pointer-events-none z-0 mix-blend-overlay"></div>
@@ -89,9 +89,9 @@
 <div class="mb-16 relative flex flex-col md:flex-row justify-between items-end gap-6 border-b border-black/10 dark:border-white/10 pb-8">
 <div class="relative z-10">
 <h1 class="text-4xl md:text-5xl font-display font-black leading-[0.9] tracking-tighter relative z-10">
-                SELECTED <br/>
+<span data-cms-text="heading_line1">SELECTED</span> <br/>
 <span class="relative inline-block mt-2">
-<span class="relative z-10">WORKS</span>
+<span class="relative z-10" data-cms-text="heading_line2">WORKS</span>
 <svg class="absolute w-[110%] h-[120%] -top-[10%] -left-[5%] -z-10 text-primary rotate-1" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 200 60">
 <path d="M5,50 C50,65 150,25 195,45" fill="none" stroke="currentColor" stroke-linecap="round" stroke-opacity="0.4" stroke-width="25"></path>
 </svg>
@@ -99,7 +99,7 @@
 </h1>
 </div>
 <div class="relative z-20 max-w-md text-right hidden md:block">
-<p class="text-sm md:text-base font-body leading-relaxed text-gray-800 dark:text-gray-200">
+<p class="text-sm md:text-base font-body leading-relaxed text-gray-800 dark:text-gray-200" data-cms-html="intro_text_html">
                 Visual storytelling through rhythm and color. <br/>
 <span class="font-script text-accent-pink text-xl">Curated for impact.</span>
 </p>
@@ -117,15 +117,15 @@
 </div>
 <div class="masonry-grid w-full">
 <div class="break-inside-avoid mb-12 relative group">
-<a class="block group relative" href="../video-v1/index.html">
+<a class="block group relative" data-cms-href="card_1.href" href="../video-v1/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300">
 <div class="absolute top-4 -left-2 z-20 transform -rotate-2 group-hover:rotate-0 transition-transform duration-300">
-<span class="inline-block bg-accent-yellow text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-accent-yellow text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker" data-cms-text="card_1.badge">
                             Adventure Co.
                         </span>
 </div>
 <div class="relative h-[400px]">
-<img alt="Adventure Co." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXYfnGoPm-o0BLlSr31GQ4yp99CKaFWIA7NJMw44TipG_X4eMWTGoyoqYNWVCMZhgkPu9ItnMxg7pxBVi5ij1N9J-NN5TKPUisHAkQi_cDSp75FtNKJJLCJ9KlH0AlW5RlRs7nb9OUNHOgvUjjXSc7ZQOF22vKGZeg3BGPKG22XkfURKCzJHM6sY0A2rlBm9unw9ZBoU9yxU0sXUtkDoayw9yEKS2V2chkRrCfJFoqC1dDwReXw2vaUWJICoKVp8uyuqrX4iwxyNcT"/>
+<img alt="Adventure Co." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100" data-cms-src="card_1.image" data-cms-alt="card_1.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXYfnGoPm-o0BLlSr31GQ4yp99CKaFWIA7NJMw44TipG_X4eMWTGoyoqYNWVCMZhgkPu9ItnMxg7pxBVi5ij1N9J-NN5TKPUisHAkQi_cDSp75FtNKJJLCJ9KlH0AlW5RlRs7nb9OUNHOgvUjjXSc7ZQOF22vKGZeg3BGPKG22XkfURKCzJHM6sY0A2rlBm9unw9ZBoU9yxU0sXUtkDoayw9yEKS2V2chkRrCfJFoqC1dDwReXw2vaUWJICoKVp8uyuqrX4iwxyNcT"/>
 <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-3 rounded-full border-2 border-black shadow-lg">
@@ -135,21 +135,21 @@
 </div>
 </div>
 <div class="mt-3 pl-1">
-<p class="font-display font-bold text-lg leading-tight">High-Altitude Storytelling</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Commercial • 2023</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_1.title">High-Altitude Storytelling</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_1.meta">Commercial • 2023</p>
 </div>
 </a>
 </div>
 <div class="break-inside-avoid mb-12 relative group">
-<a class="block group relative" href="../socialmedia-portfolio/index.html">
+<a class="block group relative" data-cms-href="card_2.href" href="../socialmedia-portfolio/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300">
 <div class="absolute top-4 -right-2 z-20 transform rotate-3 group-hover:-rotate-1 transition-transform duration-300">
-<span class="inline-block bg-accent-pink text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-accent-pink text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker" data-cms-text="card_2.badge">
                             Vogue
                         </span>
 </div>
 <div class="relative h-[500px]">
-<img alt="Vogue x Street" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfS1EcPCNHcCdYaPKLYLY5-78bYwugWYMqsY5_t7bdoH8Mqxwhtwk7-vylmqNo9an2RhyZbIrwS6MzxWYOyVkiNuAxrLXL5ELJgnk8YYC7T3eezoC2oLH8gUaxDa9VSHk65RR9ltjAmulC92iiWov0fYqVrRsbtx6WXPkOyoFjbzjzp49NC8Pqh86sjAMADPZ8wOO2K0rjuBhSuwg4MtrUko2nMJeHR6G4UOCxJ_1u3WyekOoTqjchKXfJnq3ZmCNbEtmULQegUsFj"/>
+<img alt="Vogue x Street" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 group-hover:opacity-100" data-cms-src="card_2.image" data-cms-alt="card_2.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfS1EcPCNHcCdYaPKLYLY5-78bYwugWYMqsY5_t7bdoH8Mqxwhtwk7-vylmqNo9an2RhyZbIrwS6MzxWYOyVkiNuAxrLXL5ELJgnk8YYC7T3eezoC2oLH8gUaxDa9VSHk65RR9ltjAmulC92iiWov0fYqVrRsbtx6WXPkOyoFjbzjzp49NC8Pqh86sjAMADPZ8wOO2K0rjuBhSuwg4MtrUko2nMJeHR6G4UOCxJ_1u3WyekOoTqjchKXfJnq3ZmCNbEtmULQegUsFj"/>
 <div class="absolute inset-0 bg-black/0 group-hover:bg-transparent transition-colors"></div>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-3 rounded-full border-2 border-black shadow-lg">
@@ -159,21 +159,21 @@
 </div>
 </div>
 <div class="mt-3 pl-1">
-<p class="font-display font-bold text-lg leading-tight">Urban Fashion Week</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Social Media • Edit</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_2.title">Urban Fashion Week</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_2.meta">Social Media • Edit</p>
 </div>
 </a>
 </div>
 <div class="break-inside-avoid mb-12 relative group">
-<a class="block group relative" href="../graphics/index.html">
+<a class="block group relative" data-cms-href="card_3.href" href="../graphics/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300 rounded-tr-[40px]">
 <div class="absolute bottom-4 left-4 z-20 transform -rotate-1 group-hover:rotate-1 transition-transform duration-300">
-<span class="inline-block bg-accent-purple text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-accent-purple text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker" data-cms-text="card_3.badge">
                             Glitch
                         </span>
 </div>
 <div class="relative h-[300px]">
-<img alt="Glitch Art" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPHl4zoGVV0OhCteCKaNe96c7zRP_R7-HpxKO4Dw5wYBdYpi0xp-R8xRJRqtuHKlznS_PG8GNf0lfKyMWRQPA0rnlxtU22lAi3rcBQYPrZAF8h-ZauK9N0r9kfsr-YFvvclquf-olEahn8PnJ1On17-cWsjn2pV1ggNlR3aDU1OGw11NwuEZe9TSbozxbiqssb5ewKEEWoBeZkvlTMDTMLLa5HDu_d3Gu3LbH97FQhXaNsRntqAA5J0aHHRHXciIkNRu5CQZxJjLLG"/>
+<img alt="Glitch Art" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" data-cms-src="card_3.image" data-cms-alt="card_3.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPHl4zoGVV0OhCteCKaNe96c7zRP_R7-HpxKO4Dw5wYBdYpi0xp-R8xRJRqtuHKlznS_PG8GNf0lfKyMWRQPA0rnlxtU22lAi3rcBQYPrZAF8h-ZauK9N0r9kfsr-YFvvclquf-olEahn8PnJ1On17-cWsjn2pV1ggNlR3aDU1OGw11NwuEZe9TSbozxbiqssb5ewKEEWoBeZkvlTMDTMLLa5HDu_d3Gu3LbH97FQhXaNsRntqAA5J0aHHRHXciIkNRu5CQZxJjLLG"/>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-3 rounded-full border-2 border-black shadow-lg">
 <span class="material-symbols-outlined text-3xl text-black">play_arrow</span>
@@ -182,21 +182,21 @@
 </div>
 </div>
 <div class="mt-3 pl-1">
-<p class="font-display font-bold text-lg leading-tight">Experimental Visuals</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">VFX • Personal Project</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_3.title">Experimental Visuals</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_3.meta">VFX • Personal Project</p>
 </div>
 </a>
 </div>
 <div class="break-inside-avoid mb-12 relative group">
-<a class="block group relative" href="../video-v2/index.html">
+<a class="block group relative" data-cms-href="card_4.href" href="../video-v2/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300">
 <div class="absolute -top-3 right-6 z-20 transform rotate-2 group-hover:rotate-0 transition-transform duration-300">
-<span class="inline-block bg-primary text-black border-2 border-black px-4 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-primary text-black border-2 border-black px-4 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker" data-cms-text="card_4.badge">
                             Neon Nights
                         </span>
 </div>
 <div class="relative h-[280px]">
-<img alt="Neon Nights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100 grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP"/>
+<img alt="Neon Nights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100 grayscale group-hover:grayscale-0" data-cms-src="card_4.image" data-cms-alt="card_4.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP"/>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-3 rounded-full border-2 border-black shadow-lg">
 <span class="material-symbols-outlined text-3xl text-black">play_arrow</span>
@@ -205,21 +205,21 @@
 </div>
 </div>
 <div class="mt-3 pl-1">
-<p class="font-display font-bold text-lg leading-tight">Cyberpunk Music Video</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Music Video • 2022</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_4.title">Cyberpunk Music Video</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_4.meta">Music Video • 2022</p>
 </div>
 </a>
 </div>
 <div class="break-inside-avoid mb-12 relative group">
-<a class="block group relative" href="../video-v2/index.html">
+<a class="block group relative" data-cms-href="card_5.href" href="../video-v2/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300 rounded-bl-[30px]">
 <div class="absolute top-3 left-3 z-20 transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-<span class="inline-block bg-accent-green text-black border-2 border-black px-2 py-0.5 font-display font-black text-xs uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-accent-green text-black border-2 border-black px-2 py-0.5 font-display font-black text-xs uppercase tracking-tight shadow-sticker" data-cms-text="card_5.badge">
                             Aero
                         </span>
 </div>
 <div class="relative h-[220px]">
-<img alt="Aero Dynamics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsPZ7YYOifS5lZzlA79ighqGP-cnf-HhfpzS0SedoLDslTbRk9ArgX-zw0xYO1hyQif6Rlwjc9-x2qI0w9lDrqFn4GchGxhUR3rj6Rj_LOg4quYR_ljXjU0QFN2USOTuoNrhvcIXvKidEgudi9iViS_XLl4AR7WNd2b_Ot2pHb7E6W0uuFk12I9L8FpLhXD2d7qJp7DfSD6Tqt7aGCU297IH3L5jVpT8IdCiByNeITEVxkxLQKHw-cGCFm8T9L26ArzSfqDZNtZbMB"/>
+<img alt="Aero Dynamics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" data-cms-src="card_5.image" data-cms-alt="card_5.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsPZ7YYOifS5lZzlA79ighqGP-cnf-HhfpzS0SedoLDslTbRk9ArgX-zw0xYO1hyQif6Rlwjc9-x2qI0w9lDrqFn4GchGxhUR3rj6Rj_LOg4quYR_ljXjU0QFN2USOTuoNrhvcIXvKidEgudi9iViS_XLl4AR7WNd2b_Ot2pHb7E6W0uuFk12I9L8FpLhXD2d7qJp7DfSD6Tqt7aGCU297IH3L5jVpT8IdCiByNeITEVxkxLQKHw-cGCFm8T9L26ArzSfqDZNtZbMB"/>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-2 rounded-full border-2 border-black shadow-lg">
 <span class="material-symbols-outlined text-2xl text-black">play_arrow</span>
@@ -228,21 +228,21 @@
 </div>
 </div>
 <div class="mt-3 pl-1">
-<p class="font-display font-bold text-lg leading-tight">Motion Graphics</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Sports • Branding</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_5.title">Motion Graphics</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_5.meta">Sports • Branding</p>
 </div>
 </a>
 </div>
 <div class="break-inside-avoid mb-12 relative group">
-<a class="block group relative" href="../app-v2/index.html">
+<a class="block group relative" data-cms-href="card_6.href" href="../app-v2/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300">
 <div class="absolute bottom-6 -right-2 z-20 transform rotate-6 group-hover:rotate-3 transition-transform duration-300">
-<span class="inline-block bg-accent-orange text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-accent-orange text-black border-2 border-black px-3 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker" data-cms-text="card_6.badge">
                             Retro Tech
                         </span>
 </div>
 <div class="relative h-[420px]">
-<img alt="Retro Tech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100 sepia-[.3] group-hover:sepia-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7"/>
+<img alt="Retro Tech" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100 sepia-[.3] group-hover:sepia-0" data-cms-src="card_6.image" data-cms-alt="card_6.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7"/>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-3 rounded-full border-2 border-black shadow-lg">
 <span class="material-symbols-outlined text-3xl text-black">play_arrow</span>
@@ -251,8 +251,8 @@
 </div>
 </div>
 <div class="mt-3 pl-1">
-<p class="font-display font-bold text-lg leading-tight">Gadget Review</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Tech • Review Series</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_6.title">Gadget Review</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_6.meta">Tech • Review Series</p>
 </div>
 </a>
 </div>
@@ -263,15 +263,15 @@
 <path d="M90,50 L80,45 M90,50 L82,58" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="3"></path>
 </svg>
 </div>
-<a class="block group relative" href="../video-v1/index.html">
+<a class="block group relative" data-cms-href="card_7.href" href="../video-v1/index.html">
 <div class="relative border-[3px] border-black dark:border-white bg-black overflow-hidden shadow-retro group-hover:shadow-retro-hover transition-all duration-300 rounded-tl-[30px] rounded-br-[30px]">
 <div class="absolute top-4 left-1/2 -translate-x-1/2 z-20 transform -rotate-1 group-hover:rotate-0 transition-transform duration-300">
-<span class="inline-block bg-white text-black border-2 border-black px-4 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker">
+<span class="inline-block bg-white text-black border-2 border-black px-4 py-1 font-display font-black text-sm uppercase tracking-tight shadow-sticker" data-cms-text="card_7.badge">
                             Raw Footage
                         </span>
 </div>
 <div class="relative h-[260px]">
-<img alt="Raw Footage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfjdAc8_tSMXpA2QUvG8Ggz5VHTN80NGT9Ei_UFMdRr59YbnO-yZeWkATBN-jYVkiEUEZY5PFzax7CLug8r089l_rU44cZ3k40zX17KfezzomBGLqocLDDc41HvYPFoRV8FOrnuH4R2z7WmrucIFbnd6Zh1ZBfGmUL-s5gnQi1XM0F6wID2FSB3G8Y7DoMaCncM2e_rc9p4oDu4c-1fOkZhCfRH4Atvf1NcgLidYZza8gAQcJnBsVnxUBGnqT6g1XlxwjOLCECExRV"/>
+<img alt="Raw Footage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" data-cms-src="card_7.image" data-cms-alt="card_7.alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfjdAc8_tSMXpA2QUvG8Ggz5VHTN80NGT9Ei_UFMdRr59YbnO-yZeWkATBN-jYVkiEUEZY5PFzax7CLug8r089l_rU44cZ3k40zX17KfezzomBGLqocLDDc41HvYPFoRV8FOrnuH4R2z7WmrucIFbnd6Zh1ZBfGmUL-s5gnQi1XM0F6wID2FSB3G8Y7DoMaCncM2e_rc9p4oDu4c-1fOkZhCfRH4Atvf1NcgLidYZza8gAQcJnBsVnxUBGnqT6g1XlxwjOLCECExRV"/>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <div class="bg-white/90 p-3 rounded-full border-2 border-black shadow-lg">
 <span class="material-symbols-outlined text-3xl text-black">play_arrow</span>
@@ -280,18 +280,18 @@
 </div>
 </div>
 <div class="mt-3 pl-1 text-center">
-<p class="font-display font-bold text-lg leading-tight">16mm Documentary</p>
-<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1">Documentary • Short</p>
+<p class="font-display font-bold text-lg leading-tight" data-cms-text="card_7.title">16mm Documentary</p>
+<p class="font-body text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 mt-1" data-cms-text="card_7.meta">Documentary • Short</p>
 </div>
 </a>
 </div>
 <div class="break-inside-avoid mb-12 relative group h-full">
-<a class="block h-full group relative" href="../../workspace.html">
+<a class="block h-full group relative" data-cms-href="more_projects_href" href="../../workspace.html">
 <div class="w-full h-[220px] flex flex-col justify-center items-center p-6 border-[3px] border-dashed border-black/30 dark:border-white/30 rounded-2xl hover:bg-white/50 dark:hover:bg-black/50 transition-colors cursor-pointer group-hover:border-primary group-hover:border-solid">
 <div class="text-center transform group-hover:scale-105 transition-transform duration-300">
 <span class="material-symbols-outlined text-5xl text-gray-400 mb-3 group-hover:text-primary transition-colors">add_circle</span>
-<h3 class="font-display font-bold text-lg mb-1">More Projects</h3>
-<p class="text-xs text-gray-600 dark:text-gray-400 font-mono">View complete archive</p>
+<h3 class="font-display font-bold text-lg mb-1" data-cms-text="more_projects_title">More Projects</h3>
+<p class="text-xs text-gray-600 dark:text-gray-400 font-mono" data-cms-text="more_projects_meta">View complete archive</p>
 </div>
 </div>
 </a>
@@ -305,7 +305,7 @@
 <h2 class="text-5xl uppercase tracking-wide leading-none font-black">Sara Ruffini</h2>
 <p class="font-bold tracking-widest text-sm mt-1 text-primary">VIDEO EDITOR - CONTENT CREATOR</p>
 </div>
-<p class="text-gray-400 text-sm">
+<p class="text-gray-400 text-sm" data-cms-text="footer_contact">
                     sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen
                 </p>
 </div>
@@ -319,12 +319,5 @@
 </div>
 </div>
 </footer>
-
-
-
-
-
-
-
-
+<script src="../../scripts/cms-page-loader.js"></script>
 </body></html>

@@ -53,6 +53,14 @@
         node.setAttribute('href', value);
       }
     });
+
+    document.querySelectorAll('[data-cms-title]').forEach(function (node) {
+      var key = node.getAttribute('data-cms-title');
+      var value = getByPath(data, key);
+      if (typeof value === 'string') {
+        node.setAttribute('title', value);
+      }
+    });
   }
 
   function init() {

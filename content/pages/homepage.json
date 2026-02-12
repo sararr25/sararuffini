@@ -1,0 +1,65 @@
+{
+  "hero_line_1": "I talk fast",
+  "hero_line_2_prefix": "I edit",
+  "hero_word_highlight": "faster",
+  "showreel_label": "Showreel",
+  "showreel_embed_url": "https://player.vimeo.com/video/1056816837?h=f7841e5cdc&title=0&byline=0&portrait=0",
+  "showreel_title": "Sara Ruffini Showreel",
+  "featured_title": "Featured Projects",
+  "featured_subtitle": "Select an object to view",
+  "collage_word_top": "PROJECT",
+  "collage_word_bottom": "PROJECT",
+  "featured_tv": {
+    "href": "/pages/socialmedia-portfolio/index.html",
+    "image": "/assets/media/pics-homemix3.png",
+    "alt": "Phone game reels project",
+    "label": "Pocket Arcade Fever"
+  },
+  "featured_polaroid": {
+    "href": "/pages/video-v2/index.html",
+    "image": "/assets/media/weber2.png",
+    "alt": "Weber BBQ video project",
+    "caption": "Retro Reel"
+  },
+  "featured_torn": {
+    "href": "/pages/graphics/index.html",
+    "image": "/assets/media/pics-homemix5.png",
+    "alt": "Cocktail pictures project",
+    "label": "Disco Cocktail Club"
+  },
+  "featured_grill": {
+    "href": "/pages/video-v1/index.html",
+    "image": "/assets/media/pics-homemix2.png",
+    "alt": "Podcast and science project",
+    "label": "Metabo Heat Lab"
+  },
+  "featured_window": {
+    "href": "/pages/app-v2/index.html",
+    "image": "/assets/media/pics-homemix4.png",
+    "alt": "App for travellers project",
+    "label": "Meriwa Motel OS",
+    "window_title": "PROJECT.EXE",
+    "window_button": "Open"
+  },
+  "featured_dna": {
+    "href": "/pages/video-v1/index.html",
+    "label": "Science Vids"
+  },
+  "featured_round": {
+    "href": "/pages/socialmedia-portfolio/index.html",
+    "image": "/assets/media/pics-homemix6.gif",
+    "alt": "Chef Instagram reels project",
+    "label": "Chef Tape Deluxe"
+  },
+  "featured_card": {
+    "href": "/pages/graphics/index.html",
+    "image": "/assets/media/pics-homemix7.gif",
+    "alt": "Event graphics project",
+    "label": "Poster Boogie"
+  },
+  "teaser_text_html": "A collection of work crafted with <span class=\"text-primary\">heart</span>, <span class=\"text-pink-500\">creativity</span>, and <span class=\"text-yellow-500\">storytelling</span>. Explore how I turn concepts into visuals that connect.",
+  "teaser_link_text": "Read More About Me",
+  "teaser_link_href": "/pages/about/index.html",
+  "marquee_text": "Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter •",
+  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen"
+}
