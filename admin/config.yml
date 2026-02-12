@@ -2,10 +2,8 @@ backend:
   name: github
   repo: sararr25/sararuffini
   branch: main
-  # Cloudflare Pages richiede un OAuth proxy per login GitHub.
-  # Usa il template ufficiale Decap su Cloudflare Worker e poi decommenta:
-  # base_url: https://<your-worker-domain>
-  # auth_endpoint: auth
+  base_url: https://decap-proxy.sararuffini25.workers.dev
+  auth_endpoint: auth
 
 media_folder: "assets/media"
 public_folder: "/assets/media"
