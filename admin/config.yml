@@ -98,3 +98,211 @@ collections:
           - { label: Phone 1 Caption, name: phone1_caption, widget: string }
           - { label: Phone 2 Caption, name: phone2_caption, widget: string }
           - { label: Phone 3 Caption, name: phone3_caption, widget: string }
+
+      - label: Homepage
+        name: homepage
+        file: content/pages/homepage.json
+        fields:
+          - { label: Hero Line 1, name: hero_line_1, widget: string }
+          - { label: Hero Line 2 Prefix, name: hero_line_2_prefix, widget: string }
+          - { label: Hero Highlight Word, name: hero_word_highlight, widget: string }
+          - { label: Showreel Label, name: showreel_label, widget: string }
+          - { label: Showreel Embed URL (Vimeo), name: showreel_embed_url, widget: string }
+          - { label: Showreel Iframe Title, name: showreel_title, widget: string }
+          - { label: Featured Title, name: featured_title, widget: string }
+          - { label: Featured Subtitle, name: featured_subtitle, widget: string }
+          - { label: Collage Word Top, name: collage_word_top, widget: string }
+          - { label: Collage Word Bottom, name: collage_word_bottom, widget: string }
+          - label: Featured TV
+            name: featured_tv
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Featured Polaroid
+            name: featured_polaroid
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Caption, name: caption, widget: string }
+          - label: Featured Torn Card
+            name: featured_torn
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Featured Grill
+            name: featured_grill
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Featured Window
+            name: featured_window
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Window Title, name: window_title, widget: string }
+              - { label: Window Button Text, name: window_button, widget: string }
+          - label: Featured DNA
+            name: featured_dna
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Featured Round
+            name: featured_round
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Label, name: label, widget: string }
+          - label: Featured Card
+            name: featured_card
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Label, name: label, widget: string }
+          - { label: Teaser Text (HTML Allowed), name: teaser_text_html, widget: text }
+          - { label: Teaser Link Text, name: teaser_link_text, widget: string }
+          - { label: Teaser Link URL, name: teaser_link_href, widget: string }
+          - { label: Marquee Text, name: marquee_text, widget: text }
+          - { label: Footer Contact Line, name: footer_contact, widget: string }
+
+      - label: About Page
+        name: about
+        file: content/pages/about.json
+        fields:
+          - { label: Hero Line 1, name: hero_title_line1, widget: string }
+          - { label: Hero Highlight Text, name: hero_title_highlight, widget: string }
+          - { label: Intro Paragraph 1 (HTML Allowed), name: intro_paragraph_1_html, widget: text }
+          - { label: Intro Paragraph 2 (HTML Allowed), name: intro_paragraph_2_html, widget: text }
+          - { label: Portrait Image, name: portrait_image, widget: image }
+          - { label: Portrait Alt, name: portrait_alt, widget: string }
+          - { label: Console Sticker Image, name: decor_console_image, widget: image }
+          - { label: Console Sticker Alt, name: decor_console_alt, widget: string }
+          - { label: Camera Sticker Image, name: decor_camera_image, widget: image }
+          - { label: Camera Sticker Alt, name: decor_camera_alt, widget: string }
+          - { label: CTA Text, name: cta_text, widget: string }
+          - { label: CTA Link, name: cta_href, widget: string }
+          - { label: Drink Note, name: drink_note, widget: string }
+          - { label: Drink Image, name: drink_image, widget: image }
+          - { label: Drink Image Alt, name: drink_image_alt, widget: string }
+          - { label: Timeline 1 Years, name: timeline_1_years, widget: string }
+          - { label: Timeline 1 Role, name: timeline_1_role, widget: string }
+          - { label: Timeline 1 Company, name: timeline_1_company, widget: string }
+          - { label: Timeline 1 Description, name: timeline_1_description, widget: text }
+          - { label: Timeline 2 Years, name: timeline_2_years, widget: string }
+          - { label: Timeline 2 Role, name: timeline_2_role, widget: string }
+          - { label: Timeline 2 Company, name: timeline_2_company, widget: string }
+          - { label: Timeline 2 Description, name: timeline_2_description, widget: text }
+          - { label: Timeline 3 Years, name: timeline_3_years, widget: string }
+          - { label: Timeline 3 Role, name: timeline_3_role, widget: string }
+          - { label: Timeline 3 Company, name: timeline_3_company, widget: string }
+          - { label: Timeline 3 Description, name: timeline_3_description, widget: text }
+          - { label: Download CV Text, name: download_cv_text, widget: string }
+          - { label: Download CV Link, name: download_cv_href, widget: string }
+          - { label: More About Heading, name: more_about_heading, widget: string }
+          - { label: More Card 1 Title, name: more_card_1_title, widget: string }
+          - { label: More Card 1 Text, name: more_card_1_text, widget: text }
+          - { label: More Card 2 Title, name: more_card_2_title, widget: string }
+          - { label: More Card 2 Text, name: more_card_2_text, widget: text }
+          - { label: More Card 3 Title, name: more_card_3_title, widget: string }
+          - { label: More Card 3 Text, name: more_card_3_text, widget: text }
+          - { label: Footer Contact Line, name: footer_contact, widget: string }
+
+      - label: Portfolio Main Page
+        name: portfolio_main
+        file: content/pages/portfolio-main.json
+        fields:
+          - { label: Heading Line 1, name: heading_line1, widget: string }
+          - { label: Heading Line 2, name: heading_line2, widget: string }
+          - { label: Intro Text (HTML Allowed), name: intro_text_html, widget: text }
+          - label: Card 1
+            name: card_1
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - label: Card 2
+            name: card_2
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - label: Card 3
+            name: card_3
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - label: Card 4
+            name: card_4
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - label: Card 5
+            name: card_5
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - label: Card 6
+            name: card_6
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - label: Card 7
+            name: card_7
+            widget: object
+            fields:
+              - { label: Link, name: href, widget: string }
+              - { label: Badge, name: badge, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Meta, name: meta, widget: string }
+          - { label: More Projects Link, name: more_projects_href, widget: string }
+          - { label: More Projects Title, name: more_projects_title, widget: string }
+          - { label: More Projects Meta, name: more_projects_meta, widget: string }
+          - { label: Footer Contact Line, name: footer_contact, widget: string }
