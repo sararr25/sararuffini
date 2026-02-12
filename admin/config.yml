@@ -1,0 +1,102 @@
+backend:
+  name: github
+  repo: sararr25/sararuffini
+  branch: main
+  # Cloudflare Pages richiede un OAuth proxy per login GitHub.
+  # Usa il template ufficiale Decap su Cloudflare Worker e poi decommenta:
+  # base_url: https://<your-worker-domain>
+  # auth_endpoint: auth
+
+media_folder: "assets/media"
+public_folder: "/assets/media"
+local_backend: true
+locale: "it"
+publish_mode: simple
+
+collections:
+  - name: project_pages
+    label: Project Pages
+    files:
+      - label: Video Page V1
+        name: video_v1
+        file: content/pages/video-v1.json
+        fields:
+          - { label: Hero Label, name: hero_label, widget: string }
+          - { label: Hero Years, name: hero_years, widget: string }
+          - { label: Hero Title Main, name: hero_title_main, widget: string }
+          - { label: Hero Title Highlight, name: hero_title_highlight, widget: string }
+          - { label: Hero Role, name: hero_role, widget: string }
+          - { label: Hero Meta, name: hero_meta, widget: string }
+          - { label: Hero Image, name: hero_image, widget: image }
+          - { label: Hero Timecode, name: hero_timecode, widget: string }
+          - { label: Intro Title, name: intro_title, widget: string }
+          - { label: Intro Text, name: intro_text, widget: text }
+
+      - label: Video Page V2
+        name: video_v2
+        file: content/pages/video-v2.json
+        fields:
+          - { label: Hero Label, name: hero_label, widget: string }
+          - { label: Hero Years, name: hero_years, widget: string }
+          - { label: Hero Title Main, name: hero_title_main, widget: string }
+          - { label: Hero Title Highlight, name: hero_title_highlight, widget: string }
+          - { label: Hero Role, name: hero_role, widget: string }
+          - { label: Hero Meta, name: hero_meta, widget: string }
+          - { label: Hero Image, name: hero_image, widget: image }
+          - { label: Hero Badge, name: hero_badge, widget: string }
+          - { label: Hero Timecode, name: hero_timecode, widget: string }
+          - { label: Intro Title, name: intro_title, widget: string }
+          - { label: Intro Text, name: intro_text, widget: text }
+
+      - label: App Page V1
+        name: app_v1
+        file: content/pages/app-v1.json
+        fields:
+          - { label: Phase Label, name: hero_phase, widget: string }
+          - { label: Hero Line 1, name: hero_title_main_line1, widget: string }
+          - { label: Hero Accent, name: hero_title_accent, widget: string }
+          - { label: Hero Intro, name: hero_intro, widget: text }
+          - { label: Hero Note, name: hero_note, widget: string }
+          - { label: Left Phone Image (background), name: hero_image_left, widget: image }
+          - { label: Right Phone Image, name: hero_image_right, widget: image }
+          - { label: Center Phone Image, name: hero_image_center, widget: image }
+          - { label: Phase 2 Line 1, name: phase2_title_main, widget: string }
+          - { label: Phase 2 Accent, name: phase2_title_accent, widget: string }
+
+      - label: App Page V2
+        name: app_v2
+        file: content/pages/app-v2.json
+        fields:
+          - { label: Phase Label, name: hero_phase, widget: string }
+          - { label: Hero Line 1, name: hero_title_main_line1, widget: string }
+          - { label: Hero Accent, name: hero_title_accent, widget: string }
+          - { label: Hero Intro, name: hero_intro, widget: text }
+          - { label: Insight 1 Title, name: insight_1_title, widget: string }
+          - { label: Insight 1 Text, name: insight_1_text, widget: text }
+          - { label: Insight 2 Title, name: insight_2_title, widget: string }
+          - { label: Insight 2 Text, name: insight_2_text, widget: text }
+          - { label: Insight 3 Title, name: insight_3_title, widget: string }
+          - { label: Insight 3 Text, name: insight_3_text, widget: text }
+          - { label: Hero Note, name: hero_note, widget: string }
+
+      - label: Graphics Page
+        name: graphics
+        file: content/pages/graphics.json
+        fields:
+          - { label: Campaign Title, name: campaign_title, widget: string }
+          - { label: Campaign Text, name: campaign_text, widget: text }
+          - { label: Polaroid Image, name: hero_image_polaroid, widget: image }
+          - { label: Detail Image, name: hero_image_detail, widget: image }
+          - { label: Wide Image, name: hero_image_wide, widget: image }
+
+      - label: Social Media Page
+        name: socialmedia_portfolio
+        file: content/pages/socialmedia-portfolio.json
+        fields:
+          - { label: Main Title, name: hero_title, widget: string }
+          - { label: Intro Text, name: intro_text, widget: text }
+          - { label: Technical Text, name: technical_text, widget: text }
+          - { label: Phone 1 Image, name: phone1_image, widget: image }
+          - { label: Phone 1 Caption, name: phone1_caption, widget: string }
+          - { label: Phone 2 Caption, name: phone2_caption, widget: string }
+          - { label: Phone 3 Caption, name: phone3_caption, widget: string }
