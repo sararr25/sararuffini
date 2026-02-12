@@ -26,8 +26,11 @@
         }
         .featured-canvas {
             position: relative;
-            min-height: 760px;
             width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            padding: 20px;
             border: 4px solid #32c777;
             border-radius: 14px;
             background: #f7f3ea;
@@ -39,95 +42,79 @@
             border-color: #5eead4;
         }
         .featured-object {
-            position: absolute;
+            --rot: 0deg;
+            position: relative;
             display: block;
+            aspect-ratio: 1 / 1;
             text-decoration: none;
             color: #111;
             z-index: 2;
+            padding: 12px;
+            transform: rotate(var(--rot));
             transition: transform 0.26s ease, filter 0.26s ease;
             will-change: transform;
         }
         .featured-object img {
-            width: 100%;
+            width: auto;
             height: auto;
+            max-width: 100%;
+            max-height: 100%;
             display: block;
+            margin: 0 auto;
+            object-fit: contain;
             pointer-events: none;
         }
         .featured-object.sticker-hover:hover {
             animation-play-state: paused;
-            translate: 0 0 !important;
-            transform: translateY(-10px) scale(1.04) !important;
+            translate: 0 -8px !important;
+            transform: rotate(var(--rot)) scale(1.03) !important;
             z-index: 30 !important;
             filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.3));
         }
         .collage-reels {
-            width: min(34vw, 390px);
-            left: 4%;
-            top: 5%;
-            transform: rotate(-5deg);
+            --rot: -4deg;
         }
         .collage-reels img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-cocktail {
-            width: min(23vw, 260px);
-            left: 34%;
-            top: 6%;
-            transform: rotate(-2deg);
+            --rot: -1.5deg;
         }
         .collage-cocktail img {
             filter: drop-shadow(0 9px 16px rgba(0, 0, 0, 0.22));
         }
         .collage-bbq {
-            width: min(25vw, 290px);
-            right: 5%;
-            top: 2%;
-            transform: rotate(2deg);
+            --rot: 1.5deg;
         }
         .collage-bbq img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
         }
         .collage-app {
-            width: min(33vw, 380px);
-            left: 28%;
-            top: 48%;
-            transform: rotate(-1deg);
+            --rot: -1deg;
         }
         .collage-app img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.23));
         }
         .collage-game {
-            width: min(20vw, 236px);
-            left: 34%;
-            top: 62%;
-            transform: rotate(-2deg);
+            --rot: -2deg;
         }
         .collage-game img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-dna {
-            width: min(15vw, 170px);
-            left: 56%;
-            top: 32%;
-            transform: rotate(9deg);
+            --rot: 4deg;
         }
         .collage-dna img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
         }
         .collage-pasta {
-            width: min(22vw, 252px);
-            right: 7%;
-            top: 36%;
-            transform: rotate(1deg);
+            --rot: 1deg;
         }
         .collage-pasta img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-phone {
-            width: min(16vw, 182px);
-            right: 14%;
-            top: 61%;
-            transform: rotate(18deg);
+            --rot: 7deg;
         }
         .collage-phone img {
             filter: drop-shadow(0 11px 17px rgba(0, 0, 0, 0.28));
@@ -174,25 +161,22 @@
         }
         @media (max-width: 1024px) {
             .featured-canvas {
-                min-height: auto;
                 border-width: 3px;
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 16px;
                 padding: 16px;
             }
             .featured-object {
-                position: relative;
-                width: 100% !important;
-                left: auto !important;
-                right: auto !important;
-                top: auto !important;
-                bottom: auto !important;
-                transform: none !important;
+                width: 100%;
                 translate: 0 0 !important;
             }
             .featured-object.sticker-hover:hover {
-                transform: translateY(-6px) scale(1.03) !important;
+                transform: rotate(var(--rot)) scale(1.02) !important;
+            }
+        }
+        @media (max-width: 760px) {
+            .featured-canvas {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
         @media (max-width: 640px) {
