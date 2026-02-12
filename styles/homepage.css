@@ -25,37 +25,49 @@
             letter-spacing: 0.015em;
         }
         .featured-canvas {
-            display: grid;
-            grid-template-columns: repeat(12, minmax(0, 1fr));
-            grid-template-rows: repeat(8, 62px);
-            gap: 14px;
-            min-height: 620px;
+            position: relative;
+            min-height: 720px;
             width: 100%;
+            border: 4px solid #32c777;
+            border-radius: 14px;
+            background: #f8f4eb;
+            overflow: hidden;
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.25);
+        }
+        .dark .featured-canvas {
+            background: #1f1f22;
+            border-color: #5eead4;
+        }
+        .collage-aura {
+            position: absolute;
+            inset: 8% 10%;
+            background:
+                radial-gradient(circle at 24% 36%, rgba(255, 122, 163, 0.35), transparent 42%),
+                radial-gradient(circle at 68% 52%, rgba(255, 168, 93, 0.4), transparent 38%),
+                radial-gradient(circle at 58% 76%, rgba(255, 214, 108, 0.3), transparent 40%);
+            pointer-events: none;
         }
         .featured-object {
-            position: relative;
+            position: absolute;
             display: block;
             text-decoration: none;
             color: #111;
-            min-height: 0;
-        }
-        .dark .featured-object {
-            color: #f4f4f5;
+            z-index: 2;
         }
         .featured-object.sticker-hover:hover {
             transform: scale(1.08) rotate(0deg) !important;
-            z-index: 25 !important;
+            z-index: 30 !important;
         }
         .featured-chip {
             position: absolute;
             z-index: 3;
-            font-size: 0.86rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
+            font-size: 0.74rem;
+            font-weight: 900;
+            letter-spacing: 0.03em;
             border: 3px solid #111;
-            padding: 0.25rem 0.7rem;
+            padding: 0.22rem 0.58rem;
             text-transform: uppercase;
-            transform: rotate(-6deg);
+            transform: rotate(-7deg);
             box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
             background: #fff;
             color: #111;
@@ -69,229 +81,319 @@
             color: #fff;
             border-color: #fff;
         }
-        .retro-polaroid {
+        .collage-word {
+            position: absolute;
+            z-index: 5;
+            font-family: "Archivo Black", "Inter", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.9rem);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1.6px #121212;
+            background-image: repeating-linear-gradient(
+                90deg,
+                #f4f4f4 0 18px,
+                #fbd34d 18px 36px,
+                #8de6db 36px 54px,
+                #e8a4bf 54px 72px
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            pointer-events: none;
+        }
+        .word-one { left: 18%; top: 45%; transform: rotate(-2deg); }
+        .word-two { left: 20%; top: 74%; transform: rotate(-1deg); }
+        .collage-tv {
+            width: min(25vw, 286px);
+            left: 2%;
+            top: 7%;
+            transform: rotate(-2.5deg);
+        }
+        .tv-frame {
+            background: linear-gradient(135deg, #6a4125 0%, #4a2f1c 100%);
             border: 4px solid #111;
             border-radius: 14px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 6px 6px 0 rgba(0, 0, 0, 1);
-            padding: 10px;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
+            padding: 12px 14px;
+            display: grid;
+            grid-template-columns: 1fr 52px;
+            gap: 10px;
         }
-        .retro-polaroid img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: 2px solid #111;
+        .tv-screen {
+            border: 3px solid #111;
             border-radius: 8px;
-            display: block;
+            background: #f59e0b;
+            padding: 10px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .retro-polaroid .featured-chip {
-            top: -10px;
-            right: -8px;
-        }
-        .cocktail-cutout img,
-        .gamer-cutout img,
-        .weber-cam img,
-        .chef-reel img,
-        .explainer-tape img,
-        .event-graphic img {
+        .tv-screen img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            display: block;
-            filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.2));
+            filter: drop-shadow(2px 4px 0 rgba(0, 0, 0, 0.18));
         }
-        .cocktail-cutout .featured-chip {
-            bottom: -8px;
-            left: 4px;
-            transform: rotate(4deg);
-        }
-        .gamer-cutout .featured-chip {
-            bottom: 6px;
-            right: -14px;
-            transform: rotate(-8deg);
-        }
-        .weber-cam .featured-chip {
-            top: -8px;
-            left: 10px;
-            transform: rotate(-7deg);
-        }
-        .chef-reel {
-            border-radius: 999px;
-            overflow: hidden;
-            border: 6px solid #fff;
-            box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.18);
-            background: #fff;
-        }
-        .chef-reel .featured-chip {
-            bottom: -14px;
-            left: 26%;
-            transform: rotate(-2deg);
-        }
-        .explainer-tape {
-            border: 3px solid #111;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #5b2dcf;
-            box-shadow: 5px 5px 0 rgba(0, 0, 0, 1);
-            padding: 8px;
-        }
-        .explainer-tape img {
-            object-fit: cover;
-            border: 2px solid #111;
-            border-radius: 6px;
-        }
-        .explainer-tape .featured-chip {
-            top: -9px;
-            right: -12px;
-            transform: rotate(8deg);
-        }
-        .event-graphic {
-            border: 3px solid #111;
-            background: #faf5c0;
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
-            padding: 8px;
-        }
-        .event-graphic .featured-chip {
-            top: -8px;
-            left: -8px;
-            transform: rotate(-8deg);
-        }
-        .production-note {
+        .tv-dials {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 0.15rem;
-            font-family: "Archivo Black", "Inter", sans-serif;
-            font-size: clamp(1.4rem, 2vw, 2.35rem);
-            line-height: 0.95;
-            text-transform: uppercase;
-            color: #111;
-            padding-left: 10px;
+            gap: 12px;
         }
-        .dark .production-note {
-            color: #f4f4f5;
-        }
-        .production-note span:first-child {
-            display: inline-block;
-            width: fit-content;
-            background: linear-gradient(180deg, rgba(59, 222, 200, 0) 62%, rgba(59, 222, 200, 0.68) 62%);
-            padding-right: 6px;
-        }
-        .production-note span:last-child {
-            font-family: "Inter", sans-serif;
-            font-weight: 900;
-            letter-spacing: -0.01em;
-        }
-        .app-sticker {
+        .tv-dials span {
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
             border: 3px solid #111;
-            border-radius: 14px;
-            background: #f7f7f7;
-            box-shadow: 4px 4px 0 rgba(0, 0, 0, 1);
-            padding: 10px;
+            background: radial-gradient(circle at 35% 35%, #f7f7f7 0%, #b6b6b6 50%, #3d3d3d 100%);
         }
-        .app-sticker .featured-chip {
-            top: -9px;
-            left: -12px;
+        .collage-tv .featured-chip {
+            bottom: -14px;
+            left: 14px;
+            transform: rotate(-4deg);
+        }
+        .collage-polaroid {
+            width: min(23vw, 262px);
+            left: 25%;
+            top: 10%;
+            background: #fff;
+            border: 3px solid #111;
+            padding: 14px 14px 52px;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.95);
+            transform: rotate(-4deg);
+        }
+        .collage-polaroid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #111;
+        }
+        .collage-caption {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            bottom: 10px;
+            font-family: "Permanent Marker", "cursive";
+            font-size: 1.65rem;
+            color: #111;
+            text-transform: uppercase;
+            letter-spacing: 0.01em;
+            text-align: left;
+        }
+        .collage-torn {
+            width: min(15vw, 182px);
+            left: 43%;
+            top: 14%;
+            transform: rotate(5deg);
+            background: #2a2a2a;
+            padding: 16px;
+            border: 2px solid #111;
+            clip-path: polygon(6% 0, 95% 4%, 100% 92%, 8% 100%, 0 10%);
+            box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.85);
+        }
+        .collage-torn img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            filter: drop-shadow(3px 4px 0 rgba(0, 0, 0, 0.25));
+        }
+        .collage-torn .featured-chip {
+            bottom: -14px;
+            left: 10px;
+            transform: rotate(-8deg);
+        }
+        .collage-grill {
+            width: min(22vw, 252px);
+            right: 4%;
+            top: 7%;
+            transform: rotate(4deg);
+        }
+        .collage-grill img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.22));
+        }
+        .collage-grill .featured-chip {
+            bottom: -10px;
+            left: 8px;
             transform: rotate(-7deg);
         }
-        .app-shell {
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            border: 2px solid #111;
-            border-radius: 12px;
-            padding: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-        .app-top {
-            height: 8px;
-            width: 42%;
-            margin: 0 auto;
-            border-radius: 999px;
-            background: #111;
-        }
-        .app-map {
-            flex: 1;
-            border: 2px solid #111;
-            background:
-                radial-gradient(circle at 26% 35%, #3bdec8 0, #3bdec8 9px, transparent 10px),
-                radial-gradient(circle at 74% 38%, #ffcf43 0, #ffcf43 8px, transparent 9px),
-                radial-gradient(circle at 54% 74%, #f97316 0, #f97316 8px, transparent 9px),
-                linear-gradient(135deg, #dde1e6 0%, #f5f7f9 100%);
-            position: relative;
+        .collage-window {
+            width: min(25vw, 308px);
+            left: 31%;
+            top: 53%;
+            border: 3px solid #111;
+            background: #ddd1b7;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
+            transform: rotate(-1deg);
             overflow: hidden;
         }
-        .app-map::before,
-        .app-map::after {
-            content: "";
-            position: absolute;
-            background: #111;
-            opacity: 0.22;
-            height: 2px;
+        .window-header {
+            background: #1f49c8;
+            color: #fff;
+            border-bottom: 3px solid #111;
+            font-family: "Archivo Black", "Inter", sans-serif;
+            font-size: 1.02rem;
+            padding: 0.35rem 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 0.03em;
         }
-        .app-map::before {
-            width: 140%;
-            left: -25%;
-            top: 38%;
-            transform: rotate(-14deg);
+        .window-controls {
+            display: inline-flex;
+            gap: 4px;
         }
-        .app-map::after {
-            width: 120%;
-            left: -10%;
-            top: 68%;
-            transform: rotate(14deg);
-        }
-        .app-tabs {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-        }
-        .app-tabs span {
-            height: 8px;
+        .window-controls span {
+            width: 12px;
+            height: 12px;
             border: 2px solid #111;
-            background: #3bdec8;
+            background: #efe7d4;
         }
-        .app-tabs span:nth-child(2) { background: #111; }
-        .app-tabs span:nth-child(3) { background: #ebff57; }
-        .dna-sticker {
+        .window-body {
+            background: #fff;
+            border-bottom: 3px solid #111;
+            min-height: 186px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+        }
+        .window-body img {
+            width: 78%;
+            max-height: 150px;
+            object-fit: contain;
+        }
+        .window-footer {
+            display: flex;
+            justify-content: center;
+            padding: 0.7rem;
+        }
+        .window-footer span {
+            display: inline-block;
+            border: 2px solid #111;
+            background: #ece6d8;
+            padding: 0.24rem 1.45rem;
+            font-weight: 900;
+            font-size: 1.05rem;
+        }
+        .collage-window .featured-chip {
+            top: -12px;
+            right: -10px;
+            transform: rotate(8deg);
+        }
+        .collage-dna {
+            width: min(12vw, 146px);
+            left: 60%;
+            top: 42%;
+            transform: rotate(7deg);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             gap: 8px;
         }
-        .dna-sticker svg {
+        .collage-dna svg {
             width: 100%;
-            height: 100%;
-            max-height: 185px;
+            height: auto;
             filter: drop-shadow(3px 4px 0 rgba(0, 0, 0, 0.16));
         }
-        .dna-sticker .featured-chip {
+        .collage-dna .featured-chip {
             position: static;
             transform: rotate(-8deg);
         }
-        @media (max-width: 768px) {
+        .collage-round {
+            width: min(19vw, 224px);
+            right: 12%;
+            top: 40%;
+            transform: rotate(-6deg);
+            border-radius: 999px;
+            border: 4px solid #111;
+            background: #fff;
+            padding: 12px;
+            box-shadow: 5px 6px 0 rgba(0, 0, 0, 0.85);
+        }
+        .collage-round img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 999px;
+            object-fit: cover;
+            border: 3px solid #0f172a;
+        }
+        .collage-round .featured-chip {
+            bottom: -14px;
+            left: 20%;
+            transform: rotate(-3deg);
+        }
+        .collage-card {
+            width: min(16vw, 182px);
+            right: 3%;
+            bottom: 7%;
+            transform: rotate(8deg);
+            border: 3px solid #111;
+            background: #fff;
+            padding: 9px;
+            box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.82);
+        }
+        .collage-card img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border: 2px solid #111;
+        }
+        .collage-card .featured-chip {
+            top: -12px;
+            left: -10px;
+            transform: rotate(-8deg);
+        }
+        .collage-doodle {
+            position: absolute;
+            z-index: 4;
+            font-family: "Permanent Marker", "cursive";
+            color: #12897c;
+            line-height: 1;
+            pointer-events: none;
+        }
+        .doodle-a { left: 34%; top: 7%; font-size: 2.6rem; transform: rotate(-10deg); }
+        .doodle-b { right: 7%; top: 8%; font-size: 2.3rem; transform: rotate(8deg); }
+        .doodle-c { left: 14%; bottom: 10%; font-size: 2.1rem; transform: rotate(14deg); }
+        .doodle-d { right: 20%; bottom: 13%; font-size: 2rem; transform: rotate(-18deg); }
+        @media (max-width: 1024px) {
             .featured-canvas {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                grid-template-rows: none;
-                grid-auto-rows: minmax(180px, auto);
                 min-height: auto;
+                border-width: 3px;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 16px;
+                padding: 16px;
+            }
+            .collage-aura,
+            .collage-word,
+            .collage-doodle {
+                display: none;
             }
             .featured-object {
-                grid-column: auto !important;
-                grid-row: auto !important;
-                transform: rotate(0deg) !important;
+                position: relative;
+                width: 100% !important;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+                transform: none !important;
             }
             .featured-object.sticker-hover:hover {
                 transform: translateY(-6px) scale(1.03) !important;
             }
-            .production-note {
-                align-items: flex-start;
-                min-height: 120px;
+            .tv-screen { height: 168px; }
+            .collage-polaroid img { height: 180px; }
+            .window-body { min-height: 164px; }
+            .window-body img { max-height: 126px; }
+        }
+        @media (max-width: 640px) {
+            .featured-canvas {
+                grid-template-columns: 1fr;
             }
         }
         @keyframes scribbleDraw {
