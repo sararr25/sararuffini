@@ -60,13 +60,13 @@
             z-index: 30 !important;
             filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.3));
         }
-        .collage-polaroid {
+        .collage-reels {
             width: min(34vw, 390px);
             left: 4%;
             top: 5%;
             transform: rotate(-5deg);
         }
-        .collage-polaroid img {
+        .collage-reels img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-cocktail {
@@ -78,85 +78,32 @@
         .collage-cocktail img {
             filter: drop-shadow(0 9px 16px rgba(0, 0, 0, 0.22));
         }
-        .collage-caption {
-            position: absolute;
-            left: 31%;
-            bottom: 7%;
-            font-family: "Rock Salt", "Permanent Marker", "cursive";
-            font-size: clamp(1.2rem, 2.4vw, 2rem);
-            color: #111;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            text-align: left;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
-        }
-        .collage-grill {
+        .collage-bbq {
             width: min(25vw, 290px);
             right: 5%;
             top: 2%;
             transform: rotate(2deg);
         }
-        .collage-grill img {
+        .collage-bbq img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
         }
-        .collage-window {
-            width: min(30vw, 346px);
-            left: 31%;
-            top: 47%;
-            border: 3px solid #111;
-            background: #ddd1b7;
-            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.88);
+        .collage-app {
+            width: min(33vw, 380px);
+            left: 28%;
+            top: 48%;
             transform: rotate(-1deg);
-            overflow: hidden;
         }
-        .window-header {
-            background: #1f49c8;
-            color: #fff;
-            border-bottom: 3px solid #111;
-            font-family: "Archivo Black", "Inter", sans-serif;
-            font-size: 1.02rem;
-            padding: 0.35rem 0.6rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            letter-spacing: 0.03em;
+        .collage-app img {
+            filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.23));
         }
-        .window-controls {
-            display: inline-flex;
-            gap: 4px;
+        .collage-game {
+            width: min(20vw, 236px);
+            left: 34%;
+            top: 62%;
+            transform: rotate(-2deg);
         }
-        .window-controls span {
-            width: 12px;
-            height: 12px;
-            border: 2px solid #111;
-            background: #efe7d4;
-        }
-        .window-body {
-            background: #fff;
-            border-bottom: 3px solid #111;
-            min-height: 178px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-        .window-body img {
-            width: 80%;
-            max-height: 140px;
-            object-fit: contain;
-        }
-        .window-footer {
-            display: flex;
-            justify-content: center;
-            padding: 0.7rem;
-        }
-        .window-footer span {
-            display: inline-block;
-            border: 2px solid #111;
-            background: #ece6d8;
-            padding: 0.24rem 1.45rem;
-            font-weight: 900;
-            font-size: 1.05rem;
+        .collage-game img {
+            filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-dna {
             width: min(15vw, 170px);
@@ -192,6 +139,7 @@
         .home-float-5 { animation: homeFloat5 7.4s ease-in-out infinite; }
         .home-float-6 { animation: homeFloat6 6.6s ease-in-out infinite; }
         .home-float-7 { animation: homeFloat7 7.8s ease-in-out infinite; }
+        .home-float-8 { animation: homeFloat8 6.9s ease-in-out infinite; }
         @keyframes homeFloat1 {
             0%, 100% { translate: 0 0; }
             50% { translate: 0 -14px; }
@@ -220,6 +168,10 @@
             0%, 100% { translate: 0 0; }
             50% { translate: 0 -12px; }
         }
+        @keyframes homeFloat8 {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -10px; }
+        }
         @media (max-width: 1024px) {
             .featured-canvas {
                 min-height: auto;
@@ -242,19 +194,10 @@
             .featured-object.sticker-hover:hover {
                 transform: translateY(-6px) scale(1.03) !important;
             }
-            .collage-caption {
-                left: 28%;
-                bottom: 8%;
-            }
-            .window-body { min-height: 164px; }
-            .window-body img { max-height: 126px; }
         }
         @media (max-width: 640px) {
             .featured-canvas {
                 grid-template-columns: 1fr;
-            }
-            .collage-caption {
-                font-size: 1.25rem;
             }
         }
         @keyframes scribbleDraw {
