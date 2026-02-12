@@ -160,6 +160,8 @@ collections:
             widget: object
             fields:
               - { label: Link, name: href, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt Text, name: alt, widget: string }
               - { label: Label, name: label, widget: string }
           - label: Featured Round
             name: featured_round
