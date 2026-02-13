@@ -65,9 +65,10 @@
         }
         .collage-reels {
             --rot: -4deg;
-            width: min(23vw, 320px);
-            left: 4%;
-            top: 9%;
+            width: min(28vw, 390px);
+            left: 2%;
+            top: 6%;
+            z-index: 4;
         }
         .collage-reels img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
@@ -75,17 +76,19 @@
         .collage-cocktail {
             --rot: -1.5deg;
             width: min(18vw, 250px);
-            left: 29%;
-            top: 6%;
+            left: 34%;
+            top: 5%;
+            z-index: 5;
         }
         .collage-cocktail img {
             filter: drop-shadow(0 9px 16px rgba(0, 0, 0, 0.22));
         }
         .collage-bbq {
-            --rot: 1.5deg;
-            width: min(21vw, 290px);
-            left: 50%;
-            top: 8%;
+            --rot: 2deg;
+            width: min(22vw, 305px);
+            left: 67%;
+            top: 4%;
+            z-index: 6;
         }
         .collage-bbq img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
@@ -93,26 +96,29 @@
         .collage-app {
             --rot: -1deg;
             width: min(24vw, 332px);
-            left: 8%;
-            top: 45%;
+            left: 30%;
+            top: 44%;
+            z-index: 2;
         }
         .collage-app img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.23));
         }
         .collage-game {
             --rot: -2deg;
-            width: min(19vw, 265px);
-            left: 34%;
-            top: 48%;
+            width: min(20vw, 285px);
+            left: 36%;
+            top: 44%;
+            z-index: 7;
         }
         .collage-game img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-dna {
-            --rot: 4deg;
-            width: min(14vw, 190px);
-            left: 74%;
-            top: 11%;
+            --rot: 7deg;
+            width: min(15vw, 210px);
+            left: 56%;
+            top: 30%;
+            z-index: 4;
         }
         .collage-dna img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
@@ -120,17 +126,19 @@
         .collage-pasta {
             --rot: 1deg;
             width: min(20vw, 280px);
-            left: 54%;
-            top: 46%;
+            left: 76%;
+            top: 34%;
+            z-index: 3;
         }
         .collage-pasta img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-phone {
-            --rot: 7deg;
-            width: min(14vw, 195px);
-            left: 79%;
-            top: 50%;
+            --rot: 18deg;
+            width: min(15vw, 210px);
+            left: 73%;
+            top: 58%;
+            z-index: 5;
         }
         .collage-phone img {
             filter: drop-shadow(0 11px 17px rgba(0, 0, 0, 0.28));
