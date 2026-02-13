@@ -56,6 +56,35 @@
             display: block;
             pointer-events: none;
         }
+        .featured-tag {
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%) rotate(-6deg);
+            z-index: 9;
+            font-size: 0.92rem;
+            font-weight: 900;
+            letter-spacing: 0.01em;
+            line-height: 1;
+            color: #111;
+            background: #fff;
+            border: 3px solid #111;
+            padding: 0.4rem 0.72rem;
+            white-space: nowrap;
+            box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+            text-transform: none;
+        }
+        .tag-yellow { background: #f8df3e; }
+        .tag-teal { background: #3bdec8; }
+        .tag-white { background: #f6f6f6; }
+        .tag-black {
+            background: #111;
+            color: #fff;
+            border-color: #fff;
+            box-shadow: 3px 3px 0 rgba(255, 255, 255, 0.95);
+        }
+        .tag-tilt-left { transform: translateX(-50%) rotate(-7deg); }
+        .tag-tilt-right { transform: translateX(-50%) rotate(8deg); }
         .featured-object.sticker-hover:hover {
             animation-play-state: paused;
             translate: 0 -8px !important;
@@ -65,9 +94,9 @@
         }
         .collage-reels {
             --rot: -4deg;
-            width: min(33vw, 488px);
-            left: 3%;
-            top: 4%;
+            width: min(34vw, 505px);
+            left: 5%;
+            top: 6%;
             z-index: 4;
         }
         .collage-reels img {
@@ -75,9 +104,9 @@
         }
         .collage-cocktail {
             --rot: -1.5deg;
-            width: min(24vw, 352px);
-            left: 34%;
-            top: 10%;
+            width: min(25vw, 370px);
+            left: 33%;
+            top: 11%;
             z-index: 5;
         }
         .collage-cocktail img {
@@ -85,9 +114,9 @@
         }
         .collage-bbq {
             --rot: 2deg;
-            width: min(25vw, 356px);
-            left: 67%;
-            top: 4%;
+            width: min(26vw, 372px);
+            left: 65%;
+            top: 6%;
             z-index: 6;
         }
         .collage-bbq img {
@@ -95,9 +124,9 @@
         }
         .collage-app {
             --rot: -1deg;
-            width: min(29vw, 420px);
-            left: 5%;
-            top: 47%;
+            width: min(30vw, 440px);
+            left: 9%;
+            top: 48%;
             z-index: 2;
         }
         .collage-app img {
@@ -105,9 +134,9 @@
         }
         .collage-game {
             --rot: -2deg;
-            width: min(24vw, 340px);
+            width: min(25vw, 358px);
             left: 35%;
-            top: 49%;
+            top: 50%;
             z-index: 4;
         }
         .collage-game img {
@@ -115,9 +144,9 @@
         }
         .collage-dna {
             --rot: 7deg;
-            width: min(21vw, 308px);
-            left: 50%;
-            top: 31%;
+            width: min(22vw, 325px);
+            left: 51%;
+            top: 33%;
             z-index: 4;
         }
         .collage-dna img {
@@ -125,9 +154,9 @@
         }
         .collage-pasta {
             --rot: 1deg;
-            width: min(23vw, 340px);
-            left: 72%;
-            top: 41%;
+            width: min(24vw, 356px);
+            left: 70%;
+            top: 43%;
             z-index: 3;
         }
         .collage-pasta img {
@@ -135,9 +164,9 @@
         }
         .collage-phone {
             --rot: 18deg;
-            width: min(17vw, 238px);
-            left: 65%;
-            top: 61%;
+            width: min(18vw, 250px);
+            left: 63%;
+            top: 62%;
             z-index: 5;
         }
         .collage-phone img {
@@ -201,6 +230,10 @@
             }
             .featured-object.sticker-hover:hover {
                 transform: rotate(var(--rot)) scale(1.02) !important;
+            }
+            .featured-tag {
+                font-size: 0.84rem;
+                padding: 0.32rem 0.6rem;
             }
         }
         @media (max-width: 760px) {
