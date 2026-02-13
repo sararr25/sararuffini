@@ -65,9 +65,9 @@
         }
         .collage-reels {
             --rot: -4deg;
-            width: min(31vw, 448px);
-            left: 2%;
-            top: 5%;
+            width: min(33vw, 488px);
+            left: 3%;
+            top: 4%;
             z-index: 4;
         }
         .collage-reels img {
@@ -75,9 +75,9 @@
         }
         .collage-cocktail {
             --rot: -1.5deg;
-            width: min(21vw, 295px);
-            left: 36%;
-            top: 5%;
+            width: min(24vw, 352px);
+            left: 34%;
+            top: 10%;
             z-index: 5;
         }
         .collage-cocktail img {
@@ -115,9 +115,9 @@
         }
         .collage-dna {
             --rot: 7deg;
-            width: min(17vw, 245px);
-            left: 54%;
-            top: 29%;
+            width: min(21vw, 308px);
+            left: 50%;
+            top: 31%;
             z-index: 4;
         }
         .collage-dna img {
@@ -125,9 +125,9 @@
         }
         .collage-pasta {
             --rot: 1deg;
-            width: min(20vw, 286px);
-            left: 75%;
-            top: 37%;
+            width: min(23vw, 340px);
+            left: 72%;
+            top: 41%;
             z-index: 3;
         }
         .collage-pasta img {
