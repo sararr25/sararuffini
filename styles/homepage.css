@@ -65,9 +65,9 @@
         }
         .collage-reels {
             --rot: -4deg;
-            width: min(30vw, 430px);
+            width: min(31vw, 448px);
             left: 2%;
-            top: 6%;
+            top: 5%;
             z-index: 4;
         }
         .collage-reels img {
@@ -75,8 +75,8 @@
         }
         .collage-cocktail {
             --rot: -1.5deg;
-            width: min(20vw, 280px);
-            left: 37%;
+            width: min(21vw, 295px);
+            left: 36%;
             top: 5%;
             z-index: 5;
         }
@@ -85,8 +85,8 @@
         }
         .collage-bbq {
             --rot: 2deg;
-            width: min(24vw, 340px);
-            left: 68%;
+            width: min(25vw, 356px);
+            left: 67%;
             top: 4%;
             z-index: 6;
         }
@@ -95,9 +95,9 @@
         }
         .collage-app {
             --rot: -1deg;
-            width: min(28vw, 400px);
-            left: 6%;
-            top: 49%;
+            width: min(29vw, 420px);
+            left: 5%;
+            top: 47%;
             z-index: 2;
         }
         .collage-app img {
@@ -105,9 +105,9 @@
         }
         .collage-game {
             --rot: -2deg;
-            width: min(23vw, 320px);
-            left: 36%;
-            top: 51%;
+            width: min(24vw, 340px);
+            left: 35%;
+            top: 49%;
             z-index: 4;
         }
         .collage-game img {
@@ -115,9 +115,9 @@
         }
         .collage-dna {
             --rot: 7deg;
-            width: min(16vw, 230px);
-            left: 55%;
-            top: 30%;
+            width: min(17vw, 245px);
+            left: 54%;
+            top: 29%;
             z-index: 4;
         }
         .collage-dna img {
@@ -125,9 +125,9 @@
         }
         .collage-pasta {
             --rot: 1deg;
-            width: min(19vw, 270px);
-            left: 76%;
-            top: 39%;
+            width: min(20vw, 286px);
+            left: 75%;
+            top: 37%;
             z-index: 3;
         }
         .collage-pasta img {
@@ -135,9 +135,9 @@
         }
         .collage-phone {
             --rot: 18deg;
-            width: min(16vw, 225px);
-            left: 66%;
-            top: 63%;
+            width: min(17vw, 238px);
+            left: 65%;
+            top: 61%;
             z-index: 5;
         }
         .collage-phone img {
