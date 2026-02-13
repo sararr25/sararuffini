@@ -27,10 +27,8 @@
         .featured-canvas {
             position: relative;
             width: 100%;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
-            padding: 20px;
+            min-height: 760px;
+            padding: 18px;
             border: 4px solid #32c777;
             border-radius: 14px;
             background: #f7f3ea;
@@ -43,25 +41,19 @@
         }
         .featured-object {
             --rot: 0deg;
-            position: relative;
+            position: absolute;
             display: block;
-            aspect-ratio: 1 / 1;
             text-decoration: none;
             color: #111;
             z-index: 2;
-            padding: 12px;
             transform: rotate(var(--rot));
             transition: transform 0.26s ease, filter 0.26s ease;
             will-change: transform;
         }
         .featured-object img {
-            width: auto;
+            width: 100%;
             height: auto;
-            max-width: 100%;
-            max-height: 100%;
             display: block;
-            margin: 0 auto;
-            object-fit: contain;
             pointer-events: none;
         }
         .featured-object.sticker-hover:hover {
@@ -73,48 +65,72 @@
         }
         .collage-reels {
             --rot: -4deg;
+            width: min(23vw, 320px);
+            left: 4%;
+            top: 9%;
         }
         .collage-reels img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-cocktail {
             --rot: -1.5deg;
+            width: min(18vw, 250px);
+            left: 29%;
+            top: 6%;
         }
         .collage-cocktail img {
             filter: drop-shadow(0 9px 16px rgba(0, 0, 0, 0.22));
         }
         .collage-bbq {
             --rot: 1.5deg;
+            width: min(21vw, 290px);
+            left: 50%;
+            top: 8%;
         }
         .collage-bbq img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
         }
         .collage-app {
             --rot: -1deg;
+            width: min(24vw, 332px);
+            left: 8%;
+            top: 45%;
         }
         .collage-app img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.23));
         }
         .collage-game {
             --rot: -2deg;
+            width: min(19vw, 265px);
+            left: 34%;
+            top: 48%;
         }
         .collage-game img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-dna {
             --rot: 4deg;
+            width: min(14vw, 190px);
+            left: 74%;
+            top: 11%;
         }
         .collage-dna img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.26));
         }
         .collage-pasta {
             --rot: 1deg;
+            width: min(20vw, 280px);
+            left: 54%;
+            top: 46%;
         }
         .collage-pasta img {
             filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.24));
         }
         .collage-phone {
             --rot: 7deg;
+            width: min(14vw, 195px);
+            left: 79%;
+            top: 50%;
         }
         .collage-phone img {
             filter: drop-shadow(0 11px 17px rgba(0, 0, 0, 0.28));
@@ -161,14 +177,19 @@
         }
         @media (max-width: 1024px) {
             .featured-canvas {
+                min-height: auto;
                 border-width: 3px;
+                display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 16px;
                 padding: 16px;
             }
             .featured-object {
+                position: relative;
                 width: 100%;
                 translate: 0 0 !important;
+                left: auto !important;
+                top: auto !important;
             }
             .featured-object.sticker-hover:hover {
                 transform: rotate(var(--rot)) scale(1.02) !important;
