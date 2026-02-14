@@ -1,11 +1,11 @@
 {
   "heading_line1": "SELECTED",
+  "more_projects_meta": "View complete archive",
   "heading_line2": "WORKS",
-  "intro_text_html": "Visual storytelling through rhythm and color.<br><span class=\"font-script text-accent-pink text-xl\">Curated for impact.</span>",
   "card_1": {
     "href": "/pages/video-v1/index.html",
     "badge": "Adventure Co.",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDXYfnGoPm-o0BLlSr31GQ4yp99CKaFWIA7NJMw44TipG_X4eMWTGoyoqYNWVCMZhgkPu9ItnMxg7pxBVi5ij1N9J-NN5TKPUisHAkQi_cDSp75FtNKJJLCJ9KlH0AlW5RlRs7nb9OUNHOgvUjjXSc7ZQOF22vKGZeg3BGPKG22XkfURKCzJHM6sY0A2rlBm9unw9ZBoU9yxU0sXUtkDoayw9yEKS2V2chkRrCfJFoqC1dDwReXw2vaUWJICoKVp8uyuqrX4iwxyNcT",
+    "image": "/assets/media/Cocktail-3.jpg",
     "alt": "Adventure Co.",
     "title": "High-Altitude Storytelling",
     "meta": "Commercial • 2023"
@@ -34,6 +34,7 @@
     "title": "Cyberpunk Music Video",
     "meta": "Music Video • 2022"
   },
+  "more_projects_href": "/workspace.html",
   "card_5": {
     "href": "/pages/video-v2/index.html",
     "badge": "Aero",
@@ -58,8 +59,7 @@
     "title": "16mm Documentary",
     "meta": "Documentary • Short"
   },
-  "more_projects_href": "/workspace.html",
-  "more_projects_title": "More Projects",
-  "more_projects_meta": "View complete archive",
-  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen"
+  "intro_text_html": "Visual storytelling through rhythm and color.<br><span class=\"font-script text-accent-pink text-xl\">Curated for impact.</span>",
+  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen",
+  "more_projects_title": "More Projects"
 }
