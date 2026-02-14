@@ -1,67 +1,67 @@
 {
-  "hero_line_1": "I talk fast",
-  "hero_line_2_prefix": "I edit",
-  "hero_word_highlight": "faster",
-  "showreel_label": "Showreel",
+  "featured_card": {
+    "href": "/pages/graphics/index.html",
+    "image": "/assets/media/home-videos.png",
+    "alt": "Retro phone sticker project",
+    "label": "The Edit Room"
+  },
+  "featured_window": {
+    "href": "/pages/app-v2/index.html",
+    "image": "/assets/media/home-game.png",
+    "alt": "Game device sticker project",
+    "label": "Pocket Arcade",
+    "window_title": "PROJECT.EXE",
+    "window_button": "Open"
+  },
+  "teaser_link_href": "/pages/about/index.html",
   "showreel_embed_url": "https://player.vimeo.com/video/1056816837?h=f7841e5cdc&title=0&byline=0&portrait=0",
-  "showreel_title": "Sara Ruffini Showreel",
+  "teaser_link_text": "Read More About Me",
+  "hero_word_highlight": "faster",
+  "hero_line_2_prefix": "I edit",
+  "featured_dna": {
+    "href": "/pages/video-v1/index.html",
+    "image": "/assets/media/home-dna.png",
+    "alt": "DNA sticker project",
+    "label": "Human Engine"
+  },
   "featured_title": "Featured Projects",
+  "featured_torn": {
+    "href": "/pages/graphics/index.html",
+    "image": "/assets/media/home-cocktails.png",
+    "alt": "Cocktail visual sticker project",
+    "label": "One more!"
+  },
   "featured_subtitle": "Select an object to view",
+  "marquee_text": "Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter •",
+  "hero_line_1": "I talk fast",
   "collage_word_top": "PROJECT",
-  "collage_word_bottom": "PROJECT",
+  "showreel_label": "Showreel",
+  "featured_grill": {
+    "href": "/pages/video-v1/index.html",
+    "image": "/assets/media/home-bbq.png",
+    "alt": "BBQ project sticker",
+    "label": "Smoke & Stories"
+  },
+  "teaser_text_html": "A collection of work crafted with <span class=\"text-primary\">heart</span>, <span class=\"text-pink-500\">creativity</span>, and <span class=\"text-yellow-500\">storytelling</span>. Explore how I turn concepts into visuals that connect.",
+  "showreel_title": "Sara Ruffini Showreel",
   "featured_tv": {
     "href": "/pages/app-v2/index.html",
     "image": "/assets/media/home-app.png",
     "alt": "Travel app sticker project",
     "label": "Meriwa App"
   },
-  "featured_polaroid": {
-    "href": "/pages/video-v2/index.html",
-    "image": "/assets/media/home-reels.png",
-    "alt": "Retro camcorder sticker project",
-    "caption": "Retro Reel"
-  },
-  "featured_torn": {
-    "href": "/pages/graphics/index.html",
-    "image": "/assets/media/home-cocktails.png",
-    "alt": "Cocktail visual sticker project",
-    "label": "Disco Cocktail Club"
-  },
-  "featured_grill": {
-    "href": "/pages/video-v1/index.html",
-    "image": "/assets/media/home-bbq.png",
-    "alt": "BBQ project sticker",
-    "label": "Metabo Heat Lab"
-  },
-  "featured_window": {
-    "href": "/pages/app-v2/index.html",
-    "image": "/assets/media/home-game.png",
-    "alt": "Game device sticker project",
-    "label": "Meriwa Motel OS",
-    "window_title": "PROJECT.EXE",
-    "window_button": "Open"
-  },
-  "featured_dna": {
-    "href": "/pages/video-v1/index.html",
-    "image": "/assets/media/home-dna.png",
-    "alt": "DNA sticker project",
-    "label": "Science Vids"
-  },
+  "collage_word_bottom": "PROJECT",
+  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen",
   "featured_round": {
     "href": "/pages/socialmedia-portfolio/index.html",
     "image": "/assets/media/home-pasta.png",
     "alt": "Food sticker project",
-    "label": "Chef Tape Deluxe"
+    "label": "Pan & Passion"
   },
-  "featured_card": {
-    "href": "/pages/graphics/index.html",
-    "image": "/assets/media/home-videos.png",
-    "alt": "Retro phone sticker project",
-    "label": "Poster Boogie"
-  },
-  "teaser_text_html": "A collection of work crafted with <span class=\"text-primary\">heart</span>, <span class=\"text-pink-500\">creativity</span>, and <span class=\"text-yellow-500\">storytelling</span>. Explore how I turn concepts into visuals that connect.",
-  "teaser_link_text": "Read More About Me",
-  "teaser_link_href": "/pages/about/index.html",
-  "marquee_text": "Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter • Let's create somenthing togheter •",
-  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen"
+  "featured_polaroid": {
+    "href": "/pages/video-v2/index.html",
+    "image": "/assets/media/home-reels.png",
+    "alt": "Social Media",
+    "caption": "Social Media"
+  }
 }
