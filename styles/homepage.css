@@ -58,9 +58,10 @@
         }
         .featured-tag {
             position: absolute;
-            left: 50%;
-            bottom: -10px;
-            transform: translateX(-50%) rotate(-6deg);
+            left: auto;
+            right: auto;
+            top: auto;
+            bottom: auto;
             z-index: 9;
             font-size: 0.92rem;
             font-weight: 900;
@@ -74,17 +75,40 @@
             box-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
             text-transform: none;
         }
-        .tag-yellow { background: #f8df3e; }
-        .tag-teal { background: #3bdec8; }
-        .tag-white { background: #f6f6f6; }
-        .tag-black {
+        .tag-ui-primary {
+            background: #3bdec8;
+            color: #111;
+        }
+        .tag-ui-light {
+            background: #f6f4ee;
+            color: #111;
+        }
+        .tag-ui-dark {
             background: #111;
             color: #fff;
             border-color: #fff;
             box-shadow: 3px 3px 0 rgba(255, 255, 255, 0.95);
         }
-        .tag-tilt-left { transform: translateX(-50%) rotate(-7deg); }
-        .tag-tilt-right { transform: translateX(-50%) rotate(8deg); }
+        .tag-pos-top-left {
+            top: -12px;
+            left: 8%;
+            transform: rotate(-7deg);
+        }
+        .tag-pos-top-right {
+            top: -12px;
+            right: 7%;
+            transform: rotate(8deg);
+        }
+        .tag-pos-bottom-left {
+            bottom: -12px;
+            left: 8%;
+            transform: rotate(-6deg);
+        }
+        .tag-pos-bottom-right {
+            bottom: -12px;
+            right: 8%;
+            transform: rotate(7deg);
+        }
         .featured-object.sticker-hover:hover {
             animation-play-state: paused;
             translate: 0 -8px !important;
