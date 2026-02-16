@@ -5,6 +5,51 @@
     }, obj);
   }
 
+  function normalizeReelUrl(rawUrl) {
+    if (typeof rawUrl !== 'string') {
+      return rawUrl;
+    }
+
+    var trimmedUrl = rawUrl.trim();
+    if (!trimmedUrl) {
+      return trimmedUrl;
+    }
+
+    var parsedUrl;
+    try {
+      parsedUrl = new URL(trimmedUrl, window.location.origin);
+    } catch (err) {
+      return trimmedUrl;
+    }
+
+    var host = parsedUrl.hostname.replace(/^www\./, '').toLowerCase();
+    var path = parsedUrl.pathname;
+
+    if (host === 'instagram.com' || host.slice(-14) === '.instagram.com') {
+      if (path.indexOf('/embed/') !== -1 || /\/embed\/?$/.test(path)) {
+        return parsedUrl.toString();
+      }
+
+      var instagramMatch = path.match(/\/(reel|p|tv)\/([^/?#]+)/);
+      if (instagramMatch) {
+        return 'https://www.instagram.com/' + instagramMatch[1] + '/' + instagramMatch[2] + '/embed';
+      }
+    }
+
+    if (host === 'tiktok.com' || host.slice(-11) === '.tiktok.com') {
+      if (path.indexOf('/embed/') !== -1) {
+        return parsedUrl.toString();
+      }
+
+      var tiktokMatch = path.match(/\/video\/(\d+)/);
+      if (tiktokMatch) {
+        return 'https://www.tiktok.com/embed/v2/' + tiktokMatch[1];
+      }
+    }
+
+    return parsedUrl.toString();
+  }
+
   function applyContent(data) {
     document.querySelectorAll('[data-cms-text]').forEach(function (node) {
       var key = node.getAttribute('data-cms-text');
@@ -27,6 +72,14 @@
       var value = getByPath(data, key);
       if (typeof value === 'string') {
         node.setAttribute('src', value);
+      }
+    });
+
+    document.querySelectorAll('[data-cms-reel-src]').forEach(function (node) {
+      var key = node.getAttribute('data-cms-reel-src');
+      var value = getByPath(data, key);
+      if (typeof value === 'string') {
+        node.setAttribute('src', normalizeReelUrl(value));
       }
     });
 

@@ -94,10 +94,14 @@ collections:
           - { label: Main Title, name: hero_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
           - { label: Technical Text, name: technical_text, widget: text }
-          - { label: Phone 1 Image, name: phone1_image, widget: image }
+          - { label: Phone 1 Reel URL (Instagram/TikTok), name: phone1_reel_url, widget: string }
           - { label: Phone 1 Caption, name: phone1_caption, widget: string }
+          - { label: Phone 2 Reel URL (Instagram/TikTok), name: phone2_reel_url, widget: string }
           - { label: Phone 2 Caption, name: phone2_caption, widget: string }
+          - { label: Phone 3 Reel URL (Instagram/TikTok), name: phone3_reel_url, widget: string }
           - { label: Phone 3 Caption, name: phone3_caption, widget: string }
+          - { label: Phone 4 Reel URL (Instagram/TikTok), name: phone4_reel_url, widget: string }
+          - { label: Phone 4 Caption, name: phone4_caption, widget: string }
 
       - label: Homepage
         name: homepage
