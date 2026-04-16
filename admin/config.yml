@@ -12,6 +12,96 @@ locale: "it"
 publish_mode: simple
 
 collections:
+  - name: site_settings
+    label: 🌐 Site Settings
+    description: Global site configuration
+    files:
+      - label: Global Navigation & Footer
+        name: global
+        file: content/global.json
+        editor:
+          preview: false
+        fields:
+          - { label: Nav - Home, name: nav_home, widget: string, default: "Home" }
+          - { label: Nav - Projects, name: nav_projects, widget: string, default: "Projects" }
+          - { label: Nav - About, name: nav_about, widget: string, default: "About" }
+          - { label: Nav - Contact, name: nav_contact, widget: string, default: "Contact" }
+          - { label: Footer Contact Email, name: footer_email, widget: string }
+          - { label: Footer Contact Phone, name: footer_phone, widget: string }
+          - { label: Footer Contact Location, name: footer_location, widget: string }
+
+      - label: SEO Defaults
+        name: seo_defaults
+        file: content/global-seo.json
+        editor:
+          preview: false
+        fields:
+          - { label: Site Title, name: site_title, widget: string }
+          - { label: Site Description, name: site_description, widget: text }
+          - { label: Default OG Image, name: default_og_image, widget: image }
+          - { label: Twitter Handle, name: twitter_handle, widget: string }
+
+  - name: media_library
+    label: 📁 Media Library
+    description: Manage all media files (images, videos)
+    folder: "assets/media"
+    media_folder: "assets/media"
+    public_folder: "/assets/media"
+    create: true
+    delete: true
+    editor:
+      preview: false
+    extension: json
+    format: json
+    frontmatter_delimiter: "---"
+
+  - name: templates
+    label: 📋 Content Templates
+    description: Reusable project templates for quick creation
+    files:
+      - label: Video Project Template
+        name: video_template
+        file: content/templates/video-template.json
+        fields:
+          - { label: Template Name, name: template_name, widget: string, default: "Video Project" }
+          - { label: Hero Label, name: hero_label, widget: string }
+          - { label: Years, name: hero_years, widget: string }
+          - { label: Main Title, name: hero_title_main, widget: string }
+          - { label: Highlight Word, name: hero_title_highlight, widget: string }
+          - { label: Role, name: hero_role, widget: string }
+          - { label: Meta Info, name: hero_meta, widget: string }
+          - { label: Hero Image, name: hero_image, widget: image }
+          - { label: Intro Text, name: intro_text, widget: text }
+          - { label: SEO Title, name: seo_title, widget: string }
+          - { label: SEO Description, name: seo_description, widget: text }
+          - { label: SEO Image, name: seo_image, widget: image }
+
+      - label: Graphic Design Template
+        name: graphics_template
+        file: content/templates/graphics-template.json
+        fields:
+          - { label: Template Name, name: template_name, widget: string, default: "Graphic Design" }
+          - { label: Campaign Title, name: campaign_title, widget: string }
+          - { label: Campaign Description, name: campaign_text, widget: text }
+          - { label: Hero Image, name: hero_image_polaroid, widget: image }
+          - { label: SEO Title, name: seo_title, widget: string }
+          - { label: SEO Description, name: seo_description, widget: text }
+          - { label: SEO Image, name: seo_image, widget: image }
+
+      - label: App Design Template
+        name: app_template
+        file: content/templates/app-template.json
+        fields:
+          - { label: Template Name, name: template_name, widget: string, default: "App Design" }
+          - { label: Phase Label, name: hero_phase, widget: string }
+          - { label: Main Title, name: hero_title_main_line1, widget: string }
+          - { label: Highlight Word, name: hero_title_accent, widget: string }
+          - { label: Intro Text, name: hero_intro, widget: text }
+          - { label: Hero Image, name: hero_image_left, widget: image }
+          - { label: SEO Title, name: seo_title, widget: string }
+          - { label: SEO Description, name: seo_description, widget: text }
+          - { label: SEO Image, name: seo_image, widget: image }
+
   - name: project_pages
     label: Project Pages
     files:
@@ -29,6 +119,13 @@ collections:
           - { label: Hero Timecode, name: hero_timecode, widget: string }
           - { label: Intro Title, name: intro_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: Video Page V2
         name: video_v2
@@ -45,6 +142,13 @@ collections:
           - { label: Hero Timecode, name: hero_timecode, widget: string }
           - { label: Intro Title, name: intro_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: App Page V1
         name: app_v1
@@ -60,6 +164,13 @@ collections:
           - { label: Center Phone Image, name: hero_image_center, widget: image }
           - { label: Phase 2 Line 1, name: phase2_title_main, widget: string }
           - { label: Phase 2 Accent, name: phase2_title_accent, widget: string }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: App Page V2
         name: app_v2
@@ -76,6 +187,13 @@ collections:
           - { label: Insight 3 Title, name: insight_3_title, widget: string }
           - { label: Insight 3 Text, name: insight_3_text, widget: text }
           - { label: Hero Note, name: hero_note, widget: string }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: Graphics Page
         name: graphics
@@ -86,6 +204,13 @@ collections:
           - { label: Polaroid Image, name: hero_image_polaroid, widget: image }
           - { label: Detail Image, name: hero_image_detail, widget: image }
           - { label: Wide Image, name: hero_image_wide, widget: image }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: Social Media Page
         name: socialmedia_portfolio
@@ -94,14 +219,21 @@ collections:
           - { label: Main Title, name: hero_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
           - { label: Technical Text, name: technical_text, widget: text }
-          - { label: Phone 1 Reel URL (Instagram/TikTok), name: phone1_reel_url, widget: string }
-          - { label: Phone 1 Caption, name: phone1_caption, widget: string }
-          - { label: Phone 2 Reel URL (Instagram/TikTok), name: phone2_reel_url, widget: string }
-          - { label: Phone 2 Caption, name: phone2_caption, widget: string }
-          - { label: Phone 3 Reel URL (Instagram/TikTok), name: phone3_reel_url, widget: string }
-          - { label: Phone 3 Caption, name: phone3_caption, widget: string }
-          - { label: Phone 4 Reel URL (Instagram/TikTok), name: phone4_reel_url, widget: string }
-          - { label: Phone 4 Caption, name: phone4_caption, widget: string }
+          - { label: Instagram Profile URL, name: instagram_profile_url, widget: string }
+          - { label: Watch More Text, name: watch_more_text, widget: string }
+          - label: Phones
+            name: phones
+            widget: list
+            fields:
+              - { label: Video URL, name: phone_video_url, widget: string }
+              - { label: Caption, name: phone_caption, widget: string }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: Homepage
         name: homepage
@@ -188,6 +320,13 @@ collections:
           - { label: Teaser Link URL, name: teaser_link_href, widget: string }
           - { label: Marquee Text, name: marquee_text, widget: text }
           - { label: Footer Contact Line, name: footer_contact, widget: string }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: About Page
         name: about
@@ -230,6 +369,13 @@ collections:
           - { label: More Card 3 Title, name: more_card_3_title, widget: string }
           - { label: More Card 3 Text, name: more_card_3_text, widget: text }
           - { label: Footer Contact Line, name: footer_contact, widget: string }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }
 
       - label: Portfolio Main Page
         name: portfolio_main
@@ -238,69 +384,10 @@ collections:
           - { label: Heading Line 1, name: heading_line1, widget: string }
           - { label: Heading Line 2, name: heading_line2, widget: string }
           - { label: Intro Text (HTML Allowed), name: intro_text_html, widget: text }
-          - label: Card 1
-            name: card_1
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - label: Card 2
-            name: card_2
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - label: Card 3
-            name: card_3
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - label: Card 4
-            name: card_4
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - label: Card 5
-            name: card_5
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - label: Card 6
-            name: card_6
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - label: Card 7
-            name: card_7
-            widget: object
+          - label: Portfolio Gallery (Drag to Reorder)
+            name: gallery
+            widget: list
+            collapsed: false
             fields:
               - { label: Link, name: href, widget: string }
               - { label: Badge, name: badge, widget: string }
@@ -312,3 +399,10 @@ collections:
           - { label: More Projects Title, name: more_projects_title, widget: string }
           - { label: More Projects Meta, name: more_projects_meta, widget: string }
           - { label: Footer Contact Line, name: footer_contact, widget: string }
+          - label: SEO Settings
+            name: seo
+            widget: object
+            fields:
+              - { label: Page Title, name: seo_title, widget: string }
+              - { label: Meta Description, name: seo_description, widget: text }
+              - { label: Preview Image, name: seo_image, widget: image }

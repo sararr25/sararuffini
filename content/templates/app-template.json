@@ -1,0 +1,11 @@
+{
+  "template_name": "App Design Template",
+  "hero_phase": "PHASE NAME",
+  "hero_title_main_line1": "App Project Title",
+  "hero_title_accent": "Key Feature",
+  "hero_intro": "Describe the app concept and user experience design approach.",
+  "hero_image_left": "/assets/media/default-phone-screen.jpg",
+  "seo_title": "App Design - Sara Ruffini",
+  "seo_description": "Discover the UX/UI design of this app project and design philosophy.",
+  "seo_image": "/assets/media/default-og-image.jpg"
+}

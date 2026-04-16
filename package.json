@@ -1,0 +1,14 @@
+{
+  "name": "sararuffini-site-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Content and media automation tools for Sara Ruffini portfolio",
+  "scripts": {
+    "optimize:images": "node scripts/optimize-images.js",
+    "media:bulk-upload": "node scripts/bulk-media-upload.js",
+    "template:create": "node scripts/create-project-from-template.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

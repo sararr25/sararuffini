@@ -9,5 +9,10 @@
   "insight_2_text": "Optimized the primary user flow for speed and delight.",
   "insight_3_title": "System Feedback",
   "insight_3_text": "Clear validation states and success toasts at every step.",
-  "hero_note": "follow the flow"
+  "hero_note": "follow the flow",
+  "seo": {
+    "seo_title": "UX Flow Design - Sara Ruffini",
+    "seo_description": "User experience narrative and interaction flow project by Sara Ruffini.",
+    "seo_image": ""
+  }
 }

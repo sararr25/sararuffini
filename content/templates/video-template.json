@@ -1,0 +1,14 @@
+{
+  "template_name": "Video Project Template",
+  "hero_label": "PROJECT TYPE",
+  "hero_years": "2024",
+  "hero_title_main": "Project Title",
+  "hero_title_highlight": "Highlight Key Word",
+  "hero_role": "Creative Director • Editor",
+  "hero_meta": "Video • 2024",
+  "hero_image": "/assets/media/default-hero.jpg",
+  "intro_text": "Brief description of the project and its creative approach.",
+  "seo_title": "Project Title - Sara Ruffini",
+  "seo_description": "A compelling description of your video project for search engines and social sharing.",
+  "seo_image": "/assets/media/default-og-image.jpg"
+}

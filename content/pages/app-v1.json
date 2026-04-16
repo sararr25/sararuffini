@@ -8,5 +8,10 @@
   "hero_image_right": "https://lh3.googleusercontent.com/aida-public/AB6AXuBaPrrqyVqU8fLO3a3VajVyzx-baU7zYx2kzIQCs1LDc_MBH6ac_-XK-4OUyFZMl8_4D_yEU7dP9mrPcTZ6oqOEIvlg9hLr7TG348sY-UfNgcEYyqxTBxRo9-1V6pRnXocRmRf-hHKKZDU-WgJWnleNJU4rY34CC1c6ehRGtyQT4SlEzCN_wpSter79O0ZRNHA9_pZApCSK_h9Xj1jGoLx-Weodww1FQ0idwaPROpFqQ8MfsnCZ-Ij20M5o5CYtTiu_wdQmwU0U6wQD",
   "hero_image_center": "https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB",
   "phase2_title_main": "how it",
-  "phase2_title_accent": "works"
+  "phase2_title_accent": "works",
+  "seo": {
+    "seo_title": "App Design Case Study - Sara Ruffini",
+    "seo_description": "Visual language and product UX design case study by Sara Ruffini.",
+    "seo_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB"
+  }
 }

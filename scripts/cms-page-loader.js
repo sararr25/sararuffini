@@ -1,8 +1,102 @@
 (function () {
+  function tokenizePath(path) {
+    if (typeof path !== 'string' || !path.trim()) {
+      return [];
+    }
+
+    var tokens = [];
+    path.split('.').forEach(function (part) {
+      var re = /([^\[\]]+)|\[(\d+)\]/g;
+      var match;
+      while ((match = re.exec(part)) !== null) {
+        if (match[1]) {
+          tokens.push(match[1]);
+        } else if (typeof match[2] !== 'undefined') {
+          tokens.push(Number(match[2]));
+        }
+      }
+    });
+
+    return tokens;
+  }
+
   function getByPath(obj, path) {
-    return path.split('.').reduce(function (acc, key) {
-      return acc && Object.prototype.hasOwnProperty.call(acc, key) ? acc[key] : undefined;
+    var tokens = tokenizePath(path);
+    return tokens.reduce(function (acc, key) {
+      if (acc === null || typeof acc === 'undefined') {
+        return undefined;
+      }
+      return acc[key];
     }, obj);
+  }
+
+  function toAbsoluteUrl(rawUrl) {
+    if (typeof rawUrl !== 'string' || !rawUrl.trim()) {
+      return '';
+    }
+
+    try {
+      return new URL(rawUrl, window.location.origin).toString();
+    } catch (err) {
+      return rawUrl;
+    }
+  }
+
+  function upsertMetaTag(attributeName, attributeValue, content) {
+    if (typeof content !== 'string' || !content.trim()) {
+      return;
+    }
+
+    var selector = 'meta[' + attributeName + '="' + attributeValue + '"]';
+    var node = document.head.querySelector(selector);
+    if (!node) {
+      node = document.createElement('meta');
+      node.setAttribute(attributeName, attributeValue);
+      document.head.appendChild(node);
+    }
+    node.setAttribute('content', content.trim());
+  }
+
+  function applySeoMeta(allData, globalSeoData) {
+    var pageSeo = allData && allData.seo ? allData.seo : {};
+    var title = pageSeo.seo_title || allData.seo_title || globalSeoData.site_title || document.title;
+    var description = pageSeo.seo_description || allData.seo_description || globalSeoData.site_description || '';
+    var image = pageSeo.seo_image || allData.seo_image || globalSeoData.default_og_image || '';
+    var twitterHandle = globalSeoData.twitter_handle || '';
+
+    if (typeof title === 'string' && title.trim()) {
+      document.title = title.trim();
+    }
+
+    upsertMetaTag('name', 'description', description);
+
+    upsertMetaTag('property', 'og:type', 'website');
+    upsertMetaTag('property', 'og:title', title || '');
+    upsertMetaTag('property', 'og:description', description || '');
+    upsertMetaTag('property', 'og:url', window.location.href);
+    if (image) {
+      upsertMetaTag('property', 'og:image', toAbsoluteUrl(image));
+    }
+
+    upsertMetaTag('name', 'twitter:card', image ? 'summary_large_image' : 'summary');
+    upsertMetaTag('name', 'twitter:title', title || '');
+    upsertMetaTag('name', 'twitter:description', description || '');
+    if (image) {
+      upsertMetaTag('name', 'twitter:image', toAbsoluteUrl(image));
+    }
+    if (twitterHandle) {
+      upsertMetaTag('name', 'twitter:site', twitterHandle);
+    }
+  }
+
+  function applyByAttribute(allData, dataAttribute, applyValue) {
+    document.querySelectorAll('[' + dataAttribute + ']').forEach(function (node) {
+      var key = node.getAttribute(dataAttribute);
+      var value = getByPath(allData, key);
+      if (typeof value === 'string') {
+        applyValue(node, value);
+      }
+    });
   }
 
   function normalizeReelUrl(rawUrl) {
@@ -50,89 +144,109 @@
     return parsedUrl.toString();
   }
 
+  var globalData = {};
+  var globalSeoData = {};
+
   function applyContent(data) {
-    document.querySelectorAll('[data-cms-text]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-text');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.textContent = value;
-      }
+    // Merge with global data
+    var allData = Object.assign({}, globalData, data);
+    applySeoMeta(allData, globalSeoData);
+
+    applyByAttribute(allData, 'data-cms-text', function (node, value) {
+      node.textContent = value;
     });
 
-    document.querySelectorAll('[data-cms-html]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-html');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.innerHTML = value;
-      }
+    applyByAttribute(allData, 'data-cms-html', function (node, value) {
+      node.innerHTML = value;
     });
 
-    document.querySelectorAll('[data-cms-src]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-src');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
+    applyByAttribute(allData, 'data-cms-src', function (node, value) {
+      node.setAttribute('src', value);
+    });
+
+    applyByAttribute(allData, 'data-cms-reel-src', function (node, value) {
+      node.setAttribute('src', normalizeReelUrl(value));
+    });
+
+    applyByAttribute(allData, 'data-cms-alt', function (node, value) {
+      node.setAttribute('alt', value);
+    });
+
+    applyByAttribute(allData, 'data-cms-bg', function (node, value) {
+      node.style.backgroundImage = 'url("' + value.replace(/"/g, '\\"') + '")';
+    });
+
+    applyByAttribute(allData, 'data-cms-href', function (node, value) {
+      node.setAttribute('href', value);
+    });
+
+    applyByAttribute(allData, 'data-cms-title', function (node, value) {
+      node.setAttribute('title', value);
+    });
+
+    applyByAttribute(allData, 'data-cms-video-src', function (node, value) {
+      if (value.trim()) {
         node.setAttribute('src', value);
       }
     });
 
-    document.querySelectorAll('[data-cms-reel-src]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-reel-src');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.setAttribute('src', normalizeReelUrl(value));
-      }
-    });
-
-    document.querySelectorAll('[data-cms-alt]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-alt');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.setAttribute('alt', value);
-      }
-    });
-
-    document.querySelectorAll('[data-cms-bg]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-bg');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.style.backgroundImage = 'url("' + value.replace(/"/g, '\\"') + '")';
-      }
-    });
-
-    document.querySelectorAll('[data-cms-href]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-href');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.setAttribute('href', value);
-      }
-    });
-
-    document.querySelectorAll('[data-cms-title]').forEach(function (node) {
-      var key = node.getAttribute('data-cms-title');
-      var value = getByPath(data, key);
-      if (typeof value === 'string') {
-        node.setAttribute('title', value);
+    document.querySelectorAll('[data-cms-phone-index]').forEach(function (node) {
+      var index = node.getAttribute('data-cms-phone-index');
+      var field = node.getAttribute('data-cms-phone-field');
+      if (allData.phones && allData.phones[index] && field) {
+        var value = allData.phones[index][field];
+        if (typeof value === 'string') {
+          if (node.tagName === 'VIDEO') {
+            node.setAttribute('src', value);
+          } else {
+            node.textContent = value;
+          }
+        }
       }
     });
   }
 
   function init() {
     var page = document.body && document.body.dataset ? document.body.dataset.cmsPage : '';
-    if (!page) {
-      return;
-    }
 
-    fetch('/content/pages/' + page + '.json', { cache: 'no-store' })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error('No CMS content for page ' + page);
-        }
-        return response.json();
-      })
-      .then(applyContent)
-      .catch(function () {
-        // Silent fallback to hardcoded HTML defaults.
-      });
+    // Load global settings first.
+    Promise.all([
+      fetch('/content/global.json', { cache: 'no-store' })
+        .then(function (response) {
+          return response.ok ? response.json() : {};
+        })
+        .catch(function () {
+          return {};
+        }),
+      fetch('/content/global-seo.json', { cache: 'no-store' })
+        .then(function (response) {
+          return response.ok ? response.json() : {};
+        })
+        .catch(function () {
+          return {};
+        })
+    ]).then(function (results) {
+      globalData = results[0] || {};
+      globalSeoData = results[1] || {};
+
+      // Load page-specific content after globals to avoid race conditions.
+      if (!page) {
+        applyContent({});
+        return;
+      }
+
+      fetch('/content/pages/' + page + '.json', { cache: 'no-store' })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error('No CMS content for page ' + page);
+          }
+          return response.json();
+        })
+        .then(applyContent)
+        .catch(function () {
+          // Silent fallback to hardcoded HTML defaults.
+        });
+    });
   }
 
   init();

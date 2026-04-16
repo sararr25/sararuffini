@@ -1,53 +1,67 @@
 {
   "heading_line1": "SELECTED",
-  "more_projects_meta": "View complete archive",
   "heading_line2": "WORKS",
-  "card_1": {
-    "href": "/pages/video-v1/index.html",
-    "badge": "Adventure Co.",
-    "image": "/assets/media/Cocktail-3.jpg",
-    "alt": "Adventure Co.",
-    "title": "High-Altitude Storytelling",
-    "meta": "Commercial • 2023"
-  },
-  "card_2": {
-    "href": "/pages/socialmedia-portfolio/index.html",
-    "badge": "Vogue",
-    "image": "/assets/media/Cocktail-13.jpg",
-    "alt": "Vogue x Street",
-    "title": "Urban Fashion Week",
-    "meta": "Social Media • Edit"
-  },
-  "card_3": {
-    "href": "/pages/graphics/index.html",
-    "badge": "Glitch",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPHl4zoGVV0OhCteCKaNe96c7zRP_R7-HpxKO4Dw5wYBdYpi0xp-R8xRJRqtuHKlznS_PG8GNf0lfKyMWRQPA0rnlxtU22lAi3rcBQYPrZAF8h-ZauK9N0r9kfsr-YFvvclquf-olEahn8PnJ1On17-cWsjn2pV1ggNlR3aDU1OGw11NwuEZe9TSbozxbiqssb5ewKEEWoBeZkvlTMDTMLLa5HDu_d3Gu3LbH97FQhXaNsRntqAA5J0aHHRHXciIkNRu5CQZxJjLLG",
-    "alt": "Glitch Art",
-    "title": "Experimental Visuals",
-    "meta": "VFX • Personal Project"
-  },
-  "card_4": {
-    "href": "/pages/video-v2/index.html",
-    "badge": "Neon Nights",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
-    "alt": "Neon Nights",
-    "title": "Cyberpunk Music Video",
-    "meta": "Music Video • 2022"
-  },
+  "intro_text_html": "A selection of recent projects spanning motion design, commercial video, and digital storytelling.",
+  "gallery": [
+    {
+      "href": "/pages/video-v1/index.html",
+      "badge": "Adventure Co.",
+      "image": "/assets/media/Cocktail-3.jpg",
+      "alt": "Adventure Co.",
+      "title": "High-Altitude Storytelling",
+      "meta": "Commercial • 2023"
+    },
+    {
+      "href": "/pages/socialmedia-portfolio/index.html",
+      "badge": "Vogue",
+      "image": "/assets/media/Cocktail-13.jpg",
+      "alt": "Vogue x Street",
+      "title": "Urban Fashion Week",
+      "meta": "Social Media • Edit"
+    },
+    {
+      "href": "/pages/graphics/index.html",
+      "badge": "Glitch",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPHl4zoGVV0OhCteCKaNe96c7zRP_R7-HpxKO4Dw5wYBdYpi0xp-R8xRJRqtuHKlznS_PG8GNf0lfKyMWRQPA0rnlxtU22lAi3rcBQYPrZAF8h-ZauK9N0r9kfsr-YFvvclquf-olEahn8PnJ1On17-cWsjn2pV1ggNlR3aDU1OGw11NwuEZe9TSbozxbiqssb5ewKEEWoBeZkvlTMDTMLLa5HDu_d3Gu3LbH97FQhXaNsRntqAA5J0aHHRHXciIkNRu5CQZxJjLLG",
+      "alt": "Glitch Art",
+      "title": "Experimental Visuals",
+      "meta": "VFX • Personal Project"
+    },
+    {
+      "href": "/pages/video-v2/index.html",
+      "badge": "Neon Nights",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
+      "alt": "Neon Nights",
+      "title": "Cyberpunk Music Video",
+      "meta": "Music Video • 2022"
+    },
+    {
+      "href": "/pages/video-v2/index.html",
+      "badge": "Aero",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBsPZ7YYOifS5lZzlA79ighqGP-cnf-HhfpzS0SedoLDslTbRk9ArgX-zw0xYO1hyQif6Rlwjc9-x2qI0w9lDrqFn4GchGxhUR3rj6Rj_LOg4quYR_ljXjU0QFN2USOTuoNrhvcIXvKidEgudi9iViS_XLl4AR7WNd2b_Ot2pHb7E6W0uuFk12I9L8FpLhXD2d7qJp7DfSD6Tqt7aGCU297IH3L5jVpT8IdCiByNeITEVxkxLQKHw-cGCFm8T9L26ArzSfqDZNtZbMB",
+      "alt": "Aero Dynamics",
+      "title": "Motion Graphics",
+      "meta": "Sports • Branding"
+    },
+    {
+      "href": "/pages/app-v2/index.html",
+      "badge": "Retro Tech",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7",
+      "alt": "Retro Tech",
+      "title": "Retro UI Design",
+      "meta": "UX/UI • Mobile App"
+    }
+  ],
   "more_projects_href": "/workspace.html",
-  "card_5": {
-    "href": "/pages/video-v2/index.html",
-    "badge": "Aero",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBsPZ7YYOifS5lZzlA79ighqGP-cnf-HhfpzS0SedoLDslTbRk9ArgX-zw0xYO1hyQif6Rlwjc9-x2qI0w9lDrqFn4GchGxhUR3rj6Rj_LOg4quYR_ljXjU0QFN2USOTuoNrhvcIXvKidEgudi9iViS_XLl4AR7WNd2b_Ot2pHb7E6W0uuFk12I9L8FpLhXD2d7qJp7DfSD6Tqt7aGCU297IH3L5jVpT8IdCiByNeITEVxkxLQKHw-cGCFm8T9L26ArzSfqDZNtZbMB",
-    "alt": "Aero Dynamics",
-    "title": "Motion Graphics",
-    "meta": "Sports • Branding"
-  },
-  "card_6": {
-    "href": "/pages/app-v2/index.html",
-    "badge": "Retro Tech",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7",
-    "alt": "Retro Tech",
+  "more_projects_title": "More Projects",
+  "more_projects_meta": "View complete archive",
+  "footer_contact": "Ready to collaborate? Get in touch!",
+  "seo": {
+    "seo_title": "Portfolio - Sara Ruffini | Video & Motion Design",
+    "seo_description": "Explore a curated selection of video production, motion design, and creative direction projects.",
+    "seo_image": "/assets/media/default-og-image.jpg"
+  }
+}
     "title": "Gadget Review",
     "meta": "Tech • Review Series"
   },

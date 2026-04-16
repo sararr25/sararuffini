@@ -66,3 +66,7 @@
         .animate-bounce-slow {
             animation: bounce-slow 2s infinite;
         }
+        .phone-video {
+            object-fit: cover;
+            object-position: bottom;
+        }
