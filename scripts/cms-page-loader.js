@@ -196,7 +196,9 @@
       if (allData.phones && allData.phones[index] && field) {
         var value = allData.phones[index][field];
         if (typeof value === 'string') {
-          if (node.tagName === 'VIDEO') {
+          if (node.tagName === 'IFRAME') {
+            node.setAttribute('src', normalizeReelUrl(value));
+          } else if (node.tagName === 'VIDEO') {
             node.setAttribute('src', value);
           } else {
             node.textContent = value;

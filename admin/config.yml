@@ -41,20 +41,6 @@ collections:
           - { label: Default OG Image, name: default_og_image, widget: image }
           - { label: Twitter Handle, name: twitter_handle, widget: string }
 
-  - name: media_library
-    label: 📁 Media Library
-    description: Manage all media files (images, videos)
-    folder: "assets/media"
-    media_folder: "assets/media"
-    public_folder: "/assets/media"
-    create: true
-    delete: true
-    editor:
-      preview: false
-    extension: json
-    format: json
-    frontmatter_delimiter: "---"
-
   - name: templates
     label: 📋 Content Templates
     description: Reusable project templates for quick creation
