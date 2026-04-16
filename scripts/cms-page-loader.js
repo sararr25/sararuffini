@@ -147,6 +147,27 @@
   var globalData = {};
   var globalSeoData = {};
 
+  function getPhoneItems(allData) {
+    if (Array.isArray(allData.phones) && allData.phones.length) {
+      return allData.phones;
+    }
+
+    // Backward compatibility for legacy socialmedia JSON shape.
+    var legacyPhones = [];
+    for (var i = 1; i <= 4; i += 1) {
+      var reelKey = 'phone' + i + '_reel_url';
+      var captionKey = 'phone' + i + '_caption';
+      if (typeof allData[reelKey] === 'string' || typeof allData[captionKey] === 'string') {
+        legacyPhones.push({
+          phone_video_url: typeof allData[reelKey] === 'string' ? allData[reelKey] : '',
+          phone_caption: typeof allData[captionKey] === 'string' ? allData[captionKey] : ''
+        });
+      }
+    }
+
+    return legacyPhones;
+  }
+
   function applyContent(data) {
     // Merge with global data
     var allData = Object.assign({}, globalData, data);
@@ -190,11 +211,13 @@
       }
     });
 
+    var phoneItems = getPhoneItems(allData);
+
     document.querySelectorAll('[data-cms-phone-index]').forEach(function (node) {
       var index = node.getAttribute('data-cms-phone-index');
       var field = node.getAttribute('data-cms-phone-field');
-      if (allData.phones && allData.phones[index] && field) {
-        var value = allData.phones[index][field];
+      if (phoneItems && phoneItems[index] && field) {
+        var value = phoneItems[index][field];
         if (typeof value === 'string') {
           if (node.tagName === 'IFRAME') {
             node.setAttribute('src', normalizeReelUrl(value));
