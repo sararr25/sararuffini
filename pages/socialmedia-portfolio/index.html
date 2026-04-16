@@ -113,7 +113,8 @@
 </div>
 </div>
 </div>
-<div class="w-full md:w-7/12 flex flex-col items-center gap-32 pt-4 pb-32 pl-4">
+<div class="w-full md:w-7/12 md:sticky md:top-16 md:h-[calc(100vh-4rem)] md:overflow-y-auto no-scrollbar relative">
+<div class="w-full flex flex-col items-center gap-32 pt-4 pb-56 pl-4 relative z-10">
 <div class="hidden md:flex absolute top-40 right-10 lg:right-20 z-0 flex-col items-center animate-bounce-slow opacity-80 pointer-events-none">
 <p class="font-hand text-teal font-bold text-xl rotate-6 mb-2">scroll</p>
 <svg class="w-8 h-12 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 48">
@@ -140,11 +141,8 @@
 <div class="relative w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden z-10 transition-transform hover:scale-[1.01] duration-300">
 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-32 bg-black rounded-b-xl z-30"></div>
 <div class="w-full h-full bg-black relative overflow-hidden">
-<iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen="" class="absolute inset-0 h-full w-full bg-black" data-cms-phone-index="0" data-cms-phone-field="phone_video_url" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Phone 1 reel"></iframe>
+<video class="phone-video absolute inset-0 h-full w-full bg-black" data-cms-phone-index="0" data-cms-phone-field="phone_video_url" controls playsinline preload="metadata"></video>
 </div>
-</div>
-<div class="w-[300px] border-2 border-black rounded-2xl bg-white/85 px-4 py-3 shadow-sticker">
-<p class="text-xs leading-snug text-black phone-caption" data-cms-phone-index="0" data-cms-phone-field="phone_caption">@potuschef</p>
 </div>
 </div>
 </div>
@@ -168,11 +166,8 @@
 <div class="relative w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden z-10 transition-transform hover:scale-[1.01] duration-300">
 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-32 bg-black rounded-b-xl z-30"></div>
 <div class="w-full h-full bg-black relative overflow-hidden">
-<iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen="" class="absolute inset-0 h-full w-full bg-black" data-cms-phone-index="1" data-cms-phone-field="phone_video_url" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Phone 2 reel"></iframe>
+<video class="phone-video absolute inset-0 h-full w-full bg-black" data-cms-phone-index="1" data-cms-phone-field="phone_video_url" controls playsinline preload="metadata"></video>
 </div>
-</div>
-<div class="w-[300px] border-2 border-black rounded-2xl bg-white/85 px-4 py-3 shadow-sticker">
-<p class="text-xs leading-snug text-black phone-caption" data-cms-phone-index="1" data-cms-phone-field="phone_caption">@potuschef</p>
 </div>
 </div>
 </div>
@@ -188,11 +183,8 @@
 <div class="relative w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden z-10 transition-transform hover:scale-[1.01] duration-300">
 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-32 bg-black rounded-b-xl z-30"></div>
 <div class="w-full h-full bg-black relative overflow-hidden">
-<iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen="" class="absolute inset-0 h-full w-full bg-black" data-cms-phone-index="2" data-cms-phone-field="phone_video_url" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Phone 3 reel"></iframe>
+<video class="phone-video absolute inset-0 h-full w-full bg-black" data-cms-phone-index="2" data-cms-phone-field="phone_video_url" controls playsinline preload="metadata"></video>
 </div>
-</div>
-<div class="w-[300px] border-2 border-black rounded-2xl bg-white/85 px-4 py-3 shadow-sticker">
-<p class="text-xs leading-snug text-black phone-caption" data-cms-phone-index="2" data-cms-phone-field="phone_caption">@potuschef</p>
 </div>
 </div>
 </div>
@@ -208,13 +200,20 @@
 <div class="relative w-[300px] h-[600px] bg-black rounded-[3rem] border-[8px] border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden z-10 transition-transform hover:scale-[1.01] duration-300">
 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-6 w-32 bg-black rounded-b-xl z-30"></div>
 <div class="w-full h-full bg-black relative overflow-hidden">
-<iframe allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen="" class="absolute inset-0 h-full w-full bg-black" data-cms-phone-index="3" data-cms-phone-field="phone_video_url" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Phone 4 reel"></iframe>
+<video class="phone-video absolute inset-0 h-full w-full bg-black" data-cms-phone-index="3" data-cms-phone-field="phone_video_url" controls playsinline preload="metadata"></video>
 </div>
 </div>
-<div class="w-[300px] border-2 border-black rounded-2xl bg-white/85 px-4 py-3 shadow-sticker">
-<p class="text-xs leading-snug text-black phone-caption" data-cms-phone-index="3" data-cms-phone-field="phone_caption">One more format test for stronger retention #social #ugc</p>
-<a class="mt-2 inline-flex text-xs font-bold uppercase tracking-wider text-teal hover:underline" data-cms-href="instagram_profile_url" rel="noopener noreferrer" target="_blank" data-cms-text="watch_more_text">View more on Instagram</a>
 </div>
+</div>
+</div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 bottom-8 z-30 pointer-events-none">
+<div class="w-[320px] border-2 border-black rounded-2xl bg-white/95 px-6 py-4 shadow-sticker text-center">
+<a class="inline-flex text-sm font-bold uppercase tracking-wider text-teal hover:underline pointer-events-auto" data-cms-href="instagram_profile_url" rel="noopener noreferrer" target="_blank" data-cms-text="watch_more_text">Watch more</a>
+</div>
+</div>
+<div class="md:hidden w-full flex justify-center pb-10">
+<div class="w-[320px] border-2 border-black rounded-2xl bg-white/95 px-6 py-4 shadow-sticker text-center mt-6">
+<a class="inline-flex text-sm font-bold uppercase tracking-wider text-teal hover:underline" data-cms-href="instagram_profile_url" rel="noopener noreferrer" target="_blank" data-cms-text="watch_more_text">Watch more</a>
 </div>
 </div>
 </div>

@@ -211,7 +211,7 @@ collections:
             name: phones
             widget: list
             fields:
-              - { label: Video URL, name: phone_video_url, widget: string }
+              - { label: Video File (MP4/WebM), name: phone_video_url, widget: file }
               - { label: Caption, name: phone_caption, widget: string }
           - label: SEO Settings
             name: seo
