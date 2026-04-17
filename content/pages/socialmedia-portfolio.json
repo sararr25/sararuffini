@@ -6,23 +6,23 @@
   "watch_more_text": "Watch more",
   "phones": [
     {
-      "phone_video_url": "https://www.instagram.com/reel/DUyWChFCFM3/",
+      "phone_video_url": "/assets/media/weber3.mp4",
       "phone_caption": "@potuschef"
     },
     {
-      "phone_video_url": "https://www.instagram.com/reel/DS5TqO7CCDD/",
+      "phone_video_url": "/assets/media/weber4.mp4",
       "phone_caption": "@potuschef"
     },
     {
-      "phone_video_url": "https://www.instagram.com/reel/DSc9gowCKXl/",
+      "phone_video_url": "/assets/media/weber5.mp4",
       "phone_caption": "@potuschef"
     },
     {
-      "phone_video_url": "https://www.instagram.com/reel/DTTCNXmCIlm/",
+      "phone_video_url": "/assets/media/HowTo_Updated.mp4",
       "phone_caption": "@potuschef"
     },
     {
-      "phone_video_url": "https://www.instagram.com/reel/DUqqxmXCB0r/",
+      "phone_video_url": "/assets/media/Explainer Video.mp4",
       "phone_caption": "@potuschef"
     }
   ],

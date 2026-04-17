@@ -233,14 +233,16 @@
       var iframe = container.querySelector('iframe[data-cms-phone-field="phone_video_url"]');
       var video = container.querySelector('video[data-cms-phone-field="phone_video_url"]');
 
-      if (!iframe || !video) {
+      if (!video) {
         return;
       }
 
-      if (!value) {
+      if (iframe) {
         iframe.classList.add('hidden');
         iframe.removeAttribute('src');
+      }
 
+      if (!value || !isDirectVideoUrl(value)) {
         video.classList.add('hidden');
         video.pause();
         video.removeAttribute('src');
@@ -248,22 +250,8 @@
         return;
       }
 
-      if (isDirectVideoUrl(value)) {
-        iframe.classList.add('hidden');
-        iframe.removeAttribute('src');
-
-        video.classList.remove('hidden');
-        video.setAttribute('src', value);
-        return;
-      }
-
-      video.classList.add('hidden');
-      video.pause();
-      video.removeAttribute('src');
-      video.load();
-
-      iframe.classList.remove('hidden');
-      iframe.setAttribute('src', normalizeReelUrl(value));
+      video.classList.remove('hidden');
+      video.setAttribute('src', value);
     });
 
     document.querySelectorAll('[data-cms-phone-index]').forEach(function (node) {
