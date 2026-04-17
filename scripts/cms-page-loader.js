@@ -237,12 +237,11 @@
         return;
       }
 
-      if (iframe) {
-        iframe.classList.add('hidden');
-        iframe.removeAttribute('src');
-      }
-
-      if (!value || !isDirectVideoUrl(value)) {
+      if (!value) {
+        if (iframe) {
+          iframe.classList.add('hidden');
+          iframe.removeAttribute('src');
+        }
         video.classList.add('hidden');
         video.pause();
         video.removeAttribute('src');
@@ -250,8 +249,25 @@
         return;
       }
 
-      video.classList.remove('hidden');
-      video.setAttribute('src', value);
+      if (isDirectVideoUrl(value)) {
+        if (iframe) {
+          iframe.classList.add('hidden');
+          iframe.removeAttribute('src');
+        }
+        video.classList.remove('hidden');
+        video.setAttribute('src', value);
+        return;
+      }
+
+      video.classList.add('hidden');
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+
+      if (iframe) {
+        iframe.classList.remove('hidden');
+        iframe.setAttribute('src', normalizeReelUrl(value));
+      }
     });
 
     document.querySelectorAll('[data-cms-phone-index]').forEach(function (node) {
