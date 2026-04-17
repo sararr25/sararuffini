@@ -144,6 +144,19 @@
     return parsedUrl.toString();
   }
 
+  function isDirectVideoUrl(rawUrl) {
+    if (typeof rawUrl !== 'string') {
+      return false;
+    }
+
+    var trimmedUrl = rawUrl.trim().toLowerCase();
+    if (!trimmedUrl) {
+      return false;
+    }
+
+    return /\.(mp4|webm|mov|m4v)(\?.*)?$/.test(trimmedUrl);
+  }
+
   var globalData = {};
   var globalSeoData = {};
 
@@ -213,19 +226,57 @@
 
     var phoneItems = getPhoneItems(allData);
 
+    document.querySelectorAll('[data-phone-index]').forEach(function (container) {
+      var index = Number(container.getAttribute('data-phone-index'));
+      var item = phoneItems && phoneItems[index] ? phoneItems[index] : null;
+      var value = item && typeof item.phone_video_url === 'string' ? item.phone_video_url.trim() : '';
+      var iframe = container.querySelector('iframe[data-cms-phone-field="phone_video_url"]');
+      var video = container.querySelector('video[data-cms-phone-field="phone_video_url"]');
+
+      if (!iframe || !video) {
+        return;
+      }
+
+      if (!value) {
+        iframe.classList.add('hidden');
+        iframe.removeAttribute('src');
+
+        video.classList.add('hidden');
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        return;
+      }
+
+      if (isDirectVideoUrl(value)) {
+        iframe.classList.add('hidden');
+        iframe.removeAttribute('src');
+
+        video.classList.remove('hidden');
+        video.setAttribute('src', value);
+        return;
+      }
+
+      video.classList.add('hidden');
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+
+      iframe.classList.remove('hidden');
+      iframe.setAttribute('src', normalizeReelUrl(value));
+    });
+
     document.querySelectorAll('[data-cms-phone-index]').forEach(function (node) {
-      var index = node.getAttribute('data-cms-phone-index');
       var field = node.getAttribute('data-cms-phone-field');
+      if (field === 'phone_video_url') {
+        return;
+      }
+
+      var index = node.getAttribute('data-cms-phone-index');
       if (phoneItems && phoneItems[index] && field) {
         var value = phoneItems[index][field];
         if (typeof value === 'string') {
-          if (node.tagName === 'IFRAME') {
-            node.setAttribute('src', normalizeReelUrl(value));
-          } else if (node.tagName === 'VIDEO') {
-            node.setAttribute('src', value);
-          } else {
-            node.textContent = value;
-          }
+          node.textContent = value;
         }
       }
     });

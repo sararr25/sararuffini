@@ -212,14 +212,15 @@ collections:
             widget: list
             fields:
               - { label: Video File (MP4/WebM), name: phone_video_url, widget: file }
-              - { label: Caption, name: phone_caption, widget: string }
+              - { label: Caption, name: phone_caption, widget: string, required: false }
           - label: SEO Settings
             name: seo
             widget: object
+            required: false
             fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
+              - { label: Page Title, name: seo_title, widget: string, required: false }
+              - { label: Meta Description, name: seo_description, widget: text, required: false }
+              - { label: Preview Image, name: seo_image, widget: image, required: false }
 
       - label: Homepage
         name: homepage
