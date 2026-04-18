@@ -126,7 +126,7 @@
 
       var instagramMatch = path.match(/\/(reel|p|tv)\/([^/?#]+)/);
       if (instagramMatch) {
-        return 'https://www.instagram.com/' + instagramMatch[1] + '/' + instagramMatch[2] + '/embed';
+        return 'https://www.instagram.com/' + instagramMatch[1] + '/' + instagramMatch[2] + '/embed?autoplay=1';
       }
     }
 
