@@ -61,6 +61,15 @@ collections:
           - { label: SEO Title, name: seo_title, widget: string }
           - { label: SEO Description, name: seo_description, widget: text }
           - { label: SEO Image, name: seo_image, widget: image }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
 
       - label: Graphic Design Template
         name: graphics_template
@@ -73,6 +82,15 @@ collections:
           - { label: SEO Title, name: seo_title, widget: string }
           - { label: SEO Description, name: seo_description, widget: text }
           - { label: SEO Image, name: seo_image, widget: image }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
 
       - label: App Design Template
         name: app_template
@@ -87,6 +105,15 @@ collections:
           - { label: SEO Title, name: seo_title, widget: string }
           - { label: SEO Description, name: seo_description, widget: text }
           - { label: SEO Image, name: seo_image, widget: image }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
 
   - name: project_pages
     label: Project Pages
@@ -105,6 +132,15 @@ collections:
           - { label: Hero Timecode, name: hero_timecode, widget: string }
           - { label: Intro Title, name: intro_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -128,6 +164,15 @@ collections:
           - { label: Hero Timecode, name: hero_timecode, widget: string }
           - { label: Intro Title, name: intro_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -150,6 +195,15 @@ collections:
           - { label: Center Phone Image, name: hero_image_center, widget: image }
           - { label: Phase 2 Line 1, name: phase2_title_main, widget: string }
           - { label: Phase 2 Accent, name: phase2_title_accent, widget: string }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -173,6 +227,15 @@ collections:
           - { label: Insight 3 Title, name: insight_3_title, widget: string }
           - { label: Insight 3 Text, name: insight_3_text, widget: text }
           - { label: Hero Note, name: hero_note, widget: string }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -190,6 +253,15 @@ collections:
           - { label: Polaroid Image, name: hero_image_polaroid, widget: image }
           - { label: Detail Image, name: hero_image_detail, widget: image }
           - { label: Wide Image, name: hero_image_wide, widget: image }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -205,6 +277,13 @@ collections:
           - { label: Main Title, name: hero_title, widget: string }
           - { label: Intro Text, name: intro_text, widget: text }
           - { label: Technical Text, name: technical_text, widget: text }
+          - { label: Technical Badge 1, name: technical_badge_1, widget: string, required: false }
+          - { label: Technical Badge 2, name: technical_badge_2, widget: string, required: false }
+          - { label: Technical Badge 3, name: technical_badge_3, widget: string, required: false }
+          - { label: Phone Note 1 (HTML), name: phone_note_1_html, widget: text, required: false }
+          - { label: Phone Note 2 (HTML), name: phone_note_2_html, widget: text, required: false }
+          - { label: Phone Note 3 (HTML), name: phone_note_3_html, widget: text, required: false }
+          - { label: Phone Note 4 (HTML), name: phone_note_4_html, widget: text, required: false }
           - { label: Instagram Profile URL, name: instagram_profile_url, widget: string }
           - { label: Watch More Text, name: watch_more_text, widget: string }
           - label: Phones
@@ -213,6 +292,15 @@ collections:
             fields:
               - { label: Video File (MP4/WebM), name: phone_video_url, widget: file }
               - { label: Caption, name: phone_caption, widget: string, required: false }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -307,6 +395,15 @@ collections:
           - { label: Teaser Link URL, name: teaser_link_href, widget: string }
           - { label: Marquee Text, name: marquee_text, widget: text }
           - { label: Footer Contact Line, name: footer_contact, widget: string }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -356,6 +453,15 @@ collections:
           - { label: More Card 3 Title, name: more_card_3_title, widget: string }
           - { label: More Card 3 Text, name: more_card_3_text, widget: text }
           - { label: Footer Contact Line, name: footer_contact, widget: string }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object
@@ -386,6 +492,15 @@ collections:
           - { label: More Projects Title, name: more_projects_title, widget: string }
           - { label: More Projects Meta, name: more_projects_meta, widget: string }
           - { label: Footer Contact Line, name: footer_contact, widget: string }
+          - label: Advanced Overrides
+            name: selector_overrides
+            widget: list
+            required: false
+            summary: "{{fields.selector}} -> {{fields.type}}"
+            fields:
+              - { label: CSS Selector, name: selector, widget: string }
+              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
+              - { label: Valore, name: value, widget: text, required: false }
           - label: SEO Settings
             name: seo
             widget: object

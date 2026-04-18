@@ -181,6 +181,64 @@
     return legacyPhones;
   }
 
+  function applySelectorOverrides(allData) {
+    if (!Array.isArray(allData.selector_overrides)) {
+      return;
+    }
+
+    allData.selector_overrides.forEach(function (entry) {
+      if (!entry || typeof entry.selector !== 'string') {
+        return;
+      }
+
+      var selector = entry.selector.trim();
+      var type = typeof entry.type === 'string' ? entry.type.trim().toLowerCase() : '';
+      var value = typeof entry.value === 'string' ? entry.value : '';
+
+      if (!selector || !type) {
+        return;
+      }
+
+      var nodes;
+      try {
+        nodes = document.querySelectorAll(selector);
+      } catch (err) {
+        return;
+      }
+
+      nodes.forEach(function (node) {
+        if (type === 'text') {
+          node.textContent = value;
+          return;
+        }
+
+        if (type === 'html') {
+          node.innerHTML = value;
+          return;
+        }
+
+        if (type === 'src') {
+          node.setAttribute('src', value);
+          return;
+        }
+
+        if (type === 'href') {
+          node.setAttribute('href', value);
+          return;
+        }
+
+        if (type === 'alt') {
+          node.setAttribute('alt', value);
+          return;
+        }
+
+        if (type === 'bg') {
+          node.style.backgroundImage = 'url("' + value.replace(/"/g, '\\"') + '")';
+        }
+      });
+    });
+  }
+
   function applyContent(data) {
     // Merge with global data
     var allData = Object.assign({}, globalData, data);
@@ -284,6 +342,9 @@
         }
       }
     });
+
+    // Last pass: optional direct selector overrides from CMS.
+    applySelectorOverrides(allData);
   }
 
   function init() {
