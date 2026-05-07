@@ -1,12 +1,18 @@
 {
+  "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
+  "hero_title_main": "Weber Cooking Collection",
+  "intro_title": "Weber Cooking Collection",
+  "selector_overrides": [],
+  "hero_title_highlight": "Weber Cooking Collection",
+  "hero_meta": "video editing",
   "hero_label": "Featured Collaboration",
-  "hero_years": "2021 — 2023",
-  "hero_title_main": "vertex",
-  "hero_title_highlight": "dynamics",
-  "hero_role": "Role: In-house Video Lead",
-  "hero_meta": "Brand Strategy & Direction",
-  "hero_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDzfRGLNI0P4-tIQUc9euHrbuYQVG1WdiJVL4qLToXap1RtDOspJEG6aXz0DZ-DJx8Sio1mXXO_3kRem8NBFvGUE0Q5Az3S45ujOxFFiq8omsyptCmZvS_BVok5k9rFhJIDtKRAsi_vg6CO9Ia9d0ePKbfLVJyGa8yGQFMcgoyFgeqPXXjF4YDk89MLOOuI0ygfOfDvfvg6y15rR09UfIz6kCRnh4y00tRgpyiKfOdiezGIgJ4cHdvbxH2Pyl3EDVuDm84ykHptyXxB",
-  "hero_timecode": "01:45 / Collaboration Reel",
-  "intro_title": "vertex dynamics",
-  "intro_text": "Leading the visual narrative for Vertex's global rebrand. From product launches to internal culture docs, I established a cohesive motion language that defined their digital presence for two years."
+  "hero_years": "2022",
+  "hero_image": "/assets/media/pizza2.png",
+  "hero_role": "Role: In-house Video Editor",
+  "seo": {
+    "seo_title": "weber collection",
+    "seo_description": "weber collection videos",
+    "seo_image": "/assets/media/pizza2.png"
+  },
+  "hero_timecode": "20:15"
 }
