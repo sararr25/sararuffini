@@ -1,510 +1,2199 @@
+---
 backend:
   name: github
   repo: sararr25/sararuffini
   branch: main
   base_url: https://decap-proxy.sararuffini25.workers.dev
   auth_endpoint: auth
-
-media_folder: "assets/media"
+media_folder: assets/media
 public_folder: "/assets/media"
 local_backend: true
-locale: "it"
+locale: it
 publish_mode: simple
-
 collections:
-  - name: site_settings
-    label: 🌐 Site Settings
-    description: Global site configuration
-    files:
-      - label: Global Navigation & Footer
-        name: global
-        file: content/global.json
-        editor:
-          preview: false
-        fields:
-          - { label: Nav - Home, name: nav_home, widget: string, default: "Home" }
-          - { label: Nav - Projects, name: nav_projects, widget: string, default: "Projects" }
-          - { label: Nav - About, name: nav_about, widget: string, default: "About" }
-          - { label: Nav - Contact, name: nav_contact, widget: string, default: "Contact" }
-          - { label: Footer Contact Email, name: footer_email, widget: string }
-          - { label: Footer Contact Phone, name: footer_phone, widget: string }
-          - { label: Footer Contact Location, name: footer_location, widget: string }
-
-      - label: SEO Defaults
-        name: seo_defaults
-        file: content/global-seo.json
-        editor:
-          preview: false
-        fields:
-          - { label: Site Title, name: site_title, widget: string }
-          - { label: Site Description, name: site_description, widget: text }
-          - { label: Default OG Image, name: default_og_image, widget: image }
-          - { label: Twitter Handle, name: twitter_handle, widget: string }
-
-  - name: templates
-    label: 📋 Content Templates
-    description: Reusable project templates for quick creation
-    files:
-      - label: Video Project Template
-        name: video_template
-        file: content/templates/video-template.json
-        fields:
-          - { label: Template Name, name: template_name, widget: string, default: "Video Project" }
-          - { label: Hero Label, name: hero_label, widget: string }
-          - { label: Years, name: hero_years, widget: string }
-          - { label: Main Title, name: hero_title_main, widget: string }
-          - { label: Highlight Word, name: hero_title_highlight, widget: string }
-          - { label: Role, name: hero_role, widget: string }
-          - { label: Meta Info, name: hero_meta, widget: string }
-          - { label: Hero Image, name: hero_image, widget: image }
-          - { label: Intro Text, name: intro_text, widget: text }
-          - { label: SEO Title, name: seo_title, widget: string }
-          - { label: SEO Description, name: seo_description, widget: text }
-          - { label: SEO Image, name: seo_image, widget: image }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-
-      - label: Graphic Design Template
-        name: graphics_template
-        file: content/templates/graphics-template.json
-        fields:
-          - { label: Template Name, name: template_name, widget: string, default: "Graphic Design" }
-          - { label: Campaign Title, name: campaign_title, widget: string }
-          - { label: Campaign Description, name: campaign_text, widget: text }
-          - { label: Hero Image, name: hero_image_polaroid, widget: image }
-          - { label: SEO Title, name: seo_title, widget: string }
-          - { label: SEO Description, name: seo_description, widget: text }
-          - { label: SEO Image, name: seo_image, widget: image }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-
-      - label: App Design Template
-        name: app_template
-        file: content/templates/app-template.json
-        fields:
-          - { label: Template Name, name: template_name, widget: string, default: "App Design" }
-          - { label: Phase Label, name: hero_phase, widget: string }
-          - { label: Main Title, name: hero_title_main_line1, widget: string }
-          - { label: Highlight Word, name: hero_title_accent, widget: string }
-          - { label: Intro Text, name: hero_intro, widget: text }
-          - { label: Hero Image, name: hero_image_left, widget: image }
-          - { label: SEO Title, name: seo_title, widget: string }
-          - { label: SEO Description, name: seo_description, widget: text }
-          - { label: SEO Image, name: seo_image, widget: image }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-
-  - name: project_pages
-    label: Project Pages
-    files:
-      - label: Video Page V1
-        name: video_v1
-        file: content/pages/video-v1.json
-        fields:
-          - { label: Hero Label, name: hero_label, widget: string }
-          - { label: Hero Years, name: hero_years, widget: string }
-          - { label: Hero Title Main, name: hero_title_main, widget: string }
-          - { label: Hero Title Highlight, name: hero_title_highlight, widget: string }
-          - { label: Hero Role, name: hero_role, widget: string }
-          - { label: Hero Meta, name: hero_meta, widget: string }
-          - { label: Hero Image, name: hero_image, widget: image }
-          - { label: Hero Timecode, name: hero_timecode, widget: string }
-          - { label: Intro Title, name: intro_title, widget: string }
-          - { label: Intro Text, name: intro_text, widget: text }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: Video Page V2
-        name: video_v2
-        file: content/pages/video-v2.json
-        fields:
-          - { label: Hero Label, name: hero_label, widget: string }
-          - { label: Hero Years, name: hero_years, widget: string }
-          - { label: Hero Title Main, name: hero_title_main, widget: string }
-          - { label: Hero Title Highlight, name: hero_title_highlight, widget: string }
-          - { label: Hero Role, name: hero_role, widget: string }
-          - { label: Hero Meta, name: hero_meta, widget: string }
-          - { label: Hero Image, name: hero_image, widget: image }
-          - { label: Hero Badge, name: hero_badge, widget: string }
-          - { label: Hero Timecode, name: hero_timecode, widget: string }
-          - { label: Intro Title, name: intro_title, widget: string }
-          - { label: Intro Text, name: intro_text, widget: text }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: App Page V1
-        name: app_v1
-        file: content/pages/app-v1.json
-        fields:
-          - { label: Phase Label, name: hero_phase, widget: string }
-          - { label: Hero Line 1, name: hero_title_main_line1, widget: string }
-          - { label: Hero Accent, name: hero_title_accent, widget: string }
-          - { label: Hero Intro, name: hero_intro, widget: text }
-          - { label: Hero Note, name: hero_note, widget: string }
-          - { label: Left Phone Image (background), name: hero_image_left, widget: image }
-          - { label: Right Phone Image, name: hero_image_right, widget: image }
-          - { label: Center Phone Image, name: hero_image_center, widget: image }
-          - { label: Phase 2 Line 1, name: phase2_title_main, widget: string }
-          - { label: Phase 2 Accent, name: phase2_title_accent, widget: string }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: App Page V2
-        name: app_v2
-        file: content/pages/app-v2.json
-        fields:
-          - { label: Phase Label, name: hero_phase, widget: string }
-          - { label: Hero Line 1, name: hero_title_main_line1, widget: string }
-          - { label: Hero Accent, name: hero_title_accent, widget: string }
-          - { label: Hero Intro, name: hero_intro, widget: text }
-          - { label: Insight 1 Title, name: insight_1_title, widget: string }
-          - { label: Insight 1 Text, name: insight_1_text, widget: text }
-          - { label: Insight 2 Title, name: insight_2_title, widget: string }
-          - { label: Insight 2 Text, name: insight_2_text, widget: text }
-          - { label: Insight 3 Title, name: insight_3_title, widget: string }
-          - { label: Insight 3 Text, name: insight_3_text, widget: text }
-          - { label: Hero Note, name: hero_note, widget: string }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: Graphics Page
-        name: graphics
-        file: content/pages/graphics.json
-        fields:
-          - { label: Campaign Title, name: campaign_title, widget: string }
-          - { label: Campaign Text, name: campaign_text, widget: text }
-          - { label: Polaroid Image, name: hero_image_polaroid, widget: image }
-          - { label: Detail Image, name: hero_image_detail, widget: image }
-          - { label: Wide Image, name: hero_image_wide, widget: image }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: Social Media Page
-        name: socialmedia_portfolio
-        file: content/pages/socialmedia-portfolio.json
-        fields:
-          - { label: Main Title, name: hero_title, widget: string }
-          - { label: Intro Text, name: intro_text, widget: text }
-          - { label: Technical Text, name: technical_text, widget: text }
-          - { label: Technical Badge 1, name: technical_badge_1, widget: string, required: false }
-          - { label: Technical Badge 2, name: technical_badge_2, widget: string, required: false }
-          - { label: Technical Badge 3, name: technical_badge_3, widget: string, required: false }
-          - { label: Phone Note 1 (HTML), name: phone_note_1_html, widget: text, required: false }
-          - { label: Phone Note 2 (HTML), name: phone_note_2_html, widget: text, required: false }
-          - { label: Phone Note 3 (HTML), name: phone_note_3_html, widget: text, required: false }
-          - { label: Phone Note 4 (HTML), name: phone_note_4_html, widget: text, required: false }
-          - { label: Instagram Profile URL, name: instagram_profile_url, widget: string }
-          - { label: Watch More Text, name: watch_more_text, widget: string }
-          - label: Phones
-            name: phones
-            widget: list
-            fields:
-              - { label: Video File (MP4/WebM), name: phone_video_url, widget: file }
-              - { label: Caption, name: phone_caption, widget: string, required: false }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            required: false
-            fields:
-              - { label: Page Title, name: seo_title, widget: string, required: false }
-              - { label: Meta Description, name: seo_description, widget: text, required: false }
-              - { label: Preview Image, name: seo_image, widget: image, required: false }
-
-      - label: Homepage
-        name: homepage
-        file: content/pages/homepage.json
-        fields:
-          - { label: Hero Line 1, name: hero_line_1, widget: string }
-          - { label: Hero Line 2 Prefix, name: hero_line_2_prefix, widget: string }
-          - { label: Hero Highlight Word, name: hero_word_highlight, widget: string }
-          - { label: Showreel Label, name: showreel_label, widget: string }
-          - { label: Showreel Embed URL (Vimeo), name: showreel_embed_url, widget: string }
-          - { label: Showreel Iframe Title, name: showreel_title, widget: string }
-          - { label: Featured Title, name: featured_title, widget: string }
-          - { label: Featured Subtitle, name: featured_subtitle, widget: string }
-          - { label: Collage Word Top, name: collage_word_top, widget: string }
-          - { label: Collage Word Bottom, name: collage_word_bottom, widget: string }
-          - label: Featured TV
-            name: featured_tv
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-          - label: Featured Polaroid
-            name: featured_polaroid
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Caption, name: caption, widget: string }
-          - label: Featured Torn Card
-            name: featured_torn
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-          - label: Featured Grill
-            name: featured_grill
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-          - label: Featured Window
-            name: featured_window
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-              - { label: Window Title, name: window_title, widget: string }
-              - { label: Window Button Text, name: window_button, widget: string }
-          - label: Featured DNA
-            name: featured_dna
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-          - label: Featured Round
-            name: featured_round
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-          - label: Featured Card
-            name: featured_card
-            widget: object
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Label, name: label, widget: string }
-          - { label: Teaser Text (HTML Allowed), name: teaser_text_html, widget: text }
-          - { label: Teaser Link Text, name: teaser_link_text, widget: string }
-          - { label: Teaser Link URL, name: teaser_link_href, widget: string }
-          - { label: Marquee Text, name: marquee_text, widget: text }
-          - { label: Footer Contact Line, name: footer_contact, widget: string }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: About Page
-        name: about
-        file: content/pages/about.json
-        fields:
-          - { label: Hero Line 1, name: hero_title_line1, widget: string }
-          - { label: Hero Highlight Text, name: hero_title_highlight, widget: string }
-          - { label: Intro Paragraph 1 (HTML Allowed), name: intro_paragraph_1_html, widget: text }
-          - { label: Intro Paragraph 2 (HTML Allowed), name: intro_paragraph_2_html, widget: text }
-          - { label: Portrait Image, name: portrait_image, widget: image }
-          - { label: Portrait Alt, name: portrait_alt, widget: string }
-          - { label: Console Sticker Image, name: decor_console_image, widget: image }
-          - { label: Console Sticker Alt, name: decor_console_alt, widget: string }
-          - { label: Camera Sticker Image, name: decor_camera_image, widget: image }
-          - { label: Camera Sticker Alt, name: decor_camera_alt, widget: string }
-          - { label: CTA Text, name: cta_text, widget: string }
-          - { label: CTA Link, name: cta_href, widget: string }
-          - { label: Drink Note, name: drink_note, widget: string }
-          - { label: Drink Image, name: drink_image, widget: image }
-          - { label: Drink Image Alt, name: drink_image_alt, widget: string }
-          - { label: Timeline 1 Years, name: timeline_1_years, widget: string }
-          - { label: Timeline 1 Role, name: timeline_1_role, widget: string }
-          - { label: Timeline 1 Company, name: timeline_1_company, widget: string }
-          - { label: Timeline 1 Description, name: timeline_1_description, widget: text }
-          - { label: Timeline 2 Years, name: timeline_2_years, widget: string }
-          - { label: Timeline 2 Role, name: timeline_2_role, widget: string }
-          - { label: Timeline 2 Company, name: timeline_2_company, widget: string }
-          - { label: Timeline 2 Description, name: timeline_2_description, widget: text }
-          - { label: Timeline 3 Years, name: timeline_3_years, widget: string }
-          - { label: Timeline 3 Role, name: timeline_3_role, widget: string }
-          - { label: Timeline 3 Company, name: timeline_3_company, widget: string }
-          - { label: Timeline 3 Description, name: timeline_3_description, widget: text }
-          - { label: Download CV Text, name: download_cv_text, widget: string }
-          - { label: Download CV Link, name: download_cv_href, widget: string }
-          - { label: More About Heading, name: more_about_heading, widget: string }
-          - { label: More Card 1 Title, name: more_card_1_title, widget: string }
-          - { label: More Card 1 Text, name: more_card_1_text, widget: text }
-          - { label: More Card 2 Title, name: more_card_2_title, widget: string }
-          - { label: More Card 2 Text, name: more_card_2_text, widget: text }
-          - { label: More Card 3 Title, name: more_card_3_title, widget: string }
-          - { label: More Card 3 Text, name: more_card_3_text, widget: text }
-          - { label: Footer Contact Line, name: footer_contact, widget: string }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
-
-      - label: Portfolio Main Page
-        name: portfolio_main
-        file: content/pages/portfolio-main.json
-        fields:
-          - { label: Heading Line 1, name: heading_line1, widget: string }
-          - { label: Heading Line 2, name: heading_line2, widget: string }
-          - { label: Intro Text (HTML Allowed), name: intro_text_html, widget: text }
-          - label: Portfolio Gallery (Drag to Reorder)
-            name: gallery
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Link, name: href, widget: string }
-              - { label: Badge, name: badge, widget: string }
-              - { label: Image, name: image, widget: image }
-              - { label: Alt Text, name: alt, widget: string }
-              - { label: Title, name: title, widget: string }
-              - { label: Meta, name: meta, widget: string }
-          - { label: More Projects Link, name: more_projects_href, widget: string }
-          - { label: More Projects Title, name: more_projects_title, widget: string }
-          - { label: More Projects Meta, name: more_projects_meta, widget: string }
-          - { label: Footer Contact Line, name: footer_contact, widget: string }
-          - label: Advanced Overrides
-            name: selector_overrides
-            widget: list
-            required: false
-            summary: "{{fields.selector}} -> {{fields.type}}"
-            fields:
-              - { label: CSS Selector, name: selector, widget: string }
-              - { label: Tipo Modifica, name: type, widget: select, options: ["text", "html", "src", "href", "alt", "bg"] }
-              - { label: Valore, name: value, widget: text, required: false }
-          - label: SEO Settings
-            name: seo
-            widget: object
-            fields:
-              - { label: Page Title, name: seo_title, widget: string }
-              - { label: Meta Description, name: seo_description, widget: text }
-              - { label: Preview Image, name: seo_image, widget: image }
+- name: site_settings
+  label: "\U0001F310 Site Settings"
+  description: Global site configuration
+  files:
+  - label: Global Navigation & Footer
+    name: global
+    file: content/global.json
+    editor:
+      preview: false
+    fields:
+    - label: Nav - Home
+      name: nav_home
+      widget: string
+      default: Home
+      required: false
+    - label: Nav - Projects
+      name: nav_projects
+      widget: string
+      default: Projects
+      required: false
+    - label: Nav - About
+      name: nav_about
+      widget: string
+      default: About
+      required: false
+    - label: Nav - Contact
+      name: nav_contact
+      widget: string
+      default: Contact
+      required: false
+    - label: Footer Contact Email
+      name: footer_email
+      widget: string
+      required: false
+    - label: Footer Contact Phone
+      name: footer_phone
+      widget: string
+      required: false
+    - label: Footer Contact Location
+      name: footer_location
+      widget: string
+      required: false
+  - label: SEO Defaults
+    name: seo_defaults
+    file: content/global-seo.json
+    editor:
+      preview: false
+    fields:
+    - label: Site Title
+      name: site_title
+      widget: string
+      required: false
+    - label: Site Description
+      name: site_description
+      widget: text
+      required: false
+    - label: Default OG Image
+      name: default_og_image
+      widget: image
+      required: false
+    - label: Twitter Handle
+      name: twitter_handle
+      widget: string
+      required: false
+- name: templates
+  label: "\U0001F4CB Content Templates"
+  description: Reusable project templates for quick creation
+  files:
+  - label: Video Project Template
+    name: video_template
+    file: content/templates/video-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: Video Project
+      required: false
+    - label: Hero Label
+      name: hero_label
+      widget: string
+      required: false
+    - label: Years
+      name: hero_years
+      widget: string
+      required: false
+    - label: Main Title
+      name: hero_title_main
+      widget: string
+      required: false
+    - label: Highlight Word
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Role
+      name: hero_role
+      widget: string
+      required: false
+    - label: Meta Info
+      name: hero_meta
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: SEO Title
+      name: seo_title
+      widget: string
+      required: false
+    - label: SEO Description
+      name: seo_description
+      widget: text
+      required: false
+    - label: SEO Image
+      name: seo_image
+      widget: image
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+  - label: Graphic Design Template
+    name: graphics_template
+    file: content/templates/graphics-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: Graphic Design
+      required: false
+    - label: Campaign Title
+      name: campaign_title
+      widget: string
+      required: false
+    - label: Campaign Description
+      name: campaign_text
+      widget: text
+      required: false
+    - label: Hero Image
+      name: hero_image_polaroid
+      widget: image
+      required: false
+    - label: SEO Title
+      name: seo_title
+      widget: string
+      required: false
+    - label: SEO Description
+      name: seo_description
+      widget: text
+      required: false
+    - label: SEO Image
+      name: seo_image
+      widget: image
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+  - label: App Design Template
+    name: app_template
+    file: content/templates/app-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: App Design
+      required: false
+    - label: Phase Label
+      name: hero_phase
+      widget: string
+      required: false
+    - label: Main Title
+      name: hero_title_main_line1
+      widget: string
+      required: false
+    - label: Highlight Word
+      name: hero_title_accent
+      widget: string
+      required: false
+    - label: Intro Text
+      name: hero_intro
+      widget: text
+      required: false
+    - label: Hero Image
+      name: hero_image_left
+      widget: image
+      required: false
+    - label: SEO Title
+      name: seo_title
+      widget: string
+      required: false
+    - label: SEO Description
+      name: seo_description
+      widget: text
+      required: false
+    - label: SEO Image
+      name: seo_image
+      widget: image
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+- name: project_pages
+  label: Project Pages
+  files:
+  - label: Video Page V1
+    name: video_v1
+    file: content/pages/video-v1.json
+    fields:
+    - label: Hero Label
+      name: hero_label
+      widget: string
+      required: false
+    - label: Hero Years
+      name: hero_years
+      widget: string
+      required: false
+    - label: Hero Title Main
+      name: hero_title_main
+      widget: string
+      required: false
+    - label: Hero Title Highlight
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Hero Role
+      name: hero_role
+      widget: string
+      required: false
+    - label: Hero Meta
+      name: hero_meta
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Timecode
+      name: hero_timecode
+      widget: string
+      required: false
+    - label: Intro Title
+      name: intro_title
+      widget: string
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Video Page V2
+    name: video_v2
+    file: content/pages/video-v2.json
+    fields:
+    - label: Hero Label
+      name: hero_label
+      widget: string
+      required: false
+    - label: Hero Years
+      name: hero_years
+      widget: string
+      required: false
+    - label: Hero Title Main
+      name: hero_title_main
+      widget: string
+      required: false
+    - label: Hero Title Highlight
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Hero Role
+      name: hero_role
+      widget: string
+      required: false
+    - label: Hero Meta
+      name: hero_meta
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Badge
+      name: hero_badge
+      widget: string
+      required: false
+    - label: Hero Timecode
+      name: hero_timecode
+      widget: string
+      required: false
+    - label: Intro Title
+      name: intro_title
+      widget: string
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: App Page V1
+    name: app_v1
+    file: content/pages/app-v1.json
+    fields:
+    - label: Phase Label
+      name: hero_phase
+      widget: string
+      required: false
+    - label: Hero Line 1
+      name: hero_title_main_line1
+      widget: string
+      required: false
+    - label: Hero Accent
+      name: hero_title_accent
+      widget: string
+      required: false
+    - label: Hero Intro
+      name: hero_intro
+      widget: text
+      required: false
+    - label: Hero Note
+      name: hero_note
+      widget: string
+      required: false
+    - label: Left Phone Image (background)
+      name: hero_image_left
+      widget: image
+      required: false
+    - label: Right Phone Image
+      name: hero_image_right
+      widget: image
+      required: false
+    - label: Center Phone Image
+      name: hero_image_center
+      widget: image
+      required: false
+    - label: Phase 2 Line 1
+      name: phase2_title_main
+      widget: string
+      required: false
+    - label: Phase 2 Accent
+      name: phase2_title_accent
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: App Page V2
+    name: app_v2
+    file: content/pages/app-v2.json
+    fields:
+    - label: Phase Label
+      name: hero_phase
+      widget: string
+      required: false
+    - label: Hero Line 1
+      name: hero_title_main_line1
+      widget: string
+      required: false
+    - label: Hero Accent
+      name: hero_title_accent
+      widget: string
+      required: false
+    - label: Hero Intro
+      name: hero_intro
+      widget: text
+      required: false
+    - label: Insight 1 Title
+      name: insight_1_title
+      widget: string
+      required: false
+    - label: Insight 1 Text
+      name: insight_1_text
+      widget: text
+      required: false
+    - label: Insight 2 Title
+      name: insight_2_title
+      widget: string
+      required: false
+    - label: Insight 2 Text
+      name: insight_2_text
+      widget: text
+      required: false
+    - label: Insight 3 Title
+      name: insight_3_title
+      widget: string
+      required: false
+    - label: Insight 3 Text
+      name: insight_3_text
+      widget: text
+      required: false
+    - label: Hero Note
+      name: hero_note
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Graphics Page
+    name: graphics
+    file: content/pages/graphics.json
+    fields:
+    - label: Campaign Title
+      name: campaign_title
+      widget: string
+      required: false
+    - label: Campaign Text
+      name: campaign_text
+      widget: text
+      required: false
+    - label: Polaroid Image
+      name: hero_image_polaroid
+      widget: image
+      required: false
+    - label: Detail Image
+      name: hero_image_detail
+      widget: image
+      required: false
+    - label: Wide Image
+      name: hero_image_wide
+      widget: image
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Social Media Page
+    name: socialmedia_portfolio
+    file: content/pages/socialmedia-portfolio.json
+    fields:
+    - label: Main Title
+      name: hero_title
+      widget: string
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: Technical Text
+      name: technical_text
+      widget: text
+      required: false
+    - label: Technical Badge 1
+      name: technical_badge_1
+      widget: string
+      required: false
+    - label: Technical Badge 2
+      name: technical_badge_2
+      widget: string
+      required: false
+    - label: Technical Badge 3
+      name: technical_badge_3
+      widget: string
+      required: false
+    - label: Phone Note 1 (HTML)
+      name: phone_note_1_html
+      widget: text
+      required: false
+    - label: Phone Note 2 (HTML)
+      name: phone_note_2_html
+      widget: text
+      required: false
+    - label: Phone Note 3 (HTML)
+      name: phone_note_3_html
+      widget: text
+      required: false
+    - label: Phone Note 4 (HTML)
+      name: phone_note_4_html
+      widget: text
+      required: false
+    - label: Instagram Profile URL
+      name: instagram_profile_url
+      widget: string
+      required: false
+    - label: Watch More Text
+      name: watch_more_text
+      widget: string
+      required: false
+    - label: Phones
+      name: phones
+      widget: list
+      fields:
+      - label: Video File (MP4/WebM)
+        name: phone_video_url
+        widget: file
+        required: false
+      - label: Caption
+        name: phone_caption
+        widget: string
+        required: false
+      required: false
+      allow_add: true
+      allow_delete: true
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Homepage
+    name: homepage
+    file: content/pages/homepage.json
+    fields:
+    - label: Hero Line 1
+      name: hero_line_1
+      widget: string
+      required: false
+    - label: Hero Line 2 Prefix
+      name: hero_line_2_prefix
+      widget: string
+      required: false
+    - label: Hero Highlight Word
+      name: hero_word_highlight
+      widget: string
+      required: false
+    - label: Showreel Label
+      name: showreel_label
+      widget: string
+      required: false
+    - label: Showreel Embed URL (Vimeo)
+      name: showreel_embed_url
+      widget: string
+      required: false
+    - label: Showreel Iframe Title
+      name: showreel_title
+      widget: string
+      required: false
+    - label: Featured Title
+      name: featured_title
+      widget: string
+      required: false
+    - label: Featured Subtitle
+      name: featured_subtitle
+      widget: string
+      required: false
+    - label: Collage Word Top
+      name: collage_word_top
+      widget: string
+      required: false
+    - label: Collage Word Bottom
+      name: collage_word_bottom
+      widget: string
+      required: false
+    - label: Featured TV
+      name: featured_tv
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Polaroid
+      name: featured_polaroid
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Caption
+        name: caption
+        widget: string
+        required: false
+      required: false
+    - label: Featured Torn Card
+      name: featured_torn
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Grill
+      name: featured_grill
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Window
+      name: featured_window
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Window Title
+        name: window_title
+        widget: string
+        required: false
+      - label: Window Button Text
+        name: window_button
+        widget: string
+        required: false
+      required: false
+    - label: Featured DNA
+      name: featured_dna
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Round
+      name: featured_round
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Card
+      name: featured_card
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Teaser Text (HTML Allowed)
+      name: teaser_text_html
+      widget: text
+      required: false
+    - label: Teaser Link Text
+      name: teaser_link_text
+      widget: string
+      required: false
+    - label: Teaser Link URL
+      name: teaser_link_href
+      widget: string
+      required: false
+    - label: Marquee Text
+      name: marquee_text
+      widget: text
+      required: false
+    - label: Footer Contact Line
+      name: footer_contact
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: About Page
+    name: about
+    file: content/pages/about.json
+    fields:
+    - label: Hero Line 1
+      name: hero_title_line1
+      widget: string
+      required: false
+    - label: Hero Highlight Text
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Intro Paragraph 1 (HTML Allowed)
+      name: intro_paragraph_1_html
+      widget: text
+      required: false
+    - label: Intro Paragraph 2 (HTML Allowed)
+      name: intro_paragraph_2_html
+      widget: text
+      required: false
+    - label: Portrait Image
+      name: portrait_image
+      widget: image
+      required: false
+    - label: Portrait Alt
+      name: portrait_alt
+      widget: string
+      required: false
+    - label: Console Sticker Image
+      name: decor_console_image
+      widget: image
+      required: false
+    - label: Console Sticker Alt
+      name: decor_console_alt
+      widget: string
+      required: false
+    - label: Camera Sticker Image
+      name: decor_camera_image
+      widget: image
+      required: false
+    - label: Camera Sticker Alt
+      name: decor_camera_alt
+      widget: string
+      required: false
+    - label: CTA Text
+      name: cta_text
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: Drink Note
+      name: drink_note
+      widget: string
+      required: false
+    - label: Drink Image
+      name: drink_image
+      widget: image
+      required: false
+    - label: Drink Image Alt
+      name: drink_image_alt
+      widget: string
+      required: false
+    - label: Timeline 1 Years
+      name: timeline_1_years
+      widget: string
+      required: false
+    - label: Timeline 1 Role
+      name: timeline_1_role
+      widget: string
+      required: false
+    - label: Timeline 1 Company
+      name: timeline_1_company
+      widget: string
+      required: false
+    - label: Timeline 1 Description
+      name: timeline_1_description
+      widget: text
+      required: false
+    - label: Timeline 2 Years
+      name: timeline_2_years
+      widget: string
+      required: false
+    - label: Timeline 2 Role
+      name: timeline_2_role
+      widget: string
+      required: false
+    - label: Timeline 2 Company
+      name: timeline_2_company
+      widget: string
+      required: false
+    - label: Timeline 2 Description
+      name: timeline_2_description
+      widget: text
+      required: false
+    - label: Timeline 3 Years
+      name: timeline_3_years
+      widget: string
+      required: false
+    - label: Timeline 3 Role
+      name: timeline_3_role
+      widget: string
+      required: false
+    - label: Timeline 3 Company
+      name: timeline_3_company
+      widget: string
+      required: false
+    - label: Timeline 3 Description
+      name: timeline_3_description
+      widget: text
+      required: false
+    - label: Download CV Text
+      name: download_cv_text
+      widget: string
+      required: false
+    - label: Download CV Link
+      name: download_cv_href
+      widget: string
+      required: false
+    - label: More About Heading
+      name: more_about_heading
+      widget: string
+      required: false
+    - label: More Card 1 Title
+      name: more_card_1_title
+      widget: string
+      required: false
+    - label: More Card 1 Text
+      name: more_card_1_text
+      widget: text
+      required: false
+    - label: More Card 2 Title
+      name: more_card_2_title
+      widget: string
+      required: false
+    - label: More Card 2 Text
+      name: more_card_2_text
+      widget: text
+      required: false
+    - label: More Card 3 Title
+      name: more_card_3_title
+      widget: string
+      required: false
+    - label: More Card 3 Text
+      name: more_card_3_text
+      widget: text
+      required: false
+    - label: Footer Contact Line
+      name: footer_contact
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Portfolio Main Page
+    name: portfolio_main
+    file: content/pages/portfolio-main.json
+    fields:
+    - label: Heading Line 1
+      name: heading_line1
+      widget: string
+      required: false
+    - label: Heading Line 2
+      name: heading_line2
+      widget: string
+      required: false
+    - label: Intro Text (HTML Allowed)
+      name: intro_text_html
+      widget: text
+      required: false
+    - label: Portfolio Gallery (Drag to Reorder)
+      name: gallery
+      widget: list
+      collapsed: false
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Badge
+        name: badge
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Meta
+        name: meta
+        widget: string
+        required: false
+      required: false
+      allow_add: true
+      allow_delete: true
+    - label: More Projects Link
+      name: more_projects_href
+      widget: string
+      required: false
+    - label: More Projects Title
+      name: more_projects_title
+      widget: string
+      required: false
+    - label: More Projects Meta
+      name: more_projects_meta
+      widget: string
+      required: false
+    - label: Footer Contact Line
+      name: footer_contact
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false

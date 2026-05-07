@@ -7,5 +7,7 @@
   "hero_image_left": "/assets/media/default-phone-screen.jpg",
   "seo_title": "App Design - Sara Ruffini",
   "seo_description": "Discover the UX/UI design of this app project and design philosophy.",
-  "seo_image": "/assets/media/default-og-image.jpg"
+  "seo_image": "/assets/media/default-og-image.jpg",
+  "media_blocks": [],
+  "selector_overrides": []
 }

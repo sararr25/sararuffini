@@ -10,5 +10,7 @@
   "intro_text": "Brief description of the project and its creative approach.",
   "seo_title": "Project Title - Sara Ruffini",
   "seo_description": "A compelling description of your video project for search engines and social sharing.",
-  "seo_image": "/assets/media/default-og-image.jpg"
+  "seo_image": "/assets/media/default-og-image.jpg",
+  "media_blocks": [],
+  "selector_overrides": []
 }

@@ -144,6 +144,58 @@
     return parsedUrl.toString();
   }
 
+  function normalizeEmbedUrl(rawUrl) {
+    if (typeof rawUrl !== 'string') {
+      return '';
+    }
+
+    var trimmedUrl = rawUrl.trim();
+    if (!trimmedUrl) {
+      return '';
+    }
+
+    var parsedUrl;
+    try {
+      parsedUrl = new URL(trimmedUrl, window.location.origin);
+    } catch (err) {
+      return trimmedUrl;
+    }
+
+    var host = parsedUrl.hostname.replace(/^www\./, '').toLowerCase();
+    var path = parsedUrl.pathname;
+
+    if (host === 'youtube.com' || host.slice(-12) === '.youtube.com') {
+      if (path.indexOf('/embed/') === 0) {
+        return parsedUrl.toString();
+      }
+
+      var watchId = parsedUrl.searchParams.get('v');
+      if (watchId) {
+        return 'https://www.youtube.com/embed/' + watchId;
+      }
+    }
+
+    if (host === 'youtu.be') {
+      var shortId = path.replace(/^\//, '').split('/')[0];
+      if (shortId) {
+        return 'https://www.youtube.com/embed/' + shortId;
+      }
+    }
+
+    if (host === 'vimeo.com' || host.slice(-10) === '.vimeo.com') {
+      if (path.indexOf('/video/') === 0) {
+        return parsedUrl.toString();
+      }
+
+      var vimeoIdMatch = path.match(/^\/(\d+)/);
+      if (vimeoIdMatch) {
+        return 'https://player.vimeo.com/video/' + vimeoIdMatch[1];
+      }
+    }
+
+    return normalizeReelUrl(trimmedUrl);
+  }
+
   function isDirectVideoUrl(rawUrl) {
     if (typeof rawUrl !== 'string') {
       return false;
@@ -234,7 +286,176 @@
 
         if (type === 'bg') {
           node.style.backgroundImage = 'url("' + value.replace(/"/g, '\\"') + '")';
+          return;
         }
+
+        if (type === 'append_html') {
+          node.insertAdjacentHTML('beforeend', value);
+          return;
+        }
+
+        if (type === 'prepend_html') {
+          node.insertAdjacentHTML('afterbegin', value);
+          return;
+        }
+
+        if (type === 'remove') {
+          node.remove();
+        }
+      });
+    });
+  }
+
+  function buildMediaBlockNode(item) {
+    if (!item || typeof item !== 'object') {
+      return null;
+    }
+
+    var mediaKind = typeof item.media_kind === 'string' ? item.media_kind.trim().toLowerCase() : '';
+    var mediaUploadImage = typeof item.media_upload_image === 'string' ? item.media_upload_image.trim() : '';
+    var mediaUploadVideo = typeof item.media_upload_video === 'string' ? item.media_upload_video.trim() : '';
+    var mediaUrl = typeof item.media_url === 'string' ? item.media_url.trim() : '';
+    var embedHtml = typeof item.embed_html === 'string' ? item.embed_html.trim() : '';
+    var className = typeof item.class_name === 'string' ? item.class_name.trim() : '';
+    var altText = typeof item.alt_text === 'string' ? item.alt_text : '';
+    var captionHtml = typeof item.caption_html === 'string' ? item.caption_html.trim() : '';
+    var linkUrl = typeof item.link_url === 'string' ? item.link_url.trim() : '';
+
+    var root = document.createElement('div');
+    root.className = 'cms-media-block';
+    if (className) {
+      root.className += ' ' + className;
+    }
+
+    var mediaNode = null;
+
+    if (mediaKind === 'image') {
+      var imageSrc = mediaUploadImage || mediaUrl;
+      if (!imageSrc) {
+        return null;
+      }
+
+      mediaNode = document.createElement('img');
+      mediaNode.setAttribute('src', imageSrc);
+      mediaNode.setAttribute('loading', 'lazy');
+      if (altText) {
+        mediaNode.setAttribute('alt', altText);
+      } else {
+        mediaNode.setAttribute('alt', '');
+      }
+    }
+
+    if (mediaKind === 'video') {
+      var videoSrc = mediaUploadVideo || mediaUrl;
+      if (!videoSrc) {
+        return null;
+      }
+
+      mediaNode = document.createElement('video');
+      mediaNode.setAttribute('src', videoSrc);
+      mediaNode.setAttribute('controls', 'controls');
+      mediaNode.setAttribute('playsinline', 'playsinline');
+      mediaNode.setAttribute('preload', 'metadata');
+    }
+
+    if (mediaKind === 'embed') {
+      if (embedHtml) {
+        var embedWrapper = document.createElement('div');
+        embedWrapper.innerHTML = embedHtml;
+        mediaNode = embedWrapper;
+      } else {
+        var embedSrc = normalizeEmbedUrl(mediaUrl);
+        if (!embedSrc) {
+          return null;
+        }
+
+        mediaNode = document.createElement('iframe');
+        mediaNode.setAttribute('src', embedSrc);
+        mediaNode.setAttribute('allowfullscreen', 'allowfullscreen');
+        mediaNode.setAttribute('loading', 'lazy');
+        mediaNode.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        mediaNode.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+        mediaNode.setAttribute('title', altText || 'Embedded video');
+      }
+    }
+
+    if (!mediaNode) {
+      return null;
+    }
+
+    if (linkUrl) {
+      var link = document.createElement('a');
+      link.setAttribute('href', linkUrl);
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      link.appendChild(mediaNode);
+      root.appendChild(link);
+    } else {
+      root.appendChild(mediaNode);
+    }
+
+    if (captionHtml) {
+      var caption = document.createElement('div');
+      caption.className = 'cms-media-caption';
+      caption.innerHTML = captionHtml;
+      root.appendChild(caption);
+    }
+
+    return root;
+  }
+
+  function applyMediaBlocks(allData) {
+    if (!Array.isArray(allData.media_blocks)) {
+      return;
+    }
+
+    allData.media_blocks.forEach(function (item) {
+      if (!item || typeof item.target_selector !== 'string') {
+        return;
+      }
+
+      var targetSelector = item.target_selector.trim();
+      if (!targetSelector) {
+        return;
+      }
+
+      var action = typeof item.action === 'string' ? item.action.trim().toLowerCase() : 'append';
+      var targets;
+      try {
+        targets = document.querySelectorAll(targetSelector);
+      } catch (err) {
+        return;
+      }
+
+      if (!targets.length) {
+        return;
+      }
+
+      if (action === 'remove') {
+        targets.forEach(function (target) {
+          target.remove();
+        });
+        return;
+      }
+
+      targets.forEach(function (target) {
+        var node = buildMediaBlockNode(item);
+        if (!node) {
+          return;
+        }
+
+        if (action === 'replace') {
+          target.innerHTML = '';
+          target.appendChild(node);
+          return;
+        }
+
+        if (action === 'prepend') {
+          target.prepend(node);
+          return;
+        }
+
+        target.appendChild(node);
       });
     });
   }
@@ -342,6 +563,9 @@
         }
       }
     });
+
+    // Apply dynamic media insertions/removals before final selector overrides.
+    applyMediaBlocks(allData);
 
     // Last pass: optional direct selector overrides from CMS.
     applySelectorOverrides(allData);
