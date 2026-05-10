@@ -512,365 +512,190 @@ collections:
     name: video_v1
     file: content/pages/video-v1.json
     fields:
-    - label: Hero Label
-      name: hero_label
-      widget: string
-      required: false
-    - label: Hero Years
-      name: hero_years
-      widget: string
-      required: false
-    - label: Hero Title Main
-      name: hero_title_main
-      widget: string
-      required: false
-    - label: Hero Title Highlight
-      name: hero_title_highlight
-      widget: string
-      required: false
-    - label: Hero Role
-      name: hero_role
-      widget: string
-      required: false
-    - label: Hero Meta
-      name: hero_meta
-      widget: string
-      required: false
-    - label: Hero Image
-      name: hero_image
-      widget: image
-      required: false
-    - label: Hero Timecode
-      name: hero_timecode
-      widget: string
-      required: false
-    - label: Intro Title
-      name: intro_title
-      widget: string
-      required: false
-    - label: Intro Text
-      name: intro_text
-      widget: text
-      required: false
-    - label: Hero Highlights Label
-      name: hero_highlights_label
-      widget: string
-      required: false
-    - label: Hero Volume Label
-      name: hero_volume_label
-      widget: string
-      required: false
-    - label: Intro Badge 1
-      name: intro_badge_1
-      widget: string
-      required: false
-    - label: Intro Badge 2
-      name: intro_badge_2
-      widget: string
-      required: false
-    - label: Intro Badge 3
-      name: intro_badge_3
-      widget: string
-      required: false
-    - label: Engagement Specs Title
-      name: engagement_specs_title
-      widget: string
-      required: false
-    - label: Spec Position Label
-      name: spec_position_label
-      widget: string
-      required: false
-    - label: Spec Position Value
-      name: spec_position_value
-      widget: string
-      required: false
-    - label: Spec Duration Label
-      name: spec_duration_label
-      widget: string
-      required: false
-    - label: Spec Duration Value
-      name: spec_duration_value
-      widget: string
-      required: false
-    - label: Spec Deliverables Label
-      name: spec_deliverables_label
-      widget: string
-      required: false
-    - label: Spec Deliverables Value
-      name: spec_deliverables_value
-      widget: string
-      required: false
-    - label: Key Projects Label
+    # Hero Section
+    - label: "🎬 HERO SECTION"
+      name: hero_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Label/Badge
+        name: hero_label
+        widget: string
+        required: false
+      - label: Years
+        name: hero_years
+        widget: string
+        required: false
+      - label: Main Title
+        name: hero_title_main
+        widget: string
+        required: false
+      - label: Highlight Word
+        name: hero_title_highlight
+        widget: string
+        required: false
+      - label: Role
+        name: hero_role
+        widget: string
+        required: false
+      - label: Meta (e.g. 'video editing')
+        name: hero_meta
+        widget: string
+        required: false
+      - label: Hero Image
+        name: hero_image
+        widget: image
+        required: false
+      - label: Timecode
+        name: hero_timecode
+        widget: string
+        required: false
+      - label: Volume Label
+        name: hero_volume_label
+        widget: string
+        required: false
+
+    # Introduction Section
+    - label: "📋 INTRODUCTION"
+      name: intro_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Title
+        name: intro_title
+        widget: string
+        required: false
+      - label: Description
+        name: intro_text
+        widget: text
+        required: false
+      - label: Badge 1
+        name: intro_badge_1
+        widget: string
+        required: false
+      - label: Badge 2
+        name: intro_badge_2
+        widget: string
+        required: false
+      - label: Badge 3
+        name: intro_badge_3
+        widget: string
+        required: false
+      - label: Highlights Label
+        name: hero_highlights_label
+        widget: string
+        required: false
+
+    # Specs Section
+    - label: "📊 ENGAGEMENT SPECS"
+      name: specs_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Title
+        name: engagement_specs_title
+        widget: string
+        required: false
+      - label: Position Label
+        name: spec_position_label
+        widget: string
+        required: false
+      - label: Position Value
+        name: spec_position_value
+        widget: string
+        required: false
+      - label: Duration Label
+        name: spec_duration_label
+        widget: string
+        required: false
+      - label: Duration Value
+        name: spec_duration_value
+        widget: string
+        required: false
+      - label: Deliverables Label
+        name: spec_deliverables_label
+        widget: string
+        required: false
+      - label: Deliverables Value
+        name: spec_deliverables_value
+        widget: string
+        required: false
+
+    # Projects
+    - label: "🎯 PROJECTS"
       name: key_projects_label
       widget: string
       required: false
-    - label: Project 1 Badge
-      name: project_1_badge
-      widget: string
-      required: false
-    - label: Project 1 Image
-      name: project_1_image
-      widget: image
-      required: false
-    - label: Project 1 Image Alt
-      name: project_1_image_alt
-      widget: string
-      required: false
-    - label: Project 1 Media Type
-      name: project_1_media_type
-      widget: select
-      required: false
-      options:
-      - label: Image
-        value: image
-      - label: Video Upload/URL
-        value: video
-      - label: Embed URL
-        value: embed
-    - label: Project 1 Video Upload
-      name: project_1_video_upload
-      widget: file
-      required: false
-    - label: Project 1 Video URL
-      name: project_1_video_url
-      widget: string
-      required: false
-    - label: Project 1 Embed URL
-      name: project_1_embed_url
-      widget: string
-      required: false
-    - label: Project 1 Title
-      name: project_1_title
-      widget: string
-      required: false
-    - label: Project 1 Text
-      name: project_1_text
-      widget: text
-      required: false
-    - label: Project 1 Tag 1
-      name: project_1_tag_1
-      widget: string
-      required: false
-    - label: Project 1 Tag 2
-      name: project_1_tag_2
-      widget: string
-      required: false
-    - label: Project 2 Badge
-      name: project_2_badge
-      widget: string
-      required: false
-    - label: Project 2 Image
-      name: project_2_image
-      widget: image
-      required: false
-    - label: Project 2 Image Alt
-      name: project_2_image_alt
-      widget: string
-      required: false
-    - label: Project 2 Media Type
-      name: project_2_media_type
-      widget: select
-      required: false
-      options:
-      - label: Image
-        value: image
-      - label: Video Upload/URL
-        value: video
-      - label: Embed URL
-        value: embed
-    - label: Project 2 Video Upload
-      name: project_2_video_upload
-      widget: file
-      required: false
-    - label: Project 2 Video URL
-      name: project_2_video_url
-      widget: string
-      required: false
-    - label: Project 2 Embed URL
-      name: project_2_embed_url
-      widget: string
-      required: false
-    - label: Project 2 Title
-      name: project_2_title
-      widget: string
-      required: false
-    - label: Project 2 Text
-      name: project_2_text
-      widget: text
-      required: false
-    - label: Project 2 Tag 1
-      name: project_2_tag_1
-      widget: string
-      required: false
-    - label: Project 2 Tag 2
-      name: project_2_tag_2
-      widget: string
-      required: false
-    - label: Project 2 Award Note
-      name: project_2_award_note
-      widget: string
-      required: false
-    - label: Project 3 Badge
-      name: project_3_badge
-      widget: string
-      required: false
-    - label: Project 3 Image
-      name: project_3_image
-      widget: image
-      required: false
-    - label: Project 3 Image Alt
-      name: project_3_image_alt
-      widget: string
-      required: false
-    - label: Project 3 Media Type
-      name: project_3_media_type
-      widget: select
-      required: false
-      options:
-      - label: Image
-        value: image
-      - label: Video Upload/URL
-        value: video
-      - label: Embed URL
-        value: embed
-    - label: Project 3 Video Upload
-      name: project_3_video_upload
-      widget: file
-      required: false
-    - label: Project 3 Video URL
-      name: project_3_video_url
-      widget: string
-      required: false
-    - label: Project 3 Embed URL
-      name: project_3_embed_url
-      widget: string
-      required: false
-    - label: Project 3 Title
-      name: project_3_title
-      widget: string
-      required: false
-    - label: Project 3 Text
-      name: project_3_text
-      widget: text
-      required: false
-    - label: Project 3 Tag 1
-      name: project_3_tag_1
-      widget: string
-      required: false
-    - label: Closing Quote
-      name: closing_quote
-      widget: text
-      required: false
-    - label: Dynamic Media Blocks
-      name: media_blocks
+
+    - label: Projects (Block Editor)
+      name: projects
       widget: list
       required: false
       allow_add: true
       allow_delete: true
-      collapsed: true
-      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      collapsed: false
+      summary: "{{fields.title}}"
       fields:
-      - label: Target Position (Preset)
-        name: target_selector
-        widget: select
-        options:
-        - label: Hero Media Area
-          value: "#video-v1-hero-media"
-        - label: Project 1 Media Area
-          value: "#video-v1-project-1-media"
-        - label: Project 2 Media Area
-          value: "#video-v1-project-2-media"
-        - label: Project 3 Media Area
-          value: "#video-v1-project-3-media"
-        - label: Main Content Container
-          value: ".lg\\:col-span-8.space-y-20.pb-24"
-        required: false
-      - label: Target CSS Selector (Custom, optional)
-        name: target_selector_custom
+      - label: Badge (decorative label)
+        name: badge
         widget: string
         required: false
-      - label: Action
-        name: action
-        widget: select
-        required: false
-        options:
-        - append
-        - prepend
-        - replace
-        - remove
       - label: Media Type
-        name: media_kind
+        name: media_type
         widget: select
         required: false
         options:
-        - image
-        - video
-        - embed
-      - label: Image Upload
-        name: media_upload_image
+        - label: Image
+          value: image
+        - label: Video/URL
+          value: video
+        - label: Embed (YouTube/Vimeo/Instagram)
+          value: embed
+      - label: Media Image
+        name: media_url
         widget: image
         required: false
-      - label: Video Upload
-        name: media_upload_video
+      - label: Media Upload (Video File)
+        name: media_upload
         widget: file
         required: false
-      - label: Media URL (image/video/embed)
-        name: media_url
+      - label: Title
+        name: title
         widget: string
         required: false
-      - label: Embed HTML (YouTube iframe etc.)
-        name: embed_html
+      - label: Description
+        name: description
         widget: text
         required: false
-      - label: Alt Text
-        name: alt_text
+      - label: Tag 1
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+      - label: Award/Note (optional)
+        name: award_note
         widget: string
         required: false
-      - label: Link URL (optional wrapper)
-        name: link_url
-        widget: string
-        required: false
-      - label: Caption HTML
-        name: caption_html
-        widget: text
-        required: false
-      - label: Custom CSS Classes
-        name: class_name
-        widget: string
-        required: false
-    - label: Advanced Overrides
-      name: selector_overrides
-      widget: list
-      required: false
-      summary: "{{fields.selector}} -> {{fields.type}}"
+
+    # Closing
+    - label: "✨ CLOSING"
+      name: closing_section
+      widget: object
+      collapsed: true
       fields:
-      - label: CSS Selector
-        name: selector
-        widget: string
-        required: false
-      - label: Tipo Modifica
-        name: type
-        widget: select
-        options:
-        - text
-        - html
-        - src
-        - href
-        - alt
-        - bg
-        - append_html
-        - prepend_html
-        - remove
-        required: false
-      - label: Valore
-        name: value
+      - label: Closing Quote
+        name: closing_quote
         widget: text
         required: false
-      allow_add: true
-      allow_delete: true
-    - label: SEO Settings
+
+    # SEO
+    - label: "🔍 SEO"
       name: seo
       widget: object
+      required: false
       fields:
       - label: Page Title
         name: seo_title
