@@ -116,6 +116,29 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Media Type
+      name: hero_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL (YouTube/Vimeo/Instagram/TikTok)
+        value: embed
+    - label: Hero Video Upload
+      name: hero_video_upload
+      widget: file
+      required: false
+    - label: Hero Video URL
+      name: hero_video_url
+      widget: string
+      required: false
+    - label: Hero Embed URL
+      name: hero_embed_url
+      widget: string
+      required: false
     - label: Intro Text
       name: intro_text
       widget: text
@@ -593,6 +616,29 @@ collections:
       name: project_1_image_alt
       widget: string
       required: false
+    - label: Project 1 Media Type
+      name: project_1_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 1 Video Upload
+      name: project_1_video_upload
+      widget: file
+      required: false
+    - label: Project 1 Video URL
+      name: project_1_video_url
+      widget: string
+      required: false
+    - label: Project 1 Embed URL
+      name: project_1_embed_url
+      widget: string
+      required: false
     - label: Project 1 Title
       name: project_1_title
       widget: string
@@ -619,6 +665,29 @@ collections:
       required: false
     - label: Project 2 Image Alt
       name: project_2_image_alt
+      widget: string
+      required: false
+    - label: Project 2 Media Type
+      name: project_2_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 2 Video Upload
+      name: project_2_video_upload
+      widget: file
+      required: false
+    - label: Project 2 Video URL
+      name: project_2_video_url
+      widget: string
+      required: false
+    - label: Project 2 Embed URL
+      name: project_2_embed_url
       widget: string
       required: false
     - label: Project 2 Title
@@ -653,6 +722,29 @@ collections:
       name: project_3_image_alt
       widget: string
       required: false
+    - label: Project 3 Media Type
+      name: project_3_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 3 Video Upload
+      name: project_3_video_upload
+      widget: file
+      required: false
+    - label: Project 3 Video URL
+      name: project_3_video_url
+      widget: string
+      required: false
+    - label: Project 3 Embed URL
+      name: project_3_embed_url
+      widget: string
+      required: false
     - label: Project 3 Title
       name: project_3_title
       widget: string
@@ -678,8 +770,23 @@ collections:
       collapsed: true
       summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
       fields:
-      - label: Target CSS Selector
+      - label: Target Position (Preset)
         name: target_selector
+        widget: select
+        options:
+        - label: Hero Media Area
+          value: "#video-v1-hero-media"
+        - label: Project 1 Media Area
+          value: "#video-v1-project-1-media"
+        - label: Project 2 Media Area
+          value: "#video-v1-project-2-media"
+        - label: Project 3 Media Area
+          value: "#video-v1-project-3-media"
+        - label: Main Content Container
+          value: ".lg\\:col-span-8.space-y-20.pb-24"
+        required: false
+      - label: Target CSS Selector (Custom, optional)
+        name: target_selector_custom
         widget: string
         required: false
       - label: Action
@@ -818,6 +925,137 @@ collections:
       name: hero_timecode
       widget: string
       required: false
+    - label: Hero Media Type
+      name: hero_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Hero Video Upload
+      name: hero_video_upload
+      widget: file
+      required: false
+    - label: Hero Video URL
+      name: hero_video_url
+      widget: string
+      required: false
+    - label: Hero Embed URL
+      name: hero_embed_url
+      widget: string
+      required: false
+    - label: Project 1 Badge
+      name: project_1_badge
+      widget: string
+      required: false
+    - label: Project 1 Media Type
+      name: project_1_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 1 Video Upload
+      name: project_1_video_upload
+      widget: file
+      required: false
+    - label: Project 1 Video URL
+      name: project_1_video_url
+      widget: string
+      required: false
+    - label: Project 1 Embed URL
+      name: project_1_embed_url
+      widget: string
+      required: false
+    - label: Project 2 Badge
+      name: project_2_badge
+      widget: string
+      required: false
+    - label: Project 2 Media Type
+      name: project_2_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 2 Video Upload
+      name: project_2_video_upload
+      widget: file
+      required: false
+    - label: Project 2 Video URL
+      name: project_2_video_url
+      widget: string
+      required: false
+    - label: Project 2 Embed URL
+      name: project_2_embed_url
+      widget: string
+      required: false
+    - label: Project 3 Badge
+      name: project_3_badge
+      widget: string
+      required: false
+    - label: Project 3 Media Type
+      name: project_3_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 3 Video Upload
+      name: project_3_video_upload
+      widget: file
+      required: false
+    - label: Project 3 Video URL
+      name: project_3_video_url
+      widget: string
+      required: false
+    - label: Project 3 Embed URL
+      name: project_3_embed_url
+      widget: string
+      required: false
+    - label: Project 4 Badge
+      name: project_4_badge
+      widget: string
+      required: false
+    - label: Project 4 Media Type
+      name: project_4_media_type
+      widget: select
+      required: false
+      options:
+      - label: Image
+        value: image
+      - label: Video Upload/URL
+        value: video
+      - label: Embed URL
+        value: embed
+    - label: Project 4 Video Upload
+      name: project_4_video_upload
+      widget: file
+      required: false
+    - label: Project 4 Video URL
+      name: project_4_video_url
+      widget: string
+      required: false
+    - label: Project 4 Embed URL
+      name: project_4_embed_url
+      widget: string
+      required: false
     - label: Intro Title
       name: intro_title
       widget: string
@@ -835,8 +1073,25 @@ collections:
       collapsed: true
       summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
       fields:
-      - label: Target CSS Selector
+      - label: Target Position (Preset)
         name: target_selector
+        widget: select
+        options:
+        - label: Hero Media Area
+          value: "#video-v2-hero-media"
+        - label: Project 1 Media Area
+          value: "#video-v2-project-1-media"
+        - label: Project 2 Media Area
+          value: "#video-v2-project-2-media"
+        - label: Project 3 Media Area
+          value: "#video-v2-project-3-media"
+        - label: Project 4 Media Area
+          value: "#video-v2-project-4-media"
+        - label: Main Content Container
+          value: ".lg\\:col-span-9.grid"
+        required: false
+      - label: Target CSS Selector (Custom, optional)
+        name: target_selector_custom
         widget: string
         required: false
       - label: Action
@@ -1422,6 +1677,58 @@ collections:
       name: phone_note_4_html
       widget: text
       required: false
+    - label: Phone 1 Media Type
+      name: phone_1_media_type
+      widget: select
+      required: false
+      options:
+      - label: Video/Embed
+        value: video
+      - label: Image
+        value: image
+    - label: Phone 1 Video/Embed URL
+      name: phone_1_embed_url
+      widget: string
+      required: false
+    - label: Phone 2 Media Type
+      name: phone_2_media_type
+      widget: select
+      required: false
+      options:
+      - label: Video/Embed
+        value: video
+      - label: Image
+        value: image
+    - label: Phone 2 Video/Embed URL
+      name: phone_2_embed_url
+      widget: string
+      required: false
+    - label: Phone 3 Media Type
+      name: phone_3_media_type
+      widget: select
+      required: false
+      options:
+      - label: Video/Embed
+        value: video
+      - label: Image
+        value: image
+    - label: Phone 3 Video/Embed URL
+      name: phone_3_embed_url
+      widget: string
+      required: false
+    - label: Phone 4 Media Type
+      name: phone_4_media_type
+      widget: select
+      required: false
+      options:
+      - label: Video/Embed
+        value: video
+      - label: Image
+        value: image
+    - label: Phone 4 Video/Embed URL
+      name: phone_4_embed_url
+      widget: string
+      required: false
     - label: Instagram Profile URL
       name: instagram_profile_url
       widget: string
@@ -1454,8 +1761,23 @@ collections:
       collapsed: true
       summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
       fields:
-      - label: Target CSS Selector
+      - label: Target Position (Preset)
         name: target_selector
+        widget: select
+        options:
+        - label: Phone 1 Media
+          value: "#socialmedia-portfolio-phone-1-media"
+        - label: Phone 2 Media
+          value: "#socialmedia-portfolio-phone-2-media"
+        - label: Phone 3 Media
+          value: "#socialmedia-portfolio-phone-3-media"
+        - label: Phone 4 Media
+          value: "#socialmedia-portfolio-phone-4-media"
+        - label: Main Content Container
+          value: ".w-full.md\\:w-7\\/12"
+        required: false
+      - label: Target CSS Selector (Custom, optional)
+        name: target_selector_custom
         widget: string
         required: false
       - label: Action

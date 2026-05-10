@@ -410,11 +410,13 @@
     }
 
     allData.media_blocks.forEach(function (item) {
-      if (!item || typeof item.target_selector !== 'string') {
+      if (!item) {
         return;
       }
 
-      var targetSelector = item.target_selector.trim();
+      var presetSelector = typeof item.target_selector === 'string' ? item.target_selector.trim() : '';
+      var customSelector = typeof item.target_selector_custom === 'string' ? item.target_selector_custom.trim() : '';
+      var targetSelector = customSelector || presetSelector;
       if (!targetSelector) {
         return;
       }
@@ -457,6 +459,51 @@
 
         target.appendChild(node);
       });
+    });
+  }
+
+  function applyMediaSlotOverrides(allData) {
+    document.querySelectorAll('[data-cms-media-container]').forEach(function (container) {
+      var slot = container.getAttribute('data-cms-media-container');
+      if (!slot) {
+        return;
+      }
+
+      var mediaTypeKey = slot + '_media_type';
+      var mediaType = typeof allData[mediaTypeKey] === 'string' ? allData[mediaTypeKey].trim().toLowerCase() : 'image';
+      var imageNode = container.querySelector('[data-cms-media-image]');
+      var videoNode = container.querySelector('[data-cms-media-video]');
+      var embedNode = container.querySelector('[data-cms-media-embed]');
+
+      var slotVideoUpload = allData[slot + '_video_upload'] && String(allData[slot + '_video_upload']).trim();
+      var slotVideoUrl = allData[slot + '_video_url'] && String(allData[slot + '_video_url']).trim();
+      var slotVideoSrc = slotVideoUpload || slotVideoUrl || '';
+      var hasVideo = !!slotVideoSrc;
+      var hasEmbed = !!(allData[slot + '_embed_url'] && String(allData[slot + '_embed_url']).trim());
+
+      if (videoNode && hasVideo) {
+        videoNode.setAttribute('src', slotVideoSrc);
+      }
+
+      var effectiveType = mediaType;
+      if (effectiveType === 'video' && !hasVideo) {
+        effectiveType = 'image';
+      }
+      if (effectiveType === 'embed' && !hasEmbed) {
+        effectiveType = 'image';
+      }
+
+      if (imageNode) {
+        imageNode.classList.toggle('hidden', effectiveType !== 'image');
+      }
+
+      if (videoNode) {
+        videoNode.classList.toggle('hidden', effectiveType !== 'video');
+      }
+
+      if (embedNode) {
+        embedNode.classList.toggle('hidden', effectiveType !== 'embed');
+      }
     });
   }
 
@@ -563,6 +610,9 @@
         }
       }
     });
+
+    // Switch predefined media slots between image/video/embed where configured.
+    applyMediaSlotOverrides(allData);
 
     // Apply dynamic media insertions/removals before final selector overrides.
     applyMediaBlocks(allData);
