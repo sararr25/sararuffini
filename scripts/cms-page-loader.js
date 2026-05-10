@@ -364,7 +364,7 @@
         embedWrapper.innerHTML = embedHtml;
         mediaNode = embedWrapper;
       } else {
-        var embedSrc = normalizeEmbedUrl(mediaUrl);
+        var embedSrc = normalizeEmbedUrl(mediaUrl || mediaUploadVideo);
         if (!embedSrc) {
           return null;
         }

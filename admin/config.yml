@@ -529,6 +529,146 @@ collections:
       name: intro_text
       widget: text
       required: false
+    - label: Hero Highlights Label
+      name: hero_highlights_label
+      widget: string
+      required: false
+    - label: Hero Volume Label
+      name: hero_volume_label
+      widget: string
+      required: false
+    - label: Intro Badge 1
+      name: intro_badge_1
+      widget: string
+      required: false
+    - label: Intro Badge 2
+      name: intro_badge_2
+      widget: string
+      required: false
+    - label: Intro Badge 3
+      name: intro_badge_3
+      widget: string
+      required: false
+    - label: Engagement Specs Title
+      name: engagement_specs_title
+      widget: string
+      required: false
+    - label: Spec Position Label
+      name: spec_position_label
+      widget: string
+      required: false
+    - label: Spec Position Value
+      name: spec_position_value
+      widget: string
+      required: false
+    - label: Spec Duration Label
+      name: spec_duration_label
+      widget: string
+      required: false
+    - label: Spec Duration Value
+      name: spec_duration_value
+      widget: string
+      required: false
+    - label: Spec Deliverables Label
+      name: spec_deliverables_label
+      widget: string
+      required: false
+    - label: Spec Deliverables Value
+      name: spec_deliverables_value
+      widget: string
+      required: false
+    - label: Key Projects Label
+      name: key_projects_label
+      widget: string
+      required: false
+    - label: Project 1 Badge
+      name: project_1_badge
+      widget: string
+      required: false
+    - label: Project 1 Image
+      name: project_1_image
+      widget: image
+      required: false
+    - label: Project 1 Image Alt
+      name: project_1_image_alt
+      widget: string
+      required: false
+    - label: Project 1 Title
+      name: project_1_title
+      widget: string
+      required: false
+    - label: Project 1 Text
+      name: project_1_text
+      widget: text
+      required: false
+    - label: Project 1 Tag 1
+      name: project_1_tag_1
+      widget: string
+      required: false
+    - label: Project 1 Tag 2
+      name: project_1_tag_2
+      widget: string
+      required: false
+    - label: Project 2 Badge
+      name: project_2_badge
+      widget: string
+      required: false
+    - label: Project 2 Image
+      name: project_2_image
+      widget: image
+      required: false
+    - label: Project 2 Image Alt
+      name: project_2_image_alt
+      widget: string
+      required: false
+    - label: Project 2 Title
+      name: project_2_title
+      widget: string
+      required: false
+    - label: Project 2 Text
+      name: project_2_text
+      widget: text
+      required: false
+    - label: Project 2 Tag 1
+      name: project_2_tag_1
+      widget: string
+      required: false
+    - label: Project 2 Tag 2
+      name: project_2_tag_2
+      widget: string
+      required: false
+    - label: Project 2 Award Note
+      name: project_2_award_note
+      widget: string
+      required: false
+    - label: Project 3 Badge
+      name: project_3_badge
+      widget: string
+      required: false
+    - label: Project 3 Image
+      name: project_3_image
+      widget: image
+      required: false
+    - label: Project 3 Image Alt
+      name: project_3_image_alt
+      widget: string
+      required: false
+    - label: Project 3 Title
+      name: project_3_title
+      widget: string
+      required: false
+    - label: Project 3 Text
+      name: project_3_text
+      widget: text
+      required: false
+    - label: Project 3 Tag 1
+      name: project_3_tag_1
+      widget: string
+      required: false
+    - label: Closing Quote
+      name: closing_quote
+      widget: text
+      required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -2196,4 +2336,180 @@ collections:
         name: seo_image
         widget: image
         required: false
+      required: false
+- name: project_pages_entries
+  label: Project Pages / Entries
+  description: Create new project pages from existing templates
+  folder: content/pages/entries
+  create: true
+  slug: "{{slug}}"
+  extension: json
+  format: json
+  fields:
+  - label: Entry Title
+    name: entry_title
+    widget: string
+    required: false
+  - label: Slug
+    name: slug
+    widget: string
+    required: false
+  - label: Template Selection
+    name: template_selection
+    widget: select
+    required: false
+    options:
+    - label: Video Template (content/templates/video-template.json)
+      value: video
+    - label: Graphics Template (content/templates/graphics-template.json)
+      value: graphics
+    - label: App Template (content/templates/app-template.json)
+      value: app
+  - label: Template Source Path
+    name: template_source_path
+    widget: string
+    required: false
+    default: content/templates/video-template.json
+    hint: Optional manual override; leave default to use selected template path
+  - label: Hero / Intro Basic Content
+    name: basic_content
+    widget: object
+    required: false
+    fields:
+    - label: Hero Label
+      name: hero_label
+      widget: string
+      required: false
+    - label: Hero Years
+      name: hero_years
+      widget: string
+      required: false
+    - label: Hero Title Main
+      name: hero_title_main
+      widget: string
+      required: false
+    - label: Hero Title Highlight
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Intro Title
+      name: intro_title
+      widget: string
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+  - label: Dynamic Media Blocks
+    name: media_blocks
+    widget: list
+    required: false
+    allow_add: true
+    allow_delete: true
+    collapsed: true
+    summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+    fields:
+    - label: Target CSS Selector
+      name: target_selector
+      widget: string
+      required: false
+    - label: Action
+      name: action
+      widget: select
+      required: false
+      options:
+      - append
+      - prepend
+      - replace
+      - remove
+    - label: Media Type
+      name: media_kind
+      widget: select
+      required: false
+      options:
+      - image
+      - video
+      - embed
+    - label: Image Upload
+      name: media_upload_image
+      widget: image
+      required: false
+    - label: Video Upload
+      name: media_upload_video
+      widget: file
+      required: false
+    - label: Media URL (image/video/embed)
+      name: media_url
+      widget: string
+      required: false
+    - label: Embed HTML
+      name: embed_html
+      widget: text
+      required: false
+    - label: Alt Text
+      name: alt_text
+      widget: string
+      required: false
+    - label: Link URL
+      name: link_url
+      widget: string
+      required: false
+    - label: Caption HTML
+      name: caption_html
+      widget: text
+      required: false
+    - label: Custom CSS Classes
+      name: class_name
+      widget: string
+      required: false
+  - label: Advanced Overrides
+    name: selector_overrides
+    widget: list
+    required: false
+    allow_add: true
+    allow_delete: true
+    summary: "{{fields.selector}} -> {{fields.type}}"
+    fields:
+    - label: CSS Selector
+      name: selector
+      widget: string
+      required: false
+    - label: Type
+      name: type
+      widget: select
+      required: false
+      options:
+      - text
+      - html
+      - src
+      - href
+      - alt
+      - bg
+      - append_html
+      - prepend_html
+      - remove
+    - label: Value
+      name: value
+      widget: text
+      required: false
+  - label: SEO Settings
+    name: seo
+    widget: object
+    required: false
+    fields:
+    - label: Page Title
+      name: seo_title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: seo_description
+      widget: text
+      required: false
+    - label: Preview Image
+      name: seo_image
+      widget: image
       required: false
