@@ -1,36 +1,37 @@
 {
-  "hero_label": "",
-  "hero_years": "2022",
-  "hero_title_main": "Weber",
-  "hero_title_highlight": "Cooking Collection",
-  "hero_role": "Role: In-house Video Editor",
-  "hero_meta": "video editing",
-  "hero_image": "/assets/media/pizza2.png",
-  "hero_timecode": "20:15",
-  "hero_volume_label": "Volume 100%",
+  "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
+  "spec_position_label": "Position",
   "intro_badge_1": "Art Direction",
   "intro_badge_2": "Motion Design",
   "intro_badge_3": "Video Edit",
+  "hero_title_main": "Weber",
   "intro_title": "Weber Cooking Collection",
-  "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
-  "key_projects_label": "Key Projects",
-  "engagement_specs_title": "Engagement Specs",
-  "hero_highlights_label": "2021-2023 Highlights",
-  "spec_position_label": "Position",
-  "spec_position_value": "Senior Video Editor",
-  "spec_duration_label": "Duration",
+  "hero_title_highlight": "Cooking Collection",
   "spec_duration_value": "24 Months (Contract)",
-  "spec_deliverables_label": "Key Deliverables",
   "spec_deliverables_value": "30+ Assets, 2 Campaigns",
+  "hero_meta": "video editing",
+  "spec_duration_label": "Duration",
+  "spec_deliverables_label": "Key Deliverables",
+  "key_projects_label": "Key Projects",
+  "hero_label": "",
+  "hero_years": "2022",
+  "engagement_specs_title": "Engagement Specs",
+  "closing_quote": "\"Redefining the brand through motion, one frame at a time.\"",
+  "hero_volume_label": "Volume 100%",
+  "hero_image": "/assets/media/pizza2.png",
+  "hero_highlights_label": "2021-2023 Highlights",
   "projects": [
     {
       "badge": "Product Launch",
-      "media_type": "image",
-      "media_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAg0gwaxRn4hVJNCwQEpTUwCc4jFf_m-05QJtQPpP3HlqeKzAa7uyeW7_DclteUY6Hbs2t8wHqI55j6km0rubcD6lTNfNxPgMT9OfiIXMc5NVx7X_26GKfcfC7rw435sGvmiGEgaFBoiu5YN0LV8mAPIRhk92wf5YJZIJH8I_3ySlVKMwLVoKx5accXzdHev6ro9l0HHOJcMG-3xFr9hEp1yV5um1w5cbtZBnfzsw4uPmtOOuo_48m3Nny_6v0DtrSy0g32cEM5ZZVU",
-      "media_upload": "",
-      "title": "The Apex Series Reveal",
+      "media_type": "embed",
+      "media_url": "",
+      "media_upload": "https://www.youtube.com/watch?v=3pjx-HaawTw",
+      "title": "Weber Lask",
       "description": "A high-energy 60s spot for the flagship product. I handled the offline edit and coordinated with the VFX team for the HUD overlays. The goal was speed and precision.",
-      "tags": ["Social", "Web"]
+      "tags": [
+        "Social",
+        "Web"
+      ]
     },
     {
       "badge": "Employer Brand",
@@ -39,7 +40,10 @@
       "media_upload": "",
       "title": "Life at Vertex",
       "description": "A documentary-style recruiting film. Shot over two weeks at headquarters. My role involved storyboarding the narrative arc to highlight company values without feeling corporate.",
-      "tags": ["Internal", "Youtube"],
+      "tags": [
+        "Internal",
+        "Youtube"
+      ],
       "award_note": "Award winner"
     },
     {
@@ -49,13 +53,17 @@
       "media_upload": "",
       "title": "Keynote 2022 Opener",
       "description": "The hype reel for the annual developer conference. Fast-paced, kinetic typography mixed with product renders. Synced tightly to a custom audio track.",
-      "tags": ["Live Event"]
+      "tags": [
+        "Live Event"
+      ]
     }
   ],
-  "closing_quote": "\"Redefining the brand through motion, one frame at a time.\"",
+  "hero_role": "Role: In-house Video Editor",
   "seo": {
     "seo_title": "weber collection",
     "seo_description": "weber collection videos",
     "seo_image": ""
-  }
+  },
+  "hero_timecode": "20:15",
+  "spec_position_value": "Senior Video Editor"
 }
