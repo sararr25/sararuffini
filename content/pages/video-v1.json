@@ -1,11 +1,18 @@
 {
   "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
-  "hero_title_main": "Weber Cooking Collection",
+  "media_blocks": [
+    {
+      "media_upload_video": "https://www.youtube.com/watch?v=3pjx-HaawTw",
+      "media_kind": "embed",
+      "alt_text": " Laks - Weber Grillinspiration"
+    }
+  ],
+  "hero_title_main": "Weber",
   "intro_title": "Weber Cooking Collection",
   "selector_overrides": [],
-  "hero_title_highlight": "Weber Cooking Collection",
+  "hero_title_highlight": "Cooking Collection",
   "hero_meta": "video editing",
-  "hero_label": "Featured Collaboration",
+  "hero_label": "",
   "hero_years": "2022",
   "hero_image": "/assets/media/pizza2.png",
   "hero_role": "Role: In-house Video Editor",
