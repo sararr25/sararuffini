@@ -62,6 +62,22 @@
     return normalizedUrl.includes('embed') || normalizedUrl.includes('youtube') || normalizedUrl.includes('vimeo') || normalizedUrl.includes('instagram');
   }
 
+  function withAutoplay(url) {
+    if (!url || typeof url !== 'string') return '';
+    try {
+      const parsed = new URL(url, window.location.origin);
+      parsed.searchParams.set('autoplay', '1');
+      if (parsed.hostname.includes('youtube.com') || parsed.hostname.includes('youtu.be')) {
+        // Muted autoplay is more reliable across mobile browsers.
+        if (!parsed.searchParams.has('mute')) parsed.searchParams.set('mute', '1');
+      }
+      return parsed.toString();
+    } catch (e) {
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}autoplay=1`;
+    }
+  }
+
   // ============ DATA APPLICATION ============
 
   function applyTextData(allData) {
@@ -179,6 +195,36 @@
     });
   }
 
+  function bindMediaPlayButtons() {
+    document.querySelectorAll('[data-cms-media-container]').forEach(container => {
+      const playBtn = container.querySelector('button');
+      if (!playBtn || playBtn.dataset.cmsPlayBound === 'true') return;
+      playBtn.dataset.cmsPlayBound = 'true';
+
+      playBtn.addEventListener('click', event => {
+        event.preventDefault();
+
+        const video = container.querySelector('[data-cms-media-video]:not(.hidden)');
+        if (video) {
+          video.play().catch(() => {});
+          playBtn.classList.add('hidden');
+          playBtn.style.pointerEvents = 'none';
+          return;
+        }
+
+        const iframe = container.querySelector('[data-cms-media-embed]:not(.hidden)');
+        if (iframe) {
+          const currentSrc = iframe.getAttribute('src') || '';
+          if (currentSrc) {
+            iframe.setAttribute('src', withAutoplay(currentSrc));
+          }
+          playBtn.classList.add('hidden');
+          playBtn.style.pointerEvents = 'none';
+        }
+      });
+    });
+  }
+
   // ============ SEO ============
 
   function applySeoMeta(allData, globalSeoData) {
@@ -234,6 +280,7 @@
       applyBackgroundImage(allData);
       applyHref(allData);
       applyMediaContainers(allData);
+      bindMediaPlayButtons();
       applySeoMeta(allData, globalSeo);
 
       log('Data applied successfully');
