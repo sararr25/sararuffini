@@ -709,7 +709,6 @@ collections:
         name: seo_image
         widget: image
         required: false
-      required: false
   - label: Video Page V2
     name: video_v2
     file: content/pages/video-v2.json
