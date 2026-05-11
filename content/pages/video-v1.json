@@ -35,7 +35,7 @@
     },
     {
       "badge": "T-bone steak",
-      "media_type": "image",
+      "media_type": "embed",
       "media_url": "",
       "media_upload": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
       "title": "",
@@ -48,7 +48,7 @@
     },
     {
       "badge": "Lammeskank",
-      "media_type": "image",
+      "media_type": "embed",
       "media_url": "",
       "media_upload": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
       "title": "",
@@ -60,8 +60,8 @@
   ],
   "hero_role": "Role: In-house Video Editor",
   "seo": {
-    "seo_title": "weber collection",
-    "seo_description": "weber collection videos",
+    "seo_title": "Weber Grillinspiration",
+    "seo_description": "weber collection videos\nWeber Grillinspiration",
     "seo_image": ""
   },
   "hero_timecode": "20:15",
