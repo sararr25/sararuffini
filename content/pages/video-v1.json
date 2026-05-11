@@ -4,10 +4,10 @@
     "hero_title_main": "Weber",
     "hero_title_highlight": "Grillinspiration",
     "hero_meta": "video editing",
+    "hero_play_reel_text": "play reel • showreel 2023 • play reel • showreel 2023 •",
     "hero_media_url": "https://www.youtube.com/watch?v=8TPd_RnmCjE",
     "hero_label": "Weber Grillinspiration",
     "hero_years": "2022",
-    "hero_play_reel_text": "play reel • showreel 2023 • play reel • showreel 2023 •",
     "hero_volume_label": "",
     "hero_image": "/assets/media/pizza2.png",
     "hero_highlights_label": "Grillinspiration Highlights",
@@ -38,36 +38,28 @@
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3pjx-HaawTw",
       "media_upload": "",
-      "title": "The Apex Series Reveal",
-      "description": "A high-energy 60s spot for the flagship product. I handled the offline edit and coordinated with the VFX team for the HUD overlays. The goal was speed and precision.",
-      "tags": [
-        "Social",
-        "Web"
-      ]
+      "title": "",
+      "description": "",
+      "tags": []
     },
     {
       "badge": "T-bone steak",
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
       "media_upload": "",
-      "title": "Life at Vertex",
-      "description": "A documentary-style recruiting film. Shot over two weeks at headquarters. My role involved storyboarding the narrative arc to highlight company values without feeling corporate.",
-      "tags": [
-        "Internal",
-        "Youtube"
-      ],
-      "award_note": "Award winner"
+      "title": "",
+      "description": "",
+      "tags": [],
+      "award_note": ""
     },
     {
       "badge": "Lammeskank",
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
       "media_upload": "",
-      "title": "Keynote 2022 Opener",
-      "description": "The hype reel for the annual developer conference. Fast-paced, kinetic typography mixed with product renders. Synced tightly to a custom audio track.",
-      "tags": [
-        "Live Event"
-      ]
+      "title": "",
+      "description": "",
+      "tags": []
     }
   ],
   "closing_section": {
