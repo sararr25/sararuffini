@@ -22,13 +22,13 @@
     "intro_badge_3": "Storytelling"
   },
   "specs_section": {
-    "engagement_specs_title": "Engagement Specs",
+    "engagement_specs_title": "Projects details",
     "spec_position_label": "Position",
-    "spec_position_value": "Senior Video Editor",
+    "spec_position_value": "Video Editor",
     "spec_duration_label": "Duration",
-    "spec_duration_value": "24 Months (Contract)",
-    "spec_deliverables_label": "Key Deliverables",
-    "spec_deliverables_value": "30+ Assets, 2 Campaigns"
+    "spec_duration_value": "6 months",
+    "spec_deliverables_label": "Skills and programs",
+    "spec_deliverables_value": "Da Vinci Resolve, After Effects, Premiere, Editing, Post production, Motion Graphic, Color Grading"
   },
   "key_projects_label": "Key Projects",
   "projects": [
@@ -39,10 +39,7 @@
       "media_upload": "",
       "title": "Weber Lask",
       "description": "",
-      "tags": [
-        "Social",
-        "Web"
-      ]
+      "tags": []
     },
     {
       "badge": "T-bone steak",
@@ -51,10 +48,7 @@
       "media_upload": "",
       "title": "",
       "description": "",
-      "tags": [
-        "Internal",
-        "Youtube"
-      ],
+      "tags": [],
       "award_note": ""
     },
     {
@@ -64,9 +58,7 @@
       "media_upload": "",
       "title": "",
       "description": "",
-      "tags": [
-        "Live Event"
-      ]
+      "tags": []
     }
   ],
   "closing_section": {
