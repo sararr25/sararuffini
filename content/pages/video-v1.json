@@ -1,25 +1,25 @@
 {
   "hero_section": {
-    "hero_label": "",
-    "hero_years": "2022",
+    "hero_media_upload": "",
     "hero_title_main": "Weber",
-    "hero_title_highlight": "Cooking Collection",
-    "hero_role": "Role: In-house Video Editor",
+    "hero_title_highlight": "Grillinspiration",
     "hero_meta": "video editing",
-    "hero_image": "/assets/media/pizza2.png",
-    "hero_timecode": "20:15",
+    "hero_media_url": "https://www.youtube.com/watch?v=8TPd_RnmCjE",
+    "hero_label": "Weber Grillinspiration",
+    "hero_years": "2022",
     "hero_volume_label": "Volume 100%",
+    "hero_image": "/assets/media/pizza2.png",
     "hero_highlights_label": "2021-2023 Highlights",
-    "hero_media_type": "image",
-    "hero_media_url": "",
-    "hero_media_upload": ""
+    "hero_media_type": "embed",
+    "hero_role": "Role: In-house Video Editor",
+    "hero_timecode": ""
   },
   "intro_section": {
-    "intro_title": "Weber Cooking Collection",
+    "intro_title": "Weber Grillinspiration",
     "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
-    "intro_badge_1": "Art Direction",
+    "intro_badge_1": "Video Editing",
     "intro_badge_2": "Motion Design",
-    "intro_badge_3": "Video Edit"
+    "intro_badge_3": "Storytelling"
   },
   "specs_section": {
     "engagement_specs_title": "Engagement Specs",
