@@ -53,6 +53,11 @@ collections:
       name: footer_location
       widget: string
       required: false
+    - label: Footer Contact Line (full)
+      name: footer_contact
+      widget: string
+      required: false
+      hint: "e.g. email@domain.com | +45 00 00 00 00 | City"
   - label: SEO Defaults
     name: seo_defaults
     file: content/global-seo.json
@@ -1390,6 +1395,10 @@ collections:
       name: campaign_text
       widget: text
       required: false
+    - label: Polaroid Caption
+      name: polaroid_caption
+      widget: string
+      required: false
     - label: Polaroid Image
       name: hero_image_polaroid
       widget: image
@@ -1401,6 +1410,10 @@ collections:
     - label: Wide Image
       name: hero_image_wide
       widget: image
+      required: false
+    - label: Wide Image Overlay Text
+      name: wide_image_overlay_text
+      widget: string
       required: false
     - label: Dynamic Media Blocks
       name: media_blocks
@@ -1522,6 +1535,10 @@ collections:
     - label: Intro Text
       name: intro_text
       widget: text
+      required: false
+    - label: Technical Section Title
+      name: technical_title
+      widget: string
       required: false
     - label: Technical Text
       name: technical_text
@@ -2537,6 +2554,27 @@ collections:
         widget: image
         required: false
       required: false
+  - label: Contact Page
+    name: contact
+    file: content/pages/contact.json
+    fields:
+    - label: "🔍 SEO"
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
 - name: project_pages_entries
   label: Project Pages / Entries
   description: Create new project pages from existing templates
