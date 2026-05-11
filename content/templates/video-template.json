@@ -1,16 +1,60 @@
 {
   "template_name": "Video Project Template",
-  "hero_label": "PROJECT TYPE",
-  "hero_years": "2024",
-  "hero_title_main": "Project Title",
-  "hero_title_highlight": "Highlight Key Word",
-  "hero_role": "Creative Director • Editor",
-  "hero_meta": "Video • 2024",
-  "hero_image": "/assets/media/default-hero.jpg",
-  "intro_text": "Brief description of the project and its creative approach.",
-  "seo_title": "Project Title - Sara Ruffini",
-  "seo_description": "A compelling description of your video project for search engines and social sharing.",
-  "seo_image": "/assets/media/default-og-image.jpg",
+  "hero_section": {
+    "hero_label": "PROJECT TYPE",
+    "hero_years": "2024",
+    "hero_title_main": "Project Title",
+    "hero_title_highlight": "Highlight Key Word",
+    "hero_role": "Creative Director • Editor",
+    "hero_meta": "Video • 2024",
+    "hero_image": "/assets/media/default-hero.jpg",
+    "hero_timecode": "00:00",
+    "hero_volume_label": "Volume 100%",
+    "hero_highlights_label": "Project Highlights",
+    "hero_media_type": "image",
+    "hero_media_url": "",
+    "hero_media_upload": ""
+  },
+  "intro_section": {
+    "intro_title": "Project Overview",
+    "intro_text": "Brief description of the project and its creative approach.",
+    "intro_badge_1": "Creative Direction",
+    "intro_badge_2": "Motion Design",
+    "intro_badge_3": "Editing"
+  },
+  "specs_section": {
+    "engagement_specs_title": "Engagement Specs",
+    "spec_position_label": "Position",
+    "spec_position_value": "Video Editor",
+    "spec_duration_label": "Duration",
+    "spec_duration_value": "3 Months",
+    "spec_deliverables_label": "Key Deliverables",
+    "spec_deliverables_value": "Campaign Assets"
+  },
+  "key_projects_label": "Key Projects",
+  "projects": [
+    {
+      "badge": "Project 1",
+      "media_type": "image",
+      "media_url": "",
+      "media_upload": "",
+      "title": "Project Title",
+      "description": "Project description.",
+      "tags": [
+        "Tag 1",
+        "Tag 2"
+      ],
+      "award_note": ""
+    }
+  ],
+  "closing_section": {
+    "closing_quote": "Project closing quote."
+  },
+  "seo": {
+    "seo_title": "Project Title - Sara Ruffini",
+    "seo_description": "A compelling description of your video project for search engines and social sharing.",
+    "seo_image": "/assets/media/default-og-image.jpg"
+  },
   "media_blocks": [],
   "selector_overrides": []
 }

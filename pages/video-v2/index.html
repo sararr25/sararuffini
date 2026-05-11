@@ -105,9 +105,10 @@
 </svg>
 </div>
 <div id="video-v2-hero-media" data-cms-media-container="hero" class="relative w-full aspect-video bg-black rounded-lg border-[6px] border-retro-black dark:border-background-light shadow-hard overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-80 transition-opacity duration-500" data-alt="Dynamic sports commercial hero shot with athlete sprinting" data-cms-bg="hero_image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAg0gwaxRn4hVJNCwQEpTUwCc4jFf_m-05QJtQPpP3HlqeKzAa7uyeW7_DclteUY6Hbs2t8wHqI55j6km0rubcD6lTNfNxPgMT9OfiIXMc5NVx7X_26GKfcfC7rw435sGvmiGEgaFBoiu5YN0LV8mAPIRhk92wf5YJZIJH8I_3ySlVKMwLVoKx5accXzdHev6ro9l0HHOJcMG-3xFr9hEp1yV5um1w5cbtZBnfzsw4uPmtOOuo_48m3Nny_6v0DtrSy0g32cEM5ZZVU');">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 group-hover:opacity-80 transition-opacity duration-500" data-cms-media-image data-alt="Dynamic sports commercial hero shot with athlete sprinting" data-cms-bg="hero_image" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAg0gwaxRn4hVJNCwQEpTUwCc4jFf_m-05QJtQPpP3HlqeKzAa7uyeW7_DclteUY6Hbs2t8wHqI55j6km0rubcD6lTNfNxPgMT9OfiIXMc5NVx7X_26GKfcfC7rw435sGvmiGEgaFBoiu5YN0LV8mAPIRhk92wf5YJZIJH8I_3ySlVKMwLVoKx5accXzdHev6ro9l0HHOJcMG-3xFr9hEp1yV5um1w5cbtZBnfzsw4uPmtOOuo_48m3Nny_6v0DtrSy0g32cEM5ZZVU');">
 </div>
-<video class="hidden absolute inset-0 w-full h-full" data-cms-video-src="hero_video_upload"></video>
+<video class="hidden absolute inset-0 w-full h-full" data-cms-media-video data-cms-video-src="hero_media_upload" controls playsinline preload="metadata"></video>
+<iframe class="hidden absolute inset-0 w-full h-full border-0" data-cms-media-embed data-cms-reel-src="hero_media_url" title="Hero embedded video" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group/btn hover:scale-110 transition-transform duration-300">
 <div class="relative w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-sticker border-4 border-retro-black">
 <span class="material-icons text-retro-black text-5xl md:text-6xl ml-1">play_arrow</span>
@@ -135,21 +136,21 @@
                 </p>
 <div class="space-y-6 border-l-2 border-retro-black/10 pl-6 dark:border-white/10">
 <div>
-<span class="block text-xs uppercase tracking-widest opacity-50 mb-1">Role</span>
-<span class="font-medium text-lg">Senior Editor</span>
+<span class="block text-xs uppercase tracking-widest opacity-50 mb-1" data-cms-text="spec_position_label">Role</span>
+<span class="font-medium text-lg" data-cms-text="spec_position_value">Senior Editor</span>
 </div>
 <div>
-<span class="block text-xs uppercase tracking-widest opacity-50 mb-1">Deliverables</span>
+<span class="block text-xs uppercase tracking-widest opacity-50 mb-1" data-cms-text="spec_deliverables_label">Deliverables</span>
 <ul class="font-medium text-sm space-y-1 list-disc list-inside marker:text-primary">
-<li>TV Commercials</li>
-<li>Social Shorts</li>
-<li>Product Launches</li>
-<li>Athlete Profiles</li>
+<li data-cms-text="spec_deliverable_1">TV Commercials</li>
+<li data-cms-text="spec_deliverable_2">Social Shorts</li>
+<li data-cms-text="spec_deliverable_3">Product Launches</li>
+<li data-cms-text="spec_deliverable_4">Athlete Profiles</li>
 </ul>
 </div>
 <div>
-<span class="block text-xs uppercase tracking-widest opacity-50 mb-1">Tools</span>
-<span class="font-medium text-sm">Premiere Pro, After Effects, DaVinci Resolve</span>
+<span class="block text-xs uppercase tracking-widest opacity-50 mb-1" data-cms-text="spec_tools_label">Tools</span>
+<span class="font-medium text-sm" data-cms-text="spec_tools_value">Premiere Pro, After Effects, DaVinci Resolve</span>
 </div>
 </div>
 <div class="hidden lg:block absolute -right-24 top-1/2 w-20">
@@ -157,7 +158,7 @@
 <path d="M0 25 Q 50 0 100 25" stroke-dasharray="4 4"></path>
 <path d="M90 20 L 100 25 L 90 30"></path>
 </svg>
-<span class="absolute top-0 right-0 -mt-6 text-xs font-handwriting rotate-12 text-teal-accent">more videos →</span>
+<span class="absolute top-0 right-0 -mt-6 text-xs font-handwriting rotate-12 text-teal-accent" data-cms-text="spec_more_videos_label">more videos -&gt;</span>
 </div>
 </div>
 </div>
@@ -166,19 +167,20 @@
 <div class="group relative md:mt-12"> 
 <div class="relative rotate-2 group-hover:rotate-0 transition-transform duration-300">
 <div id="video-v2-project-1-media" data-cms-media-container="project_1" class="w-full aspect-video bg-gray-200 border-4 border-retro-black dark:border-white shadow-hard-lg rounded-sm overflow-hidden relative">
-<img alt="Close up of running shoes on track" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of running shoes on track" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzfRGLNI0P4-tIQUc9euHrbuYQVG1WdiJVL4qLToXap1RtDOspJEG6aXz0DZ-DJx8Sio1mXXO_3kRem8NBFvGUE0Q5Az3S45ujOxFFiq8omsyptCmZvS_BVok5k9rFhJIDtKRAsi_vg6CO9Ia9d0ePKbfLVJyGa8yGQFMcgoyFgeqPXXjF4YDk89MLOOuI0ygfOfDvfvg6y15rR09UfIz6kCRnh4y00tRgpyiKfOdiezGIgJ4cHdvbxH2Pyl3EDVuDm84ykHptyXxB"/>
-<video class="hidden absolute inset-0 w-full h-full" data-cms-video-src="project_1_video_upload"></video>
+<img alt="Close up of running shoes on track" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-cms-media-image data-alt="Close up of running shoes on track" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzfRGLNI0P4-tIQUc9euHrbuYQVG1WdiJVL4qLToXap1RtDOspJEG6aXz0DZ-DJx8Sio1mXXO_3kRem8NBFvGUE0Q5Az3S45ujOxFFiq8omsyptCmZvS_BVok5k9rFhJIDtKRAsi_vg6CO9Ia9d0ePKbfLVJyGa8yGQFMcgoyFgeqPXXjF4YDk89MLOOuI0ygfOfDvfvg6y15rR09UfIz6kCRnh4y00tRgpyiKfOdiezGIgJ4cHdvbxH2Pyl3EDVuDm84ykHptyXxB"/>
+<video class="hidden absolute inset-0 w-full h-full" data-cms-media-video data-cms-video-src="project_1_media_upload" controls playsinline preload="metadata"></video>
+<iframe class="hidden absolute inset-0 w-full h-full border-0" data-cms-media-embed data-cms-reel-src="project_1_media_url" title="Project 1 embedded video" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 <div class="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <span class="material-icons text-white text-5xl drop-shadow-lg">play_circle_filled</span>
 </div>
 </div>
-<div class="absolute -top-5 -left-4 bg-quaternary text-retro-black px-4 py-1 font-bold text-sm border-2 border-retro-black shadow-sticker rotate-[-5deg] z-10">
+<div class="absolute -top-5 -left-4 bg-quaternary text-retro-black px-4 py-1 font-bold text-sm border-2 border-retro-black shadow-sticker rotate-[-5deg] z-10" data-cms-text="project_1_badge">
                             Social Teaser #1
                         </div>
 </div>
 <div class="mt-4 px-2">
-<p class="text-xs font-mono opacity-60">15s • Instagram Reels</p>
+<p class="text-xs font-mono opacity-60" data-cms-text="project_1_meta">15s • Instagram Reels</p>
 </div>
 <div class="absolute -bottom-8 -right-4 hidden md:block z-0">
 <span class="font-handwriting text-teal-accent text-sm -rotate-6 block">fast cuts!</span>
@@ -190,54 +192,57 @@
 <div class="group relative">
 <div class="relative -rotate-1 group-hover:rotate-0 transition-transform duration-300">
 <div id="video-v2-project-2-media" data-cms-media-container="project_2" class="w-full aspect-video bg-gray-200 border-4 border-retro-black dark:border-white shadow-hard-lg rounded-sm overflow-hidden relative">
-<img alt="Studio shot of new athletic jersey" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Studio shot of new athletic jersey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0yqZaTAH4_f5G2ZvUZzBvkJuyjXMRnG59c6lotsv1AjDxwyBugzRv6uQkFVIVLiltsNPeN3De7fmEEP4WfrdVzniTJeoAMxtxtKFF5fU6JQ0K5fKHN_txVpOh2b-mi5lpURKk6S4zIwG8TgNoWaOTbI456J1ZziO7IAlIiye4DW5ZyISjnmDpNoxn1bDu6BdOSgLWuZnsrJNHGFJzlfw5PpgFkjx7QBzFqpVAYszx2n7DDAcABnFKA-t9oaoTD0KuFNtU_30-9ZT1"/>
-<video class="hidden absolute inset-0 w-full h-full" data-cms-video-src="project_2_video_upload"></video>
+<img alt="Studio shot of new athletic jersey" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-cms-media-image data-alt="Studio shot of new athletic jersey" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0yqZaTAH4_f5G2ZvUZzBvkJuyjXMRnG59c6lotsv1AjDxwyBugzRv6uQkFVIVLiltsNPeN3De7fmEEP4WfrdVzniTJeoAMxtxtKFF5fU6JQ0K5fKHN_txVpOh2b-mi5lpURKk6S4zIwG8TgNoWaOTbI456J1ZziO7IAlIiye4DW5ZyISjnmDpNoxn1bDu6BdOSgLWuZnsrJNHGFJzlfw5PpgFkjx7QBzFqpVAYszx2n7DDAcABnFKA-t9oaoTD0KuFNtU_30-9ZT1"/>
+<video class="hidden absolute inset-0 w-full h-full" data-cms-media-video data-cms-video-src="project_2_media_upload" controls playsinline preload="metadata"></video>
+<iframe class="hidden absolute inset-0 w-full h-full border-0" data-cms-media-embed data-cms-reel-src="project_2_media_url" title="Project 2 embedded video" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <span class="material-icons text-white text-5xl drop-shadow-lg">play_circle_filled</span>
 </div>
 </div>
-<div class="absolute -bottom-4 -right-4 bg-tertiary text-retro-black px-4 py-1 font-bold text-sm border-2 border-retro-black shadow-sticker rotate-3 z-10">
+<div class="absolute -bottom-4 -right-4 bg-tertiary text-retro-black px-4 py-1 font-bold text-sm border-2 border-retro-black shadow-sticker rotate-3 z-10" data-cms-text="project_2_badge">
                             Product Reveal
                         </div>
 </div>
 <div class="mt-5 px-2 text-right">
-<p class="text-xs font-mono opacity-60">45s • Website Hero</p>
+<p class="text-xs font-mono opacity-60" data-cms-text="project_2_meta">45s • Website Hero</p>
 </div>
 </div>
 <div class="group relative md:mt-8">
 <div class="absolute -top-12 left-1/2 w-1 h-12 border-l-2 border-dashed border-retro-black/30 hidden md:block"></div>
 <div class="relative rotate-1 group-hover:rotate-0 transition-transform duration-300">
 <div id="video-v2-project-3-media" data-cms-media-container="project_3" class="w-full aspect-video bg-gray-200 border-4 border-retro-black dark:border-white shadow-hard-lg rounded-sm overflow-hidden relative">
-<img alt="Athlete looking determined before race" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Athlete looking determined before race" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcsqn-UrafHKYVtFStYgu2GVQldkTGi--wwI1-1wXbo7570Yceyo4XQ6G2x2mnMW2kJBk0w3WSwYMScwmMmfpJjJ-PZYQzUYE9rtzqHUkrMaipzp2OtMU_qVmej352zBRSTnz8Fhg7GfXMne_8BlAFBlK86JNKypRJhRC0akR-Isedcx2QeBsWrISCbZaeXlQjob8TenLG-tiauyVRsuR-8QUxjmvbKQ9Rm46MoFIffc1hHfw9mkOm4PlPP1LUfKHk6Cx7CuIiWMyY"/>
-<video class="hidden absolute inset-0 w-full h-full" data-cms-video-src="project_3_video_upload"></video>
+<img alt="Athlete looking determined before race" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-cms-media-image data-alt="Athlete looking determined before race" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcsqn-UrafHKYVtFStYgu2GVQldkTGi--wwI1-1wXbo7570Yceyo4XQ6G2x2mnMW2kJBk0w3WSwYMScwmMmfpJjJ-PZYQzUYE9rtzqHUkrMaipzp2OtMU_qVmej352zBRSTnz8Fhg7GfXMne_8BlAFBlK86JNKypRJhRC0akR-Isedcx2QeBsWrISCbZaeXlQjob8TenLG-tiauyVRsuR-8QUxjmvbKQ9Rm46MoFIffc1hHfw9mkOm4PlPP1LUfKHk6Cx7CuIiWMyY"/>
+<video class="hidden absolute inset-0 w-full h-full" data-cms-media-video data-cms-video-src="project_3_media_upload" controls playsinline preload="metadata"></video>
+<iframe class="hidden absolute inset-0 w-full h-full border-0" data-cms-media-embed data-cms-reel-src="project_3_media_url" title="Project 3 embedded video" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <span class="material-icons text-white text-5xl drop-shadow-lg">play_circle_filled</span>
 </div>
 </div>
-<div class="absolute top-1/2 -left-6 -translate-y-1/2 bg-primary text-white px-3 py-3 font-bold text-sm border-2 border-retro-black shadow-sticker -rotate-90 z-10">
+<div class="absolute top-1/2 -left-6 -translate-y-1/2 bg-primary text-white px-3 py-3 font-bold text-sm border-2 border-retro-black shadow-sticker -rotate-90 z-10" data-cms-text="project_3_badge">
                             DOCU-STYLE
                         </div>
 </div>
 <div class="mt-4 px-2">
-<h3 class="font-bold leading-tight">"The Long Run"</h3>
-<p class="text-xs font-mono opacity-60">03:20 • YouTube</p>
+<h3 class="font-bold leading-tight" data-cms-text="project_3_title">"The Long Run"</h3>
+<p class="text-xs font-mono opacity-60" data-cms-text="project_3_meta">03:20 • YouTube</p>
 </div>
 </div>
 <div class="group relative md:-mt-12">
 <div class="relative -rotate-2 group-hover:rotate-0 transition-transform duration-300">
 <div id="video-v2-project-4-media" data-cms-media-container="project_4" class="w-full aspect-video bg-gray-200 border-4 border-retro-black dark:border-white shadow-hard-lg rounded-sm overflow-hidden relative">
-<img alt="Crowd cheering at sports event" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Crowd cheering at sports event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqTRxxTO3IZFuuk34cxW8wqIvsRVTPKG_PtHq_SdNi8mukCVxIlrR5ITcjycBLA05U09tQQBL9211J7psuwEjpsCACN25hqZm2JJqCsbJ7uTld0TO7d30wfLnGGNtjXWhiESncnsIqbmO9VSYQ-Z-Q6kWkKs8VPsV-FWP_aDhHCv9oWkEsxS0husnjRBOTUSwiHuY6lxr6JbiB_8FXwQC256uVoM4V-3AH89DI7tlbqZ2sKDNU4GHxZTP1J32HWCdOveFp7YO0-V_8"/>
-<video class="hidden absolute inset-0 w-full h-full" data-cms-video-src="project_4_video_upload"></video>
+<img alt="Crowd cheering at sports event" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-cms-media-image data-alt="Crowd cheering at sports event" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqTRxxTO3IZFuuk34cxW8wqIvsRVTPKG_PtHq_SdNi8mukCVxIlrR5ITcjycBLA05U09tQQBL9211J7psuwEjpsCACN25hqZm2JJqCsbJ7uTld0TO7d30wfLnGGNtjXWhiESncnsIqbmO9VSYQ-Z-Q6kWkKs8VPsV-FWP_aDhHCv9oWkEsxS0husnjRBOTUSwiHuY6lxr6JbiB_8FXwQC256uVoM4V-3AH89DI7tlbqZ2sKDNU4GHxZTP1J32HWCdOveFp7YO0-V_8"/>
+<video class="hidden absolute inset-0 w-full h-full" data-cms-media-video data-cms-video-src="project_4_media_upload" controls playsinline preload="metadata"></video>
+<iframe class="hidden absolute inset-0 w-full h-full border-0" data-cms-media-embed data-cms-reel-src="project_4_media_url" title="Project 4 embedded video" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 <span class="material-icons text-white text-5xl drop-shadow-lg">play_circle_filled</span>
 </div>
 </div>
-<div class="absolute -top-4 right-1/2 translate-x-1/2 bg-secondary text-white px-4 py-1 font-bold text-sm border-2 border-retro-black shadow-sticker rotate-2 z-10">
+<div class="absolute -top-4 right-1/2 translate-x-1/2 bg-secondary text-white px-4 py-1 font-bold text-sm border-2 border-retro-black shadow-sticker rotate-2 z-10" data-cms-text="project_4_badge">
                             Summer Events
                         </div>
 </div>
 <div class="mt-4 px-2 text-center">
-<p class="text-xs font-mono opacity-60">60s • Internal Recap</p>
+<p class="text-xs font-mono opacity-60" data-cms-text="project_4_meta">60s • Internal Recap</p>
 </div>
 </div>
 <div class="hidden md:block absolute bottom-20 right-10 w-24 h-24 rounded-full border-2 border-dashed border-primary/50 flex items-center justify-center -rotate-12 pointer-events-none">
@@ -268,7 +273,7 @@
 </div>
 </div>
 </footer>
-<script src="../../scripts/cms-page-loader.js"></script>
+<script src="../../scripts/cms-page-loader-v2.js"></script>
 
 
 

@@ -120,6 +120,21 @@
     });
   }
 
+  function applySectionData(allData) {
+    const sectionNames = ['hero_section', 'intro_section', 'specs_section', 'closing_section'];
+
+    sectionNames.forEach(sectionName => {
+      const sectionData = allData[sectionName];
+      if (!sectionData || typeof sectionData !== 'object') return;
+
+      Object.entries(sectionData).forEach(([key, value]) => {
+        if (allData[key] === undefined || allData[key] === null || allData[key] === '') {
+          allData[key] = value;
+        }
+      });
+    });
+  }
+
   // ============ PROJECTS SYSTEM (BLOCK EDITOR) ============
 
   function applyProjectsData(allData) {
@@ -133,6 +148,7 @@
       allData[`${prefix}_badge`] = project.badge;
       allData[`${prefix}_title`] = project.title;
       allData[`${prefix}_text`] = project.description;
+      allData[`${prefix}_meta`] = project.meta;
       allData[`${prefix}_media_type`] = project.media_type;
       allData[`${prefix}_media_url`] = project.media_url;
       allData[`${prefix}_media_upload`] = project.media_upload;
@@ -160,6 +176,10 @@
       const mediaUrl = getByPath(allData, `${containerName}_media_url`) || '';
       const mediaUpload = getByPath(allData, `${containerName}_media_upload`) || '';
 
+      const imageNode = container.querySelector('[data-cms-media-image]') || container.querySelector('img');
+      const videoNode = container.querySelector('[data-cms-media-video]') || container.querySelector('[data-cms-video-src]') || container.querySelector('video');
+      let embedNode = container.querySelector('[data-cms-media-embed]') || container.querySelector('[data-cms-reel-src]') || container.querySelector('iframe');
+
       // Determine which URL to use
       const sourceUrl = mediaUpload || mediaUrl;
       if (!sourceUrl) return;
@@ -167,29 +187,42 @@
       // Handle based on type
       if (mediaType === 'embed') {
         const embedUrl = normalizeEmbedUrl(sourceUrl);
-        const iframe = container.querySelector('[data-cms-media-embed]');
-        if (iframe) {
-          iframe.src = embedUrl;
-          iframe.classList.remove('hidden');
-          container.querySelector('[data-cms-media-image]')?.classList.add('hidden');
-          container.querySelector('[data-cms-media-video]')?.classList.add('hidden');
+        if (!embedNode) {
+          embedNode = document.createElement('iframe');
+          embedNode.className = 'absolute inset-0 w-full h-full border-0 hidden';
+          embedNode.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+          embedNode.setAttribute('allowfullscreen', '');
+          container.appendChild(embedNode);
+        }
+
+        if (embedNode) {
+          embedNode.src = embedUrl;
+          embedNode.classList.remove('hidden');
+          imageNode?.classList.add('hidden');
+          videoNode?.classList.add('hidden');
         }
       } else if (mediaType === 'video') {
-        const video = container.querySelector('[data-cms-media-video]');
-        if (video) {
-          video.src = sourceUrl;
-          video.classList.remove('hidden');
-          container.querySelector('[data-cms-media-image]')?.classList.add('hidden');
-          container.querySelector('[data-cms-media-embed]')?.classList.add('hidden');
+        if (videoNode) {
+          videoNode.src = sourceUrl;
+          videoNode.classList.remove('hidden');
+          videoNode.setAttribute('playsinline', '');
+          if (!videoNode.hasAttribute('controls')) {
+            videoNode.setAttribute('controls', '');
+          }
+          imageNode?.classList.add('hidden');
+          embedNode?.classList.add('hidden');
         }
       } else {
         // Default to image
-        const imgEl = container.querySelector('[data-cms-media-image]');
-        if (imgEl) {
-          imgEl.style.backgroundImage = `url('${sourceUrl}')`;
-          imgEl.classList.remove('hidden');
-          container.querySelector('[data-cms-media-video]')?.classList.add('hidden');
-          container.querySelector('[data-cms-media-embed]')?.classList.add('hidden');
+        if (imageNode) {
+          if (imageNode.tagName === 'IMG') {
+            imageNode.setAttribute('src', sourceUrl);
+          } else {
+            imageNode.style.backgroundImage = `url('${sourceUrl}')`;
+          }
+          imageNode.classList.remove('hidden');
+          videoNode?.classList.add('hidden');
+          embedNode?.classList.add('hidden');
         }
       }
     });
@@ -274,6 +307,7 @@
       log(`Loaded page: ${pageName}`, allData);
 
       // Apply data
+      applySectionData(allData);
       applyProjectsData(allData);
       applyTextData(allData);
       applyHtmlData(allData);

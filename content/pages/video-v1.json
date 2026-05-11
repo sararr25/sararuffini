@@ -1,31 +1,42 @@
 {
-  "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
-  "spec_position_label": "Position",
-  "intro_badge_1": "Art Direction",
-  "intro_badge_2": "Motion Design",
-  "intro_badge_3": "Video Edit",
-  "hero_title_main": "Weber",
-  "intro_title": "Weber Cooking Collection",
-  "hero_title_highlight": "Cooking Collection",
-  "spec_duration_value": "24 Months (Contract)",
-  "spec_deliverables_value": "30+ Assets, 2 Campaigns",
-  "hero_meta": "video editing",
-  "spec_duration_label": "Duration",
-  "spec_deliverables_label": "Key Deliverables",
+  "hero_section": {
+    "hero_label": "",
+    "hero_years": "2022",
+    "hero_title_main": "Weber",
+    "hero_title_highlight": "Cooking Collection",
+    "hero_role": "Role: In-house Video Editor",
+    "hero_meta": "video editing",
+    "hero_image": "/assets/media/pizza2.png",
+    "hero_timecode": "20:15",
+    "hero_volume_label": "Volume 100%",
+    "hero_highlights_label": "2021-2023 Highlights",
+    "hero_media_type": "image",
+    "hero_media_url": "",
+    "hero_media_upload": ""
+  },
+  "intro_section": {
+    "intro_title": "Weber Cooking Collection",
+    "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
+    "intro_badge_1": "Art Direction",
+    "intro_badge_2": "Motion Design",
+    "intro_badge_3": "Video Edit"
+  },
+  "specs_section": {
+    "engagement_specs_title": "Engagement Specs",
+    "spec_position_label": "Position",
+    "spec_position_value": "Senior Video Editor",
+    "spec_duration_label": "Duration",
+    "spec_duration_value": "24 Months (Contract)",
+    "spec_deliverables_label": "Key Deliverables",
+    "spec_deliverables_value": "30+ Assets, 2 Campaigns"
+  },
   "key_projects_label": "Key Projects",
-  "hero_label": "",
-  "hero_years": "2022",
-  "engagement_specs_title": "Engagement Specs",
-  "closing_quote": "\"Redefining the brand through motion, one frame at a time.\"",
-  "hero_volume_label": "Volume 100%",
-  "hero_image": "/assets/media/pizza2.png",
-  "hero_highlights_label": "2021-2023 Highlights",
   "projects": [
     {
       "badge": "Salmon recipe",
       "media_type": "embed",
-      "media_url": "",
-      "media_upload": "https://www.youtube.com/watch?v=3pjx-HaawTw",
+      "media_url": "https://www.youtube.com/watch?v=3pjx-HaawTw",
+      "media_upload": "",
       "title": "Weber Lask",
       "description": "",
       "tags": [
@@ -36,8 +47,8 @@
     {
       "badge": "T-bone steak",
       "media_type": "embed",
-      "media_url": "",
-      "media_upload": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
+      "media_url": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
+      "media_upload": "",
       "title": "",
       "description": "",
       "tags": [
@@ -49,8 +60,8 @@
     {
       "badge": "Lammeskank",
       "media_type": "embed",
-      "media_url": "",
-      "media_upload": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
+      "media_url": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
+      "media_upload": "",
       "title": "",
       "description": "",
       "tags": [
@@ -58,12 +69,12 @@
       ]
     }
   ],
-  "hero_role": "Role: In-house Video Editor",
+  "closing_section": {
+    "closing_quote": "\"Redefining the brand through motion, one frame at a time.\""
+  },
   "seo": {
     "seo_title": "Weber Grillinspiration",
     "seo_description": "weber collection videos\nWeber Grillinspiration",
     "seo_image": ""
-  },
-  "hero_timecode": "20:15",
-  "spec_position_value": "Senior Video Editor"
+  }
 }
