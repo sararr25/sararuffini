@@ -131,6 +131,10 @@ collections:
         name: hero_timecode
         widget: string
         required: false
+      - label: Play Reel Circular Text
+        name: hero_play_reel_text
+        widget: string
+        required: false
       - label: Volume Label
         name: hero_volume_label
         widget: string
