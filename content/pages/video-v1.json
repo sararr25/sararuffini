@@ -7,9 +7,9 @@
     "hero_media_url": "https://www.youtube.com/watch?v=8TPd_RnmCjE",
     "hero_label": "Weber Grillinspiration",
     "hero_years": "2022",
-    "hero_volume_label": "Volume 100%",
+    "hero_volume_label": "",
     "hero_image": "/assets/media/pizza2.png",
-    "hero_highlights_label": "2021-2023 Highlights",
+    "hero_highlights_label": "Grillinspiration Highlights",
     "hero_media_type": "embed",
     "hero_role": "Role: In-house Video Editor",
     "hero_timecode": ""
@@ -37,7 +37,7 @@
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3pjx-HaawTw",
       "media_upload": "",
-      "title": "Weber Lask",
+      "title": "",
       "description": "",
       "tags": []
     },
@@ -62,7 +62,7 @@
     }
   ],
   "closing_section": {
-    "closing_quote": "\"Redefining the brand through motion, one frame at a time.\""
+    "closing_quote": ""
   },
   "seo": {
     "seo_title": "Weber Grillinspiration",
