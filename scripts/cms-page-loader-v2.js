@@ -124,6 +124,73 @@
     });
   }
 
+  function applySelectorOverrides(allData) {
+    if (!Array.isArray(allData.selector_overrides)) return;
+
+    allData.selector_overrides.forEach(entry => {
+      if (!entry || typeof entry.selector !== 'string') return;
+
+      const selector = entry.selector.trim();
+      const type = typeof entry.type === 'string' ? entry.type.trim().toLowerCase() : '';
+      const value = typeof entry.value === 'string' ? entry.value : '';
+
+      if (!selector || !type) return;
+
+      let nodes;
+      try {
+        nodes = document.querySelectorAll(selector);
+      } catch (_err) {
+        return;
+      }
+
+      nodes.forEach(node => {
+        if (type === 'text') {
+          node.textContent = value;
+          return;
+        }
+
+        if (type === 'html') {
+          node.innerHTML = value;
+          return;
+        }
+
+        if (type === 'src') {
+          node.setAttribute('src', value);
+          return;
+        }
+
+        if (type === 'href') {
+          node.setAttribute('href', value);
+          return;
+        }
+
+        if (type === 'alt') {
+          node.setAttribute('alt', value);
+          return;
+        }
+
+        if (type === 'bg') {
+          node.style.backgroundImage = value ? `url('${value.replace(/'/g, "\\'")}')` : 'none';
+          return;
+        }
+
+        if (type === 'append_html') {
+          node.insertAdjacentHTML('beforeend', value);
+          return;
+        }
+
+        if (type === 'prepend_html') {
+          node.insertAdjacentHTML('afterbegin', value);
+          return;
+        }
+
+        if (type === 'remove') {
+          node.remove();
+        }
+      });
+    });
+  }
+
   function applySectionData(allData) {
     const sectionNames = ['hero_section', 'intro_section', 'specs_section', 'closing_section'];
 
@@ -320,6 +387,7 @@
       applyHref(allData);
       applyMediaContainers(allData);
       bindMediaPlayButtons();
+      applySelectorOverrides(allData);
       applySeoMeta(allData, globalSeo);
 
       log('Data applied successfully');

@@ -860,6 +860,37 @@ collections:
         widget: text
         required: false
 
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Override Type
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Value
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+
     # SEO
     - label: "🔍 SEO"
       name: seo
@@ -1059,6 +1090,37 @@ collections:
         name: award_note
         widget: string
         required: false
+
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Override Type
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Value
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
 
     - label: "🔍 SEO"
       name: seo
