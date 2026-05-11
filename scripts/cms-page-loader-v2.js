@@ -84,8 +84,8 @@
     document.querySelectorAll('[data-cms-text]').forEach(el => {
       const key = el.getAttribute('data-cms-text');
       const value = getByPath(allData, key);
-      if (typeof value === 'string' && value.trim()) {
-        el.textContent = value.trim();
+      if (typeof value === 'string') {
+        el.textContent = value;
       }
     });
   }
@@ -94,8 +94,8 @@
     document.querySelectorAll('[data-cms-html]').forEach(el => {
       const key = el.getAttribute('data-cms-html');
       const value = getByPath(allData, key);
-      if (typeof value === 'string' && value.trim()) {
-        el.innerHTML = value.trim();
+      if (typeof value === 'string') {
+        el.innerHTML = value;
       }
     });
   }
@@ -104,8 +104,12 @@
     document.querySelectorAll('[data-cms-bg]').forEach(el => {
       const key = el.getAttribute('data-cms-bg');
       const value = getByPath(allData, key);
-      if (typeof value === 'string' && value.trim()) {
-        el.style.backgroundImage = `url('${value.trim()}')`;
+      if (typeof value === 'string') {
+        if (value.trim()) {
+          el.style.backgroundImage = `url('${value.trim()}')`;
+        } else {
+          el.style.backgroundImage = 'none';
+        }
       }
     });
   }
@@ -114,7 +118,7 @@
     document.querySelectorAll('[data-cms-href]').forEach(el => {
       const key = el.getAttribute('data-cms-href');
       const value = getByPath(allData, key);
-      if (typeof value === 'string' && value.trim()) {
+      if (typeof value === 'string') {
         el.setAttribute('href', value.trim());
       }
     });
@@ -145,23 +149,24 @@
       const prefix = `project_${projectNum}`;
       
       // Create project object in allData for backward compatibility
-      allData[`${prefix}_badge`] = project.badge;
-      allData[`${prefix}_title`] = project.title;
-      allData[`${prefix}_text`] = project.description;
-      allData[`${prefix}_meta`] = project.meta;
-      allData[`${prefix}_media_type`] = project.media_type;
-      allData[`${prefix}_media_url`] = project.media_url;
-      allData[`${prefix}_media_upload`] = project.media_upload;
+      allData[`${prefix}_badge`] = typeof project.badge === 'string' ? project.badge : '';
+      allData[`${prefix}_title`] = typeof project.title === 'string' ? project.title : '';
+      allData[`${prefix}_text`] = typeof project.description === 'string' ? project.description : '';
+      allData[`${prefix}_meta`] = typeof project.meta === 'string' ? project.meta : '';
+      allData[`${prefix}_media_type`] = typeof project.media_type === 'string' ? project.media_type : '';
+      allData[`${prefix}_media_url`] = typeof project.media_url === 'string' ? project.media_url : '';
+      allData[`${prefix}_media_upload`] = typeof project.media_upload === 'string' ? project.media_upload : '';
 
       // Apply tags
       if (Array.isArray(project.tags)) {
         project.tags.forEach((tag, tagIdx) => {
-          allData[`${prefix}_tag_${tagIdx + 1}`] = tag;
+          const normalizedTag = typeof tag === 'string' ? tag : (tag && typeof tag === 'object' && typeof tag.tag === 'string' ? tag.tag : '');
+          allData[`${prefix}_tag_${tagIdx + 1}`] = normalizedTag;
         });
       }
 
       // Apply award note if exists
-      if (project.award_note) {
+      if (typeof project.award_note === 'string') {
         allData[`${prefix}_award_note`] = project.award_note;
       }
     });

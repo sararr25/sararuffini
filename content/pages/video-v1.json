@@ -12,7 +12,7 @@
     "hero_highlights_label": "Grillinspiration Highlights",
     "hero_media_type": "embed",
     "hero_role": "Role: In-house Video Editor",
-    "hero_timecode": ""
+    "hero_timecode": "01:45 / Collaboration Reel"
   },
   "intro_section": {
     "intro_title": "Weber Grillinspiration",
@@ -37,28 +37,36 @@
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3pjx-HaawTw",
       "media_upload": "",
-      "title": "",
-      "description": "",
-      "tags": []
+      "title": "The Apex Series Reveal",
+      "description": "A high-energy 60s spot for the flagship product. I handled the offline edit and coordinated with the VFX team for the HUD overlays. The goal was speed and precision.",
+      "tags": [
+        "Social",
+        "Web"
+      ]
     },
     {
       "badge": "T-bone steak",
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
       "media_upload": "",
-      "title": "",
-      "description": "",
-      "tags": [],
-      "award_note": ""
+      "title": "Life at Vertex",
+      "description": "A documentary-style recruiting film. Shot over two weeks at headquarters. My role involved storyboarding the narrative arc to highlight company values without feeling corporate.",
+      "tags": [
+        "Internal",
+        "Youtube"
+      ],
+      "award_note": "Award winner"
     },
     {
       "badge": "Lammeskank",
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
       "media_upload": "",
-      "title": "",
-      "description": "",
-      "tags": []
+      "title": "Keynote 2022 Opener",
+      "description": "The hype reel for the annual developer conference. Fast-paced, kinetic typography mixed with product renders. Synced tightly to a custom audio track.",
+      "tags": [
+        "Live Event"
+      ]
     }
   ],
   "closing_section": {
