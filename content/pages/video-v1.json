@@ -22,37 +22,37 @@
   "hero_highlights_label": "2021-2023 Highlights",
   "projects": [
     {
-      "badge": "Product Launch",
+      "badge": "Salmon recipe",
       "media_type": "embed",
       "media_url": "",
       "media_upload": "https://www.youtube.com/watch?v=3pjx-HaawTw",
       "title": "Weber Lask",
-      "description": "A high-energy 60s spot for the flagship product. I handled the offline edit and coordinated with the VFX team for the HUD overlays. The goal was speed and precision.",
+      "description": "",
       "tags": [
         "Social",
         "Web"
       ]
     },
     {
-      "badge": "Employer Brand",
+      "badge": "T-bone steak",
       "media_type": "image",
-      "media_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuD0yqZaTAH4_f5G2ZvUZzBvkJuyjXMRnG59c6lotsv1AjDxwyBugzRv6uQkFVIVLiltsNPeN3De7fmEEP4WfrdVzniTJeoAMxtxtKFF5fU6JQ0K5fKHN_txVpOh2b-mi5lpURKk6S4zIwG8TgNoWaOTbI456J1ZziO7IAlIiye4DW5ZyISjnmDpNoxn1bDu6BdOSgLWuZnsrJNHGFJzlfw5PpgFkjx7QBzFqpVAYszx2n7DDAcABnFKA-t9oaoTD0KuFNtU_30-9ZT1",
-      "media_upload": "",
-      "title": "Life at Vertex",
-      "description": "A documentary-style recruiting film. Shot over two weeks at headquarters. My role involved storyboarding the narrative arc to highlight company values without feeling corporate.",
+      "media_url": "",
+      "media_upload": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
+      "title": "",
+      "description": "",
       "tags": [
         "Internal",
         "Youtube"
       ],
-      "award_note": "Award winner"
+      "award_note": ""
     },
     {
-      "badge": "Event Opener",
+      "badge": "Lammeskank",
       "media_type": "image",
-      "media_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCcsqn-UrafHKYVtFStYgu2GVQldkTGi--wwI1-1wXbo7570Yceyo4XQ6G2x2mnMW2kJBk0w3WSwYMScwmMmfpJjJ-PZYQzUYE9rtzqHUkrMaipzp2OtMU_qVmej352zBRSTnz8Fhg7GfXMne_8BlAFBlK86JNKypRJhRC0akR-Isedcx2QeBsWrISCbZaeXlQjob8TenLG-tiauyVRsuR-8QUxjmvbKQ9Rm46MoFIffc1hHfw9mkOm4PlPP1LUfKHk6Cx7CuIiWMyY",
-      "media_upload": "",
-      "title": "Keynote 2022 Opener",
-      "description": "The hype reel for the annual developer conference. Fast-paced, kinetic typography mixed with product renders. Synced tightly to a custom audio track.",
+      "media_url": "",
+      "media_upload": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
+      "title": "",
+      "description": "",
       "tags": [
         "Live Event"
       ]
