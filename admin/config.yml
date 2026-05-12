@@ -2816,6 +2816,11 @@ collections:
         name: href
         widget: string
         required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
       - label: Badge
         name: badge
         widget: string
