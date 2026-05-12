@@ -50,6 +50,14 @@
       "alt": "Retro Tech",
       "title": "Retro UI Design",
       "meta": "UX/UI • Mobile App"
+    },
+    {
+      "href": "/pages/cocktail-photography/index.html",
+      "badge": "Studio Light",
+      "image": "/assets/media/Cocktail-29.jpg",
+      "alt": "Cocktail photography project",
+      "title": "Mixology in Focus",
+      "meta": "Photography • 2025"
     }
   ],
   "more_projects_href": "/workspace.html",

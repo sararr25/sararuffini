@@ -435,6 +435,14 @@ collections:
       name: template_name
       widget: string
       default: Graphic Design
+  - label: Photography Project Template
+    name: photography_template
+    file: content/templates/photography-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      required: false
       required: false
     - label: Campaign Title
       name: campaign_title
@@ -446,6 +454,8 @@ collections:
       required: false
     - label: Hero Image
       name: hero_image_polaroid
+    - label: Photography Template (content/templates/photography-template.json)
+      value: photography
       widget: image
       required: false
     - label: SEO Title
@@ -923,6 +933,203 @@ collections:
 
     # SEO
     - label: "🔍 SEO"
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Cocktail Photography Page
+    name: cocktail_photography
+    file: content/pages/cocktail-photography.json
+    fields:
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Subtitle
+      name: project_subtitle
+      widget: string
+      required: false
+    - label: Hero Badge
+      name: hero_badge
+      widget: string
+      required: false
+    - label: Tag 1
+      name: hero_tag_1
+      widget: string
+      required: false
+    - label: Tag 2
+      name: hero_tag_2
+      widget: string
+      required: false
+    - label: Tag 3
+      name: hero_tag_3
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Brief Title
+      name: brief_title
+      widget: string
+      required: false
+    - label: Client Label
+      name: brief_client_label
+      widget: string
+      required: false
+    - label: Client Value
+      name: brief_client_value
+      widget: string
+      required: false
+    - label: Year Label
+      name: brief_year_label
+      widget: string
+      required: false
+    - label: Year Value
+      name: brief_year_value
+      widget: string
+      required: false
+    - label: Role Label
+      name: brief_role_label
+      widget: string
+      required: false
+    - label: Role Value
+      name: brief_role_value
+      widget: string
+      required: false
+    - label: Brief Text 1
+      name: brief_text_1
+      widget: text
+      required: false
+    - label: Brief Text 2
+      name: brief_text_2
+      widget: text
+      required: false
+    - label: Shot 1 Image
+      name: shot_1_image
+      widget: image
+      required: false
+    - label: Shot 1 Alt
+      name: shot_1_alt
+      widget: string
+      required: false
+    - label: Shot 1 Caption
+      name: shot_1_caption
+      widget: string
+      required: false
+    - label: Shot 2 Image
+      name: shot_2_image
+      widget: image
+      required: false
+    - label: Shot 2 Alt
+      name: shot_2_alt
+      widget: string
+      required: false
+    - label: Shot 2 Caption
+      name: shot_2_caption
+      widget: string
+      required: false
+    - label: Shot 3 Image
+      name: shot_3_image
+      widget: image
+      required: false
+    - label: Shot 3 Alt
+      name: shot_3_alt
+      widget: string
+      required: false
+    - label: Shot 3 Caption
+      name: shot_3_caption
+      widget: string
+      required: false
+    - label: Shot 4 Image
+      name: shot_4_image
+      widget: image
+      required: false
+    - label: Shot 4 Alt
+      name: shot_4_alt
+      widget: string
+      required: false
+    - label: Shot 4 Caption
+      name: shot_4_caption
+      widget: string
+      required: false
+    - label: Shot 5 Image
+      name: shot_5_image
+      widget: image
+      required: false
+    - label: Shot 5 Alt
+      name: shot_5_alt
+      widget: string
+      required: false
+    - label: Shot 5 Caption
+      name: shot_5_caption
+      widget: string
+      required: false
+    - label: Shot 6 Image
+      name: shot_6_image
+      widget: image
+      required: false
+    - label: Shot 6 Alt
+      name: shot_6_alt
+      widget: string
+      required: false
+    - label: Shot 6 Caption
+      name: shot_6_caption
+      widget: string
+      required: false
+    - label: Quote Text
+      name: quote_text
+      widget: text
+      required: false
+    - label: Gear Title
+      name: gear_title
+      widget: string
+      required: false
+    - label: Gear Line 1
+      name: gear_line_1
+      widget: string
+      required: false
+    - label: Gear Line 2
+      name: gear_line_2
+      widget: string
+      required: false
+    - label: Gear Line 3
+      name: gear_line_3
+      widget: string
+      required: false
+    - label: Previous Project Link
+      name: prev_project_href
+      widget: string
+      required: false
+    - label: Previous Project Label
+      name: prev_project_label
+      widget: string
+      required: false
+    - label: Next Project Link
+      name: next_project_href
+      widget: string
+      required: false
+    - label: Next Project Label
+      name: next_project_label
+      widget: string
+      required: false
+    - label: SEO
       name: seo
       widget: object
       required: false
