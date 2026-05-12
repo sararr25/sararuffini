@@ -124,6 +124,75 @@
     });
   }
 
+  function setAnchorLabel(anchor, label) {
+    if (typeof label !== 'string') return;
+
+    let textNode = null;
+    for (let i = 0; i < anchor.childNodes.length; i += 1) {
+      const node = anchor.childNodes[i];
+      if (node && node.nodeType === Node.TEXT_NODE && node.nodeValue && node.nodeValue.trim()) {
+        textNode = node;
+        break;
+      }
+    }
+
+    if (!textNode) {
+      textNode = document.createTextNode(' ');
+      anchor.insertBefore(textNode, anchor.firstChild || null);
+    }
+
+    textNode.nodeValue = ` ${label} `;
+  }
+
+  function routeTypeFromHref(href) {
+    if (typeof href !== 'string' || !href.trim()) return '';
+
+    let pathname = '';
+    try {
+      pathname = new URL(href, window.location.href).pathname;
+    } catch (_err) {
+      return '';
+    }
+
+    if (/\/index\.html$/i.test(pathname) && !/\/pages\//i.test(pathname)) return 'home';
+    if (/\/pages\/portfolio-main\/code\.html$/i.test(pathname)) return 'projects';
+    if (/\/pages\/about\/index\.html$/i.test(pathname)) return 'about';
+    if (/\/pages\/contact\/index\.html$/i.test(pathname)) return 'contact';
+    return '';
+  }
+
+  function applyGlobalNavigation(allData) {
+    const nav = {
+      home: { label: allData.nav_home, href: allData.nav_home_href },
+      projects: { label: allData.nav_projects, href: allData.nav_projects_href },
+      about: { label: allData.nav_about, href: allData.nav_about_href },
+      contact: { label: allData.nav_contact, href: allData.nav_contact_href }
+    };
+
+    document.querySelectorAll('.shared-site-nav a, .shared-site-footer a').forEach(anchor => {
+      const route = routeTypeFromHref(anchor.getAttribute('href') || '');
+      if (!route || !nav[route]) return;
+
+      if (typeof nav[route].label === 'string') {
+        setAnchorLabel(anchor, nav[route].label);
+      }
+
+      if (typeof nav[route].href === 'string' && nav[route].href.trim()) {
+        anchor.setAttribute('href', nav[route].href.trim());
+      }
+    });
+
+    const brandAnchor = document.querySelector('.shared-site-nav > a');
+    if (brandAnchor) {
+      if (typeof allData.brand_name === 'string') {
+        brandAnchor.textContent = allData.brand_name;
+      }
+      if (typeof allData.brand_href === 'string' && allData.brand_href.trim()) {
+        brandAnchor.setAttribute('href', allData.brand_href.trim());
+      }
+    }
+  }
+
   function applySelectorOverrides(allData) {
     if (!Array.isArray(allData.selector_overrides)) return;
 
@@ -388,6 +457,7 @@
       applyMediaContainers(allData);
       bindMediaPlayButtons();
       applySelectorOverrides(allData);
+      applyGlobalNavigation(allData);
       applySeoMeta(allData, globalSeo);
 
       log('Data applied successfully');

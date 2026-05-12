@@ -21,25 +21,55 @@ collections:
     editor:
       preview: false
     fields:
+    - label: Brand Name
+      name: brand_name
+      widget: string
+      default: Sara Ruffini
+      required: false
+    - label: Brand Link
+      name: brand_href
+      widget: string
+      default: /index.html
+      required: false
     - label: Nav - Home
       name: nav_home
       widget: string
       default: Home
+      required: false
+    - label: Nav - Home Link
+      name: nav_home_href
+      widget: string
+      default: /index.html
       required: false
     - label: Nav - Projects
       name: nav_projects
       widget: string
       default: Projects
       required: false
+    - label: Nav - Projects Link
+      name: nav_projects_href
+      widget: string
+      default: /pages/portfolio-main/code.html
+      required: false
     - label: Nav - About
       name: nav_about
       widget: string
       default: About
       required: false
+    - label: Nav - About Link
+      name: nav_about_href
+      widget: string
+      default: /pages/about/index.html
+      required: false
     - label: Nav - Contact
       name: nav_contact
       widget: string
       default: Contact
+      required: false
+    - label: Nav - Contact Link
+      name: nav_contact_href
+      widget: string
+      default: /pages/contact/index.html
       required: false
     - label: Footer Contact Email
       name: footer_email
