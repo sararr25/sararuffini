@@ -18,6 +18,36 @@
     return path.split('.').reduce((curr, prop) => curr?.[prop], obj);
   }
 
+  function resolvePageLinkPresets(target) {
+    if (!target || typeof target !== 'object') return;
+
+    if (Array.isArray(target)) {
+      target.forEach(resolvePageLinkPresets);
+      return;
+    }
+
+    Object.keys(target).forEach(key => {
+      const value = target[key];
+      if (value && typeof value === 'object') {
+        resolvePageLinkPresets(value);
+      }
+    });
+
+    Object.keys(target).forEach(key => {
+      const value = target[key];
+      if (typeof value !== 'string' || !value.trim()) return;
+
+      if (/_href_page$/.test(key)) {
+        target[key.replace(/_page$/, '')] = value.trim();
+        return;
+      }
+
+      if (key === 'href_page') {
+        target.href = value.trim();
+      }
+    });
+  }
+
   function normalizeEmbedUrl(url) {
     if (!url || typeof url !== 'string') return '';
     url = url.trim();
@@ -444,6 +474,7 @@
       ]);
 
       const allData = { ...globalData, ...pageData };
+      resolvePageLinkPresets(allData);
 
       log(`Loaded page: ${pageName}`, allData);
 

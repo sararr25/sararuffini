@@ -30,6 +30,40 @@
     }, obj);
   }
 
+  function resolvePageLinkPresets(target) {
+    if (!target || typeof target !== 'object') {
+      return;
+    }
+
+    if (Array.isArray(target)) {
+      target.forEach(resolvePageLinkPresets);
+      return;
+    }
+
+    Object.keys(target).forEach(function (key) {
+      var value = target[key];
+      if (value && typeof value === 'object') {
+        resolvePageLinkPresets(value);
+      }
+    });
+
+    Object.keys(target).forEach(function (key) {
+      var value = target[key];
+      if (typeof value !== 'string' || !value.trim()) {
+        return;
+      }
+
+      if (/_href_page$/.test(key)) {
+        target[key.replace(/_page$/, '')] = value.trim();
+        return;
+      }
+
+      if (key === 'href_page') {
+        target.href = value.trim();
+      }
+    });
+  }
+
   function toAbsoluteUrl(rawUrl) {
     if (typeof rawUrl !== 'string' || !rawUrl.trim()) {
       return '';
@@ -595,6 +629,7 @@
     // Merge with global data
     var allData = Object.assign({}, globalData, data);
     applySeoMeta(allData, globalSeoData);
+    resolvePageLinkPresets(allData);
 
     applyByAttribute(allData, 'data-cms-text', function (node, value) {
       node.textContent = value;
