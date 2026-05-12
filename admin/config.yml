@@ -443,33 +443,43 @@ collections:
       name: template_name
       widget: string
       required: false
-      required: false
-    - label: Campaign Title
-      name: campaign_title
+    - label: Project Title
+      name: project_title
       widget: string
       required: false
-    - label: Campaign Description
-      name: campaign_text
-      widget: text
+    - label: Project Subtitle
+      name: project_subtitle
+      widget: string
       required: false
     - label: Hero Image
-      name: hero_image_polaroid
-    - label: Photography Template (content/templates/photography-template.json)
-      value: photography
+      name: hero_image
       widget: image
       required: false
-    - label: SEO Title
-      name: seo_title
+    - label: Hero Image Alt
+      name: hero_image_alt
       widget: string
       required: false
-    - label: SEO Description
-      name: seo_description
+    - label: Quote Text
+      name: quote_text
       widget: text
       required: false
-    - label: SEO Image
-      name: seo_image
-      widget: image
+    - label: SEO
+      name: seo
+      widget: object
       required: false
+      fields:
+      - label: SEO Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: SEO Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: SEO Image
+        name: seo_image
+        widget: image
+        required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
