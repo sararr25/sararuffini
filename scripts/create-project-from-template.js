@@ -6,7 +6,8 @@ const rootDir = path.resolve(__dirname, '..');
 const templateMap = {
   video: 'content/templates/video-template.json',
   graphics: 'content/templates/graphics-template.json',
-  app: 'content/templates/app-template.json'
+  app: 'content/templates/app-template.json',
+  photography: 'content/templates/photography-template.json'
 };
 
 function argValue(flag, fallback) {
@@ -46,7 +47,7 @@ function run() {
   const force = hasFlag('--force');
 
   if (!templateName || !templateMap[templateName]) {
-    throw new Error('Invalid template. Use --template video|graphics|app');
+    throw new Error('Invalid template. Use --template video|graphics|app|photography');
   }
 
   if (!outputPathArg) {

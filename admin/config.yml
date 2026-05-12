@@ -2906,6 +2906,8 @@ collections:
       value: graphics
     - label: App Template (content/templates/app-template.json)
       value: app
+    - label: Photography Template (content/templates/photography-template.json)
+      value: photography
   - label: Template Source Path
     name: template_source_path
     widget: string
