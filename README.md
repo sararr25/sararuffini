@@ -45,6 +45,7 @@ npm run optimize:images -- --input assets/media/uploads --output assets/media/op
 npm run template:create -- --template video --output content/pages/video-v3.json
 npm run template:create -- --template graphics --output content/pages/graphics-v2.json
 npm run template:create -- --template app --output content/pages/app-v3.json
+npm run template:create -- --template web --output content/pages/web-v1.json
 ```
 
 Use `--force` to overwrite an existing target file.

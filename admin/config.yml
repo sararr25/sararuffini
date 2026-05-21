@@ -58,6 +58,8 @@ collections:
         value: /pages/socialmedia-portfolio/index.html
       - label: Cocktail Photography
         value: /pages/cocktail-photography/index.html
+      - label: Neon Vibes Web Project
+        value: /pages/neon-vibes-web/index.html
     - label: Nav - Home
       name: nav_home
       widget: string
@@ -752,9 +754,287 @@ collections:
         required: false
       allow_add: true
       allow_delete: true
+  - label: Web Project Template
+    name: web_template
+    file: content/templates/web-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      required: false
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Summary
+      name: project_summary
+      widget: text
+      required: false
+    - label: Year
+      name: meta_year
+      widget: string
+      required: false
+    - label: Project Type
+      name: meta_type
+      widget: string
+      required: false
+    - label: Role
+      name: meta_role
+      widget: string
+      required: false
+    - label: Browser Label
+      name: hero_browser_label
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Kit Title
+      name: kit_title
+      widget: string
+      required: false
+    - label: Typography Heading
+      name: typography_heading
+      widget: string
+      required: false
+    - label: Typography Primary Name
+      name: typography_primary_name
+      widget: string
+      required: false
+    - label: Typography Secondary Name
+      name: typography_secondary_name
+      widget: string
+      required: false
+    - label: Colors Heading
+      name: colors_heading
+      widget: string
+      required: false
+    - label: Journey Title
+      name: journey_title
+      widget: string
+      required: false
+    - label: Step 1 Label
+      name: journey_step_1_label
+      widget: string
+      required: false
+    - label: Step 1 Title
+      name: journey_step_1_title
+      widget: string
+      required: false
+    - label: Step 1 Image
+      name: journey_step_1_image
+      widget: image
+      required: false
+    - label: Step 1 Alt
+      name: journey_step_1_alt
+      widget: string
+      required: false
+    - label: Step 2 Label
+      name: journey_step_2_label
+      widget: string
+      required: false
+    - label: Step 2 Title
+      name: journey_step_2_title
+      widget: string
+      required: false
+    - label: Step 2 Image
+      name: journey_step_2_image
+      widget: image
+      required: false
+    - label: Step 2 Alt
+      name: journey_step_2_alt
+      widget: string
+      required: false
+    - label: Step 3 Label
+      name: journey_step_3_label
+      widget: string
+      required: false
+    - label: Step 3 Title
+      name: journey_step_3_title
+      widget: string
+      required: false
+    - label: Step 3 Image
+      name: journey_step_3_image
+      widget: image
+      required: false
+    - label: Step 3 Alt
+      name: journey_step_3_alt
+      widget: string
+      required: false
+    - label: CTA Label
+      name: cta_label
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: Footer Contact
+      name: footer_contact
+      widget: string
+      required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
 - name: project_pages
   label: Project Pages
   files:
+  - label: Neon Vibes Web Page
+    name: neon_vibes_web
+    file: content/pages/neon-vibes-web.json
+    fields:
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Summary
+      name: project_summary
+      widget: text
+      required: false
+    - label: Year
+      name: meta_year
+      widget: string
+      required: false
+    - label: Project Type
+      name: meta_type
+      widget: string
+      required: false
+    - label: Role
+      name: meta_role
+      widget: string
+      required: false
+    - label: Browser Label
+      name: hero_browser_label
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Kit Title
+      name: kit_title
+      widget: string
+      required: false
+    - label: Typography Heading
+      name: typography_heading
+      widget: string
+      required: false
+    - label: Typography Primary Name
+      name: typography_primary_name
+      widget: string
+      required: false
+    - label: Typography Secondary Name
+      name: typography_secondary_name
+      widget: string
+      required: false
+    - label: Colors Heading
+      name: colors_heading
+      widget: string
+      required: false
+    - label: Journey Title
+      name: journey_title
+      widget: string
+      required: false
+    - label: Step 1 Label
+      name: journey_step_1_label
+      widget: string
+      required: false
+    - label: Step 1 Title
+      name: journey_step_1_title
+      widget: string
+      required: false
+    - label: Step 1 Image
+      name: journey_step_1_image
+      widget: image
+      required: false
+    - label: Step 1 Alt
+      name: journey_step_1_alt
+      widget: string
+      required: false
+    - label: Step 2 Label
+      name: journey_step_2_label
+      widget: string
+      required: false
+    - label: Step 2 Title
+      name: journey_step_2_title
+      widget: string
+      required: false
+    - label: Step 2 Image
+      name: journey_step_2_image
+      widget: image
+      required: false
+    - label: Step 2 Alt
+      name: journey_step_2_alt
+      widget: string
+      required: false
+    - label: Step 3 Label
+      name: journey_step_3_label
+      widget: string
+      required: false
+    - label: Step 3 Title
+      name: journey_step_3_title
+      widget: string
+      required: false
+    - label: Step 3 Image
+      name: journey_step_3_image
+      widget: image
+      required: false
+    - label: Step 3 Alt
+      name: journey_step_3_alt
+      widget: string
+      required: false
+    - label: CTA Label
+      name: cta_label
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: Footer Contact
+      name: footer_contact
+      widget: string
+      required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
   - label: Video Page V1
     name: video_v1
     file: content/pages/video-v1.json

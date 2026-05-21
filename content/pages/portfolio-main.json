@@ -36,12 +36,12 @@
       "meta": "Music Video • 2022"
     },
     {
-      "href": "/pages/video-v2/index.html",
-      "badge": "Aero",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBsPZ7YYOifS5lZzlA79ighqGP-cnf-HhfpzS0SedoLDslTbRk9ArgX-zw0xYO1hyQif6Rlwjc9-x2qI0w9lDrqFn4GchGxhUR3rj6Rj_LOg4quYR_ljXjU0QFN2USOTuoNrhvcIXvKidEgudi9iViS_XLl4AR7WNd2b_Ot2pHb7E6W0uuFk12I9L8FpLhXD2d7qJp7DfSD6Tqt7aGCU297IH3L5jVpT8IdCiByNeITEVxkxLQKHw-cGCFm8T9L26ArzSfqDZNtZbMB",
-      "alt": "Aero Dynamics",
-      "title": "Motion Graphics",
-      "meta": "Sports • Branding"
+      "href": "/pages/neon-vibes-web/index.html",
+      "badge": "Neon Vibes",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
+      "alt": "Neon Vibes web project",
+      "title": "Neon Vibes",
+      "meta": "Web Design • 2024"
     },
     {
       "href": "/pages/app-v2/index.html",
@@ -69,19 +69,4 @@
     "seo_description": "Explore a curated selection of video production, motion design, and creative direction projects.",
     "seo_image": "/assets/media/default-og-image.jpg"
   }
-}
-    "title": "Gadget Review",
-    "meta": "Tech • Review Series"
-  },
-  "card_7": {
-    "href": "/pages/video-v1/index.html",
-    "badge": "Raw Footage",
-    "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfjdAc8_tSMXpA2QUvG8Ggz5VHTN80NGT9Ei_UFMdRr59YbnO-yZeWkATBN-jYVkiEUEZY5PFzax7CLug8r089l_rU44cZ3k40zX17KfezzomBGLqocLDDc41HvYPFoRV8FOrnuH4R2z7WmrucIFbnd6Zh1ZBfGmUL-s5gnQi1XM0F6wID2FSB3G8Y7DoMaCncM2e_rc9p4oDu4c-1fOkZhCfRH4Atvf1NcgLidYZza8gAQcJnBsVnxUBGnqT6g1XlxwjOLCECExRV",
-    "alt": "Raw Footage",
-    "title": "16mm Documentary",
-    "meta": "Documentary • Short"
-  },
-  "intro_text_html": "Visual storytelling through rhythm and color.<br><span class=\"font-script text-accent-pink text-xl\">Curated for impact.</span>",
-  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen",
-  "more_projects_title": "More Projects"
 }

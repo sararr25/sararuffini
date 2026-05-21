@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon Vibes | Sara Ruffini</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            paper: "#ececec",
+            ink: "#151515",
+            teal: "#16e0c4",
+            orange: "#fc8d3f",
+            cream: "#f7f4ef"
+          },
+          boxShadow: {
+            hard: "6px 6px 0px 0px rgba(0,0,0,1)",
+            hardLg: "10px 10px 0px 0px rgba(0,0,0,1)"
+          },
+          fontFamily: {
+            display: ["Epilogue", "sans-serif"],
+            body: ["Be Vietnam Pro", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
+  <link rel="stylesheet" href="../../styles/mobile.css"/>
+</head>
+<body class="bg-paper text-ink font-body min-h-screen flex flex-col" data-cms-page="neon-vibes-web">
+  <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-paper border-b-2 border-black sticky top-0 z-50 shared-site-nav">
+    <a class="text-2xl font-black uppercase tracking-tight hover:text-teal transition-colors" href="../../index.html">Sara Ruffini</a>
+    <div class="hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center text-black">
+      <a class="scribble-hover relative inline-block transition-all" href="../../index.html">
+        Home
+        <svg class="text-teal fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+          <path d="M0 5 Q 50 10 100 5"></path>
+        </svg>
+      </a>
+      <a class="scribble-hover active relative inline-block transition-all text-teal" href="../portfolio-main/code.html">
+        Projects
+        <svg class="text-teal fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+          <path d="M0 5 Q 50 10 100 5"></path>
+        </svg>
+      </a>
+      <a class="scribble-hover relative inline-block transition-all" href="../about/index.html">
+        About
+        <svg class="text-teal fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+          <path d="M0 5 Q 50 10 100 5"></path>
+        </svg>
+      </a>
+      <a class="scribble-hover relative inline-block transition-all" href="../contact/index.html">
+        Contact
+        <svg class="text-teal fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
+          <path d="M0 5 Q 50 10 100 5"></path>
+        </svg>
+      </a>
+    </div>
+    <button class="md:hidden text-3xl leading-none" aria-label="Open menu">☰</button>
+  </nav>
+
+  <main class="flex-grow">
+    <section class="px-6 md:px-12 py-16 md:py-20 max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="font-display font-black text-5xl md:text-7xl tracking-tight" data-cms-text="project_title">Neon Vibes</h1>
+        <p class="mt-6 text-lg leading-relaxed text-black/75" data-cms-text="project_summary">A vibrant, high-energy e-commerce platform designed for a custom neon sign workshop.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm font-bold uppercase tracking-wide">
+          <span class="px-4 py-2 border-2 border-black rounded-full bg-cream" data-cms-text="meta_year">2024</span>
+          <span class="px-4 py-2 border-2 border-black rounded-full bg-orange/25" data-cms-text="meta_type">E-Commerce</span>
+          <span class="px-4 py-2 border-2 border-black rounded-full bg-teal/25" data-cms-text="meta_role">Web Design</span>
+        </div>
+      </div>
+
+      <div class="mt-14 border-[3px] border-black rounded-xl bg-[#efbecd] shadow-hardLg overflow-hidden">
+        <div class="h-10 border-b-[3px] border-black bg-paper flex items-center gap-2 px-3">
+          <span class="w-3 h-3 rounded-full border border-black bg-[#ff7f7f]"></span>
+          <span class="w-3 h-3 rounded-full border border-black bg-[#ffd95b]"></span>
+          <span class="w-3 h-3 rounded-full border border-black bg-[#8ded8a]"></span>
+          <div class="ml-3 flex-1 border-2 border-black rounded px-3 py-0.5 text-xs text-center font-semibold" data-cms-text="hero_browser_label">neon-vibes.shop</div>
+        </div>
+        <div class="p-5 md:p-10">
+          <img class="w-full h-auto border-[3px] border-black rounded-xl shadow-hard" data-cms-src="hero_image" data-cms-alt="hero_image_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6" alt="Neon sign storefront hero shot"/>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y-2 border-black py-14 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display font-black text-4xl md:text-5xl" data-cms-text="kit_title">The Kit</h2>
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+          <article class="border-[3px] border-black rounded-xl bg-paper p-6 shadow-hard">
+            <h3 class="font-display font-extrabold text-3xl border-b-2 border-black pb-2" data-cms-text="typography_heading">Typography</h3>
+            <p class="mt-5 text-xs uppercase tracking-[0.2em] font-bold text-black/60">Headings</p>
+            <p class="font-display text-6xl font-black leading-none mt-2" data-cms-text="typography_primary_name">Epilogue</p>
+            <p class="mt-5 text-xs uppercase tracking-[0.2em] font-bold text-black/60">Body</p>
+            <p class="text-3xl font-bold mt-2" data-cms-text="typography_secondary_name">Be Vietnam Pro</p>
+          </article>
+
+          <article class="border-[3px] border-black rounded-xl bg-paper p-6 shadow-hard">
+            <h3 class="font-display font-extrabold text-3xl border-b-2 border-black pb-2" data-cms-text="colors_heading">Colors</h3>
+            <div class="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div>
+                <div class="h-20 bg-teal border-2 border-black rounded-lg"></div>
+                <p class="mt-2 text-xs font-bold text-center">Teal Pop</p>
+              </div>
+              <div>
+                <div class="h-20 bg-orange border-2 border-black rounded-lg"></div>
+                <p class="mt-2 text-xs font-bold text-center">Orange Zap</p>
+              </div>
+              <div>
+                <div class="h-20 bg-white border-2 border-black rounded-lg"></div>
+                <p class="mt-2 text-xs font-bold text-center">Paper White</p>
+              </div>
+              <div>
+                <div class="h-20 bg-ink border-2 border-black rounded-lg"></div>
+                <p class="mt-2 text-xs font-bold text-center">Ink Black</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 px-6 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="font-display font-black text-4xl md:text-5xl" data-cms-text="journey_title">Interface Journey</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="border-[3px] border-black rounded-xl bg-paper p-4 shadow-hard">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-orange px-2 py-1 border border-black text-xs font-black" data-cms-text="journey_step_1_label">01</span>
+              <h3 class="font-display font-bold text-lg" data-cms-text="journey_step_1_title">Product Discovery</h3>
+            </div>
+            <img class="w-full h-56 object-cover border-2 border-black rounded-lg" data-cms-src="journey_step_1_image" data-cms-alt="journey_step_1_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACEnptQt9oUQAs1b0WM-sZd8HUVMiS08AjaMpPQT0lCV6y1rQ71vcwf2cAgGRqdp1nQvpG7-mttnYDXJv5snnFjH-eURleOfVu-6QpxJ-5u0Nb5jNs0boDr6pzrT8yyb-ux7cPt9D3TwhXXyVWiP6iS3oM6wfS1NHlIvReDX7QgCWT3lFpe7c9335XLiGHQIgMYpFtxbJCAZvUx-VsaXip0fJYotcfqd671W1Rny8KfpyO8YVc5S2uuZcunmszNXppDr4tqma6owjv" alt="Product discovery interface"/>
+          </article>
+
+          <article class="border-[3px] border-black rounded-xl bg-paper p-4 shadow-hard">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-teal px-2 py-1 border border-black text-xs font-black" data-cms-text="journey_step_2_label">02</span>
+              <h3 class="font-display font-bold text-lg" data-cms-text="journey_step_2_title">Customizer Tool</h3>
+            </div>
+            <img class="w-full h-56 object-cover border-2 border-black rounded-lg" data-cms-src="journey_step_2_image" data-cms-alt="journey_step_2_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlIsCz0hU7UkHc9Kgj0HMwGFabGIqPtjHNWkglC0jbw5c4DYI2fwM4Uwh_Lm9k6dixU8INDNzdeOqbgFEdg8jRxl4WbPWidP6qSP5MIVN85-5dNiAFfur0sQ835GmxzT0f8VpGEv0f6xgN_L5uf-vSXlaaCnO7k2coWVQRaZnCf9u3ck5DNeBkkgfzDfP09V4spcoM7Q0g-J1vdBsRfFEBUrwRnLhn_5CWmj2JwZDzxuSWJkJwwoJkHYvoxnXrzYqWMTbrZZLd8tQL" alt="Neon customizer interface"/>
+          </article>
+
+          <article class="border-[3px] border-black rounded-xl bg-paper p-4 shadow-hard">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="bg-[#efefef] px-2 py-1 border border-black text-xs font-black" data-cms-text="journey_step_3_label">03</span>
+              <h3 class="font-display font-bold text-lg" data-cms-text="journey_step_3_title">Checkout Experience</h3>
+            </div>
+            <img class="w-full h-56 object-cover border-2 border-black rounded-lg" data-cms-src="journey_step_3_image" data-cms-alt="journey_step_3_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChI7G4N37q4EmLoKjiqfTIrUTpnmKVmv4vAzRmJ7kZ9ECD_c1edUUdFpM3qVTP7fwk1JZZL5birk3LX5HW-hoMi4KwiNi6-KCsSkGWjM2ydhBzojKn8TOb3VJEy22kYTH4uG13K0K0aqS5CtW1k6knyvHk79xOYZ19OM71sT3XhcKzbQFi9tsaBnVIXz63ZKxKzXp27QgZv_mu9-cx0U5wa3jyCqewbwvhTXh00WbtFj2oCWcA_X4jdKIEr41J8UcCpTe9hMrY5Gck" alt="Checkout UI"/>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 pb-24 flex justify-center">
+      <a class="inline-flex items-center gap-2 px-8 py-4 bg-teal border-[3px] border-black rounded-xl shadow-hard font-display font-bold text-2xl hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all" data-cms-href="cta_href" href="#">
+        <span data-cms-text="cta_label">View Live Project</span>
+        <span class="material-symbols-outlined text-3xl">arrow_outward</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="bg-black text-white py-16 shared-site-footer">
+    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+      <div class="space-y-4">
+        <div>
+          <h2 class="text-5xl uppercase tracking-wide leading-none font-black">Sara Ruffini</h2>
+          <p class="font-bold tracking-widest text-sm mt-1 text-teal">VIDEO EDITOR - CONTENT CREATOR</p>
+        </div>
+        <p class="text-gray-400 text-sm" data-cms-text="footer_contact">sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen</p>
+      </div>
+      <div class="flex flex-col md:items-end space-y-4">
+        <div class="flex space-x-8 font-medium uppercase tracking-widest text-sm">
+          <a class="transition-colors" href="../../index.html">Home</a>
+          <a class="transition-colors" href="../portfolio-main/code.html">Projects</a>
+          <a class="transition-colors" href="../about/index.html">About</a>
+          <a class="transition-colors" href="../contact/index.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../scripts/cms-page-loader.js"></script>
+  <script src="../../scripts/mobile-nav.js"></script>
+</body>
+</html>
