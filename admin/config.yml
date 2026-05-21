@@ -3280,6 +3280,8 @@ collections:
   description: Create new project pages from existing templates
   folder: content/pages/entries
   create: true
+  identifier_field: entry_title
+  summary: "{{entry_title}} -> /pages/{{slug}}/index.html"
   slug: "{{slug}}"
   extension: json
   format: json
@@ -3287,11 +3289,13 @@ collections:
   - label: Entry Title
     name: entry_title
     widget: string
-    required: false
+    required: true
+    hint: Name shown in CMS list for this page
   - label: Slug
     name: slug
     widget: string
-    required: false
+    required: true
+    hint: URL segment (example: video-v3 => /pages/video-v3/index.html)
   - label: Template Selection
     name: template_selection
     widget: select

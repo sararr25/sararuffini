@@ -8,5 +8,164 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      function slugify(value) {
+        if (typeof value !== 'string') return '';
+
+        return value
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '');
+      }
+
+      function getCollectionName() {
+        var parts = window.location.hash.split('/');
+        var index = parts.indexOf('collections');
+        return index >= 0 ? parts[index + 1] : '';
+      }
+
+      function isEntriesCollection() {
+        return getCollectionName() === 'project_pages_entries';
+      }
+
+      function findFieldInput(fieldName) {
+        var candidates = [
+          'input[name="' + fieldName + '"]',
+          'textarea[name="' + fieldName + '"]',
+          '[data-slate-editor="true"][name="' + fieldName + '"]'
+        ];
+
+        for (var i = 0; i < candidates.length; i += 1) {
+          var node = document.querySelector(candidates[i]);
+          if (node) return node;
+        }
+
+        return null;
+      }
+
+      function setInputValue(input, value) {
+        var nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value');
+        if (nativeSetter && nativeSetter.set) {
+          nativeSetter.set.call(input, value);
+        } else {
+          input.value = value;
+        }
+
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+
+      function setStatusText(host, message) {
+        var status = host.querySelector('[data-slug-sync-status]');
+        if (!status) return;
+        status.textContent = message;
+      }
+
+      function buildControls(slugInput, titleInput) {
+        if (!slugInput || !titleInput) return;
+        if (slugInput.dataset.slugSyncReady === 'true') return;
+
+        slugInput.dataset.slugSyncReady = 'true';
+        var wrapper = slugInput.closest('div');
+        if (!wrapper) return;
+
+        var controls = document.createElement('div');
+        controls.setAttribute('data-slug-sync-controls', 'true');
+        controls.style.display = 'flex';
+        controls.style.flexDirection = 'column';
+        controls.style.gap = '8px';
+        controls.style.marginTop = '8px';
+
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = 'Aggiorna link dal nome pagina';
+        button.style.alignSelf = 'flex-start';
+        button.style.background = '#111111';
+        button.style.color = '#ffffff';
+        button.style.border = '0';
+        button.style.borderRadius = '6px';
+        button.style.padding = '6px 10px';
+        button.style.cursor = 'pointer';
+        button.style.fontSize = '12px';
+        button.style.fontWeight = '700';
+
+        var status = document.createElement('small');
+        status.setAttribute('data-slug-sync-status', 'true');
+        status.style.color = '#4b5563';
+        status.textContent = 'Se cambi il nome pagina, puoi riallineare lo slug con questo pulsante.';
+
+        controls.appendChild(button);
+        controls.appendChild(status);
+        wrapper.appendChild(controls);
+
+        var lastAutoSlug = slugify(titleInput.value || '');
+
+        function syncSlugFromTitle(force) {
+          var nextSlug = slugify(titleInput.value || '');
+          if (!nextSlug) {
+            setStatusText(controls, 'Inserisci un nome pagina valido per generare lo slug.');
+            return;
+          }
+
+          var currentSlug = (slugInput.value || '').trim();
+          var shouldAutoSync = force || !currentSlug || currentSlug !== nextSlug || currentSlug === lastAutoSlug;
+          if (!shouldAutoSync) {
+            return;
+          }
+
+          setInputValue(slugInput, nextSlug);
+          lastAutoSlug = nextSlug;
+          if (force) {
+            setStatusText(controls, 'Slug aggiornato dal nome pagina: /pages/' + nextSlug + '/index.html');
+          } else {
+            setStatusText(controls, 'Slug sincronizzato automaticamente: /pages/' + nextSlug + '/index.html');
+          }
+        }
+
+        titleInput.addEventListener('input', function () {
+          syncSlugFromTitle(false);
+        });
+
+        slugInput.addEventListener('input', function () {
+          var value = (slugInput.value || '').trim();
+          if (value && value !== lastAutoSlug) {
+            setStatusText(controls, 'Slug manuale attivo. Premi il pulsante per riallinearlo al nome pagina.');
+          }
+        });
+
+        button.addEventListener('click', function () {
+          syncSlugFromTitle(true);
+        });
+
+        // First pass for new entries and existing entries missing slug.
+        syncSlugFromTitle(false);
+      }
+
+      function wireEditorEnhancements() {
+        if (!isEntriesCollection()) return;
+
+        var titleInput = findFieldInput('entry_title');
+        var slugInput = findFieldInput('slug');
+        if (!titleInput || !slugInput) return;
+
+        buildControls(slugInput, titleInput);
+      }
+
+      var observer = new MutationObserver(function () {
+        wireEditorEnhancements();
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+      window.addEventListener('hashchange', wireEditorEnhancements);
+      window.addEventListener('load', wireEditorEnhancements);
+      setInterval(wireEditorEnhancements, 1200);
+    })();
+  </script>
 </body>
 </html>

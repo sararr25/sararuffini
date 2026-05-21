@@ -54,12 +54,19 @@
       }
 
       if (/_href_page$/.test(key)) {
-        target[key.replace(/_page$/, '')] = value.trim();
+        var hrefKey = key.replace(/_page$/, '');
+        var currentHref = typeof target[hrefKey] === 'string' ? target[hrefKey].trim() : '';
+        if (!currentHref) {
+          target[hrefKey] = value.trim();
+        }
         return;
       }
 
       if (key === 'href_page') {
-        target.href = value.trim();
+        var currentHrefRoot = typeof target.href === 'string' ? target.href.trim() : '';
+        if (!currentHrefRoot) {
+          target.href = value.trim();
+        }
       }
     });
   }

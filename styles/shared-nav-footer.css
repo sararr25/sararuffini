@@ -2,6 +2,33 @@
     overflow: visible;
 }
 
+.shared-site-nav > a {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #111111;
+}
+
+.shared-site-nav > a:hover {
+    color: #3bdec8;
+}
+
+.shared-site-nav .hidden.md\:flex {
+    color: #111111;
+    font-family: "Inter", "Space Grotesk", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.shared-site-nav .scribble-hover {
+    color: #111111;
+}
+
 .shared-site-nav .scribble-hover {
     position: relative;
     text-decoration: none !important;
@@ -29,6 +56,20 @@
 .shared-site-nav .scribble-hover.active svg {
     opacity: 1;
     transform: scaleX(1);
+}
+
+.shared-site-nav .scribble-hover:hover,
+.shared-site-nav .scribble-hover.active {
+    color: #3bdec8 !important;
+}
+
+.shared-site-nav .scribble-hover svg {
+    color: #3bdec8 !important;
+}
+
+.shared-site-footer {
+    background: #000000;
+    color: #ffffff;
 }
 
 .shared-site-footer a {

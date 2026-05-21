@@ -38,12 +38,19 @@
       if (typeof value !== 'string' || !value.trim()) return;
 
       if (/_href_page$/.test(key)) {
-        target[key.replace(/_page$/, '')] = value.trim();
+        const hrefKey = key.replace(/_page$/, '');
+        const currentHref = typeof target[hrefKey] === 'string' ? target[hrefKey].trim() : '';
+        if (!currentHref) {
+          target[hrefKey] = value.trim();
+        }
         return;
       }
 
       if (key === 'href_page') {
-        target.href = value.trim();
+        const currentHref = typeof target.href === 'string' ? target.href.trim() : '';
+        if (!currentHref) {
+          target.href = value.trim();
+        }
       }
     });
   }
