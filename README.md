@@ -50,6 +50,24 @@ npm run template:create -- --template web --output content/pages/web-v1.json
 
 Use `--force` to overwrite an existing target file.
 
+### Rename a page slug (folder + JSON + references)
+
+```bash
+npm run page:rename-slug -- --old-slug socialmedia-portfolio --new-slug social-media-pro --page-name "Social Media Pro"
+```
+
+Dry run preview:
+
+```bash
+npm run page:rename-slug -- --old-slug socialmedia-portfolio --new-slug social-media-pro --dry-run
+```
+
+This command updates path references across project text files, renames:
+- `pages/<old-slug>/` to `pages/<new-slug>/`
+- `content/pages/<old-slug>.json` to `content/pages/<new-slug>.json`
+
+Then it writes `page_slug` (and optionally `page_name`) in the renamed JSON.
+
 ## SEO Auto Meta Tags
 
 Page metadata is now injected automatically by `scripts/cms-page-loader.js`.

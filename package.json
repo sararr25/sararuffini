@@ -6,7 +6,8 @@
   "scripts": {
     "optimize:images": "node scripts/optimize-images.js",
     "media:bulk-upload": "node scripts/bulk-media-upload.js",
-    "template:create": "node scripts/create-project-from-template.js"
+    "template:create": "node scripts/create-project-from-template.js",
+    "page:rename-slug": "node scripts/rename-page-slug.js"
   },
   "dependencies": {
     "sharp": "^0.33.5"
