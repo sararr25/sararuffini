@@ -45,10 +45,11 @@
   "teaser_text_html": "A collection of work crafted with <span class=\"text-primary\">heart</span>, <span class=\"text-pink-500\">creativity</span>, and <span class=\"text-yellow-500\">storytelling</span>. Explore how I turn concepts into visuals that connect.",
   "showreel_title": "Sara Ruffini Showreel",
   "featured_tv": {
-    "href": "/pages/app-v2/index.html",
+    "href": "",
     "image": "/assets/media/home-app.png",
     "alt": "Travel app sticker project",
-    "label": "Meriwa App"
+    "label": "Meriwa App",
+    "href_page": "/pages/app-v1/index.html"
   },
   "collage_word_bottom": "PROJECT",
   "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen",
