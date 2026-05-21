@@ -3290,12 +3290,12 @@ collections:
     name: entry_title
     widget: string
     required: true
-    hint: Name shown in CMS list for this page
+    hint: "Name shown in CMS list for this page"
   - label: Slug
     name: slug
     widget: string
     required: true
-    hint: URL segment (example: video-v3 => /pages/video-v3/index.html)
+    hint: "URL segment (example: video-v3 => /pages/video-v3/index.html)"
   - label: Template Selection
     name: template_selection
     widget: select

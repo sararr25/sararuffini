@@ -81,7 +81,7 @@
 <main class="w-full relative z-10 flex-grow">
 <div class="max-w-7xl w-full mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-12 relative">
 <div class="w-full md:w-5/12 relative">
-<div class="md:sticky md:top-16 md:h-[calc(100vh-4rem)] flex flex-col justify-start pt-2 overflow-y-auto no-scrollbar pr-6">
+<div class="md:sticky md:top-16 md:min-h-[calc(100vh-4rem)] flex flex-col justify-start pt-2 overflow-visible no-scrollbar pr-6">
 <h1 class="text-5xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tighter text-black mb-6 leading-none pr-4" data-cms-text="hero_title">
                         productions
                     </h1>
@@ -114,8 +114,8 @@
 </div>
 </div>
 </div>
-<div class="w-full md:w-7/12 md:sticky md:top-16 md:h-[calc(100vh-4rem)] relative">
-<div class="w-full md:h-full md:overflow-y-auto md:overflow-x-visible no-scrollbar relative">
+<div class="w-full md:w-7/12 md:sticky md:top-16 md:min-h-[calc(100vh-4rem)] relative">
+<div class="w-full md:h-full overflow-visible no-scrollbar relative">
 <div class="w-full flex flex-col items-center gap-32 pt-4 pb-64 relative z-10">
 <div class="hidden md:flex absolute top-40 right-10 lg:right-20 z-0 flex-col items-center animate-bounce-slow opacity-80 pointer-events-none">
 <p class="font-hand text-teal font-bold text-xl rotate-6 mb-2">scroll</p>
@@ -126,8 +126,8 @@
 
 <!-- Phone 1 -->
 <div class="relative w-full flex justify-center group z-10 phone-container" data-phone-index="0">
-<div class="absolute right-0 xl:-right-4 top-20 w-40 text-right z-20 hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-<p class="font-hand text-black text-lg leading-tight transform rotate-2" data-cms-html="phone_note_1_html">
+<div class="absolute right-0 xl:-right-4 top-20 w-56 overflow-visible text-right z-20 hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<p class="font-hand text-black text-lg leading-[1.25] transform rotate-2" data-cms-html="phone_note_1_html">
                             organic production<br/>videoleap app
                         </p>
 <svg class="w-12 h-12 text-black ml-auto -mt-1 transform" fill="none" stroke="currentColor" viewBox="0 0 100 100">
@@ -152,8 +152,8 @@
 
 <!-- Phone 2 -->
 <div class="relative w-full flex justify-center group z-10 phone-container" data-phone-index="1">
-<div class="absolute left-0 xl:-left-4 top-32 w-40 text-left z-20 hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-<p class="font-hand text-black text-lg leading-tight transform -rotate-3 text-teal font-bold" data-cms-html="phone_note_2_html">
+<div class="absolute left-0 xl:-left-4 top-32 w-56 overflow-visible text-left z-20 hidden lg:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<p class="font-hand text-black text-lg leading-[1.25] transform -rotate-3 text-teal font-bold" data-cms-html="phone_note_2_html">
                             high retention<br/>hooks
                         </p>
 <svg class="w-12 h-12 text-teal mr-auto -mt-1 transform scale-x-[-1]" fill="none" stroke="currentColor" viewBox="0 0 100 100">
@@ -178,8 +178,8 @@
 
 <!-- Phone 3 -->
 <div class="relative w-full flex justify-center group z-10 phone-container" data-phone-index="2">
-<div class="absolute right-0 xl:-right-8 bottom-32 w-48 text-right z-20 hidden lg:block">
-<p class="font-hand text-orange text-xl leading-tight transform rotate-6 font-bold" data-cms-html="phone_note_3_html">
+<div class="absolute right-0 xl:-right-8 bottom-32 w-56 overflow-visible text-right z-20 hidden lg:block">
+<p class="font-hand text-orange text-xl leading-[1.25] transform rotate-6 font-bold" data-cms-html="phone_note_3_html">
                             capcut edits<br/>&amp; trends
                         </p>
 </div>
@@ -196,8 +196,8 @@
 
 <!-- Phone 4 -->
 <div class="relative w-full flex justify-center group z-10 phone-container" data-phone-index="3">
-<div class="absolute left-0 xl:-left-8 bottom-32 w-48 text-left z-20 hidden lg:block">
-<p class="font-hand text-pink text-xl leading-tight transform -rotate-6 font-bold" data-cms-html="phone_note_4_html">
+<div class="absolute left-0 xl:-left-8 bottom-32 w-56 overflow-visible text-left z-20 hidden lg:block">
+<p class="font-hand text-pink text-xl leading-[1.25] transform -rotate-6 font-bold" data-cms-html="phone_note_4_html">
                             split testing<br/>different hooks
                         </p>
 </div>
