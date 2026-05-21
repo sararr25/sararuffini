@@ -30,8 +30,18 @@
         return index >= 0 ? parts[index + 1] : '';
       }
 
-      function isEntriesCollection() {
-        return getCollectionName() === 'project_pages_entries';
+      function getCollectionFieldMap() {
+        var collection = getCollectionName();
+
+        if (collection === 'project_pages_entries') {
+          return { title: 'entry_title', slug: 'slug' };
+        }
+
+        if (collection === 'project_pages') {
+          return { title: 'page_name', slug: 'page_slug' };
+        }
+
+        return null;
       }
 
       function findFieldInput(fieldName) {
@@ -148,10 +158,11 @@
       }
 
       function wireEditorEnhancements() {
-        if (!isEntriesCollection()) return;
+        var fieldMap = getCollectionFieldMap();
+        if (!fieldMap) return;
 
-        var titleInput = findFieldInput('entry_title');
-        var slugInput = findFieldInput('slug');
+        var titleInput = findFieldInput(fieldMap.title);
+        var slugInput = findFieldInput(fieldMap.slug);
         if (!titleInput || !slugInput) return;
 
         buildControls(slugInput, titleInput);
