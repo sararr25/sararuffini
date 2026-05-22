@@ -1,17 +1,19 @@
 {
-  "hero_phase": "Phase 01",
   "hero_title_main_line1": "visual",
-  "hero_title_accent": "language",
   "hero_intro": "We stripped back the interface to its raw essentials. No shadows, just bold strokes and vibrant energy. A digital brutalism that feels warm.",
-  "hero_note": "user profile v1.2",
+  "phase2_title_main": "how it",
   "hero_image_left": "https://lh3.googleusercontent.com/aida-public/AB6AXuBQehSS-VilEXNEh8xXqCUax_9c4RKfx-MVbfX3whPnJxgUsfVMcxlHlBAWhsXEhL86k4xT29MUonh1BxOLks_HZA7bBmYYdHDIXnUshFq1iQ-IMemXZBc4Auwh3hda0k_v9PlQuOfKvb4FFRNh_CHH85yS1D9UNo8W1Zcojp9UkyTNtGd8xYvDwHK980Vc1rzBCM_NufBWS9buRfDtpvzPZr-ihrXPf1n1OUG10hAjMNYfwTxGI17fJ8jXXrOH3Un7nm4K-jQqqgrV",
   "hero_image_right": "https://lh3.googleusercontent.com/aida-public/AB6AXuBaPrrqyVqU8fLO3a3VajVyzx-baU7zYx2kzIQCs1LDc_MBH6ac_-XK-4OUyFZMl8_4D_yEU7dP9mrPcTZ6oqOEIvlg9hLr7TG348sY-UfNgcEYyqxTBxRo9-1V6pRnXocRmRf-hHKKZDU-WgJWnleNJU4rY34CC1c6ehRGtyQT4SlEzCN_wpSter79O0ZRNHA9_pZApCSK_h9Xj1jGoLx-Weodww1FQ0idwaPROpFqQ8MfsnCZ-Ij20M5o5CYtTiu_wdQmwU0U6wQD",
-  "hero_image_center": "https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB",
-  "phase2_title_main": "how it",
+  "hero_title_accent": "language",
+  "hero_phase": "Phase 01",
+  "hero_note": "user profile v1.2",
   "phase2_title_accent": "works",
+  "page_name": "Meriwa Travel app",
+  "page_slug": "meriwa",
   "seo": {
     "seo_title": "App Design Case Study - Sara Ruffini",
     "seo_description": "Visual language and product UX design case study by Sara Ruffini.",
     "seo_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB"
-  }
+  },
+  "hero_image_center": "https://lh3.googleusercontent.com/aida-public/AB6AXuBX_A5dJc6BRuxwGI6bwSLg3SLQEvkE3e03H8CecJwB05nlVw4Q3Q-A8ONPL2EuDbKDxWJvi-e8E-GN_76I4dtuzEWt3sD93BK-mstwd0EwLuD1H1sh6S7NraMT7oiCRLNgaFZG4iBOqqk2RREC3b_qrelNw-6db8LH1ZUGTKM9Lnt8Lx2CByQhJnqZsCljEaDPfspW7oDvr3L00gyhelk9xhX93bEgr6ejSnZhZeaj9j3skw6E5yLGgqX3-yNNTpe4mO2HLaeKskxB"
 }
