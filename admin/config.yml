@@ -45,7 +45,7 @@ collections:
       - label: Contact
         value: /pages/contact/index.html
       - label: Video Project V1
-        value: /pages/video-v1/index.html
+        value: /pages/weber-grillinspiration/index.html
       - label: Video Project V2
         value: /pages/video-v2/index.html
       - label: App Project V1
@@ -1047,7 +1047,7 @@ collections:
         required: false
   - label: Video Page V1
     name: video_v1
-    file: content/pages/video-v1.json
+    file: content/pages/weber-grillinspiration.json
     fields:
     - label: Page Name
       name: page_name
@@ -1058,7 +1058,7 @@ collections:
       name: page_slug
       widget: string
       required: false
-      hint: "URL slug (example: video-v1 => /pages/video-v1/index.html)"
+      hint: "URL slug (example: video-v1 => /pages/weber-grillinspiration/index.html)"
     # Hero Section
     - label: "🎬 HERO SECTION"
       name: hero_section

@@ -215,8 +215,8 @@ Multiple timeline entries use these label structures without data-cms-text in so
 
 ---
 
-## 8. **pages/video-v1/index.html**
-**File:** `/pages/video-v1/index.html`
+## 8. **pages/weber-grillinspiration/index.html**
+**File:** `/pages/weber-grillinspiration/index.html`
 
 ### Project Spec Box
 | Content | Element Type | Suggested CMS Field |
@@ -381,7 +381,7 @@ Cross-reference with:
 - [content/pages/app-v1.json](content/pages/app-v1.json)
 - [content/pages/app-v2.json](content/pages/app-v2.json)
 - [content/pages/graphics.json](content/pages/graphics.json)
-- [content/pages/video-v1.json](content/pages/video-v1.json)
+- [content/pages/weber-grillinspiration.json](content/pages/weber-grillinspiration.json)
 - [content/pages/video-v2.json](content/pages/video-v2.json)
 - [content/pages/socialmedia-portfolio.json](content/pages/socialmedia-portfolio.json)
 
