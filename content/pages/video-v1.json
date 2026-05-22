@@ -15,6 +15,7 @@
     "hero_role": "Role: In-house Video Editor",
     "hero_timecode": "01:45 / Collaboration Reel"
   },
+  "key_projects_label": "Key Projects",
   "intro_section": {
     "intro_title": "Weber Grillinspiration",
     "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
@@ -22,16 +23,6 @@
     "intro_badge_2": "Motion Design",
     "intro_badge_3": "Storytelling"
   },
-  "specs_section": {
-    "engagement_specs_title": "Projects details",
-    "spec_position_label": "Position",
-    "spec_position_value": "Video Editor",
-    "spec_duration_label": "Duration",
-    "spec_duration_value": "6 months",
-    "spec_deliverables_label": "Skills and programs",
-    "spec_deliverables_value": "Da Vinci Resolve, After Effects, Premiere, Editing, Post production, Motion Graphic, Color Grading"
-  },
-  "key_projects_label": "Key Projects",
   "projects": [
     {
       "badge": "Salmon recipe",
@@ -65,9 +56,20 @@
   "closing_section": {
     "closing_quote": ""
   },
+  "page_name": "Weber Grillinspiration",
+  "page_slug": "weber-grillinspiration",
   "seo": {
     "seo_title": "Weber Grillinspiration",
     "seo_description": "weber collection videos\nWeber Grillinspiration",
     "seo_image": ""
+  },
+  "specs_section": {
+    "engagement_specs_title": "Projects details",
+    "spec_position_label": "Position",
+    "spec_position_value": "Video Editor",
+    "spec_duration_label": "Duration",
+    "spec_duration_value": "6 months",
+    "spec_deliverables_label": "Skills and programs",
+    "spec_deliverables_value": "Da Vinci Resolve, After Effects, Premiere, Editing, Post production, Motion Graphic, Color Grading"
   }
 }
