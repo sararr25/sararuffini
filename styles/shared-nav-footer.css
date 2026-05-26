@@ -27,15 +27,9 @@
 }
 
 .shared-site-nav__brand {
-    margin: 0;
     flex-shrink: 0;
     text-decoration: none;
-    font-family: "Space Grotesk", "Inter", sans-serif;
-    font-size: clamp(1.3rem, 1.05rem + 0.55vw, 1.75rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
     color: var(--shared-chrome-ink) !important;
     transition: color 0.2s ease;
 }
@@ -46,15 +40,9 @@
 
 .shared-site-nav__links,
 .shared-site-nav .hidden.md\:flex {
-    align-items: center;
-    gap: 2rem;
     margin-left: auto;
     color: var(--shared-chrome-ink);
     font-family: "Inter", sans-serif;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
 }
 
 .shared-site-nav .scribble-hover {
@@ -65,6 +53,13 @@
     text-decoration: none !important;
     z-index: 1;
     transition: color 0.2s ease;
+}
+
+.shared-site-nav .scribble-hover svg path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
 }
 
 .shared-site-nav .scribble-hover svg {
