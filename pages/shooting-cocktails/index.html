@@ -1,19 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shooting Cocktails | Sara Ruffini</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;700&family=Material+Icons&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../styles/shooting-cocktails.css"/>
-  <link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
-  <link rel="stylesheet" href="../../styles/shared-project-pager.css"/>
-  <link rel="stylesheet" href="../../styles/mobile.css"/>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shooting Cocktails | Sara Ruffini</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=DM+Sans:wght@400;500;700&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#006b57",
+          secondary: "#ff6b35",
+          "accent-yellow": "#ffe66d",
+          "background-light": "#fafaf7",
+          "background-dark": "#1a1a1a",
+          "surface": "#ffffff",
+          "on-surface": "#1a1a1a",
+          "on-surface-variant": "#666666"
+        },
+        fontFamily: {
+          display: ["Space Grotesk", "sans-serif"],
+          body: ["DM Sans", "sans-serif"],
+          script: ["Permanent Marker", "cursive"]
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="../../styles/shooting-cocktails.css"/>
+<link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
+<link rel="stylesheet" href="../../styles/shared-project-pager.css"/>
+<link rel="stylesheet" href="../../styles/mobile.css"/>
 </head>
-<body data-cms-page="shooting-cocktails" class="shooting-cocktails-page">
+<body class="bg-background-light dark:bg-background-dark text-on-surface dark:text-gray-100 font-body min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-white flex flex-col" data-cms-page="shooting-cocktails">
   <nav class="shared-site-nav" data-shared-chrome="nav"></nav>
 
   <main class="sc-main">
