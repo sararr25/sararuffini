@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shooting Cocktails | Sara Ruffini</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400;700&family=Material+Icons&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../styles/shooting-cocktails.css"/>
+  <link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
+  <link rel="stylesheet" href="../../styles/shared-project-pager.css"/>
+  <link rel="stylesheet" href="../../styles/mobile.css"/>
+</head>
+<body data-cms-page="shooting-cocktails" class="shooting-cocktails-page">
+  <nav class="shared-site-nav" data-shared-chrome="nav"></nav>
+
+  <main class="sc-main">
+    <section class="sc-hero-wrap">
+      <div class="sc-noise"></div>
+
+      <article class="sc-story-card">
+        <div class="sc-tape"></div>
+        <h1 class="sc-title">
+          <span data-cms-text="hero_title_line_1">Midnight</span>
+          <span data-cms-text="hero_title_line_2">Mixology</span>
+          <svg class="sc-scribble" viewBox="0 0 300 32" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 18 C 70 30, 150 2, 298 16"></path>
+          </svg>
+        </h1>
+
+        <p class="sc-description" data-cms-text="hero_description">
+          A high-contrast, energy-driven editorial shoot for an underground speakeasy menu.
+        </p>
+
+        <div class="sc-tags">
+          <span class="sc-tag sc-tag--teal" data-cms-text="hero_tag_1">Editorial Photography</span>
+          <span class="sc-tag sc-tag--orange" data-cms-text="hero_tag_2">Lighting Design</span>
+          <span class="sc-tag sc-tag--plain">
+            <span data-cms-text="hero_client_label">Client:</span>
+            <span data-cms-text="hero_client_value">The Vault</span>
+          </span>
+        </div>
+
+        <a class="sc-back" data-cms-href="back_to_projects_href" href="/pages/portfolio-main/code.html">
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+          <span data-cms-text="back_to_projects_label">Back to Projects</span>
+        </a>
+      </article>
+
+      <div class="sc-collage">
+        <figure class="sc-polaroid">
+          <img data-cms-src="hero_polaroid_image" data-cms-alt="hero_polaroid_alt" src="/assets/media/Cocktail-89.jpg" alt="Cocktail making close-up"/>
+          <figcaption data-cms-text="hero_polaroid_caption">Shot 01</figcaption>
+        </figure>
+
+        <figure class="sc-main-shot">
+          <img data-cms-src="hero_main_image" data-cms-alt="hero_main_image_alt" src="/assets/media/Cocktail-123.jpg" alt="Orange cocktail splash"/>
+        </figure>
+
+        <figure class="sc-accent-shot">
+          <img data-cms-src="hero_accent_image" data-cms-alt="hero_accent_alt" src="/assets/media/Cocktail-141.jpg" alt="Blue cocktail"/>
+          <div class="sc-pop" data-cms-text="hero_pop_label">POP!</div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="sc-collection">
+      <div class="sc-collection-head">
+        <h2 data-cms-text="collection_title">The Collection</h2>
+        <div class="sc-rule"></div>
+      </div>
+
+      <div class="sc-grid">
+        <article class="sc-photo-card sc-photo-card--a">
+          <div class="sc-photo-frame">
+            <img data-cms-src="collection_items[0].image" data-cms-alt="collection_items[0].alt" src="/assets/media/Cocktail-13.jpg" alt="Smoked old fashioned"/>
+          </div>
+          <div class="sc-photo-meta">
+            <h3 data-cms-text="collection_items[0].title">The Smoked Old Fashioned</h3>
+            <span data-cms-text="collection_items[0].index_label">01</span>
+          </div>
+        </article>
+
+        <article class="sc-photo-card sc-photo-card--b">
+          <div class="sc-photo-frame">
+            <img data-cms-src="collection_items[1].image" data-cms-alt="collection_items[1].alt" src="/assets/media/Cocktail-6.jpg" alt="Blood orange spritz"/>
+          </div>
+          <div class="sc-photo-meta">
+            <h3 data-cms-text="collection_items[1].title">Blood Orange Spritz</h3>
+            <span data-cms-text="collection_items[1].index_label">02</span>
+          </div>
+        </article>
+
+        <article class="sc-photo-card sc-photo-card--c">
+          <div class="sc-photo-frame">
+            <img data-cms-src="collection_items[2].image" data-cms-alt="collection_items[2].alt" src="/assets/media/Cocktail-132.jpg" alt="Neon sour"/>
+          </div>
+          <div class="sc-photo-meta">
+            <h3 data-cms-text="collection_items[2].title">Neon Sour</h3>
+            <span data-cms-text="collection_items[2].index_label">03</span>
+          </div>
+        </article>
+
+        <article class="sc-photo-card sc-photo-card--d">
+          <div class="sc-photo-frame">
+            <img data-cms-src="collection_items[3].image" data-cms-alt="collection_items[3].alt" src="/assets/media/Cocktail-29.jpg" alt="Cocktail details"/>
+          </div>
+          <div class="sc-photo-meta">
+            <h3 data-cms-text="collection_items[3].title">The Details</h3>
+            <span data-cms-text="collection_items[3].index_label">04</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shared-project-pager" data-shared-project-pager></section>
+  </main>
+
+  <footer class="shared-site-footer" data-shared-chrome="footer"></footer>
+
+  <script src="../../scripts/cms-page-loader.js"></script>
+  <script src="../../scripts/shared-project-pager.js"></script>
+  <script src="../../scripts/shared-site-chrome.js"></script>
+  <script src="../../scripts/mobile-nav.js"></script>
+</body>
+</html>

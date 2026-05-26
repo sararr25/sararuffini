@@ -58,6 +58,14 @@
       "alt": "Cocktail photography project",
       "title": "Mixology in Focus",
       "meta": "Photography • 2025"
+    },
+    {
+      "href": "/pages/shooting-cocktails/index.html",
+      "badge": "Retro Pop",
+      "image": "/assets/media/Cocktail-123.jpg",
+      "alt": "Shooting Cocktails project cover",
+      "title": "Shooting Cocktails",
+      "meta": "Photography • Editorial"
     }
   ],
   "more_projects_href": "/workspace.html",
