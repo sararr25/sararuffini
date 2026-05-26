@@ -20,17 +20,19 @@
 
 .sc-main {
   width: min(1380px, 100% - 2.2rem);
-  margin: 1.7rem auto 4rem;
+  margin: 2.1rem auto 4rem;
   display: grid;
-  gap: 2.6rem;
+  gap: 3.4rem;
 }
 
 .sc-hero-wrap {
   position: relative;
   display: grid;
-  grid-template-columns: 0.86fr 1.14fr;
-  gap: 1.1rem;
-  align-items: center;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 1.5rem;
+  align-items: start;
+  min-height: 620px;
+  overflow: visible;
 }
 
 .sc-noise {
@@ -50,7 +52,7 @@
   box-shadow: 6px 6px 0 var(--sc-ink);
   border-radius: 10px;
   padding: 1.6rem 1.7rem;
-  max-width: 760px;
+  max-width: 660px;
 }
 
 .sc-tape {
@@ -96,7 +98,7 @@
 .sc-description {
   margin: 1.35rem 0 1.2rem;
   color: var(--sc-ink-soft);
-  max-width: 45ch;
+  max-width: 43ch;
   line-height: 1.6;
   font-size: 0.98rem;
 }
@@ -158,8 +160,8 @@
 .sc-collage {
   position: relative;
   z-index: 1;
-  min-height: 560px;
-  margin-left: -1.2rem;
+  min-height: 620px;
+  margin-left: -0.35rem;
 }
 
 .sc-main-shot,
@@ -173,17 +175,17 @@
 }
 
 .sc-main-shot {
-  width: min(69%, 650px);
-  right: 16%;
-  top: 20%;
+  width: min(61%, 520px);
+  right: 12%;
+  top: 23%;
   aspect-ratio: 4 / 3;
   z-index: 2;
 }
 
 .sc-polaroid {
-  width: min(46%, 345px);
-  left: 6%;
-  top: 5%;
+  width: min(39%, 280px);
+  left: 2%;
+  top: 7%;
   padding: 0.72rem 0.72rem 1.9rem;
   transform: rotate(-7deg);
   z-index: 4;
@@ -202,9 +204,9 @@
 }
 
 .sc-accent-shot {
-  width: min(45%, 345px);
-  right: 8%;
-  bottom: 7%;
+  width: min(39%, 280px);
+  right: 2%;
+  bottom: 9%;
   aspect-ratio: 1 / 1;
   padding: 0.55rem;
   transform: rotate(4deg);
@@ -242,6 +244,9 @@
 .sc-collection {
   border-top: 3px solid var(--sc-ink);
   padding-top: 1.2rem;
+  margin-top: 1.8rem;
+  position: relative;
+  z-index: 3;
 }
 
 .sc-collection-head {
@@ -287,19 +292,19 @@
 
 .sc-collection-divider {
   border-top: 3px solid var(--sc-ink);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .sc-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(250px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(4, minmax(235px, 1fr));
+  gap: 1rem;
   overflow-x: auto;
-  padding: 0.1rem 0.2rem 0.35rem;
+  padding: 0.25rem 0.2rem 0.35rem;
 }
 
 .sc-photo-card {
-  min-width: 250px;
+  min-width: 235px;
   background: #fff;
   border: 3px solid var(--sc-ink);
   box-shadow: 5px 5px 0 var(--sc-ink);
@@ -308,7 +313,7 @@
 }
 
 .sc-photo-card--a { transform: rotate(-1deg); }
-.sc-photo-card--b { transform: rotate(-2deg); margin-top: 0.5rem; }
+.sc-photo-card--b { transform: rotate(-2deg); margin-top: 0.7rem; }
 .sc-photo-card--c { transform: rotate(1.2deg); }
 .sc-photo-card--d { transform: rotate(-0.7deg); margin-top: 0.25rem; }
 
@@ -375,6 +380,7 @@
   .sc-hero-wrap {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+    min-height: 0;
   }
 
   .sc-collage {
@@ -383,25 +389,25 @@
   }
 
   .sc-main-shot {
-    width: min(70%, 540px);
-    top: 20%;
-    right: 10%;
+    width: min(66%, 500px);
+    top: 22%;
+    right: 12%;
   }
 
   .sc-polaroid {
-    width: min(42%, 290px);
-    left: 8%;
-    top: 6%;
+    width: min(40%, 265px);
+    left: 4%;
+    top: 4%;
   }
 
   .sc-accent-shot {
-    width: min(40%, 280px);
-    right: 10%;
-    bottom: 8%;
+    width: min(38%, 250px);
+    right: 6%;
+    bottom: 6%;
   }
 
   .sc-grid {
-    grid-template-columns: repeat(4, minmax(235px, 1fr));
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
   }
 }
 
@@ -409,7 +415,7 @@
   .sc-main {
     width: calc(100% - 1rem);
     margin-top: 1.2rem;
-    gap: 2.3rem;
+    gap: 2.8rem;
   }
 
   .sc-story-card {
@@ -425,21 +431,21 @@
   }
 
   .sc-main-shot {
-    width: 74%;
-    right: 8%;
-    top: 21%;
+    width: 72%;
+    right: 9%;
+    top: 23%;
   }
 
   .sc-polaroid {
-    width: 46%;
-    left: 1%;
-    top: 2%;
+    width: 44%;
+    left: 2%;
+    top: 3%;
   }
 
   .sc-accent-shot {
-    width: 48%;
-    right: 1%;
-    bottom: 7%;
+    width: 44%;
+    right: 2%;
+    bottom: 8%;
   }
 
   .sc-grid {
