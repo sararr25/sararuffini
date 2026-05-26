@@ -37,6 +37,7 @@
 </script>
 <link rel="stylesheet" href="../../styles/graphics.css"/>
 <link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
+<link rel="stylesheet" href="../../styles/shared-project-pager.css"/>
 <link rel="stylesheet" href="../../styles/mobile.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-gray-900 dark:text-white font-display overflow-x-hidden min-h-screen relative flex flex-col" data-cms-page="cocktail-photography">
@@ -45,36 +46,7 @@
 <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 blur-[100px] rounded-full"></div>
 <div class="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-accent-pink/20 blur-[120px] rounded-full"></div>
 </div>
-<nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-background-light border-b-2 border-black sticky top-0 z-50 shared-site-nav">
-<a class="text-2xl font-black uppercase tracking-tight hover:text-primary transition-colors" href="../../index.html">Sara Ruffini</a>
-<div class="hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center text-black">
-<a class="scribble-hover relative inline-block transition-all" href="../../index.html">
-                Home
-                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
-<path d="M0 5 Q 50 10 100 5"></path>
-</svg>
-</a>
-<a class="scribble-hover active relative inline-block transition-all text-primary" href="../portfolio-main/code.html">
-                Projects
-                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
-<path d="M0 5 Q 50 10 100 5"></path>
-</svg>
-</a>
-<a class="scribble-hover relative inline-block transition-all" href="../about/index.html">
-                About
-                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
-<path d="M0 5 Q 50 10 100 5"></path>
-</svg>
-</a>
-<a class="scribble-hover relative inline-block transition-all" href="../contact/index.html">
-                Contact
-                <svg class="text-primary fill-transparent stroke-current stroke-[3px]" preserveAspectRatio="none" viewBox="0 0 100 10">
-<path d="M0 5 Q 50 10 100 5"></path>
-</svg>
-</a>
-</div>
-<button aria-label="Open menu" class="md:hidden text-3xl leading-none">☰</button>
-</nav>
+<nav class="shared-site-nav" data-shared-chrome="nav"></nav>
 <main class="flex-grow relative z-10 px-6 md:px-12 py-10 md:py-14">
 <section class="max-w-7xl mx-auto mb-16 relative">
 <div class="relative w-full aspect-[21/9] neo-border neo-shadow-lg rounded overflow-hidden -rotate-1 bg-surface-container-highest">
@@ -160,36 +132,11 @@
 </div>
 </div>
 </section>
-<section class="w-full max-w-5xl mx-auto mt-16 border-t-[4px] border-on-surface pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<a class="flex items-center gap-2 text-2xl font-bold text-on-surface-variant hover:text-primary transition-colors group" data-cms-href="prev_project_href" href="/pages/portfolio-main/code.html">
-<span class="material-symbols-outlined text-2xl group-hover:-translate-x-2 transition-transform">arrow_left_alt</span>
-<span data-cms-text="prev_project_label">Previous Project</span>
-</a>
-<a class="flex items-center gap-2 text-2xl font-bold text-on-surface hover:text-secondary transition-colors group" data-cms-href="next_project_href" href="/pages/weber-grillinspiration/index.html">
-<span data-cms-text="next_project_label">Next Project</span>
-<span class="material-symbols-outlined text-2xl group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
-</a>
-</section>
+<section class="shared-project-pager" data-shared-project-pager></section>
 </main>
-<footer class="bg-black text-white py-16 shared-site-footer">
-<div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
-<div class="space-y-4">
-<div>
-<h2 class="text-5xl uppercase tracking-wide leading-none font-black">Sara Ruffini</h2>
-<p class="font-bold tracking-widest text-sm mt-1 text-primary">VIDEO EDITOR - CONTENT CREATOR</p>
-</div>
-<p class="text-gray-400 text-sm" data-cms-text="footer_contact">sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen</p>
-</div>
-<div class="flex flex-col md:items-end space-y-4">
-<div class="flex space-x-8 font-medium uppercase tracking-widest text-sm">
-<a class="transition-colors" href="../../index.html">Home</a>
-<a class="transition-colors" href="../portfolio-main/code.html">Projects</a>
-<a class="transition-colors" href="../about/index.html">About</a>
-<a class="transition-colors" href="../contact/index.html">Contact</a>
-</div>
-</div>
-</div>
-</footer>
+<footer class="shared-site-footer" data-shared-chrome="footer"></footer>
 <script src="../../scripts/cms-page-loader.js"></script>
+<script src="../../scripts/shared-project-pager.js"></script>
+<script src="../../scripts/shared-site-chrome.js"></script>
 <script src="../../scripts/mobile-nav.js"></script>
 </body></html>

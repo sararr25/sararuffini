@@ -1,17 +1,24 @@
 (function () {
   var MOBILE_WIDTH = 767;
+  var initializedNavs = new WeakSet();
 
   function isMobileViewport() {
     return window.innerWidth <= MOBILE_WIDTH;
   }
 
   function setupNav(nav) {
+    if (initializedNavs.has(nav)) {
+      return;
+    }
+
     var button = nav.querySelector('button[aria-label="Open menu"]');
     var menu = nav.querySelector('div.hidden.md\\:flex');
 
     if (!button || !menu) {
       return;
     }
+
+    initializedNavs.add(nav);
 
     button.setAttribute("aria-expanded", "false");
     button.setAttribute("aria-haspopup", "true");
@@ -55,8 +62,16 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initializeSharedNavs() {
     var navs = document.querySelectorAll(".shared-site-nav");
     navs.forEach(setupNav);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initializeSharedNavs();
+  });
+
+  document.addEventListener("shared-site-chrome:ready", function () {
+    initializeSharedNavs();
   });
 })();

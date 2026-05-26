@@ -13,34 +13,6 @@
         .animate-float { animation: float 6s ease-in-out infinite }
         .animate-float-delayed { animation: float 5s ease-in-out infinite 1s }
         .animate-float-reverse { animation: float 7s ease-in-out infinite 2s reverse }
-        .scribble-hover {
-            position: relative;
-            text-decoration: none !important;
-            display: inline-block;
-            padding-bottom: 4px;
-            z-index: 1;
-        }
-        .scribble-hover svg {
-            position: absolute;
-            bottom: -6px;
-            left: -5%;
-            width: 110%;
-            height: 12px;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: scaleX(0);
-            pointer-events: none;
-            z-index: 0;
-            overflow: visible;
-        }
-        .scribble-hover:hover svg {
-            opacity: 1;
-            transform: scaleX(1);
-        }
-        .scribble-hover.active svg {
-            opacity: 1;
-            transform: scaleX(1);
-        }
         .animate-marquee {
             animation: marquee 20s linear infinite;
         }

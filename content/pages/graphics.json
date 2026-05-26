@@ -5,5 +5,11 @@
   "hero_image_polaroid": "/assets/media/Cocktail-89.jpg",
   "hero_image_detail": "/assets/media/Cocktail-6.jpg",
   "hero_image_wide": "/assets/media/Cocktail-29.jpg",
-  "wide_image_overlay_text": "THE CITY IS YOURS"
+  "wide_image_overlay_text": "THE CITY IS YOURS",
+  "prev_project_href": "/pages/video-v2/index.html",
+  "prev_project_label": "Previous Project",
+  "prev_project_title": "Cyberpunk",
+  "next_project_href": "/pages/app-v1/index.html",
+  "next_project_label": "Next Project",
+  "next_project_title": "Retro Glitch"
 }

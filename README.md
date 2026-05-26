@@ -81,3 +81,30 @@ Injected tags include:
 - `description`
 - `og:type`, `og:title`, `og:description`, `og:url`, `og:image`
 - `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`, `twitter:site`
+
+## Shared Site Structure
+
+To avoid editing the same UI in many files, shared public-site UI is centralized here:
+
+- `content/global.json`: brand name, navbar labels/links, footer contact info
+- `styles/shared-nav-footer.css`: the single visual style source for navbar and footer
+- `scripts/shared-site-chrome.js`: renders navbar and footer in public pages
+- `styles/shared-project-pager.css`: shared previous/next project pager styling
+- `scripts/shared-project-pager.js`: renders project pager from the current page JSON
+
+### What to edit for common changes
+
+- Change navbar/footer text or links: `content/global.json`
+- Change navbar/footer font, spacing, colors, hover states: `styles/shared-nav-footer.css`
+- Change shared project pager labels/titles/links for a page: `content/pages/<slug>.json`
+- Change shared project pager layout/style: `styles/shared-project-pager.css`
+
+### Public page convention
+
+Public pages under `pages/` should prefer placeholders over duplicated markup:
+
+- Navbar: `<nav class="shared-site-nav" data-shared-chrome="nav"></nav>`
+- Footer: `<footer class="shared-site-footer" data-shared-chrome="footer"></footer>`
+- Project pager: `<section class="shared-project-pager" data-shared-project-pager></section>`
+
+This keeps future edits local instead of spread across many HTML files.
