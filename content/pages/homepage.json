@@ -26,10 +26,11 @@
   },
   "featured_title": "Featured Projects",
   "featured_torn": {
-    "href": "/pages/graphics/index.html",
+    "href": "",
     "image": "/assets/media/home-cocktails.png",
     "alt": "Cocktail visual sticker project",
-    "label": "One more!"
+    "label": "One more!",
+    "href_page": "/pages/shooting-cocktails/index.html"
   },
   "featured_subtitle": "Select an object to view",
   "marquee_text": "Let's create something together• Let's create something together • Let's create something together • Let's create something together • Let's create something together • Let's create something together •",
