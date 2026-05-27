@@ -1,0 +1,19 @@
+{
+  "window_label": "System.Dialog",
+  "loading_title": "PROJECT.EXE IS LOADING...",
+  "progress_badge_text": "99% DONE",
+  "loading_description": "Hang tight, we're almost ready to go live. The pixels are being polished and the hard drives are spinning up.",
+  "back_home_label": "BACK TO HOME",
+  "back_home_href": "/index.html",
+  "back_home_href_page": "/index.html",
+  "explore_projects_label": "EXPLORE PROJECTS",
+  "explore_projects_href": "/pages/portfolio-main/code.html",
+  "explore_projects_href_page": "/pages/portfolio-main/code.html",
+  "media_blocks": [],
+  "selector_overrides": [],
+  "seo": {
+    "seo_title": "Coming Soon | Sara Ruffini",
+    "seo_description": "Coming soon page for upcoming projects by Sara Ruffini.",
+    "seo_image": "/assets/media/home-reels.png"
+  }
+}
