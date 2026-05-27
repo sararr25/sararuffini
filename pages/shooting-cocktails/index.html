@@ -122,12 +122,14 @@
           <!-- Tape -->
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-[#ffffcc] opacity-80 -rotate-2 border border-[#d9d9d9] z-20" style="box-shadow:1px 1px 3px rgba(0,0,0,0.1)"></div>
 
-          <h1 class="font-display-lg text-on-surface mb-5 relative inline-block">
+          <h1 class="font-display-lg text-on-surface mb-5 inline-block">
             <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_1">Midnight</div>
-            <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_2">Mixology</div>
-            <svg class="absolute -bottom-2 left-0 w-full h-4 text-primary" preserveAspectRatio="none" viewBox="0 0 200 20" aria-hidden="true">
-              <path d="M0,10 Q50,20 100,5 T200,10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
-            </svg>
+            <div class="relative inline-block pb-4">
+              <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_2">Mixology</div>
+              <svg class="absolute left-0 top-full w-full h-4 text-primary" preserveAspectRatio="none" viewBox="0 0 200 20" aria-hidden="true">
+                <path d="M0,10 Q50,20 100,5 T200,10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
+              </svg>
+            </div>
           </h1>
 
           <p class="font-body-md text-[0.95rem] text-on-surface-variant mb-5 leading-relaxed" data-cms-text="hero_description">
@@ -151,15 +153,15 @@
       </div>
 
       <!-- Right: Photo Collage -->
-      <div class="relative flex items-center justify-center h-[500px] lg:h-auto z-10">
+      <div class="relative flex items-center justify-center h-[450px] md:h-[500px] lg:h-[520px] z-10 max-w-[580px] mx-auto w-full">
         <!-- Central large image -->
-        <div class="absolute z-20 w-[80%] aspect-[4/3] bg-surface border-[3px] border-on-background brutal-shadow overflow-hidden group">
+        <div class="absolute z-20 w-[74%] top-[12%] aspect-[4/3] bg-surface border-[3px] border-on-background brutal-shadow overflow-hidden group">
           <img data-cms-src="hero_main_image" data-cms-alt="hero_main_image_alt"
                src="/assets/media/Cocktail-123.jpg" alt="Orange cocktail"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
         </div>
         <!-- Polaroid left -->
-        <div class="absolute z-30 -left-4 top-[10%] w-[45%] md:w-[40%] bg-surface-container-lowest p-4 pb-12 border-[3px] border-on-background brutal-shadow -rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
+        <div class="absolute z-30 left-[2%] top-[4%] w-[36%] md:w-[34%] bg-surface-container-lowest p-4 pb-12 border-[3px] border-on-background brutal-shadow -rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
           <div class="w-full aspect-square border-[3px] border-on-background overflow-hidden bg-on-surface">
             <img data-cms-src="hero_polaroid_image" data-cms-alt="hero_polaroid_alt"
                  src="/assets/media/Cocktail-89.jpg" alt="Bartender close-up"
@@ -168,7 +170,7 @@
           <div class="absolute bottom-3 left-4 font-label-sm text-on-surface uppercase tracking-widest" style="font-size:0.65rem;font-weight:700" data-cms-text="hero_polaroid_caption">Shot 01</div>
         </div>
         <!-- Accent image right with POP! badge -->
-        <div class="absolute z-10 -right-4 bottom-[10%] w-[50%] md:w-[45%] aspect-square bg-secondary-container p-2 border-[3px] border-on-background brutal-shadow rotate-3 hover:rotate-0 hover:z-40 transition-all duration-300">
+        <div class="absolute z-10 right-[1%] bottom-[12%] w-[38%] md:w-[36%] aspect-square bg-secondary-container p-2 border-[3px] border-on-background brutal-shadow rotate-3 hover:rotate-0 hover:z-40 transition-all duration-300">
           <div class="w-full h-full border-[3px] border-on-background overflow-hidden">
             <img data-cms-src="hero_accent_image" data-cms-alt="hero_accent_alt"
                  src="/assets/media/Cocktail-141.jpg" alt="Cocktail accent"
