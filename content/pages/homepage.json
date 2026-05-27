@@ -35,7 +35,6 @@
   "featured_subtitle": "Select an object to view",
   "marquee_text": "Let's create something together• Let's create something together • Let's create something together • Let's create something together • Let's create something together • Let's create something together •",
   "hero_line_1": "I talk fast",
-  "collage_word_top": "PROJECT",
   "showreel_label": "Showreel",
   "featured_grill": {
     "href": "/pages/weber-grillinspiration/index.html",
@@ -52,8 +51,6 @@
     "label": "Meriwa App",
     "href_page": "/pages/app-v1/index.html"
   },
-  "collage_word_bottom": "PROJECT",
-  "footer_contact": "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen",
   "featured_round": {
     "href": "/pages/socialmedia-portfolio/index.html",
     "image": "/assets/media/home-pasta.png",
@@ -65,5 +62,11 @@
     "image": "/assets/media/home-reels.png",
     "alt": "Social Media",
     "caption": "Social Media"
+  },
+  "seo": {
+    "seo_title": "Sara Ruffini - Video Editor Portfolio",
+    "seo_description": "Portfolio of video editing, motion design, and content creation work by Sara Ruffini.",
+    "seo_image": "/assets/media/home-reels.png"
   }
+
 }

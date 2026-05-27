@@ -1,6 +1,4 @@
 {
-  "page_name": "Shooting Cocktails",
-  "page_slug": "shooting-cocktails",
   "hero_title_line_1": "Midnight",
   "hero_title_line_2": "Mixology",
   "hero_description": "A high-contrast, energy-driven editorial shoot for an underground speakeasy menu. We focused on capturing the raw, tactile essence of mixology\u2014shattered ice, spilled bitters, and intense neon rim lighting. The goal was to make the drinks feel like aggressive pieces of modern art.",
@@ -13,7 +11,7 @@
   "hero_main_image": "/assets/media/Cocktail-123.jpg",
   "hero_main_image_alt": "A vivid orange cocktail splash in a crystal glass.",
   "hero_polaroid_image": "/assets/media/Cocktail-89.jpg",
-  "hero_polaroid_alt": "Black and white bartender close-up polaroid.",
+  "hero_polaroid_alt": "Bartender close-up polaroid.",
   "hero_polaroid_caption": "Shot 01",
   "hero_accent_image": "/assets/media/Cocktail-141.jpg",
   "hero_accent_alt": "Electric blue cocktail as supporting visual.",
@@ -50,12 +48,6 @@
       "alt": "Macro detail of textured cocktail garnish."
     }
   ],
-  "prev_project_href": "/pages/cocktail-photography/index.html",
-  "prev_project_label": "Previous Project",
-  "prev_project_title": "Mixology in Focus",
-  "next_project_href": "/pages/video-v2/index.html",
-  "next_project_label": "Next Project",
-  "next_project_title": "Company Work Showcase V2",
   "seo": {
     "seo_title": "Shooting Cocktails - Sara Ruffini",
     "seo_description": "Portfolio project page for cocktail photography art direction and editorial visuals by Sara Ruffini.",

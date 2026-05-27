@@ -631,14 +631,6 @@ collections:
       name: template_name
       widget: string
       required: false
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
     - label: Hero Title Line 1
       name: hero_title_line_1
       widget: string
@@ -1118,10 +1110,6 @@ collections:
       name: cta_href
       widget: string
       required: false
-    - label: Footer Contact
-      name: footer_contact
-      widget: string
-      required: false
     - label: SEO
       name: seo
       widget: object
@@ -1146,16 +1134,6 @@ collections:
     name: neon_vibes_web
     file: content/pages/neon-vibes-web.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: neon-vibes-web => /pages/neon-vibes-web/index.html)"
     - label: Project Title
       name: project_title
       widget: string
@@ -1268,10 +1246,6 @@ collections:
       name: cta_href
       widget: string
       required: false
-    - label: Footer Contact
-      name: footer_contact
-      widget: string
-      required: false
     - label: SEO
       name: seo
       widget: object
@@ -1293,16 +1267,6 @@ collections:
     name: video_v1
     file: content/pages/weber-grillinspiration.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: video-v1 => /pages/weber-grillinspiration/index.html)"
     # Hero Section
     - label: "🎬 HERO SECTION"
       name: hero_section
@@ -1554,26 +1518,12 @@ collections:
     name: cocktail_photography
     file: content/pages/cocktail-photography.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: cocktail-photography => /pages/cocktail-photography/index.html)"
     - label: Project Title
       name: project_title
       widget: string
       required: false
     - label: Project Subtitle
       name: project_subtitle
-      widget: string
-      required: false
-    - label: Hero Badge
-      name: hero_badge
       widget: string
       required: false
     - label: Tag 1
@@ -1761,16 +1711,6 @@ collections:
     name: shooting_cocktails
     file: content/pages/shooting-cocktails.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: shooting-cocktails => /pages/shooting-cocktails/index.html)"
     - label: Hero Title Line 1
       name: hero_title_line_1
       widget: string
@@ -1888,30 +1828,6 @@ collections:
         name: alt
         widget: string
         required: false
-    - label: Previous Project Link
-      name: prev_project_href
-      widget: string
-      required: false
-    - label: Previous Project Label
-      name: prev_project_label
-      widget: string
-      required: false
-    - label: Previous Project Title
-      name: prev_project_title
-      widget: string
-      required: false
-    - label: Next Project Link
-      name: next_project_href
-      widget: string
-      required: false
-    - label: Next Project Label
-      name: next_project_label
-      widget: string
-      required: false
-    - label: Next Project Title
-      name: next_project_title
-      widget: string
-      required: false
     - label: SEO
       name: seo
       widget: object
@@ -1933,16 +1849,6 @@ collections:
     name: video_v2
     file: content/pages/video-v2.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: video-v2 => /pages/video-v2/index.html)"
     - label: "🎬 HERO SECTION"
       name: hero_section
       widget: object
@@ -2173,16 +2079,6 @@ collections:
     name: app_v1
     file: content/pages/app-v1.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: app-v1 => /pages/app-v1/index.html)"
     - label: Phase Label
       name: hero_phase
       widget: string
@@ -2336,16 +2232,6 @@ collections:
     name: app_v2
     file: content/pages/app-v2.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: app-v2 => /pages/app-v2/index.html)"
     - label: Phase Label
       name: hero_phase
       widget: string
@@ -2503,16 +2389,6 @@ collections:
     name: graphics
     file: content/pages/graphics.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: graphics => /pages/graphics/index.html)"
     - label: Campaign Title
       name: campaign_title
       widget: string
@@ -2654,16 +2530,6 @@ collections:
     name: socialmedia_portfolio
     file: content/pages/socialmedia-portfolio.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: socialmedia-portfolio => /pages/socialmedia-portfolio/index.html)"
     - label: Main Title
       name: hero_title
       widget: string
@@ -2707,58 +2573,6 @@ collections:
     - label: Phone Note 4 (HTML)
       name: phone_note_4_html
       widget: text
-      required: false
-    - label: Phone 1 Media Type
-      name: phone_1_media_type
-      widget: select
-      required: false
-      options:
-      - label: Video/Embed
-        value: video
-      - label: Image
-        value: image
-    - label: Phone 1 Video/Embed URL
-      name: phone_1_embed_url
-      widget: string
-      required: false
-    - label: Phone 2 Media Type
-      name: phone_2_media_type
-      widget: select
-      required: false
-      options:
-      - label: Video/Embed
-        value: video
-      - label: Image
-        value: image
-    - label: Phone 2 Video/Embed URL
-      name: phone_2_embed_url
-      widget: string
-      required: false
-    - label: Phone 3 Media Type
-      name: phone_3_media_type
-      widget: select
-      required: false
-      options:
-      - label: Video/Embed
-        value: video
-      - label: Image
-        value: image
-    - label: Phone 3 Video/Embed URL
-      name: phone_3_embed_url
-      widget: string
-      required: false
-    - label: Phone 4 Media Type
-      name: phone_4_media_type
-      widget: select
-      required: false
-      options:
-      - label: Video/Embed
-        value: video
-      - label: Image
-        value: image
-    - label: Phone 4 Video/Embed URL
-      name: phone_4_embed_url
-      widget: string
       required: false
     - label: Instagram Profile URL
       name: instagram_profile_url
@@ -2911,16 +2725,6 @@ collections:
     name: homepage
     file: content/pages/homepage.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: homepage => /pages/homepage/index.html)"
     - label: Hero Line 1
       name: hero_line_1
       widget: string
@@ -2951,14 +2755,6 @@ collections:
       required: false
     - label: Featured Subtitle
       name: featured_subtitle
-      widget: string
-      required: false
-    - label: Collage Word Top
-      name: collage_word_top
-      widget: string
-      required: false
-    - label: Collage Word Bottom
-      name: collage_word_bottom
       widget: string
       required: false
     - label: Featured TV
@@ -3193,10 +2989,6 @@ collections:
       name: marquee_text
       widget: text
       required: false
-    - label: Footer Contact Line
-      name: footer_contact
-      widget: string
-      required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -3310,16 +3102,6 @@ collections:
     name: about
     file: content/pages/about.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: about => /pages/about/index.html)"
     - label: Hero Line 1
       name: hero_title_line1
       widget: string
@@ -3474,10 +3256,6 @@ collections:
       name: more_card_3_text
       widget: text
       required: false
-    - label: Footer Contact Line
-      name: footer_contact
-      widget: string
-      required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -3591,16 +3369,6 @@ collections:
     name: portfolio_main
     file: content/pages/portfolio-main.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: portfolio-main => /pages/portfolio-main/code.html)"
     - label: Heading Line 1
       name: heading_line1
       widget: string
@@ -3665,10 +3433,6 @@ collections:
       required: false
     - label: More Projects Meta
       name: more_projects_meta
-      widget: string
-      required: false
-    - label: Footer Contact Line
-      name: footer_contact
       widget: string
       required: false
     - label: Dynamic Media Blocks
@@ -3784,16 +3548,6 @@ collections:
     name: contact
     file: content/pages/contact.json
     fields:
-    - label: Page Name
-      name: page_name
-      widget: string
-      required: false
-      hint: "Admin title for this page"
-    - label: Page Slug
-      name: page_slug
-      widget: string
-      required: false
-      hint: "URL slug (example: contact => /pages/contact/index.html)"
     - label: "🔍 SEO"
       name: seo
       widget: object
