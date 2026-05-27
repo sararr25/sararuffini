@@ -111,20 +111,24 @@
 <div class="relative">
 <div class="bg-white dark:bg-[#222] border-[3px] border-black dark:border-white p-8 md:p-10 shadow-[8px_8px_0px_0px_#000000] dark:shadow-[8px_8px_0px_0px_#39FFCA] relative">
 <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/80 rotate-2 backdrop-blur-sm z-10 shadow-sm"></div>
-<form class="space-y-6">
+<form action="https://formsubmit.co/sara.ruffini95@gmail.com" class="space-y-6" method="POST">
+<input name="_subject" type="hidden" value="Nuovo messaggio dal sito Sara Ruffini"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_template" type="hidden" value="table"/>
+<input name="_honey" style="display:none" tabindex="-1" type="text" value=""/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="space-y-2">
 <label class="font-display text-xl uppercase tracking-wide" for="name">Name</label>
-<input class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="name" placeholder="Your name" type="text"/>
+<input class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="name" name="name" placeholder="Your name" required type="text"/>
 </div>
 <div class="space-y-2">
 <label class="font-display text-xl uppercase tracking-wide" for="email">Email</label>
-<input class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="email" placeholder="hello@you.com" type="email"/>
+<input class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="email" name="email" placeholder="hello@you.com" required type="email"/>
 </div>
 </div>
 <div class="space-y-2">
 <label class="font-display text-xl uppercase tracking-wide" for="subject">Subject</label>
-<select class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all cursor-pointer" id="subject">
+<select class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all cursor-pointer" id="subject" name="subject" required>
 <option>Video Editing Project</option>
 <option>Motion Graphics</option>
 <option>Collaboration</option>
@@ -133,7 +137,7 @@
 </div>
 <div class="space-y-2">
 <label class="font-display text-xl uppercase tracking-wide" for="message">The Vision</label>
-<textarea class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="message" placeholder="Tell me about your project..." rows="5"></textarea>
+<textarea class="w-full bg-background-light dark:bg-black border-2 border-black dark:border-gray-600 focus:border-primary dark:focus:border-primary focus:ring-0 p-3 text-lg font-bold outline-none transition-all placeholder-gray-400" id="message" name="message" placeholder="Tell me about your project..." required rows="5"></textarea>
 </div>
 <div class="pt-4">
 <button class="w-full bg-primary text-black font-display text-3xl uppercase tracking-wider py-4 border-2 border-black shadow-retro hover:shadow-retro-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200 group relative overflow-hidden" type="submit">
