@@ -73,7 +73,6 @@
   font-size: clamp(2.4rem, 3vw, 5rem);
   letter-spacing: -0.03em;
   line-height: 0.89;
-  text-transform: uppercase;
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -117,8 +116,7 @@
   padding: 0.34rem 0.85rem;
   font-size: 0.78rem;
   font-family: "Space Grotesk", "Inter", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   font-weight: 700;
 }
 
@@ -145,8 +143,7 @@
   box-shadow: 4px 4px 0 var(--sc-ink);
   padding: 0.68rem 0.95rem;
   font-family: "Space Grotesk", "Inter", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   font-size: 0.8rem;
   font-weight: 700;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -261,7 +258,6 @@
   font-family: "Space Grotesk", "Inter", sans-serif;
   font-size: clamp(1.8rem, 2.6vw, 2.8rem);
   letter-spacing: -0.02em;
-  text-transform: uppercase;
 }
 
 .sc-rule {
