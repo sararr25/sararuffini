@@ -1,9 +1,10 @@
 {
   "featured_card": {
-    "href": "/pages/graphics/index.html",
+    "href": "",
     "image": "/assets/media/home-videos.png",
     "alt": "Retro phone sticker project",
-    "label": "The Edit Room"
+    "label": "The Edit Room",
+    "href_page": "/pages/coming-soon/index.html"
   },
   "featured_window": {
     "href": "/pages/app-v2/index.html",
@@ -19,10 +20,11 @@
   "hero_word_highlight": "faster",
   "hero_line_2_prefix": "I edit",
   "featured_dna": {
-    "href": "/pages/weber-grillinspiration/index.html",
+    "href": "",
     "image": "/assets/media/home-dna.png",
     "alt": "DNA sticker project",
-    "label": "Human Engine"
+    "label": "Human Engine",
+    "href_page": "/pages/coming-soon/index.html"
   },
   "featured_title": "Featured Projects",
   "featured_torn": {
@@ -51,22 +53,22 @@
     "label": "Meriwa App",
     "href_page": "/pages/app-v1/index.html"
   },
+  "seo": {
+    "seo_title": "Sara Ruffini - Video Editor Portfolio",
+    "seo_description": "Portfolio of video editing, motion design, and content creation work by Sara Ruffini.",
+    "seo_image": "/assets/media/home-reels.png"
+  },
   "featured_round": {
-    "href": "/pages/socialmedia-portfolio/index.html",
+    "href": "",
     "image": "/assets/media/home-pasta.png",
     "alt": "Food sticker project",
-    "label": "Pan & Passion"
+    "label": "Pan & Passion",
+    "href_page": "/pages/coming-soon/index.html"
   },
   "featured_polaroid": {
     "href": "/pages/socialmedia-portfolio/index.html",
     "image": "/assets/media/home-reels.png",
     "alt": "Social Media",
     "caption": "Social Media"
-  },
-  "seo": {
-    "seo_title": "Sara Ruffini - Video Editor Portfolio",
-    "seo_description": "Portfolio of video editing, motion design, and content creation work by Sara Ruffini.",
-    "seo_image": "/assets/media/home-reels.png"
   }
-
 }
