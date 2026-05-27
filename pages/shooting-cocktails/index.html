@@ -1,154 +1,263 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Shooting Cocktails | Sara Ruffini</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=DM+Sans:wght@400;500;700&amp;family=Permanent+Marker&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Epilogue:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script>
   tailwind.config = {
     darkMode: "class",
     theme: {
       extend: {
         colors: {
-          primary: "#006b57",
-          secondary: "#ff6b35",
-          "accent-yellow": "#ffe66d",
-          "background-light": "#fafaf7",
-          "background-dark": "#1a1a1a",
-          "surface": "#ffffff",
-          "on-surface": "#1a1a1a",
-          "on-surface-variant": "#666666"
+          "primary":                   "#006b57",
+          "on-primary":                "#ffffff",
+          "primary-container":         "#00ffd1",
+          "on-primary-container":      "#00725c",
+          "inverse-primary":           "#00e0b7",
+          "secondary":                 "#9b4600",
+          "on-secondary":              "#ffffff",
+          "secondary-container":       "#fc8a40",
+          "on-secondary-container":    "#672c00",
+          "tertiary":                  "#6e5e00",
+          "on-tertiary":               "#ffffff",
+          "tertiary-container":        "#ffe253",
+          "on-tertiary-container":     "#746400",
+          "surface":                   "#fcf9f8",
+          "surface-dim":               "#dcd9d9",
+          "surface-bright":            "#fcf9f8",
+          "surface-container-lowest":  "#ffffff",
+          "surface-container-low":     "#f6f3f2",
+          "surface-container":         "#f0eded",
+          "surface-container-high":    "#eae7e7",
+          "surface-container-highest": "#e5e2e1",
+          "on-surface":                "#1b1b1b",
+          "on-surface-variant":        "#3a4a44",
+          "inverse-surface":           "#313030",
+          "inverse-on-surface":        "#f3f0ef",
+          "outline":                   "#6a7b74",
+          "outline-variant":           "#b9cbc3",
+          "background":                "#fcf9f8",
+          "on-background":             "#1b1b1b",
+          "primary-fixed":             "#15ffd1",
+          "primary-fixed-dim":         "#00e0b7",
+          "on-primary-fixed":          "#002019",
+          "on-primary-fixed-variant":  "#005141",
+          "secondary-fixed":           "#ffdbc9",
+          "secondary-fixed-dim":       "#ffb68d",
+          "on-secondary-fixed":        "#331200",
+          "on-secondary-fixed-variant":"#763300",
+          "tertiary-fixed":            "#ffe253",
+          "tertiary-fixed-dim":        "#e1c639",
+          "on-tertiary-fixed":         "#211b00",
+          "on-tertiary-fixed-variant": "#534600",
+          "surface-variant":           "#e5e2e1",
+          "surface-tint":              "#006b57",
+          "error":                     "#ba1a1a",
+          "on-error":                  "#ffffff",
+          "error-container":           "#ffdad6",
+          "on-error-container":        "#93000a"
         },
         fontFamily: {
-          display: ["Space Grotesk", "sans-serif"],
-          body: ["DM Sans", "sans-serif"],
-          script: ["Permanent Marker", "cursive"]
+          "display-lg":         ["Epilogue", "sans-serif"],
+          "headline-lg":        ["Epilogue", "sans-serif"],
+          "headline-md":        ["Epilogue", "sans-serif"],
+          "body-lg":            ["Be Vietnam Pro", "sans-serif"],
+          "body-md":            ["Be Vietnam Pro", "sans-serif"],
+          "label-md":           ["Space Grotesk", "sans-serif"],
+          "label-sm":           ["Space Grotesk", "sans-serif"]
+        },
+        fontSize: {
+          "display-lg":  ["4.5rem",   { lineHeight: "1.1",  letterSpacing: "-0.02em" }],
+          "headline-lg": ["3rem",     { lineHeight: "1.2",  letterSpacing: "-0.01em" }],
+          "headline-md": ["2rem",     { lineHeight: "1.3" }],
+          "body-lg":     ["1.125rem", { lineHeight: "1.6" }],
+          "body-md":     ["1rem",     { lineHeight: "1.6" }],
+          "label-md":    ["0.875rem", { lineHeight: "1.0",  letterSpacing: "0.05em" }],
+          "label-sm":    ["0.75rem",  { lineHeight: "1.0" }]
+        },
+        spacing: {
+          "base":            "8px",
+          "gutter":          "24px",
+          "margin-mobile":   "16px",
+          "margin-desktop":  "48px",
+          "stack-sm":        "12px",
+          "stack-md":        "24px",
+          "stack-lg":        "40px"
         }
       }
     }
   };
 </script>
-<link rel="stylesheet" href="../../styles/shooting-cocktails.css"/>
+<style>
+  .brutal-shadow { box-shadow: 4px 4px 0px 0px rgba(27,27,27,1); }
+  .brutal-shadow-hover:hover { box-shadow: none; transform: translate(4px, 4px); }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
 <link rel="stylesheet" href="../../styles/shared-nav-footer.css"/>
 <link rel="stylesheet" href="../../styles/shared-project-pager.css"/>
 <link rel="stylesheet" href="../../styles/mobile.css"/>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-on-surface dark:text-gray-100 font-body min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-white flex flex-col" data-cms-page="shooting-cocktails">
+<body class="bg-surface text-on-surface font-body-md text-body-md overflow-x-hidden min-h-screen flex flex-col" data-cms-page="shooting-cocktails">
+
   <nav class="shared-site-nav" data-shared-chrome="nav"></nav>
 
-  <main class="sc-main">
-    <section class="sc-hero-wrap">
-      <div class="sc-noise"></div>
+  <main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg">
 
-      <article class="sc-story-card">
-        <div class="sc-tape"></div>
-        <h1 class="sc-title">
-          <span data-cms-text="hero_title_line_1">Midnight</span>
-          <span data-cms-text="hero_title_line_2">Mixology</span>
-          <svg class="sc-scribble" viewBox="0 0 300 32" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M2 18 C 70 30, 150 2, 298 16"></path>
-          </svg>
-        </h1>
+    <!-- ── Hero Section ── -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative py-stack-lg">
+      <!-- Soft decorative blobs -->
+      <div class="absolute top-10 left-10 w-32 h-32 bg-secondary-fixed rounded-full opacity-50 -z-10 blur-xl pointer-events-none"></div>
+      <div class="absolute bottom-10 right-10 w-48 h-48 bg-primary-fixed rounded-full opacity-50 -z-10 blur-xl pointer-events-none"></div>
 
-        <p class="sc-description" data-cms-text="hero_description">
-          A high-contrast, energy-driven editorial shoot for an underground speakeasy menu.
-        </p>
+      <!-- Left: Story Card -->
+      <div class="flex items-center">
+        <div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[8px_8px_0px_0px_rgba(27,27,27,1)] p-10 md:p-12 rounded w-full relative z-10">
+          <!-- Tape -->
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-[#ffffcc] opacity-80 -rotate-2 border border-[#d9d9d9] z-20" style="box-shadow:1px 1px 3px rgba(0,0,0,0.1)"></div>
 
-        <div class="sc-tags">
-          <span class="sc-tag sc-tag--teal" data-cms-text="hero_tag_1">Editorial Photography</span>
-          <span class="sc-tag sc-tag--orange" data-cms-text="hero_tag_2">Lighting Design</span>
-          <span class="sc-tag sc-tag--plain">
-            <span data-cms-text="hero_client_label">Client:</span>
-            &ldquo;<span data-cms-text="hero_client_value">The Vault</span>&rdquo;
-          </span>
+          <h1 class="font-display-lg text-on-surface mb-stack-md relative inline-block">
+            <div class="font-extrabold leading-[0.9]" style="font-size:clamp(2.4rem,4.5vw,4.5rem)" data-cms-text="hero_title_line_1">Midnight</div>
+            <div class="font-extrabold leading-[0.9]" style="font-size:clamp(2.4rem,4.5vw,4.5rem)" data-cms-text="hero_title_line_2">Mixology</div>
+            <svg class="absolute -bottom-2 left-0 w-full h-4 text-primary" preserveAspectRatio="none" viewBox="0 0 200 20" aria-hidden="true">
+              <path d="M0,10 Q50,20 100,5 T200,10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
+            </svg>
+          </h1>
+
+          <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md leading-relaxed" data-cms-text="hero_description">
+            A high-contrast, energy-driven editorial shoot for an underground speakeasy menu.
+          </p>
+
+          <div class="flex flex-wrap gap-base mb-stack-lg">
+            <span class="inline-block bg-primary text-on-primary font-label-md text-label-md px-4 py-1 border-[2px] border-on-surface rounded-full shadow-[2px_2px_0px_0px_rgba(27,27,27,1)]" data-cms-text="hero_tag_1">Editorial Photography</span>
+            <span class="inline-block bg-secondary text-on-secondary font-label-md text-label-md px-4 py-1 border-[2px] border-on-surface rounded-full shadow-[2px_2px_0px_0px_rgba(27,27,27,1)]" data-cms-text="hero_tag_2">Lighting Design</span>
+            <span class="inline-block bg-surface text-on-surface font-label-md text-label-md px-4 py-1 border-[2px] border-on-surface rounded-full shadow-[2px_2px_0px_0px_rgba(27,27,27,1)]">
+              <span data-cms-text="hero_client_label">Client:</span> &ldquo;<span data-cms-text="hero_client_value">The Vault</span>&rdquo;
+            </span>
+          </div>
+
+          <a class="inline-flex items-center gap-base bg-primary text-on-primary font-label-md text-label-md font-bold px-6 py-3 border-[3px] border-on-surface rounded shadow-[4px_4px_0px_0px_rgba(27,27,27,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(27,27,27,1)] transition-all"
+             href="/pages/portfolio-main/code.html" data-cms-href="back_to_projects_href">
+            <span class="material-symbols-outlined" style="font-size:1.1rem">arrow_back</span>
+            <span data-cms-text="back_to_projects_label">Back to Projects</span>
+          </a>
         </div>
+      </div>
 
-        <a class="sc-back" data-cms-href="back_to_projects_href" href="/pages/portfolio-main/code.html">
-          <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-          <span data-cms-text="back_to_projects_label">Back to Projects</span>
-        </a>
-      </article>
-
-      <div class="sc-collage">
-        <figure class="sc-polaroid">
-          <img data-cms-src="hero_polaroid_image" data-cms-alt="hero_polaroid_alt" src="/assets/media/Cocktail-89.jpg" alt="Cocktail making close-up"/>
-          <figcaption data-cms-text="hero_polaroid_caption">Shot 01</figcaption>
-        </figure>
-
-        <figure class="sc-main-shot">
-          <img data-cms-src="hero_main_image" data-cms-alt="hero_main_image_alt" src="/assets/media/Cocktail-123.jpg" alt="Orange cocktail splash"/>
-        </figure>
-
-        <figure class="sc-accent-shot">
-          <img data-cms-src="hero_accent_image" data-cms-alt="hero_accent_alt" src="/assets/media/Cocktail-141.jpg" alt="Blue cocktail"/>
-          <div class="sc-pop" data-cms-text="hero_pop_label">POP!</div>
-        </figure>
+      <!-- Right: Photo Collage -->
+      <div class="relative flex items-center justify-center h-[500px] lg:h-auto z-10">
+        <!-- Central large image -->
+        <div class="absolute z-20 w-[80%] aspect-[4/3] bg-surface border-[3px] border-on-background brutal-shadow overflow-hidden group">
+          <img data-cms-src="hero_main_image" data-cms-alt="hero_main_image_alt"
+               src="/assets/media/Cocktail-123.jpg" alt="Orange cocktail"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+        </div>
+        <!-- Polaroid left -->
+        <div class="absolute z-30 -left-4 top-[10%] w-[45%] md:w-[40%] bg-surface-container-lowest p-4 pb-12 border-[3px] border-on-background brutal-shadow -rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
+          <div class="w-full aspect-square border-[3px] border-on-background overflow-hidden bg-on-surface">
+            <img data-cms-src="hero_polaroid_image" data-cms-alt="hero_polaroid_alt"
+                 src="/assets/media/Cocktail-89.jpg" alt="Bartender close-up"
+                 class="w-full h-full object-cover grayscale contrast-150"/>
+          </div>
+          <div class="absolute bottom-3 left-4 font-label-sm text-on-surface uppercase tracking-widest" style="font-size:0.65rem;font-weight:700" data-cms-text="hero_polaroid_caption">Shot 01</div>
+        </div>
+        <!-- Accent image right with POP! badge -->
+        <div class="absolute z-10 -right-4 bottom-[10%] w-[50%] md:w-[45%] aspect-square bg-secondary-container p-2 border-[3px] border-on-background brutal-shadow rotate-3 hover:rotate-0 hover:z-40 transition-all duration-300">
+          <div class="w-full h-full border-[3px] border-on-background overflow-hidden">
+            <img data-cms-src="hero_accent_image" data-cms-alt="hero_accent_alt"
+                 src="/assets/media/Cocktail-141.jpg" alt="Cocktail accent"
+                 class="w-full h-full object-cover"/>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-tertiary-container border-[3px] border-on-background rounded-full w-16 h-16 flex items-center justify-center brutal-shadow font-label-sm rotate-12"
+               style="font-size:0.7rem;font-weight:700;text-transform:uppercase" data-cms-text="hero_pop_label">POP!</div>
+        </div>
       </div>
     </section>
 
-    <section class="sc-collection">
-      <div class="sc-collection-head">
-        <h2 data-cms-text="collection_title">The Collection</h2>
-        <div class="sc-rule"></div>
-        <div class="sc-collection-arrows" aria-hidden="true">
-          <button type="button" class="sc-arrow-btn">
+    <!-- ── The Collection ── -->
+    <section class="flex flex-col gap-stack-md w-full">
+      <div class="flex items-center gap-4 border-b-[3px] border-on-background pb-4">
+        <h2 class="font-headline-md text-on-surface" style="font-size:2rem;font-weight:700;line-height:1.3" data-cms-text="collection_title">The Collection</h2>
+        <div class="flex-grow h-[3px] bg-on-background mt-2"></div>
+        <div class="flex gap-2">
+          <button type="button" aria-label="Scroll Left"
+                  class="w-10 h-10 bg-surface border-[3px] border-on-background flex items-center justify-center brutal-shadow hover:bg-primary-container hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all">
             <span class="material-symbols-outlined">arrow_back</span>
           </button>
-          <button type="button" class="sc-arrow-btn">
+          <button type="button" aria-label="Scroll Right"
+                  class="w-10 h-10 bg-surface border-[3px] border-on-background flex items-center justify-center brutal-shadow hover:bg-primary-container hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all">
             <span class="material-symbols-outlined">arrow_forward</span>
           </button>
         </div>
       </div>
-      <div class="sc-collection-divider"></div>
 
-      <div class="sc-grid">
-        <article class="sc-photo-card sc-photo-card--a">
-          <div class="sc-photo-frame">
-            <img data-cms-src="collection_items[0].image" data-cms-alt="collection_items[0].alt" src="/assets/media/Cocktail-13.jpg" alt="Smoked old fashioned"/>
+      <!-- Scrollable gallery -->
+      <div class="w-full overflow-x-auto pb-8 pt-4 px-2 no-scrollbar flex gap-gutter snap-x">
+
+        <!-- Card 1 -->
+        <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 -rotate-1">
+          <div class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4">
+            <img data-cms-src="collection_items[0].image" data-cms-alt="collection_items[0].alt"
+                 src="/assets/media/Cocktail-13.jpg" alt="The Smoked Old Fashioned"
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
           </div>
-          <div class="sc-photo-meta">
-            <h3 data-cms-text="collection_items[0].title">The Smoked Old Fashioned</h3>
-            <span data-cms-text="collection_items[0].index_label">01</span>
+          <div class="flex justify-between items-center px-1">
+            <span class="font-label-md text-label-md font-bold" data-cms-text="collection_items[0].title">The Smoked Old Fashioned</span>
+            <span class="font-label-sm text-label-sm font-bold bg-primary-container px-2 py-1 border-[2px] border-on-background" data-cms-text="collection_items[0].index_label">01</span>
           </div>
         </article>
 
-        <article class="sc-photo-card sc-photo-card--b">
-          <div class="sc-photo-frame">
-            <img data-cms-src="collection_items[1].image" data-cms-alt="collection_items[1].alt" src="/assets/media/Cocktail-6.jpg" alt="Blood orange spritz"/>
+        <!-- Card 2 -->
+        <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 -rotate-2 mt-4">
+          <div class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4">
+            <img data-cms-src="collection_items[1].image" data-cms-alt="collection_items[1].alt"
+                 src="/assets/media/Cocktail-6.jpg" alt="Blood Orange Spritz"
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
           </div>
-          <div class="sc-photo-meta">
-            <h3 data-cms-text="collection_items[1].title">Blood Orange Spritz</h3>
-            <span data-cms-text="collection_items[1].index_label">02</span>
-          </div>
-        </article>
-
-        <article class="sc-photo-card sc-photo-card--c">
-          <div class="sc-photo-frame">
-            <img data-cms-src="collection_items[2].image" data-cms-alt="collection_items[2].alt" src="/assets/media/Cocktail-132.jpg" alt="Neon sour"/>
-          </div>
-          <div class="sc-photo-meta">
-            <h3 data-cms-text="collection_items[2].title">Neon Sour</h3>
-            <span data-cms-text="collection_items[2].index_label">03</span>
+          <div class="flex justify-between items-center px-1">
+            <span class="font-label-md text-label-md font-bold" data-cms-text="collection_items[1].title">Blood Orange Spritz</span>
+            <span class="font-label-sm text-label-sm font-bold bg-secondary-container px-2 py-1 border-[2px] border-on-background" data-cms-text="collection_items[1].index_label">02</span>
           </div>
         </article>
 
-        <article class="sc-photo-card sc-photo-card--d">
-          <div class="sc-photo-frame">
-            <img data-cms-src="collection_items[3].image" data-cms-alt="collection_items[3].alt" src="/assets/media/Cocktail-29.jpg" alt="Cocktail details"/>
+        <!-- Card 3 -->
+        <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 rotate-1">
+          <div class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4">
+            <img data-cms-src="collection_items[2].image" data-cms-alt="collection_items[2].alt"
+                 src="/assets/media/Cocktail-132.jpg" alt="Neon Sour"
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
           </div>
-          <div class="sc-photo-meta">
-            <h3 data-cms-text="collection_items[3].title">The Details</h3>
-            <span data-cms-text="collection_items[3].index_label">04</span>
+          <div class="flex justify-between items-center px-1">
+            <span class="font-label-md text-label-md font-bold" data-cms-text="collection_items[2].title">Neon Sour</span>
+            <span class="font-label-sm text-label-sm font-bold bg-tertiary-container px-2 py-1 border-[2px] border-on-background" data-cms-text="collection_items[2].index_label">03</span>
           </div>
         </article>
+
+        <!-- Card 4 -->
+        <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 mt-2">
+          <div class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4">
+            <img data-cms-src="collection_items[3].image" data-cms-alt="collection_items[3].alt"
+                 src="/assets/media/Cocktail-29.jpg" alt="The Details"
+                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+          </div>
+          <div class="flex justify-between items-center px-1">
+            <span class="font-label-md text-label-md font-bold" data-cms-text="collection_items[3].title">The Details</span>
+            <span class="font-label-sm text-label-sm font-bold bg-primary-container px-2 py-1 border-[2px] border-on-background" data-cms-text="collection_items[3].index_label">04</span>
+          </div>
+        </article>
+
       </div>
     </section>
 
+    <!-- Project Pager -->
     <section class="shared-project-pager" data-shared-project-pager></section>
+
   </main>
 
   <footer class="shared-site-footer" data-shared-chrome="footer"></footer>
