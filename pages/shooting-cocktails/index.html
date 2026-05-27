@@ -111,7 +111,7 @@
   <main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg">
 
     <!-- ── Hero Section ── -->
-    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative py-stack-lg">
+    <section class="grid grid-cols-1 md:grid-cols-[minmax(0,520px)_minmax(0,1fr)] gap-8 md:gap-10 items-start relative py-stack-lg">
       <!-- Soft decorative blobs -->
       <div class="absolute top-10 left-10 w-32 h-32 bg-secondary-fixed rounded-full opacity-50 -z-10 blur-xl pointer-events-none"></div>
       <div class="absolute bottom-10 right-10 w-48 h-48 bg-primary-fixed rounded-full opacity-50 -z-10 blur-xl pointer-events-none"></div>
@@ -124,9 +124,9 @@
 
           <h1 class="font-display-lg text-on-surface mb-5 inline-block">
             <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_1">Midnight</div>
-            <div class="relative inline-block pb-4">
+            <div class="relative inline-block pb-5">
               <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_2">Mixology</div>
-              <svg class="absolute left-0 top-full w-full h-4 text-primary" preserveAspectRatio="none" viewBox="0 0 200 20" aria-hidden="true">
+              <svg class="absolute left-0 top-full w-full h-4 text-primary" preserveAspectRatio="none" viewBox="0 0 200 20" aria-hidden="true" style="margin-top:-2px;">
                 <path d="M0,10 Q50,20 100,5 T200,10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
               </svg>
             </div>
@@ -153,15 +153,15 @@
       </div>
 
       <!-- Right: Photo Collage -->
-      <div class="relative flex items-center justify-center h-[450px] md:h-[500px] lg:h-[520px] z-10 max-w-[580px] mx-auto w-full">
+      <div class="relative flex items-center justify-center h-[360px] md:h-[500px] lg:h-[520px] z-10 max-w-[580px] mx-auto w-full mt-2 md:mt-0">
         <!-- Central large image -->
-        <div class="absolute z-20 w-[74%] top-[12%] aspect-[4/3] bg-surface border-[3px] border-on-background brutal-shadow overflow-hidden group">
+        <div class="absolute z-20 w-[68%] md:w-[74%] top-[14%] md:top-[12%] aspect-[4/3] bg-surface border-[3px] border-on-background brutal-shadow overflow-hidden group">
           <img data-cms-src="hero_main_image" data-cms-alt="hero_main_image_alt"
                src="/assets/media/Cocktail-123.jpg" alt="Orange cocktail"
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
         </div>
         <!-- Polaroid left -->
-        <div class="absolute z-30 left-[2%] top-[4%] w-[36%] md:w-[34%] bg-surface-container-lowest p-4 pb-12 border-[3px] border-on-background brutal-shadow -rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
+        <div class="absolute z-30 left-[8%] md:left-[2%] top-[3%] md:top-[4%] w-[30%] md:w-[34%] bg-surface-container-lowest p-3 md:p-4 pb-10 md:pb-12 border-[3px] border-on-background brutal-shadow -rotate-3 md:-rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
           <div class="w-full aspect-square border-[3px] border-on-background overflow-hidden bg-on-surface">
             <img data-cms-src="hero_polaroid_image" data-cms-alt="hero_polaroid_alt"
                  src="/assets/media/Cocktail-89.jpg" alt="Bartender close-up"
@@ -170,13 +170,13 @@
           <div class="absolute bottom-3 left-4 font-label-sm text-on-surface uppercase tracking-widest" style="font-size:0.65rem;font-weight:700" data-cms-text="hero_polaroid_caption">Shot 01</div>
         </div>
         <!-- Accent image right with POP! badge -->
-        <div class="absolute z-10 right-[1%] bottom-[12%] w-[38%] md:w-[36%] aspect-square bg-secondary-container p-2 border-[3px] border-on-background brutal-shadow rotate-3 hover:rotate-0 hover:z-40 transition-all duration-300">
+        <div class="absolute z-10 right-[7%] md:right-[1%] bottom-[8%] md:bottom-[12%] w-[31%] md:w-[36%] aspect-square bg-secondary-container p-2 border-[3px] border-on-background brutal-shadow rotate-2 md:rotate-3 hover:rotate-0 hover:z-40 transition-all duration-300">
           <div class="w-full h-full border-[3px] border-on-background overflow-hidden">
             <img data-cms-src="hero_accent_image" data-cms-alt="hero_accent_alt"
                  src="/assets/media/Cocktail-141.jpg" alt="Cocktail accent"
                  class="w-full h-full object-cover"/>
           </div>
-          <div class="absolute -top-4 -right-4 bg-tertiary-container border-[3px] border-on-background rounded-full w-16 h-16 flex items-center justify-center brutal-shadow font-label-sm rotate-12"
+          <div class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-tertiary-container border-[3px] border-on-background rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center brutal-shadow font-label-sm rotate-12"
                style="font-size:0.7rem;font-weight:700;text-transform:uppercase" data-cms-text="hero_pop_label">POP!</div>
         </div>
       </div>
@@ -188,13 +188,15 @@
         <h2 class="font-headline-md text-on-surface" style="font-size:2rem;font-weight:700;line-height:1.3" data-cms-text="collection_title">The Collection</h2>
         <div class="flex-grow h-[2px] bg-on-background mt-2"></div>
         <div class="flex gap-2">
-          <button type="button" aria-label="Scroll Left"
+          <button type="button"
                   class="collection-scroll-left w-10 h-10 bg-surface border-[3px] border-on-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(27,27,27,1)] hover:bg-primary-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
             <span class="material-symbols-outlined">arrow_back</span>
+            <span class="sr-only" data-cms-text="collection_scroll_left_label">Scroll Left</span>
           </button>
-          <button type="button" aria-label="Scroll Right"
+          <button type="button"
                   class="collection-scroll-right w-10 h-10 bg-surface border-[3px] border-on-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(27,27,27,1)] hover:bg-primary-container hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all">
             <span class="material-symbols-outlined">arrow_forward</span>
+            <span class="sr-only" data-cms-text="collection_scroll_right_label">Scroll Right</span>
           </button>
         </div>
       </div>
@@ -204,7 +206,7 @@
 
         <!-- Card 1 -->
         <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 -rotate-1">
-          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-src="/assets/media/Cocktail-13.jpg" data-lightbox-alt="The Smoked Old Fashioned">
+          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-image>
             <img data-cms-src="collection_items[0].image" data-cms-alt="collection_items[0].alt"
                  src="/assets/media/Cocktail-13.jpg" alt="The Smoked Old Fashioned"
                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
@@ -217,7 +219,7 @@
 
         <!-- Card 2 -->
         <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 -rotate-2 mt-4">
-          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-src="/assets/media/Cocktail-6.jpg" data-lightbox-alt="Blood Orange Spritz">
+          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-image>
             <img data-cms-src="collection_items[1].image" data-cms-alt="collection_items[1].alt"
                  src="/assets/media/Cocktail-6.jpg" alt="Blood Orange Spritz"
                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
@@ -230,7 +232,7 @@
 
         <!-- Card 3 -->
         <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 rotate-1">
-          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-src="/assets/media/Cocktail-132.jpg" data-lightbox-alt="Neon Sour">
+          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-image>
             <img data-cms-src="collection_items[2].image" data-cms-alt="collection_items[2].alt"
                  src="/assets/media/Cocktail-132.jpg" alt="Neon Sour"
                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
@@ -243,7 +245,7 @@
 
         <!-- Card 4 -->
         <article class="flex-none w-[280px] md:w-[320px] bg-surface-container-lowest p-4 pb-16 border-[3px] border-on-background brutal-shadow snap-center group hover:-translate-y-2 transition-transform duration-200 mt-2">
-          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-src="/assets/media/Cocktail-29.jpg" data-lightbox-alt="The Details">
+          <button type="button" class="w-full aspect-[4/5] border-[3px] border-on-background overflow-hidden mb-4 cursor-zoom-in" data-lightbox-image>
             <img data-cms-src="collection_items[3].image" data-cms-alt="collection_items[3].alt"
                  src="/assets/media/Cocktail-29.jpg" alt="The Details"
                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
@@ -258,8 +260,13 @@
     </section>
 
     <!-- Lightbox -->
-    <div id="collection-lightbox" class="fixed inset-0 z-[120] bg-black/75 hidden items-center justify-center p-4" aria-hidden="true" role="dialog" aria-label="Collection image preview">
-      <button type="button" class="lightbox-close absolute top-4 right-4 w-11 h-11 rounded-full border-[2px] border-white text-white bg-black/40 flex items-center justify-center text-2xl leading-none" aria-label="Close image preview">&times;</button>
+    <div id="collection-lightbox" class="fixed inset-0 z-[120] bg-black/75 hidden items-center justify-center p-4" aria-hidden="true" role="dialog" aria-labelledby="collection-lightbox-title">
+      <h3 id="collection-lightbox-title" class="sr-only" data-cms-text="collection_lightbox_title">Collection image preview</h3>
+      <button type="button" class="lightbox-close absolute top-4 right-4 w-11 h-11 rounded-full border-[2px] border-white text-white bg-black/40 flex items-center justify-center text-2xl leading-none">
+        &times;
+        <span class="sr-only" data-cms-text="collection_lightbox_close_label">Close image preview</span>
+      </button>
+      <span id="collection-lightbox-fallback-alt" class="sr-only" data-cms-text="collection_lightbox_fallback_alt">Cocktail image</span>
       <img id="collection-lightbox-image" src="" alt="" class="max-w-[92vw] max-h-[86vh] object-contain border-[3px] border-on-surface shadow-[8px_8px_0px_0px_rgba(255,255,255,0.35)] bg-white"/>
     </div>
 
@@ -288,8 +295,9 @@
 
       const lightbox = document.getElementById('collection-lightbox');
       const lightboxImage = document.getElementById('collection-lightbox-image');
+      const fallbackAltNode = document.getElementById('collection-lightbox-fallback-alt');
       const closeBtn = document.querySelector('.lightbox-close');
-      const previewButtons = document.querySelectorAll('[data-lightbox-src]');
+      const previewButtons = document.querySelectorAll('[data-lightbox-image]');
 
       function closeLightbox() {
         if (!lightbox) {
@@ -304,8 +312,8 @@
         previewButtons.forEach(function (button) {
           button.addEventListener('click', function () {
             const img = button.querySelector('img');
-            lightboxImage.src = button.getAttribute('data-lightbox-src') || '';
-            lightboxImage.alt = button.getAttribute('data-lightbox-alt') || (img ? img.alt : 'Cocktail image');
+            lightboxImage.src = img ? img.src : '';
+            lightboxImage.alt = img && img.alt ? img.alt : (fallbackAltNode ? fallbackAltNode.textContent.trim() : 'Cocktail image');
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
             lightbox.setAttribute('aria-hidden', 'false');

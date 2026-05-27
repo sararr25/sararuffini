@@ -623,6 +623,248 @@ collections:
         required: false
       allow_add: true
       allow_delete: true
+  - label: Shooting Cocktails Template
+    name: shooting_cocktails_template
+    file: content/templates/shooting-cocktails-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      required: false
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+    - label: Hero Title Line 1
+      name: hero_title_line_1
+      widget: string
+      required: false
+    - label: Hero Title Line 2
+      name: hero_title_line_2
+      widget: string
+      required: false
+    - label: Hero Description
+      name: hero_description
+      widget: text
+      required: false
+    - label: Hero Tag 1
+      name: hero_tag_1
+      widget: string
+      required: false
+    - label: Hero Tag 2
+      name: hero_tag_2
+      widget: string
+      required: false
+    - label: Hero Client Label
+      name: hero_client_label
+      widget: string
+      required: false
+    - label: Hero Client Value
+      name: hero_client_value
+      widget: string
+      required: false
+    - label: Back To Projects Label
+      name: back_to_projects_label
+      widget: string
+      required: false
+    - label: Back To Projects Link
+      name: back_to_projects_href
+      widget: string
+      required: false
+    - label: Hero Main Image
+      name: hero_main_image
+      widget: image
+      required: false
+    - label: Hero Main Image Alt
+      name: hero_main_image_alt
+      widget: string
+      required: false
+    - label: Hero Polaroid Image
+      name: hero_polaroid_image
+      widget: image
+      required: false
+    - label: Hero Polaroid Alt
+      name: hero_polaroid_alt
+      widget: string
+      required: false
+    - label: Hero Polaroid Caption
+      name: hero_polaroid_caption
+      widget: string
+      required: false
+    - label: Hero Accent Image
+      name: hero_accent_image
+      widget: image
+      required: false
+    - label: Hero Accent Alt
+      name: hero_accent_alt
+      widget: string
+      required: false
+    - label: Hero Pop Label
+      name: hero_pop_label
+      widget: string
+      required: false
+    - label: Collection Title
+      name: collection_title
+      widget: string
+      required: false
+    - label: Collection Scroll Left Label
+      name: collection_scroll_left_label
+      widget: string
+      required: false
+    - label: Collection Scroll Right Label
+      name: collection_scroll_right_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Title
+      name: collection_lightbox_title
+      widget: string
+      required: false
+    - label: Collection Lightbox Close Label
+      name: collection_lightbox_close_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Fallback Alt
+      name: collection_lightbox_fallback_alt
+      widget: string
+      required: false
+    - label: Collection Items
+      name: collection_items
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      summary: "{{fields.title}}"
+      fields:
+      - label: Item Title
+        name: title
+        widget: string
+        required: false
+      - label: Item Index Label
+        name: index_label
+        widget: string
+        required: false
+      - label: Item Image
+        name: image
+        widget: image
+        required: false
+      - label: Item Image Alt
+        name: alt
+        widget: string
+        required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
   - label: App Design Template
     name: app_template
     file: content/templates/app-template.json
@@ -1599,6 +1841,26 @@ collections:
       required: false
     - label: Collection Title
       name: collection_title
+      widget: string
+      required: false
+    - label: Collection Scroll Left Label
+      name: collection_scroll_left_label
+      widget: string
+      required: false
+    - label: Collection Scroll Right Label
+      name: collection_scroll_right_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Title
+      name: collection_lightbox_title
+      widget: string
+      required: false
+    - label: Collection Lightbox Close Label
+      name: collection_lightbox_close_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Fallback Alt
+      name: collection_lightbox_fallback_alt
       widget: string
       required: false
     - label: Collection Items
