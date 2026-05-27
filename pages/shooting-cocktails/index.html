@@ -118,13 +118,13 @@
 
       <!-- Left: Story Card -->
       <div class="flex items-center">
-        <div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[6px_6px_0px_0px_rgba(27,27,27,1)] p-7 md:p-8 rounded w-full max-w-[640px] relative z-10">
+        <div class="bg-surface-container-lowest border-[3px] border-on-surface shadow-[6px_6px_0px_0px_rgba(27,27,27,1)] px-6 py-10 md:px-7 md:py-12 rounded w-full max-w-[520px] relative z-10">
           <!-- Tape -->
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-[#ffffcc] opacity-80 -rotate-2 border border-[#d9d9d9] z-20" style="box-shadow:1px 1px 3px rgba(0,0,0,0.1)"></div>
 
           <h1 class="font-display-lg text-on-surface mb-5 relative inline-block">
-            <div class="font-extrabold leading-[0.9]" style="font-size:clamp(2rem,4vw,3.7rem)" data-cms-text="hero_title_line_1">Midnight</div>
-            <div class="font-extrabold leading-[0.9]" style="font-size:clamp(2rem,4vw,3.7rem)" data-cms-text="hero_title_line_2">Mixology</div>
+            <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_1">Midnight</div>
+            <div class="font-extrabold leading-[0.92]" style="font-size:clamp(1.75rem,3.2vw,3rem)" data-cms-text="hero_title_line_2">Mixology</div>
             <svg class="absolute -bottom-2 left-0 w-full h-4 text-primary" preserveAspectRatio="none" viewBox="0 0 200 20" aria-hidden="true">
               <path d="M0,10 Q50,20 100,5 T200,10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4"/>
             </svg>
@@ -159,7 +159,7 @@
                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
         </div>
         <!-- Polaroid left -->
-        <div class="absolute z-30 -left-5 top-[9%] w-[50%] md:w-[44%] bg-surface-container-lowest p-4 pb-12 border-[3px] border-on-background brutal-shadow -rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
+        <div class="absolute z-30 -left-4 top-[10%] w-[45%] md:w-[40%] bg-surface-container-lowest p-4 pb-12 border-[3px] border-on-background brutal-shadow -rotate-6 hover:rotate-0 hover:z-40 transition-all duration-300">
           <div class="w-full aspect-square border-[3px] border-on-background overflow-hidden bg-on-surface">
             <img data-cms-src="hero_polaroid_image" data-cms-alt="hero_polaroid_alt"
                  src="/assets/media/Cocktail-89.jpg" alt="Bartender close-up"
@@ -255,9 +255,6 @@
       </div>
     </section>
 
-    <!-- Project Pager -->
-    <section class="shared-project-pager" data-shared-project-pager></section>
-
     <!-- Lightbox -->
     <div id="collection-lightbox" class="fixed inset-0 z-[120] bg-black/75 hidden items-center justify-center p-4" aria-hidden="true" role="dialog" aria-label="Collection image preview">
       <button type="button" class="lightbox-close absolute top-4 right-4 w-11 h-11 rounded-full border-[2px] border-white text-white bg-black/40 flex items-center justify-center text-2xl leading-none" aria-label="Close image preview">&times;</button>
@@ -269,7 +266,6 @@
   <footer class="shared-site-footer" data-shared-chrome="footer"></footer>
 
   <script src="../../scripts/cms-page-loader.js"></script>
-  <script src="../../scripts/shared-project-pager.js"></script>
   <script src="../../scripts/shared-site-chrome.js"></script>
   <script src="../../scripts/mobile-nav.js"></script>
   <script>
