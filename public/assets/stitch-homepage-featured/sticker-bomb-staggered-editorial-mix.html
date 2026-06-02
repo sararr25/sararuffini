@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sticker Bomb Featured Projects V2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f26c0d",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221710",
+                        "sticker-stroke": "#1a1a1a",
+                        "sticker-teal": "#2A9D8F",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    boxShadow: {
+                        "sticker": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 5px 5px 0px 0px rgba(0,0,0,1)",
+                        "sticker-hover": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 8px 8px 0px 0px #f26c0d",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style>.subtle-hover:hover { transform: scale(1.05) rotate(0deg) !important; }</style><style>/* Custom styles for sticker masking and interactions */ .sticker-wrapper { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); filter: drop-shadow(4px 4px 0px #000); cursor: pointer; } .sticker-wrapper:hover { transform: scale(1.1) rotate(0deg) !important; z-index: 100; filter: drop-shadow(8px 8px 0px #f26c0d); } .sticker-content { background-color: white; padding: 8px; border-radius: 20px; border: 3px solid #000; } .sticker-wrapper .tooltip { opacity: 0; transform: translateY(10px) translateX(-50%); transition: all 0.2s ease; pointer-events: none; } .sticker-wrapper:hover .tooltip { opacity: 1; transform: translateY(0) translateX(-50%); } @keyframes drift { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(5px, -5px); } 50% { transform: translate(-5px, 5px); } 75% { transform: translate(5px, 5px); } } .animate-drift-1 { animation: drift 8s ease-in-out infinite; } .animate-drift-2 { animation: drift 10s ease-in-out infinite reverse; } .animate-drift-3 { animation: drift 12s ease-in-out infinite 1s; } .tag-label { position: absolute; bottom: -12px; right: -12px; padding: 4px 12px; font-weight: 800; text-transform: uppercase; font-size: 0.75rem; border: 3px solid #000; box-shadow: 4px 4px 0px #000; z-index: 10; transition: transform 0.2s ease; } .sticker-wrapper:hover .tag-label { transform: scale(1.1) rotate(5deg); }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-900 font-display min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Header Section -->
+<header class="w-full pt-16 pb-8 text-center relative z-10">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-black dark:text-white mb-6 uppercase flex justify-center"><span class="inline-block bg-white dark:bg-black px-8 py-4 border-4 border-black shadow-[8px_8px_0_rgba(242,108,13,1)]">Featured projects</span></h1>
+<p class="text-xl text-gray-600 dark:text-gray-300 font-medium tracking-wide">Handpicked selections from the cutting room floor</p>
+<!-- Decorative Sparkles (Top) -->
+<div class="absolute top-10 left-[10%] text-primary opacity-80 animate-pulse" style="color: #E9C46A;">
+<span class="material-icons text-5xl">auto_awesome</span>
+</div>
+<div class="absolute top-20 right-[15%] text-sticker-teal opacity-80 animate-bounce">
+<span class="material-icons text-4xl">star</span>
+</div>
+</header>
+<!-- Main Content: Sticker Bomb Area -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 md:px-8 relative py-12 md:py-24">
+<!-- Background Decorations (Doodles) -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-30">
+<!-- Teal Squiggles and Stars -->
+<svg class="absolute top-1/4 left-10 w-24 h-24 text-sticker-teal" fill="none" stroke="currentColor" stroke-width="4" viewbox="0 0 100 100">
+<path d="M10,50 Q30,20 50,50 T90,50"></path>
+</svg>
+<svg class="absolute bottom-1/3 right-20 w-16 h-16 text-primary" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+</svg>
+<div class="absolute top-1/2 left-1/3 w-4 h-4 rounded-full bg-black"></div>
+<div class="absolute bottom-20 left-1/4 w-3 h-3 rounded-full bg-primary" style="background-color: #E9C46A;"></div>
+<div class="absolute top-20 right-1/3 text-6xl text-sticker-teal font-black select-none opacity-20 rotate-12" style="color: rgb(233, 196, 106);">POP!</div>
+<svg class="absolute bottom-10 left-10 w-32 h-32 text-black opacity-10" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="40" stroke-dasharray="5,5"></circle>
+</svg>
+</div>
+<!-- Sticker Cluster Container -->
+<!-- We use a grid for mobile responsiveness, but use absolute positioning tricks or flex-wrap with negative margins for the desktop "bomb" look -->
+<div class="relative z-10 w-full min-h-[1200px] flex items-center justify-center">
+<!-- Sticker 1: Old Camcorder (Documentary) -->
+<div aria-label="Project: Urban Chronicles" class="sticker-wrapper animate-drift-1 group absolute top-[5%] left-[5%] md:left-[10%] rotate-[-4deg] w-72" style="top: 2%; left: 5%; transform: rotate(-3deg);">
+<div class="bg-white p-3 rounded-xl border-[6px] border-black">
+<div class="bg-gray-100 rounded-lg overflow-hidden h-56 w-full">
+<img alt="Vintage camcorder" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJoFbK-rApNphlX970FOBVkbF49cs9DcaLk0nZaq7y9ax_R0Q9BUv0LCDLNgfy3Kg1OYQ40ZAoe2KOu_sxq8hiXOT6LI9gSMmlRskMHW7MkFVsJ6xzOUEpjq3uW7Z9mN-Lj95MgMIgPt2CknvTO99JnISm_a7JPfzvA8FiiQfeN8logJUOOm_0TQyinLdnFggKU-Mif3vbuXke1WxkiA-IFdbxw0LVBg4gg7euFhRkuVEjN0Jfv--_qY2f7B2P75e2nUFPUHxESclN"/>
+</div>
+</div>
+<div class="tag-label bg-[#FFD166] text-black rotate-[-3deg]">URBAN CHRONICLES</div>
+</div><div class="sticker-wrapper animate-drift-2 group absolute top-[5%] left-[35%] rotate-[2deg] w-80">
+<div class="bg-white p-3 rounded-xl border-[6px] border-black">
+<div class="bg-gray-100 rounded-lg overflow-hidden h-60 w-full flex items-center justify-center">
+<img alt="Pixel Perfect Website" class="object-contain w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASGBuX9Sp0jjn2arc7sr0ux3TMrFhiReo0iUkrYeV3pJTWwb7v7LobexWQrwl31xJRWdjjUhGiGugW7mlw7tGvOTGzFEhvvvqY50zr4MFd4HD57BHByzetac_zpi8jImQDl0azSQc-HgKzck9GofPJddobEzUioFoo3x-3HVL-9Mn0fP9ZBhsxIYzncbmt35WlXdjMDwJGWiR20_YuBf1oC3KTj_O9379vcRylQonyG5_cr_3CLyVOuQQZoIwEJhOHjZp1zaNe96WH"/>
+</div>
+</div>
+<div class="tag-label bg-[#00FFD1] text-black rotate-[-2deg]">PIXEL PERFECT</div>
+</div>
+<!-- Sticker 2: GameBoy (Gaming) -->
+<div class="sticker-wrapper animate-drift-2 group absolute top-[5%] right-[5%] md:right-[10%] rotate-[6deg] w-64" style="top: 2%; right: 5%; transform: rotate(4deg);">
+<div class="bg-white p-3 rounded-2xl border-[6px] border-black">
+<div class="bg-[#2A9D8F]/10 rounded-xl overflow-hidden h-64 w-full">
+<img alt="Gameboy" class="object-cover w-full h-full mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkvnNN1ouCBfIeJz_tXc44XbxCsorfodiWlaN12W_RfxqCF4_3JP9Ow-sR7V_46opbikPUOMoBp1T_WQS8My04gPTUIHqs67-g3-BRspEAmn1JzeRUbDzGxrQ5WiqKlCVmzwtV_9qy6zzLWJ2WdHuZWDsAPw3cpG4cKgLeccL7BMNiYke75YlxWchVM74x_y2DVXyWyisX5KTMzgqKoj0kzehWMgLVAuAr8Z1IyP-9h3TWW_RFvmA7MlnCGrTuaQQoYF-OMs1aJRSH"/>
+</div>
+</div>
+<div class="tag-label bg-[#EF476F] text-white rotate-[4deg]">LEVEL UP</div>
+</div>
+<!-- Sticker 3: Pasta (Food) - Centerpiece -->
+<div class="sticker-wrapper animate-drift-3 group absolute z-30 w-80 left-[38%] subtle-hover top-[15%]" style="top: 35%; left: 45%; transform: rotate(3deg);">
+<div class="bg-white p-4 rounded-full border-[8px] border-black aspect-square">
+<div class="rounded-full overflow-hidden w-full h-full border-4 border-dashed border-gray-200">
+<img alt="Pasta" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDe4OQ7WLlWLZY5IDQkU0I40zEGwPl5UaVELBzL-zjRLAlN9QZadn21hr-8Lgzrhq9fJdhEA_UzEuvIGVDq8EWelyOh3Bb36bNDz6_qn4ndqNDL9-ZB0We-KwA7LxmSlHPjhjKrdzZP458E8cXPjiCk57U0_XfWPUQQYyS3IiDBomGy1Ap0lPppYHWF5HhLaedDUcmv7FuPfVhnv1GvHNKvphQb4OfjrHEgto7ZPBnQ1dcIl0AZ0JWQW0-G-srR7PPJHrv3ZektLnl"/>
+</div>
+</div>
+<div class="tag-label bg-primary text-white rotate-[-8deg] px-6 py-2 text-lg">NONNA'S KITCHEN</div>
+</div>
+<!-- Sticker 4: Retro Phone (Communication) -->
+<div class="sticker-wrapper animate-drift-1 group absolute bottom-[5%] left-[5%] md:left-[15%] rotate-[3deg] w-60" style="bottom: 15%; left: 15%; transform: rotate(5deg);">
+<div class="bg-white p-3 rounded-2xl border-[6px] border-black">
+<div class="bg-[#F1A7F1]/20 rounded-xl overflow-hidden h-48 w-full">
+<img alt="Retro Phone" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8VmbK03FtYI5IYMqImL4UdZWuy7vmwwpieFmvKPnXnTwuEKCnnfIXc3dmhVL0z7BLT8Ta_VZt2waDGCEQ5WLaAnM03Z7gIq-lNfgzyj4adbYrnd7vCNOe7PH9TE2LTS2RtIEIN3AugLEUPIyOAzhijA_e6q9WjkupzJfgILRfS3AzE4WuaUJjzW8eZbUDdvx_n5PN2NKPtn0APvG534zehryKWlrWvWc6cKDmypXhGX3TM5Ec6bZjC5DIb2kPyHHdzVfw-NgxJfKC"/>
+</div>
+</div>
+<div class="tag-label bg-[#06D6A0] text-black rotate-[2deg]">CALL ME</div>
+</div>
+<!-- Sticker 5: Vintage Cocktail (Nightlife) -->
+<div class="sticker-wrapper animate-drift-2 group absolute rotate-[-5deg] w-56 bottom-[10%] right-[40%] bottom-\[5%\]" style="bottom: 12%; right: 20%; transform: rotate(-4deg);">
+<div class="bg-white p-3 rounded-full border-[6px] border-black aspect-[3/4]">
+<div class="bg-purple-50 rounded-full overflow-hidden w-full h-full">
+<img alt="Cocktail" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYAgywVaKZ6roQaWqjFErJXk0xMkdXZ7dvkUY40eUxocPX-lDRoW2XmZsvuVIqn25TMF0PURV2H1wPq1OUR9CYbrH-ijJ31c3O3oCOtOYdQqOKE6-CQ0Sqtbvu94H8pGzJW4uBTxX2ohBnq_VskxlwqK3kc-Qg81kntO9yIXWaWcc-a6W58xhzGqNADNxWbH6tLgJ8Nx_o4l_wVoaTK5WD4ni2GlHddARvsDr7eekuKPQZs0M-IugI1wMoowQVG6diahREBkZ2e8yo"/>
+</div>
+</div>
+<div class="tag-label bg-[#118AB2] text-white rotate-[-3deg]">NEON NIGHTS</div>
+</div>
+<!-- Sticker 6: DNA Helix (Science) -->
+<div class="sticker-wrapper animate-drift-3 group absolute top-1/2 left-[5%] -translate-y-1/2 rotate-[-10deg] w-52" style="top: 30%; left: 8%; transform: rotate(-5deg);">
+<div class="bg-white p-3 rounded-[32px] border-[6px] border-black">
+<div class="bg-blue-100/30 rounded-[24px] overflow-hidden h-40 w-full">
+<img alt="DNA" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3AGXL7Aava2dH4el7QDGnYWhvOgf4B_BI3GDCZrWuPpn7l9H-bZhk_2AsjJq1quZ5gUYhw9rXzWeP3YQXKnxe8TsHNMGZqCbPlwb7dy28kQCdUrt7XLwPKELLF8acbRl6I24KqruO2PmPw3wL_WOGO6F1hBXxJQJr4pBS7R3SL0n15BUPyaJxsyIxqzoJpOll4gT074Hu2VB3cDw_cMd3qA-oVMpvZEetZKXkblCy-KpaON971EzwCZSqf_ur4Rv01qkmk5fpvAkD"/>
+</div>
+</div>
+<div class="tag-label bg-[#FFD166] text-black rotate-[5deg]">BIOTECH</div>
+</div>
+<!-- Sticker 7: Barbecue (Outdoor) -->
+<div class="sticker-wrapper animate-drift-1 group absolute top-[40%] right-[8%] rotate-[8deg] w-64" style="top: 32%; right: 10%; transform: rotate(-2deg);">
+<div class="bg-white p-3 rounded-lg border-[6px] border-black">
+<div class="bg-red-50 rounded overflow-hidden h-44 w-full">
+<img alt="Barbecue" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnXWiCZPCcKofrVBYV4KORa_bd32w1HSsCYzElmMGvvwSRpDMEw1D3wR5qZf-9Q_We0l9lDBmbpVNj-yZ5WUshbBSmq1a_xnHnnhAGBJfRI4mJ6av4QCHPyN3qOSRvaSmOr212sNYQ4EfDFqRcOwt59FAiCraifloQeyNQPrffxSGwZmz7P2E6qQ2X9bIxN5kZa3hZLFockS-_TiCI6tss3sbFakA16la1a5JUZRpcClW0zKBiY4E2LU7Jiiju0H2ONEiRjCnsWf_6"/>
+</div>
+</div>
+<div class="tag-label bg-black text-primary rotate-[-4deg]">SUMMER HEAT</div>
+</div>
+<!-- Decorative Small Stickers (Non-Clickable) -->
+<div class="absolute top-[15%] left-[30%] w-12 h-12 bg-sticker-teal rounded-full border-2 border-black flex items-center justify-center z-0 rot-neg-12 opacity-80 shadow-[3px_3px_0_black]" style="top: 10%; left: 28%;">
+<span class="material-icons text-white text-2xl">bolt</span>
+</div>
+<div class="absolute bottom-[18%] right-[42%] w-16 h-10 bg-primary rounded-full border-2 border-black flex items-center justify-center z-0 rot-pos-12 opacity-90 shadow-[3px_3px_0_black]" style="bottom: 40%; right: 35%;">
+<span class="text-black font-black text-xs uppercase">New!</span>
+</div>
+<div class="absolute top-[60%] left-[8%] z-0 rot-pos-12 opacity-60" style="top: 65%; left: 12%;">
+<svg fill="none" height="60" viewbox="0 0 60 60" width="60">
+<path d="M30 0L38 22L60 30L38 38L30 60L22 38L0 30L22 22L30 0Z" fill="#2A9D8F" stroke="black" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full py-8 text-center text-gray-400 text-sm relative z-20">
+<div class="bg-white dark:bg-black inline-block px-6 py-2 rounded-full border border-gray-200 dark:border-gray-800 shadow-sm">
+<p class="">© 2023 Sara Ruffini Portfolio. Designed with creative chaos.</p>
+</div>
+</footer>
+</body></html>

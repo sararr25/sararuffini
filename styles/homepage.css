@@ -28,6 +28,447 @@
             display: inline-block;
             white-space: nowrap;
         }
+        .featured-stitch-section {
+            overflow: hidden;
+        }
+        .featured-stitch-header {
+            position: relative;
+            z-index: 2;
+            padding: 4rem 1rem 2rem;
+            text-align: center;
+        }
+        .featured-stitch-title {
+            display: inline-block;
+            margin: 0;
+            padding: 0.75rem 2rem;
+            border: 4px solid #111;
+            background: #fff;
+            box-shadow: 8px 8px 0 #f26c0d;
+            color: #111;
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+        .featured-stitch-subtitle {
+            margin: 1.25rem 0 0;
+            color: rgba(17, 17, 17, 0.66);
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+        .dark .featured-stitch-subtitle {
+            color: rgba(255, 255, 255, 0.72);
+        }
+        .featured-stitch-sparkle {
+            position: absolute;
+            color: #e9c46a;
+            opacity: 0.85;
+            pointer-events: none;
+        }
+        .featured-stitch-sparkle--left {
+            top: 2.3rem;
+            left: 10%;
+            animation: stitchPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .featured-stitch-sparkle--right {
+            top: 3.3rem;
+            right: 15%;
+            color: #2a9d8f;
+            animation: stitchBounce 1.2s ease-in-out infinite;
+        }
+        .featured-stitch-sparkle .material-icons {
+            font-size: 3rem;
+        }
+        .featured-stitch-board {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            min-height: 1200px;
+            padding: 3rem 1rem 6rem;
+        }
+        .featured-stitch-doodles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .stitch-doodle {
+            position: absolute;
+        }
+        .stitch-doodle--squiggle {
+            top: 24%;
+            left: 2.5rem;
+            width: 6rem;
+            height: 6rem;
+            color: #2a9d8f;
+        }
+        .stitch-doodle--star {
+            right: 5rem;
+            bottom: 30%;
+            width: 4rem;
+            height: 4rem;
+            color: #f26c0d;
+        }
+        .stitch-pop {
+            position: absolute;
+            top: 5rem;
+            right: 32%;
+            color: #e9c46a;
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1;
+            opacity: 0.7;
+            transform: rotate(12deg);
+        }
+        .stitch-dot {
+            position: absolute;
+            border-radius: 9999px;
+        }
+        .stitch-dot--black {
+            top: 48%;
+            left: 33%;
+            width: 1rem;
+            height: 1rem;
+            background: #111;
+        }
+        .stitch-dot--gold {
+            bottom: 9rem;
+            left: 24%;
+            width: 0.75rem;
+            height: 0.75rem;
+            background: #e9c46a;
+        }
+        .stitch-sticker {
+            position: absolute;
+            display: block;
+            color: #111;
+            text-decoration: none;
+            filter: drop-shadow(4px 4px 0 #000);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+            cursor: pointer;
+        }
+        .stitch-sticker:hover {
+            z-index: 100 !important;
+            transform: scale(1.08) rotate(0deg) !important;
+            filter: drop-shadow(8px 8px 0 #f26c0d);
+        }
+        .stitch-sticker-card {
+            display: block;
+        }
+        .stitch-drift-1 .stitch-sticker-card {
+            animation: stitchDrift 8s ease-in-out infinite;
+        }
+        .stitch-drift-2 .stitch-sticker-card {
+            animation: stitchDrift 10s ease-in-out infinite reverse;
+        }
+        .stitch-drift-3 .stitch-sticker-card {
+            animation: stitchDrift 12s ease-in-out infinite 1s;
+        }
+        .stitch-frame {
+            display: block;
+            background: #fff;
+            border: 6px solid #000;
+            padding: 0.75rem;
+        }
+        .stitch-frame--rounded {
+            border-radius: 1rem;
+        }
+        .stitch-frame--soft {
+            border-radius: 1.5rem;
+        }
+        .stitch-frame--circle {
+            aspect-ratio: 1;
+            padding: 1rem;
+            border-width: 8px;
+            border-radius: 9999px;
+        }
+        .stitch-frame--pill {
+            aspect-ratio: 3 / 4;
+            border-radius: 9999px;
+        }
+        .stitch-frame--square {
+            border-radius: 0.5rem;
+        }
+        .stitch-media {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+        .stitch-media--large {
+            height: 14rem;
+            border-radius: 0.75rem;
+        }
+        .stitch-media--wide {
+            height: 15rem;
+            border-radius: 0.75rem;
+        }
+        .stitch-media--tall {
+            height: 16rem;
+            border-radius: 1rem;
+        }
+        .stitch-media--phone {
+            height: 12rem;
+            border-radius: 1rem;
+            background: rgba(241, 167, 241, 0.2);
+        }
+        .stitch-media--short {
+            height: 11rem;
+            border-radius: 0.5rem;
+        }
+        .stitch-media--cocktail {
+            height: 100%;
+            border-radius: 9999px;
+            background: #faf5ff;
+        }
+        .stitch-media--circle {
+            height: 100%;
+            border: 4px dashed #e5e7eb;
+            border-radius: 9999px;
+        }
+        .stitch-media--mint {
+            background: rgba(42, 157, 143, 0.1);
+        }
+        .stitch-media img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .stitch-media--contain img {
+            object-fit: contain;
+        }
+        .stitch-label {
+            position: absolute;
+            right: -0.75rem;
+            bottom: -0.75rem;
+            z-index: 10;
+            padding: 0.28rem 0.78rem;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0 #000;
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 0;
+            line-height: 1;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transition: transform 0.2s ease;
+        }
+        .stitch-sticker:hover .stitch-label {
+            transform: scale(1.08) rotate(5deg);
+        }
+        .stitch-label--yellow {
+            background: #ffd166;
+            color: #111;
+            transform: rotate(-3deg);
+        }
+        .stitch-label--teal {
+            background: #00ffd1;
+            color: #111;
+            transform: rotate(-2deg);
+        }
+        .stitch-label--pink {
+            background: #ef476f;
+            color: #fff;
+            transform: rotate(4deg);
+        }
+        .stitch-label--orange {
+            padding: 0.5rem 1rem;
+            background: #f26c0d;
+            color: #fff;
+            font-size: 1rem;
+            transform: rotate(-8deg);
+        }
+        .stitch-label--green {
+            background: #06d6a0;
+            color: #111;
+            transform: rotate(2deg);
+        }
+        .stitch-label--blue {
+            background: #118ab2;
+            color: #fff;
+            transform: rotate(-3deg);
+        }
+        .stitch-label--black {
+            background: #111;
+            color: #3bdec8;
+            transform: rotate(-4deg);
+        }
+        .stitch-sticker--urban {
+            top: 2%;
+            left: 5%;
+            z-index: 24;
+            width: 18rem;
+            transform: rotate(-3deg);
+        }
+        .stitch-sticker--pixel {
+            top: 5%;
+            left: 35%;
+            z-index: 22;
+            width: 20rem;
+            transform: rotate(2deg);
+        }
+        .stitch-sticker--game {
+            top: 2%;
+            right: 5%;
+            z-index: 23;
+            width: 16rem;
+            transform: rotate(4deg);
+        }
+        .stitch-sticker--pasta {
+            top: 35%;
+            left: 45%;
+            z-index: 30;
+            width: 20rem;
+            transform: rotate(3deg);
+        }
+        .stitch-sticker--phone {
+            bottom: 15%;
+            left: 15%;
+            z-index: 25;
+            width: 15rem;
+            transform: rotate(5deg);
+        }
+        .stitch-sticker--cocktail {
+            right: 20%;
+            bottom: 12%;
+            z-index: 26;
+            width: 14rem;
+            transform: rotate(-4deg);
+        }
+        .stitch-sticker--dna {
+            top: 30%;
+            left: 8%;
+            z-index: 21;
+            width: 13rem;
+            transform: rotate(-5deg);
+        }
+        .stitch-sticker--bbq {
+            top: 32%;
+            right: 10%;
+            z-index: 22;
+            width: 16rem;
+            transform: rotate(-2deg);
+        }
+        .stitch-mini-sticker {
+            position: absolute;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0 #000;
+            font-weight: 900;
+        }
+        .stitch-mini-sticker--bolt {
+            top: 10%;
+            left: 28%;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background: #2a9d8f;
+            color: #fff;
+            transform: rotate(-12deg);
+        }
+        .stitch-mini-sticker--new {
+            right: 35%;
+            bottom: 40%;
+            width: 4rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            background: #f26c0d;
+            color: #111;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transform: rotate(12deg);
+        }
+        @keyframes stitchDrift {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(5px, -5px); }
+            50% { transform: translate(-5px, 5px); }
+            75% { transform: translate(5px, 5px); }
+        }
+        @keyframes stitchPulse {
+            0%, 100% { opacity: 0.85; transform: scale(1); }
+            50% { opacity: 0.45; transform: scale(0.95); }
+        }
+        @keyframes stitchBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @media (max-width: 1024px) {
+            .featured-stitch-board {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 2rem;
+                min-height: auto;
+                padding: 2rem 1rem 4rem;
+            }
+            .featured-stitch-doodles,
+            .stitch-mini-sticker {
+                display: none;
+            }
+            .stitch-sticker {
+                position: relative;
+                top: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                left: auto !important;
+                width: 100%;
+                transform: rotate(-2deg) !important;
+            }
+            .stitch-sticker:nth-of-type(even) {
+                transform: rotate(2deg) !important;
+            }
+            .stitch-sticker:hover {
+                transform: rotate(0deg) scale(1.04) !important;
+            }
+            .stitch-frame--circle,
+            .stitch-frame--pill {
+                aspect-ratio: auto;
+            }
+            .stitch-media,
+            .stitch-media--large,
+            .stitch-media--wide,
+            .stitch-media--tall,
+            .stitch-media--phone,
+            .stitch-media--short,
+            .stitch-media--cocktail,
+            .stitch-media--circle {
+                height: 14rem;
+                border-radius: 0.9rem;
+            }
+            .stitch-label {
+                right: 0.25rem;
+                bottom: -0.8rem;
+                font-size: 0.68rem;
+            }
+            .stitch-label--orange {
+                padding: 0.35rem 0.8rem;
+                font-size: 0.78rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .featured-stitch-header {
+                padding-top: 2.5rem;
+            }
+            .featured-stitch-title {
+                padding: 0.65rem 1rem;
+                font-size: 2.5rem;
+            }
+            .featured-stitch-subtitle {
+                font-size: 0.95rem;
+            }
+            .featured-stitch-board {
+                grid-template-columns: 1fr;
+                gap: 2.35rem;
+            }
+            .featured-stitch-sparkle {
+                display: none;
+            }
+        }
         .featured-canvas {
             position: relative;
             width: 100%;
