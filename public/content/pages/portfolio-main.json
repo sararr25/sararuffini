@@ -1,0 +1,79 @@
+{
+  "heading_line1": "SELECTED",
+  "heading_line2": "WORKS",
+  "intro_text_html": "A selection of recent projects spanning motion design, commercial video, and digital storytelling.",
+  "gallery": [
+    {
+      "href": "/pages/weber-grillinspiration/index.html",
+      "badge": "Adventure Co.",
+      "image": "/assets/media/Cocktail-3.jpg",
+      "alt": "Adventure Co.",
+      "title": "High-Altitude Storytelling",
+      "meta": "Commercial • 2023"
+    },
+    {
+      "href": "/pages/socialmedia-portfolio/index.html",
+      "badge": "Vogue",
+      "image": "/assets/media/Cocktail-13.jpg",
+      "alt": "Vogue x Street",
+      "title": "Urban Fashion Week",
+      "meta": "Social Media • Edit"
+    },
+    {
+      "href": "/pages/graphics/index.html",
+      "badge": "Glitch",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAPHl4zoGVV0OhCteCKaNe96c7zRP_R7-HpxKO4Dw5wYBdYpi0xp-R8xRJRqtuHKlznS_PG8GNf0lfKyMWRQPA0rnlxtU22lAi3rcBQYPrZAF8h-ZauK9N0r9kfsr-YFvvclquf-olEahn8PnJ1On17-cWsjn2pV1ggNlR3aDU1OGw11NwuEZe9TSbozxbiqssb5ewKEEWoBeZkvlTMDTMLLa5HDu_d3Gu3LbH97FQhXaNsRntqAA5J0aHHRHXciIkNRu5CQZxJjLLG",
+      "alt": "Glitch Art",
+      "title": "Experimental Visuals",
+      "meta": "VFX • Personal Project"
+    },
+    {
+      "href": "/pages/video-v2/index.html",
+      "badge": "Neon Nights",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
+      "alt": "Neon Nights",
+      "title": "Cyberpunk Music Video",
+      "meta": "Music Video • 2022"
+    },
+    {
+      "href": "/pages/neon-vibes-web/index.html",
+      "badge": "Neon Vibes",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
+      "alt": "Neon Vibes web project",
+      "title": "Neon Vibes",
+      "meta": "Web Design • 2024"
+    },
+    {
+      "href": "/pages/app-v2/index.html",
+      "badge": "Retro Tech",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7",
+      "alt": "Retro Tech",
+      "title": "Retro UI Design",
+      "meta": "UX/UI • Mobile App"
+    },
+    {
+      "href": "/pages/cocktail-photography/index.html",
+      "badge": "Studio Light",
+      "image": "/assets/media/Cocktail-29.jpg",
+      "alt": "Cocktail photography project",
+      "title": "Mixology in Focus",
+      "meta": "Photography • 2025"
+    },
+    {
+      "href": "/pages/shooting-cocktails/index.html",
+      "badge": "Retro Pop",
+      "image": "/assets/media/Cocktail-123.jpg",
+      "alt": "Shooting Cocktails project cover",
+      "title": "Shooting Cocktails",
+      "meta": "Photography • Editorial"
+    }
+  ],
+  "more_projects_href": "/workspace.html",
+  "more_projects_title": "More Projects",
+  "more_projects_meta": "View complete archive",
+  "seo": {
+    "seo_title": "Portfolio - Sara Ruffini | Video & Motion Design",
+    "seo_description": "Explore a curated selection of video production, motion design, and creative direction projects.",
+    "seo_image": "/assets/media/default-og-image.jpg"
+  }
+}

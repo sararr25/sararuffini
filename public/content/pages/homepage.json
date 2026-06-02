@@ -1,0 +1,74 @@
+{
+  "featured_card": {
+    "href": "",
+    "image": "/assets/media/home-videos.png",
+    "alt": "Retro phone sticker project",
+    "label": "The Edit Room",
+    "href_page": "/pages/coming-soon/index.html"
+  },
+  "featured_window": {
+    "href": "/pages/app-v2/index.html",
+    "image": "/assets/media/home-game.png",
+    "alt": "Game device sticker project",
+    "label": "Pocket Arcade",
+    "window_title": "PROJECT.EXE",
+    "window_button": "Open"
+  },
+  "teaser_link_href": "/pages/about/index.html",
+  "showreel_embed_url": "https://player.vimeo.com/video/1056816837?h=f7841e5cdc&title=0&byline=0&portrait=0",
+  "teaser_link_text": "Read More About Me",
+  "hero_word_highlight": "faster",
+  "hero_line_2_prefix": "I edit",
+  "featured_dna": {
+    "href": "",
+    "image": "/assets/media/home-dna.png",
+    "alt": "DNA sticker project",
+    "label": "Human Engine",
+    "href_page": "/pages/coming-soon/index.html"
+  },
+  "featured_title": "Featured Projects",
+  "featured_torn": {
+    "href": "",
+    "image": "/assets/media/home-cocktails.png",
+    "alt": "Cocktail visual sticker project",
+    "label": "One more!",
+    "href_page": "/pages/shooting-cocktails/index.html"
+  },
+  "featured_subtitle": "Select an object to view",
+  "marquee_text": "Let's create something together• Let's create something together • Let's create something together • Let's create something together • Let's create something together • Let's create something together •",
+  "hero_line_1": "I talk fast",
+  "showreel_label": "Showreel",
+  "featured_grill": {
+    "href": "/pages/weber-grillinspiration/index.html",
+    "image": "/assets/media/home-bbq.png",
+    "alt": "BBQ project sticker",
+    "label": "Smoke & Stories"
+  },
+  "teaser_text_html": "A collection of work crafted with <span class=\"text-primary\">heart</span>, <span class=\"text-pink-500\">creativity</span>, and <span class=\"text-yellow-500\">storytelling</span>. Explore how I turn concepts into visuals that connect.",
+  "showreel_title": "Sara Ruffini Showreel",
+  "featured_tv": {
+    "href": "",
+    "image": "/assets/media/home-app.png",
+    "alt": "Travel app sticker project",
+    "label": "Meriwa App",
+    "href_page": "/pages/app-v1/index.html"
+  },
+  "seo": {
+    "seo_title": "Sara Ruffini - Video Editor Portfolio",
+    "seo_description": "Portfolio of video editing, motion design, and content creation work by Sara Ruffini.",
+    "seo_image": "/assets/media/home-reels.png"
+  },
+  "featured_round": {
+    "href": "",
+    "image": "/assets/media/home-pasta.png",
+    "alt": "Food sticker project",
+    "label": "Pan & Passion",
+    "href_page": "/pages/coming-soon/index.html"
+  },
+  "featured_polaroid": {
+    "href": "/pages/socialmedia-portfolio/index.html",
+    "image": "/assets/media/home-reels.png",
+    "alt": "Social Media",
+    "caption": "Social Media"
+  }
+}

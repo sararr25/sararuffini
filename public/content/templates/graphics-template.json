@@ -1,0 +1,11 @@
+{
+  "template_name": "Graphic Design Template",
+  "campaign_title": "Campaign Name",
+  "campaign_text": "Describe your graphic design project, the inspiration, and the design direction.",
+  "hero_image_polaroid": "/assets/media/default-graphic.jpg",
+  "seo_title": "Campaign Title - Sara Ruffini Design",
+  "seo_description": "Explore this graphic design project and the creative concepts behind it.",
+  "seo_image": "/assets/media/default-og-image.jpg",
+  "media_blocks": [],
+  "selector_overrides": []
+}

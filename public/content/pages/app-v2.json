@@ -1,0 +1,18 @@
+{
+  "hero_phase": "UX Narrative",
+  "hero_title_main_line1": "experience",
+  "hero_title_accent": "design",
+  "hero_intro": "A seamless journey from onboarding to conversion. We mapped out every interaction to reduce friction and amplify engagement.",
+  "insight_1_title": "Cognitive Load",
+  "insight_1_text": "Minimized decision points per screen to keep users focused.",
+  "insight_2_title": "Happy Path",
+  "insight_2_text": "Optimized the primary user flow for speed and delight.",
+  "insight_3_title": "System Feedback",
+  "insight_3_text": "Clear validation states and success toasts at every step.",
+  "hero_note": "follow the flow",
+  "seo": {
+    "seo_title": "UX Flow Design - Sara Ruffini",
+    "seo_description": "User experience narrative and interaction flow project by Sara Ruffini.",
+    "seo_image": ""
+  }
+}

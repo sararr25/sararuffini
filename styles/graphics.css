@@ -1,3 +1,4 @@
+.text-outline-thick {
             -webkit-text-stroke: 1px black;
             color: transparent;
         }

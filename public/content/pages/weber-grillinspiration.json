@@ -1,0 +1,73 @@
+{
+  "hero_section": {
+    "hero_media_upload": "",
+    "hero_title_main": "Weber",
+    "hero_title_highlight": "Grillinspiration",
+    "hero_meta": "video editing",
+    "hero_play_reel_text": "play reel • showreel 2023 • play reel • showreel 2023 •",
+    "hero_media_url": "https://www.youtube.com/watch?v=8TPd_RnmCjE",
+    "hero_label": "Weber Grillinspiration",
+    "hero_years": "2022",
+    "hero_volume_label": "",
+    "hero_image": "/assets/media/pizza2.png",
+    "hero_highlights_label": "Grillinspiration Highlights",
+    "hero_media_type": "embed",
+    "hero_role": "Role: In-house Video Editor",
+    "hero_timecode": "01:45 / Collaboration Reel"
+  },
+  "key_projects_label": "Key Projects",
+  "intro_section": {
+    "intro_title": "Weber Grillinspiration",
+    "intro_text": "The Weber Collection was a recipe video series showcasing the versatility of barbecue cooking through a variety of dishes and techniques. Combining cinematic food visuals with clear step by step instructions, the videos were designed to inspire viewers while teaching practical barbecue recipes, ingredients, and cooking methods.",
+    "intro_badge_1": "Video Editing",
+    "intro_badge_2": "Motion Design",
+    "intro_badge_3": "Storytelling"
+  },
+  "projects": [
+    {
+      "badge": "Salmon recipe",
+      "media_type": "embed",
+      "media_url": "https://www.youtube.com/watch?v=3pjx-HaawTw",
+      "media_upload": "",
+      "title": "",
+      "description": "",
+      "tags": []
+    },
+    {
+      "badge": "T-bone steak",
+      "media_type": "embed",
+      "media_url": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
+      "media_upload": "",
+      "title": "",
+      "description": "",
+      "tags": [],
+      "award_note": ""
+    },
+    {
+      "badge": "Lammeskank",
+      "media_type": "embed",
+      "media_url": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
+      "media_upload": "",
+      "title": "",
+      "description": "",
+      "tags": []
+    }
+  ],
+  "closing_section": {
+    "closing_quote": ""
+  },
+  "seo": {
+    "seo_title": "Weber Grillinspiration",
+    "seo_description": "weber collection videos\nWeber Grillinspiration",
+    "seo_image": ""
+  },
+  "specs_section": {
+    "engagement_specs_title": "Projects details",
+    "spec_position_label": "Position",
+    "spec_position_value": "Video Editor",
+    "spec_duration_label": "Duration",
+    "spec_duration_value": "6 months",
+    "spec_deliverables_label": "Skills and programs",
+    "spec_deliverables_value": "Da Vinci Resolve, After Effects, Premiere, Editing, Post production, Motion Graphic, Color Grading"
+  }
+}

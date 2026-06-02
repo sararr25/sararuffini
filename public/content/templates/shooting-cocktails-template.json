@@ -1,0 +1,59 @@
+{
+  "template_name": "Shooting Cocktails Template",
+  "hero_title_line_1": "Midnight",
+  "hero_title_line_2": "Mixology",
+  "hero_description": "A high-contrast, energy-driven editorial shoot for an underground speakeasy menu. We focused on capturing the raw, tactile essence of mixology—shattered ice, spilled bitters, and intense neon rim lighting. The goal was to make the drinks feel like aggressive pieces of modern art.",
+  "hero_tag_1": "Editorial Photography",
+  "hero_tag_2": "Lighting Design",
+  "hero_client_label": "Client:",
+  "hero_client_value": "The Vault",
+  "back_to_projects_label": "Back to Projects",
+  "back_to_projects_href": "/pages/portfolio-main/code.html",
+  "hero_main_image": "/assets/media/Cocktail-123.jpg",
+  "hero_main_image_alt": "A vivid orange cocktail splash in a crystal glass.",
+  "hero_polaroid_image": "/assets/media/Cocktail-89.jpg",
+  "hero_polaroid_alt": "Bartender close-up polaroid.",
+  "hero_polaroid_caption": "Shot 01",
+  "hero_accent_image": "/assets/media/Cocktail-141.jpg",
+  "hero_accent_alt": "Electric blue cocktail as supporting visual.",
+  "hero_pop_label": "POP!",
+  "collection_title": "The Collection",
+  "collection_scroll_left_label": "Scroll Left",
+  "collection_scroll_right_label": "Scroll Right",
+  "collection_lightbox_title": "Collection image preview",
+  "collection_lightbox_close_label": "Close image preview",
+  "collection_lightbox_fallback_alt": "Cocktail image",
+  "collection_items": [
+    {
+      "title": "The Smoked Old Fashioned",
+      "index_label": "01",
+      "image": "/assets/media/Cocktail-13.jpg",
+      "alt": "Smoked old fashioned with atmospheric haze."
+    },
+    {
+      "title": "Blood Orange Spritz",
+      "index_label": "02",
+      "image": "/assets/media/Cocktail-6.jpg",
+      "alt": "Blood orange spritz with dramatic color contrast."
+    },
+    {
+      "title": "Neon Sour",
+      "index_label": "03",
+      "image": "/assets/media/Cocktail-132.jpg",
+      "alt": "Neon green sour cocktail with hard light."
+    },
+    {
+      "title": "The Details",
+      "index_label": "04",
+      "image": "/assets/media/Cocktail-29.jpg",
+      "alt": "Macro detail of textured cocktail garnish."
+    }
+  ],
+  "seo": {
+    "seo_title": "Shooting Cocktails - Sara Ruffini",
+    "seo_description": "Portfolio project page for cocktail photography art direction and editorial visuals by Sara Ruffini.",
+    "seo_image": "/assets/media/Cocktail-123.jpg"
+  },
+  "media_blocks": [],
+  "selector_overrides": []
+}

@@ -1,0 +1,86 @@
+/* Global mobile layer for all public pages */
+@media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  .shared-site-nav {
+    padding: 1rem 1.25rem;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .shared-site-nav > a {
+    font-size: 1.15rem;
+    max-width: calc(100% - 3.5rem);
+    line-height: 1.15;
+  }
+
+  .shared-site-nav .md\:hidden[aria-label="Open menu"] {
+    border: 2px solid #000;
+    border-radius: 0.5rem;
+    line-height: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f5ee;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .shared-site-nav.mobile-open {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .shared-site-nav.mobile-open > .hidden.md\:flex {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding-top: 0.9rem;
+    margin-top: 0.2rem;
+    border-top: 2px solid #000;
+  }
+
+  .shared-site-nav.mobile-open > .hidden.md\:flex a {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+
+  .shared-site-footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  [data-cms-page="socialmedia-portfolio"] .phone-unit > .relative {
+    width: min(86vw, 300px);
+    height: min(calc(86vw * 2), 600px);
+  }
+}
+
+@media (max-width: 420px) {
+  .shared-site-nav {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .shared-site-nav > a {
+    font-size: 1.02rem;
+  }
+}

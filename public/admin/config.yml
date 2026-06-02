@@ -1,0 +1,3906 @@
+---
+backend:
+  name: github
+  repo: sararr25/sararuffini
+  branch: main
+  base_url: https://decap-proxy.sararuffini25.workers.dev
+  auth_endpoint: auth
+media_folder: assets/media
+public_folder: "/assets/media"
+local_backend: true
+locale: it
+publish_mode: simple
+collections:
+- name: site_settings
+  label: "\U0001F310 Site Settings"
+  description: Global site configuration
+  files:
+  - label: Global Navigation & Footer
+    name: global
+    file: content/global.json
+    editor:
+      preview: false
+    fields:
+    - label: Brand Name
+      name: brand_name
+      widget: string
+      default: Sara Ruffini
+      required: false
+    - label: Brand Link
+      name: brand_href
+      widget: string
+      default: /index.html
+      required: false
+    - label: Brand Link Preset
+      name: brand_href_page
+      widget: select
+      required: false
+      options: &internal_page_options
+      - label: Home
+        value: /index.html
+      - label: Projects
+        value: /pages/portfolio-main/code.html
+      - label: About
+        value: /pages/about/index.html
+      - label: Contact
+        value: /pages/contact/index.html
+      - label: Video Project V1
+        value: /pages/weber-grillinspiration/index.html
+      - label: Video Project V2
+        value: /pages/video-v2/index.html
+      - label: App Project V1
+        value: /pages/app-v1/index.html
+      - label: App Project V2
+        value: /pages/app-v2/index.html
+      - label: Graphics Project
+        value: /pages/graphics/index.html
+      - label: Social Media Portfolio
+        value: /pages/socialmedia-portfolio/index.html
+      - label: Cocktail Photography
+        value: /pages/cocktail-photography/index.html
+      - label: Shooting Cocktails
+        value: /pages/shooting-cocktails/index.html
+      - label: Neon Vibes Web Project
+        value: /pages/neon-vibes-web/index.html
+      - label: Coming Soon
+        value: /pages/coming-soon/index.html
+    - label: Nav - Home
+      name: nav_home
+      widget: string
+      default: Home
+      required: false
+    - label: Nav - Home Link
+      name: nav_home_href
+      widget: string
+      default: /index.html
+      required: false
+    - label: Nav - Home Link Preset
+      name: nav_home_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Nav - Projects
+      name: nav_projects
+      widget: string
+      default: Projects
+      required: false
+    - label: Nav - Projects Link
+      name: nav_projects_href
+      widget: string
+      default: /pages/portfolio-main/code.html
+      required: false
+    - label: Nav - Projects Link Preset
+      name: nav_projects_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Nav - About
+      name: nav_about
+      widget: string
+      default: About
+      required: false
+    - label: Nav - About Link
+      name: nav_about_href
+      widget: string
+      default: /pages/about/index.html
+      required: false
+    - label: Nav - About Link Preset
+      name: nav_about_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Nav - Contact
+      name: nav_contact
+      widget: string
+      default: Contact
+      required: false
+    - label: Nav - Contact Link
+      name: nav_contact_href
+      widget: string
+      default: /pages/contact/index.html
+      required: false
+    - label: Nav - Contact Link Preset
+      name: nav_contact_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Footer Contact Email
+      name: footer_email
+      widget: string
+      required: false
+    - label: Footer Contact Phone
+      name: footer_phone
+      widget: string
+      required: false
+    - label: Footer Contact Location
+      name: footer_location
+      widget: string
+      required: false
+    - label: Footer Contact Line (full)
+      name: footer_contact
+      widget: string
+      required: false
+      hint: "e.g. email@domain.com | +45 00 00 00 00 | City"
+  - label: SEO Defaults
+    name: seo_defaults
+    file: content/global-seo.json
+    editor:
+      preview: false
+    fields:
+    - label: Site Title
+      name: site_title
+      widget: string
+      required: false
+    - label: Site Description
+      name: site_description
+      widget: text
+      required: false
+    - label: Default OG Image
+      name: default_og_image
+      widget: image
+      required: false
+    - label: Twitter Handle
+      name: twitter_handle
+      widget: string
+      required: false
+- name: templates
+  label: "\U0001F4CB Content Templates"
+  description: Reusable project templates for quick creation
+  files:
+  - label: Video Project Template
+    name: video_template
+    file: content/templates/video-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: Video Project
+      required: false
+    - label: Hero Section
+      name: hero_section
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Label
+        name: hero_label
+        widget: string
+        required: false
+      - label: Years
+        name: hero_years
+        widget: string
+        required: false
+      - label: Main Title
+        name: hero_title_main
+        widget: string
+        required: false
+      - label: Highlight Word
+        name: hero_title_highlight
+        widget: string
+        required: false
+      - label: Role
+        name: hero_role
+        widget: string
+        required: false
+      - label: Meta Info
+        name: hero_meta
+        widget: string
+        required: false
+      - label: Hero Image
+        name: hero_image
+        widget: image
+        required: false
+      - label: Timecode
+        name: hero_timecode
+        widget: string
+        required: false
+      - label: Play Reel Circular Text
+        name: hero_play_reel_text
+        widget: string
+        required: false
+      - label: Volume Label
+        name: hero_volume_label
+        widget: string
+        required: false
+      - label: Highlights Label
+        name: hero_highlights_label
+        widget: string
+        required: false
+      - label: Media Type
+        name: hero_media_type
+        widget: select
+        required: false
+        options:
+        - label: Image
+          value: image
+        - label: Video
+          value: video
+        - label: Embed
+          value: embed
+      - label: Media URL
+        name: hero_media_url
+        widget: string
+        required: false
+      - label: Media Upload
+        name: hero_media_upload
+        widget: file
+        required: false
+    - label: Intro Section
+      name: intro_section
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Title
+        name: intro_title
+        widget: string
+        required: false
+      - label: Description
+        name: intro_text
+        widget: text
+        required: false
+      - label: Badge 1
+        name: intro_badge_1
+        widget: string
+        required: false
+      - label: Badge 2
+        name: intro_badge_2
+        widget: string
+        required: false
+      - label: Badge 3
+        name: intro_badge_3
+        widget: string
+        required: false
+    - label: Specs Section
+      name: specs_section
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Title
+        name: engagement_specs_title
+        widget: string
+        required: false
+      - label: Position Label
+        name: spec_position_label
+        widget: string
+        required: false
+      - label: Position Value
+        name: spec_position_value
+        widget: string
+        required: false
+      - label: Duration Label
+        name: spec_duration_label
+        widget: string
+        required: false
+      - label: Duration Value
+        name: spec_duration_value
+        widget: string
+        required: false
+      - label: Deliverables Label
+        name: spec_deliverables_label
+        widget: string
+        required: false
+      - label: Deliverables Value
+        name: spec_deliverables_value
+        widget: string
+        required: false
+    - label: Projects Label
+      name: key_projects_label
+      widget: string
+      required: false
+    - label: Projects
+      name: projects
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      summary: "{{fields.title}}"
+      fields:
+      - label: Badge
+        name: badge
+        widget: string
+        required: false
+      - label: Media Type
+        name: media_type
+        widget: select
+        required: false
+        options:
+        - label: Image
+          value: image
+        - label: Video
+          value: video
+        - label: Embed
+          value: embed
+      - label: Media URL
+        name: media_url
+        widget: string
+        required: false
+      - label: Media Upload
+        name: media_upload
+        widget: file
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+      - label: Award Note
+        name: award_note
+        widget: string
+        required: false
+    - label: Closing Section
+      name: closing_section
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Closing Quote
+        name: closing_quote
+        widget: text
+        required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+  - label: Graphic Design Template
+    name: graphics_template
+    file: content/templates/graphics-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: Graphic Design
+  - label: Photography Project Template
+    name: photography_template
+    file: content/templates/photography-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      required: false
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Subtitle
+      name: project_subtitle
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Quote Text
+      name: quote_text
+      widget: text
+      required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: SEO Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: SEO Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: SEO Image
+        name: seo_image
+        widget: image
+        required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+  - label: Shooting Cocktails Template
+    name: shooting_cocktails_template
+    file: content/templates/shooting-cocktails-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      required: false
+    - label: Hero Title Line 1
+      name: hero_title_line_1
+      widget: string
+      required: false
+    - label: Hero Title Line 2
+      name: hero_title_line_2
+      widget: string
+      required: false
+    - label: Hero Description
+      name: hero_description
+      widget: text
+      required: false
+    - label: Hero Tag 1
+      name: hero_tag_1
+      widget: string
+      required: false
+    - label: Hero Tag 2
+      name: hero_tag_2
+      widget: string
+      required: false
+    - label: Hero Client Label
+      name: hero_client_label
+      widget: string
+      required: false
+    - label: Hero Client Value
+      name: hero_client_value
+      widget: string
+      required: false
+    - label: Back To Projects Label
+      name: back_to_projects_label
+      widget: string
+      required: false
+    - label: Back To Projects Link
+      name: back_to_projects_href
+      widget: string
+      required: false
+    - label: Hero Main Image
+      name: hero_main_image
+      widget: image
+      required: false
+    - label: Hero Main Image Alt
+      name: hero_main_image_alt
+      widget: string
+      required: false
+    - label: Hero Polaroid Image
+      name: hero_polaroid_image
+      widget: image
+      required: false
+    - label: Hero Polaroid Alt
+      name: hero_polaroid_alt
+      widget: string
+      required: false
+    - label: Hero Polaroid Caption
+      name: hero_polaroid_caption
+      widget: string
+      required: false
+    - label: Hero Accent Image
+      name: hero_accent_image
+      widget: image
+      required: false
+    - label: Hero Accent Alt
+      name: hero_accent_alt
+      widget: string
+      required: false
+    - label: Hero Pop Label
+      name: hero_pop_label
+      widget: string
+      required: false
+    - label: Collection Title
+      name: collection_title
+      widget: string
+      required: false
+    - label: Collection Scroll Left Label
+      name: collection_scroll_left_label
+      widget: string
+      required: false
+    - label: Collection Scroll Right Label
+      name: collection_scroll_right_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Title
+      name: collection_lightbox_title
+      widget: string
+      required: false
+    - label: Collection Lightbox Close Label
+      name: collection_lightbox_close_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Fallback Alt
+      name: collection_lightbox_fallback_alt
+      widget: string
+      required: false
+    - label: Collection Items
+      name: collection_items
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      summary: "{{fields.title}}"
+      fields:
+      - label: Item Title
+        name: title
+        widget: string
+        required: false
+      - label: Item Index Label
+        name: index_label
+        widget: string
+        required: false
+      - label: Item Image
+        name: image
+        widget: image
+        required: false
+      - label: Item Image Alt
+        name: alt
+        widget: string
+        required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+  - label: App Design Template
+    name: app_template
+    file: content/templates/app-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: App Design
+      required: false
+    - label: Phase Label
+      name: hero_phase
+      widget: string
+      required: false
+    - label: Main Title
+      name: hero_title_main_line1
+      widget: string
+      required: false
+    - label: Highlight Word
+      name: hero_title_accent
+      widget: string
+      required: false
+    - label: Intro Text
+      name: hero_intro
+      widget: text
+      required: false
+    - label: Hero Image
+      name: hero_image_left
+      widget: image
+      required: false
+    - label: SEO Title
+      name: seo_title
+      widget: string
+      required: false
+    - label: SEO Description
+      name: seo_description
+      widget: text
+      required: false
+    - label: SEO Image
+      name: seo_image
+      widget: image
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+  - label: Web Project Template
+    name: web_template
+    file: content/templates/web-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      required: false
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Summary
+      name: project_summary
+      widget: text
+      required: false
+    - label: Year
+      name: meta_year
+      widget: string
+      required: false
+    - label: Project Type
+      name: meta_type
+      widget: string
+      required: false
+    - label: Role
+      name: meta_role
+      widget: string
+      required: false
+    - label: Browser Label
+      name: hero_browser_label
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Kit Title
+      name: kit_title
+      widget: string
+      required: false
+    - label: Typography Heading
+      name: typography_heading
+      widget: string
+      required: false
+    - label: Typography Primary Name
+      name: typography_primary_name
+      widget: string
+      required: false
+    - label: Typography Secondary Name
+      name: typography_secondary_name
+      widget: string
+      required: false
+    - label: Colors Heading
+      name: colors_heading
+      widget: string
+      required: false
+    - label: Journey Title
+      name: journey_title
+      widget: string
+      required: false
+    - label: Step 1 Label
+      name: journey_step_1_label
+      widget: string
+      required: false
+    - label: Step 1 Title
+      name: journey_step_1_title
+      widget: string
+      required: false
+    - label: Step 1 Image
+      name: journey_step_1_image
+      widget: image
+      required: false
+    - label: Step 1 Alt
+      name: journey_step_1_alt
+      widget: string
+      required: false
+    - label: Step 2 Label
+      name: journey_step_2_label
+      widget: string
+      required: false
+    - label: Step 2 Title
+      name: journey_step_2_title
+      widget: string
+      required: false
+    - label: Step 2 Image
+      name: journey_step_2_image
+      widget: image
+      required: false
+    - label: Step 2 Alt
+      name: journey_step_2_alt
+      widget: string
+      required: false
+    - label: Step 3 Label
+      name: journey_step_3_label
+      widget: string
+      required: false
+    - label: Step 3 Title
+      name: journey_step_3_title
+      widget: string
+      required: false
+    - label: Step 3 Image
+      name: journey_step_3_image
+      widget: image
+      required: false
+    - label: Step 3 Alt
+      name: journey_step_3_alt
+      widget: string
+      required: false
+    - label: CTA Label
+      name: cta_label
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+- name: project_pages
+  label: Project Pages
+  files:
+  - label: Neon Vibes Web Page
+    name: neon_vibes_web
+    file: content/pages/neon-vibes-web.json
+    fields:
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Summary
+      name: project_summary
+      widget: text
+      required: false
+    - label: Year
+      name: meta_year
+      widget: string
+      required: false
+    - label: Project Type
+      name: meta_type
+      widget: string
+      required: false
+    - label: Role
+      name: meta_role
+      widget: string
+      required: false
+    - label: Browser Label
+      name: hero_browser_label
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Kit Title
+      name: kit_title
+      widget: string
+      required: false
+    - label: Typography Heading
+      name: typography_heading
+      widget: string
+      required: false
+    - label: Typography Primary Name
+      name: typography_primary_name
+      widget: string
+      required: false
+    - label: Typography Secondary Name
+      name: typography_secondary_name
+      widget: string
+      required: false
+    - label: Colors Heading
+      name: colors_heading
+      widget: string
+      required: false
+    - label: Journey Title
+      name: journey_title
+      widget: string
+      required: false
+    - label: Step 1 Label
+      name: journey_step_1_label
+      widget: string
+      required: false
+    - label: Step 1 Title
+      name: journey_step_1_title
+      widget: string
+      required: false
+    - label: Step 1 Image
+      name: journey_step_1_image
+      widget: image
+      required: false
+    - label: Step 1 Alt
+      name: journey_step_1_alt
+      widget: string
+      required: false
+    - label: Step 2 Label
+      name: journey_step_2_label
+      widget: string
+      required: false
+    - label: Step 2 Title
+      name: journey_step_2_title
+      widget: string
+      required: false
+    - label: Step 2 Image
+      name: journey_step_2_image
+      widget: image
+      required: false
+    - label: Step 2 Alt
+      name: journey_step_2_alt
+      widget: string
+      required: false
+    - label: Step 3 Label
+      name: journey_step_3_label
+      widget: string
+      required: false
+    - label: Step 3 Title
+      name: journey_step_3_title
+      widget: string
+      required: false
+    - label: Step 3 Image
+      name: journey_step_3_image
+      widget: image
+      required: false
+    - label: Step 3 Alt
+      name: journey_step_3_alt
+      widget: string
+      required: false
+    - label: CTA Label
+      name: cta_label
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Video Page V1
+    name: video_v1
+    file: content/pages/weber-grillinspiration.json
+    fields:
+    # Hero Section
+    - label: "🎬 HERO SECTION"
+      name: hero_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Label/Badge
+        name: hero_label
+        widget: string
+        required: false
+      - label: Years
+        name: hero_years
+        widget: string
+        required: false
+      - label: Main Title
+        name: hero_title_main
+        widget: string
+        required: false
+      - label: Highlight Word
+        name: hero_title_highlight
+        widget: string
+        required: false
+      - label: Role
+        name: hero_role
+        widget: string
+        required: false
+      - label: Meta (e.g. 'video editing')
+        name: hero_meta
+        widget: string
+        required: false
+      - label: Hero Image
+        name: hero_image
+        widget: image
+        required: false
+      - label: Media Type
+        name: hero_media_type
+        widget: select
+        required: false
+        options:
+        - label: Image
+          value: image
+        - label: Video
+          value: video
+        - label: Embed
+          value: embed
+      - label: Media URL (YouTube/Vimeo/video/image)
+        name: hero_media_url
+        widget: string
+        required: false
+      - label: Media Upload (image or video file)
+        name: hero_media_upload
+        widget: file
+        required: false
+      - label: Timecode
+        name: hero_timecode
+        widget: string
+        required: false
+      - label: Volume Label
+        name: hero_volume_label
+        widget: string
+        required: false
+      - label: Highlights Label
+        name: hero_highlights_label
+        widget: string
+        required: false
+
+    # Introduction Section
+    - label: "📋 INTRODUCTION"
+      name: intro_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Title
+        name: intro_title
+        widget: string
+        required: false
+      - label: Description
+        name: intro_text
+        widget: text
+        required: false
+      - label: Badge 1
+        name: intro_badge_1
+        widget: string
+        required: false
+      - label: Badge 2
+        name: intro_badge_2
+        widget: string
+        required: false
+      - label: Badge 3
+        name: intro_badge_3
+        widget: string
+        required: false
+
+    # Specs Section
+    - label: "📊 ENGAGEMENT SPECS"
+      name: specs_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Title
+        name: engagement_specs_title
+        widget: string
+        required: false
+      - label: Position Label
+        name: spec_position_label
+        widget: string
+        required: false
+      - label: Position Value
+        name: spec_position_value
+        widget: string
+        required: false
+      - label: Duration Label
+        name: spec_duration_label
+        widget: string
+        required: false
+      - label: Duration Value
+        name: spec_duration_value
+        widget: string
+        required: false
+      - label: Deliverables Label
+        name: spec_deliverables_label
+        widget: string
+        required: false
+      - label: Deliverables Value
+        name: spec_deliverables_value
+        widget: string
+        required: false
+
+    # Projects
+    - label: "🎯 PROJECTS"
+      name: key_projects_label
+      widget: string
+      required: false
+
+    - label: Projects (Block Editor)
+      name: projects
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      summary: "{{fields.title}}"
+      fields:
+      - label: Badge (decorative label)
+        name: badge
+        widget: string
+        required: false
+      - label: Media Type
+        name: media_type
+        widget: select
+        required: false
+        options:
+        - label: Image
+          value: image
+        - label: Video/URL
+          value: video
+        - label: Embed (YouTube/Vimeo/Instagram)
+          value: embed
+      - label: Media URL (YouTube/Vimeo/video/image)
+        name: media_url
+        widget: string
+        required: false
+      - label: Media Upload (image or video file)
+        name: media_upload
+        widget: file
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+      - label: Award Note
+        name: award_note
+        widget: string
+        required: false
+
+    # Closing
+    - label: "✨ CLOSING"
+      name: closing_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Closing Quote
+        name: closing_quote
+        widget: text
+        required: false
+
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Override Type
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Value
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+
+    # SEO
+    - label: "🔍 SEO"
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Cocktail Photography Page
+    name: cocktail_photography
+    file: content/pages/cocktail-photography.json
+    fields:
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Subtitle
+      name: project_subtitle
+      widget: string
+      required: false
+    - label: Tag 1
+      name: hero_tag_1
+      widget: string
+      required: false
+    - label: Tag 2
+      name: hero_tag_2
+      widget: string
+      required: false
+    - label: Tag 3
+      name: hero_tag_3
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Brief Title
+      name: brief_title
+      widget: string
+      required: false
+    - label: Client Label
+      name: brief_client_label
+      widget: string
+      required: false
+    - label: Client Value
+      name: brief_client_value
+      widget: string
+      required: false
+    - label: Year Label
+      name: brief_year_label
+      widget: string
+      required: false
+    - label: Year Value
+      name: brief_year_value
+      widget: string
+      required: false
+    - label: Role Label
+      name: brief_role_label
+      widget: string
+      required: false
+    - label: Role Value
+      name: brief_role_value
+      widget: string
+      required: false
+    - label: Brief Text 1
+      name: brief_text_1
+      widget: text
+      required: false
+    - label: Brief Text 2
+      name: brief_text_2
+      widget: text
+      required: false
+    - label: Shot 1 Image
+      name: shot_1_image
+      widget: image
+      required: false
+    - label: Shot 1 Alt
+      name: shot_1_alt
+      widget: string
+      required: false
+    - label: Shot 1 Caption
+      name: shot_1_caption
+      widget: string
+      required: false
+    - label: Shot 2 Image
+      name: shot_2_image
+      widget: image
+      required: false
+    - label: Shot 2 Alt
+      name: shot_2_alt
+      widget: string
+      required: false
+    - label: Shot 2 Caption
+      name: shot_2_caption
+      widget: string
+      required: false
+    - label: Shot 3 Image
+      name: shot_3_image
+      widget: image
+      required: false
+    - label: Shot 3 Alt
+      name: shot_3_alt
+      widget: string
+      required: false
+    - label: Shot 3 Caption
+      name: shot_3_caption
+      widget: string
+      required: false
+    - label: Shot 4 Image
+      name: shot_4_image
+      widget: image
+      required: false
+    - label: Shot 4 Alt
+      name: shot_4_alt
+      widget: string
+      required: false
+    - label: Shot 4 Caption
+      name: shot_4_caption
+      widget: string
+      required: false
+    - label: Shot 5 Image
+      name: shot_5_image
+      widget: image
+      required: false
+    - label: Shot 5 Alt
+      name: shot_5_alt
+      widget: string
+      required: false
+    - label: Shot 5 Caption
+      name: shot_5_caption
+      widget: string
+      required: false
+    - label: Shot 6 Image
+      name: shot_6_image
+      widget: image
+      required: false
+    - label: Shot 6 Alt
+      name: shot_6_alt
+      widget: string
+      required: false
+    - label: Shot 6 Caption
+      name: shot_6_caption
+      widget: string
+      required: false
+    - label: Quote Text
+      name: quote_text
+      widget: text
+      required: false
+    - label: Gear Title
+      name: gear_title
+      widget: string
+      required: false
+    - label: Gear Line 1
+      name: gear_line_1
+      widget: string
+      required: false
+    - label: Gear Line 2
+      name: gear_line_2
+      widget: string
+      required: false
+    - label: Gear Line 3
+      name: gear_line_3
+      widget: string
+      required: false
+    - label: Previous Project Link
+      name: prev_project_href
+      widget: string
+      required: false
+    - label: Previous Project Label
+      name: prev_project_label
+      widget: string
+      required: false
+    - label: Next Project Link
+      name: next_project_href
+      widget: string
+      required: false
+    - label: Next Project Label
+      name: next_project_label
+      widget: string
+      required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Shooting Cocktails Page
+    name: shooting_cocktails
+    file: content/pages/shooting-cocktails.json
+    fields:
+    - label: Hero Title Line 1
+      name: hero_title_line_1
+      widget: string
+      required: false
+    - label: Hero Title Line 2
+      name: hero_title_line_2
+      widget: string
+      required: false
+    - label: Hero Description
+      name: hero_description
+      widget: text
+      required: false
+    - label: Hero Tag 1
+      name: hero_tag_1
+      widget: string
+      required: false
+    - label: Hero Tag 2
+      name: hero_tag_2
+      widget: string
+      required: false
+    - label: Hero Client Label
+      name: hero_client_label
+      widget: string
+      required: false
+    - label: Hero Client Value
+      name: hero_client_value
+      widget: string
+      required: false
+    - label: Back To Projects Label
+      name: back_to_projects_label
+      widget: string
+      required: false
+    - label: Back To Projects Link
+      name: back_to_projects_href
+      widget: string
+      required: false
+    - label: Hero Main Image
+      name: hero_main_image
+      widget: image
+      required: false
+    - label: Hero Main Image Alt
+      name: hero_main_image_alt
+      widget: string
+      required: false
+    - label: Hero Polaroid Image
+      name: hero_polaroid_image
+      widget: image
+      required: false
+    - label: Hero Polaroid Alt
+      name: hero_polaroid_alt
+      widget: string
+      required: false
+    - label: Hero Polaroid Caption
+      name: hero_polaroid_caption
+      widget: string
+      required: false
+    - label: Hero Accent Image
+      name: hero_accent_image
+      widget: image
+      required: false
+    - label: Hero Accent Alt
+      name: hero_accent_alt
+      widget: string
+      required: false
+    - label: Hero Pop Label
+      name: hero_pop_label
+      widget: string
+      required: false
+    - label: Collection Title
+      name: collection_title
+      widget: string
+      required: false
+    - label: Collection Scroll Left Label
+      name: collection_scroll_left_label
+      widget: string
+      required: false
+    - label: Collection Scroll Right Label
+      name: collection_scroll_right_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Title
+      name: collection_lightbox_title
+      widget: string
+      required: false
+    - label: Collection Lightbox Close Label
+      name: collection_lightbox_close_label
+      widget: string
+      required: false
+    - label: Collection Lightbox Fallback Alt
+      name: collection_lightbox_fallback_alt
+      widget: string
+      required: false
+    - label: Collection Items
+      name: collection_items
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      summary: "{{fields.title}}"
+      fields:
+      - label: Item Title
+        name: title
+        widget: string
+        required: false
+      - label: Item Index Label
+        name: index_label
+        widget: string
+        required: false
+      - label: Item Image
+        name: image
+        widget: image
+        required: false
+      - label: Item Image Alt
+        name: alt
+        widget: string
+        required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Coming Soon Page
+    name: coming_soon
+    file: content/pages/coming-soon.json
+    fields:
+    - label: Window Label
+      name: window_label
+      widget: string
+      required: false
+    - label: Loading Title
+      name: loading_title
+      widget: string
+      required: false
+    - label: Progress Badge Text
+      name: progress_badge_text
+      widget: string
+      required: false
+    - label: Loading Description
+      name: loading_description
+      widget: text
+      required: false
+    - label: Back To Home Label
+      name: back_home_label
+      widget: string
+      required: false
+    - label: Back To Home Link
+      name: back_home_href
+      widget: string
+      required: false
+    - label: Back To Home Link Preset
+      name: back_home_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Explore Projects Label
+      name: explore_projects_label
+      widget: string
+      required: false
+    - label: Explore Projects Link
+      name: explore_projects_href
+      widget: string
+      required: false
+    - label: Explore Projects Link Preset
+      name: explore_projects_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Video Page V2
+    name: video_v2
+    file: content/pages/video-v2.json
+    fields:
+    - label: "🎬 HERO SECTION"
+      name: hero_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Label/Badge
+        name: hero_label
+        widget: string
+        required: false
+      - label: Years
+        name: hero_years
+        widget: string
+        required: false
+      - label: Main Title
+        name: hero_title_main
+        widget: string
+        required: false
+      - label: Highlight Word
+        name: hero_title_highlight
+        widget: string
+        required: false
+      - label: Role
+        name: hero_role
+        widget: string
+        required: false
+      - label: Meta
+        name: hero_meta
+        widget: string
+        required: false
+      - label: Hero Sticker Badge
+        name: hero_badge
+        widget: string
+        required: false
+      - label: Hero Image
+        name: hero_image
+        widget: image
+        required: false
+      - label: Media Type
+        name: hero_media_type
+        widget: select
+        required: false
+        options:
+        - label: Image
+          value: image
+        - label: Video
+          value: video
+        - label: Embed
+          value: embed
+      - label: Media URL (YouTube/Vimeo/video/image)
+        name: hero_media_url
+        widget: string
+        required: false
+      - label: Media Upload (image or video file)
+        name: hero_media_upload
+        widget: file
+        required: false
+      - label: Timecode
+        name: hero_timecode
+        widget: string
+        required: false
+
+    - label: "📋 INTRODUCTION"
+      name: intro_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Title
+        name: intro_title
+        widget: string
+        required: false
+      - label: Description
+        name: intro_text
+        widget: text
+        required: false
+
+    - label: "📊 SIDEBAR DETAILS"
+      name: specs_section
+      widget: object
+      collapsed: true
+      fields:
+      - label: Role Label
+        name: spec_position_label
+        widget: string
+        required: false
+      - label: Role Value
+        name: spec_position_value
+        widget: string
+        required: false
+      - label: Deliverables Label
+        name: spec_deliverables_label
+        widget: string
+        required: false
+      - label: Deliverable 1
+        name: spec_deliverable_1
+        widget: string
+        required: false
+      - label: Deliverable 2
+        name: spec_deliverable_2
+        widget: string
+        required: false
+      - label: Deliverable 3
+        name: spec_deliverable_3
+        widget: string
+        required: false
+      - label: Deliverable 4
+        name: spec_deliverable_4
+        widget: string
+        required: false
+      - label: Tools Label
+        name: spec_tools_label
+        widget: string
+        required: false
+      - label: Tools Value
+        name: spec_tools_value
+        widget: string
+        required: false
+      - label: Side Note
+        name: spec_more_videos_label
+        widget: string
+        required: false
+
+    - label: Projects
+      name: projects
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      summary: "{{fields.badge}}"
+      fields:
+      - label: Badge
+        name: badge
+        widget: string
+        required: false
+      - label: Media Type
+        name: media_type
+        widget: select
+        required: false
+        options:
+        - label: Image
+          value: image
+        - label: Video
+          value: video
+        - label: Embed
+          value: embed
+      - label: Media URL (YouTube/Vimeo/video/image)
+        name: media_url
+        widget: string
+        required: false
+      - label: Media Upload (image or video file)
+        name: media_upload
+        widget: file
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Meta Line
+        name: meta
+        widget: string
+        required: false
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+      - label: Award Note
+        name: award_note
+        widget: string
+        required: false
+
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Override Type
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Value
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+
+    - label: "🔍 SEO"
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: App Page V1
+    name: app_v1
+    file: content/pages/app-v1.json
+    fields:
+    - label: Phase Label
+      name: hero_phase
+      widget: string
+      required: false
+    - label: Hero Line 1
+      name: hero_title_main_line1
+      widget: string
+      required: false
+    - label: Hero Accent
+      name: hero_title_accent
+      widget: string
+      required: false
+    - label: Hero Intro
+      name: hero_intro
+      widget: text
+      required: false
+    - label: Hero Note
+      name: hero_note
+      widget: string
+      required: false
+    - label: Left Phone Image (background)
+      name: hero_image_left
+      widget: image
+      required: false
+    - label: Right Phone Image
+      name: hero_image_right
+      widget: image
+      required: false
+    - label: Center Phone Image
+      name: hero_image_center
+      widget: image
+      required: false
+    - label: Phase 2 Line 1
+      name: phase2_title_main
+      widget: string
+      required: false
+    - label: Phase 2 Accent
+      name: phase2_title_accent
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: App Page V2
+    name: app_v2
+    file: content/pages/app-v2.json
+    fields:
+    - label: Phase Label
+      name: hero_phase
+      widget: string
+      required: false
+    - label: Hero Line 1
+      name: hero_title_main_line1
+      widget: string
+      required: false
+    - label: Hero Accent
+      name: hero_title_accent
+      widget: string
+      required: false
+    - label: Hero Intro
+      name: hero_intro
+      widget: text
+      required: false
+    - label: Insight 1 Title
+      name: insight_1_title
+      widget: string
+      required: false
+    - label: Insight 1 Text
+      name: insight_1_text
+      widget: text
+      required: false
+    - label: Insight 2 Title
+      name: insight_2_title
+      widget: string
+      required: false
+    - label: Insight 2 Text
+      name: insight_2_text
+      widget: text
+      required: false
+    - label: Insight 3 Title
+      name: insight_3_title
+      widget: string
+      required: false
+    - label: Insight 3 Text
+      name: insight_3_text
+      widget: text
+      required: false
+    - label: Hero Note
+      name: hero_note
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Graphics Page
+    name: graphics
+    file: content/pages/graphics.json
+    fields:
+    - label: Campaign Title
+      name: campaign_title
+      widget: string
+      required: false
+    - label: Campaign Text
+      name: campaign_text
+      widget: text
+      required: false
+    - label: Polaroid Caption
+      name: polaroid_caption
+      widget: string
+      required: false
+    - label: Polaroid Image
+      name: hero_image_polaroid
+      widget: image
+      required: false
+    - label: Detail Image
+      name: hero_image_detail
+      widget: image
+      required: false
+    - label: Wide Image
+      name: hero_image_wide
+      widget: image
+      required: false
+    - label: Wide Image Overlay Text
+      name: wide_image_overlay_text
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Social Media Page
+    name: socialmedia_portfolio
+    file: content/pages/socialmedia-portfolio.json
+    fields:
+    - label: Main Title
+      name: hero_title
+      widget: string
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: Technical Section Title
+      name: technical_title
+      widget: string
+      required: false
+    - label: Technical Text
+      name: technical_text
+      widget: text
+      required: false
+    - label: Technical Badge 1
+      name: technical_badge_1
+      widget: string
+      required: false
+    - label: Technical Badge 2
+      name: technical_badge_2
+      widget: string
+      required: false
+    - label: Technical Badge 3
+      name: technical_badge_3
+      widget: string
+      required: false
+    - label: Phone Note 1 (HTML)
+      name: phone_note_1_html
+      widget: text
+      required: false
+    - label: Phone Note 2 (HTML)
+      name: phone_note_2_html
+      widget: text
+      required: false
+    - label: Phone Note 3 (HTML)
+      name: phone_note_3_html
+      widget: text
+      required: false
+    - label: Phone Note 4 (HTML)
+      name: phone_note_4_html
+      widget: text
+      required: false
+    - label: Instagram Profile URL
+      name: instagram_profile_url
+      widget: string
+      required: false
+    - label: Watch More Text
+      name: watch_more_text
+      widget: string
+      required: false
+    - label: Phones
+      name: phones
+      widget: list
+      fields:
+      - label: Video File (MP4/WebM)
+        name: phone_video_url
+        widget: file
+        required: false
+      - label: Caption
+        name: phone_caption
+        widget: string
+        required: false
+      required: false
+      allow_add: true
+      allow_delete: true
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target Position (Preset)
+        name: target_selector
+        widget: select
+        options:
+        - label: Phone 1 Media
+          value: "#socialmedia-portfolio-phone-1-media"
+        - label: Phone 2 Media
+          value: "#socialmedia-portfolio-phone-2-media"
+        - label: Phone 3 Media
+          value: "#socialmedia-portfolio-phone-3-media"
+        - label: Phone 4 Media
+          value: "#socialmedia-portfolio-phone-4-media"
+        - label: Main Content Container
+          value: ".w-full.md\\:w-7\\/12"
+        required: false
+      - label: Target CSS Selector (Custom, optional)
+        name: target_selector_custom
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Homepage
+    name: homepage
+    file: content/pages/homepage.json
+    fields:
+    - label: Hero Line 1
+      name: hero_line_1
+      widget: string
+      required: false
+    - label: Hero Line 2 Prefix
+      name: hero_line_2_prefix
+      widget: string
+      required: false
+    - label: Hero Highlight Word
+      name: hero_word_highlight
+      widget: string
+      required: false
+    - label: Showreel Label
+      name: showreel_label
+      widget: string
+      required: false
+    - label: Showreel Embed URL (Vimeo)
+      name: showreel_embed_url
+      widget: string
+      required: false
+    - label: Showreel Iframe Title
+      name: showreel_title
+      widget: string
+      required: false
+    - label: Featured Title
+      name: featured_title
+      widget: string
+      required: false
+    - label: Featured Subtitle
+      name: featured_subtitle
+      widget: string
+      required: false
+    - label: Featured TV
+      name: featured_tv
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Polaroid
+      name: featured_polaroid
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Caption
+        name: caption
+        widget: string
+        required: false
+      required: false
+    - label: Featured Torn Card
+      name: featured_torn
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Grill
+      name: featured_grill
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Window
+      name: featured_window
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Window Title
+        name: window_title
+        widget: string
+        required: false
+      - label: Window Button Text
+        name: window_button
+        widget: string
+        required: false
+      required: false
+    - label: Featured DNA
+      name: featured_dna
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Round
+      name: featured_round
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Featured Card
+      name: featured_card
+      widget: object
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      required: false
+    - label: Teaser Text (HTML Allowed)
+      name: teaser_text_html
+      widget: text
+      required: false
+    - label: Teaser Link Text
+      name: teaser_link_text
+      widget: string
+      required: false
+    - label: Teaser Link URL
+      name: teaser_link_href
+      widget: string
+      required: false
+    - label: Marquee Text
+      name: marquee_text
+      widget: text
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: About Page
+    name: about
+    file: content/pages/about.json
+    fields:
+    - label: Hero Line 1
+      name: hero_title_line1
+      widget: string
+      required: false
+    - label: Hero Highlight Text
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Intro Paragraph 1 (HTML Allowed)
+      name: intro_paragraph_1_html
+      widget: text
+      required: false
+    - label: Intro Paragraph 2 (HTML Allowed)
+      name: intro_paragraph_2_html
+      widget: text
+      required: false
+    - label: Portrait Image
+      name: portrait_image
+      widget: image
+      required: false
+    - label: Portrait Alt
+      name: portrait_alt
+      widget: string
+      required: false
+    - label: Console Sticker Image
+      name: decor_console_image
+      widget: image
+      required: false
+    - label: Console Sticker Alt
+      name: decor_console_alt
+      widget: string
+      required: false
+    - label: Camera Sticker Image
+      name: decor_camera_image
+      widget: image
+      required: false
+    - label: Camera Sticker Alt
+      name: decor_camera_alt
+      widget: string
+      required: false
+    - label: CTA Text
+      name: cta_text
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: CTA Link Preset
+      name: cta_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: Drink Note
+      name: drink_note
+      widget: string
+      required: false
+    - label: Drink Image
+      name: drink_image
+      widget: image
+      required: false
+    - label: Drink Image Alt
+      name: drink_image_alt
+      widget: string
+      required: false
+    - label: Timeline 1 Years
+      name: timeline_1_years
+      widget: string
+      required: false
+    - label: Timeline 1 Role
+      name: timeline_1_role
+      widget: string
+      required: false
+    - label: Timeline 1 Company
+      name: timeline_1_company
+      widget: string
+      required: false
+    - label: Timeline 1 Description
+      name: timeline_1_description
+      widget: text
+      required: false
+    - label: Timeline 2 Years
+      name: timeline_2_years
+      widget: string
+      required: false
+    - label: Timeline 2 Role
+      name: timeline_2_role
+      widget: string
+      required: false
+    - label: Timeline 2 Company
+      name: timeline_2_company
+      widget: string
+      required: false
+    - label: Timeline 2 Description
+      name: timeline_2_description
+      widget: text
+      required: false
+    - label: Timeline 3 Years
+      name: timeline_3_years
+      widget: string
+      required: false
+    - label: Timeline 3 Role
+      name: timeline_3_role
+      widget: string
+      required: false
+    - label: Timeline 3 Company
+      name: timeline_3_company
+      widget: string
+      required: false
+    - label: Timeline 3 Description
+      name: timeline_3_description
+      widget: text
+      required: false
+    - label: Download CV Text
+      name: download_cv_text
+      widget: string
+      required: false
+    - label: Download CV Link
+      name: download_cv_href
+      widget: string
+      required: false
+    - label: Download CV Link Preset
+      name: download_cv_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: More About Heading
+      name: more_about_heading
+      widget: string
+      required: false
+    - label: More Card 1 Title
+      name: more_card_1_title
+      widget: string
+      required: false
+    - label: More Card 1 Text
+      name: more_card_1_text
+      widget: text
+      required: false
+    - label: More Card 2 Title
+      name: more_card_2_title
+      widget: string
+      required: false
+    - label: More Card 2 Text
+      name: more_card_2_text
+      widget: text
+      required: false
+    - label: More Card 3 Title
+      name: more_card_3_title
+      widget: string
+      required: false
+    - label: More Card 3 Text
+      name: more_card_3_text
+      widget: text
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Portfolio Main Page
+    name: portfolio_main
+    file: content/pages/portfolio-main.json
+    fields:
+    - label: Heading Line 1
+      name: heading_line1
+      widget: string
+      required: false
+    - label: Heading Line 2
+      name: heading_line2
+      widget: string
+      required: false
+    - label: Intro Text (HTML Allowed)
+      name: intro_text_html
+      widget: text
+      required: false
+    - label: Portfolio Gallery (Drag to Reorder)
+      name: gallery
+      widget: list
+      collapsed: false
+      fields:
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Badge
+        name: badge
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Meta
+        name: meta
+        widget: string
+        required: false
+      required: false
+      allow_add: true
+      allow_delete: true
+    - label: More Projects Link
+      name: more_projects_href
+      widget: string
+      required: false
+    - label: More Projects Link Preset
+      name: more_projects_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
+    - label: More Projects Title
+      name: more_projects_title
+      widget: string
+      required: false
+    - label: More Projects Meta
+      name: more_projects_meta
+      widget: string
+      required: false
+    - label: Dynamic Media Blocks
+      name: media_blocks
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: true
+      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+      fields:
+      - label: Target CSS Selector
+        name: target_selector
+        widget: string
+        required: false
+      - label: Action
+        name: action
+        widget: select
+        required: false
+        options:
+        - append
+        - prepend
+        - replace
+        - remove
+      - label: Media Type
+        name: media_kind
+        widget: select
+        required: false
+        options:
+        - image
+        - video
+        - embed
+      - label: Image Upload
+        name: media_upload_image
+        widget: image
+        required: false
+      - label: Video Upload
+        name: media_upload_video
+        widget: file
+        required: false
+      - label: Media URL (image/video/embed)
+        name: media_url
+        widget: string
+        required: false
+      - label: Embed HTML (YouTube iframe etc.)
+        name: embed_html
+        widget: text
+        required: false
+      - label: Alt Text
+        name: alt_text
+        widget: string
+        required: false
+      - label: Link URL (optional wrapper)
+        name: link_url
+        widget: string
+        required: false
+      - label: Caption HTML
+        name: caption_html
+        widget: text
+        required: false
+      - label: Custom CSS Classes
+        name: class_name
+        widget: string
+        required: false
+    - label: Advanced Overrides
+      name: selector_overrides
+      widget: list
+      required: false
+      summary: "{{fields.selector}} -> {{fields.type}}"
+      fields:
+      - label: CSS Selector
+        name: selector
+        widget: string
+        required: false
+      - label: Tipo Modifica
+        name: type
+        widget: select
+        options:
+        - text
+        - html
+        - src
+        - href
+        - alt
+        - bg
+        - append_html
+        - prepend_html
+        - remove
+        required: false
+      - label: Valore
+        name: value
+        widget: text
+        required: false
+      allow_add: true
+      allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      required: false
+  - label: Contact Page
+    name: contact
+    file: content/pages/contact.json
+    fields:
+    - label: "🔍 SEO"
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+- name: project_pages_entries
+  label: Project Pages / Entries
+  description: Create new project pages from existing templates
+  folder: content/pages/entries
+  create: true
+  identifier_field: entry_title
+  summary: "{{entry_title}} -> /pages/{{slug}}/index.html"
+  slug: "{{slug}}"
+  extension: json
+  format: json
+  fields:
+  - label: Entry Title
+    name: entry_title
+    widget: string
+    required: true
+    hint: "Name shown in CMS list for this page"
+  - label: Slug
+    name: slug
+    widget: string
+    required: true
+    hint: "URL segment (example: video-v3 => /pages/video-v3/index.html)"
+  - label: Template Selection
+    name: template_selection
+    widget: select
+    required: false
+    options:
+    - label: Video Template (content/templates/video-template.json)
+      value: video
+    - label: Graphics Template (content/templates/graphics-template.json)
+      value: graphics
+    - label: App Template (content/templates/app-template.json)
+      value: app
+    - label: Photography Template (content/templates/photography-template.json)
+      value: photography
+  - label: Template Source Path
+    name: template_source_path
+    widget: string
+    required: false
+    default: content/templates/video-template.json
+    hint: Optional manual override; leave default to use selected template path
+  - label: Hero / Intro Basic Content
+    name: basic_content
+    widget: object
+    required: false
+    fields:
+    - label: Hero Label
+      name: hero_label
+      widget: string
+      required: false
+    - label: Hero Years
+      name: hero_years
+      widget: string
+      required: false
+    - label: Hero Title Main
+      name: hero_title_main
+      widget: string
+      required: false
+    - label: Hero Title Highlight
+      name: hero_title_highlight
+      widget: string
+      required: false
+    - label: Intro Title
+      name: intro_title
+      widget: string
+      required: false
+    - label: Intro Text
+      name: intro_text
+      widget: text
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+  - label: Dynamic Media Blocks
+    name: media_blocks
+    widget: list
+    required: false
+    allow_add: true
+    allow_delete: true
+    collapsed: true
+    summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
+    fields:
+    - label: Target CSS Selector
+      name: target_selector
+      widget: string
+      required: false
+    - label: Action
+      name: action
+      widget: select
+      required: false
+      options:
+      - append
+      - prepend
+      - replace
+      - remove
+    - label: Media Type
+      name: media_kind
+      widget: select
+      required: false
+      options:
+      - image
+      - video
+      - embed
+    - label: Image Upload
+      name: media_upload_image
+      widget: image
+      required: false
+    - label: Video Upload
+      name: media_upload_video
+      widget: file
+      required: false
+    - label: Media URL (image/video/embed)
+      name: media_url
+      widget: string
+      required: false
+    - label: Embed HTML
+      name: embed_html
+      widget: text
+      required: false
+    - label: Alt Text
+      name: alt_text
+      widget: string
+      required: false
+    - label: Link URL
+      name: link_url
+      widget: string
+      required: false
+    - label: Caption HTML
+      name: caption_html
+      widget: text
+      required: false
+    - label: Custom CSS Classes
+      name: class_name
+      widget: string
+      required: false
+  - label: Advanced Overrides
+    name: selector_overrides
+    widget: list
+    required: false
+    allow_add: true
+    allow_delete: true
+    summary: "{{fields.selector}} -> {{fields.type}}"
+    fields:
+    - label: CSS Selector
+      name: selector
+      widget: string
+      required: false
+    - label: Type
+      name: type
+      widget: select
+      required: false
+      options:
+      - text
+      - html
+      - src
+      - href
+      - alt
+      - bg
+      - append_html
+      - prepend_html
+      - remove
+    - label: Value
+      name: value
+      widget: text
+      required: false
+  - label: SEO Settings
+    name: seo
+    widget: object
+    required: false
+    fields:
+    - label: Page Title
+      name: seo_title
+      widget: string
+      required: false
+    - label: Meta Description
+      name: seo_description
+      widget: text
+      required: false
+    - label: Preview Image
+      name: seo_image
+      widget: image
+      required: false
