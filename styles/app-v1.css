@@ -5,11 +5,11 @@
             background-image: radial-gradient(#13ecec 1px, transparent 1px);
             background-size: 20px 20px;
         }
-        .scribble-underline {
+        [data-cms-page="app-v1"] .scribble-underline {
             position: relative;
             display: inline-block;
         }
-        .scribble-underline::after {
+        [data-cms-page="app-v1"] .scribble-underline::after {
             content: '';
             position: absolute;
             left: 0;

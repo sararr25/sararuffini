@@ -1,13 +1,10 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
-import { SiteFooter, SiteNav } from "./SiteChrome";
-
-const CHROME_MARKER_RE = /<!--NEXT_CHROME_(NAV|FOOTER)-->/g;
 
 export default function LegacyPage({ page }) {
   const rootRef = useRef(null);
-  const parts = useMemo(() => splitChrome(page.html), [page.html]);
+  const scripts = useMemo(() => page.scripts, [page.scripts]);
 
   useEffect(() => {
     const previousClass = document.body.className;
@@ -31,7 +28,7 @@ export default function LegacyPage({ page }) {
     const appendedScripts = [];
 
     async function runScripts() {
-      for (const script of page.scripts) {
+      for (const script of scripts) {
         if (cancelled) {
           return;
         }
@@ -46,47 +43,22 @@ export default function LegacyPage({ page }) {
       cancelled = true;
       appendedScripts.forEach((script) => script.remove());
     };
-  }, [page.route, page.scripts]);
+  }, [page.route, scripts]);
 
   return (
-    <div className={page.bodyClass} data-cms-page={page.pageKey} ref={rootRef} suppressHydrationWarning>
+    <div
+      className={page.bodyClass}
+      data-cms-page={page.pageKey}
+      ref={rootRef}
+      style={{ display: "contents" }}
+      suppressHydrationWarning
+    >
       {page.inlineStyles.map((style, index) => (
         <style dangerouslySetInnerHTML={{ __html: style }} key={index} />
       ))}
-      {parts.map((part, index) => {
-        if (part.type === "nav") {
-          return <SiteNav key={`${index}-nav`} pageKey={page.pageKey} />;
-        }
-
-        if (part.type === "footer") {
-          return <SiteFooter key={`${index}-footer`} />;
-        }
-
-        return <div dangerouslySetInnerHTML={{ __html: part.html }} key={`${index}-html`} />;
-      })}
+      <div dangerouslySetInnerHTML={{ __html: page.html }} />
     </div>
   );
-}
-
-function splitChrome(html) {
-  const parts = [];
-  let lastIndex = 0;
-  let match;
-
-  while ((match = CHROME_MARKER_RE.exec(html))) {
-    if (match.index > lastIndex) {
-      parts.push({ type: "html", html: html.slice(lastIndex, match.index) });
-    }
-
-    parts.push({ type: match[1].toLowerCase() });
-    lastIndex = match.index + match[0].length;
-  }
-
-  if (lastIndex < html.length) {
-    parts.push({ type: "html", html: html.slice(lastIndex) });
-  }
-
-  return parts.filter((part) => part.type !== "html" || part.html.trim());
 }
 
 function appendScript(script, appendedScripts) {

@@ -1,8 +1,8 @@
-        .scribble-underline {
+        [data-cms-page="app-v2"] .scribble-underline {
             position: relative;
             display: inline-block;
         }
-        .scribble-underline::after {
+        [data-cms-page="app-v2"] .scribble-underline::after {
             content: '';
             position: absolute;
             left: 0;

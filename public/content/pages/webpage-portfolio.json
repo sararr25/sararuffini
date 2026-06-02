@@ -1,0 +1,70 @@
+{
+  "project_title": "Neon Vibes",
+  "project_summary": "A vibrant, high-energy e-commerce platform designed for a custom neon sign workshop. The goal was to translate the physical buzz of neon tubes into a digital retail experience.",
+  "meta_chips": [
+    {
+      "icon": "calendar_month",
+      "label": "2024"
+    },
+    {
+      "icon": "category",
+      "label": "E-Commerce"
+    },
+    {
+      "icon": "code",
+      "label": "Web Design"
+    }
+  ],
+  "hero_browser_label": "neon-vibes.shop",
+  "hero_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
+  "hero_image_alt": "Neon sign storefront hero shot",
+  "kit_title": "The Kit",
+  "typography_heading": "Typography",
+  "typography_primary_label": "Headings",
+  "typography_primary_name": "Epilogue",
+  "typography_primary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
+  "typography_secondary_label": "Body",
+  "typography_secondary_name": "Be Vietnam Pro",
+  "typography_secondary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
+  "colors_heading": "Colors",
+  "color_swatches": [
+    {
+      "label": "Teal Pop",
+      "value": "#00ffd1"
+    },
+    {
+      "label": "Orange Zap",
+      "value": "#fc8a40"
+    },
+    {
+      "label": "Paper White",
+      "value": "#ffffff"
+    },
+    {
+      "label": "Ink Black",
+      "value": "#1b1b1b"
+    }
+  ],
+  "experience_title": "Digital Experience",
+  "site_views": [
+    {
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAuZRm45M_VFHSNWAoYp968tC03nb4HApYILT_MNM6qYmTx9oePI1QzVv059Eh83bsr-5ZECnZyXCr-dNuVFIEYAnPKvtp8xrSInEHlPfotBgy68jslQqSDgie-c3eNLyRAClDkLLkhBfUuIR-KIfPJN-PwjvNUsiuafYuxUiIpm1XWnwnCUhWNCOZX8JzESnSJWQ1habf13doVw_ZsRMz7pyG5beQ-D1r3OO4Vk8CpBBY35tWpVyvEot4L9swVLKX4aw4aieLztxGl",
+      "alt": "Neo-brutalist music website mockup"
+    },
+    {
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAl6Q93oxvchNsXaLpZCtYX3f9llKu6_rhSweu7rdgC0RXcRcuYmm65KEivdcDtulUJ5ljs1OtxC0o128qFvTng8EieO_aklAKqcQxBtiSwLVvPBjC8mF6GWLLzPKW7z3Olx1MVAoyI0cSMVeLc4B9UAEcm6vDbG_6lpuBUZ4MCcZoRI7h26PVXt1NV3rpk9GWPy23YFkxVuatPS7fdQNOrAC0kU3TmswUAzq0PNt13KjHABPEXCB71yWuFEHWzNdLDElN3GqDsNo3h",
+      "alt": "Creative agency about page mockup"
+    },
+    {
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBHwtK2jQozpj2Eo4U_OHzOY0FPQSHPCpjwsNZtcs5qalXDjYJzJceqmzdbGxscbBZOSXVUN_wdiRKn8KJ0k_1YRJ6cyRGRlLNLJANLEGdMWte9y8j-atDwu3gHzta_Y-n_5kcW1MxG4CtpCGM780CGPItDdnYNO9FYYAhNOOFG3lY-dZx641TgGMA9yUQVxpIWbgpt9wvTy4WhSxCZktLMjcnFKBjiNV6JYUd0tvzGOgxyuEd4MxWRhnNFhjCV5-UXy1Qg75YYzfyf",
+      "alt": "Portfolio homepage hero mockup"
+    }
+  ],
+  "cta_label": "See Website Live",
+  "cta_href": "#",
+  "seo": {
+    "seo_title": "Webpage Portfolio - Sara Ruffini",
+    "seo_description": "A retro-pop web design case study by Sara Ruffini.",
+    "seo_image": "/assets/webpage-portfolio/animated_web_showcase_hybrid_editorial/screen.png"
+  }
+}

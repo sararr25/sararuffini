@@ -5,11 +5,11 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        .scribble-underline {
+        [data-cms-page="socialmedia-portfolio"] .scribble-underline {
             position: relative;
             display: inline-block;
         }
-        .scribble-underline::after {
+        [data-cms-page="socialmedia-portfolio"] .scribble-underline::after {
             content: "";
             position: absolute;
             left: 0;

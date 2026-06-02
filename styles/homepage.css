@@ -24,6 +24,10 @@
             font-weight: 600;
             letter-spacing: 0.015em;
         }
+        .homepage-hero-line-two {
+            display: inline-block;
+            white-space: nowrap;
+        }
         .featured-canvas {
             position: relative;
             width: 100%;

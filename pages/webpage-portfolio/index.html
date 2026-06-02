@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Webpage Portfolio - Sara Ruffini</title>
+  <style>
+    .webpage-portfolio-page {
+      --color-on-error-container: #93000a;
+      --color-on-error: #ffffff;
+      --color-surface: #f9f9f9;
+      --color-on-secondary-fixed-variant: #763300;
+      --color-inverse-on-surface: #f1f1f1;
+      --color-error-container: #ffdad6;
+      --color-surface-container-high: #e8e8e8;
+      --color-secondary: #9b4500;
+      --color-on-background: #1b1b1b;
+      --color-secondary-fixed-dim: #ffb68d;
+      --color-secondary-fixed: #ffdbc9;
+      --color-surface-variant: #e2e2e2;
+      --color-surface-container-low: #f3f3f3;
+      --color-on-primary-fixed-variant: #005141;
+      --color-on-secondary-fixed: #331200;
+      --color-on-tertiary-fixed-variant: #474744;
+      --color-on-secondary-container: #672c00;
+      --color-surface-container-highest: #e2e2e2;
+      --color-surface-bright: #f9f9f9;
+      --color-on-tertiary-fixed: #1b1c1a;
+      --color-on-primary: #ffffff;
+      --color-surface-container: #eeeeee;
+      --color-primary: #006b57;
+      --color-on-surface: #1b1b1b;
+      --color-primary-fixed: #15ffd1;
+      --color-on-tertiary: #ffffff;
+      --color-primary-fixed-dim: #00e0b7;
+      --color-tertiary: #5e5e5c;
+      --color-secondary-container: #fc8a40;
+      --color-inverse-primary: #00e0b7;
+      --color-surface-tint: #006b57;
+      --color-outline-variant: #b9cbc3;
+      --color-on-secondary: #ffffff;
+      --color-primary-container: #00ffd1;
+      --color-on-primary-container: #00725c;
+      --color-surface-container-lowest: #ffffff;
+      --color-on-surface-variant: #3a4a44;
+      --color-on-primary-fixed: #002019;
+      --color-background: #f9f9f9;
+      --color-tertiary-fixed-dim: #c8c6c3;
+      --color-surface-dim: #dadada;
+      --color-tertiary-container: #e4e2de;
+      --color-outline: #6a7b74;
+      --color-error: #ba1a1a;
+      --color-inverse-surface: #303030;
+      --color-on-tertiary-container: #646461;
+      --color-tertiary-fixed: #e4e2de;
+      --font-h1: "Epilogue", sans-serif;
+      --font-h2: "Epilogue", sans-serif;
+      --font-h3: "Epilogue", sans-serif;
+      --font-body-md: "Be Vietnam Pro", sans-serif;
+      --font-body-lg: "Be Vietnam Pro", sans-serif;
+      --font-label-bold: "Space Grotesk", sans-serif;
+      background: var(--color-background);
+    }
+
+    .neo-shadow {
+      box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+    }
+
+    .neo-shadow-lg {
+      box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    }
+
+    .neo-border {
+      border: 3px solid #1b1b1b;
+    }
+
+    .neo-border-thick {
+      border: 4px solid #1b1b1b;
+    }
+
+    .sticker-rotate-1 {
+      transform: rotate(1deg);
+    }
+
+    .sticker-rotate-minus-1 {
+      transform: rotate(-1deg);
+    }
+
+    .sticker-rotate-2 {
+      transform: rotate(2deg);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .slide-in-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .slide-in-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .slide-in-right.visible,
+      .slide-in-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .float {
+        animation: webpage-float 6s ease-in-out infinite;
+      }
+
+      .float-delayed {
+        animation: webpage-float 6s ease-in-out infinite 2s;
+      }
+
+      .pulse-hover:hover {
+        animation: webpage-pulse 1.5s infinite;
+      }
+
+      @keyframes webpage-float {
+        0% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
+        50% { transform: translateY(-10px) rotate(var(--rotation, 0deg)); }
+        100% { transform: translateY(0px) rotate(var(--rotation, 0deg)); }
+      }
+
+      @keyframes webpage-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 255, 209, 0.4), 8px 12px 0px 0px #1b1b1b; }
+        70% { box-shadow: 0 0 0 10px rgba(0, 255, 209, 0), 8px 12px 0px 0px #1b1b1b; }
+        100% { box-shadow: 0 0 0 0 rgba(0, 255, 209, 0), 8px 12px 0px 0px #1b1b1b; }
+      }
+    }
+
+    #cursor-glow {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,255,209,0.15) 0%, rgba(0,255,209,0) 70%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s;
+      mix-blend-mode: multiply;
+    }
+
+    @media (max-width: 767px) {
+      .webpage-portfolio-page .text-h1 {
+        font-size: clamp(3rem, 18vw, 5.25rem);
+      }
+
+      .webpage-portfolio-page .text-h2 {
+        font-size: clamp(2.25rem, 12vw, 3rem);
+      }
+
+      .webpage-portfolio-page .digital-windows {
+        height: 700px;
+      }
+
+      .webpage-portfolio-page .digital-window {
+        left: 5% !important;
+        right: auto !important;
+        width: 90% !important;
+      }
+
+      .webpage-portfolio-page .digital-window:nth-child(1) {
+        top: 0;
+      }
+
+      .webpage-portfolio-page .digital-window:nth-child(2) {
+        top: 150px;
+      }
+
+      .webpage-portfolio-page .digital-window:nth-child(3) {
+        top: 300px;
+      }
+    }
+  </style>
+</head>
+<body class="webpage-portfolio-page bg-background text-on-surface font-body-md min-h-screen flex flex-col relative overflow-x-hidden" data-cms-page="webpage-portfolio">
+  <div id="cursor-glow"></div>
+  <nav class="shared-site-nav" data-shared-chrome="nav"></nav>
+
+  <main class="flex-grow z-20 relative">
+    <section class="px-margin py-xl max-w-7xl mx-auto overflow-hidden">
+      <div class="flex flex-col gap-lg items-center text-center mb-xl">
+        <div class="relative inline-block fade-up">
+          <h1 class="font-h1 text-h1 text-on-surface" data-cms-text="project_title">Neon Vibes</h1>
+          <svg class="absolute -bottom-4 -right-8 w-24 h-12 text-secondary-container" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4" viewBox="0 0 100 50" aria-hidden="true">
+            <path d="M5,25 Q25,5 50,25 T95,25"></path>
+          </svg>
+        </div>
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl fade-up" data-cms-text="project_summary" style="transition-delay: 0.2s;">
+          A vibrant, high-energy e-commerce platform designed for a custom neon sign workshop. The goal was to translate the physical buzz of neon tubes into a digital retail experience.
+        </p>
+        <div class="flex flex-wrap justify-center gap-sm mt-md fade-up" style="transition-delay: 0.4s;">
+          <div class="bg-surface-container neo-border rounded-full px-4 py-2 font-label-bold text-label-bold flex items-center gap-xs">
+            <span class="material-symbols-outlined text-primary" data-cms-text="meta_chips[0].icon">calendar_month</span>
+            <span data-cms-text="meta_chips[0].label">2024</span>
+          </div>
+          <div class="bg-surface-container neo-border rounded-full px-4 py-2 font-label-bold text-label-bold flex items-center gap-xs">
+            <span class="material-symbols-outlined text-secondary-container" data-cms-text="meta_chips[1].icon">category</span>
+            <span data-cms-text="meta_chips[1].label">E-Commerce</span>
+          </div>
+          <div class="bg-surface-container neo-border rounded-full px-4 py-2 font-label-bold text-label-bold flex items-center gap-xs">
+            <span class="material-symbols-outlined text-primary" data-cms-text="meta_chips[2].icon">code</span>
+            <span data-cms-text="meta_chips[2].label">Web Design</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative w-full max-w-5xl mx-auto aspect-video sticker-rotate-minus-1 fade-up" style="transition-delay: 0.6s;">
+        <div class="absolute inset-0 bg-primary-container neo-border-thick rounded-lg neo-shadow-lg flex flex-col overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:translate-x-2 hover:rotate-1">
+          <div class="bg-surface-container-highest border-b-4 border-on-surface p-2 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-primary-container neo-border"></div>
+            <div class="flex-grow ml-4 bg-surface neo-border rounded px-2 py-1 font-label-bold text-label-bold text-xs text-center text-on-surface-variant" data-cms-text="hero_browser_label">
+              neon-vibes.shop
+            </div>
+          </div>
+          <div class="flex-grow relative bg-surface">
+            <img alt="Neon sign glowing in the dark" class="w-full h-full object-cover" data-cms-src="hero_image" data-cms-alt="hero_image_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6"/>
+          </div>
+        </div>
+        <svg class="absolute -top-8 -right-8 w-16 h-16 text-primary sticker-rotate-2" fill="currentColor" stroke="#1b1b1b" stroke-width="4" viewBox="0 0 100 100" aria-hidden="true">
+          <polygon points="50,5 61,35 95,35 67,55 78,85 50,65 22,85 33,55 5,35 39,35"></polygon>
+        </svg>
+      </div>
+    </section>
+
+    <section class="px-margin py-xl bg-surface-container-low border-y-[3px] border-on-surface relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center gap-sm mb-lg fade-up observer-target">
+          <h2 class="font-h2 text-h2 text-on-surface" data-cms-text="kit_title">The Kit</h2>
+          <span class="material-symbols-outlined text-h2 text-secondary-container">palette</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+          <div class="bg-surface neo-border-thick rounded-lg p-md neo-shadow relative group fade-up observer-target transition-all duration-300 hover:-translate-y-2 hover:-rotate-1 hover:shadow-[12px_12px_0px_0px_#1b1b1b]" style="transition-delay: 0.1s;">
+            <h3 class="font-h3 text-h3 mb-md border-b-2 border-on-surface pb-2" data-cms-text="typography_heading">Typography</h3>
+            <div class="space-y-md">
+              <div>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_primary_label">Headings</p>
+                <p class="font-h1 text-h1 truncate" data-cms-text="typography_primary_name">Epilogue</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_primary_sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+              </div>
+              <div>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_secondary_label">Body</p>
+                <p class="font-body-lg text-body-lg text-2xl font-bold truncate" data-cms-text="typography_secondary_name">Be Vietnam Pro</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_secondary_sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface neo-border-thick rounded-lg p-md neo-shadow fade-up observer-target transition-all duration-300 hover:-translate-y-2 hover:rotate-1 hover:shadow-[12px_12px_0px_0px_#1b1b1b]" style="transition-delay: 0.3s;">
+            <h3 class="font-h3 text-h3 mb-md border-b-2 border-on-surface pb-2" data-cms-text="colors_heading">Colors</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-sm">
+              <div class="flex flex-col gap-xs items-center group/color">
+                <div class="w-full aspect-square bg-primary-container neo-border rounded-lg neo-shadow transition-transform duration-300 group-hover/color:scale-110 group-hover/color:-translate-y-1 relative" data-cms-bg="color_swatches[0].value">
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/color:opacity-100 transition-opacity duration-300 font-label-bold bg-black/50 text-white rounded-md text-xs" data-cms-text="color_swatches[0].value">#00ffd1</div>
+                </div>
+                <span class="font-label-bold text-label-bold text-xs mt-2 transition-colors duration-300 group-hover/color:text-primary" data-cms-text="color_swatches[0].label">Teal Pop</span>
+              </div>
+              <div class="flex flex-col gap-xs items-center group/color">
+                <div class="w-full aspect-square bg-secondary-container neo-border rounded-lg neo-shadow transition-transform duration-300 group-hover/color:scale-110 group-hover/color:-translate-y-1 relative" data-cms-bg="color_swatches[1].value">
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/color:opacity-100 transition-opacity duration-300 font-label-bold bg-black/50 text-white rounded-md text-xs" data-cms-text="color_swatches[1].value">#fc8a40</div>
+                </div>
+                <span class="font-label-bold text-label-bold text-xs mt-2 transition-colors duration-300 group-hover/color:text-secondary-container" data-cms-text="color_swatches[1].label">Orange Zap</span>
+              </div>
+              <div class="flex flex-col gap-xs items-center group/color">
+                <div class="w-full aspect-square neo-border rounded-lg neo-shadow transition-transform duration-300 group-hover/color:scale-110 group-hover/color:-translate-y-1 relative" data-cms-bg="color_swatches[2].value" style="background-color: #ffffff;">
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/color:opacity-100 transition-opacity duration-300 font-label-bold bg-black/50 text-white rounded-md text-xs" data-cms-text="color_swatches[2].value">#ffffff</div>
+                </div>
+                <span class="font-label-bold text-label-bold text-xs mt-2 transition-colors duration-300" data-cms-text="color_swatches[2].label">Paper White</span>
+              </div>
+              <div class="flex flex-col gap-xs items-center group/color">
+                <div class="w-full aspect-square bg-on-surface neo-border rounded-lg neo-shadow transition-transform duration-300 group-hover/color:scale-110 group-hover/color:-translate-y-1 relative" data-cms-bg="color_swatches[3].value">
+                  <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/color:opacity-100 transition-opacity duration-300 font-label-bold bg-white/50 text-black rounded-md text-xs" data-cms-text="color_swatches[3].value">#1b1b1b</div>
+                </div>
+                <span class="font-label-bold text-label-bold text-xs mt-2 transition-colors duration-300" data-cms-text="color_swatches[3].label">Ink Black</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-xl relative pt-lg overflow-hidden" id="live-site">
+      <h2 class="font-h2 text-h2 text-on-surface mb-lg text-center fade-up observer-target" data-cms-text="experience_title">Digital Experience</h2>
+      <div class="digital-windows relative h-[600px] w-full max-w-5xl mx-auto">
+        <div class="digital-window absolute top-0 left-0 w-3/4 h-[400px] bg-surface-container-lowest rounded-lg neo-border-thick neo-shadow-lg overflow-hidden -rotate-2 transform transition-transform duration-500 hover:z-30 hover:scale-[1.05] hover:rotate-0 slide-in-left observer-target float" style="--rotation: -2deg;">
+          <div class="h-8 bg-surface-container border-b-[3px] border-on-surface flex items-center px-2 gap-2">
+            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-primary neo-border"></div>
+          </div>
+          <img alt="Site View 1" class="w-full h-full object-cover" data-cms-src="site_views[0].image" data-cms-alt="site_views[0].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuZRm45M_VFHSNWAoYp968tC03nb4HApYILT_MNM6qYmTx9oePI1QzVv059Eh83bsr-5ZECnZyXCr-dNuVFIEYAnPKvtp8xrSInEHlPfotBgy68jslQqSDgie-c3eNLyRAClDkLLkhBfUuIR-KIfPJN-PwjvNUsiuafYuxUiIpm1XWnwnCUhWNCOZX8JzESnSJWQ1habf13doVw_ZsRMz7pyG5beQ-D1r3OO4Vk8CpBBY35tWpVyvEot4L9swVLKX4aw4aieLztxGl"/>
+        </div>
+        <div class="digital-window absolute top-20 right-0 w-3/4 h-[400px] bg-surface-container-lowest rounded-lg neo-border-thick neo-shadow-lg overflow-hidden rotate-2 transform transition-transform duration-500 hover:z-30 hover:scale-[1.05] hover:rotate-0 slide-in-right observer-target float-delayed" style="--rotation: 2deg;">
+          <div class="h-8 bg-surface-container border-b-[3px] border-on-surface flex items-center px-2 gap-2">
+            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-primary neo-border"></div>
+          </div>
+          <img alt="Site View 2" class="w-full h-full object-cover" data-cms-src="site_views[1].image" data-cms-alt="site_views[1].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6Q93oxvchNsXaLpZCtYX3f9llKu6_rhSweu7rdgC0RXcRcuYmm65KEivdcDtulUJ5ljs1OtxC0o128qFvTng8EieO_aklAKqcQxBtiSwLVvPBjC8mF6GWLLzPKW7z3Olx1MVAoyI0cSMVeLc4B9UAEcm6vDbG_6lpuBUZ4MCcZoRI7h26PVXt1NV3rpk9GWPy23YFkxVuatPS7fdQNOrAC0kU3TmswUAzq0PNt13KjHABPEXCB71yWuFEHWzNdLDElN3GqDsNo3h"/>
+        </div>
+        <div class="digital-window absolute top-40 left-[12.5%] w-3/4 h-[450px] bg-surface-container-lowest rounded-lg neo-border-thick neo-shadow-lg overflow-hidden z-20 transform transition-transform duration-500 hover:scale-[1.05] hover:z-40 fade-up observer-target float" style="transition-delay: 0.2s;">
+          <div class="h-8 bg-surface-container border-b-[3px] border-on-surface flex items-center px-2 gap-2">
+            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
+            <div class="w-3 h-3 rounded-full bg-primary neo-border"></div>
+          </div>
+          <img alt="Site View Main" class="w-full h-full object-cover" data-cms-src="site_views[2].image" data-cms-alt="site_views[2].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHwtK2jQozpj2Eo4U_OHzOY0FPQSHPCpjwsNZtcs5qalXDjYJzJceqmzdbGxscbBZOSXVUN_wdiRKn8KJ0k_1YRJ6cyRGRlLNLJANLEGdMWte9y8j-atDwu3gHzta_Y-n_5kcW1MxG4CtpCGM780CGPItDdnYNO9FYYAhNOOFG3lY-dZx641TgGMA9yUQVxpIWbgpt9wvTy4WhSxCZktLMjcnFKBjiNV6JYUd0tvzGOgxyuEd4MxWRhnNFhjCV5-UXy1Qg75YYzfyf"/>
+        </div>
+      </div>
+      <div class="flex justify-center mt-xl mb-xl fade-up observer-target">
+        <a class="inline-flex items-center gap-2 bg-primary-container text-on-surface font-h3 text-h3 py-md px-xl rounded-full neo-border-thick neo-shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-[8px_12px_0px_0px_#1b1b1b] pulse-hover" data-cms-href="cta_href" href="#">
+          <span data-cms-text="cta_label">See Website Live</span>
+          <span class="material-symbols-outlined text-4xl">arrow_outward</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shared-site-footer" data-shared-chrome="footer"></footer>
+
+  <script src="../../scripts/cms-page-loader.js"></script>
+  <script>
+    (function () {
+      function initializeWebpagePortfolio() {
+        var initialElements = document.querySelectorAll('.fade-up:not(.observer-target)');
+        setTimeout(function () {
+          initialElements.forEach(function (el) {
+            el.classList.add('visible');
+          });
+        }, 100);
+
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function (entries, instance) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                instance.unobserve(entry.target);
+              }
+            });
+          }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+          });
+
+          document.querySelectorAll('.observer-target').forEach(function (el) {
+            observer.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.observer-target').forEach(function (el) {
+            el.classList.add('visible');
+          });
+        }
+
+        var cursorGlow = document.getElementById('cursor-glow');
+        if (!cursorGlow) {
+          return;
+        }
+
+        var isMouseMoving = false;
+        var mouseTimeout;
+
+        document.addEventListener('mousemove', function (event) {
+          cursorGlow.style.left = event.clientX + 'px';
+          cursorGlow.style.top = event.clientY + 'px';
+
+          if (!isMouseMoving) {
+            cursorGlow.style.opacity = '1';
+            isMouseMoving = true;
+          }
+
+          clearTimeout(mouseTimeout);
+          mouseTimeout = setTimeout(function () {
+            cursorGlow.style.opacity = '0';
+            isMouseMoving = false;
+          }, 1000);
+        });
+
+        document.addEventListener('mouseleave', function () {
+          cursorGlow.style.opacity = '0';
+          isMouseMoving = false;
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeWebpagePortfolio);
+      } else {
+        initializeWebpagePortfolio();
+      }
+    })();
+  </script>
+</body>
+</html>

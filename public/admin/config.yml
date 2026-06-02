@@ -62,6 +62,8 @@ collections:
         value: /pages/shooting-cocktails/index.html
       - label: Neon Vibes Web Project
         value: /pages/neon-vibes-web/index.html
+      - label: Webpage Portfolio
+        value: /pages/webpage-portfolio/index.html
       - label: Coming Soon
         value: /pages/coming-soon/index.html
     - label: Nav - Home
@@ -1248,6 +1250,147 @@ collections:
       name: cta_href
       widget: string
       required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+  - label: Webpage Portfolio
+    name: webpage_portfolio
+    file: content/pages/webpage-portfolio.json
+    fields:
+    - label: Project Title
+      name: project_title
+      widget: string
+      required: false
+    - label: Project Summary
+      name: project_summary
+      widget: text
+      required: false
+    - label: Metadata Chips
+      name: meta_chips
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      collapsed: false
+      fields:
+      - label: Icon
+        name: icon
+        widget: string
+        required: false
+        hint: Material Symbols icon name, e.g. calendar_month
+      - label: Label
+        name: label
+        widget: string
+        required: false
+    - label: Browser Label
+      name: hero_browser_label
+      widget: string
+      required: false
+    - label: Hero Image
+      name: hero_image
+      widget: image
+      required: false
+    - label: Hero Image Alt
+      name: hero_image_alt
+      widget: string
+      required: false
+    - label: Kit Title
+      name: kit_title
+      widget: string
+      required: false
+    - label: Typography Heading
+      name: typography_heading
+      widget: string
+      required: false
+    - label: Typography Primary Label
+      name: typography_primary_label
+      widget: string
+      required: false
+    - label: Typography Primary Name
+      name: typography_primary_name
+      widget: string
+      required: false
+    - label: Typography Primary Sample
+      name: typography_primary_sample
+      widget: string
+      required: false
+    - label: Typography Secondary Label
+      name: typography_secondary_label
+      widget: string
+      required: false
+    - label: Typography Secondary Name
+      name: typography_secondary_name
+      widget: string
+      required: false
+    - label: Typography Secondary Sample
+      name: typography_secondary_sample
+      widget: string
+      required: false
+    - label: Colors Heading
+      name: colors_heading
+      widget: string
+      required: false
+    - label: Color Swatches
+      name: color_swatches
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Color Value
+        name: value
+        widget: color
+        required: false
+    - label: Experience Title
+      name: experience_title
+      widget: string
+      required: false
+    - label: Site Views
+      name: site_views
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+    - label: CTA Label
+      name: cta_label
+      widget: string
+      required: false
+    - label: CTA Link
+      name: cta_href
+      widget: string
+      required: false
+    - label: CTA Link Preset
+      name: cta_href_page
+      widget: select
+      required: false
+      options: *internal_page_options
     - label: SEO
       name: seo
       widget: object

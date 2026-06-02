@@ -1,4 +1,4 @@
-:root {
+[data-cms-page="workspace"] {
   --bg: #f5efe3;
   --card: #ffffff;
   --ink: #121212;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-body {
+[data-cms-page="workspace"] {
   margin: 0;
   font-family: "Inter", "Segoe UI", sans-serif;
   color: var(--ink);
@@ -20,19 +20,19 @@ body {
     var(--bg);
 }
 
-.workspace {
+[data-cms-page="workspace"] .workspace {
   max-width: 1160px;
   margin: 0 auto;
   padding: 40px 20px 56px;
 }
 
-.workspace-header h1 {
+[data-cms-page="workspace"] .workspace-header h1 {
   margin: 0;
   font-size: clamp(2rem, 5.5vw, 3.5rem);
   line-height: 1.02;
 }
 
-.eyebrow {
+[data-cms-page="workspace"] .eyebrow {
   margin: 0 0 8px;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
@@ -40,20 +40,20 @@ body {
   font-weight: 700;
 }
 
-.subtitle {
+[data-cms-page="workspace"] .subtitle {
   margin: 12px 0 0;
   font-size: 1rem;
   max-width: 70ch;
 }
 
-.page-grid {
+[data-cms-page="workspace"] .page-grid {
   margin-top: 28px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
 }
 
-.page-card {
+[data-cms-page="workspace"] .page-card {
   display: block;
   text-decoration: none;
   color: inherit;
@@ -64,19 +64,19 @@ body {
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.page-card:hover {
+[data-cms-page="workspace"] .page-card:hover {
   transform: translate(2px, 2px);
   box-shadow: 4px 4px 0 var(--line);
 }
 
-.page-card img {
+[data-cms-page="workspace"] .page-card img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
 }
 
-.page-card span {
+[data-cms-page="workspace"] .page-card span {
   display: block;
   padding: 10px 12px;
   font-weight: 700;
@@ -84,7 +84,7 @@ body {
 }
 
 @media (max-width: 640px) {
-  .workspace {
+  [data-cms-page="workspace"] .workspace {
     padding-top: 28px;
   }
 }
