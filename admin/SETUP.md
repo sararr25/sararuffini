@@ -27,8 +27,8 @@ backend:
 - Edit project page content from the visual forms
 
 ## 4) Where content is saved
-- JSON files: `content/pages/*.json`
-- Uploaded media: `assets/media/`
+- JSON files: `public/content/pages/*.json`
+- Uploaded media: `public/assets/media/`
 
 ## References
 - Decap docs: https://decapcms.org/docs/intro/

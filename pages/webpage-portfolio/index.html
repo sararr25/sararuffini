@@ -59,18 +59,12 @@
       --font-body-md: "Be Vietnam Pro", sans-serif;
       --font-body-lg: "Be Vietnam Pro", sans-serif;
       --font-label-bold: "Space Grotesk", sans-serif;
-      --typography-primary-label-font: "Space Grotesk", sans-serif;
-      --typography-primary-label-size: 14px;
-      --typography-primary-name-font: "Epilogue", sans-serif;
-      --typography-primary-name-size: 84px;
-      --typography-primary-sample-font: "Epilogue", sans-serif;
-      --typography-primary-sample-size: 18px;
-      --typography-secondary-label-font: "Space Grotesk", sans-serif;
-      --typography-secondary-label-size: 14px;
-      --typography-secondary-name-font: "Be Vietnam Pro", sans-serif;
-      --typography-secondary-name-size: 24px;
-      --typography-secondary-sample-font: "Be Vietnam Pro", sans-serif;
-      --typography-secondary-sample-size: 16px;
+      --typography-display-font: "Sora", sans-serif;
+      --typography-display-size: 42px;
+      --typography-headings-font: "Hanken Grotesk", sans-serif;
+      --typography-headings-size: 42px;
+      --typography-body-font: "Inter", sans-serif;
+      --typography-body-size: 24px;
       background: var(--color-background);
     }
 
@@ -283,34 +277,36 @@
       overflow-wrap: anywhere;
     }
 
-    .typography-card [data-typography-style="primary-label"] {
-      font-family: var(--typography-primary-label-font);
-      font-size: var(--typography-primary-label-size);
+    .typography-card [data-typography-style$="-label"] {
+      font-family: var(--font-label-bold);
+      font-size: 0.78rem;
     }
 
-    .typography-card [data-typography-style="primary-name"] {
-      font-family: var(--typography-primary-name-font);
-      font-size: var(--typography-primary-name-size);
+    .typography-card [data-typography-style="display-name"],
+    .typography-card [data-typography-style="display-sample"] {
+      font-family: var(--typography-display-font);
     }
 
-    .typography-card [data-typography-style="primary-sample"] {
-      font-family: var(--typography-primary-sample-font);
-      font-size: var(--typography-primary-sample-size);
+    .typography-card [data-typography-style="display-name"] {
+      font-size: var(--typography-display-size);
     }
 
-    .typography-card [data-typography-style="secondary-label"] {
-      font-family: var(--typography-secondary-label-font);
-      font-size: var(--typography-secondary-label-size);
+    .typography-card [data-typography-style="headings-name"],
+    .typography-card [data-typography-style="headings-sample"] {
+      font-family: var(--typography-headings-font);
     }
 
-    .typography-card [data-typography-style="secondary-name"] {
-      font-family: var(--typography-secondary-name-font);
-      font-size: var(--typography-secondary-name-size);
+    .typography-card [data-typography-style="headings-name"] {
+      font-size: var(--typography-headings-size);
     }
 
-    .typography-card [data-typography-style="secondary-sample"] {
-      font-family: var(--typography-secondary-sample-font);
-      font-size: var(--typography-secondary-sample-size);
+    .typography-card [data-typography-style="body-name"],
+    .typography-card [data-typography-style="body-sample"] {
+      font-family: var(--typography-body-font);
+    }
+
+    .typography-card [data-typography-style="body-name"] {
+      font-size: var(--typography-body-size);
     }
 
     .tech-section {
@@ -528,17 +524,22 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
           <div class="typography-card bg-surface neo-border-thick rounded-lg p-md neo-shadow relative group fade-up observer-target transition-all duration-300 hover:-translate-y-2 hover:-rotate-1 hover:shadow-[12px_12px_0px_0px_#1b1b1b]" style="transition-delay: 0.1s;">
-            <h3 class="font-h3 text-h3 mb-md border-b-2 border-on-surface pb-2" data-cms-text="typography_heading">Typography</h3>
+            <h3 class="font-h3 text-h3 mb-md border-b-2 border-on-surface pb-2" data-cms-text="typography_card.heading">Typography</h3>
             <div class="space-y-md">
               <div>
-                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_primary_label" data-typography-style="primary-label">Headings</p>
-                <p class="font-h1 text-h1 truncate" data-cms-text="typography_primary_name" data-typography-style="primary-name">Epilogue</p>
-                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_primary_sample" data-typography-style="primary-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_card.display.label" data-typography-style="display-label">Display/headings/buttons/nav</p>
+                <p class="font-h1 text-h1 truncate" data-cms-text="typography_card.display.font" data-typography-style="display-name">Sora</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_card.display.sample" data-typography-style="display-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
               </div>
               <div>
-                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_secondary_label" data-typography-style="secondary-label">Body</p>
-                <p class="font-body-lg text-body-lg text-2xl font-bold truncate" data-cms-text="typography_secondary_name" data-typography-style="secondary-name">Be Vietnam Pro</p>
-                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_secondary_sample" data-typography-style="secondary-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_card.headings.label" data-typography-style="headings-label">Headings</p>
+                <p class="font-h1 text-h1 truncate" data-cms-text="typography_card.headings.font" data-typography-style="headings-name">Hanken Grotesk</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_card.headings.sample" data-typography-style="headings-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+              </div>
+              <div>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_card.body.label" data-typography-style="body-label">Body</p>
+                <p class="font-body-lg text-body-lg text-2xl font-bold truncate" data-cms-text="typography_card.body.font" data-typography-style="body-name">Inter</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_card.body.sample" data-typography-style="body-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
               </div>
             </div>
           </div>
@@ -776,27 +777,31 @@
         }
 
         var root = document.body || document.documentElement;
+        function getNested(path, fallbackKey) {
+          var value = path.split('.').reduce(function (acc, key) {
+            return acc && typeof acc === 'object' ? acc[key] : undefined;
+          }, data);
+          if (typeof value !== 'undefined') {
+            return value;
+          }
+          return fallbackKey ? data[fallbackKey] : undefined;
+        }
+
         var fields = [
-          ['--typography-primary-label-font', 'typography_primary_label_font', formatFontFamily, '"Space Grotesk", sans-serif'],
-          ['--typography-primary-label-size', 'typography_primary_label_size', formatFontSize, '14px'],
-          ['--typography-primary-name-font', 'typography_primary_name_font', formatFontFamily, '"Epilogue", sans-serif'],
-          ['--typography-primary-name-size', 'typography_primary_name_size', formatFontSize, '84px'],
-          ['--typography-primary-sample-font', 'typography_primary_sample_font', formatFontFamily, '"Epilogue", sans-serif'],
-          ['--typography-primary-sample-size', 'typography_primary_sample_size', formatFontSize, '18px'],
-          ['--typography-secondary-label-font', 'typography_secondary_label_font', formatFontFamily, '"Space Grotesk", sans-serif'],
-          ['--typography-secondary-label-size', 'typography_secondary_label_size', formatFontSize, '14px'],
-          ['--typography-secondary-name-font', 'typography_secondary_name_font', formatFontFamily, '"Be Vietnam Pro", sans-serif'],
-          ['--typography-secondary-name-size', 'typography_secondary_name_size', formatFontSize, '24px'],
-          ['--typography-secondary-sample-font', 'typography_secondary_sample_font', formatFontFamily, '"Be Vietnam Pro", sans-serif'],
-          ['--typography-secondary-sample-size', 'typography_secondary_sample_size', formatFontSize, '16px']
+          ['--typography-display-font', getNested('typography_card.display.font'), formatFontFamily, '"Sora", sans-serif'],
+          ['--typography-display-size', getNested('typography_card.display.size'), formatFontSize, '42px'],
+          ['--typography-headings-font', getNested('typography_card.headings.font', 'typography_primary_name_font'), formatFontFamily, '"Hanken Grotesk", sans-serif'],
+          ['--typography-headings-size', getNested('typography_card.headings.size', 'typography_primary_name_size'), formatFontSize, '42px'],
+          ['--typography-body-font', getNested('typography_card.body.font', 'typography_secondary_name_font'), formatFontFamily, '"Inter", sans-serif'],
+          ['--typography-body-size', getNested('typography_card.body.size', 'typography_secondary_name_size'), formatFontSize, '24px']
         ];
 
         fields.forEach(function (entry) {
           var cssVar = entry[0];
-          var key = entry[1];
+          var value = entry[1];
           var formatter = entry[2];
           var fallback = entry[3];
-          root.style.setProperty(cssVar, formatter(data[key], fallback));
+          root.style.setProperty(cssVar, formatter(value, fallback));
         });
       }
 

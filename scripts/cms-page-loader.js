@@ -102,7 +102,7 @@
     var pageSeo = allData && allData.seo ? allData.seo : {};
     var title = pageSeo.seo_title || allData.seo_title || globalSeoData.site_title || document.title;
     var description = pageSeo.seo_description || allData.seo_description || globalSeoData.site_description || '';
-    var image = pageSeo.seo_image || allData.seo_image || globalSeoData.default_og_image || '';
+    var image = stripImageCrop(pageSeo.seo_image || allData.seo_image || globalSeoData.default_og_image || '');
     var twitterHandle = globalSeoData.twitter_handle || '';
 
     if (typeof title === 'string' && title.trim()) {
@@ -138,6 +138,44 @@
         applyValue(node, value);
       }
     });
+  }
+
+  function parseImageCrop(rawUrl) {
+    if (typeof rawUrl !== 'string') {
+      return null;
+    }
+
+    var match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:&.*)?$/);
+    if (!match) {
+      return null;
+    }
+
+    var x = Math.max(0, Math.min(100, Number(match[1])));
+    var y = Math.max(0, Math.min(100, Number(match[2])));
+    return { x: x, y: y };
+  }
+
+  function stripImageCrop(rawUrl) {
+    if (typeof rawUrl !== 'string') {
+      return rawUrl;
+    }
+
+    return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
+  }
+
+  function applyImageCrop(node, rawUrl) {
+    var crop = parseImageCrop(rawUrl);
+    if (!crop) {
+      return;
+    }
+
+    var position = crop.x + '% ' + crop.y + '%';
+    if (node.tagName === 'IMG' || node.tagName === 'VIDEO') {
+      node.style.objectPosition = position;
+    } else {
+      node.style.backgroundPosition = position;
+      node.style.backgroundSize = 'cover';
+    }
   }
 
   function normalizeReelUrl(rawUrl) {
@@ -311,7 +349,8 @@
         }
 
         if (type === 'src') {
-          node.setAttribute('src', value);
+          node.setAttribute('src', stripImageCrop(value));
+          applyImageCrop(node, value);
           return;
         }
 
@@ -326,7 +365,8 @@
         }
 
         if (type === 'bg') {
-          node.style.backgroundImage = 'url("' + value.replace(/"/g, '\\"') + '")';
+          node.style.backgroundImage = 'url("' + stripImageCrop(value).replace(/"/g, '\\"') + '")';
+          applyImageCrop(node, value);
           return;
         }
 
@@ -377,7 +417,8 @@
       }
 
       mediaNode = document.createElement('img');
-      mediaNode.setAttribute('src', imageSrc);
+      mediaNode.setAttribute('src', stripImageCrop(imageSrc));
+      applyImageCrop(mediaNode, imageSrc);
       mediaNode.setAttribute('loading', 'lazy');
       if (altText) {
         mediaNode.setAttribute('alt', altText);
@@ -647,7 +688,8 @@
     });
 
     applyByAttribute(allData, 'data-cms-src', function (node, value) {
-      node.setAttribute('src', value);
+      node.setAttribute('src', stripImageCrop(value));
+      applyImageCrop(node, value);
     });
 
     applyByAttribute(allData, 'data-cms-reel-src', function (node, value) {
@@ -659,7 +701,8 @@
     });
 
     applyByAttribute(allData, 'data-cms-bg', function (node, value) {
-      node.style.backgroundImage = 'url("' + value.replace(/"/g, '\\"') + '")';
+      node.style.backgroundImage = 'url("' + stripImageCrop(value).replace(/"/g, '\\"') + '")';
+      applyImageCrop(node, value);
     });
 
     applyByAttribute(allData, 'data-cms-href', function (node, value) {

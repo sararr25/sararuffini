@@ -18,6 +18,34 @@
     return path.split('.').reduce((curr, prop) => curr?.[prop], obj);
   }
 
+  function parseImageCrop(rawUrl) {
+    if (typeof rawUrl !== 'string') return null;
+    const match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:&.*)?$/);
+    if (!match) return null;
+    return {
+      x: Math.max(0, Math.min(100, Number(match[1]))),
+      y: Math.max(0, Math.min(100, Number(match[2]))),
+    };
+  }
+
+  function stripImageCrop(rawUrl) {
+    if (typeof rawUrl !== 'string') return rawUrl;
+    return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
+  }
+
+  function applyImageCrop(node, rawUrl) {
+    const crop = parseImageCrop(rawUrl);
+    if (!crop) return;
+
+    const position = `${crop.x}% ${crop.y}%`;
+    if (node.tagName === 'IMG' || node.tagName === 'VIDEO') {
+      node.style.objectPosition = position;
+    } else {
+      node.style.backgroundPosition = position;
+      node.style.backgroundSize = 'cover';
+    }
+  }
+
   function resolvePageLinkPresets(target) {
     if (!target || typeof target !== 'object') return;
 
@@ -143,7 +171,8 @@
       const value = getByPath(allData, key);
       if (typeof value === 'string') {
         if (value.trim()) {
-          el.style.backgroundImage = `url('${value.trim()}')`;
+          el.style.backgroundImage = `url('${stripImageCrop(value.trim())}')`;
+          applyImageCrop(el, value);
         } else {
           el.style.backgroundImage = 'none';
         }
@@ -261,7 +290,8 @@
         }
 
         if (type === 'src') {
-          node.setAttribute('src', value);
+          node.setAttribute('src', stripImageCrop(value));
+          applyImageCrop(node, value);
           return;
         }
 
@@ -393,11 +423,13 @@
       } else {
         // Default to image
         if (imageNode) {
+          const imageUrl = stripImageCrop(sourceUrl);
           if (imageNode.tagName === 'IMG') {
-            imageNode.setAttribute('src', sourceUrl);
+            imageNode.setAttribute('src', imageUrl);
           } else {
-            imageNode.style.backgroundImage = `url('${sourceUrl}')`;
+            imageNode.style.backgroundImage = `url('${imageUrl}')`;
           }
+          applyImageCrop(imageNode, sourceUrl);
           imageNode.classList.remove('hidden');
           videoNode?.classList.add('hidden');
           embedNode?.classList.add('hidden');
@@ -442,7 +474,7 @@
     const pageSeo = allData.seo || {};
     const title = pageSeo.seo_title || globalSeoData?.site_title || document.title;
     const description = pageSeo.seo_description || globalSeoData?.site_description || '';
-    const image = pageSeo.seo_image || globalSeoData?.default_og_image || '';
+    const image = stripImageCrop(pageSeo.seo_image || globalSeoData?.default_og_image || '');
 
     if (title) document.title = title;
 

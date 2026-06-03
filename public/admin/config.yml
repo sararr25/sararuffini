@@ -1312,127 +1312,71 @@ collections:
       name: kit_title
       widget: string
       required: false
-    - label: Typography Heading
-      name: typography_heading
-      widget: string
+    - label: Typography Card
+      name: typography_card
+      widget: object
       required: false
-    - label: Typography Primary Label
-      name: typography_primary_label
-      widget: string
-      required: false
-    - label: Typography Primary Label Font
-      name: typography_primary_label_font
-      widget: select
-      required: false
-      options: &webpage_font_options
-      - Epilogue
-      - Be Vietnam Pro
-      - Space Grotesk
-      - Hanken Grotesk
-      - Inter
-      - Arial
-      - DM Sans
-      - Archivo Black
-      - Anton
-      - Spline Sans
-      - Instrument Serif
-      - Permanent Marker
-      - Reenie Beanie
-      - Rock Salt
-      - Architects Daughter
-    - label: Typography Primary Label Size (px)
-      name: typography_primary_label_size
-      widget: number
-      value_type: int
-      min: 8
-      max: 96
-      step: 1
-      required: false
-    - label: Typography Primary Name
-      name: typography_primary_name
-      widget: string
-      required: false
-    - label: Typography Primary Name Font
-      name: typography_primary_name_font
-      widget: select
-      required: false
-      options: *webpage_font_options
-    - label: Typography Primary Name Size (px)
-      name: typography_primary_name_size
-      widget: number
-      value_type: int
-      min: 8
-      max: 140
-      step: 1
-      required: false
-    - label: Typography Primary Sample
-      name: typography_primary_sample
-      widget: string
-      required: false
-    - label: Typography Primary Sample Font
-      name: typography_primary_sample_font
-      widget: select
-      required: false
-      options: *webpage_font_options
-    - label: Typography Primary Sample Size (px)
-      name: typography_primary_sample_size
-      widget: number
-      value_type: int
-      min: 8
-      max: 96
-      step: 1
-      required: false
-    - label: Typography Secondary Label
-      name: typography_secondary_label
-      widget: string
-      required: false
-    - label: Typography Secondary Label Font
-      name: typography_secondary_label_font
-      widget: select
-      required: false
-      options: *webpage_font_options
-    - label: Typography Secondary Label Size (px)
-      name: typography_secondary_label_size
-      widget: number
-      value_type: int
-      min: 8
-      max: 96
-      step: 1
-      required: false
-    - label: Typography Secondary Name
-      name: typography_secondary_name
-      widget: string
-      required: false
-    - label: Typography Secondary Name Font
-      name: typography_secondary_name_font
-      widget: select
-      required: false
-      options: *webpage_font_options
-    - label: Typography Secondary Name Size (px)
-      name: typography_secondary_name_size
-      widget: number
-      value_type: int
-      min: 8
-      max: 140
-      step: 1
-      required: false
-    - label: Typography Secondary Sample
-      name: typography_secondary_sample
-      widget: string
-      required: false
-    - label: Typography Secondary Sample Font
-      name: typography_secondary_sample_font
-      widget: select
-      required: false
-      options: *webpage_font_options
-    - label: Typography Secondary Sample Size (px)
-      name: typography_secondary_sample_size
-      widget: number
-      value_type: int
-      min: 8
-      max: 96
-      step: 1
-      required: false
+      collapsed: false
+      fields:
+      - label: Card Title
+        name: heading
+        widget: string
+        required: false
+      - label: Display / Headings / Buttons / Nav
+        name: display
+        widget: object
+        required: false
+        collapsed: false
+        fields: &webpage_typography_row_fields
+        - label: Row Label
+          name: label
+          widget: string
+          required: false
+        - label: Font
+          name: font
+          widget: select
+          required: false
+          options: &webpage_font_options
+          - Sora
+          - Hanken Grotesk
+          - Inter
+          - Arial
+          - Epilogue
+          - Be Vietnam Pro
+          - Space Grotesk
+          - DM Sans
+          - Archivo Black
+          - Anton
+          - Spline Sans
+          - Instrument Serif
+          - Permanent Marker
+          - Reenie Beanie
+          - Rock Salt
+          - Architects Daughter
+        - label: Size (px)
+          name: size
+          widget: number
+          value_type: int
+          min: 8
+          max: 140
+          step: 1
+          required: false
+        - label: Sample
+          name: sample
+          widget: string
+          required: false
+      - label: Headings
+        name: headings
+        widget: object
+        required: false
+        collapsed: true
+        fields: *webpage_typography_row_fields
+      - label: Body
+        name: body
+        widget: object
+        required: false
+        collapsed: true
+        fields: *webpage_typography_row_fields
     - label: Colors Heading
       name: colors_heading
       widget: string

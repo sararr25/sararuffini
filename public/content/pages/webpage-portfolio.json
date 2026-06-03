@@ -119,5 +119,26 @@
     "seo_description": "A retro-pop web design case study by Sara Ruffini.",
     "seo_image": ""
   },
-  "tech_flow_5_text": "Interactive map for zones and venues."
+  "tech_flow_5_text": "Interactive map for zones and venues.",
+  "typography_card": {
+    "heading": "Typography",
+    "display": {
+      "label": "Display/headings/buttons/nav",
+      "font": "Sora",
+      "size": 42,
+      "sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789"
+    },
+    "headings": {
+      "label": "Headings",
+      "font": "Hanken Grotesk",
+      "size": 64,
+      "sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789"
+    },
+    "body": {
+      "label": "Body",
+      "font": "Inter",
+      "size": 24,
+      "sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789"
+    }
+  }
 }
