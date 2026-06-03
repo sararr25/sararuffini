@@ -59,6 +59,18 @@
       --font-body-md: "Be Vietnam Pro", sans-serif;
       --font-body-lg: "Be Vietnam Pro", sans-serif;
       --font-label-bold: "Space Grotesk", sans-serif;
+      --typography-primary-label-font: "Space Grotesk", sans-serif;
+      --typography-primary-label-size: 14px;
+      --typography-primary-name-font: "Epilogue", sans-serif;
+      --typography-primary-name-size: 84px;
+      --typography-primary-sample-font: "Epilogue", sans-serif;
+      --typography-primary-sample-size: 18px;
+      --typography-secondary-label-font: "Space Grotesk", sans-serif;
+      --typography-secondary-label-size: 14px;
+      --typography-secondary-name-font: "Be Vietnam Pro", sans-serif;
+      --typography-secondary-name-size: 24px;
+      --typography-secondary-sample-font: "Be Vietnam Pro", sans-serif;
+      --typography-secondary-sample-size: 16px;
       background: var(--color-background);
     }
 
@@ -161,6 +173,218 @@
       mix-blend-mode: multiply;
     }
 
+    .webpage-browser-frame {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-surface-container-lowest);
+      border-radius: 18px;
+      isolation: isolate;
+    }
+
+    .webpage-browser-chrome {
+      flex: 0 0 auto;
+      min-height: 48px;
+      background: var(--color-surface-container-highest);
+      border-bottom: 4px solid var(--color-on-surface);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+    }
+
+    .webpage-browser-dot {
+      width: 12px;
+      height: 12px;
+      flex: 0 0 auto;
+      border-radius: 999px;
+    }
+
+    .webpage-browser-address {
+      min-width: 0;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      background: var(--color-surface);
+      border: 3px solid var(--color-on-surface);
+      border-radius: 9px;
+      padding: 0 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .webpage-browser-viewport {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+      background: #ffc8d8;
+    }
+
+    .webpage-browser-media {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .webpage-hero-browser {
+      border-radius: 22px;
+    }
+
+    .webpage-hero-browser .webpage-browser-chrome {
+      min-height: 58px;
+      padding: 12px 14px;
+    }
+
+    .webpage-hero-browser .webpage-browser-address {
+      height: 34px;
+      font-size: 0.95rem;
+    }
+
+    .webpage-hero-star {
+      filter: drop-shadow(3px 3px 0 #1b1b1b);
+    }
+
+    .digital-browser-window .webpage-browser-chrome {
+      min-height: 32px;
+      padding: 6px 8px;
+      border-bottom-width: 3px;
+    }
+
+    .digital-browser-window .webpage-browser-dot {
+      width: 12px;
+      height: 12px;
+    }
+
+    .typography-card [data-typography-style] {
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    .typography-card [data-typography-style="primary-label"] {
+      font-family: var(--typography-primary-label-font);
+      font-size: var(--typography-primary-label-size);
+    }
+
+    .typography-card [data-typography-style="primary-name"] {
+      font-family: var(--typography-primary-name-font);
+      font-size: var(--typography-primary-name-size);
+    }
+
+    .typography-card [data-typography-style="primary-sample"] {
+      font-family: var(--typography-primary-sample-font);
+      font-size: var(--typography-primary-sample-size);
+    }
+
+    .typography-card [data-typography-style="secondary-label"] {
+      font-family: var(--typography-secondary-label-font);
+      font-size: var(--typography-secondary-label-size);
+    }
+
+    .typography-card [data-typography-style="secondary-name"] {
+      font-family: var(--typography-secondary-name-font);
+      font-size: var(--typography-secondary-name-size);
+    }
+
+    .typography-card [data-typography-style="secondary-sample"] {
+      font-family: var(--typography-secondary-sample-font);
+      font-size: var(--typography-secondary-sample-size);
+    }
+
+    .tech-section {
+      background:
+        linear-gradient(rgba(27, 27, 27, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(27, 27, 27, 0.045) 1px, transparent 1px),
+        var(--color-surface);
+      background-size: 28px 28px;
+    }
+
+    .tech-blueprint-card {
+      background: var(--color-surface-container-lowest);
+      border-radius: 20px;
+    }
+
+    .tech-code-window {
+      background: #171924;
+      color: #f9f9f9;
+      border-radius: 20px;
+    }
+
+    .tech-code-line {
+      display: block;
+      color: #d8d7ff;
+      font-family: "Space Grotesk", monospace;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .tech-code-line strong {
+      color: var(--color-primary-container);
+      font-weight: 800;
+    }
+
+    .tech-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .tech-flow-node {
+      position: relative;
+      min-height: 118px;
+      background: var(--color-surface-container-lowest);
+      border-radius: 14px;
+    }
+
+    .tech-flow-node:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -16px;
+      width: 18px;
+      border-top: 3px dashed var(--color-on-surface);
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      border: 2px solid var(--color-on-surface);
+      border-radius: 999px;
+      padding: 0 12px;
+      background: var(--color-surface-container);
+      box-shadow: 2px 2px 0 #1b1b1b;
+      font-family: var(--font-label-bold);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 900px) {
+      .tech-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-flow-node:not(:last-child)::after {
+        top: auto;
+        right: auto;
+        bottom: -16px;
+        left: 50%;
+        width: 0;
+        height: 18px;
+        border-top: 0;
+        border-left: 3px dashed var(--color-on-surface);
+        transform: translateX(-50%);
+      }
+    }
+
     @media (max-width: 767px) {
       .webpage-portfolio-page .text-h1 {
         font-size: clamp(3rem, 18vw, 5.25rem);
@@ -190,6 +414,22 @@
 
       .webpage-portfolio-page .digital-window:nth-child(3) {
         top: 300px;
+      }
+
+      .webpage-hero-browser .webpage-browser-chrome {
+        min-height: 46px;
+        padding: 8px;
+      }
+
+      .webpage-hero-browser .webpage-browser-address {
+        height: 28px;
+        margin-left: 4px;
+        font-size: 0.75rem;
+      }
+
+      .webpage-browser-dot {
+        width: 10px;
+        height: 10px;
       }
     }
   </style>
@@ -227,20 +467,20 @@
       </div>
 
       <div class="relative w-full max-w-5xl mx-auto aspect-video sticker-rotate-minus-1 fade-up" style="transition-delay: 0.6s;">
-        <div class="absolute inset-0 bg-primary-container neo-border-thick rounded-lg neo-shadow-lg flex flex-col overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:translate-x-2 hover:rotate-1">
-          <div class="bg-surface-container-highest border-b-4 border-on-surface p-2 flex items-center gap-2">
-            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-primary-container neo-border"></div>
-            <div class="flex-grow ml-4 bg-surface neo-border rounded px-2 py-1 font-label-bold text-label-bold text-xs text-center text-on-surface-variant" data-cms-text="hero_browser_label">
+        <div class="webpage-browser-frame webpage-hero-browser absolute inset-0 neo-border-thick neo-shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2 hover:translate-x-2 hover:rotate-1">
+          <div class="webpage-browser-chrome">
+            <div class="webpage-browser-dot bg-error neo-border"></div>
+            <div class="webpage-browser-dot bg-secondary-container neo-border"></div>
+            <div class="webpage-browser-dot bg-primary-container neo-border"></div>
+            <div class="webpage-browser-address flex-grow font-label-bold text-label-bold text-center text-on-surface-variant" data-cms-text="hero_browser_label">
               neon-vibes.shop
             </div>
           </div>
-          <div class="flex-grow relative bg-surface">
-            <img alt="Neon sign glowing in the dark" class="w-full h-full object-cover" data-cms-src="hero_image" data-cms-alt="hero_image_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6"/>
+          <div class="webpage-browser-viewport">
+            <img alt="Neon sign glowing in the dark" class="webpage-browser-media" data-cms-src="hero_image" data-cms-alt="hero_image_alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6"/>
           </div>
         </div>
-        <svg class="absolute -top-8 -right-8 w-16 h-16 text-primary sticker-rotate-2" fill="currentColor" stroke="#1b1b1b" stroke-width="4" viewBox="0 0 100 100" aria-hidden="true">
+        <svg class="webpage-hero-star absolute -top-8 -right-8 w-16 h-16 text-primary sticker-rotate-2" fill="currentColor" stroke="#1b1b1b" stroke-width="4" viewBox="0 0 100 100" aria-hidden="true">
           <polygon points="50,5 61,35 95,35 67,55 78,85 50,65 22,85 33,55 5,35 39,35"></polygon>
         </svg>
       </div>
@@ -253,18 +493,18 @@
           <span class="material-symbols-outlined text-h2 text-secondary-container">palette</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-          <div class="bg-surface neo-border-thick rounded-lg p-md neo-shadow relative group fade-up observer-target transition-all duration-300 hover:-translate-y-2 hover:-rotate-1 hover:shadow-[12px_12px_0px_0px_#1b1b1b]" style="transition-delay: 0.1s;">
+          <div class="typography-card bg-surface neo-border-thick rounded-lg p-md neo-shadow relative group fade-up observer-target transition-all duration-300 hover:-translate-y-2 hover:-rotate-1 hover:shadow-[12px_12px_0px_0px_#1b1b1b]" style="transition-delay: 0.1s;">
             <h3 class="font-h3 text-h3 mb-md border-b-2 border-on-surface pb-2" data-cms-text="typography_heading">Typography</h3>
             <div class="space-y-md">
               <div>
-                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_primary_label">Headings</p>
-                <p class="font-h1 text-h1 truncate" data-cms-text="typography_primary_name">Epilogue</p>
-                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_primary_sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_primary_label" data-typography-style="primary-label">Headings</p>
+                <p class="font-h1 text-h1 truncate" data-cms-text="typography_primary_name" data-typography-style="primary-name">Epilogue</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_primary_sample" data-typography-style="primary-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
               </div>
               <div>
-                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_secondary_label">Body</p>
-                <p class="font-body-lg text-body-lg text-2xl font-bold truncate" data-cms-text="typography_secondary_name">Be Vietnam Pro</p>
-                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_secondary_sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
+                <p class="font-label-bold text-label-bold text-on-surface-variant mb-1 uppercase" data-cms-text="typography_secondary_label" data-typography-style="secondary-label">Body</p>
+                <p class="font-body-lg text-body-lg text-2xl font-bold truncate" data-cms-text="typography_secondary_name" data-typography-style="secondary-name">Be Vietnam Pro</p>
+                <p class="font-body-md text-body-md mt-2" data-cms-text="typography_secondary_sample" data-typography-style="secondary-sample">Aa Bb Cc Dd Ee Ff Gg 0123456789</p>
               </div>
             </div>
           </div>
@@ -302,32 +542,137 @@
       </div>
     </section>
 
+    <section class="tech-section px-margin py-xl border-y-[3px] border-on-surface relative overflow-hidden" id="tech-stack">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-md mb-lg">
+          <div class="fade-up observer-target">
+            <p class="inline-flex items-center gap-2 bg-primary-container neo-border rounded-full px-4 py-2 font-label-bold text-label-bold uppercase neo-shadow mb-md" data-cms-text="tech_kicker">
+              Build Notes
+            </p>
+            <h2 class="font-h2 text-h2 text-on-surface" data-cms-text="tech_title">How I Built It</h2>
+          </div>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl fade-up observer-target" data-cms-text="tech_intro" style="transition-delay: 0.1s;">
+            I used a Python scraper to pull all events from the official site and export them as a CSV, filtered by my own criteria. That data lives in Supabase, which handles the database and API layer. The frontend is built in Next.js and deployed on Vercel via GitHub. The interactive map runs on Leaflet.js. I used AI tools inside VS Code to help with the code, since development isn't my main background.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-lg">
+          <div class="tech-code-window neo-border-thick neo-shadow-lg overflow-hidden fade-up observer-target" style="transition-delay: 0.15s;">
+            <div class="h-10 border-b-[3px] border-black/80 bg-[#11131d] flex items-center gap-2 px-4">
+              <span class="w-3 h-3 rounded-full bg-error neo-border"></span>
+              <span class="w-3 h-3 rounded-full bg-secondary-container neo-border"></span>
+              <span class="w-3 h-3 rounded-full bg-primary-container neo-border"></span>
+              <span class="ml-auto font-label-bold text-xs text-white/50" data-cms-text="tech_code_file">scraper_to_supabase.py</span>
+            </div>
+            <div class="p-md">
+              <p class="font-label-bold text-label-bold uppercase text-primary-container mb-sm" data-cms-text="tech_code_label">Data Prep</p>
+              <span class="tech-code-line" data-cms-html="tech_code_line_1">events = scrape_official_site()</span>
+              <span class="tech-code-line" data-cms-html="tech_code_line_2">filtered = apply_my_criteria(events)</span>
+              <span class="tech-code-line" data-cms-html="tech_code_line_3">csv = export_to_csv(filtered)</span>
+              <span class="tech-code-line" data-cms-html="tech_code_line_4">supabase.table("events").upsert(csv)</span>
+              <span class="tech-code-line" data-cms-html="tech_code_line_5">map = Leaflet(events + saved_likes)</span>
+            </div>
+          </div>
+
+          <div class="tech-blueprint-card neo-border-thick neo-shadow-lg p-md fade-up observer-target" style="transition-delay: 0.25s;">
+            <div class="flex items-center justify-between gap-md mb-md">
+              <h3 class="font-h3 text-h3" data-cms-text="tech_flow_title">Architectural Flow</h3>
+              <span class="material-symbols-outlined text-primary text-4xl">account_tree</span>
+            </div>
+            <div class="tech-flow">
+              <div class="tech-flow-node neo-border p-sm flex flex-col gap-xs">
+                <span class="material-symbols-outlined text-primary text-3xl" data-cms-text="tech_flow_1_icon">travel_explore</span>
+                <h4 class="font-label-bold text-label-bold uppercase" data-cms-text="tech_flow_1_title">Official Site</h4>
+                <p class="font-body-md text-sm text-on-surface-variant" data-cms-text="tech_flow_1_text">Source events and raw programme data.</p>
+              </div>
+              <div class="tech-flow-node neo-border p-sm flex flex-col gap-xs">
+                <span class="material-symbols-outlined text-secondary-container text-3xl" data-cms-text="tech_flow_2_icon">terminal</span>
+                <h4 class="font-label-bold text-label-bold uppercase" data-cms-text="tech_flow_2_title">Python Scraper</h4>
+                <p class="font-body-md text-sm text-on-surface-variant" data-cms-text="tech_flow_2_text">Collect, filter, and export the events as CSV.</p>
+              </div>
+              <div class="tech-flow-node neo-border p-sm flex flex-col gap-xs">
+                <span class="material-symbols-outlined text-primary text-3xl" data-cms-text="tech_flow_3_icon">database</span>
+                <h4 class="font-label-bold text-label-bold uppercase" data-cms-text="tech_flow_3_title">Supabase</h4>
+                <p class="font-body-md text-sm text-on-surface-variant" data-cms-text="tech_flow_3_text">Database plus API layer for the app.</p>
+              </div>
+              <div class="tech-flow-node neo-border p-sm flex flex-col gap-xs">
+                <span class="material-symbols-outlined text-secondary-container text-3xl" data-cms-text="tech_flow_4_icon">web</span>
+                <h4 class="font-label-bold text-label-bold uppercase" data-cms-text="tech_flow_4_title">Next.js UI</h4>
+                <p class="font-body-md text-sm text-on-surface-variant" data-cms-text="tech_flow_4_text">Filters, saved likes, and mobile-first screens.</p>
+              </div>
+              <div class="tech-flow-node neo-border p-sm flex flex-col gap-xs">
+                <span class="material-symbols-outlined text-primary text-3xl" data-cms-text="tech_flow_5_icon">map</span>
+                <h4 class="font-label-bold text-label-bold uppercase" data-cms-text="tech_flow_5_title">Leaflet Map</h4>
+                <p class="font-body-md text-sm text-on-surface-variant" data-cms-text="tech_flow_5_text">Interactive map for zones and venues.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-md mt-lg">
+          <div class="bg-surface-container-lowest neo-border-thick rounded-lg p-md neo-shadow fade-up observer-target" style="transition-delay: 0.1s;">
+            <h3 class="font-h3 text-h3 mb-sm" data-cms-text="tech_frontend_title">Frontend</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-md" data-cms-text="tech_frontend_text">Next.js handles the interface, filtering states, likes, and the mobile-first route structure.</p>
+            <div class="flex flex-wrap gap-xs">
+              <span class="tech-pill" data-cms-text="tech_tag_1">Next.js</span>
+              <span class="tech-pill" data-cms-text="tech_tag_2">Leaflet.js</span>
+              <span class="tech-pill" data-cms-text="tech_tag_3">Vercel</span>
+            </div>
+          </div>
+          <div class="bg-primary-container neo-border-thick rounded-lg p-md neo-shadow fade-up observer-target" style="transition-delay: 0.2s;">
+            <h3 class="font-h3 text-h3 mb-sm" data-cms-text="tech_backend_title">Backend</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-md" data-cms-text="tech_backend_text">Supabase stores the event database and exposes the API layer used by the frontend.</p>
+            <div class="flex flex-wrap gap-xs">
+              <span class="tech-pill bg-surface-container-lowest" data-cms-text="tech_tag_4">Supabase</span>
+              <span class="tech-pill bg-surface-container-lowest" data-cms-text="tech_tag_5">CSV import</span>
+              <span class="tech-pill bg-surface-container-lowest" data-cms-text="tech_tag_6">API</span>
+            </div>
+          </div>
+          <div class="bg-surface-container-lowest neo-border-thick rounded-lg p-md neo-shadow fade-up observer-target" style="transition-delay: 0.3s;">
+            <h3 class="font-h3 text-h3 mb-sm" data-cms-text="tech_tools_title">Workflow</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-md" data-cms-text="tech_tools_text">GitHub connects the code to Vercel deployment, while AI tools inside VS Code helped me move faster through implementation.</p>
+            <div class="flex flex-wrap gap-xs">
+              <span class="tech-pill" data-cms-text="tech_tag_7">GitHub</span>
+              <span class="tech-pill" data-cms-text="tech_tag_8">VS Code</span>
+              <span class="tech-pill" data-cms-text="tech_tag_9">AI-assisted code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-xl relative pt-lg overflow-hidden" id="live-site">
       <h2 class="font-h2 text-h2 text-on-surface mb-lg text-center fade-up observer-target" data-cms-text="experience_title">Digital Experience</h2>
       <div class="digital-windows relative h-[600px] w-full max-w-5xl mx-auto">
-        <div class="digital-window absolute top-0 left-0 w-3/4 h-[400px] bg-surface-container-lowest rounded-lg neo-border-thick neo-shadow-lg overflow-hidden -rotate-2 transform transition-transform duration-500 hover:z-30 hover:scale-[1.05] hover:rotate-0 slide-in-left observer-target float" style="--rotation: -2deg;">
-          <div class="h-8 bg-surface-container border-b-[3px] border-on-surface flex items-center px-2 gap-2">
-            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-primary neo-border"></div>
+        <div class="digital-window digital-browser-window webpage-browser-frame absolute top-0 left-0 w-3/4 h-[400px] neo-border-thick neo-shadow-lg overflow-hidden -rotate-2 transform transition-transform duration-500 hover:z-30 hover:scale-[1.05] hover:rotate-0 slide-in-left observer-target float" style="--rotation: -2deg;">
+          <div class="webpage-browser-chrome">
+            <div class="webpage-browser-dot bg-error neo-border"></div>
+            <div class="webpage-browser-dot bg-secondary-container neo-border"></div>
+            <div class="webpage-browser-dot bg-primary neo-border"></div>
           </div>
-          <img alt="Site View 1" class="w-full h-full object-cover" data-cms-src="site_views[0].image" data-cms-alt="site_views[0].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuZRm45M_VFHSNWAoYp968tC03nb4HApYILT_MNM6qYmTx9oePI1QzVv059Eh83bsr-5ZECnZyXCr-dNuVFIEYAnPKvtp8xrSInEHlPfotBgy68jslQqSDgie-c3eNLyRAClDkLLkhBfUuIR-KIfPJN-PwjvNUsiuafYuxUiIpm1XWnwnCUhWNCOZX8JzESnSJWQ1habf13doVw_ZsRMz7pyG5beQ-D1r3OO4Vk8CpBBY35tWpVyvEot4L9swVLKX4aw4aieLztxGl"/>
+          <div class="webpage-browser-viewport">
+            <img alt="Site View 1" class="webpage-browser-media" data-cms-src="site_views[0].image" data-cms-alt="site_views[0].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuZRm45M_VFHSNWAoYp968tC03nb4HApYILT_MNM6qYmTx9oePI1QzVv059Eh83bsr-5ZECnZyXCr-dNuVFIEYAnPKvtp8xrSInEHlPfotBgy68jslQqSDgie-c3eNLyRAClDkLLkhBfUuIR-KIfPJN-PwjvNUsiuafYuxUiIpm1XWnwnCUhWNCOZX8JzESnSJWQ1habf13doVw_ZsRMz7pyG5beQ-D1r3OO4Vk8CpBBY35tWpVyvEot4L9swVLKX4aw4aieLztxGl"/>
+          </div>
         </div>
-        <div class="digital-window absolute top-20 right-0 w-3/4 h-[400px] bg-surface-container-lowest rounded-lg neo-border-thick neo-shadow-lg overflow-hidden rotate-2 transform transition-transform duration-500 hover:z-30 hover:scale-[1.05] hover:rotate-0 slide-in-right observer-target float-delayed" style="--rotation: 2deg;">
-          <div class="h-8 bg-surface-container border-b-[3px] border-on-surface flex items-center px-2 gap-2">
-            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-primary neo-border"></div>
+        <div class="digital-window digital-browser-window webpage-browser-frame absolute top-20 right-0 w-3/4 h-[400px] neo-border-thick neo-shadow-lg overflow-hidden rotate-2 transform transition-transform duration-500 hover:z-30 hover:scale-[1.05] hover:rotate-0 slide-in-right observer-target float-delayed" style="--rotation: 2deg;">
+          <div class="webpage-browser-chrome">
+            <div class="webpage-browser-dot bg-error neo-border"></div>
+            <div class="webpage-browser-dot bg-secondary-container neo-border"></div>
+            <div class="webpage-browser-dot bg-primary neo-border"></div>
           </div>
-          <img alt="Site View 2" class="w-full h-full object-cover" data-cms-src="site_views[1].image" data-cms-alt="site_views[1].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6Q93oxvchNsXaLpZCtYX3f9llKu6_rhSweu7rdgC0RXcRcuYmm65KEivdcDtulUJ5ljs1OtxC0o128qFvTng8EieO_aklAKqcQxBtiSwLVvPBjC8mF6GWLLzPKW7z3Olx1MVAoyI0cSMVeLc4B9UAEcm6vDbG_6lpuBUZ4MCcZoRI7h26PVXt1NV3rpk9GWPy23YFkxVuatPS7fdQNOrAC0kU3TmswUAzq0PNt13KjHABPEXCB71yWuFEHWzNdLDElN3GqDsNo3h"/>
+          <div class="webpage-browser-viewport">
+            <img alt="Site View 2" class="webpage-browser-media" data-cms-src="site_views[1].image" data-cms-alt="site_views[1].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl6Q93oxvchNsXaLpZCtYX3f9llKu6_rhSweu7rdgC0RXcRcuYmm65KEivdcDtulUJ5ljs1OtxC0o128qFvTng8EieO_aklAKqcQxBtiSwLVvPBjC8mF6GWLLzPKW7z3Olx1MVAoyI0cSMVeLc4B9UAEcm6vDbG_6lpuBUZ4MCcZoRI7h26PVXt1NV3rpk9GWPy23YFkxVuatPS7fdQNOrAC0kU3TmswUAzq0PNt13KjHABPEXCB71yWuFEHWzNdLDElN3GqDsNo3h"/>
+          </div>
         </div>
-        <div class="digital-window absolute top-40 left-[12.5%] w-3/4 h-[450px] bg-surface-container-lowest rounded-lg neo-border-thick neo-shadow-lg overflow-hidden z-20 transform transition-transform duration-500 hover:scale-[1.05] hover:z-40 fade-up observer-target float" style="transition-delay: 0.2s;">
-          <div class="h-8 bg-surface-container border-b-[3px] border-on-surface flex items-center px-2 gap-2">
-            <div class="w-3 h-3 rounded-full bg-error neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-secondary-container neo-border"></div>
-            <div class="w-3 h-3 rounded-full bg-primary neo-border"></div>
+        <div class="digital-window digital-browser-window webpage-browser-frame absolute top-40 left-[12.5%] w-3/4 h-[450px] neo-border-thick neo-shadow-lg overflow-hidden z-20 transform transition-transform duration-500 hover:scale-[1.05] hover:z-40 fade-up observer-target float" style="transition-delay: 0.2s;">
+          <div class="webpage-browser-chrome">
+            <div class="webpage-browser-dot bg-error neo-border"></div>
+            <div class="webpage-browser-dot bg-secondary-container neo-border"></div>
+            <div class="webpage-browser-dot bg-primary neo-border"></div>
           </div>
-          <img alt="Site View Main" class="w-full h-full object-cover" data-cms-src="site_views[2].image" data-cms-alt="site_views[2].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHwtK2jQozpj2Eo4U_OHzOY0FPQSHPCpjwsNZtcs5qalXDjYJzJceqmzdbGxscbBZOSXVUN_wdiRKn8KJ0k_1YRJ6cyRGRlLNLJANLEGdMWte9y8j-atDwu3gHzta_Y-n_5kcW1MxG4CtpCGM780CGPItDdnYNO9FYYAhNOOFG3lY-dZx641TgGMA9yUQVxpIWbgpt9wvTy4WhSxCZktLMjcnFKBjiNV6JYUd0tvzGOgxyuEd4MxWRhnNFhjCV5-UXy1Qg75YYzfyf"/>
+          <div class="webpage-browser-viewport">
+            <img alt="Site View Main" class="webpage-browser-media" data-cms-src="site_views[2].image" data-cms-alt="site_views[2].alt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHwtK2jQozpj2Eo4U_OHzOY0FPQSHPCpjwsNZtcs5qalXDjYJzJceqmzdbGxscbBZOSXVUN_wdiRKn8KJ0k_1YRJ6cyRGRlLNLJANLEGdMWte9y8j-atDwu3gHzta_Y-n_5kcW1MxG4CtpCGM780CGPItDdnYNO9FYYAhNOOFG3lY-dZx641TgGMA9yUQVxpIWbgpt9wvTy4WhSxCZktLMjcnFKBjiNV6JYUd0tvzGOgxyuEd4MxWRhnNFhjCV5-UXy1Qg75YYzfyf"/>
+          </div>
         </div>
       </div>
       <div class="flex justify-center mt-xl mb-xl fade-up observer-target">
@@ -344,7 +689,97 @@
   <script src="../../scripts/cms-page-loader.js"></script>
   <script>
     (function () {
+      function formatFontFamily(value, fallback) {
+        if (typeof value !== 'string' || !value.trim()) {
+          return fallback;
+        }
+
+        var cleanValue = value.replace(/[<>{};]/g, '').replace(/"/g, '').trim();
+        if (!cleanValue) {
+          return fallback;
+        }
+
+        var cursiveFonts = {
+          'Architects Daughter': true,
+          'Permanent Marker': true,
+          'Reenie Beanie': true,
+          'Rock Salt': true
+        };
+
+        var serifFonts = {
+          'Instrument Serif': true
+        };
+
+        var fallbackFamily = serifFonts[cleanValue] ? 'serif' : (cursiveFonts[cleanValue] ? 'cursive' : 'sans-serif');
+        return '"' + cleanValue + '", ' + fallbackFamily;
+      }
+
+      function formatFontSize(value, fallback) {
+        if (typeof value === 'number' && isFinite(value)) {
+          return Math.max(8, Math.min(140, value)) + 'px';
+        }
+
+        if (typeof value !== 'string' || !value.trim()) {
+          return fallback;
+        }
+
+        var cleanValue = value.trim().replace(/[<>{};]/g, '');
+        if (/^\d+(\.\d+)?$/.test(cleanValue)) {
+          return Math.max(8, Math.min(140, Number(cleanValue))) + 'px';
+        }
+
+        if (/^\d+(\.\d+)?(px|rem|em)$/.test(cleanValue)) {
+          return cleanValue;
+        }
+
+        return fallback;
+      }
+
+      function applyEditableTypographyStyles(data) {
+        var target = document.querySelector('.typography-card');
+        if (!target || !data) {
+          return;
+        }
+
+        var root = document.body || document.documentElement;
+        var fields = [
+          ['--typography-primary-label-font', 'typography_primary_label_font', formatFontFamily, '"Space Grotesk", sans-serif'],
+          ['--typography-primary-label-size', 'typography_primary_label_size', formatFontSize, '14px'],
+          ['--typography-primary-name-font', 'typography_primary_name_font', formatFontFamily, '"Epilogue", sans-serif'],
+          ['--typography-primary-name-size', 'typography_primary_name_size', formatFontSize, '84px'],
+          ['--typography-primary-sample-font', 'typography_primary_sample_font', formatFontFamily, '"Epilogue", sans-serif'],
+          ['--typography-primary-sample-size', 'typography_primary_sample_size', formatFontSize, '18px'],
+          ['--typography-secondary-label-font', 'typography_secondary_label_font', formatFontFamily, '"Space Grotesk", sans-serif'],
+          ['--typography-secondary-label-size', 'typography_secondary_label_size', formatFontSize, '14px'],
+          ['--typography-secondary-name-font', 'typography_secondary_name_font', formatFontFamily, '"Be Vietnam Pro", sans-serif'],
+          ['--typography-secondary-name-size', 'typography_secondary_name_size', formatFontSize, '24px'],
+          ['--typography-secondary-sample-font', 'typography_secondary_sample_font', formatFontFamily, '"Be Vietnam Pro", sans-serif'],
+          ['--typography-secondary-sample-size', 'typography_secondary_sample_size', formatFontSize, '16px']
+        ];
+
+        fields.forEach(function (entry) {
+          var cssVar = entry[0];
+          var key = entry[1];
+          var formatter = entry[2];
+          var fallback = entry[3];
+          root.style.setProperty(cssVar, formatter(data[key], fallback));
+        });
+      }
+
+      function loadEditableTypographyStyles() {
+        fetch('/content/pages/webpage-portfolio.json', { cache: 'no-store' })
+          .then(function (response) {
+            return response.ok ? response.json() : {};
+          })
+          .then(applyEditableTypographyStyles)
+          .catch(function () {
+            applyEditableTypographyStyles({});
+          });
+      }
+
       function initializeWebpagePortfolio() {
+        loadEditableTypographyStyles();
+
         var initialElements = document.querySelectorAll('.fade-up:not(.observer-target)');
         setTimeout(function () {
           initialElements.forEach(function (el) {

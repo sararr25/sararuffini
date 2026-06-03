@@ -1320,25 +1320,116 @@ collections:
       name: typography_primary_label
       widget: string
       required: false
+    - label: Typography Primary Label Font
+      name: typography_primary_label_font
+      widget: select
+      required: false
+      options: &webpage_font_options
+      - Epilogue
+      - Be Vietnam Pro
+      - Space Grotesk
+      - Inter
+      - DM Sans
+      - Archivo Black
+      - Anton
+      - Spline Sans
+      - Instrument Serif
+      - Permanent Marker
+      - Reenie Beanie
+      - Rock Salt
+      - Architects Daughter
+    - label: Typography Primary Label Size (px)
+      name: typography_primary_label_size
+      widget: number
+      value_type: int
+      min: 8
+      max: 96
+      step: 1
+      required: false
     - label: Typography Primary Name
       name: typography_primary_name
       widget: string
+      required: false
+    - label: Typography Primary Name Font
+      name: typography_primary_name_font
+      widget: select
+      required: false
+      options: *webpage_font_options
+    - label: Typography Primary Name Size (px)
+      name: typography_primary_name_size
+      widget: number
+      value_type: int
+      min: 8
+      max: 140
+      step: 1
       required: false
     - label: Typography Primary Sample
       name: typography_primary_sample
       widget: string
       required: false
+    - label: Typography Primary Sample Font
+      name: typography_primary_sample_font
+      widget: select
+      required: false
+      options: *webpage_font_options
+    - label: Typography Primary Sample Size (px)
+      name: typography_primary_sample_size
+      widget: number
+      value_type: int
+      min: 8
+      max: 96
+      step: 1
+      required: false
     - label: Typography Secondary Label
       name: typography_secondary_label
       widget: string
+      required: false
+    - label: Typography Secondary Label Font
+      name: typography_secondary_label_font
+      widget: select
+      required: false
+      options: *webpage_font_options
+    - label: Typography Secondary Label Size (px)
+      name: typography_secondary_label_size
+      widget: number
+      value_type: int
+      min: 8
+      max: 96
+      step: 1
       required: false
     - label: Typography Secondary Name
       name: typography_secondary_name
       widget: string
       required: false
+    - label: Typography Secondary Name Font
+      name: typography_secondary_name_font
+      widget: select
+      required: false
+      options: *webpage_font_options
+    - label: Typography Secondary Name Size (px)
+      name: typography_secondary_name_size
+      widget: number
+      value_type: int
+      min: 8
+      max: 140
+      step: 1
+      required: false
     - label: Typography Secondary Sample
       name: typography_secondary_sample
       widget: string
+      required: false
+    - label: Typography Secondary Sample Font
+      name: typography_secondary_sample_font
+      widget: select
+      required: false
+      options: *webpage_font_options
+    - label: Typography Secondary Sample Size (px)
+      name: typography_secondary_sample_size
+      widget: number
+      value_type: int
+      min: 8
+      max: 96
+      step: 1
       required: false
     - label: Colors Heading
       name: colors_heading
@@ -1359,6 +1450,170 @@ collections:
         name: value
         widget: color
         required: false
+    - label: Tech Kicker
+      name: tech_kicker
+      widget: string
+      required: false
+    - label: Tech Title
+      name: tech_title
+      widget: string
+      required: false
+    - label: Tech Intro
+      name: tech_intro
+      widget: text
+      required: false
+    - label: Tech Code File
+      name: tech_code_file
+      widget: string
+      required: false
+    - label: Tech Code Label
+      name: tech_code_label
+      widget: string
+      required: false
+    - label: Tech Code Line 1
+      name: tech_code_line_1
+      widget: string
+      required: false
+    - label: Tech Code Line 2
+      name: tech_code_line_2
+      widget: string
+      required: false
+    - label: Tech Code Line 3
+      name: tech_code_line_3
+      widget: string
+      required: false
+    - label: Tech Code Line 4
+      name: tech_code_line_4
+      widget: string
+      required: false
+    - label: Tech Code Line 5
+      name: tech_code_line_5
+      widget: string
+      required: false
+    - label: Tech Flow Title
+      name: tech_flow_title
+      widget: string
+      required: false
+    - label: Tech Flow 1 Icon
+      name: tech_flow_1_icon
+      widget: string
+      required: false
+    - label: Tech Flow 1 Title
+      name: tech_flow_1_title
+      widget: string
+      required: false
+    - label: Tech Flow 1 Text
+      name: tech_flow_1_text
+      widget: text
+      required: false
+    - label: Tech Flow 2 Icon
+      name: tech_flow_2_icon
+      widget: string
+      required: false
+    - label: Tech Flow 2 Title
+      name: tech_flow_2_title
+      widget: string
+      required: false
+    - label: Tech Flow 2 Text
+      name: tech_flow_2_text
+      widget: text
+      required: false
+    - label: Tech Flow 3 Icon
+      name: tech_flow_3_icon
+      widget: string
+      required: false
+    - label: Tech Flow 3 Title
+      name: tech_flow_3_title
+      widget: string
+      required: false
+    - label: Tech Flow 3 Text
+      name: tech_flow_3_text
+      widget: text
+      required: false
+    - label: Tech Flow 4 Icon
+      name: tech_flow_4_icon
+      widget: string
+      required: false
+    - label: Tech Flow 4 Title
+      name: tech_flow_4_title
+      widget: string
+      required: false
+    - label: Tech Flow 4 Text
+      name: tech_flow_4_text
+      widget: text
+      required: false
+    - label: Tech Flow 5 Icon
+      name: tech_flow_5_icon
+      widget: string
+      required: false
+    - label: Tech Flow 5 Title
+      name: tech_flow_5_title
+      widget: string
+      required: false
+    - label: Tech Flow 5 Text
+      name: tech_flow_5_text
+      widget: text
+      required: false
+    - label: Tech Frontend Title
+      name: tech_frontend_title
+      widget: string
+      required: false
+    - label: Tech Frontend Text
+      name: tech_frontend_text
+      widget: text
+      required: false
+    - label: Tech Backend Title
+      name: tech_backend_title
+      widget: string
+      required: false
+    - label: Tech Backend Text
+      name: tech_backend_text
+      widget: text
+      required: false
+    - label: Tech Workflow Title
+      name: tech_tools_title
+      widget: string
+      required: false
+    - label: Tech Workflow Text
+      name: tech_tools_text
+      widget: text
+      required: false
+    - label: Tech Tag 1
+      name: tech_tag_1
+      widget: string
+      required: false
+    - label: Tech Tag 2
+      name: tech_tag_2
+      widget: string
+      required: false
+    - label: Tech Tag 3
+      name: tech_tag_3
+      widget: string
+      required: false
+    - label: Tech Tag 4
+      name: tech_tag_4
+      widget: string
+      required: false
+    - label: Tech Tag 5
+      name: tech_tag_5
+      widget: string
+      required: false
+    - label: Tech Tag 6
+      name: tech_tag_6
+      widget: string
+      required: false
+    - label: Tech Tag 7
+      name: tech_tag_7
+      widget: string
+      required: false
+    - label: Tech Tag 8
+      name: tech_tag_8
+      widget: string
+      required: false
+    - label: Tech Tag 9
+      name: tech_tag_9
+      widget: string
+      required: false
     - label: Experience Title
       name: experience_title
       widget: string
