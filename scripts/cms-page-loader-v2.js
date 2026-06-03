@@ -18,6 +18,25 @@
     return path.split('.').reduce((curr, prop) => curr?.[prop], obj);
   }
 
+  function getSiblingCropPosition(allData, path) {
+    if (!path || typeof path !== 'string') return '';
+    const parts = path.split('.');
+    if (!parts.length) return '';
+    parts[parts.length - 1] = `${parts[parts.length - 1]}_crop_position`;
+    const value = parts.reduce((curr, prop) => curr?.[prop], allData);
+    return typeof value === 'string' ? value : '';
+  }
+
+  function parseCropPosition(rawCrop) {
+    if (typeof rawCrop !== 'string' || !rawCrop.trim()) return null;
+    const match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})$/);
+    if (!match) return null;
+    return {
+      x: Math.max(0, Math.min(100, Number(match[1]))),
+      y: Math.max(0, Math.min(100, Number(match[2]))),
+    };
+  }
+
   function parseImageCrop(rawUrl) {
     if (typeof rawUrl !== 'string') return null;
     const match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:&.*)?$/);
@@ -33,8 +52,8 @@
     return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
   }
 
-  function applyImageCrop(node, rawUrl) {
-    const crop = parseImageCrop(rawUrl);
+  function applyImageCrop(node, rawUrl, rawCrop) {
+    const crop = parseCropPosition(rawCrop) || parseImageCrop(rawUrl);
     if (!crop) return;
 
     const position = `${crop.x}% ${crop.y}%`;
@@ -172,7 +191,7 @@
       if (typeof value === 'string') {
         if (value.trim()) {
           el.style.backgroundImage = `url('${stripImageCrop(value.trim())}')`;
-          applyImageCrop(el, value);
+          applyImageCrop(el, value, getSiblingCropPosition(allData, key));
         } else {
           el.style.backgroundImage = 'none';
         }
@@ -429,7 +448,7 @@
           } else {
             imageNode.style.backgroundImage = `url('${imageUrl}')`;
           }
-          applyImageCrop(imageNode, sourceUrl);
+          applyImageCrop(imageNode, sourceUrl, item.image_crop_position || item.media_url_crop_position);
           imageNode.classList.remove('hidden');
           videoNode?.classList.add('hidden');
           embedNode?.classList.add('hidden');

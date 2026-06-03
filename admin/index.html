@@ -10,6 +10,133 @@
   <script src="https://unpkg.com/decap-cms@3.8.3/dist/decap-cms.js"></script>
   <script>
     (function () {
+      if (!window.CMS || typeof createClass === 'undefined' || typeof h === 'undefined') {
+        return;
+      }
+
+      function parseCrop(value) {
+        var raw = typeof value === 'string' && value.trim() ? value.trim() : '50,50';
+        var parts = raw.split(',');
+        return {
+          x: Math.max(0, Math.min(100, Number(parts[0]) || 50)),
+          y: Math.max(0, Math.min(100, Number(parts[1]) || 50))
+        };
+      }
+
+      function serializeCrop(crop) {
+        return Math.round(crop.x) + ',' + Math.round(crop.y);
+      }
+
+      var CropPositionControl = createClass({
+        setCrop: function (crop) {
+          this.props.onChange(serializeCrop(crop));
+        },
+
+        renderButton: function (label, x, y) {
+          return h('button', {
+            key: label,
+            type: 'button',
+            onClick: function () {
+              this.setCrop({ x: x, y: y });
+            }.bind(this),
+            style: {
+              minHeight: '30px',
+              border: '1px solid #d1d5db',
+              borderRadius: '4px',
+              background: '#ffffff',
+              cursor: 'pointer',
+              fontSize: '11px',
+              fontWeight: '700'
+            }
+          }, label);
+        },
+
+        render: function () {
+          var crop = parseCrop(this.props.value);
+          return h('div', {
+            id: this.props.forID,
+            className: this.props.classNameWrapper,
+            style: {
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '10px',
+              padding: '10px',
+              border: '1px solid #d1d5db',
+              borderRadius: '8px',
+              background: '#f9fafb'
+            }
+          }, [
+            h('div', {
+              key: 'preview',
+              style: {
+                width: '100%',
+                maxWidth: '260px',
+                aspectRatio: '16 / 9',
+                border: '1px solid #111827',
+                borderRadius: '6px',
+                background:
+                  'radial-gradient(circle at ' + crop.x + '% ' + crop.y + '%, #2563eb 0 8px, transparent 9px), linear-gradient(90deg, rgba(17,24,39,.12) 1px, transparent 1px), linear-gradient(rgba(17,24,39,.12) 1px, transparent 1px)',
+                backgroundSize: 'auto, 33.33% 100%, 100% 33.33%'
+              }
+            }),
+            h('div', {
+              key: 'grid',
+              style: {
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+                gap: '4px',
+                maxWidth: '260px'
+              }
+            }, [
+              this.renderButton('TL', 0, 0),
+              this.renderButton('T', 50, 0),
+              this.renderButton('TR', 100, 0),
+              this.renderButton('L', 0, 50),
+              this.renderButton('C', 50, 50),
+              this.renderButton('R', 100, 50),
+              this.renderButton('BL', 0, 100),
+              this.renderButton('B', 50, 100),
+              this.renderButton('BR', 100, 100)
+            ]),
+            h('label', { key: 'x', style: { display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' } }, [
+              'X: ' + crop.x + '%',
+              h('input', {
+                type: 'range',
+                min: 0,
+                max: 100,
+                step: 1,
+                value: crop.x,
+                onChange: function (event) {
+                  this.setCrop({ x: event.target.value, y: crop.y });
+                }.bind(this)
+              })
+            ]),
+            h('label', { key: 'y', style: { display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' } }, [
+              'Y: ' + crop.y + '%',
+              h('input', {
+                type: 'range',
+                min: 0,
+                max: 100,
+                step: 1,
+                value: crop.y,
+                onChange: function (event) {
+                  this.setCrop({ x: crop.x, y: event.target.value });
+                }.bind(this)
+              })
+            ]),
+            h('small', { key: 'hint', style: { color: '#4b5563', lineHeight: 1.35 } },
+              'Choose which part of the image stays visible inside cropped frames. The original file is not changed.'
+            )
+          ]);
+        }
+      });
+
+      CMS.registerWidget('crop_position', CropPositionControl);
+    })();
+
+  </script>
+  <script>
+    (function () {
       function slugify(value) {
         if (typeof value !== 'string') return '';
 

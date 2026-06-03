@@ -135,9 +135,42 @@
       var key = node.getAttribute(dataAttribute);
       var value = getByPath(allData, key);
       if (typeof value === 'string') {
-        applyValue(node, value);
+        applyValue(node, value, key);
       }
     });
+  }
+
+  function getSiblingCropPosition(allData, path) {
+    var tokens = tokenizePath(path);
+    if (!tokens.length || typeof tokens[tokens.length - 1] !== 'string') {
+      return '';
+    }
+
+    tokens[tokens.length - 1] = tokens[tokens.length - 1] + '_crop_position';
+    var value = tokens.reduce(function (acc, key) {
+      if (acc === null || typeof acc === 'undefined') {
+        return undefined;
+      }
+      return acc[key];
+    }, allData);
+
+    return typeof value === 'string' ? value : '';
+  }
+
+  function parseCropPosition(rawCrop) {
+    if (typeof rawCrop !== 'string' || !rawCrop.trim()) {
+      return null;
+    }
+
+    var match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})$/);
+    if (!match) {
+      return null;
+    }
+
+    return {
+      x: Math.max(0, Math.min(100, Number(match[1]))),
+      y: Math.max(0, Math.min(100, Number(match[2])))
+    };
   }
 
   function parseImageCrop(rawUrl) {
@@ -163,8 +196,8 @@
     return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
   }
 
-  function applyImageCrop(node, rawUrl) {
-    var crop = parseImageCrop(rawUrl);
+  function applyImageCrop(node, rawUrl, rawCrop) {
+    var crop = parseCropPosition(rawCrop) || parseImageCrop(rawUrl);
     if (!crop) {
       return;
     }
@@ -687,9 +720,9 @@
       node.innerHTML = value;
     });
 
-    applyByAttribute(allData, 'data-cms-src', function (node, value) {
+    applyByAttribute(allData, 'data-cms-src', function (node, value, key) {
       node.setAttribute('src', stripImageCrop(value));
-      applyImageCrop(node, value);
+      applyImageCrop(node, value, getSiblingCropPosition(allData, key));
     });
 
     applyByAttribute(allData, 'data-cms-reel-src', function (node, value) {
@@ -700,9 +733,9 @@
       node.setAttribute('alt', value);
     });
 
-    applyByAttribute(allData, 'data-cms-bg', function (node, value) {
+    applyByAttribute(allData, 'data-cms-bg', function (node, value, key) {
       node.style.backgroundImage = 'url("' + stripImageCrop(value).replace(/"/g, '\\"') + '")';
-      applyImageCrop(node, value);
+      applyImageCrop(node, value, getSiblingCropPosition(allData, key));
     });
 
     applyByAttribute(allData, 'data-cms-href', function (node, value) {

@@ -161,6 +161,12 @@ collections:
       name: default_og_image
       widget: image
       required: false
+    - label: Default OG Image Crop Position
+      name: default_og_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Twitter Handle
       name: twitter_handle
       widget: string
@@ -212,6 +218,12 @@ collections:
         name: hero_image
         widget: image
         required: false
+      - label: Hero Image Crop Position
+        name: hero_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Timecode
         name: hero_timecode
         widget: string
@@ -390,6 +402,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -424,6 +442,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -510,6 +534,12 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -535,6 +565,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: SEO Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -569,6 +605,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -675,6 +717,12 @@ collections:
       name: hero_main_image
       widget: image
       required: false
+    - label: Hero Main Image Crop Position
+      name: hero_main_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Main Image Alt
       name: hero_main_image_alt
       widget: string
@@ -683,6 +731,12 @@ collections:
       name: hero_polaroid_image
       widget: image
       required: false
+    - label: Hero Polaroid Image Crop Position
+      name: hero_polaroid_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Polaroid Alt
       name: hero_polaroid_alt
       widget: string
@@ -695,6 +749,12 @@ collections:
       name: hero_accent_image
       widget: image
       required: false
+    - label: Hero Accent Image Crop Position
+      name: hero_accent_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Accent Alt
       name: hero_accent_alt
       widget: string
@@ -748,6 +808,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Item Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Item Image Alt
         name: alt
         widget: string
@@ -769,6 +835,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -803,6 +875,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -890,6 +968,12 @@ collections:
       name: hero_image_left
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_left_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: SEO Title
       name: seo_title
       widget: string
@@ -902,6 +986,12 @@ collections:
       name: seo_image
       widget: image
       required: false
+    - label: SEO Image Crop Position
+      name: seo_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -936,6 +1026,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -1030,6 +1126,12 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1070,6 +1172,12 @@ collections:
       name: journey_step_1_image
       widget: image
       required: false
+    - label: Step 1 Image Crop Position
+      name: journey_step_1_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Step 1 Alt
       name: journey_step_1_alt
       widget: string
@@ -1086,6 +1194,12 @@ collections:
       name: journey_step_2_image
       widget: image
       required: false
+    - label: Step 2 Image Crop Position
+      name: journey_step_2_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Step 2 Alt
       name: journey_step_2_alt
       widget: string
@@ -1102,6 +1216,12 @@ collections:
       name: journey_step_3_image
       widget: image
       required: false
+    - label: Step 3 Image Crop Position
+      name: journey_step_3_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Step 3 Alt
       name: journey_step_3_alt
       widget: string
@@ -1131,6 +1251,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
 - name: project_pages
   label: Project Pages
   files:
@@ -1166,6 +1292,12 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1206,6 +1338,12 @@ collections:
       name: journey_step_1_image
       widget: image
       required: false
+    - label: Step 1 Image Crop Position
+      name: journey_step_1_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Step 1 Alt
       name: journey_step_1_alt
       widget: string
@@ -1222,6 +1360,12 @@ collections:
       name: journey_step_2_image
       widget: image
       required: false
+    - label: Step 2 Image Crop Position
+      name: journey_step_2_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Step 2 Alt
       name: journey_step_2_alt
       widget: string
@@ -1238,6 +1382,12 @@ collections:
       name: journey_step_3_image
       widget: image
       required: false
+    - label: Step 3 Image Crop Position
+      name: journey_step_3_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Step 3 Alt
       name: journey_step_3_alt
       widget: string
@@ -1267,6 +1417,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Webpage Portfolio
     name: webpage_portfolio
     file: public/content/pages/webpage-portfolio.json
@@ -1304,6 +1460,12 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1575,6 +1737,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -1609,6 +1777,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Video Page V1
     name: video_v1
     file: public/content/pages/weber-grillinspiration.json
@@ -1647,6 +1821,12 @@ collections:
         name: hero_image
         widget: image
         required: false
+      - label: Hero Image Crop Position
+        name: hero_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Media Type
         name: hero_media_type
         widget: select
@@ -1860,6 +2040,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Cocktail Photography Page
     name: cocktail_photography
     file: public/content/pages/cocktail-photography.json
@@ -1888,6 +2074,12 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1932,6 +2124,12 @@ collections:
       name: shot_1_image
       widget: image
       required: false
+    - label: Shot 1 Image Crop Position
+      name: shot_1_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Shot 1 Alt
       name: shot_1_alt
       widget: string
@@ -1944,6 +2142,12 @@ collections:
       name: shot_2_image
       widget: image
       required: false
+    - label: Shot 2 Image Crop Position
+      name: shot_2_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Shot 2 Alt
       name: shot_2_alt
       widget: string
@@ -1956,6 +2160,12 @@ collections:
       name: shot_3_image
       widget: image
       required: false
+    - label: Shot 3 Image Crop Position
+      name: shot_3_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Shot 3 Alt
       name: shot_3_alt
       widget: string
@@ -1968,6 +2178,12 @@ collections:
       name: shot_4_image
       widget: image
       required: false
+    - label: Shot 4 Image Crop Position
+      name: shot_4_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Shot 4 Alt
       name: shot_4_alt
       widget: string
@@ -1980,6 +2196,12 @@ collections:
       name: shot_5_image
       widget: image
       required: false
+    - label: Shot 5 Image Crop Position
+      name: shot_5_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Shot 5 Alt
       name: shot_5_alt
       widget: string
@@ -1992,6 +2214,12 @@ collections:
       name: shot_6_image
       widget: image
       required: false
+    - label: Shot 6 Image Crop Position
+      name: shot_6_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Shot 6 Alt
       name: shot_6_alt
       widget: string
@@ -2053,6 +2281,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Shooting Cocktails Page
     name: shooting_cocktails
     file: public/content/pages/shooting-cocktails.json
@@ -2097,6 +2331,12 @@ collections:
       name: hero_main_image
       widget: image
       required: false
+    - label: Hero Main Image Crop Position
+      name: hero_main_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Main Image Alt
       name: hero_main_image_alt
       widget: string
@@ -2105,6 +2345,12 @@ collections:
       name: hero_polaroid_image
       widget: image
       required: false
+    - label: Hero Polaroid Image Crop Position
+      name: hero_polaroid_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Polaroid Alt
       name: hero_polaroid_alt
       widget: string
@@ -2117,6 +2363,12 @@ collections:
       name: hero_accent_image
       widget: image
       required: false
+    - label: Hero Accent Image Crop Position
+      name: hero_accent_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Hero Accent Alt
       name: hero_accent_alt
       widget: string
@@ -2170,6 +2422,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Item Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Item Image Alt
         name: alt
         widget: string
@@ -2191,6 +2449,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Coming Soon Page
     name: coming_soon
     file: public/content/pages/coming-soon.json
@@ -2271,6 +2535,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -2346,6 +2616,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Video Page V2
     name: video_v2
     file: public/content/pages/video-v2.json
@@ -2387,6 +2663,12 @@ collections:
         name: hero_image
         widget: image
         required: false
+      - label: Hero Image Crop Position
+        name: hero_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Media Type
         name: hero_media_type
         widget: select
@@ -2576,6 +2858,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: App Page V1
     name: app_v1
     file: public/content/pages/app-v1.json
@@ -2604,14 +2892,32 @@ collections:
       name: hero_image_left
       widget: image
       required: false
+    - label: Left Phone Image (background) Crop Position
+      name: hero_image_left_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Right Phone Image
       name: hero_image_right
       widget: image
       required: false
+    - label: Right Phone Image Crop Position
+      name: hero_image_right_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Center Phone Image
       name: hero_image_center
       widget: image
       required: false
+    - label: Center Phone Image Crop Position
+      name: hero_image_center_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Phase 2 Line 1
       name: phase2_title_main
       widget: string
@@ -2654,6 +2960,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -2728,6 +3040,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       required: false
   - label: App Page V2
     name: app_v2
@@ -2811,6 +3129,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -2885,6 +3209,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       required: false
   - label: Graphics Page
     name: graphics
@@ -2906,14 +3236,32 @@ collections:
       name: hero_image_polaroid
       widget: image
       required: false
+    - label: Polaroid Image Crop Position
+      name: hero_image_polaroid_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Detail Image
       name: hero_image_detail
       widget: image
       required: false
+    - label: Detail Image Crop Position
+      name: hero_image_detail_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Wide Image
       name: hero_image_wide
       widget: image
       required: false
+    - label: Wide Image Crop Position
+      name: hero_image_wide_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Wide Image Overlay Text
       name: wide_image_overlay_text
       widget: string
@@ -2952,6 +3300,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3026,6 +3380,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       required: false
   - label: Social Media Page
     name: socialmedia_portfolio
@@ -3147,6 +3507,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3222,6 +3588,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
   - label: Homepage
     name: homepage
     file: public/content/pages/homepage.json
@@ -3275,6 +3647,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3301,6 +3679,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3327,6 +3711,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3353,6 +3743,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3379,6 +3775,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3413,6 +3815,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3439,6 +3847,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3465,6 +3879,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3524,6 +3944,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3598,6 +4024,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       required: false
   - label: About Page
     name: about
@@ -3623,6 +4055,12 @@ collections:
       name: portrait_image
       widget: image
       required: false
+    - label: Portrait Image Crop Position
+      name: portrait_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Portrait Alt
       name: portrait_alt
       widget: string
@@ -3631,6 +4069,12 @@ collections:
       name: decor_console_image
       widget: image
       required: false
+    - label: Console Sticker Image Crop Position
+      name: decor_console_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Console Sticker Alt
       name: decor_console_alt
       widget: string
@@ -3639,6 +4083,12 @@ collections:
       name: decor_camera_image
       widget: image
       required: false
+    - label: Camera Sticker Image Crop Position
+      name: decor_camera_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Camera Sticker Alt
       name: decor_camera_alt
       widget: string
@@ -3664,6 +4114,12 @@ collections:
       name: drink_image
       widget: image
       required: false
+    - label: Drink Image Crop Position
+      name: drink_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Drink Image Alt
       name: drink_image_alt
       widget: string
@@ -3791,6 +4247,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3865,6 +4327,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       required: false
   - label: Portfolio Main Page
     name: portfolio_main
@@ -3904,6 +4372,12 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Alt Text
         name: alt
         widget: string
@@ -3970,6 +4444,12 @@ collections:
         name: media_upload_image
         widget: image
         required: false
+      - label: Image Upload Crop Position
+        name: media_upload_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -4044,6 +4524,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
       required: false
   - label: Contact Page
     name: contact
@@ -4066,6 +4552,12 @@ collections:
         name: seo_image
         widget: image
         required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
 - name: project_pages_entries
   label: Project Pages / Entries
   description: Create new project pages from existing templates
@@ -4139,6 +4631,12 @@ collections:
       name: hero_image
       widget: image
       required: false
+    - label: Hero Image Crop Position
+      name: hero_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
   - label: Dynamic Media Blocks
     name: media_blocks
     widget: list
@@ -4173,6 +4671,12 @@ collections:
       name: media_upload_image
       widget: image
       required: false
+    - label: Image Upload Crop Position
+      name: media_upload_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
     - label: Video Upload
       name: media_upload_video
       widget: file
@@ -4248,3 +4752,10 @@ collections:
       name: seo_image
       widget: image
       required: false
+
+    - label: Preview Image Crop Position
+      name: seo_image_crop_position
+      widget: crop_position
+      required: false
+      default: 50,50
+      hint: Choose which part of the image stays visible inside cropped frames.
