@@ -1,32 +1,9 @@
 {
-  "project_title": "Neon Vibes",
-  "project_summary": "A vibrant, high-energy e-commerce platform designed for a custom neon sign workshop. The goal was to translate the physical buzz of neon tubes into a digital retail experience.",
-  "meta_chips": [
-    {
-      "icon": "calendar_month",
-      "label": "2024"
-    },
-    {
-      "icon": "category",
-      "label": "E-Commerce"
-    },
-    {
-      "icon": "code",
-      "label": "Web Design"
-    }
-  ],
-  "hero_browser_label": "neon-vibes.shop",
-  "hero_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
+  "project_summary": "Every year at 3 Days of Design I waste too much time on the official site trying to figure out what to see and where. So I built my own. A personal, mobile-first event guide with filters by day, zone, time, and category, an interactive map, and a likes section to save the events I don't want to miss. Fast, no clutter, built in one day.",
   "hero_image_alt": "Neon sign storefront hero shot",
-  "kit_title": "The Kit",
-  "typography_heading": "Typography",
-  "typography_primary_label": "Headings",
-  "typography_primary_name": "Epilogue",
-  "typography_primary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
-  "typography_secondary_label": "Body",
-  "typography_secondary_name": "Be Vietnam Pro",
+  "experience_title": "Digital Experience",
+  "cta_label": "See Website Live",
   "typography_secondary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
-  "colors_heading": "Colors",
   "color_swatches": [
     {
       "label": "Teal Pop",
@@ -45,7 +22,27 @@
       "value": "#1b1b1b"
     }
   ],
-  "experience_title": "Digital Experience",
+  "typography_secondary_name": "Be Vietnam Pro",
+  "typography_primary_label": "Headings",
+  "meta_chips": [
+    {
+      "icon": "calendar_month",
+      "label": "2024"
+    },
+    {
+      "icon": "category",
+      "label": "E-Commerce"
+    },
+    {
+      "icon": "code",
+      "label": "Web Design"
+    }
+  ],
+  "kit_title": "The Kit",
+  "project_title": "3 Days of Design Event Map",
+  "typography_heading": "Typography",
+  "colors_heading": "Colors",
+  "hero_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
   "site_views": [
     {
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAuZRm45M_VFHSNWAoYp968tC03nb4HApYILT_MNM6qYmTx9oePI1QzVv059Eh83bsr-5ZECnZyXCr-dNuVFIEYAnPKvtp8xrSInEHlPfotBgy68jslQqSDgie-c3eNLyRAClDkLLkhBfUuIR-KIfPJN-PwjvNUsiuafYuxUiIpm1XWnwnCUhWNCOZX8JzESnSJWQ1habf13doVw_ZsRMz7pyG5beQ-D1r3OO4Vk8CpBBY35tWpVyvEot4L9swVLKX4aw4aieLztxGl",
@@ -60,11 +57,14 @@
       "alt": "Portfolio homepage hero mockup"
     }
   ],
-  "cta_label": "See Website Live",
+  "typography_primary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
+  "hero_browser_label": "neon-vibes.shop",
+  "typography_primary_name": "Epilogue",
+  "typography_secondary_label": "Body",
   "cta_href": "#",
   "seo": {
     "seo_title": "Webpage Portfolio - Sara Ruffini",
     "seo_description": "A retro-pop web design case study by Sara Ruffini.",
-    "seo_image": "/assets/webpage-portfolio/animated_web_showcase_hybrid_editorial/screen.png"
+    "seo_image": ""
   }
 }
