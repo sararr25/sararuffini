@@ -234,7 +234,7 @@
         },
 
         renderImageSurface: function (key, imageUrl, crop, zoom, showGuides) {
-          var safeUrl = imageUrl.replace(/"/g, '\\"');
+          var scale = Math.max(1, zoom / 100);
           return h('div', {
             key: key,
             style: {
@@ -242,19 +242,59 @@
               aspectRatio: '16 / 9',
               border: showGuides ? '2px solid #111827' : '1px solid #d1d5db',
               borderRadius: showGuides ? '10px' : '8px',
-              backgroundImage: showGuides
-                ? 'linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px), radial-gradient(circle at ' + crop.x + '% ' + crop.y + '%, rgba(0,0,0,.0) 0 5px, rgba(255,255,255,.9) 6px 8px, rgba(255,255,255,0) 9px), url("' + safeUrl + '")'
-                : 'url("' + safeUrl + '")',
-              backgroundSize: showGuides
-                ? '33.33% 100%, 100% 33.33%, auto, ' + zoom + '% ' + zoom + '%'
-                : zoom + '% ' + zoom + '%',
-              backgroundPosition: showGuides
-                ? 'center, center, center, ' + crop.x + '% ' + crop.y + '%'
-                : crop.x + '% ' + crop.y + '%',
-              backgroundRepeat: 'no-repeat',
+              background: '#0f172a',
+              position: 'relative',
               overflow: 'hidden'
             }
-          });
+          }, [
+            h('img', {
+              key: key + '-img',
+              src: imageUrl,
+              alt: 'Crop preview',
+              draggable: false,
+              style: {
+                width: '100%',
+                height: '100%',
+                display: 'block',
+                objectFit: 'cover',
+                objectPosition: crop.x + '% ' + crop.y + '%',
+                transform: 'scale(' + scale + ')',
+                transformOrigin: crop.x + '% ' + crop.y + '%',
+                transition: this.state && this.state.isDragging ? 'none' : 'transform 90ms linear, object-position 90ms linear',
+                pointerEvents: 'none',
+                userSelect: 'none'
+              }
+            }),
+            showGuides
+              ? h('div', {
+                  key: key + '-guides',
+                  style: {
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundImage: 'linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px)',
+                    backgroundSize: '33.33% 100%, 100% 33.33%',
+                    pointerEvents: 'none'
+                  }
+                })
+              : null,
+            showGuides
+              ? h('div', {
+                  key: key + '-focus',
+                  style: {
+                    position: 'absolute',
+                    left: crop.x + '%',
+                    top: crop.y + '%',
+                    width: '14px',
+                    height: '14px',
+                    borderRadius: '999px',
+                    border: '2px solid #ffffff',
+                    boxShadow: '0 0 0 1px rgba(17,24,39,.7)',
+                    transform: 'translate(-50%, -50%)',
+                    pointerEvents: 'none'
+                  }
+                })
+              : null
+          ]);
         },
 
         render: function () {
