@@ -8,9 +8,9 @@
   },
   "featured_window": {
     "href": "/pages/app-v2/index.html",
-    "image": "/assets/stitch-homepage-featured/sticker-level-up.png",
-    "alt": "Game device sticker",
-    "label": "Level Up",
+    "image": "/assets/stitch-homepage-featured/sticker-app-mobile.png",
+    "alt": "Vintage silver mobile phone app sticker",
+    "label": "Retro Call!",
     "window_title": "PROJECT.EXE",
     "window_button": "Open",
     "href_page": "/pages/app-v2/index.html"

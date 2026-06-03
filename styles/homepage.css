@@ -209,6 +209,11 @@
             height: 16rem;
             border-radius: 1rem;
         }
+        .stitch-media--app {
+            height: 16.5rem;
+            border-radius: 1rem;
+            background: #fcf9f8;
+        }
         .stitch-media--phone {
             height: 12rem;
             border-radius: 1rem;
@@ -239,6 +244,10 @@
         }
         .stitch-media--contain img {
             object-fit: contain;
+        }
+        .stitch-media--app img {
+            object-fit: contain;
+            transform: scale(1.06);
         }
         .stitch-label {
             position: absolute;
@@ -310,11 +319,11 @@
             width: 20rem;
             transform: rotate(2deg);
         }
-        .stitch-sticker--game {
+        .stitch-sticker--app {
             top: 2%;
             right: 5%;
             z-index: 23;
-            width: 16rem;
+            width: 17rem;
             transform: rotate(4deg);
         }
         .stitch-sticker--pasta {
@@ -433,6 +442,7 @@
             .stitch-media--large,
             .stitch-media--wide,
             .stitch-media--tall,
+            .stitch-media--app,
             .stitch-media--phone,
             .stitch-media--short,
             .stitch-media--cocktail,
