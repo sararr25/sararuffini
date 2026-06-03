@@ -248,6 +248,25 @@
       filter: drop-shadow(3px 3px 0 #1b1b1b);
     }
 
+    .webpage-hero-section {
+      padding-top: clamp(2.5rem, 5vw, 4.75rem);
+      padding-bottom: clamp(2.25rem, 4.5vw, 4rem);
+    }
+
+    .webpage-hero-copy {
+      gap: clamp(0.85rem, 1.8vw, 1.35rem);
+      margin-bottom: clamp(1.5rem, 3vw, 2.35rem);
+    }
+
+    .webpage-hero-summary {
+      max-width: 76rem;
+      line-height: 1.35;
+    }
+
+    .webpage-hero-meta {
+      margin-top: 0.25rem;
+    }
+
     .digital-browser-window .webpage-browser-chrome {
       min-height: 32px;
       padding: 6px 8px;
@@ -431,6 +450,21 @@
         width: 10px;
         height: 10px;
       }
+
+      .webpage-hero-section {
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+      }
+
+      .webpage-hero-copy {
+        gap: 1rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .webpage-hero-summary {
+        max-width: 100%;
+        line-height: 1.5;
+      }
     }
   </style>
 </head>
@@ -439,18 +473,18 @@
   <nav class="shared-site-nav" data-shared-chrome="nav"></nav>
 
   <main class="flex-grow z-20 relative">
-    <section class="px-margin py-xl max-w-7xl mx-auto overflow-hidden">
-      <div class="flex flex-col gap-lg items-center text-center mb-xl">
+    <section class="webpage-hero-section px-margin py-xl max-w-7xl mx-auto overflow-hidden">
+      <div class="webpage-hero-copy flex flex-col gap-lg items-center text-center mb-xl">
         <div class="relative inline-block fade-up">
           <h1 class="font-h1 text-h1 text-on-surface" data-cms-text="project_title">Neon Vibes</h1>
           <svg class="absolute -bottom-4 -right-8 w-24 h-12 text-secondary-container" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4" viewBox="0 0 100 50" aria-hidden="true">
             <path d="M5,25 Q25,5 50,25 T95,25"></path>
           </svg>
         </div>
-        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl fade-up" data-cms-text="project_summary" style="transition-delay: 0.2s;">
+        <p class="webpage-hero-summary font-body-lg text-body-lg text-on-surface-variant max-w-2xl fade-up" data-cms-text="project_summary" style="transition-delay: 0.2s;">
           A vibrant, high-energy e-commerce platform designed for a custom neon sign workshop. The goal was to translate the physical buzz of neon tubes into a digital retail experience.
         </p>
-        <div class="flex flex-wrap justify-center gap-sm mt-md fade-up" style="transition-delay: 0.4s;">
+        <div class="webpage-hero-meta flex flex-wrap justify-center gap-sm mt-md fade-up" style="transition-delay: 0.4s;">
           <div class="bg-surface-container neo-border rounded-full px-4 py-2 font-label-bold text-label-bold flex items-center gap-xs">
             <span class="material-symbols-outlined text-primary" data-cms-text="meta_chips[0].icon">calendar_month</span>
             <span data-cms-text="meta_chips[0].label">2024</span>
