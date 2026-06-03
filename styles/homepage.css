@@ -306,15 +306,15 @@
             transform: rotate(-4deg);
         }
         .stitch-sticker--urban {
-            top: 4%;
-            left: 3%;
+            top: 2%;
+            left: 4.5%;
             z-index: 24;
             width: clamp(9.55rem, 13.95vw, 11.1rem);
             transform: rotate(-3deg);
         }
         .stitch-sticker--pixel {
-            top: 13%;
-            left: 27%;
+            top: 54%;
+            left: 34%;
             z-index: 22;
             width: clamp(9.9rem, 14.6vw, 11.65rem);
             transform: rotate(2deg);
@@ -327,24 +327,24 @@
             transform: rotate(4deg);
         }
         .stitch-sticker--pasta {
-            top: 20%;
-            right: 6%;
+            top: 14%;
+            right: 7%;
             left: auto;
             z-index: 30;
             width: clamp(9.55rem, 13.85vw, 11rem);
             transform: rotate(3deg);
         }
         .stitch-sticker--phone {
-            top: 60%;
-            right: 13%;
+            top: 54%;
+            right: 10%;
             left: auto;
             z-index: 25;
             width: clamp(8rem, 11.3vw, 9.1rem);
             transform: rotate(5deg);
         }
         .stitch-sticker--cocktail {
-            top: 38%;
-            left: 57%;
+            top: 42%;
+            left: 58.5%;
             z-index: 26;
             width: clamp(8.1rem, 11.5vw, 9.2rem);
             transform: rotate(-4deg);
@@ -357,8 +357,8 @@
             transform: rotate(-5deg);
         }
         .stitch-sticker--bbq {
-            top: 56%;
-            left: 34%;
+            top: 13%;
+            left: 27%;
             z-index: 22;
             width: clamp(8.25rem, 12vw, 9.7rem);
             transform: rotate(-2deg);
@@ -382,18 +382,6 @@
             background: #2a9d8f;
             color: #fff;
             transform: rotate(-12deg);
-        }
-        .stitch-mini-sticker--new {
-            right: 39%;
-            bottom: 9%;
-            width: 4rem;
-            height: 2.5rem;
-            border-radius: 9999px;
-            background: #f26c0d;
-            color: #111;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            transform: rotate(12deg);
         }
         @keyframes stitchDrift {
             0%, 100% { transform: translate(0, 0); }
