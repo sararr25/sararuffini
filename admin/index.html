@@ -99,6 +99,47 @@
         return '';
       }
 
+      function resolveImageFromShell(shell) {
+        if (!shell || !shell.querySelectorAll) {
+          return '';
+        }
+
+        var mediaNodes = Array.prototype.slice.call(shell.querySelectorAll('img, video'));
+        var bestNode = null;
+        var bestArea = 0;
+        mediaNodes.forEach(function (node) {
+          var source = node.currentSrc || node.src || node.getAttribute('src') || node.poster || node.getAttribute('poster') || '';
+          if (!source || /^data:image\/svg/i.test(source)) {
+            return;
+          }
+
+          var rect = typeof node.getBoundingClientRect === 'function' ? node.getBoundingClientRect() : null;
+          var area = rect && rect.width && rect.height ? rect.width * rect.height : 1;
+          if (area >= bestArea) {
+            bestNode = node;
+            bestArea = area;
+          }
+        });
+
+        if (!bestNode) {
+          var valueNodes = Array.prototype.slice.call(shell.querySelectorAll('input, textarea'));
+          for (var i = 0; i < valueNodes.length; i += 1) {
+            if (valueNodes[i].type === 'file') {
+              continue;
+            }
+
+            var rawValue = valueNodes[i].value;
+            if (typeof rawValue === 'string' && rawValue.trim() && rawValue.indexOf('fakepath') === -1) {
+              return stripImageCrop(rawValue.trim());
+            }
+          }
+
+          return '';
+        }
+
+        return stripImageCrop(bestNode.currentSrc || bestNode.src || bestNode.getAttribute('src') || bestNode.poster || bestNode.getAttribute('poster') || '');
+      }
+
       function resolveCropImageUrl(props) {
         if (!props) {
           return '';
@@ -157,7 +198,8 @@
         getInitialState: function () {
           return {
             isEditorOpen: false,
-            isDragging: false
+            isDragging: false,
+            editorImageUrl: ''
           };
         },
 
@@ -290,7 +332,16 @@
           this.compactCropField(cropShell);
 
           var imageShell = this.findImageFieldShell(cropShell);
-          if (!imageShell || imageShell.querySelector('[data-sr-image-edit="' + this.props.forID + '"]')) {
+          if (!imageShell) {
+            return;
+          }
+
+          this.imageShell = imageShell;
+
+          var existingButton = imageShell.querySelector('[data-sr-image-edit="' + this.props.forID + '"]');
+          if (existingButton) {
+            existingButton.__srImageShell = imageShell;
+            existingButton.__srCropControl = this;
             return;
           }
 
@@ -299,6 +350,8 @@
           button.type = 'button';
           button.textContent = 'Edit';
           button.setAttribute('data-sr-image-edit', this.props.forID);
+          button.__srImageShell = imageShell;
+          button.__srCropControl = this;
           button.style.flex = '0 0 auto';
           button.style.minHeight = '34px';
           button.style.border = '1px solid #111827';
@@ -310,13 +363,24 @@
           button.style.fontWeight = '700';
           button.style.padding = '0 14px';
           button.style.whiteSpace = 'nowrap';
-          button.addEventListener('click', this.openEditor);
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            var control = button.__srCropControl;
+            if (control && typeof control.openEditorForShell === 'function') {
+              control.openEditorForShell(button.__srImageShell || imageShell);
+            }
+          });
 
           host.insertBefore(button, host.firstChild);
         },
 
-        openEditor: function () {
-          this.setState({ isEditorOpen: true });
+        openEditorForShell: function (imageShell) {
+          this.imageShell = imageShell || this.imageShell;
+          this.setState({
+            isEditorOpen: true,
+            editorImageUrl: resolveImageFromShell(this.imageShell) || resolveCropImageUrl(this.props)
+          });
         },
 
         closeEditor: function () {
@@ -464,7 +528,7 @@
 
         render: function () {
           var crop = parseCrop(this.props.value);
-          var imageUrl = resolveCropImageUrl(this.props);
+          var imageUrl = this.state.editorImageUrl || resolveImageFromShell(this.imageShell) || resolveCropImageUrl(this.props);
           var hasImage = !!imageUrl;
 
           return h('div', {
