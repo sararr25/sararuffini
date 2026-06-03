@@ -34,25 +34,25 @@
         .featured-stitch-header {
             position: relative;
             z-index: 2;
-            padding: 2.25rem 1rem 1rem;
+            padding: 2.05rem 1rem 0.65rem;
             text-align: center;
         }
         .featured-stitch-title {
             display: inline-block;
             margin: 0;
-            padding: 0.75rem 2rem;
+            padding: 0.62rem 1.72rem;
             border: 4px solid #111;
             background: #fff;
-            box-shadow: 8px 8px 0 #f26c0d;
+            box-shadow: 7px 7px 0 #f26c0d;
             color: #111;
-            font-size: clamp(2.2rem, 4.4vw, 3.35rem);
+            font-size: clamp(2.05rem, 4.15vw, 3.15rem);
             font-weight: 900;
             line-height: 0.95;
             letter-spacing: 0;
             text-transform: uppercase;
         }
         .featured-stitch-subtitle {
-            margin: 0.85rem 0 0;
+            margin: 0.68rem 0 0;
             color: rgba(17, 17, 17, 0.66);
             font-size: 1rem;
             font-weight: 700;
@@ -85,7 +85,7 @@
             z-index: 1;
             width: 100%;
             min-height: clamp(600px, 57vw, 690px);
-            padding: 1rem clamp(0.9rem, 2vw, 1.5rem) 1.65rem;
+            padding: 0.55rem clamp(0.9rem, 2vw, 1.5rem) 1.4rem;
         }
         .featured-stitch-doodles {
             position: absolute;
@@ -313,7 +313,7 @@
             transform: rotate(-3deg);
         }
         .stitch-sticker--pixel {
-            top: 54%;
+            top: 51%;
             left: 34%;
             z-index: 22;
             width: clamp(9.9rem, 14.6vw, 11.65rem);
@@ -360,28 +360,8 @@
             top: 13%;
             left: 27%;
             z-index: 22;
-            width: clamp(8.25rem, 12vw, 9.7rem);
+            width: clamp(8.85rem, 12.8vw, 10.35rem);
             transform: rotate(-2deg);
-        }
-        .stitch-mini-sticker {
-            position: absolute;
-            z-index: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid #000;
-            box-shadow: 3px 3px 0 #000;
-            font-weight: 900;
-        }
-        .stitch-mini-sticker--bolt {
-            top: 16%;
-            left: 39%;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 9999px;
-            background: #2a9d8f;
-            color: #fff;
-            transform: rotate(-12deg);
         }
         @keyframes stitchDrift {
             0%, 100% { transform: translate(0, 0); }
@@ -407,8 +387,7 @@
                 min-height: auto;
                 padding: 2rem 1rem 4rem;
             }
-            .featured-stitch-doodles,
-            .stitch-mini-sticker {
+            .featured-stitch-doodles {
                 display: none;
             }
             .stitch-sticker {
