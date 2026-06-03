@@ -94,7 +94,7 @@
   ],
   "tech_flow_2_icon": "terminal",
   "tech_code_line_1": "events = scrape_official_site()",
-  "hero_image_crop_position": "50,9",
+  "hero_image_crop_position": "46,4",
   "tech_title": "How I Built It",
   "kit_title": "The Kit",
   "tech_flow_1_icon": "travel_explore",
@@ -115,7 +115,7 @@
     {
       "image": "/assets/media/desktop-02-event-map.png",
       "alt": "Map view",
-      "image_crop_position": "46,53"
+      "image_crop_position": "60,56"
     },
     {
       "image": "/assets/media/mobile-01-schedule.png",
