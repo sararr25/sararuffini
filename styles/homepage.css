@@ -84,7 +84,7 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            min-height: clamp(760px, 74vw, 860px);
+            min-height: clamp(710px, 68vw, 810px);
             padding: 1.35rem clamp(0.9rem, 2vw, 1.5rem) 2.35rem;
         }
         .featured-stitch-doodles {
@@ -327,38 +327,38 @@
             transform: rotate(4deg);
         }
         .stitch-sticker--pasta {
-            top: 17%;
-            right: 2%;
+            top: 20%;
+            right: 6%;
             left: auto;
             z-index: 30;
             width: clamp(10.4rem, 15.1vw, 12rem);
             transform: rotate(3deg);
         }
         .stitch-sticker--phone {
-            top: 69%;
-            right: 12%;
+            top: 60%;
+            right: 13%;
             left: auto;
             z-index: 25;
             width: clamp(8.7rem, 12.3vw, 9.9rem);
             transform: rotate(5deg);
         }
         .stitch-sticker--cocktail {
-            top: 43%;
-            left: 55%;
+            top: 38%;
+            left: 57%;
             z-index: 26;
             width: clamp(8.8rem, 12.5vw, 10rem);
             transform: rotate(-4deg);
         }
         .stitch-sticker--dna {
-            top: 50%;
-            left: 8%;
+            top: 43%;
+            left: 7%;
             z-index: 21;
             width: clamp(8.5rem, 12.2vw, 9.7rem);
             transform: rotate(-5deg);
         }
         .stitch-sticker--bbq {
-            top: 61%;
-            left: 30%;
+            top: 56%;
+            left: 34%;
             z-index: 22;
             width: clamp(9rem, 13.1vw, 10.6rem);
             transform: rotate(-2deg);
@@ -384,8 +384,8 @@
             transform: rotate(-12deg);
         }
         .stitch-mini-sticker--new {
-            right: 40%;
-            bottom: 16%;
+            right: 39%;
+            bottom: 9%;
             width: 4rem;
             height: 2.5rem;
             border-radius: 9999px;
