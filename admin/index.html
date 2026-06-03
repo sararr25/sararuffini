@@ -150,7 +150,7 @@
         getInitialState: function () {
           return {
             isEditorOpen: false,
-            zoom: 140,
+            zoom: 130,
             isDragging: false
           };
         },
@@ -173,12 +173,16 @@
             return;
           }
 
-          this.setState({ zoom: Math.max(100, Math.min(300, zoom)) });
+          this.setState({ zoom: Math.max(100, Math.min(280, zoom)) });
         },
 
-        setCropFromEvent: function (event) {
-          var canvas = this.canvasRef;
-          if (!canvas) {
+        changeZoom: function (delta) {
+          this.setZoom((this.state.zoom || 130) + delta);
+        },
+
+        setCropFromPointer: function (event) {
+          var editor = this.editorRef;
+          if (!editor) {
             return;
           }
 
@@ -187,7 +191,7 @@
             return;
           }
 
-          var rect = canvas.getBoundingClientRect();
+          var rect = editor.getBoundingClientRect();
           if (!rect.width || !rect.height) {
             return;
           }
@@ -200,65 +204,65 @@
           });
         },
 
-        onCanvasMouseDown: function (event) {
+        onEditorMouseDown: function (event) {
           event.preventDefault();
           this.setState({ isDragging: true });
-          this.setCropFromEvent(event);
+          this.setCropFromPointer(event);
         },
 
-        onCanvasMouseMove: function (event) {
+        onEditorMouseMove: function (event) {
           if (!this.state.isDragging) {
             return;
           }
-          this.setCropFromEvent(event);
+
+          this.setCropFromPointer(event);
         },
 
-        onCanvasMouseUp: function () {
-          if (!this.state.isDragging) {
-            return;
-          }
-          this.setState({ isDragging: false });
-        },
-
-        onCanvasTouchStart: function (event) {
-          this.setCropFromEvent(event);
-        },
-
-        onCanvasTouchMove: function (event) {
-          event.preventDefault();
-          this.setCropFromEvent(event);
-        },
-
-        componentWillUnmount: function () {
-          if (this.state && this.state.isDragging) {
+        stopDragging: function () {
+          if (this.state.isDragging) {
             this.setState({ isDragging: false });
           }
         },
 
-        renderButton: function (label, x, y) {
-          return h('button', {
-            key: label,
-            type: 'button',
-            onClick: function () {
-              this.setCrop({ x: x, y: y });
-            }.bind(this),
+        onEditorTouchStart: function (event) {
+          this.setCropFromPointer(event);
+        },
+
+        onEditorTouchMove: function (event) {
+          event.preventDefault();
+          this.setCropFromPointer(event);
+        },
+
+        renderImageSurface: function (key, imageUrl, crop, zoom, showGuides) {
+          var safeUrl = imageUrl.replace(/"/g, '\\"');
+          return h('div', {
+            key: key,
             style: {
-              minHeight: '30px',
-              border: '1px solid #d1d5db',
-              borderRadius: '4px',
-              background: '#ffffff',
-              cursor: 'pointer',
-              fontSize: '11px',
-              fontWeight: '700'
+              width: '100%',
+              aspectRatio: '16 / 9',
+              border: showGuides ? '2px solid #111827' : '1px solid #d1d5db',
+              borderRadius: showGuides ? '10px' : '8px',
+              backgroundImage: showGuides
+                ? 'linear-gradient(90deg, rgba(255,255,255,.25) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.25) 1px, transparent 1px), radial-gradient(circle at ' + crop.x + '% ' + crop.y + '%, rgba(0,0,0,.0) 0 5px, rgba(255,255,255,.9) 6px 8px, rgba(255,255,255,0) 9px), url("' + safeUrl + '")'
+                : 'url("' + safeUrl + '")',
+              backgroundSize: showGuides
+                ? '33.33% 100%, 100% 33.33%, auto, ' + zoom + '% ' + zoom + '%'
+                : zoom + '% ' + zoom + '%',
+              backgroundPosition: showGuides
+                ? 'center, center, center, ' + crop.x + '% ' + crop.y + '%'
+                : crop.x + '% ' + crop.y + '%',
+              backgroundRepeat: 'no-repeat',
+              overflow: 'hidden'
             }
-          }, label);
+          });
         },
 
         render: function () {
           var crop = parseCrop(this.props.value);
           var imageUrl = resolveCropImageUrl(this.props);
           var hasImage = !!imageUrl;
-          var zoomPercent = this.state.zoom;
+          var zoom = this.state.zoom;
+
           return h('div', {
             id: this.props.forID,
             className: this.props.classNameWrapper,
@@ -266,14 +270,36 @@
               display: 'flex',
               flexDirection: 'column',
               gap: '10px',
-              padding: '10px',
+              padding: '12px',
               border: '1px solid #d1d5db',
               borderRadius: '8px',
               background: '#f9fafb'
             }
           }, [
+            h('strong', {
+              key: 'title',
+              style: { fontSize: '12px', letterSpacing: '.02em' }
+            }, 'Crop position'),
+            hasImage
+              ? this.renderImageSurface('mini-preview', imageUrl, crop, 100, false)
+              : h('div', {
+                  key: 'placeholder',
+                  style: {
+                    width: '100%',
+                    maxWidth: '360px',
+                    aspectRatio: '16 / 9',
+                    border: '1px dashed #9ca3af',
+                    borderRadius: '8px',
+                    background: '#ffffff',
+                    color: '#6b7280',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '12px'
+                  }
+                }, 'Carica prima l\'immagine per usare il crop'),
             h('div', {
-              key: 'hero-row',
+              key: 'actions',
               style: {
                 display: 'flex',
                 alignItems: 'center',
@@ -281,37 +307,6 @@
                 flexWrap: 'wrap'
               }
             }, [
-              hasImage
-                ? h('img', {
-                    key: 'thumb',
-                    src: imageUrl,
-                    alt: 'Preview immagine',
-                    style: {
-                      width: '96px',
-                      height: '60px',
-                      objectFit: 'cover',
-                      objectPosition: crop.x + '% ' + crop.y + '%',
-                      borderRadius: '6px',
-                      border: '1px solid #111827'
-                    }
-                  })
-                : h('div', {
-                    key: 'thumb-placeholder',
-                    style: {
-                      width: '96px',
-                      height: '60px',
-                      borderRadius: '6px',
-                      border: '1px dashed #9ca3af',
-                      background: '#ffffff',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#6b7280',
-                      fontSize: '10px',
-                      textAlign: 'center',
-                      padding: '4px'
-                    }
-                  }, 'Nessuna immagine'),
               h('button', {
                 key: 'open-editor',
                 type: 'button',
@@ -328,80 +323,23 @@
                   fontWeight: '700',
                   padding: '0 12px'
                 }
-              }, 'Crop immagine'),
+              }, 'Apri editor crop'),
               h('small', {
                 key: 'coords',
                 style: {
                   color: '#4b5563',
                   fontSize: '12px'
                 }
-              }, 'Posizione: ' + Math.round(crop.x) + '% / ' + Math.round(crop.y) + '%')
+              }, 'Vista attuale: ' + Math.round(crop.x) + '% / ' + Math.round(crop.y) + '%')
             ]),
-            h('div', {
-              key: 'preview',
-              style: {
-                width: '100%',
-                maxWidth: '260px',
-                aspectRatio: '16 / 9',
-                border: '1px solid #111827',
-                borderRadius: '6px',
-                background:
-                  'radial-gradient(circle at ' + crop.x + '% ' + crop.y + '%, #2563eb 0 8px, transparent 9px), linear-gradient(90deg, rgba(17,24,39,.12) 1px, transparent 1px), linear-gradient(rgba(17,24,39,.12) 1px, transparent 1px)',
-                backgroundSize: 'auto, 33.33% 100%, 100% 33.33%'
-              }
-            }),
-            h('div', {
-              key: 'grid',
-              style: {
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-                gap: '4px',
-                maxWidth: '260px'
-              }
-            }, [
-              this.renderButton('TL', 0, 0),
-              this.renderButton('T', 50, 0),
-              this.renderButton('TR', 100, 0),
-              this.renderButton('L', 0, 50),
-              this.renderButton('C', 50, 50),
-              this.renderButton('R', 100, 50),
-              this.renderButton('BL', 0, 100),
-              this.renderButton('B', 50, 100),
-              this.renderButton('BR', 100, 100)
-            ]),
-            h('label', { key: 'x', style: { display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' } }, [
-              'X: ' + crop.x + '%',
-              h('input', {
-                type: 'range',
-                min: 0,
-                max: 100,
-                step: 1,
-                value: crop.x,
-                onChange: function (event) {
-                  this.setCrop({ x: event.target.value, y: crop.y });
-                }.bind(this)
-              })
-            ]),
-            h('label', { key: 'y', style: { display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px' } }, [
-              'Y: ' + crop.y + '%',
-              h('input', {
-                type: 'range',
-                min: 0,
-                max: 100,
-                step: 1,
-                value: crop.y,
-                onChange: function (event) {
-                  this.setCrop({ x: crop.x, y: event.target.value });
-                }.bind(this)
-              })
-            ]),
-            h('small', { key: 'hint', style: { color: '#4b5563', lineHeight: 1.35 } },
-              'Choose which part of the image stays visible inside cropped frames. The original file is not changed.'
-            ),
+            h('small', {
+              key: 'hint',
+              style: { color: '#4b5563', lineHeight: 1.35 }
+            }, 'Nell\'editor puoi trascinare l\'immagine e usare zoom +/- per scegliere esattamente la parte che verra mostrata.'),
             this.state.isEditorOpen && hasImage
               ? h('div', {
                   key: 'editor-overlay',
-                  onMouseUp: this.onCanvasMouseUp,
+                  onMouseUp: this.stopDragging,
                   style: {
                     position: 'fixed',
                     inset: '0',
@@ -415,8 +353,9 @@
                 }, [
                   h('div', {
                     key: 'editor-modal',
+                    onClick: function (event) { event.stopPropagation(); },
                     style: {
-                      width: 'min(960px, 100%)',
+                      width: 'min(980px, 100%)',
                       maxHeight: '92vh',
                       overflow: 'auto',
                       background: '#ffffff',
@@ -426,14 +365,11 @@
                       padding: '16px',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '12px'
-                    },
-                    onClick: function (event) {
-                      event.stopPropagation();
+                      gap: '14px'
                     }
                   }, [
                     h('div', {
-                      key: 'editor-header',
+                      key: 'header',
                       style: {
                         display: 'flex',
                         alignItems: 'center',
@@ -441,7 +377,7 @@
                         gap: '12px'
                       }
                     }, [
-                      h('strong', { key: 'title', style: { fontSize: '14px' } }, 'Editor Crop'),
+                      h('strong', { key: 'header-title', style: { fontSize: '14px' } }, 'Editor crop immagine'),
                       h('button', {
                         key: 'close',
                         type: 'button',
@@ -458,53 +394,112 @@
                       }, 'Chiudi')
                     ]),
                     h('div', {
-                      key: 'canvas',
-                      ref: function (node) {
-                        this.canvasRef = node;
-                      }.bind(this),
-                      onMouseDown: this.onCanvasMouseDown,
-                      onMouseMove: this.onCanvasMouseMove,
-                      onMouseLeave: this.onCanvasMouseUp,
-                      onTouchStart: this.onCanvasTouchStart,
-                      onTouchMove: this.onCanvasTouchMove,
+                      key: 'workspace',
                       style: {
-                        width: '100%',
-                        aspectRatio: '16 / 9',
-                        border: '2px solid #111827',
-                        borderRadius: '10px',
-                        cursor: this.state.isDragging ? 'grabbing' : 'crosshair',
-                        backgroundImage:
-                          'radial-gradient(circle at ' + crop.x + '% ' + crop.y + '%, rgba(37,99,235,.95) 0 8px, rgba(37,99,235,.3) 9px 16px, transparent 17px), linear-gradient(90deg, rgba(17,24,39,.2) 1px, transparent 1px), linear-gradient(rgba(17,24,39,.2) 1px, transparent 1px), url("' + imageUrl.replace(/"/g, '\\"') + '")',
-                        backgroundSize: 'auto, 33.33% 100%, 100% 33.33%, ' + zoomPercent + '% ' + zoomPercent + '%',
-                        backgroundPosition: 'center, center, center, ' + crop.x + '% ' + crop.y + '%',
-                        backgroundRepeat: 'no-repeat'
+                        display: 'grid',
+                        gridTemplateColumns: '2fr 1fr',
+                        gap: '14px'
                       }
-                    }),
+                    }, [
+                      h('div', {
+                        key: 'editor-panel',
+                        style: {
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '8px'
+                        }
+                      }, [
+                        h('small', { key: 'editor-label', style: { color: '#374151' } }, 'Editor: trascina per scegliere il punto visibile'),
+                        h('div', {
+                          key: 'editor-surface',
+                          ref: function (node) { this.editorRef = node; }.bind(this),
+                          onMouseDown: this.onEditorMouseDown,
+                          onMouseMove: this.onEditorMouseMove,
+                          onMouseLeave: this.stopDragging,
+                          onTouchStart: this.onEditorTouchStart,
+                          onTouchMove: this.onEditorTouchMove,
+                          style: {
+                            cursor: this.state.isDragging ? 'grabbing' : 'grab'
+                          }
+                        }, [this.renderImageSurface('editor-surface-inner', imageUrl, crop, zoom, true)])
+                      ]),
+                      h('div', {
+                        key: 'preview-panel',
+                        style: {
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '8px'
+                        }
+                      }, [
+                        h('small', { key: 'preview-label', style: { color: '#374151' } }, 'Anteprima reale di cio che verra mostrato'),
+                        this.renderImageSurface('preview-surface', imageUrl, crop, 100, false),
+                        h('small', { key: 'preview-coords', style: { color: '#4b5563' } }, 'Posizione: ' + Math.round(crop.x) + '% / ' + Math.round(crop.y) + '%')
+                      ])
+                    ]),
                     h('div', {
                       key: 'controls',
                       style: {
                         display: 'grid',
-                        gridTemplateColumns: 'auto 1fr auto auto',
-                        gap: '10px',
+                        gridTemplateColumns: 'auto auto 1fr auto auto',
+                        gap: '8px',
                         alignItems: 'center'
                       }
                     }, [
-                      h('label', { key: 'zoom-label', style: { fontSize: '12px', fontWeight: '700' } }, 'Zoom'),
+                      h('span', { key: 'zoom-label', style: { fontSize: '12px', fontWeight: '700' } }, 'Zoom'),
+                      h('button', {
+                        key: 'zoom-out',
+                        type: 'button',
+                        onClick: function () { this.changeZoom(-10); }.bind(this),
+                        style: {
+                          minHeight: '30px',
+                          minWidth: '30px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '6px',
+                          background: '#ffffff',
+                          cursor: 'pointer',
+                          fontWeight: '700'
+                        }
+                      }, '-'),
                       h('input', {
                         key: 'zoom-range',
                         type: 'range',
                         min: 100,
-                        max: 300,
-                        step: 5,
-                        value: zoomPercent,
+                        max: 280,
+                        step: 2,
+                        value: zoom,
                         onChange: function (event) {
                           this.setZoom(event.target.value);
                         }.bind(this)
                       }),
+                      h('button', {
+                        key: 'zoom-in',
+                        type: 'button',
+                        onClick: function () { this.changeZoom(10); }.bind(this),
+                        style: {
+                          minHeight: '30px',
+                          minWidth: '30px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '6px',
+                          background: '#ffffff',
+                          cursor: 'pointer',
+                          fontWeight: '700'
+                        }
+                      }, '+'),
                       h('span', {
                         key: 'zoom-value',
                         style: { fontSize: '12px', minWidth: '56px', textAlign: 'right' }
-                      }, zoomPercent + '%'),
+                      }, zoom + '%')
+                    ]),
+                    h('div', {
+                      key: 'footer',
+                      style: {
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        gap: '10px',
+                        flexWrap: 'wrap'
+                      }
+                    }, [
                       h('button', {
                         key: 'center',
                         type: 'button',
@@ -519,14 +514,14 @@
                           cursor: 'pointer',
                           fontSize: '12px',
                           fontWeight: '700',
-                          padding: '0 8px'
+                          padding: '0 10px'
                         }
-                      }, 'Centra')
-                    ]),
-                    h('small', {
-                      key: 'editor-hint',
-                      style: { color: '#4b5563', lineHeight: 1.35 }
-                    }, 'Clicca o trascina sull\'immagine per scegliere il punto di crop. Usa lo zoom per maggiore precisione.')
+                      }, 'Centra immagine'),
+                      h('small', {
+                        key: 'footer-note',
+                        style: { color: '#4b5563', lineHeight: 1.35 }
+                      }, 'Il crop salva solo la posizione (x,y). Il file originale non viene modificato.')
+                    ])
                   ])
                 ])
               : null
@@ -688,172 +683,7 @@
         syncSlugFromTitle(false);
       }
 
-      function isImageField(input) {
-        var name = (input.getAttribute('name') || '').toLowerCase();
-        var value = (input.value || '').trim();
-        var imageName = /(image|img|photo|poster|thumbnail|cover|avatar|media|seo_image)/.test(name);
-        var imageValue = /\.(png|jpe?g|webp|gif|avif|svg)(?:[?#].*)?$/i.test(value) ||
-          /^\/assets\/media\//.test(value) ||
-          /^https?:\/\/.+/i.test(value) && /(image|googleusercontent|cloudinary|unsplash|assets|media)/i.test(value);
-
-        return imageName || imageValue;
-      }
-
-      function parseCropValue(value) {
-        var match = String(value || '').match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:&.*)?$/);
-        return {
-          x: match ? Math.max(0, Math.min(100, Number(match[1]))) : 50,
-          y: match ? Math.max(0, Math.min(100, Number(match[2]))) : 50
-        };
-      }
-
-      function stripCropValue(value) {
-        return String(value || '').replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
-      }
-
-      function withCropValue(value, crop) {
-        var cleanValue = stripCropValue(value).trim();
-        if (!cleanValue) return '';
-        return cleanValue + '#crop=' + Math.round(crop.x) + ',' + Math.round(crop.y);
-      }
-
-      function makeCropButton(label, x, y, onClick) {
-        var button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = label;
-        button.style.minHeight = '28px';
-        button.style.border = '1px solid #d1d5db';
-        button.style.borderRadius = '4px';
-        button.style.background = '#ffffff';
-        button.style.cursor = 'pointer';
-        button.style.fontSize = '11px';
-        button.addEventListener('click', function () {
-          onClick({ x: x, y: y });
-        });
-        return button;
-      }
-
-      function buildImageCropControls(input) {
-        if (input.dataset.cropControlsReady === 'true') return;
-        input.dataset.cropControlsReady = 'true';
-
-        var wrapper = input.closest('div');
-        if (!wrapper) return;
-
-        var controls = document.createElement('div');
-        controls.setAttribute('data-image-crop-controls', 'true');
-        controls.style.display = 'none';
-        controls.style.flexDirection = 'column';
-        controls.style.gap = '8px';
-        controls.style.marginTop = '10px';
-        controls.style.padding = '10px';
-        controls.style.border = '1px solid #d1d5db';
-        controls.style.borderRadius = '8px';
-        controls.style.background = '#f9fafb';
-
-        var title = document.createElement('strong');
-        title.textContent = 'Crop / posizione immagine';
-        title.style.fontSize = '12px';
-
-        var hint = document.createElement('small');
-        hint.textContent = "Scegli quale parte dell'immagine deve restare visibile nei frame con ritaglio. Il file originale non viene modificato.";
-        hint.style.color = '#4b5563';
-        hint.style.lineHeight = '1.35';
-
-        var preview = document.createElement('div');
-        preview.style.width = '100%';
-        preview.style.maxWidth = '260px';
-        preview.style.aspectRatio = '16 / 9';
-        preview.style.border = '1px solid #111827';
-        preview.style.borderRadius = '6px';
-        preview.style.backgroundSize = 'cover';
-        preview.style.backgroundColor = '#e5e7eb';
-        preview.style.overflow = 'hidden';
-
-        var grid = document.createElement('div');
-        grid.style.display = 'grid';
-        grid.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
-        grid.style.gap = '4px';
-        grid.style.maxWidth = '260px';
-
-        var sliderX = document.createElement('input');
-        sliderX.type = 'range';
-        sliderX.min = '0';
-        sliderX.max = '100';
-        sliderX.step = '1';
-
-        var sliderY = document.createElement('input');
-        sliderY.type = 'range';
-        sliderY.min = '0';
-        sliderY.max = '100';
-        sliderY.step = '1';
-
-        var status = document.createElement('small');
-        status.style.color = '#374151';
-
-        function refresh() {
-          var value = input.value || '';
-          var cleanValue = stripCropValue(value);
-          var crop = parseCropValue(value);
-          var hasImage = !!cleanValue.trim();
-
-          controls.style.display = hasImage ? 'flex' : 'none';
-          if (!hasImage) return;
-
-          sliderX.value = String(crop.x);
-          sliderY.value = String(crop.y);
-          preview.style.backgroundImage = 'url("' + cleanValue.replace(/"/g, '\\"') + '")';
-          preview.style.backgroundPosition = crop.x + '% ' + crop.y + '%';
-          status.textContent = 'Posizione: ' + crop.x + '% orizzontale, ' + crop.y + '% verticale';
-        }
-
-        function update(crop) {
-          var next = {
-            x: Math.max(0, Math.min(100, Number(crop.x))),
-            y: Math.max(0, Math.min(100, Number(crop.y)))
-          };
-          setInputValue(input, withCropValue(input.value || '', next));
-          refresh();
-        }
-
-        [
-          ['TL', 0, 0], ['T', 50, 0], ['TR', 100, 0],
-          ['L', 0, 50], ['C', 50, 50], ['R', 100, 50],
-          ['BL', 0, 100], ['B', 50, 100], ['BR', 100, 100]
-        ].forEach(function (item) {
-          grid.appendChild(makeCropButton(item[0], item[1], item[2], update));
-        });
-
-        sliderX.addEventListener('input', function () {
-          update({ x: sliderX.value, y: sliderY.value });
-        });
-        sliderY.addEventListener('input', function () {
-          update({ x: sliderX.value, y: sliderY.value });
-        });
-        input.addEventListener('input', refresh);
-        input.addEventListener('change', refresh);
-
-        controls.appendChild(title);
-        controls.appendChild(hint);
-        controls.appendChild(preview);
-        controls.appendChild(grid);
-        controls.appendChild(status);
-        controls.appendChild(sliderX);
-        controls.appendChild(sliderY);
-        wrapper.appendChild(controls);
-        refresh();
-      }
-
-      function wireImageCropControls() {
-        document.querySelectorAll('input[name], textarea[name]').forEach(function (input) {
-          if (!isImageField(input)) return;
-          buildImageCropControls(input);
-        });
-      }
-
       function wireEditorEnhancements() {
-        wireImageCropControls();
-
         var fieldMap = getCollectionFieldMap();
         if (!fieldMap) return;
 
