@@ -5,7 +5,7 @@ backend:
   branch: main
   base_url: https://decap-proxy.sararuffini25.workers.dev
   auth_endpoint: auth
-media_folder: assets/media
+media_folder: public/assets/media
 public_folder: "/assets/media"
 local_backend: true
 locale: it
@@ -17,7 +17,7 @@ collections:
   files:
   - label: Global Navigation & Footer
     name: global
-    file: content/global.json
+    file: public/content/global.json
     editor:
       preview: false
     fields:
@@ -145,7 +145,7 @@ collections:
       hint: "e.g. email@domain.com | +45 00 00 00 00 | City"
   - label: SEO Defaults
     name: seo_defaults
-    file: content/global-seo.json
+    file: public/content/global-seo.json
     editor:
       preview: false
     fields:
@@ -171,7 +171,7 @@ collections:
   files:
   - label: Video Project Template
     name: video_template
-    file: content/templates/video-template.json
+    file: public/content/templates/video-template.json
     fields:
     - label: Template Name
       name: template_name
@@ -484,7 +484,7 @@ collections:
       allow_delete: true
   - label: Graphic Design Template
     name: graphics_template
-    file: content/templates/graphics-template.json
+    file: public/content/templates/graphics-template.json
     fields:
     - label: Template Name
       name: template_name
@@ -492,7 +492,7 @@ collections:
       default: Graphic Design
   - label: Photography Project Template
     name: photography_template
-    file: content/templates/photography-template.json
+    file: public/content/templates/photography-template.json
     fields:
     - label: Template Name
       name: template_name
@@ -629,7 +629,7 @@ collections:
       allow_delete: true
   - label: Shooting Cocktails Template
     name: shooting_cocktails_template
-    file: content/templates/shooting-cocktails-template.json
+    file: public/content/templates/shooting-cocktails-template.json
     fields:
     - label: Template Name
       name: template_name
@@ -863,7 +863,7 @@ collections:
       allow_delete: true
   - label: App Design Template
     name: app_template
-    file: content/templates/app-template.json
+    file: public/content/templates/app-template.json
     fields:
     - label: Template Name
       name: template_name
@@ -996,7 +996,7 @@ collections:
       allow_delete: true
   - label: Web Project Template
     name: web_template
-    file: content/templates/web-template.json
+    file: public/content/templates/web-template.json
     fields:
     - label: Template Name
       name: template_name
@@ -1136,7 +1136,7 @@ collections:
   files:
   - label: Neon Vibes Web Page
     name: neon_vibes_web
-    file: content/pages/neon-vibes-web.json
+    file: public/content/pages/neon-vibes-web.json
     fields:
     - label: Project Title
       name: project_title
@@ -1269,7 +1269,7 @@ collections:
         required: false
   - label: Webpage Portfolio
     name: webpage_portfolio
-    file: content/pages/webpage-portfolio.json
+    file: public/content/pages/webpage-portfolio.json
     fields:
     - label: Project Title
       name: project_title
@@ -1667,7 +1667,7 @@ collections:
         required: false
   - label: Video Page V1
     name: video_v1
-    file: content/pages/weber-grillinspiration.json
+    file: public/content/pages/weber-grillinspiration.json
     fields:
     # Hero Section
     - label: "🎬 HERO SECTION"
@@ -1918,7 +1918,7 @@ collections:
         required: false
   - label: Cocktail Photography Page
     name: cocktail_photography
-    file: content/pages/cocktail-photography.json
+    file: public/content/pages/cocktail-photography.json
     fields:
     - label: Project Title
       name: project_title
@@ -2111,7 +2111,7 @@ collections:
         required: false
   - label: Shooting Cocktails Page
     name: shooting_cocktails
-    file: content/pages/shooting-cocktails.json
+    file: public/content/pages/shooting-cocktails.json
     fields:
     - label: Hero Title Line 1
       name: hero_title_line_1
@@ -2249,7 +2249,7 @@ collections:
         required: false
   - label: Coming Soon Page
     name: coming_soon
-    file: content/pages/coming-soon.json
+    file: public/content/pages/coming-soon.json
     fields:
     - label: Window Label
       name: window_label
@@ -2404,7 +2404,7 @@ collections:
         required: false
   - label: Video Page V2
     name: video_v2
-    file: content/pages/video-v2.json
+    file: public/content/pages/video-v2.json
     fields:
     - label: "🎬 HERO SECTION"
       name: hero_section
@@ -2634,7 +2634,7 @@ collections:
         required: false
   - label: App Page V1
     name: app_v1
-    file: content/pages/app-v1.json
+    file: public/content/pages/app-v1.json
     fields:
     - label: Phase Label
       name: hero_phase
@@ -2787,7 +2787,7 @@ collections:
       required: false
   - label: App Page V2
     name: app_v2
-    file: content/pages/app-v2.json
+    file: public/content/pages/app-v2.json
     fields:
     - label: Phase Label
       name: hero_phase
@@ -2944,7 +2944,7 @@ collections:
       required: false
   - label: Graphics Page
     name: graphics
-    file: content/pages/graphics.json
+    file: public/content/pages/graphics.json
     fields:
     - label: Campaign Title
       name: campaign_title
@@ -3085,7 +3085,7 @@ collections:
       required: false
   - label: Social Media Page
     name: socialmedia_portfolio
-    file: content/pages/socialmedia-portfolio.json
+    file: public/content/pages/socialmedia-portfolio.json
     fields:
     - label: Main Title
       name: hero_title
@@ -3280,7 +3280,7 @@ collections:
         required: false
   - label: Homepage
     name: homepage
-    file: content/pages/homepage.json
+    file: public/content/pages/homepage.json
     fields:
     - label: Hero Line 1
       name: hero_line_1
@@ -3657,7 +3657,7 @@ collections:
       required: false
   - label: About Page
     name: about
-    file: content/pages/about.json
+    file: public/content/pages/about.json
     fields:
     - label: Hero Line 1
       name: hero_title_line1
@@ -3924,7 +3924,7 @@ collections:
       required: false
   - label: Portfolio Main Page
     name: portfolio_main
-    file: content/pages/portfolio-main.json
+    file: public/content/pages/portfolio-main.json
     fields:
     - label: Heading Line 1
       name: heading_line1
@@ -4103,7 +4103,7 @@ collections:
       required: false
   - label: Contact Page
     name: contact
-    file: content/pages/contact.json
+    file: public/content/pages/contact.json
     fields:
     - label: "🔍 SEO"
       name: seo
@@ -4125,7 +4125,7 @@ collections:
 - name: project_pages_entries
   label: Project Pages / Entries
   description: Create new project pages from existing templates
-  folder: content/pages/entries
+  folder: public/content/pages/entries
   create: true
   identifier_field: entry_title
   summary: "{{entry_title}} -> /pages/{{slug}}/index.html"
