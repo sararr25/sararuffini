@@ -130,6 +130,83 @@
     }
   }
 
+  function isExternalHttpLink(href) {
+    if (typeof href !== 'string' || !href.trim()) {
+      return false;
+    }
+
+    var trimmed = href.trim();
+    if (/^(#|mailto:|tel:|javascript:|data:)/i.test(trimmed)) {
+      return false;
+    }
+
+    var resolved;
+    try {
+      resolved = new URL(trimmed, window.location.href);
+    } catch (err) {
+      return false;
+    }
+
+    if (!/^https?:$/i.test(resolved.protocol)) {
+      return false;
+    }
+
+    return resolved.origin !== window.location.origin;
+  }
+
+  function applyAnchorTargetPolicy(anchor) {
+    if (!anchor) {
+      return;
+    }
+
+    var href = anchor.getAttribute('href') || '';
+    var isExternal = isExternalHttpLink(href);
+
+    if (isExternal) {
+      anchor.setAttribute('target', '_blank');
+
+      var rel = (anchor.getAttribute('rel') || '').trim();
+      var relParts = rel ? rel.split(/\s+/) : [];
+      if (relParts.indexOf('noopener') === -1) {
+        relParts.push('noopener');
+      }
+      if (relParts.indexOf('noreferrer') === -1) {
+        relParts.push('noreferrer');
+      }
+      anchor.setAttribute('rel', relParts.join(' ').trim());
+      return;
+    }
+
+    if ((anchor.getAttribute('target') || '').toLowerCase() === '_blank') {
+      anchor.removeAttribute('target');
+    }
+
+    var currentRel = (anchor.getAttribute('rel') || '').trim();
+    if (!currentRel) {
+      return;
+    }
+
+    var nextRel = currentRel
+      .split(/\s+/)
+      .filter(function (part) {
+        var lower = part.toLowerCase();
+        return lower !== 'noopener' && lower !== 'noreferrer';
+      })
+      .join(' ')
+      .trim();
+
+    if (nextRel) {
+      anchor.setAttribute('rel', nextRel);
+    } else {
+      anchor.removeAttribute('rel');
+    }
+  }
+
+  function applyLinkTargetPolicy(scope) {
+    var root = scope && scope.querySelectorAll ? scope : document;
+    root.querySelectorAll('a[href]').forEach(applyAnchorTargetPolicy);
+  }
+
   function applyByAttribute(allData, dataAttribute, applyValue) {
     document.querySelectorAll('[' + dataAttribute + ']').forEach(function (node) {
       var key = node.getAttribute(dataAttribute);
@@ -501,8 +578,7 @@
     if (linkUrl) {
       var link = document.createElement('a');
       link.setAttribute('href', linkUrl);
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
+      applyAnchorTargetPolicy(link);
       link.appendChild(mediaNode);
       root.appendChild(link);
     } else {
@@ -824,6 +900,9 @@
 
     // Apply brand and nav labels/links globally from site settings.
     applyGlobalNavigation(allData);
+
+    // Internal links stay in same tab, external links open in a new tab.
+    applyLinkTargetPolicy(document);
   }
 
   function init() {

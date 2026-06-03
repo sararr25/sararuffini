@@ -146,6 +146,68 @@
     return normalizedUrl.includes('embed') || normalizedUrl.includes('youtube') || normalizedUrl.includes('vimeo') || normalizedUrl.includes('instagram');
   }
 
+  function isExternalHttpLink(href) {
+    if (typeof href !== 'string' || !href.trim()) return false;
+
+    const trimmed = href.trim();
+    if (/^(#|mailto:|tel:|javascript:|data:)/i.test(trimmed)) return false;
+
+    let parsed;
+    try {
+      parsed = new URL(trimmed, window.location.href);
+    } catch (_e) {
+      return false;
+    }
+
+    if (!/^https?:$/i.test(parsed.protocol)) return false;
+    return parsed.origin !== window.location.origin;
+  }
+
+  function applyAnchorTargetPolicy(anchor) {
+    if (!anchor) return;
+
+    const href = anchor.getAttribute('href') || '';
+    const isExternal = isExternalHttpLink(href);
+
+    if (isExternal) {
+      anchor.setAttribute('target', '_blank');
+
+      const rel = (anchor.getAttribute('rel') || '').trim();
+      const relParts = rel ? rel.split(/\s+/) : [];
+      if (!relParts.includes('noopener')) relParts.push('noopener');
+      if (!relParts.includes('noreferrer')) relParts.push('noreferrer');
+      anchor.setAttribute('rel', relParts.join(' ').trim());
+      return;
+    }
+
+    if ((anchor.getAttribute('target') || '').toLowerCase() === '_blank') {
+      anchor.removeAttribute('target');
+    }
+
+    const relValue = (anchor.getAttribute('rel') || '').trim();
+    if (!relValue) return;
+
+    const nextRel = relValue
+      .split(/\s+/)
+      .filter(part => {
+        const lower = part.toLowerCase();
+        return lower !== 'noopener' && lower !== 'noreferrer';
+      })
+      .join(' ')
+      .trim();
+
+    if (nextRel) {
+      anchor.setAttribute('rel', nextRel);
+    } else {
+      anchor.removeAttribute('rel');
+    }
+  }
+
+  function applyLinkTargetPolicy(scope) {
+    const root = scope && scope.querySelectorAll ? scope : document;
+    root.querySelectorAll('a[href]').forEach(applyAnchorTargetPolicy);
+  }
+
   function withAutoplay(url) {
     if (!url || typeof url !== 'string') return '';
     try {
@@ -547,6 +609,7 @@
       bindMediaPlayButtons();
       applySelectorOverrides(allData);
       applyGlobalNavigation(allData);
+      applyLinkTargetPolicy(document);
       applySeoMeta(allData, globalSeo);
 
       log('Data applied successfully');

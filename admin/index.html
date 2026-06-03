@@ -27,9 +27,212 @@
         return Math.round(crop.x) + ',' + Math.round(crop.y);
       }
 
+      function stripImageCrop(url) {
+        if (typeof url !== 'string') {
+          return '';
+        }
+
+        return url.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
+      }
+
+      function findDeepStringByKey(target, keyName) {
+        if (!target || typeof target !== 'object') {
+          return '';
+        }
+
+        if (typeof target[keyName] === 'string' && target[keyName].trim()) {
+          return target[keyName].trim();
+        }
+
+        if (Array.isArray(target)) {
+          for (var i = 0; i < target.length; i += 1) {
+            var nestedValue = findDeepStringByKey(target[i], keyName);
+            if (nestedValue) {
+              return nestedValue;
+            }
+          }
+          return '';
+        }
+
+        var keys = Object.keys(target);
+        for (var j = 0; j < keys.length; j += 1) {
+          var key = keys[j];
+          var child = target[key];
+          if (child && typeof child === 'object') {
+            var nested = findDeepStringByKey(child, keyName);
+            if (nested) {
+              return nested;
+            }
+          }
+        }
+
+        return '';
+      }
+
+      function resolveImageFromDom(fieldName) {
+        if (!fieldName) {
+          return '';
+        }
+
+        var selectors = [
+          'input[name="' + fieldName + '"]',
+          'input[name$=".' + fieldName + '"]',
+          'input[id$="' + fieldName + '"]',
+          'textarea[name="' + fieldName + '"]',
+          'textarea[name$=".' + fieldName + '"]'
+        ];
+
+        for (var i = 0; i < selectors.length; i += 1) {
+          var input = document.querySelector(selectors[i]);
+          if (input && typeof input.value === 'string' && input.value.trim()) {
+            return input.value.trim();
+          }
+        }
+
+        return '';
+      }
+
+      function resolveCropImageUrl(props) {
+        if (!props) {
+          return '';
+        }
+
+        var fieldName = '';
+        if (props.field && typeof props.field.get === 'function') {
+          fieldName = props.field.get('name') || '';
+        }
+
+        if (!fieldName && typeof props.forID === 'string') {
+          var idParts = props.forID.split('.');
+          fieldName = idParts[idParts.length - 1] || '';
+        }
+
+        if (!fieldName) {
+          return '';
+        }
+
+        var candidates = [];
+        if (/_crop_position$/.test(fieldName)) {
+          candidates.push(fieldName.replace(/_crop_position$/, ''));
+        }
+        candidates.push(fieldName.replace(/_crop$/, ''));
+
+        var uniqueCandidates = [];
+        candidates.forEach(function (candidate) {
+          if (candidate && uniqueCandidates.indexOf(candidate) === -1) {
+            uniqueCandidates.push(candidate);
+          }
+        });
+
+        var entryData = props.entry && typeof props.entry.toJS === 'function' ? props.entry.toJS() : null;
+        for (var i = 0; i < uniqueCandidates.length; i += 1) {
+          var key = uniqueCandidates[i];
+          var direct = entryData && typeof entryData[key] === 'string' ? entryData[key].trim() : '';
+          if (direct) {
+            return stripImageCrop(direct);
+          }
+
+          var deep = findDeepStringByKey(entryData, key);
+          if (deep) {
+            return stripImageCrop(deep);
+          }
+
+          var fromDom = resolveImageFromDom(key);
+          if (fromDom) {
+            return stripImageCrop(fromDom);
+          }
+        }
+
+        return '';
+      }
+
       var CropPositionControl = createClass({
+        getInitialState: function () {
+          return {
+            isEditorOpen: false,
+            zoom: 140,
+            isDragging: false
+          };
+        },
+
         setCrop: function (crop) {
           this.props.onChange(serializeCrop(crop));
+        },
+
+        openEditor: function () {
+          this.setState({ isEditorOpen: true });
+        },
+
+        closeEditor: function () {
+          this.setState({ isEditorOpen: false, isDragging: false });
+        },
+
+        setZoom: function (value) {
+          var zoom = Number(value);
+          if (!isFinite(zoom)) {
+            return;
+          }
+
+          this.setState({ zoom: Math.max(100, Math.min(300, zoom)) });
+        },
+
+        setCropFromEvent: function (event) {
+          var canvas = this.canvasRef;
+          if (!canvas) {
+            return;
+          }
+
+          var point = event.touches && event.touches[0] ? event.touches[0] : event;
+          if (!point) {
+            return;
+          }
+
+          var rect = canvas.getBoundingClientRect();
+          if (!rect.width || !rect.height) {
+            return;
+          }
+
+          var x = ((point.clientX - rect.left) / rect.width) * 100;
+          var y = ((point.clientY - rect.top) / rect.height) * 100;
+          this.setCrop({
+            x: Math.max(0, Math.min(100, x)),
+            y: Math.max(0, Math.min(100, y))
+          });
+        },
+
+        onCanvasMouseDown: function (event) {
+          event.preventDefault();
+          this.setState({ isDragging: true });
+          this.setCropFromEvent(event);
+        },
+
+        onCanvasMouseMove: function (event) {
+          if (!this.state.isDragging) {
+            return;
+          }
+          this.setCropFromEvent(event);
+        },
+
+        onCanvasMouseUp: function () {
+          if (!this.state.isDragging) {
+            return;
+          }
+          this.setState({ isDragging: false });
+        },
+
+        onCanvasTouchStart: function (event) {
+          this.setCropFromEvent(event);
+        },
+
+        onCanvasTouchMove: function (event) {
+          event.preventDefault();
+          this.setCropFromEvent(event);
+        },
+
+        componentWillUnmount: function () {
+          if (this.state && this.state.isDragging) {
+            this.setState({ isDragging: false });
+          }
         },
 
         renderButton: function (label, x, y) {
@@ -53,6 +256,9 @@
 
         render: function () {
           var crop = parseCrop(this.props.value);
+          var imageUrl = resolveCropImageUrl(this.props);
+          var hasImage = !!imageUrl;
+          var zoomPercent = this.state.zoom;
           return h('div', {
             id: this.props.forID,
             className: this.props.classNameWrapper,
@@ -66,6 +272,71 @@
               background: '#f9fafb'
             }
           }, [
+            h('div', {
+              key: 'hero-row',
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                flexWrap: 'wrap'
+              }
+            }, [
+              hasImage
+                ? h('img', {
+                    key: 'thumb',
+                    src: imageUrl,
+                    alt: 'Preview immagine',
+                    style: {
+                      width: '96px',
+                      height: '60px',
+                      objectFit: 'cover',
+                      objectPosition: crop.x + '% ' + crop.y + '%',
+                      borderRadius: '6px',
+                      border: '1px solid #111827'
+                    }
+                  })
+                : h('div', {
+                    key: 'thumb-placeholder',
+                    style: {
+                      width: '96px',
+                      height: '60px',
+                      borderRadius: '6px',
+                      border: '1px dashed #9ca3af',
+                      background: '#ffffff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#6b7280',
+                      fontSize: '10px',
+                      textAlign: 'center',
+                      padding: '4px'
+                    }
+                  }, 'Nessuna immagine'),
+              h('button', {
+                key: 'open-editor',
+                type: 'button',
+                onClick: this.openEditor,
+                disabled: !hasImage,
+                style: {
+                  minHeight: '34px',
+                  border: '1px solid #1d4ed8',
+                  borderRadius: '6px',
+                  background: hasImage ? '#2563eb' : '#d1d5db',
+                  color: hasImage ? '#ffffff' : '#6b7280',
+                  cursor: hasImage ? 'pointer' : 'not-allowed',
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  padding: '0 12px'
+                }
+              }, 'Crop immagine'),
+              h('small', {
+                key: 'coords',
+                style: {
+                  color: '#4b5563',
+                  fontSize: '12px'
+                }
+              }, 'Posizione: ' + Math.round(crop.x) + '% / ' + Math.round(crop.y) + '%')
+            ]),
             h('div', {
               key: 'preview',
               style: {
@@ -126,7 +397,139 @@
             ]),
             h('small', { key: 'hint', style: { color: '#4b5563', lineHeight: 1.35 } },
               'Choose which part of the image stays visible inside cropped frames. The original file is not changed.'
-            )
+            ),
+            this.state.isEditorOpen && hasImage
+              ? h('div', {
+                  key: 'editor-overlay',
+                  onMouseUp: this.onCanvasMouseUp,
+                  style: {
+                    position: 'fixed',
+                    inset: '0',
+                    background: 'rgba(17,24,39,.55)',
+                    zIndex: 5000,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '16px'
+                  }
+                }, [
+                  h('div', {
+                    key: 'editor-modal',
+                    style: {
+                      width: 'min(960px, 100%)',
+                      maxHeight: '92vh',
+                      overflow: 'auto',
+                      background: '#ffffff',
+                      borderRadius: '12px',
+                      border: '1px solid #d1d5db',
+                      boxShadow: '0 20px 50px rgba(0, 0, 0, .25)',
+                      padding: '16px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '12px'
+                    },
+                    onClick: function (event) {
+                      event.stopPropagation();
+                    }
+                  }, [
+                    h('div', {
+                      key: 'editor-header',
+                      style: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '12px'
+                      }
+                    }, [
+                      h('strong', { key: 'title', style: { fontSize: '14px' } }, 'Editor Crop'),
+                      h('button', {
+                        key: 'close',
+                        type: 'button',
+                        onClick: this.closeEditor,
+                        style: {
+                          minHeight: '32px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '6px',
+                          background: '#ffffff',
+                          cursor: 'pointer',
+                          fontWeight: '700',
+                          padding: '0 10px'
+                        }
+                      }, 'Chiudi')
+                    ]),
+                    h('div', {
+                      key: 'canvas',
+                      ref: function (node) {
+                        this.canvasRef = node;
+                      }.bind(this),
+                      onMouseDown: this.onCanvasMouseDown,
+                      onMouseMove: this.onCanvasMouseMove,
+                      onMouseLeave: this.onCanvasMouseUp,
+                      onTouchStart: this.onCanvasTouchStart,
+                      onTouchMove: this.onCanvasTouchMove,
+                      style: {
+                        width: '100%',
+                        aspectRatio: '16 / 9',
+                        border: '2px solid #111827',
+                        borderRadius: '10px',
+                        cursor: this.state.isDragging ? 'grabbing' : 'crosshair',
+                        backgroundImage:
+                          'radial-gradient(circle at ' + crop.x + '% ' + crop.y + '%, rgba(37,99,235,.95) 0 8px, rgba(37,99,235,.3) 9px 16px, transparent 17px), linear-gradient(90deg, rgba(17,24,39,.2) 1px, transparent 1px), linear-gradient(rgba(17,24,39,.2) 1px, transparent 1px), url("' + imageUrl.replace(/"/g, '\\"') + '")',
+                        backgroundSize: 'auto, 33.33% 100%, 100% 33.33%, ' + zoomPercent + '% ' + zoomPercent + '%',
+                        backgroundPosition: 'center, center, center, ' + crop.x + '% ' + crop.y + '%',
+                        backgroundRepeat: 'no-repeat'
+                      }
+                    }),
+                    h('div', {
+                      key: 'controls',
+                      style: {
+                        display: 'grid',
+                        gridTemplateColumns: 'auto 1fr auto auto',
+                        gap: '10px',
+                        alignItems: 'center'
+                      }
+                    }, [
+                      h('label', { key: 'zoom-label', style: { fontSize: '12px', fontWeight: '700' } }, 'Zoom'),
+                      h('input', {
+                        key: 'zoom-range',
+                        type: 'range',
+                        min: 100,
+                        max: 300,
+                        step: 5,
+                        value: zoomPercent,
+                        onChange: function (event) {
+                          this.setZoom(event.target.value);
+                        }.bind(this)
+                      }),
+                      h('span', {
+                        key: 'zoom-value',
+                        style: { fontSize: '12px', minWidth: '56px', textAlign: 'right' }
+                      }, zoomPercent + '%'),
+                      h('button', {
+                        key: 'center',
+                        type: 'button',
+                        onClick: function () {
+                          this.setCrop({ x: 50, y: 50 });
+                        }.bind(this),
+                        style: {
+                          minHeight: '30px',
+                          border: '1px solid #d1d5db',
+                          borderRadius: '6px',
+                          background: '#ffffff',
+                          cursor: 'pointer',
+                          fontSize: '12px',
+                          fontWeight: '700',
+                          padding: '0 8px'
+                        }
+                      }, 'Centra')
+                    ]),
+                    h('small', {
+                      key: 'editor-hint',
+                      style: { color: '#4b5563', lineHeight: 1.35 }
+                    }, 'Clicca o trascina sull\'immagine per scegliere il punto di crop. Usa lo zoom per maggiore precisione.')
+                  ])
+                ])
+              : null
           ]);
         }
       });
