@@ -84,8 +84,8 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            min-height: clamp(700px, 76vh, 820px);
-            padding: 1.35rem 0.9rem 2.35rem;
+            min-height: clamp(760px, 74vw, 860px);
+            padding: 1.35rem clamp(0.9rem, 2vw, 1.5rem) 2.35rem;
         }
         .featured-stitch-doodles {
             position: absolute;
@@ -151,7 +151,7 @@
         }
         .stitch-sticker:hover {
             z-index: 100 !important;
-            transform: scale(1.08) rotate(0deg) !important;
+            transform: translateY(-6px) scale(1.035) rotate(0deg) !important;
             filter: drop-shadow(8px 8px 0 #f26c0d);
         }
         .stitch-sticker-card {
@@ -309,56 +309,58 @@
             top: 4%;
             left: 3%;
             z-index: 24;
-            width: 12.2rem;
+            width: clamp(10.4rem, 15.2vw, 12.1rem);
             transform: rotate(-3deg);
         }
         .stitch-sticker--pixel {
             top: 13%;
-            left: 22%;
+            left: 27%;
             z-index: 22;
-            width: 12.8rem;
+            width: clamp(10.8rem, 15.9vw, 12.7rem);
             transform: rotate(2deg);
         }
         .stitch-sticker--app {
-            top: 6%;
-            left: 46%;
+            top: 5%;
+            left: 52%;
             z-index: 23;
-            width: 11.9rem;
+            width: clamp(10.2rem, 14.8vw, 11.7rem);
             transform: rotate(4deg);
         }
         .stitch-sticker--pasta {
-            top: 16%;
-            left: 74%;
+            top: 17%;
+            right: 2%;
+            left: auto;
             z-index: 30;
-            width: 12.3rem;
+            width: clamp(10.4rem, 15.1vw, 12rem);
             transform: rotate(3deg);
         }
         .stitch-sticker--phone {
-            top: 67%;
-            left: 71%;
+            top: 69%;
+            right: 12%;
+            left: auto;
             z-index: 25;
-            width: 10rem;
+            width: clamp(8.7rem, 12.3vw, 9.9rem);
             transform: rotate(5deg);
         }
         .stitch-sticker--cocktail {
-            top: 45%;
-            left: 56%;
+            top: 43%;
+            left: 55%;
             z-index: 26;
-            width: 10.1rem;
+            width: clamp(8.8rem, 12.5vw, 10rem);
             transform: rotate(-4deg);
         }
         .stitch-sticker--dna {
-            top: 49%;
-            left: 9%;
+            top: 50%;
+            left: 8%;
             z-index: 21;
-            width: 9.9rem;
+            width: clamp(8.5rem, 12.2vw, 9.7rem);
             transform: rotate(-5deg);
         }
         .stitch-sticker--bbq {
-            top: 55%;
-            left: 31%;
+            top: 61%;
+            left: 30%;
             z-index: 22;
-            width: 10.8rem;
+            width: clamp(9rem, 13.1vw, 10.6rem);
             transform: rotate(-2deg);
         }
         .stitch-mini-sticker {
@@ -409,9 +411,11 @@
         }
         @media (max-width: 1024px) {
             .featured-stitch-board {
-                display: grid;
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 2.35rem 1.4rem;
                 min-height: auto;
                 padding: 2rem 1rem 4rem;
             }
@@ -425,11 +429,18 @@
                 right: auto !important;
                 bottom: auto !important;
                 left: auto !important;
-                width: 100%;
+                flex: 0 1 min(20rem, calc(50% - 1.4rem));
+                width: min(20rem, calc(50% - 1.4rem));
                 transform: rotate(-2deg) !important;
             }
             .stitch-sticker:nth-of-type(even) {
                 transform: rotate(2deg) !important;
+            }
+            .stitch-sticker:nth-of-type(3n) {
+                margin-top: 1.5rem;
+            }
+            .stitch-sticker:nth-of-type(4n) {
+                margin-top: -0.75rem;
             }
             .stitch-sticker:hover {
                 transform: rotate(0deg) scale(1.04) !important;
@@ -472,8 +483,12 @@
                 font-size: 0.95rem;
             }
             .featured-stitch-board {
-                grid-template-columns: 1fr;
-                gap: 2.35rem;
+                gap: 2.4rem;
+            }
+            .stitch-sticker {
+                flex-basis: min(100%, 22rem);
+                width: min(100%, 22rem);
+                margin-top: 0 !important;
             }
             .featured-stitch-sparkle {
                 display: none;
