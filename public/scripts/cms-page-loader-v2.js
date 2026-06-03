@@ -29,27 +29,31 @@
 
   function parseCropPosition(rawCrop) {
     if (typeof rawCrop !== 'string' || !rawCrop.trim()) return null;
-    const match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})$/);
+    const match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})(?:,(\d{1,3}))?(?:,(-?\d{1,3}))?$/);
     if (!match) return null;
     return {
       x: Math.max(0, Math.min(100, Number(match[1]))),
       y: Math.max(0, Math.min(100, Number(match[2]))),
+      zoom: Math.max(100, Math.min(280, Number(match[3]) || 100)),
+      rotate: Math.max(-180, Math.min(180, Number(match[4]) || 0)),
     };
   }
 
   function parseImageCrop(rawUrl) {
     if (typeof rawUrl !== 'string') return null;
-    const match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:&.*)?$/);
+    const match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:,(\d{1,3}))?(?:,(-?\d{1,3}))?(?:&.*)?$/);
     if (!match) return null;
     return {
       x: Math.max(0, Math.min(100, Number(match[1]))),
       y: Math.max(0, Math.min(100, Number(match[2]))),
+      zoom: Math.max(100, Math.min(280, Number(match[3]) || 100)),
+      rotate: Math.max(-180, Math.min(180, Number(match[4]) || 0)),
     };
   }
 
   function stripImageCrop(rawUrl) {
     if (typeof rawUrl !== 'string') return rawUrl;
-    return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
+    return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:,\d{1,3})?(?:,-?\d{1,3})?(?:&.*)?$/, '');
   }
 
   function applyImageCrop(node, rawUrl, rawCrop) {
@@ -59,6 +63,10 @@
     const position = `${crop.x}% ${crop.y}%`;
     if (node.tagName === 'IMG' || node.tagName === 'VIDEO') {
       node.style.objectPosition = position;
+      node.style.transformOrigin = position;
+      if (crop.zoom !== 100 || crop.rotate !== 0) {
+        node.style.transform = `scale(${crop.zoom / 100}) rotate(${crop.rotate}deg)`;
+      }
     } else {
       node.style.backgroundPosition = position;
       node.style.backgroundSize = 'cover';

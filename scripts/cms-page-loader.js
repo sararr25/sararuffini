@@ -239,14 +239,16 @@
       return null;
     }
 
-    var match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})$/);
+    var match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})(?:,(\d{1,3}))?(?:,(-?\d{1,3}))?$/);
     if (!match) {
       return null;
     }
 
     return {
       x: Math.max(0, Math.min(100, Number(match[1]))),
-      y: Math.max(0, Math.min(100, Number(match[2])))
+      y: Math.max(0, Math.min(100, Number(match[2]))),
+      zoom: Math.max(100, Math.min(280, Number(match[3]) || 100)),
+      rotate: Math.max(-180, Math.min(180, Number(match[4]) || 0))
     };
   }
 
@@ -255,14 +257,19 @@
       return null;
     }
 
-    var match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:&.*)?$/);
+    var match = rawUrl.match(/#(?:.*&)?crop=(\d{1,3}),(\d{1,3})(?:,(\d{1,3}))?(?:,(-?\d{1,3}))?(?:&.*)?$/);
     if (!match) {
       return null;
     }
 
     var x = Math.max(0, Math.min(100, Number(match[1])));
     var y = Math.max(0, Math.min(100, Number(match[2])));
-    return { x: x, y: y };
+    return {
+      x: x,
+      y: y,
+      zoom: Math.max(100, Math.min(280, Number(match[3]) || 100)),
+      rotate: Math.max(-180, Math.min(180, Number(match[4]) || 0))
+    };
   }
 
   function stripImageCrop(rawUrl) {
@@ -270,7 +277,7 @@
       return rawUrl;
     }
 
-    return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:&.*)?$/, '');
+    return rawUrl.replace(/#(?:.*&)?crop=\d{1,3},\d{1,3}(?:,\d{1,3})?(?:,-?\d{1,3})?(?:&.*)?$/, '');
   }
 
   function applyImageCrop(node, rawUrl, rawCrop) {
@@ -282,6 +289,10 @@
     var position = crop.x + '% ' + crop.y + '%';
     if (node.tagName === 'IMG' || node.tagName === 'VIDEO') {
       node.style.objectPosition = position;
+      node.style.transformOrigin = position;
+      if (crop.zoom !== 100 || crop.rotate !== 0) {
+        node.style.transform = 'scale(' + (crop.zoom / 100) + ') rotate(' + crop.rotate + 'deg)';
+      }
     } else {
       node.style.backgroundPosition = position;
       node.style.backgroundSize = 'cover';
