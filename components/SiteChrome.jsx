@@ -8,7 +8,7 @@ const DEFAULT_CONTENT = {
   nav_home: "Home",
   nav_home_href: "/index.html",
   nav_projects: "Projects",
-  nav_projects_href: "/pages/projects/code.html",
+  nav_projects_href: "/pages/projects",
   nav_about: "About",
   nav_about_href: "/pages/about/index.html",
   nav_contact: "Contact",

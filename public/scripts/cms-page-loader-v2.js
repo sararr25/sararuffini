@@ -310,7 +310,7 @@
     }
 
     if (/\/index\.html$/i.test(pathname) && !/\/pages\//i.test(pathname)) return 'home';
-    if (/\/pages\/(?:projects|portfolio-main)\/code\.html$/i.test(pathname)) return 'projects';
+    if (/\/pages\/(?:projects(?:\/code\.html)?|portfolio-main\/code\.html)$/i.test(pathname)) return 'projects';
     if (/\/pages\/about\/index\.html$/i.test(pathname)) return 'about';
     if (/\/pages\/contact\/index\.html$/i.test(pathname)) return 'contact';
     return '';

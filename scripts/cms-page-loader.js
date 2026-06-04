@@ -207,6 +207,15 @@
     root.querySelectorAll('a[href]').forEach(applyAnchorTargetPolicy);
   }
 
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   function applyByAttribute(allData, dataAttribute, applyValue) {
     document.querySelectorAll('[' + dataAttribute + ']').forEach(function (node) {
       var key = node.getAttribute(dataAttribute);
@@ -407,6 +416,120 @@
     }
 
     return /\.(mp4|webm|mov|m4v)(\?.*)?$/.test(trimmedUrl);
+  }
+
+  function getProjectGalleryHref(item) {
+    if (!item || typeof item !== 'object') {
+      return '#';
+    }
+
+    var href = typeof item.href === 'string' ? item.href.trim() : '';
+    var preset = typeof item.href_page === 'string' ? item.href_page.trim() : '';
+    return href || preset || '#';
+  }
+
+  function buildProjectGalleryCard(item, index) {
+    if (!item || typeof item !== 'object') {
+      return null;
+    }
+
+    var image = typeof item.image === 'string' ? item.image.trim() : '';
+    var title = typeof item.title === 'string' ? item.title : '';
+    var badge = typeof item.badge === 'string' ? item.badge : '';
+    var meta = typeof item.meta === 'string' ? item.meta : '';
+    var alt = typeof item.alt === 'string' ? item.alt : title;
+    var href = getProjectGalleryHref(item);
+
+    var variants = [
+      {
+        height: 'h-[420px]',
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-1deg] rounded-sm',
+        badge: 'bg-accent-yellow text-black -bottom-4 left-4 rotate-[-2deg]'
+      },
+      {
+        height: 'h-[520px]',
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[1deg] rounded-sm',
+        badge: 'bg-primary text-black bottom-12 -right-4 rotate-[2deg]'
+      },
+      {
+        height: 'h-[360px]',
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[2deg] rounded-sm',
+        badge: 'bg-accent-pink text-white -bottom-3 right-8 rotate-[3deg]'
+      },
+      {
+        height: 'h-[470px]',
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-2deg] rounded-full overflow-hidden',
+        badge: 'bg-cyan-600 text-white bottom-6 left-1/2 -translate-x-1/2 rotate-[-3deg]'
+      },
+      {
+        height: 'h-[390px]',
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[1deg] rounded-sm',
+        badge: 'bg-accent-orange text-black -bottom-4 left-8 rotate-[2deg]'
+      }
+    ];
+    var variant = variants[index % variants.length];
+
+    var card = document.createElement('a');
+    card.className = 'break-inside-avoid mb-12 block relative group cursor-pointer';
+    card.setAttribute('href', href);
+
+    var frame = document.createElement('div');
+    frame.className = variant.frame + ' p-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-retro-hover overflow-hidden';
+
+    var mediaWrap = document.createElement('div');
+    mediaWrap.className = variant.height + ' relative overflow-hidden bg-gray-100 dark:bg-black/20 flex items-center justify-center';
+
+    if (image) {
+      var img = document.createElement('img');
+      img.className = 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]';
+      img.setAttribute('src', stripImageCrop(image));
+      img.setAttribute('alt', alt);
+      img.setAttribute('loading', index < 3 ? 'eager' : 'lazy');
+      applyImageCrop(img, image, item.image_crop_position);
+      mediaWrap.appendChild(img);
+    }
+
+    frame.appendChild(mediaWrap);
+
+    if (badge) {
+      var badgeNode = document.createElement('div');
+      badgeNode.className = 'absolute z-20 border-2 border-black shadow-sticker px-4 py-2 font-display font-black uppercase text-sm md:text-base ' + variant.badge;
+      badgeNode.textContent = badge;
+      frame.appendChild(badgeNode);
+    }
+
+    if (title || meta) {
+      var caption = document.createElement('div');
+      caption.className = 'pt-5 pb-1 px-1';
+      if (title) {
+        caption.innerHTML += '<h2 class="font-display font-black uppercase text-xl leading-tight">' + escapeHtml(title) + '</h2>';
+      }
+      if (meta) {
+        caption.innerHTML += '<p class="mt-1 text-sm text-gray-700 dark:text-gray-300">' + escapeHtml(meta) + '</p>';
+      }
+      frame.appendChild(caption);
+    }
+
+    card.appendChild(frame);
+    return card;
+  }
+
+  function renderProjectGalleries(allData) {
+    document.querySelectorAll('[data-cms-gallery]').forEach(function (container) {
+      var key = container.getAttribute('data-cms-gallery') || 'gallery';
+      var items = getByPath(allData, key);
+      if (!Array.isArray(items)) {
+        return;
+      }
+
+      container.innerHTML = '';
+      items.forEach(function (item, index) {
+        var card = buildProjectGalleryCard(item, index);
+        if (card) {
+          container.appendChild(card);
+        }
+      });
+    });
   }
 
   var globalData = {};
@@ -746,7 +869,7 @@
     if (/\/index\.html$/i.test(pathname) && !/\/pages\//i.test(pathname)) {
       return 'home';
     }
-    if (/\/pages\/(?:projects|portfolio-main)\/code\.html$/i.test(pathname)) {
+    if (/\/pages\/(?:projects(?:\/code\.html)?|portfolio-main\/code\.html)$/i.test(pathname)) {
       return 'projects';
     }
     if (/\/pages\/about\/index\.html$/i.test(pathname)) {
@@ -905,6 +1028,9 @@
 
     // Apply dynamic media insertions/removals before final selector overrides.
     applyMediaBlocks(allData);
+
+    // Render CMS-managed galleries after simple fields are applied.
+    renderProjectGalleries(allData);
 
     // Last pass: optional direct selector overrides from CMS.
     applySelectorOverrides(allData);

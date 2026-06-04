@@ -9,8 +9,8 @@
   "back_home_href": "/index.html",
   "back_home_href_page": "/index.html",
   "explore_projects_label": "EXPLORE PROJECTS",
-  "explore_projects_href": "/pages/projects/code.html",
-  "explore_projects_href_page": "/pages/projects/code.html",
+  "explore_projects_href": "/pages/projects",
+  "explore_projects_href_page": "/pages/projects",
   "media_blocks": [],
   "selector_overrides": [],
   "seo": {

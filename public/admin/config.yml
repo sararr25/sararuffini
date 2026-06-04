@@ -39,7 +39,7 @@ collections:
       - label: Home
         value: /index.html
       - label: Projects
-        value: /pages/projects/code.html
+        value: /pages/projects
       - label: About
         value: /pages/about/index.html
       - label: Contact
@@ -89,7 +89,7 @@ collections:
     - label: Nav - Projects Link
       name: nav_projects_href
       widget: string
-      default: /pages/projects/code.html
+      default: /pages/projects
       required: false
     - label: Nav - Projects Link Preset
       name: nav_projects_href_page
@@ -1258,7 +1258,7 @@ collections:
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
 - name: project_pages
-  label: Project Pages
+  label: Pages - Projects
   files:
   - label: Neon Vibes Web Page
     name: neon_vibes_web
@@ -4490,7 +4490,7 @@ collections:
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
       required: false
-  - label: Projects Page
+  - label: Projects
     name: projects
     file: public/content/pages/projects.json
     fields:
@@ -4518,10 +4518,11 @@ collections:
       name: intro_text_html
       widget: text
       required: false
-    - label: Portfolio Gallery (Drag to Reorder)
+    - label: Projects List (Add / Edit / Reorder)
       name: gallery
       widget: list
-      collapsed: false
+      collapsed: true
+      summary: "{{fields.title}} • {{fields.badge}}"
       fields:
       - label: Link
         name: href
@@ -4559,121 +4560,6 @@ collections:
         widget: string
         required: false
       required: false
-      allow_add: true
-      allow_delete: true
-    - label: More Projects Link
-      name: more_projects_href
-      widget: string
-      required: false
-    - label: More Projects Link Preset
-      name: more_projects_href_page
-      widget: select
-      required: false
-      options: *internal_page_options
-    - label: More Projects Title
-      name: more_projects_title
-      widget: string
-      required: false
-    - label: More Projects Meta
-      name: more_projects_meta
-      widget: string
-      required: false
-    - label: Dynamic Media Blocks
-      name: media_blocks
-      widget: list
-      required: false
-      allow_add: true
-      allow_delete: true
-      collapsed: true
-      summary: "{{fields.target_selector}} • {{fields.media_kind}} • {{fields.action}}"
-      fields:
-      - label: Target CSS Selector
-        name: target_selector
-        widget: string
-        required: false
-      - label: Action
-        name: action
-        widget: select
-        required: false
-        options:
-        - append
-        - prepend
-        - replace
-        - remove
-      - label: Media Type
-        name: media_kind
-        widget: select
-        required: false
-        options:
-        - image
-        - video
-        - embed
-      - label: Image Upload
-        name: media_upload_image
-        widget: image
-        required: false
-      - label: Image Upload Crop Position
-        name: media_upload_image_crop_position
-        widget: crop_position
-        required: false
-        default: 50,50
-        hint: Choose which part of the image stays visible inside cropped frames.
-      - label: Video Upload
-        name: media_upload_video
-        widget: file
-        required: false
-      - label: Media URL (image/video/embed)
-        name: media_url
-        widget: string
-        required: false
-      - label: Embed HTML (YouTube iframe etc.)
-        name: embed_html
-        widget: text
-        required: false
-      - label: Alt Text
-        name: alt_text
-        widget: string
-        required: false
-      - label: Link URL (optional wrapper)
-        name: link_url
-        widget: string
-        required: false
-      - label: Caption HTML
-        name: caption_html
-        widget: text
-        required: false
-      - label: Custom CSS Classes
-        name: class_name
-        widget: string
-        required: false
-    - label: Advanced Overrides
-      name: selector_overrides
-      widget: list
-      required: false
-      summary: "{{fields.selector}} -> {{fields.type}}"
-      fields:
-      - label: CSS Selector
-        name: selector
-        widget: string
-        required: false
-      - label: Tipo Modifica
-        name: type
-        widget: select
-        options:
-        - text
-        - html
-        - src
-        - href
-        - alt
-        - bg
-        - append_html
-        - prepend_html
-        - remove
-        required: false
-      - label: Valore
-        name: value
-        widget: text
-        required: false
       allow_add: true
       allow_delete: true
     - label: SEO Settings
