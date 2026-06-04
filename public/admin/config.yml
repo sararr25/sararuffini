@@ -39,7 +39,7 @@ collections:
       - label: Home
         value: /index.html
       - label: Projects
-        value: /pages/portfolio-main/code.html
+        value: /pages/projects/code.html
       - label: About
         value: /pages/about/index.html
       - label: Contact
@@ -89,7 +89,7 @@ collections:
     - label: Nav - Projects Link
       name: nav_projects_href
       widget: string
-      default: /pages/portfolio-main/code.html
+      default: /pages/projects/code.html
       required: false
     - label: Nav - Projects Link Preset
       name: nav_projects_href_page
@@ -1264,6 +1264,18 @@ collections:
     name: neon_vibes_web
     file: public/content/pages/neon-vibes-web.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Neon Vibes Web
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: neon-vibes-web
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Project Title
       name: project_title
       widget: string
@@ -1427,6 +1439,18 @@ collections:
     name: webpage_portfolio
     file: public/content/pages/webpage-portfolio.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Webpage Portfolio
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: webpage-portfolio
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Project Title
       name: project_title
       widget: string
@@ -1787,6 +1811,18 @@ collections:
     name: video_v1
     file: public/content/pages/weber-grillinspiration.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Weber Grillinspiration
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: weber-grillinspiration
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     # Hero Section
     - label: "🎬 HERO SECTION"
       name: hero_section
@@ -2050,6 +2086,18 @@ collections:
     name: cocktail_photography
     file: public/content/pages/cocktail-photography.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Cocktail Photography
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: cocktail-photography
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Project Title
       name: project_title
       widget: string
@@ -2291,6 +2339,18 @@ collections:
     name: shooting_cocktails
     file: public/content/pages/shooting-cocktails.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Shooting Cocktails
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: shooting-cocktails
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Hero Title Line 1
       name: hero_title_line_1
       widget: string
@@ -2459,6 +2519,18 @@ collections:
     name: coming_soon
     file: public/content/pages/coming-soon.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Coming Soon
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: coming-soon
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Window Label
       name: window_label
       widget: string
@@ -2626,6 +2698,18 @@ collections:
     name: video_v2
     file: public/content/pages/video-v2.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Video V2
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: video-v2
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: "🎬 HERO SECTION"
       name: hero_section
       widget: object
@@ -2868,6 +2952,18 @@ collections:
     name: app_v1
     file: public/content/pages/app-v1.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: App V1
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: app-v1
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Phase Label
       name: hero_phase
       widget: string
@@ -3051,6 +3147,18 @@ collections:
     name: app_v2
     file: public/content/pages/app-v2.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: App V2
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: app-v2
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Phase Label
       name: hero_phase
       widget: string
@@ -3220,6 +3328,18 @@ collections:
     name: graphics
     file: public/content/pages/graphics.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Graphics
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: graphics
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Campaign Title
       name: campaign_title
       widget: string
@@ -3391,6 +3511,18 @@ collections:
     name: socialmedia_portfolio
     file: public/content/pages/socialmedia-portfolio.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Socialmedia Portfolio
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: socialmedia-portfolio
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Main Title
       name: hero_title
       widget: string
@@ -3598,6 +3730,18 @@ collections:
     name: homepage
     file: public/content/pages/homepage.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Homepage
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: homepage
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Hero Line 1
       name: hero_line_1
       widget: string
@@ -4035,6 +4179,18 @@ collections:
     name: about
     file: public/content/pages/about.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: About
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: about
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Hero Line 1
       name: hero_title_line1
       widget: string
@@ -4334,10 +4490,22 @@ collections:
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
       required: false
-  - label: Portfolio Main Page
-    name: portfolio_main
-    file: public/content/pages/portfolio-main.json
+  - label: Projects Page
+    name: projects
+    file: public/content/pages/projects.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Projects
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: projects
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: Heading Line 1
       name: heading_line1
       widget: string
@@ -4535,6 +4703,18 @@ collections:
     name: contact
     file: public/content/pages/contact.json
     fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Contact
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: contact
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
     - label: "🔍 SEO"
       name: seo
       widget: object

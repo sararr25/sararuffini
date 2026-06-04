@@ -333,8 +333,8 @@ These are the most important to migrate as they're design-specific labels:
 
 ---
 
-## 11. **pages/portfolio-main/code.html**
-**File:** `/pages/portfolio-main/code.html`
+## 11. **pages/projects/code.html**
+**File:** `/pages/projects/code.html`
 
 ### Project Cards - Badges (Some Hardcoded)
 Review all project card badges - these appear to already have `data-cms-text` attributes based on structure like `data-cms-text="card_1.badge"`, so they may be acceptable.
@@ -377,7 +377,7 @@ Review all project card badges - these appear to already have `data-cms-text` at
 Cross-reference with:
 - [content/pages/about.json](content/pages/about.json)
 - [content/pages/homepage.json](content/pages/homepage.json)
-- [content/pages/portfolio-main.json](content/pages/portfolio-main.json)
+- [content/pages/projects.json](content/pages/projects.json)
 - [content/pages/app-v1.json](content/pages/app-v1.json)
 - [content/pages/app-v2.json](content/pages/app-v2.json)
 - [content/pages/graphics.json](content/pages/graphics.json)

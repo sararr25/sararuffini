@@ -1,4 +1,6 @@
 {
+  "page_name": "Webpage Portfolio",
+  "page_slug": "webpage-portfolio",
   "project_summary": "Every year at 3 Days of Design I waste too much time on the official site trying to figure out what to see and where. So I built my own. A personal, mobile-first event guide with filters by day, zone, time, and category, an interactive map, and a likes section to save the events I don't want to miss. Fast, no clutter, built in one day.",
   "tech_flow_4_text": "Filters, saved likes, and mobile-first screens.",
   "hero_image_alt": "Neon sign storefront hero shot",

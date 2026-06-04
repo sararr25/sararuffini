@@ -1,4 +1,6 @@
 {
+  "page_name": "Coming Soon",
+  "page_slug": "coming-soon",
   "window_label": "System.Dialog",
   "loading_title": "PROJECT.EXE IS LOADING...",
   "progress_badge_text": "99% DONE",
@@ -7,8 +9,8 @@
   "back_home_href": "/index.html",
   "back_home_href_page": "/index.html",
   "explore_projects_label": "EXPLORE PROJECTS",
-  "explore_projects_href": "/pages/portfolio-main/code.html",
-  "explore_projects_href_page": "/pages/portfolio-main/code.html",
+  "explore_projects_href": "/pages/projects/code.html",
+  "explore_projects_href_page": "/pages/projects/code.html",
   "media_blocks": [],
   "selector_overrides": [],
   "seo": {

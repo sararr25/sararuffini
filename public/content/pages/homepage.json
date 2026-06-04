@@ -1,4 +1,6 @@
 {
+  "page_name": "Homepage",
+  "page_slug": "homepage",
   "featured_card": {
     "href": "/pages/contact/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-call-me.png",

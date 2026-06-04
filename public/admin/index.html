@@ -806,6 +806,10 @@
           return { title: 'page_name', slug: 'page_slug' };
         }
 
+        if (findFieldInput('page_name') && findFieldInput('page_slug')) {
+          return { title: 'page_name', slug: 'page_slug' };
+        }
+
         return null;
       }
 
@@ -898,9 +902,9 @@
           setInputValue(slugInput, nextSlug);
           lastAutoSlug = nextSlug;
           if (force) {
-            setStatusText(controls, 'Slug aggiornato dal nome pagina: /pages/' + nextSlug + '/index.html');
+            setStatusText(controls, 'Slug aggiornato dal nome pagina: ' + nextSlug + '. Assicurati che la rotta corrispondente esista.');
           } else {
-            setStatusText(controls, 'Slug sincronizzato automaticamente: /pages/' + nextSlug + '/index.html');
+            setStatusText(controls, 'Slug sincronizzato automaticamente: ' + nextSlug + '. Assicurati che la rotta corrispondente esista.');
           }
         }
 

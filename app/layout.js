@@ -1,6 +1,6 @@
 import "./globals.css";
 import "../styles/homepage.css";
-import "../styles/portfolio-main.css";
+import "../styles/projects.css";
 import "../styles/about.css";
 import "../styles/contact.css";
 import "../styles/socialmedia-portfolio.css";

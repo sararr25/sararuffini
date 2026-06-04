@@ -1,4 +1,6 @@
 {
+  "page_name": "Cocktail Photography",
+  "page_slug": "cocktail-photography",
   "project_title": "Mixology in Focus",
   "project_subtitle": "Cocktail Editorial Shoot",
   "hero_tag_1": "Cocktails",
@@ -38,7 +40,7 @@
   "gear_line_1": "Sony FX3",
   "gear_line_2": "Laowa 35mm",
   "gear_line_3": "Mixed LED / practical light",
-  "prev_project_href": "/pages/portfolio-main/code.html",
+  "prev_project_href": "/pages/projects/code.html",
   "prev_project_label": "Previous Project",
   "prev_project_title": "All Projects",
   "next_project_href": "/pages/weber-grillinspiration/index.html",

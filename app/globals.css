@@ -53,8 +53,8 @@ body[data-cms-page="homepage"],
   --font-cursive: 'Rock Salt', cursive;
 }
 
-body[data-cms-page="portfolio-main"],
-[data-cms-page="portfolio-main"] {
+body[data-cms-page="projects"],
+[data-cms-page="projects"] {
   --color-primary: #40E0D0;
   --color-secondary: #1a1a1a;
   --color-background-light: #F8F4EC;
