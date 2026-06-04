@@ -1,23 +1,26 @@
 {
   "heading_line1": "SELECTED",
   "heading_line2": "WORKS",
-  "intro_text_html": "A selection of recent projects spanning motion design, commercial video, and digital storytelling.",
+  "intro_text_html": "A selection of work across video editing, motion design, commercial production, and web design and development, each project shaped by a hands-on approach and a strong visual eye.",
   "gallery": [
     {
-      "href": "/pages/weber-grillinspiration/index.html",
+      "href": "",
       "badge": "Adventure Co.",
       "image": "/assets/media/Cocktail-3.jpg",
-      "alt": "Adventure Co.",
-      "title": "High-Altitude Storytelling",
-      "meta": "Commercial • 2023"
+      "alt": "Drink it!",
+      "title": "Cocktail shooting",
+      "meta": "2025",
+      "href_page": "/pages/cocktail-photography/index.html"
     },
     {
-      "href": "/pages/socialmedia-portfolio/index.html",
-      "badge": "Vogue",
-      "image": "/assets/media/Cocktail-13.jpg",
+      "href": "",
+      "badge": "Cook it!",
+      "image": "/assets/media/screenshot-2026-06-04-at-13.21.16.png",
       "alt": "Vogue x Street",
       "title": "Urban Fashion Week",
-      "meta": "Social Media • Edit"
+      "meta": "Social Media • Edit",
+      "href_page": "/pages/socialmedia-portfolio/index.html",
+      "image_crop_position": "40,75,100,0"
     },
     {
       "href": "/pages/graphics/index.html",
