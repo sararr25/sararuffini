@@ -458,7 +458,7 @@
       },
       {
         height: 'h-[470px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-2deg] rounded-full overflow-hidden',
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-2deg] rounded-2xl',
         badge: 'bg-cyan-600 text-white bottom-6 left-1/2 -translate-x-1/2 rotate-[-3deg]'
       },
       {
@@ -474,14 +474,14 @@
     card.setAttribute('href', href);
 
     var frame = document.createElement('div');
-    frame.className = variant.frame + ' p-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-retro-hover overflow-hidden';
+    frame.className = variant.frame + ' p-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-retro-hover overflow-visible';
 
     var mediaWrap = document.createElement('div');
-    mediaWrap.className = variant.height + ' relative overflow-hidden bg-gray-100 dark:bg-black/20 flex items-center justify-center';
+    mediaWrap.className = variant.height + ' relative overflow-hidden rounded-[inherit] bg-gray-100 dark:bg-black/20';
 
     if (image) {
       var img = document.createElement('img');
-      img.className = 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]';
+      img.className = 'w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]';
       img.setAttribute('src', stripImageCrop(image));
       img.setAttribute('alt', alt);
       img.setAttribute('loading', index < 3 ? 'eager' : 'lazy');
