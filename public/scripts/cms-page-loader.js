@@ -444,37 +444,37 @@
       {
         height: 'h-[420px]',
         frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-1deg] rounded-sm',
-        badge: 'bg-accent-yellow text-black -bottom-4 left-4 rotate-[-2deg]'
+        badge: 'bg-accent-yellow text-black top-0 left-4 rotate-[-2deg]'
       },
       {
         height: 'h-[520px]',
         frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[1deg] rounded-sm',
-        badge: 'bg-primary text-black bottom-12 -right-4 rotate-[2deg]'
+        badge: 'bg-primary text-black top-0 right-4 rotate-[2deg]'
       },
       {
         height: 'h-[360px]',
         frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[2deg] rounded-sm',
-        badge: 'bg-accent-pink text-white -bottom-3 right-8 rotate-[3deg]'
+        badge: 'bg-accent-pink text-white top-1 right-8 rotate-[3deg]'
       },
       {
         height: 'h-[470px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-2deg] rounded-2xl',
-        badge: 'bg-cyan-600 text-white bottom-6 left-1/2 -translate-x-1/2 rotate-[-3deg]'
+        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-2deg] rounded-sm',
+        badge: 'bg-cyan-600 text-white top-1 left-1/2 -translate-x-1/2 rotate-[-3deg]'
       },
       {
         height: 'h-[390px]',
         frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[1deg] rounded-sm',
-        badge: 'bg-accent-orange text-black -bottom-4 left-8 rotate-[2deg]'
+        badge: 'bg-accent-orange text-black top-0 left-8 rotate-[2deg]'
       }
     ];
     var variant = variants[index % variants.length];
 
     var card = document.createElement('a');
-    card.className = 'break-inside-avoid mb-12 block relative group cursor-pointer';
+    card.className = 'break-inside-avoid mb-12 block relative group cursor-pointer pt-7';
     card.setAttribute('href', href);
 
     var frame = document.createElement('div');
-    frame.className = variant.frame + ' p-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-retro-hover overflow-visible';
+    frame.className = variant.frame + ' p-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-retro-hover overflow-hidden';
 
     var mediaWrap = document.createElement('div');
     mediaWrap.className = variant.height + ' relative overflow-hidden rounded-[inherit] bg-gray-100 dark:bg-black/20';
@@ -495,22 +495,23 @@
       var badgeNode = document.createElement('div');
       badgeNode.className = 'absolute z-20 border-2 border-black shadow-sticker px-4 py-2 font-display font-black uppercase text-sm md:text-base ' + variant.badge;
       badgeNode.textContent = badge;
-      frame.appendChild(badgeNode);
+      card.appendChild(badgeNode);
     }
+
+    card.appendChild(frame);
 
     if (title || meta) {
       var caption = document.createElement('div');
-      caption.className = 'pt-5 pb-1 px-1';
+      caption.className = 'pt-4 pb-1 px-1';
       if (title) {
         caption.innerHTML += '<h2 class="font-display font-black uppercase text-xl leading-tight">' + escapeHtml(title) + '</h2>';
       }
       if (meta) {
         caption.innerHTML += '<p class="mt-1 text-sm text-gray-700 dark:text-gray-300">' + escapeHtml(meta) + '</p>';
       }
-      frame.appendChild(caption);
+      card.appendChild(caption);
     }
 
-    card.appendChild(frame);
     return card;
   }
 
