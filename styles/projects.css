@@ -15,6 +15,144 @@
   .break-inside-avoid {
     break-inside: avoid;
   }
+
+  .project-frame {
+    position: relative;
+    padding: 1rem;
+    overflow: hidden;
+    border: 3px solid #1a1a1a;
+    background: #fff;
+    box-shadow: 7px 7px 0 #1a1a1a;
+    transition: transform 300ms ease, box-shadow 300ms ease;
+  }
+
+  .project-frame__media {
+    border-radius: inherit;
+  }
+
+  .project-frame--square {
+    border-radius: 2px;
+  }
+
+  .project-frame--soft {
+    padding: 1.15rem;
+    border-width: 4px;
+    border-radius: 2.25rem 0.5rem 2.25rem 0.5rem;
+    box-shadow: 9px 9px 0 #40e0d0, 12px 12px 0 #1a1a1a;
+  }
+
+  .project-frame--arch {
+    padding: 1rem;
+    border-radius: 10rem 10rem 1.25rem 1.25rem;
+    box-shadow: 7px 7px 0 #ff69b4;
+  }
+
+  .project-frame--arch .project-frame__media {
+    border-radius: 9rem 9rem 0.6rem 0.6rem;
+  }
+
+  .project-frame--oval {
+    padding: 1.2rem;
+    border-width: 4px;
+    border-radius: 48% 48% 44% 44% / 28% 28% 18% 18%;
+    box-shadow: 8px 8px 0 #168a9a, 11px 11px 0 #1a1a1a;
+  }
+
+  .project-frame--oval .project-frame__media {
+    border-radius: 48% 48% 44% 44% / 28% 28% 18% 18%;
+  }
+
+  .project-frame--double {
+    border: 6px double #1a1a1a;
+    border-radius: 0.5rem 2rem 0.5rem 2rem;
+    box-shadow: 8px 8px 0 #ffeb3b;
+  }
+
+  .group:hover .project-frame {
+    box-shadow: 3px 3px 0 #1a1a1a;
+  }
+
+  .project-badge {
+    border: 2px solid #1a1a1a;
+    box-shadow: 3px 3px 0 #1a1a1a;
+    line-height: 1;
+    color: #111;
+  }
+
+  .project-badge--yellow {
+    background: #ffeb3b;
+  }
+
+  .project-badge--cyan {
+    background: #40e0d0;
+  }
+
+  .project-badge--pink {
+    background: #ff69b4;
+    color: #fff;
+  }
+
+  .project-badge--blue {
+    background: #168a9a;
+    color: #fff;
+  }
+
+  .project-badge--orange {
+    background: #ff6b6b;
+  }
+
+  .dark .project-frame {
+    border-color: #f8f4ec;
+    background: #1e1e1e;
+  }
+
+  .dark .project-frame--double {
+    border-color: #f8f4ec;
+  }
+
+  @media (max-width: 767px) {
+    [data-cms-page="projects"] main {
+      width: auto !important;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .projects-intro {
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .masonry-grid,
+    .project-card {
+      width: calc(100% - 1.25rem) !important;
+      max-width: calc(100% - 1.25rem);
+      box-sizing: border-box;
+    }
+
+    .project-frame {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .project-badge {
+      max-width: calc(100% - 1.5rem);
+      padding: 0.45rem 0.75rem;
+      font-size: 0.75rem;
+      white-space: normal;
+    }
+
+    .project-frame--oval {
+      border-radius: 8rem 8rem 2rem 2rem / 4rem 4rem 1.5rem 1.5rem;
+    }
+
+    .project-frame--oval .project-frame__media {
+      border-radius: 7rem 7rem 1.25rem 1.25rem / 3.5rem 3.5rem 1rem 1rem;
+    }
+  }
+
   .nav-scribble path {
     stroke-dasharray: 200;
     stroke-dashoffset: 200;

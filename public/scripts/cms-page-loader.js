@@ -443,41 +443,41 @@
     var variants = [
       {
         height: 'h-[420px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-1deg] rounded-sm',
-        badge: 'bg-accent-yellow text-black top-0 left-4 rotate-[-2deg]'
+        frame: 'project-frame project-frame--square rotate-[-1deg]',
+        badge: 'project-badge--yellow top-0 left-4 rotate-[-2deg]'
       },
       {
         height: 'h-[520px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[1deg] rounded-sm',
-        badge: 'bg-primary text-black top-0 right-4 rotate-[2deg]'
+        frame: 'project-frame project-frame--soft rotate-[1deg]',
+        badge: 'project-badge--cyan top-0 right-4 rotate-[2deg]'
       },
       {
         height: 'h-[360px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[2deg] rounded-sm',
-        badge: 'bg-accent-pink text-white top-1 right-8 rotate-[3deg]'
+        frame: 'project-frame project-frame--arch rotate-[2deg]',
+        badge: 'project-badge--pink top-1 right-8 rotate-[3deg]'
       },
       {
         height: 'h-[470px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[-2deg] rounded-sm',
-        badge: 'bg-cyan-600 text-white top-1 left-1/2 -translate-x-1/2 rotate-[-3deg]'
+        frame: 'project-frame project-frame--oval rotate-[-2deg]',
+        badge: 'project-badge--blue top-1 left-1/2 -translate-x-1/2 rotate-[-3deg]'
       },
       {
         height: 'h-[390px]',
-        frame: 'relative border-[3px] border-secondary bg-card-light dark:bg-card-dark shadow-retro rotate-[1deg] rounded-sm',
-        badge: 'bg-accent-orange text-black top-0 left-8 rotate-[2deg]'
+        frame: 'project-frame project-frame--double rotate-[1deg]',
+        badge: 'project-badge--orange top-0 left-8 rotate-[2deg]'
       }
     ];
     var variant = variants[index % variants.length];
 
     var card = document.createElement('a');
-    card.className = 'break-inside-avoid mb-12 block relative group cursor-pointer pt-7';
+    card.className = 'project-card break-inside-avoid mb-12 block relative group cursor-pointer pt-7';
     card.setAttribute('href', href);
 
     var frame = document.createElement('div');
-    frame.className = variant.frame + ' p-4 transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-retro-hover overflow-hidden';
+    frame.className = variant.frame + ' transition-all duration-300 group-hover:-translate-y-1';
 
     var mediaWrap = document.createElement('div');
-    mediaWrap.className = variant.height + ' relative overflow-hidden rounded-[inherit] bg-gray-100 dark:bg-black/20';
+    mediaWrap.className = variant.height + ' project-frame__media relative overflow-hidden bg-gray-100 dark:bg-black/20';
 
     if (image) {
       var img = document.createElement('img');
@@ -493,7 +493,7 @@
 
     if (badge) {
       var badgeNode = document.createElement('div');
-      badgeNode.className = 'absolute z-20 border-2 border-black shadow-sticker px-4 py-2 font-display font-black uppercase text-sm md:text-base ' + variant.badge;
+      badgeNode.className = 'project-badge absolute z-20 px-4 py-2 font-display font-black uppercase text-sm md:text-base ' + variant.badge;
       badgeNode.textContent = badge;
       card.appendChild(badgeNode);
     }
