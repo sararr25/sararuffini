@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sara Ruffini | Strategic Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Space+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#f0eded",
+                        "primary-fixed": "#60fae3",
+                        "surface-variant": "#e5e2e1",
+                        "on-secondary-container": "#656464",
+                        "tertiary-fixed": "#e6e2d9",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-container": "#e5e2e1",
+                        "tertiary-container": "#cac7bf",
+                        "surface-bright": "#fcf9f8",
+                        "tertiary-fixed-dim": "#c9c6be",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-container": "#54534c",
+                        "ink": "#111111",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-surface-variant": "#3c4a46",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-tertiary-fixed": "#1c1c17",
+                        "accent-orange": "#FF6B6B",
+                        "outline": "#6b7a76",
+                        "surface-tint": "#006b5f",
+                        "on-primary-container": "#005e53",
+                        "secondary": "#5f5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "accent-pink": "#FF69B4",
+                        "on-secondary": "#ffffff",
+                        "accent-cyan": "#3BDEC8",
+                        "primary": "#006b5f",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#005047",
+                        "on-background": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#484741",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "background": "#fcf9f8",
+                        "outline-variant": "#bacac5",
+                        "inverse-primary": "#39ddc7",
+                        "on-error-container": "#93000a",
+                        "paper-bg": "#FDF9F0",
+                        "on-primary-fixed": "#00201c",
+                        "tertiary": "#605e58",
+                        "on-error": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "accent-yellow": "#FFEB3B",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed-dim": "#39ddc7",
+                        "primary-container": "#3bdec8",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-v": "8rem",
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1.5rem",
+                        "margin-page": "5vw",
+                        "gutter": "2rem"
+                    },
+                    "fontFamily": {
+                        "sticker-label": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "sticker-label": ["12px", {"lineHeight": "1.0", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .neo-shadow { box-shadow: 4px 4px 0px 0px #111111; }
+        .neo-shadow-lg { box-shadow: 8px 8px 0px 0px #111111; }
+        .neo-shadow-sm { box-shadow: 2px 2px 0px 0px #111111; }
+        .active-neo-press:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px 0px #111111; }
+        .scribble-underline { background-image: url("data:image/svg+xml,%3Csvg width='100' height='10' viewBox='0 0 100 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 8C20 4 40 2 60 4C80 6 95 8 98 8' stroke='%23FF6B6B' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"); background-size: 100% 10px; background-repeat: no-repeat; background-position: bottom; }
+        .sticker-rotate-pos { transform: rotate(2deg); }
+        .sticker-rotate-neg { transform: rotate(-3deg); }
+    </style>
+</head>
+<body class="bg-paper-bg text-ink font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-paper-bg dark:bg-ink border-b-2 border-ink dark:border-paper-bg flex justify-between items-center px-margin-page py-4 w-full">
+<div class="font-headline-md text-headline-md font-bold text-ink dark:text-paper-bg">SARA RUFFINI</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps uppercase text-ink dark:text-paper-bg hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">Work</a>
+<a class="font-label-caps text-label-caps uppercase text-accent-cyan underline decoration-2 underline-offset-4 active:translate-y-[1px]" href="#">Process</a>
+<a class="font-label-caps text-label-caps uppercase text-ink dark:text-paper-bg hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">About</a>
+<a class="font-label-caps text-label-caps uppercase text-ink dark:text-paper-bg hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">Contact</a>
+</div>
+<button class="bg-accent-orange px-6 py-2 border-2 border-ink neo-shadow font-label-caps text-label-caps uppercase text-ink active-neo-press">Hire Me</button>
+</nav>
+<main class="px-margin-page">
+<!-- Hero / Header Section -->
+<header class="py-section-v flex flex-col items-start relative">
+<div class="absolute -top-10 -right-5 md:right-10 bg-accent-yellow border-2 border-ink px-4 py-2 sticker-rotate-pos neo-shadow z-10">
+<span class="font-sticker-label text-sticker-label text-ink uppercase">STRATEGY_MODE: ACTIVE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg mb-stack-md max-w-4xl">
+                DIGITAL <span class="scribble-underline">DOMINANCE</span> THROUGH ARCHITECTURE.
+            </h1>
+<p class="font-body-lg text-body-lg max-w-2xl text-secondary">
+                Crafting social ecosystems that don't just grow—they resonate. We treat every account as a technical infrastructure problem with a creative soul.
+            </p>
+</header>
+<!-- Growth Dashboard Section (Refined Integration) -->
+<section class="mb-section-v">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Metric Card -->
+<div class="md:col-span-8 bg-surface-container-lowest border-4 border-ink neo-shadow-lg p-8 relative">
+<div class="flex justify-between items-end mb-8 border-b-2 border-ink pb-4">
+<div>
+<h3 class="font-label-caps text-label-caps text-secondary mb-1">AGGREGATED GROWTH</h3>
+<h2 class="font-headline-md text-headline-md">+142.8% YOY</h2>
+</div>
+<div class="flex gap-2">
+<span class="w-3 h-3 bg-accent-orange border border-ink"></span>
+<span class="w-3 h-3 bg-accent-cyan border border-ink"></span>
+<span class="w-3 h-3 bg-accent-yellow border border-ink"></span>
+</div>
+</div>
+<div class="h-64 w-full bg-surface-container-low border-2 border-ink overflow-hidden relative group">
+<!-- Chart Mockup -->
+<div class="absolute inset-0 flex items-end justify-between px-4 pb-4">
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[20%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[35%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[25%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[50%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[45%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[75%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[65%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[95%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[85%]"></div>
+<div class="w-[8%] bg-accent-orange border-t-2 border-x-2 border-ink h-[100%]"></div>
+</div>
+<div class="absolute top-4 left-4 font-label-caps text-[10px] bg-ink text-paper-bg px-2 py-1">REAL-TIME_FEED.EXE</div>
+</div>
+</div>
+<!-- Secondary Metric Side Stack -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-accent-cyan border-2 border-ink p-6 neo-shadow active-neo-press">
+<div class="material-symbols-outlined mb-2 text-ink" style="font-variation-settings: 'FILL' 1;">group</div>
+<h4 class="font-label-caps text-label-caps text-ink">TOTAL REACH</h4>
+<p class="font-headline-md text-headline-md text-ink">4.2M</p>
+</div>
+<div class="bg-accent-pink border-2 border-ink p-6 neo-shadow active-neo-press">
+<div class="material-symbols-outlined mb-2 text-ink" style="font-variation-settings: 'FILL' 1;">favorite</div>
+<h4 class="font-label-caps text-label-caps text-ink">ENGAGEMENT RATE</h4>
+<p class="font-headline-md text-headline-md text-ink">8.4%</p>
+</div>
+<div class="bg-accent-yellow border-2 border-ink p-6 neo-shadow active-neo-press">
+<div class="material-symbols-outlined mb-2 text-ink" style="font-variation-settings: 'FILL' 1;">share</div>
+<h4 class="font-label-caps text-label-caps text-ink">VIRAL VELOCITY</h4>
+<p class="font-headline-md text-headline-md text-ink">FAST</p>
+</div>
+</div>
+</div>
+</section>
+<!-- New Section: Strategic Management -->
+<section class="mb-section-v">
+<div class="flex items-center gap-4 mb-stack-md">
+<h2 class="font-headline-md text-headline-md uppercase">Strategic Management</h2>
+<div class="h-1 flex-grow bg-ink"></div>
+<span class="font-label-caps text-label-caps bg-ink text-paper-bg px-3 py-1">VER_2.4</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Content Pillars: Window Style -->
+<div class="border-4 border-ink neo-shadow-lg bg-surface-container-lowest overflow-hidden flex flex-col">
+<div class="bg-ink text-paper-bg px-4 py-2 flex justify-between items-center">
+<span class="font-label-caps text-label-caps">PILLARS.CFG</span>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-sm">remove</span>
+<span class="material-symbols-outlined text-sm">check_box_outline_blank</span>
+<span class="material-symbols-outlined text-sm">close</span>
+</div>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="bg-accent-orange text-ink border-2 border-ink w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">01</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-1">TECHNICAL AUTHORITY</h4>
+<p class="font-body-md text-sm text-secondary">Deep dives into backend architecture and performance optimization tutorials.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="bg-accent-cyan text-ink border-2 border-ink w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">02</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-1">AESTHETIC RAWNESS</h4>
+<p class="font-body-md text-sm text-secondary">Showcasing the 'behind-the-scenes' of brutalist design iterations.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="bg-accent-yellow text-ink border-2 border-ink w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">03</span>
+<div>
+<h4 class="font-label-caps text-label-caps mb-1">COMMUNITY RE-POSTS</h4>
+<p class="font-body-md text-sm text-secondary">Curated user-generated content that aligns with the ecosystem vibe.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Posting Frequency: Interactive Card -->
+<div class="border-4 border-ink neo-shadow-lg bg-paper-bg p-6 flex flex-col relative">
+<div class="absolute -top-4 -left-2 bg-accent-pink border-2 border-ink px-2 py-1 sticker-rotate-neg z-10">
+<span class="font-sticker-label text-sticker-label text-ink">CADENCE_MONITOR</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-stack-md">CADENCE</h3>
+<div class="space-y-4">
+<div class="bg-surface-container border-2 border-ink p-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps">INSTAGRAM STORIES</span>
+<span class="font-bold text-accent-orange">3-5X DAILY</span>
+</div>
+<div class="bg-surface-container border-2 border-ink p-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps">FEED POSTS</span>
+<span class="font-bold text-accent-orange">4X WEEKLY</span>
+</div>
+<div class="bg-surface-container border-2 border-ink p-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps">LONG-FORM REELS</span>
+<span class="font-bold text-accent-orange">2X WEEKLY</span>
+</div>
+<div class="bg-surface-container border-2 border-ink p-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps">TWITTER/X THREADS</span>
+<span class="font-bold text-accent-orange">DAILY</span>
+</div>
+</div>
+<div class="mt-auto pt-8">
+<img class="w-full h-40 object-cover border-2 border-ink grayscale hover:grayscale-0 transition-all duration-500 cursor-crosshair" data-alt="A futuristic digital data visualization with sharp lines and high contrast colors like orange and cyan. The image shows a complex network of nodes and connections representing digital strategy and social media flow in a neo-brutalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjkVuKvLSJ2yoUyyD9xWSmGoh6RbxoR_0CG--BdQ48a6WEDviNIl3OozO891rkadYSeCVpFgGpximVFma1AHvvndacpGZRTankWxEaE5fe7BCEZL3JTsYX3fMcRkCMIapoHRVMmxt7ZjG-1AcE30BoFHEH99HhhUcu8Q-5XT7qqH1m1YY-JkJXJKbOdd-cO7plItkG5pQs7P26ihebH0EJ2ppv4mTF4eeHvsH20tfrAv1GVZ2C_pS1iuZs-UHzE_dhiTKnz9cz3MRO"/>
+</div>
+</div>
+<!-- Community Management: Scrapbook Style -->
+<div class="flex flex-col gap-6">
+<div class="border-2 border-ink bg-accent-yellow p-6 neo-shadow relative sticker-rotate-pos">
+<h4 class="font-headline-md text-[24px] mb-2 uppercase">Reaction Protocol</h4>
+<p class="font-body-md text-sm text-ink mb-4">Manual engagement within the first 60 minutes of every post. No bots, just human interaction.</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">bolt</span>
+<span class="font-label-caps text-[12px]">RESPONSE TIME: &lt; 15 MINS</span>
+</div>
+</div>
+<div class="border-2 border-ink bg-white p-6 neo-shadow-sm flex-grow">
+<h4 class="font-label-caps text-label-caps mb-4 border-b-2 border-ink pb-2">STRATEGY_NOTES</h4>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 border-2 border-ink flex items-center justify-center font-bold">X</div>
+<span class="text-sm font-body-md">Identify 10 micro-influencers per week</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 border-2 border-ink flex items-center justify-center font-bold">X</div>
+<span class="text-sm font-body-md">Bi-weekly analytics auditing</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 border-2 border-ink flex items-center justify-center font-bold">X</div>
+<span class="text-sm font-body-md">Active DM nurturing for leads</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-ink text-paper-bg py-4 font-label-caps text-label-caps uppercase hover:bg-accent-orange hover:text-ink transition-colors duration-300 border-2 border-ink neo-shadow active-neo-press">
+                        Download Full Strategy PDF
+                    </button>
+</div>
+</div>
+</section><section class="mb-section-v">
+<div class="flex items-center gap-4 mb-stack-md">
+<h2 class="font-headline-md text-headline-md uppercase">Reel Showcase</h2>
+<div class="h-1 flex-grow bg-ink"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Reel 1 -->
+<div class="relative bg-surface-container-lowest border-2 border-ink neo-shadow p-2 group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<div class="absolute -top-4 -right-4 z-10 bg-accent-yellow border-2 border-ink px-4 py-1.5 rounded-full font-sticker-label text-sticker-label uppercase text-ink shadow-sm sticker-rotate-pos">VIRAL</div>
+<div class="w-full aspect-[9/16] border-2 border-ink overflow-hidden relative bg-ink">
+<img alt="Viral Reel" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3QNHfbuLeH5h7r5XoPkTaf4Jwoy8wwnpO8lZK7RrRkp-2_E4kZLahCWIsfyRI-XKAePSnLvdKC0L8xbUei5n8d1czUxGMz7Uh6DXjWbFaF2AquyA9mbfs7yD-0OPz8X2dLpoDoXICcxyW3ZqjvJX_ZEP9aBcVSzIgzYNe0bwcZu9MR5gkCwaoyv7bggfLllIUUGsNIjwI7iz68-N4D64JIs4bsr8IkpuIAP6tfMDEjmnO9Sp8DZeIeVBuXi4uqgev8zzdveW1CBSh"/>
+</div>
+<div class="pt-3 pb-1 px-1 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-ink uppercase">Streetwear Drop</span>
+<span class="material-symbols-outlined text-ink text-sm">play_arrow</span>
+</div>
+</div>
+<!-- Reel 2 -->
+<div class="relative bg-surface-container-lowest border-2 border-ink neo-shadow p-2 group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<div class="absolute top-4 -left-6 z-10 bg-accent-cyan border-2 border-ink px-4 py-1.5 rounded-full font-sticker-label text-sticker-label uppercase text-ink shadow-sm sticker-rotate-neg">700K+ VIEWS</div>
+<div class="w-full aspect-[9/16] border-2 border-ink overflow-hidden relative bg-ink">
+<img alt="Vlog Series" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvEy-Mxn3gVE-hHGv1VSXeUGKvtd7KH4AczPqh8G_cza9NIf5MeleJ-qsn9qOD-5LUJwsLsaecobEkUVLLNcUVWSywLU2IbgBDnaheLNeq4J1Lj3eEV7XBF29jq90-zJQd-YTJyD8qI6lq_bvWs9esnL-HJyrY6ShlBRSB9vqiNh9wW2z0JMl3OhmWlvoSN2pBgqMU0xGrbhFURe4Oc9TaWkSZ1GfrLKWlURDjWM010k4nCLBxO5emBQt3_DjrTeCE6jGenvsME5ge"/>
+</div>
+<div class="pt-3 pb-1 px-1 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-ink uppercase">Vlog Series 02</span>
+<span class="material-symbols-outlined text-ink text-sm">play_arrow</span>
+</div>
+</div>
+<!-- Reel 3 -->
+<div class="relative bg-surface-container-lowest border-2 border-ink neo-shadow p-2 group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<div class="absolute -bottom-4 right-4 z-10 bg-accent-pink border-2 border-ink px-4 py-1.5 rounded-full font-sticker-label text-sticker-label uppercase text-ink shadow-sm sticker-rotate-pos">NEW</div>
+<div class="w-full aspect-[9/16] border-2 border-ink overflow-hidden relative bg-ink">
+<img alt="Tech Review" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCui_wFRBVAUCqDCxSnmig5himIXmBCItt_G86MpY7ligpCH-u3zwWrDorEF-qEMfbM7yQ7BuCO0OB_dqqizyzXT0BhaO9evDP3b2zQ-yywIMqjgdRoiIoekG2c20spiIwGTt6rpgWx78ByIQ4fqQohTTVMU4a04ozAVUndd4v6cFsiI4xj5LTR5il-4YU4kJNJe8tnZaU9tj37W80cc_1TOiHTex7kLeShhTb8rcMv1odCxH1vwKOrZJsC2q_CfDBIjY7eZSEnCNjS"/>
+</div>
+<div class="pt-3 pb-1 px-1 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-ink uppercase">Retro Tech</span>
+<span class="material-symbols-outlined text-ink text-sm">play_arrow</span>
+</div>
+</div>
+<!-- Reel 4 -->
+<div class="relative bg-surface-container-lowest border-2 border-ink neo-shadow p-2 group cursor-pointer transition-transform duration-300 hover:scale-[1.02]">
+<div class="w-full aspect-[9/16] border-2 border-ink overflow-hidden relative bg-ink">
+<img alt="Fashion Drop" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKqruyC8UL3I7iTWmsFneFt3syWR9YELcMRSb1u7Xlojgd2MxTDCUsCdDSS_kWgbCkcXxdsg6ghQ9-znKjd_zu-fQaxDVmzqjPuNwPPNR2rdU2vd2MOeo9dmndyVhS24Vk6FoXgWNjnz3NkGOfScbChE7tyi89JwbPM6J310Q5JsmBTRqHsoAHtBIomQ7YNJrbI2d50ND-2MfzYdWNb1hkFaLAJnJHhm17j5MEhux91Sd-FWLvB3ra6Tlp3uiq2Wb_THz-kHvUAslP"/>
+</div>
+<div class="pt-3 pb-1 px-1 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-ink uppercase">Urban Style</span>
+<span class="material-symbols-outlined text-ink text-sm">play_arrow</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Project EXE Showcase Section -->
+<section class="mb-section-v">
+<div class="bg-surface-container border-4 border-ink neo-shadow-lg p-10 flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<div class="relative">
+<div class="absolute -top-5 -left-5 bg-accent-cyan border-2 border-ink px-4 py-2 neo-shadow z-10">
+<span class="font-sticker-label text-sticker-label">CASE_STUDY: 003</span>
+</div>
+<img class="w-full h-auto border-4 border-ink neo-shadow grayscale hover:grayscale-0 transition-all duration-700" data-alt="A sleek corporate workspace featuring advanced digital interfaces on multiple screens. The aesthetic is professional yet bold with high-contrast shadows and sharp edges. Vibrant orange highlights illuminate technical charts and social media dashboard visualizations in a spacious modern office environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5bLs656zBRdyqwu0MHGvR0wbPWBPStsXC10ZF-QxZ_SCk_dRJFnXnZRT5snIDkHtBdXopV_emnUedbnnyVY2xFX9VQwbAbBIx3G0zbKz_tRZjFdrtfueflNBU2b2Luc_2PAQe4bivaF64SaU_1ZOlDV_kn2TCvPMc72gghKOFzErqfUy24Me9DFWPyuzn4bB3W1VDTip1RHsCCvUiMpwDxcjHn4XHgeFf82-jUXPdsl7wZWBuPxmwU9Yk36xh0wYozbbl9RGIsRx"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-6">
+<h2 class="font-headline-lg text-headline-md md:text-[56px] leading-none uppercase">Project.EXE</h2>
+<p class="font-body-lg text-body-lg text-secondary italic">"Redefining the digital interface for a new generation of technical creators."</p>
+<div class="flex flex-wrap gap-3">
+<span class="px-4 py-1 bg-accent-orange text-ink border-2 border-ink font-label-caps text-[12px] uppercase">Branding</span>
+<span class="px-4 py-1 bg-accent-cyan text-ink border-2 border-ink font-label-caps text-[12px] uppercase">Social Strategy</span>
+<span class="px-4 py-1 bg-accent-yellow text-ink border-2 border-ink font-label-caps text-[12px] uppercase">Web3</span>
+</div>
+<p class="font-body-md text-body-md leading-relaxed">
+                        Project EXE was a complete overhaul of a legacy tech brand's social presence. We shifted from corporate beige to a technical-brutalist aesthetic, resulting in a 400% increase in comment-section sentiment quality.
+                    </p>
+<a class="inline-block font-label-caps text-label-caps text-ink border-b-4 border-accent-orange hover:bg-accent-orange py-1 px-2 transition-all" href="#">VIEW LIVE CASE STUDY</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-v pb-stack-md bg-ink dark:bg-surface-container-lowest border-t-4 border-ink flex flex-col md:flex-row justify-between items-center px-margin-page w-full">
+<div class="font-headline-md text-headline-md text-accent-cyan mb-6 md:mb-0">SARA RUFFINI</div>
+<div class="flex flex-col items-center md:items-end gap-4">
+<div class="flex gap-8 mb-4">
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">Vimeo</a>
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">Email</a>
+</div>
+<p class="font-label-caps text-[10px] text-surface-container-high/50 uppercase tracking-[0.2em]">© 2024 SARA RUFFINI. MADE FOR THE SCREEN.</p>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('.neo-shadow').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translate(-2px, -2px)';
+                card.style.boxShadow = '6px 6px 0px 0px #111111';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translate(0px, 0px)';
+                card.style.boxShadow = '4px 4px 0px 0px #111111';
+            });
+        });
+    </script>
+</body></html>

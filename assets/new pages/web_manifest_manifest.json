@@ -1,0 +1,21 @@
+{
+  "name": "Sara Ruffini Portfolio",
+  "short_name": "Sara Ruffini",
+  "description": "Video editor and content creator portfolio showcasing high-energy social media creative and editorial motion design.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF9F0",
+  "theme_color": "#3BDEC8",
+  "icons": [
+    {
+      "src": "{{DATA:IMAGE:IMAGE_1}}",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "{{DATA:IMAGE:IMAGE_2}}",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
