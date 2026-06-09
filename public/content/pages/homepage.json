@@ -1,18 +1,16 @@
 {
-  "page_name": "Homepage",
-  "page_slug": "homepage",
   "featured_card": {
     "href": "/pages/contact/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-call-me.png",
     "alt": "Retro phone sticker",
-    "label": "Call Me",
+    "label": "Social media",
     "href_page": "/pages/contact/index.html"
   },
   "featured_window": {
     "href": "/pages/app-v2/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-app-mobile.png",
     "alt": "Vintage silver mobile phone app sticker",
-    "label": "Retro Call!",
+    "label": "Travel app",
     "window_title": "PROJECT.EXE",
     "window_button": "Open",
     "href_page": "/pages/app-v2/index.html"
@@ -25,7 +23,7 @@
   "featured_dna": {
     "href": "/pages/coming-soon/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-biotech.png",
-    "alt": "DNA sticker",
+    "alt": "VideoxScience",
     "label": "Biotech",
     "href_page": "/pages/coming-soon/index.html"
   },
@@ -45,7 +43,7 @@
     "href": "/pages/weber-grillinspiration/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-summer-heat.png",
     "alt": "Barbecue sticker",
-    "label": "Summer Heat",
+    "label": "Weber collection",
     "href_page": "/pages/weber-grillinspiration/index.html"
   },
   "teaser_text_html": "A collection of work crafted with <span class=\"text-primary\">heart</span>, <span class=\"text-pink-500\">creativity</span>, and <span class=\"text-yellow-500\">storytelling</span>. Explore how I turn concepts into visuals that connect.",
@@ -54,26 +52,28 @@
     "href": "/pages/shooting-cocktails/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-neon-nights.png",
     "alt": "Cocktail sticker",
-    "label": "Neon Nights",
+    "label": "Enjoy",
     "href_page": "/pages/shooting-cocktails/index.html"
   },
+  "page_name": "Homepage",
+  "page_slug": "homepage",
   "seo": {
     "seo_title": "Sara Ruffini - Video Editor Portfolio",
     "seo_description": "Portfolio of video editing, motion design, and content creation work by Sara Ruffini.",
-    "seo_image": "/assets/media/home-reels.png"
+    "seo_image": ""
   },
   "featured_round": {
     "href": "/pages/coming-soon/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-nonnas-kitchen.png",
     "alt": "Pasta sticker",
-    "label": "Nonna's Kitchen",
+    "label": "Lst's cook it!",
     "href_page": "/pages/coming-soon/index.html"
   },
   "featured_polaroid": {
     "href": "/pages/video-v2/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-urban-chronicles.png",
     "alt": "Vintage camcorder sticker",
-    "caption": "Urban Chronicles",
+    "caption": "Behind the camera",
     "href_page": "/pages/video-v2/index.html"
   }
 }
