@@ -1,30 +1,13 @@
 import { SiteFooter, SiteNav } from "../../components/SiteChrome";
+import pageContent from "../../public/content/pages/social-media.json";
 
 export const metadata = {
-  title: "Social Media | Sara Ruffini",
-  description: "Social-first creative portfolio with high-retention editing, hooks, and format testing.",
+  title: pageContent?.seo?.seo_title || "Social Media | Sara Ruffini",
+  description: pageContent?.seo?.seo_description || "Social-first creative portfolio with high-retention editing, hooks, and format testing.",
 };
 
-const reels = [
-  { title: "Strangers in the Kitchen", note: "Interactive format / entertainment hook", accent: "bg-[#FF69B4]" },
-  { title: "Basic & Advanced Techniques", note: "Educational series / authority builder", accent: "bg-[#3BDEC8]" },
-  { title: "Retention-First Reels", note: "Pacing, captions, and audio optimization", accent: "bg-[#FFEB3B]" },
-  { title: "Split Test Hooks", note: "Iterate fast, keep what converts", accent: "bg-[#FF6B6B]" },
-  { title: "Consistent Posting Engine", note: "Delivery system built for momentum", accent: "bg-[#7FFF00]" },
-];
-
-const metrics = [
-  { label: "Views", value: "1.2M", tone: "bg-[#FF69B4]" },
-  { label: "Retention", value: "High", tone: "bg-[#3BDEC8]" },
-  { label: "Hooks tested", value: "40+", tone: "bg-[#FFEB3B]" },
-];
-
-const formatCards = [
-  { title: "Creative Direction", copy: "Visual systems that keep the content feeling handmade while staying platform-native." },
-  { title: "Editing Rhythm", copy: "Fast pacing, clean captions, and enough friction to make people stop scrolling." },
-  { title: "Distribution", copy: "Launches, hook testing, and post scheduling designed to keep the feed moving." },
-  { title: "Audience Growth", copy: "A mix of repeatable series, creator-led personality, and sharper video structure." },
-];
+const reelAccents = ["bg-[#FF69B4]", "bg-[#3BDEC8]", "bg-[#FFEB3B]", "bg-[#FF6B6B]", "bg-[#7FFF00]"];
+const metricTones = ["bg-[#FF69B4]", "bg-[#3BDEC8]", "bg-[#FFEB3B]"];
 
 function SectionTitle({ eyebrow, title, accent = "#3BDEC8" }) {
   return (
@@ -45,6 +28,14 @@ function ShadowCard({ className = "", children }) {
 }
 
 export default function SocialMediaPage() {
+  const hero = pageContent?.hero || {};
+  const reels = Array.isArray(pageContent?.reels) ? pageContent.reels : [];
+  const metrics = Array.isArray(pageContent?.metrics) ? pageContent.metrics : [];
+  const formatCards = Array.isArray(pageContent?.format_cards) ? pageContent.format_cards : [];
+  const postRhythm = Array.isArray(pageContent?.post_rhythm) ? pageContent.post_rhythm : [];
+  const hookLab = pageContent?.hook_lab || {};
+  const audienceNote = pageContent?.audience_note || {};
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#FDF9F0] text-[#111111] selection:bg-[#3BDEC8] selection:text-black">
       <div className="pointer-events-none fixed right-0 top-0 -z-10 h-[32rem] w-[32rem] translate-x-1/2 -translate-y-1/3 rounded-full bg-[radial-gradient(circle,rgba(255,105,180,0.18)_0%,rgba(59,222,200,0.08)_42%,rgba(253,249,240,0)_72%)] blur-3xl" />
@@ -56,49 +47,49 @@ export default function SocialMediaPage() {
         <section className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="space-y-8">
             <div className="inline-flex -rotate-3 items-center gap-2 border-2 border-black bg-[#FFEB3B] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] shadow-[4px_4px_0_0_#111111]">
-              <span className="text-sm">🔥</span>
-              For you page vibes
+              <span className="text-sm">{hero.badge_emoji || "🔥"}</span>
+              {hero.badge_text || "For you page vibes"}
             </div>
 
             <h1 className="max-w-4xl text-5xl font-black uppercase leading-[0.92] tracking-[-0.05em] md:text-7xl">
-              The <span className="relative inline-block">Algo<span className="absolute left-0 bottom-2 h-3 w-full -rotate-2 rounded-full bg-[#3BDEC8]/80" /></span>
+              {hero.title_line_1 || "The"} <span className="relative inline-block">{hero.title_highlight || "Algo"}<span className="absolute left-0 bottom-2 h-3 w-full -rotate-2 rounded-full bg-[#3BDEC8]/80" /></span>
               <br />
-              Approved Portfolio
+              {hero.title_line_2 || "Approved Portfolio"}
             </h1>
 
             <p className="max-w-xl border-l-4 border-black bg-white/60 px-4 py-3 text-lg leading-relaxed shadow-[3px_3px_0_0_#111111] md:text-xl">
-              Stop scrolling. Start converting. I create social-first creative that lives on the FYP and actually gets engagement.
+              {hero.intro_text || "Stop scrolling. Start converting. I create social-first creative that lives on the FYP and actually gets engagement."}
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="https://www.instagram.com/potuschef/" rel="noreferrer" target="_blank" className="inline-flex items-center gap-2 border-2 border-black bg-[#3BDEC8] px-6 py-4 text-sm font-black uppercase tracking-[0.22em] shadow-[6px_6px_0_0_#111111] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5">
-                View Showreel
+              <a href={hero.primary_cta_url || "https://www.instagram.com/potuschef/"} rel="noreferrer" target="_blank" className="inline-flex items-center gap-2 border-2 border-black bg-[#3BDEC8] px-6 py-4 text-sm font-black uppercase tracking-[0.22em] shadow-[6px_6px_0_0_#111111] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5">
+                {hero.primary_cta_label || "View Showreel"}
                 <span aria-hidden="true">↗</span>
               </a>
-              <a href="#metrics" className="inline-flex items-center gap-2 border-2 border-black bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.22em] shadow-[6px_6px_0_0_#111111] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5">
-                Stats &amp; Analytics
+              <a href={hero.secondary_cta_url || "#metrics"} className="inline-flex items-center gap-2 border-2 border-black bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.22em] shadow-[6px_6px_0_0_#111111] transition-transform hover:-translate-x-0.5 hover:-translate-y-0.5">
+                {hero.secondary_cta_label || "Stats & Analytics"}
               </a>
             </div>
           </div>
 
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="absolute -right-2 top-8 z-20 rounded-full border-2 border-black bg-[#FF69B4] px-4 py-3 text-center text-sm font-black uppercase shadow-[4px_4px_0_0_#111111]">
-              <div className="text-xl leading-none">1.2M</div>
-              <div className="tracking-[0.18em]">Views</div>
+              <div className="text-xl leading-none">{hero.hero_stat_value || "1.2M"}</div>
+              <div className="tracking-[0.18em]">{hero.hero_stat_label || "Views"}</div>
             </div>
 
             <div className="rotate-2 rounded-[2.5rem] border-4 border-black bg-black p-3 shadow-[10px_10px_0_0_#111111] transition-transform duration-300 hover:rotate-0">
               <div className="overflow-hidden rounded-[2rem] bg-[#0b0b0b] p-4 text-white">
                 <div className="mb-4 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-white/60">
-                  <span>Creative feed</span>
-                  <span>05 reels</span>
+                  <span>{hero.hero_feed_label || "Creative feed"}</span>
+                  <span>{hero.hero_feed_count || "05 reels"}</span>
                 </div>
 
                 <div className="space-y-3">
                   {reels.map((reel, index) => (
                     <div key={reel.title} className="flex items-center gap-4 rounded-[1.5rem] border-2 border-white/15 bg-white/5 p-3">
-                      <div className={`flex h-20 w-16 shrink-0 items-end justify-center rounded-[1.1rem] border-2 border-black ${reel.accent} text-[10px] font-black uppercase tracking-[0.18em] text-black shadow-[4px_4px_0_0_#111111]`}>
-                        Reel {String(index + 1).padStart(2, "0")}
+                      <div className={`flex h-20 w-16 shrink-0 items-end justify-center rounded-[1.1rem] border-2 border-black ${reelAccents[index % reelAccents.length]} text-[10px] font-black uppercase tracking-[0.18em] text-black shadow-[4px_4px_0_0_#111111]`}>
+                        {reel.label || `Reel ${String(index + 1).padStart(2, "0")}`}
                       </div>
                       <div className="min-w-0">
                         <p className="text-sm font-black uppercase tracking-[0.18em]">{reel.title}</p>
@@ -109,8 +100,8 @@ export default function SocialMediaPage() {
                 </div>
 
                 <div className="mt-4 grid grid-cols-3 gap-3">
-                  {metrics.map((metric) => (
-                    <div key={metric.label} className={`rounded-2xl border-2 border-black ${metric.tone} px-3 py-4 text-center text-black shadow-[3px_3px_0_0_#111111]`}>
+                  {metrics.map((metric, index) => (
+                    <div key={metric.label} className={`rounded-2xl border-2 border-black ${metricTones[index % metricTones.length]} px-3 py-4 text-center text-black shadow-[3px_3px_0_0_#111111]`}>
                       <div className="text-xl font-black uppercase leading-none">{metric.value}</div>
                       <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em]">{metric.label}</div>
                     </div>
@@ -122,11 +113,11 @@ export default function SocialMediaPage() {
         </section>
 
         <section id="metrics" className="mt-20 grid gap-6 md:grid-cols-3">
-          {metrics.map((metric) => (
-            <ShadowCard key={metric.label} className={`${metric.tone} p-6`}>
+          {metrics.map((metric, index) => (
+            <ShadowCard key={metric.label} className={`${metricTones[index % metricTones.length]} p-6`}>
               <div className="text-xs font-black uppercase tracking-[0.22em] text-black/70">{metric.label}</div>
               <div className="mt-3 text-4xl font-black uppercase">{metric.value}</div>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-black/75">Social creative tuned for hooks, pacing, and repeatable engagement patterns.</p>
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-black/75">{metric.description || "Social creative tuned for hooks, pacing, and repeatable engagement patterns."}</p>
             </ShadowCard>
           ))}
         </section>
@@ -134,7 +125,7 @@ export default function SocialMediaPage() {
         <section className="mt-20 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <ShadowCard className="relative overflow-hidden p-6 md:p-8">
             <div className="absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[#FF69B4]/20 blur-2xl" />
-            <SectionTitle eyebrow="Format system" title="Content engine" accent="#FF69B4" />
+            <SectionTitle eyebrow={pageContent?.format_section?.eyebrow || "Format system"} title={pageContent?.format_section?.title || "Content engine"} accent="#FF69B4" />
             <div className="space-y-4">
               {formatCards.map((card) => (
                 <div key={card.title} className="rounded-2xl border-2 border-black bg-[#FDF9F0] p-4 shadow-[3px_3px_0_0_#111111]">
@@ -147,24 +138,26 @@ export default function SocialMediaPage() {
 
           <div className="grid gap-6 sm:grid-cols-2">
             <ShadowCard className="bg-[#3BDEC8] p-6">
-              <div className="text-xs font-black uppercase tracking-[0.22em] text-black/70">Hook lab</div>
-              <div className="mt-3 text-3xl font-black uppercase leading-[0.92]">Split testing different hooks</div>
-              <p className="mt-3 text-sm leading-relaxed text-black/80">Fast iteration, stronger opening seconds, and a feed that rewards momentum.</p>
+              <div className="text-xs font-black uppercase tracking-[0.22em] text-black/70">{hookLab.eyebrow || "Hook lab"}</div>
+              <div className="mt-3 text-3xl font-black uppercase leading-[0.92]">{hookLab.title || "Split testing different hooks"}</div>
+              <p className="mt-3 text-sm leading-relaxed text-black/80">{hookLab.copy || "Fast iteration, stronger opening seconds, and a feed that rewards momentum."}</p>
             </ShadowCard>
 
             <ShadowCard className="bg-white p-6">
-              <div className="text-xs font-black uppercase tracking-[0.22em] text-black/60">Post rhythm</div>
+              <div className="text-xs font-black uppercase tracking-[0.22em] text-black/60">{pageContent?.post_rhythm_title || "Post rhythm"}</div>
               <div className="mt-4 space-y-3 text-sm font-bold uppercase tracking-[0.16em] text-black/80">
-                <div className="flex items-center justify-between border-b border-black/10 pb-2"><span>Stories</span><span>3-5x daily</span></div>
-                <div className="flex items-center justify-between border-b border-black/10 pb-2"><span>Feed posts</span><span>4x weekly</span></div>
-                <div className="flex items-center justify-between"><span>Reels</span><span>2x weekly</span></div>
+                {postRhythm.map((item, index) => (
+                  <div key={`${item.label}-${index}`} className={`flex items-center justify-between ${index !== postRhythm.length - 1 ? "border-b border-black/10 pb-2" : ""}`}>
+                    <span>{item.label}</span><span>{item.value}</span>
+                  </div>
+                ))}
               </div>
             </ShadowCard>
 
             <ShadowCard className="bg-[#FFEB3B] p-6 sm:col-span-2">
-              <div className="text-xs font-black uppercase tracking-[0.22em] text-black/70">Audience note</div>
-              <div className="mt-3 text-3xl font-black uppercase leading-[0.92]">Organic production, high retention hooks, sharp edits</div>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-black/80">The goal is simple: keep the work feeling human and tactile while making the structure strong enough to travel across the feed.</p>
+              <div className="text-xs font-black uppercase tracking-[0.22em] text-black/70">{audienceNote.eyebrow || "Audience note"}</div>
+              <div className="mt-3 text-3xl font-black uppercase leading-[0.92]">{audienceNote.title || "Organic production, high retention hooks, sharp edits"}</div>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-black/80">{audienceNote.copy || "The goal is simple: keep the work feeling human and tactile while making the structure strong enough to travel across the feed."}</p>
             </ShadowCard>
           </div>
         </section>

@@ -1,0 +1,116 @@
+{
+  "page_name": "Social Media",
+  "page_slug": "social-media",
+  "hero": {
+    "badge_emoji": "🔥",
+    "badge_text": "For you page vibes",
+    "title_line_1": "The",
+    "title_highlight": "Algo",
+    "title_line_2": "Approved Portfolio",
+    "intro_text": "Stop scrolling. Start converting. I create social-first creative that lives on the FYP and actually gets engagement.",
+    "primary_cta_label": "View Showreel",
+    "primary_cta_url": "https://www.instagram.com/potuschef/",
+    "secondary_cta_label": "Stats & Analytics",
+    "secondary_cta_url": "#metrics",
+    "hero_stat_value": "1.2M",
+    "hero_stat_label": "Views",
+    "hero_feed_label": "Creative feed",
+    "hero_feed_count": "05 reels"
+  },
+  "reels": [
+    {
+      "label": "Reel 01",
+      "title": "Strangers in the Kitchen",
+      "note": "Interactive format / entertainment hook"
+    },
+    {
+      "label": "Reel 02",
+      "title": "Basic & Advanced Techniques",
+      "note": "Educational series / authority builder"
+    },
+    {
+      "label": "Reel 03",
+      "title": "Retention-First Reels",
+      "note": "Pacing, captions, and audio optimization"
+    },
+    {
+      "label": "Reel 04",
+      "title": "Split Test Hooks",
+      "note": "Iterate fast, keep what converts"
+    },
+    {
+      "label": "Reel 05",
+      "title": "Consistent Posting Engine",
+      "note": "Delivery system built for momentum"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Views",
+      "value": "1.2M",
+      "description": "Social creative tuned for hooks, pacing, and repeatable engagement patterns."
+    },
+    {
+      "label": "Retention",
+      "value": "High",
+      "description": "Fast edits and structure designed to keep attention from first second to last frame."
+    },
+    {
+      "label": "Hooks tested",
+      "value": "40+",
+      "description": "Continuous testing of hooks, captions, and pacing to improve performance over time."
+    }
+  ],
+  "format_section": {
+    "eyebrow": "Format system",
+    "title": "Content engine"
+  },
+  "format_cards": [
+    {
+      "title": "Creative Direction",
+      "copy": "Visual systems that keep the content feeling handmade while staying platform-native."
+    },
+    {
+      "title": "Editing Rhythm",
+      "copy": "Fast pacing, clean captions, and enough friction to make people stop scrolling."
+    },
+    {
+      "title": "Distribution",
+      "copy": "Launches, hook testing, and post scheduling designed to keep the feed moving."
+    },
+    {
+      "title": "Audience Growth",
+      "copy": "A mix of repeatable series, creator-led personality, and sharper video structure."
+    }
+  ],
+  "hook_lab": {
+    "eyebrow": "Hook lab",
+    "title": "Split testing different hooks",
+    "copy": "Fast iteration, stronger opening seconds, and a feed that rewards momentum."
+  },
+  "post_rhythm_title": "Post rhythm",
+  "post_rhythm": [
+    {
+      "label": "Stories",
+      "value": "3-5x daily"
+    },
+    {
+      "label": "Feed posts",
+      "value": "4x weekly"
+    },
+    {
+      "label": "Reels",
+      "value": "2x weekly"
+    }
+  ],
+  "audience_note": {
+    "eyebrow": "Audience note",
+    "title": "Organic production, high retention hooks, sharp edits",
+    "copy": "The goal is simple: keep the work feeling human and tactile while making the structure strong enough to travel across the feed."
+  },
+  "seo": {
+    "seo_title": "Social Media | Sara Ruffini",
+    "seo_description": "Social-first creative portfolio with high-retention editing, hooks, and format testing.",
+    "seo_image": ""
+  }
+}

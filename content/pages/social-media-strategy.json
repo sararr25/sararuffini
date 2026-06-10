@@ -1,0 +1,113 @@
+{
+  "page_name": "Social Media Strategy",
+  "page_slug": "social-media-strategy",
+  "hero": {
+    "badge_text": "Strategy mode: active",
+    "title_line_1": "Digital dominance",
+    "title_line_2": "through architecture.",
+    "intro_text": "Crafting social ecosystems that do more than grow. They resonate, repeat, and create a structure people can actually follow."
+  },
+  "hero_stats": [
+    {
+      "label": "Aggregated growth",
+      "value": "+142.8%",
+      "copy": "Year over year, across content, retention, and distribution systems.",
+      "tone_class": "bg-[#3BDEC8]"
+    },
+    {
+      "label": "Total reach",
+      "value": "4.2M",
+      "copy": "Measured across campaign runs and format rollouts.",
+      "tone_class": "bg-[#FF69B4]"
+    },
+    {
+      "label": "Velocity",
+      "value": "Fast",
+      "copy": "A feedback loop built for iteration, not waiting around.",
+      "tone_class": "bg-[#FFEB3B]"
+    }
+  ],
+  "dashboard": {
+    "eyebrow": "Growth dashboard",
+    "title": "Real-time feed",
+    "snapshot_label": "Performance snapshot",
+    "snapshot_value": "+142.8% YOY"
+  },
+  "dashboard_bars": [20, 35, 24, 52, 45, 76, 66, 92, 86, 100],
+  "cards": [
+    {
+      "title": "Strategy system",
+      "copy": "A clear content architecture that connects brand goals, hooks, and execution."
+    },
+    {
+      "title": "Testing layer",
+      "copy": "Hook variants, pacing changes, and format shifts are measured before scaling."
+    },
+    {
+      "title": "Delivery stack",
+      "copy": "Production, editing, and publishing stay aligned so the feed never loses rhythm."
+    },
+    {
+      "title": "Growth focus",
+      "copy": "Audience signals drive the next batch of content, not guesswork or generic templates."
+    }
+  ],
+  "pillars_section": {
+    "eyebrow": "Content pillars",
+    "title": "Strategic management"
+  },
+  "pillars": [
+    {
+      "id": "01",
+      "title": "Technical authority",
+      "copy": "Deep dives into process, performance, and educational formats that build trust.",
+      "tone_class": "bg-[#FF6B6B]"
+    },
+    {
+      "id": "02",
+      "title": "Aesthetic rawness",
+      "copy": "Behind-the-scenes content that keeps the brand textured, handmade, and real.",
+      "tone_class": "bg-[#3BDEC8]"
+    },
+    {
+      "id": "03",
+      "title": "Community reposts",
+      "copy": "Social proof and user-generated moments that keep the channel human and active.",
+      "tone_class": "bg-[#FFEB3B]"
+    }
+  ],
+  "cadence_title": "Cadence",
+  "cadence": [
+    {
+      "label": "Instagram stories",
+      "value": "3-5x daily"
+    },
+    {
+      "label": "Feed posts",
+      "value": "4x weekly"
+    },
+    {
+      "label": "Long-form reels",
+      "value": "2x weekly"
+    },
+    {
+      "label": "Threads / notes",
+      "value": "Daily"
+    }
+  ],
+  "cadence_monitor": {
+    "eyebrow": "Cadence monitor",
+    "title": "Launch, test, adapt, repeat.",
+    "copy": "The schedule is intentionally simple. Consistency gives the strategy room to compound."
+  },
+  "execution_layer": {
+    "eyebrow": "Execution layer",
+    "title": "High-retention hooks, clean edits, fast delivery",
+    "copy": "Strategy only works when it reaches the feed in a usable form. The process stays close to production so the creative and the analytics can keep talking to each other."
+  },
+  "seo": {
+    "seo_title": "Social Media Strategy | Sara Ruffini",
+    "seo_description": "Strategic social media management with growth dashboards, format systems, and repeatable cadence.",
+    "seo_image": ""
+  }
+}

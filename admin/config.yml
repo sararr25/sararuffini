@@ -56,6 +56,10 @@ collections:
         value: /pages/graphics/index.html
       - label: Social Media Portfolio
         value: /pages/socialmedia-portfolio/index.html
+      - label: Social Media
+        value: /social-media
+      - label: Social Media Strategy
+        value: /social-media-strategy
       - label: Cocktail Photography
         value: /pages/cocktail-photography/index.html
       - label: Shooting Cocktails
@@ -3703,6 +3707,442 @@ collections:
         required: false
       allow_add: true
       allow_delete: true
+    - label: SEO Settings
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
+  - label: Social Media
+    name: social_media
+    file: public/content/pages/social-media.json
+    fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Social Media
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: social-media
+    - label: Hero
+      name: hero
+      widget: object
+      required: false
+      fields:
+      - label: Badge Emoji
+        name: badge_emoji
+        widget: string
+        required: false
+      - label: Badge Text
+        name: badge_text
+        widget: string
+        required: false
+      - label: Title Line 1
+        name: title_line_1
+        widget: string
+        required: false
+      - label: Highlight Word
+        name: title_highlight
+        widget: string
+        required: false
+      - label: Title Line 2
+        name: title_line_2
+        widget: string
+        required: false
+      - label: Intro Text
+        name: intro_text
+        widget: text
+        required: false
+      - label: Primary CTA Label
+        name: primary_cta_label
+        widget: string
+        required: false
+      - label: Primary CTA URL
+        name: primary_cta_url
+        widget: string
+        required: false
+      - label: Secondary CTA Label
+        name: secondary_cta_label
+        widget: string
+        required: false
+      - label: Secondary CTA URL
+        name: secondary_cta_url
+        widget: string
+        required: false
+      - label: Hero Stat Value
+        name: hero_stat_value
+        widget: string
+        required: false
+      - label: Hero Stat Label
+        name: hero_stat_label
+        widget: string
+        required: false
+      - label: Hero Feed Label
+        name: hero_feed_label
+        widget: string
+        required: false
+      - label: Hero Feed Count
+        name: hero_feed_count
+        widget: string
+        required: false
+    - label: Reels
+      name: reels
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Note
+        name: note
+        widget: text
+        required: false
+    - label: Metrics
+      name: metrics
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Value
+        name: value
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+    - label: Format Section
+      name: format_section
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+    - label: Format Cards
+      name: format_cards
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+    - label: Hook Lab
+      name: hook_lab
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+    - label: Post Rhythm Section Title
+      name: post_rhythm_title
+      widget: string
+      required: false
+    - label: Post Rhythm Rows
+      name: post_rhythm
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Value
+        name: value
+        widget: string
+        required: false
+    - label: Audience Note
+      name: audience_note
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+    - label: SEO Settings
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: crop_position
+        required: false
+        default: 50,50
+        hint: Choose which part of the image stays visible inside cropped frames.
+  - label: Social Media Strategy
+    name: social_media_strategy
+    file: public/content/pages/social-media-strategy.json
+    fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Social Media Strategy
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: social-media-strategy
+    - label: Hero
+      name: hero
+      widget: object
+      required: false
+      fields:
+      - label: Badge Text
+        name: badge_text
+        widget: string
+        required: false
+      - label: Title Line 1
+        name: title_line_1
+        widget: string
+        required: false
+      - label: Title Line 2
+        name: title_line_2
+        widget: string
+        required: false
+      - label: Intro Text
+        name: intro_text
+        widget: text
+        required: false
+    - label: Hero Stats
+      name: hero_stats
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Value
+        name: value
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+      - label: Tone Class
+        name: tone_class
+        widget: string
+        required: false
+    - label: Dashboard
+      name: dashboard
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Snapshot Label
+        name: snapshot_label
+        widget: string
+        required: false
+      - label: Snapshot Value
+        name: snapshot_value
+        widget: string
+        required: false
+    - label: Dashboard Bars
+      name: dashboard_bars
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      field:
+        label: Height (0-100)
+        name: value
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+    - label: Strategy Cards
+      name: cards
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+    - label: Pillars Section
+      name: pillars_section
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+    - label: Pillars
+      name: pillars
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: ID
+        name: id
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+      - label: Tone Class
+        name: tone_class
+        widget: string
+        required: false
+    - label: Cadence Section Title
+      name: cadence_title
+      widget: string
+      required: false
+    - label: Cadence Rows
+      name: cadence
+      widget: list
+      required: false
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Label
+        name: label
+        widget: string
+        required: false
+      - label: Value
+        name: value
+        widget: string
+        required: false
+    - label: Cadence Monitor
+      name: cadence_monitor
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
+    - label: Execution Layer
+      name: execution_layer
+      widget: object
+      required: false
+      fields:
+      - label: Eyebrow
+        name: eyebrow
+        widget: string
+        required: false
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Copy
+        name: copy
+        widget: text
+        required: false
     - label: SEO Settings
       name: seo
       widget: object
