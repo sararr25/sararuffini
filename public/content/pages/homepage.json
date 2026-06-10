@@ -2,14 +2,14 @@
   "featured_card": {
     "href": "/pages/contact/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-call-me.png",
-    "alt": "Retro phone sticker",
-    "label": "Social media",
-    "href_page": "/pages/contact/index.html"
+    "alt": "Social media Strategy",
+    "label": "@Potuschef",
+    "href_page": "/social-media-strategy"
   },
   "featured_window": {
     "href": "/pages/app-v2/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-app-mobile.png",
-    "alt": "Vintage silver mobile phone app sticker",
+    "alt": "",
     "label": "Travel app",
     "window_title": "PROJECT.EXE",
     "window_button": "Open",
@@ -65,9 +65,9 @@
   "featured_round": {
     "href": "/pages/coming-soon/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-nonnas-kitchen.png",
-    "alt": "Pasta sticker",
+    "alt": "potuschef",
     "label": "Lst's cook it!",
-    "href_page": "/pages/coming-soon/index.html"
+    "href_page": "/social-media"
   },
   "featured_polaroid": {
     "href": "/pages/video-v2/index.html",
