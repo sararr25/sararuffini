@@ -1,9 +1,9 @@
 {
   "featured_card": {
-    "href": "/pages/contact/index.html",
+    "href": "",
     "image": "/assets/stitch-homepage-featured/sticker-call-me.png",
     "alt": "Social media Strategy",
-    "label": "@Potuschef",
+    "label": "SMS x @Potuschef",
     "href_page": "/social-media-strategy"
   },
   "featured_window": {
@@ -24,7 +24,7 @@
     "href": "/pages/coming-soon/index.html",
     "image": "/assets/stitch-homepage-featured/sticker-biotech.png",
     "alt": "VideoxScience",
-    "label": "Biotech",
+    "label": "Søberg Institute",
     "href_page": "/pages/coming-soon/index.html"
   },
   "featured_title": "Featured Projects",
@@ -63,10 +63,10 @@
     "seo_image": ""
   },
   "featured_round": {
-    "href": "/pages/coming-soon/index.html",
+    "href": "",
     "image": "/assets/stitch-homepage-featured/sticker-nonnas-kitchen.png",
-    "alt": "potuschef",
-    "label": "Lst's cook it!",
+    "alt": "",
+    "label": "Reels!",
     "href_page": "/social-media"
   },
   "featured_polaroid": {
