@@ -1,165 +1,98 @@
-import { SiteFooter, SiteNav } from "../../components/SiteChrome";
+import { EditorialFooter, EditorialNav } from "../../components/EditorialChrome";
 import pageContent from "../../public/content/pages/social-media-strategy.json";
 
 export const metadata = {
   title: pageContent?.seo?.seo_title || "Social Media Strategy | Sara Ruffini",
-  description: pageContent?.seo?.seo_description || "Strategic social media management with growth dashboards, format systems, and repeatable cadence.",
+  description: pageContent?.seo?.seo_description || "Strategic social media management.",
 };
 
-const pillarTones = ["bg-[#FF6B6B]", "bg-[#3BDEC8]", "bg-[#FFEB3B]"];
-
-function ShadowCard({ className = "", children }) {
-  return <div className={`border-2 border-black bg-white shadow-[6px_6px_0_0_#111111] ${className}`}>{children}</div>;
-}
-
-function SectionHeading({ eyebrow, title, accent = "#FF6B6B" }) {
-  return (
-    <div className="mb-6 space-y-3">
-      <p className="text-xs font-black uppercase tracking-[0.28em] text-black/60">{eyebrow}</p>
-      <h2 className="max-w-3xl text-3xl font-black uppercase leading-[0.92] tracking-[-0.04em] md:text-4xl">
-        <span className="relative inline-block">
-          {title}
-          <span className="absolute left-0 -bottom-1 h-3 w-full rotate-[-1.5deg] rounded-full opacity-80" style={{ backgroundColor: accent }} />
-        </span>
-      </h2>
-    </div>
-  );
-}
+const reelImages = [
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuC3QNHfbuLeH5h7r5XoPkTaf4Jwoy8wwnpO8lZK7RrRkp-2_E4kZLahCWIsfyRI-XKAePSnLvdKC0L8xbUei5n8d1czUxGMz7Uh6DXjWbFaF2AquyA9mbfs7yD-0OPz8X2dLpoDoXICcxyW3ZqjvJX_ZEP9aBcVSzIgzYNe0bwcZu9MR5gkCwaoyv7bggfLllIUUGsNIjwI7iz68-N4D64JIs4bsr8IkpuIAP6tfMDEjmnO9Sp8DZeIeVBuXi4uqgev8zzdveW1CBSh",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAvEy-Mxn3gVE-hHGv1VSXeUGKvtd7KH4AczPqh8G_cza9NIf5MeleJ-qsn9qOD-5LUJwsLsaecobEkUVLLNcUVWSywLU2IbgBDnaheLNeq4J1Lj3eEV7XBF29jq90-zJQd-YTJyD8qI6lq_bvWs9esnL-HJyrY6ShlBRSB9vqiNh9wW2z0JMl3OhmWlvoSN2pBgqMU0xGrbhFURe4Oc9TaWkSZ1GfrLKWlURDjWM010k4nCLBxO5emBQt3_DjrTeCE6jGenvsME5ge",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCui_wFRBVAUCqDCxSnmig5himIXmBCItt_G86MpY7ligpCH-u3zwWrDorEF-qEMfbM7yQ7BuCO0OB_dqqizyzXT0BhaO9evDP3b2zQ-yywIMqjgdRoiIoekG2c20spiIwGTt6rpgWx78ByIQ4fqQohTTVMU4a04ozAVUndd4v6cFsiI4xj5LTR5il-4YU4kJNJe8tnZaU9tj37W80cc_1TOiHTex7kLeShhTb8rcMv1odCxH1vwKOrZJsC2q_CfDBIjY7eZSEnCNjS",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuCKqruyC8UL3I7iTWmsFneFt3syWR9YELcMRSb1u7Xlojgd2MxTDCUsCdDSS_kWgbCkcXxdsg6ghQ9-znKjd_zu-fQaxDVmzqjPuNwPPNR2rdU2vd2MOeo9dmndyVhS24Vk6FoXgWNjnz3NkGOfScbChE7tyi89JwbPM6J310Q5JsmBTRqHsoAHtBIomQ7YNJrbI2d50ND-2MfzYdWNb1hkFaLAJnJHhm17j5MEhux91Sd-FWLvB3ra6Tlp3uiq2Wb_THz-kHvUAslP",
+];
+const reelNames = ["Streetwear Drop", "Vlog Series 02", "Retro Tech", "Urban Style"];
+const reelBadges = ["Viral", "700K+ views", "New", ""];
 
 export default function SocialMediaStrategyPage() {
-  const hero = pageContent?.hero || {};
-  const heroStats = Array.isArray(pageContent?.hero_stats) ? pageContent.hero_stats : [];
-  const dashboard = pageContent?.dashboard || {};
-  const dashboardBars = Array.isArray(pageContent?.dashboard_bars) ? pageContent.dashboard_bars : [];
-  const cards = Array.isArray(pageContent?.cards) ? pageContent.cards : [];
-  const pillars = Array.isArray(pageContent?.pillars) ? pageContent.pillars : [];
-  const cadence = Array.isArray(pageContent?.cadence) ? pageContent.cadence : [];
-  const cadenceMonitor = pageContent?.cadence_monitor || {};
-  const executionLayer = pageContent?.execution_layer || {};
+  const hero = pageContent.hero || {};
+  const pillars = pageContent.pillars || [];
+  const cadence = pageContent.cadence || [];
+  const bars = pageContent.dashboard_bars || [];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#FDF9F0] text-[#111111] selection:bg-[#FF6B6B] selection:text-black">
-      <div className="pointer-events-none fixed right-0 top-0 -z-10 h-[28rem] w-[28rem] translate-x-1/2 -translate-y-1/3 rounded-full bg-[radial-gradient(circle,rgba(255,107,107,0.16)_0%,rgba(59,222,200,0.08)_40%,rgba(253,249,240,0)_72%)] blur-3xl" />
-      <div className="pointer-events-none fixed left-0 bottom-0 -z-10 h-[32rem] w-[32rem] -translate-x-1/3 translate-y-1/3 rounded-full bg-[radial-gradient(circle,rgba(255,235,59,0.15)_0%,rgba(255,105,180,0.08)_44%,rgba(253,249,240,0)_72%)] blur-3xl" />
+    <div className="editorial-page">
+      <EditorialNav active="Process" hireTone="orange" />
+      <main className="strategy-main">
+        <header className="strategy-hero">
+          <div className="sticker strategy-sticker">{hero.badge_text || "Strategy mode: active"}</div>
+          <h1>{hero.title_line_1?.split(" ").map((word, index) => (
+            <span className={word.toLowerCase() === "dominance" ? "strategy-underline" : ""} key={word}>{word}{index === 1 ? <br /> : " "}</span>
+          ))}{hero.title_line_2}</h1>
+          <p>{hero.intro_text}</p>
+        </header>
 
-      <SiteNav pageKey="projects" />
-
-      <main className="mx-auto w-full max-w-7xl px-6 py-10 md:px-12 md:py-16">
-        <section className="relative">
-          <div className="absolute -right-2 -top-2 rotate-2 border-2 border-black bg-[#FFEB3B] px-4 py-2 text-xs font-black uppercase tracking-[0.22em] shadow-[4px_4px_0_0_#111111]">
-            {hero.badge_text || "Strategy mode: active"}
-          </div>
-
-          <div className="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
-            <div className="space-y-8">
-              <h1 className="max-w-4xl text-5xl font-black uppercase leading-[0.92] tracking-[-0.05em] md:text-7xl">
-                {hero.title_line_1 || "Digital dominance"}
-                <br />
-                {hero.title_line_2 || "through architecture."}
-              </h1>
-              <p className="max-w-2xl border-l-4 border-black bg-white/65 px-4 py-3 text-lg leading-relaxed shadow-[3px_3px_0_0_#111111] md:text-xl">
-                {hero.intro_text || "Crafting social ecosystems that do more than grow. They resonate, repeat, and create a structure people can actually follow."}
-              </p>
+        <section className="growth-grid">
+          <div className="growth-chart">
+            <div className="metric-header">
+              <div><small>Aggregated growth</small><strong>{pageContent.dashboard?.snapshot_value || "+142.8% YOY"}</strong></div>
+              <div className="metric-dots"><i /><i /><i /></div>
             </div>
+            <div className="bars">{bars.map((height, index) => <div className="bar" key={index} style={{ height: `${height}%` }} />)}</div>
+          </div>
+          <div className="stats-stack">
+            <div className="stat-card"><span>Total reach</span><strong>4.2M</strong></div>
+            <div className="stat-card"><span>Engagement rate</span><strong>8.4%</strong></div>
+            <div className="stat-card"><span>Viral velocity</span><strong>Fast</strong></div>
+          </div>
+        </section>
 
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {heroStats.map((item, index) => (
-                <ShadowCard key={`${item.label}-${index}`} className={`${item.tone_class || (index === 0 ? "bg-[#3BDEC8]" : index === 1 ? "bg-[#FF69B4]" : "bg-[#FFEB3B]")} p-5`}>
-                  <div className="text-xs font-black uppercase tracking-[0.22em] text-black/70">{item.label}</div>
-                  <div className="mt-3 text-4xl font-black uppercase">{item.value}</div>
-                  <div className="mt-2 text-sm text-black/75">{item.copy}</div>
-                </ShadowCard>
-              ))}
+        <section>
+          <div className="section-rule"><h2>Strategic Management</h2></div>
+          <div className="management-grid">
+            <div className="window-card">
+              <div className="window-bar"><span>PILLARS.CFG</span><span>− □ ×</span></div>
+              <div className="pillar-list">
+                {pillars.map((pillar) => <div className="pillar" key={pillar.id}><span className="pillar-id">{pillar.id}</span><div><h3>{pillar.title}</h3><p>{pillar.copy}</p></div></div>)}
+              </div>
+            </div>
+            <div className="cadence-card">
+              <span className="sticker">Cadence_monitor</span>
+              <h3>Cadence</h3>
+              {cadence.map((item) => <div className="cadence-row" key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>)}
+              <div className="cadence-art" />
+            </div>
+            <div className="notes-stack">
+              <div className="reaction"><h3>Reaction Protocol</h3><p>Manual engagement within the first 60 minutes of every post. No bots, just human interaction.</p><strong className="label">⚡ Response time: &lt; 15 mins</strong></div>
+              <div className="strategy-notes"><h3>Strategy_notes</h3><p>☒ Identify 10 micro-influencers per week</p><p>☒ Bi-weekly analytics auditing</p><p>☒ Active DM nurturing for leads</p></div>
+              <a className="download-strategy" href="#project-exe">Download full strategy PDF</a>
             </div>
           </div>
         </section>
 
-        <section className="mt-20 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <ShadowCard className="p-6 md:p-8">
-            <SectionHeading eyebrow={dashboard.eyebrow || "Growth dashboard"} title={dashboard.title || "Real-time feed"} accent="#3BDEC8" />
-            <div className="rounded-[1.5rem] border-2 border-black bg-[#F8F5EE] p-5 shadow-[4px_4px_0_0_#111111]">
-              <div className="mb-5 flex items-end justify-between border-b-2 border-black pb-4">
-                <div>
-                  <p className="text-xs font-black uppercase tracking-[0.24em] text-black/60">{dashboard.snapshot_label || "Performance snapshot"}</p>
-                  <p className="mt-1 text-2xl font-black uppercase">{dashboard.snapshot_value || "+142.8% YOY"}</p>
-                </div>
-                <div className="flex gap-2">
-                  <span className="h-3 w-3 border border-black bg-[#FF6B6B]" />
-                  <span className="h-3 w-3 border border-black bg-[#3BDEC8]" />
-                  <span className="h-3 w-3 border border-black bg-[#FFEB3B]" />
-                </div>
-              </div>
-
-              <div className="grid h-64 grid-cols-10 items-end gap-2 rounded-[1rem] border-2 border-black bg-white p-4">
-                {dashboardBars.map((heightEntry, index) => {
-                  const height = typeof heightEntry === "number" ? heightEntry : Number(heightEntry?.value || 0);
-                  return (
-                  <div key={`bar-${index}`} className="flex h-full items-end">
-                    <div className="w-full border-x-2 border-t-2 border-black bg-[#FF6B6B]" style={{ height: `${height}%` }} />
-                  </div>
-                  );
-                })}
-              </div>
-            </div>
-          </ShadowCard>
-
-          <div className="space-y-6">
-            {cards.map((card) => (
-              <ShadowCard key={card.title} className="p-5 md:p-6">
-                <h3 className="text-lg font-black uppercase tracking-[0.16em]">{card.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-black/75">{card.copy}</p>
-              </ShadowCard>
-            ))}
+        <section>
+          <div className="section-rule"><h2>Reel Showcase</h2></div>
+          <div className="reel-grid">
+            {reelImages.map((image, index) => <article className="reel-card" key={image}>{reelBadges[index] ? <span className="sticker">{reelBadges[index]}</span> : null}<img alt="" src={image} /><div className="reel-meta"><span>{reelNames[index]}</span><span>▷</span></div></article>)}
           </div>
         </section>
 
-        <section className="mt-20 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <ShadowCard className="overflow-hidden p-6 md:p-8">
-            <SectionHeading eyebrow={pageContent?.pillars_section?.eyebrow || "Content pillars"} title={pageContent?.pillars_section?.title || "Strategic management"} accent="#FF69B4" />
-            <div className="space-y-5">
-              {pillars.map((pillar, index) => (
-                <div key={pillar.id} className="flex gap-4 rounded-[1.25rem] border-2 border-black bg-[#FDF9F0] p-4 shadow-[3px_3px_0_0_#111111]">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center border-2 border-black ${pillar.tone_class || pillarTones[index % pillarTones.length]} text-sm font-black shadow-[3px_3px_0_0_#111111]`}>
-                    {pillar.id}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-black uppercase tracking-[0.14em]">{pillar.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-black/75">{pillar.copy}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ShadowCard>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            <ShadowCard className="bg-white p-6">
-              <div className="text-xs font-black uppercase tracking-[0.24em] text-black/60">{pageContent?.cadence_title || "Cadence"}</div>
-              <div className="mt-4 space-y-4">
-                {cadence.map((item, index) => (
-                  <div key={`${item.label}-${index}`} className="flex items-center justify-between border-b border-black/10 pb-2 text-sm font-black uppercase tracking-[0.16em]">
-                    <span>{item.label}</span>
-                    <span className="text-[#FF6B6B]">{item.value}</span>
-                  </div>
-                ))}
-              </div>
-            </ShadowCard>
-
-            <ShadowCard className="bg-[#FFEB3B] p-6">
-              <div className="text-xs font-black uppercase tracking-[0.24em] text-black/70">{cadenceMonitor.eyebrow || "Cadence monitor"}</div>
-              <div className="mt-3 text-3xl font-black uppercase leading-[0.92]">{cadenceMonitor.title || "Launch, test, adapt, repeat."}</div>
-              <p className="mt-3 text-sm leading-relaxed text-black/80">{cadenceMonitor.copy || "The schedule is intentionally simple. Consistency gives the strategy room to compound."}</p>
-            </ShadowCard>
-
-            <ShadowCard className="bg-[#3BDEC8] p-6 sm:col-span-2">
-              <div className="text-xs font-black uppercase tracking-[0.24em] text-black/70">{executionLayer.eyebrow || "Execution layer"}</div>
-              <div className="mt-3 text-3xl font-black uppercase leading-[0.92]">{executionLayer.title || "High-retention hooks, clean edits, fast delivery"}</div>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-black/80">{executionLayer.copy || "Strategy only works when it reaches the feed in a usable form. The process stays close to production so the creative and the analytics can keep talking to each other."}</p>
-            </ShadowCard>
+        <section className="project-exe" id="project-exe">
+          <div className="project-image">
+            <span className="sticker">Case_study: 003</span>
+            <img alt="Project EXE workstation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-5bLs656zBRdyqwu0MHGvR0wbPWBPStsXC10ZF-QxZ_SCk_dRJFnXnZRT5snIDkHtBdXopV_emnUedbnnyVY2xFX9VQwbAbBIx3G0zbKz_tRZjFdrtfueflNBU2b2Luc_2PAQe4bivaF64SaU_1ZOlDV_kn2TCvPMc72gghKOFzErqfUy24Me9DFWPyuzn4bB3W1VDTip1RHsCCvUiMpwDxcjHn4XHgeFf82-jUXPdsl7wZWBuPxmwU9Yk36xh0wYozbbl9RGIsRx" />
+          </div>
+          <div className="project-copy">
+            <h2>Project.EXE</h2>
+            <p className="quote">“Redefining the digital interface for a new generation of technical creators.”</p>
+            <div className="project-tags"><span>Branding</span><span>Social Strategy</span><span>Web3</span></div>
+            <p>Project EXE was a complete overhaul of a legacy tech brand&apos;s social presence. We shifted from corporate beige to a technical-brutalist aesthetic, resulting in a 400% increase in comment-section sentiment quality.</p>
+            <a className="project-link" href="/pages/projects">View live case study</a>
           </div>
         </section>
       </main>
-
-      <SiteFooter />
+      <EditorialFooter />
     </div>
   );
 }
