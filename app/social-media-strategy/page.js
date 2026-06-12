@@ -33,6 +33,20 @@ const fallbackReels = [
   },
 ];
 
+function instagramEmbedUrl(value) {
+  if (!value) return "";
+
+  try {
+    const url = new URL(value);
+    if (!/(^|\.)instagram\.com$/i.test(url.hostname)) return "";
+
+    const match = url.pathname.match(/^\/(reel|p|tv)\/([^/]+)/i);
+    return match ? `https://www.instagram.com/${match[1]}/${match[2]}/embed/captioned/` : "";
+  } catch {
+    return "";
+  }
+}
+
 export default function SocialMediaStrategyPage() {
   const hero = pageContent.hero || {};
   const pillars = pageContent.pillars || [];
@@ -110,19 +124,29 @@ export default function SocialMediaStrategyPage() {
           <div className="section-rule"><h2>Reel Showcase</h2></div>
           <div className="reel-grid">
             {reels.map((reel, index) => {
+              const embedUrl = instagramEmbedUrl(reel.instagram_url);
               const coverImage = reel.cover_image || "";
 
               return (
                 <article className="reel-card" key={`${reel.title}-${index}`}>
                   {reel.badge ? <span className="sticker">{reel.badge}</span> : null}
-                  <a className="reel-card-link" href={reel.instagram_url || "#"} rel="noreferrer" target={reel.instagram_url ? "_blank" : undefined}>
-                    <div className="reel-media">
-                      {coverImage ? (
+                  <div className="reel-media">
+                    {embedUrl ? (
+                      <iframe
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        src={embedUrl}
+                        title={`Instagram Reel: ${reel.title || `Reel ${index + 1}`}`}
+                      />
+                    ) : coverImage ? (
                       <img alt={reel.title || `Reel ${index + 1}`} src={coverImage} />
                       ) : (
                         <div className="reel-media-placeholder"><span>Instagram Reel</span><b>▷</b></div>
                       )}
-                    </div>
+                  </div>
+                  <a className="reel-card-link" href={reel.instagram_url || "#"} rel="noreferrer" target={reel.instagram_url ? "_blank" : undefined}>
                     <div className="reel-meta"><span>{reel.title || `Reel ${index + 1}`}</span><span>▷</span></div>
                   </a>
                 </article>
