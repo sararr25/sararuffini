@@ -2,9 +2,9 @@
   "featured_card": {
     "href": "",
     "image": "/assets/stitch-homepage-featured/sticker-call-me.png",
-    "alt": "Social media Strategy",
-    "label": "SMS x @Potuschef",
-    "href_page": "/social-media-strategy"
+    "alt": "Social media",
+    "label": "Reels!",
+    "href_page": "/social-media"
   },
   "featured_window": {
     "href": "/pages/app-v2/index.html",
@@ -66,8 +66,8 @@
     "href": "",
     "image": "/assets/stitch-homepage-featured/sticker-nonnas-kitchen.png",
     "alt": "",
-    "label": "Reels!",
-    "href_page": "/pages/socialmedia-portfolio/index.html"
+    "label": "SMMx@potuschef",
+    "href_page": "/social-media-strategy"
   },
   "featured_polaroid": {
     "href": "/pages/video-v2/index.html",
