@@ -3747,6 +3747,7 @@ collections:
     - label: Hero
       name: hero
       widget: object
+      collapsed: false
       required: false
       fields:
       - label: Badge Emoji
@@ -3982,170 +3983,182 @@ collections:
         name: intro_text
         widget: text
         required: false
-    - label: Hero Stats
-      name: hero_stats
-      widget: list
-      required: false
-      allow_add: true
-      allow_delete: true
-      fields:
-      - label: Label
-        name: label
-        widget: string
-        required: false
-      - label: Value
-        name: value
-        widget: string
-        required: false
-      - label: Copy
-        name: copy
-        widget: text
-        required: false
-      - label: Tone Class
-        name: tone_class
-        widget: string
-        required: false
-    - label: Dashboard
+    - label: Dashboard e metriche
       name: dashboard
       widget: object
+      collapsed: false
       required: false
       fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-        required: false
-      - label: Title
-        name: title
-        widget: string
-        required: false
-      - label: Snapshot Label
+      - label: Etichetta crescita
         name: snapshot_label
         widget: string
         required: false
-      - label: Snapshot Value
+      - label: Valore crescita
         name: snapshot_value
         widget: string
         required: false
-    - label: Dashboard Bars
+      - label: Etichetta reach
+        name: reach_label
+        widget: string
+        required: false
+      - label: Valore reach
+        name: reach_value
+        widget: string
+        required: false
+      - label: Etichetta engagement
+        name: engagement_label
+        widget: string
+        required: false
+      - label: Valore engagement
+        name: engagement_value
+        widget: string
+        required: false
+      - label: Etichetta velocità
+        name: velocity_label
+        widget: string
+        required: false
+      - label: Valore velocità
+        name: velocity_value
+        widget: string
+        required: false
+    - label: Altezza colonne del grafico
       name: dashboard_bars
-      widget: list
+      widget: object
+      collapsed: false
       required: false
-      allow_add: true
-      allow_delete: true
-      field:
-        label: Height (0-100)
-        name: value
+      hint: Inserisci per ogni colonna un valore da 0 a 100. Tutti i valori sono visibili insieme.
+      fields:
+      - label: Colonna 1
+        name: bar_1
         widget: number
         value_type: int
         min: 0
         max: 100
-    - label: Strategy Cards
-      name: cards
-      widget: list
-      required: false
-      allow_add: true
-      allow_delete: true
-      fields:
-      - label: Title
-        name: title
-        widget: string
-        required: false
-      - label: Copy
-        name: copy
-        widget: text
-        required: false
-    - label: Pillars Section
-      name: pillars_section
-      widget: object
-      required: false
-      fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-        required: false
-      - label: Title
-        name: title
-        widget: string
-        required: false
-    - label: Pillars
+      - label: Colonna 2
+        name: bar_2
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 3
+        name: bar_3
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 4
+        name: bar_4
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 5
+        name: bar_5
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 6
+        name: bar_6
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 7
+        name: bar_7
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 8
+        name: bar_8
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 9
+        name: bar_9
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+      - label: Colonna 10
+        name: bar_10
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+    - label: Pilastri strategici
       name: pillars
       widget: list
+      collapsed: false
+      summary: "{{fields.id}} - {{fields.title}}"
       required: false
       allow_add: true
       allow_delete: true
       fields:
-      - label: ID
+      - label: Numero
         name: id
         widget: string
         required: false
-      - label: Title
+      - label: Titolo
         name: title
         widget: string
         required: false
-      - label: Copy
+      - label: Descrizione
         name: copy
         widget: text
         required: false
-      - label: Tone Class
-        name: tone_class
-        widget: string
-        required: false
-    - label: Cadence Section Title
-      name: cadence_title
-      widget: string
-      required: false
-    - label: Cadence Rows
+    - label: Frequenza di pubblicazione
       name: cadence
       widget: list
+      collapsed: false
+      summary: "{{fields.label}} - {{fields.value}}"
       required: false
       allow_add: true
       allow_delete: true
       fields:
-      - label: Label
+      - label: Canale o formato
         name: label
         widget: string
         required: false
-      - label: Value
+      - label: Frequenza
         name: value
         widget: string
         required: false
-    - label: Cadence Monitor
-      name: cadence_monitor
-      widget: object
+    - label: Reel Showcase
+      name: reels
+      widget: list
+      collapsed: false
+      summary: "{{fields.title}}"
       required: false
+      allow_add: true
+      allow_delete: true
+      hint: Incolla il link pubblico di un post o Reel Instagram. Verrà mostrato automaticamente dentro la cornice.
       fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-        required: false
-      - label: Title
+      - label: Titolo
         name: title
         widget: string
         required: false
-      - label: Copy
-        name: copy
-        widget: text
-        required: false
-    - label: Execution Layer
-      name: execution_layer
-      widget: object
-      required: false
-      fields:
-      - label: Eyebrow
-        name: eyebrow
+      - label: Badge
+        name: badge
         widget: string
         required: false
-      - label: Title
-        name: title
+        hint: "Esempi: Viral, New, 700K+ views. Lascia vuoto per non mostrarlo."
+      - label: Link Instagram
+        name: instagram_url
         widget: string
         required: false
-      - label: Copy
-        name: copy
-        widget: text
+        hint: "Esempio: https://www.instagram.com/reel/ABC123/"
+      - label: Immagine di copertina
+        name: cover_image
+        widget: image
         required: false
+        hint: Usata come anteprima quando il link Instagram è vuoto o non valido.
     - label: SEO Settings
       name: seo
       widget: object
+      collapsed: true
       required: false
       fields:
       - label: Page Title

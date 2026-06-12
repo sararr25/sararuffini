@@ -7,76 +7,45 @@
     "title_line_2": "through architecture.",
     "intro_text": "Crafting social ecosystems that do more than grow. They resonate, repeat, and create a structure people can actually follow."
   },
-  "hero_stats": [
-    {
-      "label": "Aggregated growth",
-      "value": "+142.8%",
-      "copy": "Year over year, across content, retention, and distribution systems.",
-      "tone_class": "bg-[#3BDEC8]"
-    },
-    {
-      "label": "Total reach",
-      "value": "4.2M",
-      "copy": "Measured across campaign runs and format rollouts.",
-      "tone_class": "bg-[#FF69B4]"
-    },
-    {
-      "label": "Velocity",
-      "value": "Fast",
-      "copy": "A feedback loop built for iteration, not waiting around.",
-      "tone_class": "bg-[#FFEB3B]"
-    }
-  ],
   "dashboard": {
-    "eyebrow": "Growth dashboard",
-    "title": "Real-time feed",
-    "snapshot_label": "Performance snapshot",
-    "snapshot_value": "+142.8% YOY"
+    "snapshot_label": "Aggregated growth",
+    "snapshot_value": "+142.8% YOY",
+    "reach_label": "Total reach",
+    "reach_value": "4.2M",
+    "engagement_label": "Engagement rate",
+    "engagement_value": "8.4%",
+    "velocity_label": "Viral velocity",
+    "velocity_value": "Fast"
   },
-  "dashboard_bars": [20, 35, 24, 52, 45, 76, 66, 92, 86, 100],
-  "cards": [
-    {
-      "title": "Strategy system",
-      "copy": "A clear content architecture that connects brand goals, hooks, and execution."
-    },
-    {
-      "title": "Testing layer",
-      "copy": "Hook variants, pacing changes, and format shifts are measured before scaling."
-    },
-    {
-      "title": "Delivery stack",
-      "copy": "Production, editing, and publishing stay aligned so the feed never loses rhythm."
-    },
-    {
-      "title": "Growth focus",
-      "copy": "Audience signals drive the next batch of content, not guesswork or generic templates."
-    }
-  ],
-  "pillars_section": {
-    "eyebrow": "Content pillars",
-    "title": "Strategic management"
+  "dashboard_bars": {
+    "bar_1": 20,
+    "bar_2": 35,
+    "bar_3": 24,
+    "bar_4": 52,
+    "bar_5": 45,
+    "bar_6": 76,
+    "bar_7": 66,
+    "bar_8": 92,
+    "bar_9": 86,
+    "bar_10": 100
   },
   "pillars": [
     {
       "id": "01",
       "title": "Technical authority",
-      "copy": "Deep dives into process, performance, and educational formats that build trust.",
-      "tone_class": "bg-[#FF6B6B]"
+      "copy": "Deep dives into process, performance, and educational formats that build trust."
     },
     {
       "id": "02",
       "title": "Aesthetic rawness",
-      "copy": "Behind-the-scenes content that keeps the brand textured, handmade, and real.",
-      "tone_class": "bg-[#3BDEC8]"
+      "copy": "Behind-the-scenes content that keeps the brand textured, handmade, and real."
     },
     {
       "id": "03",
       "title": "Community reposts",
-      "copy": "Social proof and user-generated moments that keep the channel human and active.",
-      "tone_class": "bg-[#FFEB3B]"
+      "copy": "Social proof and user-generated moments that keep the channel human and active."
     }
   ],
-  "cadence_title": "Cadence",
   "cadence": [
     {
       "label": "Instagram stories",
@@ -95,16 +64,32 @@
       "value": "Daily"
     }
   ],
-  "cadence_monitor": {
-    "eyebrow": "Cadence monitor",
-    "title": "Launch, test, adapt, repeat.",
-    "copy": "The schedule is intentionally simple. Consistency gives the strategy room to compound."
-  },
-  "execution_layer": {
-    "eyebrow": "Execution layer",
-    "title": "High-retention hooks, clean edits, fast delivery",
-    "copy": "Strategy only works when it reaches the feed in a usable form. The process stays close to production so the creative and the analytics can keep talking to each other."
-  },
+  "reels": [
+    {
+      "title": "Streetwear Drop",
+      "badge": "Viral",
+      "instagram_url": "",
+      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3QNHfbuLeH5h7r5XoPkTaf4Jwoy8wwnpO8lZK7RrRkp-2_E4kZLahCWIsfyRI-XKAePSnLvdKC0L8xbUei5n8d1czUxGMz7Uh6DXjWbFaF2AquyA9mbfs7yD-0OPz8X2dLpoDoXICcxyW3ZqjvJX_ZEP9aBcVSzIgzYNe0bwcZu9MR5gkCwaoyv7bggfLllIUUGsNIjwI7iz68-N4D64JIs4bsr8IkpuIAP6tfMDEjmnO9Sp8DZeIeVBuXi4uqgev8zzdveW1CBSh"
+    },
+    {
+      "title": "Vlog Series 02",
+      "badge": "700K+ views",
+      "instagram_url": "",
+      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAvEy-Mxn3gVE-hHGv1VSXeUGKvtd7KH4AczPqh8G_cza9NIf5MeleJ-qsn9qOD-5LUJwsLsaecobEkUVLLNcUVWSywLU2IbgBDnaheLNeq4J1Lj3eEV7XBF29jq90-zJQd-YTJyD8qI6lq_bvWs9esnL-HJyrY6ShlBRSB9vqiNh9wW2z0JMl3OhmWlvoSN2pBgqMU0xGrbhFURe4Oc9TaWkSZ1GfrLKWlURDjWM010k4nCLBxO5emBQt3_DjrTeCE6jGenvsME5ge"
+    },
+    {
+      "title": "Retro Tech",
+      "badge": "New",
+      "instagram_url": "",
+      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCui_wFRBVAUCqDCxSnmig5himIXmBCItt_G86MpY7ligpCH-u3zwWrDorEF-qEMfbM7yQ7BuCO0OB_dqqizyzXT0BhaO9evDP3b2zQ-yywIMqjgdRoiIoekG2c20spiIwGTt6rpgWx78ByIQ4fqQohTTVMU4a04ozAVUndd4v6cFsiI4xj5LTR5il-4YU4kJNJe8tnZaU9tj37W80cc_1TOiHTex7kLeShhTb8rcMv1odCxH1vwKOrZJsC2q_CfDBIjY7eZSEnCNjS"
+    },
+    {
+      "title": "Urban Style",
+      "badge": "",
+      "instagram_url": "",
+      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCKqruyC8UL3I7iTWmsFneFt3syWR9YELcMRSb1u7Xlojgd2MxTDCUsCdDSS_kWgbCkcXxdsg6ghQ9-znKjd_zu-fQaxDVmzqjPuNwPPNR2rdU2vd2MOeo9dmndyVhS24Vk6FoXgWNjnz3NkGOfScbChE7tyi89JwbPM6J310Q5JsmBTRqHsoAHtBIomQ7YNJrbI2d50ND-2MfzYdWNb1hkFaLAJnJHhm17j5MEhux91Sd-FWLvB3ra6Tlp3uiq2Wb_THz-kHvUAslP"
+    }
+  ],
   "seo": {
     "seo_title": "Social Media Strategy | Sara Ruffini",
     "seo_description": "Strategic social media management with growth dashboards, format systems, and repeatable cadence.",
