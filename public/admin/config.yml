@@ -4088,6 +4088,10 @@ collections:
         value_type: int
         min: 0
         max: 100
+    - label: Titolo sezione strategia
+      name: strategy_section_title
+      widget: string
+      required: false
     - label: Pilastri strategici
       name: pillars
       widget: list
@@ -4126,6 +4130,35 @@ collections:
         name: value
         widget: string
         required: false
+    - label: Reaction Protocol
+      name: reaction_protocol
+      widget: object
+      collapsed: false
+      required: false
+      fields:
+      - label: Titolo
+        name: title
+        widget: string
+        required: false
+      - label: Testo
+        name: copy
+        widget: text
+        required: false
+      - label: Nota evidenziata
+        name: note
+        widget: string
+        required: false
+    - label: Strategy Notes
+      name: strategy_notes
+      widget: list
+      collapsed: false
+      required: false
+      allow_add: true
+      allow_delete: true
+      field:
+        label: Nota
+        name: note
+        widget: string
     - label: Reel Showcase
       name: reels
       widget: list
@@ -4134,7 +4167,7 @@ collections:
       required: false
       allow_add: true
       allow_delete: true
-      hint: Incolla il link pubblico di un post o Reel Instagram. Verrà mostrato automaticamente dentro la cornice.
+      hint: Incolla il link pubblico di un post o Reel Instagram. La card lo aprirà in una nuova scheda.
       fields:
       - label: Titolo
         name: title
@@ -4154,7 +4187,53 @@ collections:
         name: cover_image
         widget: image
         required: false
-        hint: Usata come anteprima quando il link Instagram è vuoto o non valido.
+        hint: Se resta vuota verrà mostrato un placeholder scuro con il pulsante play.
+    - label: Case Study finale
+      name: case_study
+      widget: object
+      collapsed: false
+      required: false
+      fields:
+      - label: Etichetta
+        name: label
+        widget: string
+        required: false
+      - label: Titolo
+        name: title
+        widget: string
+        required: false
+      - label: Citazione
+        name: quote
+        widget: text
+        required: false
+      - label: Tag
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+      - label: Descrizione
+        name: copy
+        widget: text
+        required: false
+      - label: Testo pulsante
+        name: cta_label
+        widget: string
+        required: false
+      - label: Link pulsante
+        name: cta_url
+        widget: string
+        required: false
+      - label: Immagine
+        name: image
+        widget: image
+        required: false
+      - label: Testo alternativo immagine
+        name: image_alt
+        widget: string
+        required: false
     - label: SEO Settings
       name: seo
       widget: object

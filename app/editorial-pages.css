@@ -373,6 +373,7 @@
 .pillar:nth-child(1) .pillar-id { background: var(--orange); }
 .pillar:nth-child(2) .pillar-id { background: var(--cyan); }
 .pillar:nth-child(3) .pillar-id { background: var(--yellow); }
+.pillar:nth-child(4) .pillar-id { background: var(--pink); }
 .pillar h3 { margin: 0 0 5px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
 .pillar p { margin: 0; color: #666; font-size: 12px; line-height: 1.45; }
 .cadence-card { position: relative; padding: 28px 24px 24px; border: 4px solid var(--ink); background: var(--paper); box-shadow: 7px 7px 0 var(--ink); }
@@ -390,6 +391,7 @@
 .strategy-notes p { margin: 9px 0; font-size: 12px; }
 .reel-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 30px; margin-bottom: 110px; }
 .reel-card { position: relative; padding: 8px; border: 2px solid var(--ink); background: white; box-shadow: 4px 4px 0 var(--ink); }
+.reel-card-link { display: block; color: inherit; text-decoration: none; }
 .reel-media {
   width: 100%;
   aspect-ratio: 9/16;
@@ -405,16 +407,47 @@
   border: 0;
   object-fit: cover;
 }
+.reel-media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  background: #111;
+  color: white;
+  font: 700 12px "Space Grotesk";
+  letter-spacing: .14em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.reel-media-placeholder b { font-size: 40px; }
 .reel-meta { display: flex; justify-content: space-between; padding: 12px 3px 4px; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .reel-card .sticker { position: absolute; z-index: 3; top: -15px; right: -12px; padding: 5px 11px; font-size: 9px; background: var(--yellow); }
 .reel-card:nth-child(2) .sticker { left: -12px; right: auto; background: var(--cyan); }
 .reel-card:nth-child(3) .sticker { top: auto; bottom: -13px; background: var(--pink); }
+.project-exe { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 50px; padding: 40px; border: 4px solid var(--ink); background: #f0eded; box-shadow: 8px 8px 0 var(--ink); }
+.project-image { position: relative; }
+.project-image img,
+.project-image-placeholder { width: 100%; aspect-ratio: 4/3; display: grid; place-items: center; filter: grayscale(1); border: 4px solid var(--ink); object-fit: cover; }
+.project-image-placeholder { background: #111; color: white; font: 700 clamp(32px,5vw,64px) "Space Grotesk"; text-transform: uppercase; }
+.project-image .sticker { position: absolute; z-index: 3; top: -15px; left: -15px; border-radius: 0; background: var(--cyan); }
+.project-copy h2 { margin: 0 0 18px; font-size: clamp(40px,5vw,62px); text-transform: uppercase; }
+.project-copy .quote { color: #666; font-size: 18px; font-style: italic; line-height: 1.5; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+.project-tags span { padding: 7px 12px; border: 2px solid var(--ink); font-size: 10px; font-weight: 800; text-transform: uppercase; }
+.project-tags span:nth-child(4n+1) { background: var(--orange); }
+.project-tags span:nth-child(4n+2) { background: var(--cyan); }
+.project-tags span:nth-child(4n+3) { background: var(--yellow); }
+.project-tags span:nth-child(4n) { background: var(--pink); }
+.project-copy > p:last-of-type { font-size: 14px; line-height: 1.65; }
+.project-link { display: inline-block; padding: 5px 2px; border-bottom: 4px solid var(--orange); color: var(--ink); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
 @media (max-width: 850px) {
   .social-hero { grid-template-columns: 1fr; padding-top: 55px; }
   .phone-stage { margin-top: 45px; }
   .phone-stat { right: 8%; }
   .growth-grid,
-  .management-grid { grid-template-columns: 1fr; }
+  .management-grid,
+  .project-exe { grid-template-columns: 1fr; }
   .reel-grid { grid-template-columns: repeat(2,1fr); }
 }
 
@@ -435,4 +468,5 @@
   .bars { height: 220px; gap: 5px; padding-right: 9px; padding-left: 9px; }
   .section-rule h2 { font-size: 20px; }
   .reel-grid { grid-template-columns: 1fr; }
+  .project-exe { padding: 22px; }
 }

@@ -3,96 +3,129 @@
   "page_slug": "social-media-strategy",
   "hero": {
     "badge_text": "Strategy mode: active",
-    "title_line_1": "Digital dominance",
-    "title_line_2": "through architecture.",
-    "intro_text": "Crafting social ecosystems that do more than grow. They resonate, repeat, and create a structure people can actually follow."
+    "title_line_1": "From 70K to 113K",
+    "title_line_2": "— and from Italy to Denmark.",
+    "intro_text": "Lorenzo Poto came to me as a client looking for a video editor. What he got was a full social media strategy that turned his Italian-speaking audience into an international community — and positioned him to build a career in Copenhagen."
   },
   "dashboard": {
-    "snapshot_label": "Aggregated growth",
-    "snapshot_value": "+142.8% YOY",
-    "reach_label": "Total reach",
-    "reach_value": "4.2M",
-    "engagement_label": "Engagement rate",
-    "engagement_value": "8.4%",
-    "velocity_label": "Viral velocity",
-    "velocity_value": "Fast"
+    "snapshot_label": "Followers gained",
+    "snapshot_value": "+43K",
+    "reach_label": "In how long",
+    "reach_value": "6 months",
+    "engagement_label": "International audience",
+    "engagement_value": "~40% (was 10%)",
+    "velocity_label": "Brand deals",
+    "velocity_value": "2 (Weber · Mutti)"
   },
   "dashboard_bars": {
     "bar_1": 20,
-    "bar_2": 35,
-    "bar_3": 24,
-    "bar_4": 52,
-    "bar_5": 45,
-    "bar_6": 76,
-    "bar_7": 66,
-    "bar_8": 92,
-    "bar_9": 86,
+    "bar_2": 28,
+    "bar_3": 35,
+    "bar_4": 42,
+    "bar_5": 50,
+    "bar_6": 60,
+    "bar_7": 68,
+    "bar_8": 78,
+    "bar_9": 88,
     "bar_10": 100
   },
+  "strategy_section_title": "Social Media Strategy — @potuschef",
   "pillars": [
     {
       "id": "01",
-      "title": "Technical authority",
-      "copy": "Deep dives into process, performance, and educational formats that build trust."
+      "title": "Language transition",
+      "copy": "Gradual, intentional switch from Italian to English — protecting existing followers while opening the account to an international audience. Today Lorenzo speaks and writes exclusively in English."
     },
     {
       "id": "02",
-      "title": "Aesthetic rawness",
-      "copy": "Behind-the-scenes content that keeps the brand textured, handmade, and real."
+      "title": "Original formats",
+      "copy": "Two recurring formats designed from scratch: Kitchen Roots (technique-based educational series) and In cucina con uno sconosciuto (Lorenzo cooks live with a follower). Both drive repeat viewership and community."
     },
     {
       "id": "03",
-      "title": "Community reposts",
-      "copy": "Social proof and user-generated moments that keep the channel human and active."
+      "title": "Content balance",
+      "copy": "A strategic mix of accessible everyday recipes and high-end gourmet content — balancing reach with authority. Italian ingredients meet Danish ones, reflecting exactly who Lorenzo is and where he lives."
+    },
+    {
+      "id": "04",
+      "title": "Stories & engagement",
+      "copy": "Stories went from nearly nonexistent to daily — with Q&As, polls, and behind-the-scenes that turn passive followers into an active, invested community."
     }
   ],
   "cadence": [
     {
-      "label": "Instagram stories",
-      "value": "3-5x daily"
-    },
-    {
-      "label": "Feed posts",
-      "value": "4x weekly"
-    },
-    {
-      "label": "Long-form reels",
-      "value": "2x weekly"
-    },
-    {
-      "label": "Threads / notes",
+      "label": "Instagram Stories",
       "value": "Daily"
+    },
+    {
+      "label": "Feed posts / Reels",
+      "value": "2–3x weekly"
+    },
+    {
+      "label": "Brand collabs",
+      "value": "Ongoing (Weber, Mutti)"
+    },
+    {
+      "label": "Pop-up / IRL events",
+      "value": "Active in Copenhagen"
     }
+  ],
+  "reaction_protocol": {
+    "title": "Reaction Protocol",
+    "copy": "Manual engagement within the first 60 minutes of every post. Stories monitored daily for DM replies and poll responses.",
+    "note": "⚡ Response time: < 15 mins"
+  },
+  "strategy_notes": [
+    "Bi-weekly content calendar planning",
+    "Monthly analytics review and format adjustment",
+    "Active audience nurturing via Stories Q&A",
+    "Ongoing brand outreach and collaboration management"
   ],
   "reels": [
     {
-      "title": "Streetwear Drop",
+      "title": "Restaurant reel",
       "badge": "Viral",
-      "instagram_url": "",
-      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3QNHfbuLeH5h7r5XoPkTaf4Jwoy8wwnpO8lZK7RrRkp-2_E4kZLahCWIsfyRI-XKAePSnLvdKC0L8xbUei5n8d1czUxGMz7Uh6DXjWbFaF2AquyA9mbfs7yD-0OPz8X2dLpoDoXICcxyW3ZqjvJX_ZEP9aBcVSzIgzYNe0bwcZu9MR5gkCwaoyv7bggfLllIUUGsNIjwI7iz68-N4D64JIs4bsr8IkpuIAP6tfMDEjmnO9Sp8DZeIeVBuXi4uqgev8zzdveW1CBSh"
+      "instagram_url": "https://www.instagram.com/reel/DWy7X9UCIyu/",
+      "cover_image": ""
     },
     {
-      "title": "Vlog Series 02",
-      "badge": "700K+ views",
-      "instagram_url": "",
-      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAvEy-Mxn3gVE-hHGv1VSXeUGKvtd7KH4AczPqh8G_cza9NIf5MeleJ-qsn9qOD-5LUJwsLsaecobEkUVLLNcUVWSywLU2IbgBDnaheLNeq4J1Lj3eEV7XBF29jq90-zJQd-YTJyD8qI6lq_bvWs9esnL-HJyrY6ShlBRSB9vqiNh9wW2z0JMl3OhmWlvoSN2pBgqMU0xGrbhFURe4Oc9TaWkSZ1GfrLKWlURDjWM010k4nCLBxO5emBQt3_DjrTeCE6jGenvsME5ge"
+      "title": "In cucina con uno sconosciuto",
+      "badge": "Format originale",
+      "instagram_url": "https://www.instagram.com/reel/DTTCNXmCIlm/",
+      "cover_image": ""
     },
     {
-      "title": "Retro Tech",
-      "badge": "New",
-      "instagram_url": "",
-      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCui_wFRBVAUCqDCxSnmig5himIXmBCItt_G86MpY7ligpCH-u3zwWrDorEF-qEMfbM7yQ7BuCO0OB_dqqizyzXT0BhaO9evDP3b2zQ-yywIMqjgdRoiIoekG2c20spiIwGTt6rpgWx78ByIQ4fqQohTTVMU4a04ozAVUndd4v6cFsiI4xj5LTR5il-4YU4kJNJe8tnZaU9tj37W80cc_1TOiHTex7kLeShhTb8rcMv1odCxH1vwKOrZJsC2q_CfDBIjY7eZSEnCNjS"
+      "title": "Technique series",
+      "badge": "Kitchen Roots",
+      "instagram_url": "https://www.instagram.com/reel/DXHjIxmiNSM/",
+      "cover_image": ""
     },
     {
-      "title": "Urban Style",
-      "badge": "",
-      "instagram_url": "",
-      "cover_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCKqruyC8UL3I7iTWmsFneFt3syWR9YELcMRSb1u7Xlojgd2MxTDCUsCdDSS_kWgbCkcXxdsg6ghQ9-znKjd_zu-fQaxDVmzqjPuNwPPNR2rdU2vd2MOeo9dmndyVhS24Vk6FoXgWNjnz3NkGOfScbChE7tyi89JwbPM6J310Q5JsmBTRqHsoAHtBIomQ7YNJrbI2d50ND-2MfzYdWNb1hkFaLAJnJHhm17j5MEhux91Sd-FWLvB3ra6Tlp3uiq2Wb_THz-kHvUAslP"
+      "title": "Copenhagen dinner",
+      "badge": "Pop-up event",
+      "instagram_url": "https://www.instagram.com/reel/DZK0fyWoPBe/",
+      "cover_image": ""
     }
   ],
+  "case_study": {
+    "label": "Case_study: @potuschef",
+    "title": "Project.EXE",
+    "quote": "Building the bridge between a chef's Italian roots and a Danish audience — one reel at a time.",
+    "tags": [
+      "Social Strategy",
+      "Video Editing",
+      "Content Formats",
+      "Growth"
+    ],
+    "copy": "@potuschef is the Instagram account of Lorenzo Poto, an Italian chef based in Copenhagen. When we started working together in December 2025, he had 70K followers and a 90% Italian audience. Six months later: 113K followers, ~40% international audience, two brand collaborations (Weber and Mutti), and a sold-out pop-up dinner in Copenhagen. The strategy combined original recurring formats, a gradual language transition to English, and a daily Stories presence that turned a recipe account into a real community.",
+    "cta_label": "View @potuschef on Instagram",
+    "cta_url": "https://www.instagram.com/potuschef/",
+    "image": "",
+    "image_alt": "@potuschef social media case study"
+  },
   "seo": {
-    "seo_title": "Social Media Strategy | Sara Ruffini",
-    "seo_description": "Strategic social media management with growth dashboards, format systems, and repeatable cadence.",
+    "seo_title": "@potuschef Social Media Strategy | Sara Ruffini",
+    "seo_description": "How Sara Ruffini helped @potuschef grow from 70K to 113K followers and build an international audience in six months.",
     "seo_image": ""
   }
 }

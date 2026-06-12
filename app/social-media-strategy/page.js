@@ -8,54 +8,39 @@ export const metadata = {
 
 const fallbackReels = [
   {
-    title: "Streetwear Drop",
+    title: "Restaurant reel",
     badge: "Viral",
-    instagram_url: "",
-    cover_image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC3QNHfbuLeH5h7r5XoPkTaf4Jwoy8wwnpO8lZK7RrRkp-2_E4kZLahCWIsfyRI-XKAePSnLvdKC0L8xbUei5n8d1czUxGMz7Uh6DXjWbFaF2AquyA9mbfs7yD-0OPz8X2dLpoDoXICcxyW3ZqjvJX_ZEP9aBcVSzIgzYNe0bwcZu9MR5gkCwaoyv7bggfLllIUUGsNIjwI7iz68-N4D64JIs4bsr8IkpuIAP6tfMDEjmnO9Sp8DZeIeVBuXi4uqgev8zzdveW1CBSh",
+    instagram_url: "https://www.instagram.com/reel/DWy7X9UCIyu/",
+    cover_image: "",
   },
   {
-    title: "Vlog Series 02",
-    badge: "700K+ views",
-    instagram_url: "",
-    cover_image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAvEy-Mxn3gVE-hHGv1VSXeUGKvtd7KH4AczPqh8G_cza9NIf5MeleJ-qsn9qOD-5LUJwsLsaecobEkUVLLNcUVWSywLU2IbgBDnaheLNeq4J1Lj3eEV7XBF29jq90-zJQd-YTJyD8qI6lq_bvWs9esnL-HJyrY6ShlBRSB9vqiNh9wW2z0JMl3OhmWlvoSN2pBgqMU0xGrbhFURe4Oc9TaWkSZ1GfrLKWlURDjWM010k4nCLBxO5emBQt3_DjrTeCE6jGenvsME5ge",
+    title: "In cucina con uno sconosciuto",
+    badge: "Format originale",
+    instagram_url: "https://www.instagram.com/reel/DTTCNXmCIlm/",
+    cover_image: "",
   },
   {
-    title: "Retro Tech",
-    badge: "New",
-    instagram_url: "",
-    cover_image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCui_wFRBVAUCqDCxSnmig5himIXmBCItt_G86MpY7ligpCH-u3zwWrDorEF-qEMfbM7yQ7BuCO0OB_dqqizyzXT0BhaO9evDP3b2zQ-yywIMqjgdRoiIoekG2c20spiIwGTt6rpgWx78ByIQ4fqQohTTVMU4a04ozAVUndd4v6cFsiI4xj5LTR5il-4YU4kJNJe8tnZaU9tj37W80cc_1TOiHTex7kLeShhTb8rcMv1odCxH1vwKOrZJsC2q_CfDBIjY7eZSEnCNjS",
+    title: "Technique series",
+    badge: "Kitchen Roots",
+    instagram_url: "https://www.instagram.com/reel/DXHjIxmiNSM/",
+    cover_image: "",
   },
   {
-    title: "Urban Style",
-    badge: "",
-    instagram_url: "",
-    cover_image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCKqruyC8UL3I7iTWmsFneFt3syWR9YELcMRSb1u7Xlojgd2MxTDCUsCdDSS_kWgbCkcXxdsg6ghQ9-znKjd_zu-fQaxDVmzqjPuNwPPNR2rdU2vd2MOeo9dmndyVhS24Vk6FoXgWNjnz3NkGOfScbChE7tyi89JwbPM6J310Q5JsmBTRqHsoAHtBIomQ7YNJrbI2d50ND-2MfzYdWNb1hkFaLAJnJHhm17j5MEhux91Sd-FWLvB3ra6Tlp3uiq2Wb_THz-kHvUAslP",
+    title: "Copenhagen dinner",
+    badge: "Pop-up event",
+    instagram_url: "https://www.instagram.com/reel/DZK0fyWoPBe/",
+    cover_image: "",
   },
 ];
-
-function instagramEmbedUrl(value) {
-  if (!value) return "";
-
-  try {
-    const url = new URL(value);
-    if (!/(^|\.)instagram\.com$/i.test(url.hostname)) return "";
-
-    const match = url.pathname.match(/^\/(reel|p|tv)\/([^/]+)/i);
-    return match ? `https://www.instagram.com/${match[1]}/${match[2]}/embed/` : "";
-  } catch {
-    return "";
-  }
-}
 
 export default function SocialMediaStrategyPage() {
   const hero = pageContent.hero || {};
   const pillars = pageContent.pillars || [];
   const cadence = pageContent.cadence || [];
   const dashboard = pageContent.dashboard || {};
+  const reactionProtocol = pageContent.reaction_protocol || {};
+  const strategyNotes = Array.isArray(pageContent.strategy_notes) ? pageContent.strategy_notes : [];
+  const caseStudy = pageContent.case_study || {};
   const barValues = pageContent.dashboard_bars || {};
   const bars = Array.from({ length: 10 }, (_, index) => {
     const rawValue = Array.isArray(barValues) ? barValues[index] : barValues[`bar_${index + 1}`];
@@ -69,9 +54,11 @@ export default function SocialMediaStrategyPage() {
       <main className="strategy-main">
         <header className="strategy-hero">
           <div className="sticker strategy-sticker">{hero.badge_text || "Strategy mode: active"}</div>
-          <h1>{hero.title_line_1?.split(" ").map((word, index) => (
-            <span className={word.toLowerCase() === "dominance" ? "strategy-underline" : ""} key={word}>{word}{index === 1 ? <br /> : " "}</span>
-          ))}{hero.title_line_2}</h1>
+          <h1>
+            {hero.title_line_1 || "From 70K to 113K"}
+            <br />
+            <span className="strategy-underline">{hero.title_line_2 || "— and from Italy to Denmark."}</span>
+          </h1>
           <p>{hero.intro_text}</p>
         </header>
 
@@ -91,7 +78,7 @@ export default function SocialMediaStrategyPage() {
         </section>
 
         <section>
-          <div className="section-rule"><h2>Strategic Management</h2></div>
+          <div className="section-rule"><h2>{pageContent.strategy_section_title || "Social Media Strategy — @potuschef"}</h2></div>
           <div className="management-grid">
             <div className="window-card">
               <div className="window-bar"><span>PILLARS.CFG</span><span>− □ ×</span></div>
@@ -106,8 +93,15 @@ export default function SocialMediaStrategyPage() {
               <div className="cadence-art" />
             </div>
             <div className="notes-stack">
-              <div className="reaction"><h3>Reaction Protocol</h3><p>Manual engagement within the first 60 minutes of every post. No bots, just human interaction.</p><strong className="label">⚡ Response time: &lt; 15 mins</strong></div>
-              <div className="strategy-notes"><h3>Strategy_notes</h3><p>☒ Identify 10 micro-influencers per week</p><p>☒ Bi-weekly analytics auditing</p><p>☒ Active DM nurturing for leads</p></div>
+              <div className="reaction">
+                <h3>{reactionProtocol.title || "Reaction Protocol"}</h3>
+                <p>{reactionProtocol.copy}</p>
+                <strong className="label">{reactionProtocol.note || "⚡ Response time: < 15 mins"}</strong>
+              </div>
+              <div className="strategy-notes">
+                <h3>Strategy_notes</h3>
+                {strategyNotes.map((note) => <p key={note}>☒ {note}</p>)}
+              </div>
             </div>
           </div>
         </section>
@@ -116,29 +110,46 @@ export default function SocialMediaStrategyPage() {
           <div className="section-rule"><h2>Reel Showcase</h2></div>
           <div className="reel-grid">
             {reels.map((reel, index) => {
-              const embedUrl = instagramEmbedUrl(reel.instagram_url);
-              const coverImage = reel.cover_image || fallbackReels[index % fallbackReels.length].cover_image;
+              const coverImage = reel.cover_image || "";
 
               return (
                 <article className="reel-card" key={`${reel.title}-${index}`}>
                   {reel.badge ? <span className="sticker">{reel.badge}</span> : null}
-                  <div className="reel-media">
-                    {embedUrl ? (
-                      <iframe
-                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                        allowFullScreen
-                        loading="lazy"
-                        src={embedUrl}
-                        title={`Instagram Reel: ${reel.title || `Reel ${index + 1}`}`}
-                      />
-                    ) : (
+                  <a className="reel-card-link" href={reel.instagram_url || "#"} rel="noreferrer" target={reel.instagram_url ? "_blank" : undefined}>
+                    <div className="reel-media">
+                      {coverImage ? (
                       <img alt={reel.title || `Reel ${index + 1}`} src={coverImage} />
-                    )}
-                  </div>
-                  <div className="reel-meta"><span>{reel.title || `Reel ${index + 1}`}</span><span>▷</span></div>
+                      ) : (
+                        <div className="reel-media-placeholder"><span>Instagram Reel</span><b>▷</b></div>
+                      )}
+                    </div>
+                    <div className="reel-meta"><span>{reel.title || `Reel ${index + 1}`}</span><span>▷</span></div>
+                  </a>
                 </article>
               );
             })}
+          </div>
+        </section>
+
+        <section className="project-exe">
+          <div className="project-image">
+            <span className="sticker">{caseStudy.label || "Case_study: @potuschef"}</span>
+            {caseStudy.image ? (
+              <img alt={caseStudy.image_alt || "@potuschef social media case study"} src={caseStudy.image} />
+            ) : (
+              <div className="project-image-placeholder">@potuschef</div>
+            )}
+          </div>
+          <div className="project-copy">
+            <h2>{caseStudy.title || "Project.EXE"}</h2>
+            <p className="quote">{caseStudy.quote}</p>
+            <div className="project-tags">
+              {(caseStudy.tags || []).map((tag) => <span key={tag}>{tag}</span>)}
+            </div>
+            <p>{caseStudy.copy}</p>
+            <a className="project-link" href={caseStudy.cta_url || "https://www.instagram.com/potuschef/"} rel="noreferrer" target="_blank">
+              {caseStudy.cta_label || "View @potuschef on Instagram"}
+            </a>
           </div>
         </section>
       </main>
