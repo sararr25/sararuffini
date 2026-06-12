@@ -1,4 +1,4 @@
-import { EditorialFooter, EditorialNav } from "../../components/EditorialChrome";
+import { SiteFooter, SiteNav } from "../../components/SiteChrome";
 import pageContent from "../../public/content/pages/social-media-strategy.json";
 
 export const metadata = {
@@ -23,7 +23,7 @@ export default function SocialMediaStrategyPage() {
 
   return (
     <div className="editorial-page">
-      <EditorialNav active="Process" hireTone="orange" />
+      <SiteNav pageKey="projects" />
       <main className="strategy-main">
         <header className="strategy-hero">
           <div className="sticker strategy-sticker">{hero.badge_text || "Strategy mode: active"}</div>
@@ -92,7 +92,7 @@ export default function SocialMediaStrategyPage() {
           </div>
         </section>
       </main>
-      <EditorialFooter />
+      <SiteFooter />
     </div>
   );
 }

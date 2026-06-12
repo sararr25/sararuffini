@@ -1,4 +1,4 @@
-import { EditorialFooter, EditorialNav } from "../../components/EditorialChrome";
+import { SiteFooter, SiteNav } from "../../components/SiteChrome";
 import pageContent from "../../public/content/pages/social-media.json";
 
 export const metadata = {
@@ -36,7 +36,7 @@ export default function SocialMediaPage() {
 
   return (
     <div className="editorial-page">
-      <EditorialNav active="Work" />
+      <SiteNav pageKey="projects" />
       <main>
         <header className="social-hero">
           <div className="social-copy">
@@ -95,7 +95,7 @@ export default function SocialMediaPage() {
           </div>
         </section>
       </main>
-      <EditorialFooter />
+      <SiteFooter />
     </div>
   );
 }
