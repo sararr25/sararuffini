@@ -3733,6 +3733,8 @@ collections:
   - label: Social Media
     name: social_media
     file: public/content/pages/social-media.json
+    editor:
+      preview: false
     fields:
     - label: Page Name
       name: page_name
@@ -3744,187 +3746,60 @@ collections:
       widget: string
       required: false
       default: social-media
-    - label: Hero
-      name: hero
-      widget: object
-      collapsed: false
-      required: false
-      fields:
-      - label: Badge Emoji
-        name: badge_emoji
-        widget: string
-        required: false
-      - label: Badge Text
-        name: badge_text
-        widget: string
-        required: false
-      - label: Title Line 1
-        name: title_line_1
-        widget: string
-        required: false
-      - label: Highlight Word
-        name: title_highlight
-        widget: string
-        required: false
-      - label: Title Line 2
-        name: title_line_2
-        widget: string
-        required: false
-      - label: Intro Text
-        name: intro_text
-        widget: text
-        required: false
-      - label: Primary CTA Label
-        name: primary_cta_label
-        widget: string
-        required: false
-      - label: Primary CTA URL
-        name: primary_cta_url
-        widget: string
-        required: false
-      - label: Secondary CTA Label
-        name: secondary_cta_label
-        widget: string
-        required: false
-      - label: Secondary CTA URL
-        name: secondary_cta_url
-        widget: string
-        required: false
-      - label: Hero Stat Value
-        name: hero_stat_value
-        widget: string
-        required: false
-      - label: Hero Stat Label
-        name: hero_stat_label
-        widget: string
-        required: false
-      - label: Hero Feed Label
-        name: hero_feed_label
-        widget: string
-        required: false
-      - label: Hero Feed Count
-        name: hero_feed_count
-        widget: string
-        required: false
+    - label: Page Headline
+      name: headline
+      widget: string
+      default: Short-form content, from set to screen.
+    - label: Page Description
+      name: description
+      widget: text
+      default: "I shoot and edit short-form video for social — food content, brand storytelling, behind-the-scenes. My work covers the full process: concept, camera, cut. Mostly Instagram Reels, always built around the platform."
+    - label: Work Section Heading
+      name: work_heading
+      widget: string
+      default: Work
+    - label: Empty Reel Label
+      name: reel_placeholder_label
+      widget: string
+      default: Reel coming soon
     - label: Reels
       name: reels
       widget: list
-      required: false
       allow_add: true
       allow_delete: true
+      collapsed: false
+      summary: "{{fields.client}} — {{fields.role}}"
       fields:
-      - label: Label
-        name: label
+      - label: Client
+        name: client
+        widget: string
+      - label: Role
+        name: role
+        widget: string
+        hint: For example, Shot & edited or Edited.
+      - label: Platform
+        name: platform
+        widget: string
+        default: Instagram Reels
+      - label: Instagram Reel URL
+        name: reel_url
         widget: string
         required: false
-      - label: Title
-        name: title
-        widget: string
-        required: false
-      - label: Note
-        name: note
-        widget: text
-        required: false
-    - label: Metrics
-      name: metrics
-      widget: list
-      required: false
-      allow_add: true
-      allow_delete: true
-      fields:
-      - label: Label
-        name: label
-        widget: string
-        required: false
-      - label: Value
-        name: value
-        widget: string
-        required: false
-      - label: Description
-        name: description
-        widget: text
-        required: false
-    - label: Format Section
-      name: format_section
-      widget: object
-      required: false
-      fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-        required: false
-      - label: Title
-        name: title
-        widget: string
-        required: false
-    - label: Format Cards
-      name: format_cards
-      widget: list
-      required: false
-      allow_add: true
-      allow_delete: true
-      fields:
-      - label: Title
-        name: title
-        widget: string
-        required: false
-      - label: Copy
-        name: copy
-        widget: text
-        required: false
-    - label: Hook Lab
-      name: hook_lab
-      widget: object
-      required: false
-      fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-        required: false
-      - label: Title
-        name: title
-        widget: string
-        required: false
-      - label: Copy
-        name: copy
-        widget: text
-        required: false
-    - label: Post Rhythm Section Title
-      name: post_rhythm_title
+        hint: Paste the full URL, for example https://www.instagram.com/reel/XXXX/.
+    - label: What I Bring Section Heading
+      name: approach_heading
       widget: string
-      required: false
-    - label: Post Rhythm Rows
-      name: post_rhythm
+      default: What I bring
+    - label: What I Bring Items
+      name: approach_items
       widget: list
-      required: false
       allow_add: true
       allow_delete: true
-      fields:
-      - label: Label
-        name: label
+      collapsed: false
+      field:
+        label: Item
+        name: item
         widget: string
-        required: false
-      - label: Value
-        name: value
-        widget: string
-        required: false
-    - label: Audience Note
-      name: audience_note
-      widget: object
-      required: false
-      fields:
-      - label: Eyebrow
-        name: eyebrow
-        widget: string
-        required: false
-      - label: Title
-        name: title
-        widget: string
-        required: false
-      - label: Copy
-        name: copy
-        widget: text
-        required: false
     - label: SEO Settings
       name: seo
       widget: object
