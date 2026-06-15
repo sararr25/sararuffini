@@ -31,6 +31,7 @@ const DEFAULT_APPROACH_ITEMS = [
   "Fast turnaround, content calendar support",
   "Creative direction on set when needed",
 ];
+const HERO_IMAGE_URL = "/assets/media/social-media-hero.png";
 
 export const metadata = {
   title: pageContent?.seo?.seo_title || "Social Media | Sara Ruffini",
@@ -79,7 +80,19 @@ export default function SocialMediaPage() {
               {pageContent.description || DEFAULT_DESCRIPTION}
             </p>
           </div>
-          <div className="social-hero-space" aria-hidden="true" />
+          <div className="phone-stage">
+            <div className="phone-dash" aria-hidden="true" />
+            <div className="phone-tape" aria-hidden="true" />
+            <div className="phone">
+              <div className="phone-notch" aria-hidden="true" />
+              <div className="phone-screen">
+                <img
+                  alt="Colorful abstract frame from a short-form video"
+                  src={HERO_IMAGE_URL}
+                />
+              </div>
+            </div>
+          </div>
         </header>
 
         <section className="recent-drops social-work" aria-labelledby="social-work-heading">
