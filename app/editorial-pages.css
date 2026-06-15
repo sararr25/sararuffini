@@ -63,7 +63,8 @@
 .social-hero {
   position: relative;
   min-height: 695px;
-  display: flex;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
   align-items: center;
   padding: 70px 5vw;
   border-bottom: 4px solid var(--ink);
@@ -73,26 +74,29 @@
 .social-copy {
   position: relative;
   z-index: 3;
-  width: min(900px, 100%);
+  min-width: 0;
+  max-width: 530px;
 }
 .social-copy h1 {
-  max-width: 860px;
-  margin: 0 0 28px;
+  margin: 22px 0 20px;
   font-size: clamp(58px, 6.3vw, 91px);
   font-weight: 700;
   letter-spacing: -.055em;
-  line-height: .92;
+  line-height: .87;
   text-transform: uppercase;
 }
 .social-intro {
-  max-width: 650px;
-  margin: 0;
-  padding: 16px 20px;
+  max-width: 430px;
+  margin: 0 0 24px;
+  padding: 12px 16px;
   border-left: 4px solid var(--ink);
-  background: rgba(255,255,255,.8);
-  box-shadow: 3px 3px 0 var(--ink);
+  background: rgba(255,255,255,.75);
+  box-shadow: 2px 2px 0 var(--ink);
   font-size: 18px;
   line-height: 1.6;
+}
+.social-hero-space {
+  min-height: 565px;
 }
 .recent-drops {
   padding: 90px 0 105px;
@@ -119,14 +123,13 @@
   text-transform: uppercase;
 }
 .drop-track {
+  display: flex;
   gap: 30px;
+  width: max-content;
   padding: 15px 5vw 25px;
 }
 .social-work .drop-track {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 255px));
-  justify-content: start;
+  width: max-content;
 }
 .social-reel-card {
   min-width: 0;
@@ -166,10 +169,8 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background:
-    linear-gradient(135deg, rgba(59,222,200,.9), rgba(255,105,180,.72)),
-    #111;
-  color: var(--ink);
+  background: #111;
+  color: white;
   font: 800 12px "Space Grotesk", sans-serif;
   letter-spacing: .12em;
   text-align: center;
@@ -239,35 +240,20 @@
   font-size: 30px;
   text-transform: uppercase;
 }
-.social-approach-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-.social-approach-item {
-  min-height: 125px;
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  align-items: stretch;
-  border: 2px solid var(--ink);
-  background: white;
-  box-shadow: 5px 5px 0 var(--ink);
-}
-.social-approach-item:nth-child(2) { background: var(--cyan); }
-.social-approach-item:nth-child(3) { background: var(--yellow); }
-.social-approach-item:nth-child(4) { background: var(--pink); }
-.social-approach-item > span {
-  display: grid;
-  place-items: center;
-  border-right: 2px solid var(--ink);
-  font: 800 11px "Space Grotesk", sans-serif;
-  letter-spacing: .08em;
-}
-.social-approach-item p {
-  align-self: center;
+.social-approach-list {
+  max-width: 900px;
   margin: 0;
-  padding: 24px;
-  font-size: 17px;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+  list-style: none;
+}
+.social-approach-list li {
+  padding: 22px 18px;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  border-left: 2px solid var(--ink);
+  background: white;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -411,8 +397,8 @@
 .project-copy > p:last-of-type { font-size: 14px; line-height: 1.65; }
 .project-link { display: inline-block; padding: 5px 2px; border-bottom: 4px solid var(--orange); color: var(--ink); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
 @media (max-width: 850px) {
-  .social-work .drop-track { grid-template-columns: repeat(2, minmax(0, 255px)); }
-  .social-approach-grid { grid-template-columns: 1fr; }
+  .social-hero { grid-template-columns: 1fr; padding-top: 55px; }
+  .social-hero-space { display: none; }
   .growth-grid,
   .management-grid,
   .project-exe { grid-template-columns: 1fr; }
@@ -420,19 +406,18 @@
 }
 
 @media (max-width: 540px) {
-  .social-hero { min-height: 625px; padding-right: 25px; padding-left: 25px; }
+  .social-hero { min-width: 0; min-height: 625px; padding-right: 25px; padding-left: 25px; }
   .social-copy h1 { font-size: 52px; }
   .social-intro { width: 100%; max-width: 100%; font-size: 16px; }
   .social-work .drop-track {
     width: 100%;
+    display: grid;
     grid-template-columns: minmax(0, 255px);
     gap: 42px;
   }
-  .social-reel-frame { width: 100%; }
   .social-approach-section { padding-right: 25px; padding-left: 25px; }
   .social-approach-heading h2 { font-size: 25px; }
-  .social-approach-item { grid-template-columns: 45px 1fr; }
-  .social-approach-item p { padding: 20px; font-size: 15px; }
+  .social-approach-list li { padding: 18px 15px; font-size: 15px; }
   .strategy-main { padding-top: 70px; }
   .strategy-hero h1 { font-size: 46px; }
   .strategy-hero p { font-size: 16px; }

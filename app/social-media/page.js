@@ -79,6 +79,7 @@ export default function SocialMediaPage() {
               {pageContent.description || DEFAULT_DESCRIPTION}
             </p>
           </div>
+          <div className="social-hero-space" aria-hidden="true" />
         </header>
 
         <section className="recent-drops social-work" aria-labelledby="social-work-heading">
@@ -118,14 +119,11 @@ export default function SocialMediaPage() {
               {pageContent.approach_heading || "What I bring"}
             </h2>
           </div>
-          <div className="social-approach-grid">
+          <ul className="social-approach-list">
             {approachItems.map((item, index) => (
-              <div className="social-approach-item" key={`${item}-${index}`}>
-                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <p>{item}</p>
-              </div>
+              <li key={`${item}-${index}`}>{item}</li>
             ))}
-          </div>
+          </ul>
         </section>
       </main>
       <SiteFooter />
