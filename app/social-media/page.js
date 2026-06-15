@@ -69,34 +69,40 @@ export default function SocialMediaPage() {
   const hasEmbeds = reels.some((reel) => reel.reel_url?.trim());
 
   return (
-    <div className="editorial-page social-media-page">
+    <div className="editorial-page">
       <SiteNav pageKey="projects" />
-      <main className="social-media-main">
-        <header className="social-media-hero">
-          <h1>{pageContent.headline || DEFAULT_HEADLINE}</h1>
-          <p>{pageContent.description || DEFAULT_DESCRIPTION}</p>
+      <main>
+        <header className="social-hero">
+          <div className="social-copy">
+            <h1>{pageContent.headline || DEFAULT_HEADLINE}</h1>
+            <p className="social-intro">
+              {pageContent.description || DEFAULT_DESCRIPTION}
+            </p>
+          </div>
         </header>
 
-        <section className="social-work" aria-labelledby="social-work-heading">
-          <h2 id="social-work-heading">{pageContent.work_heading || "Work"}</h2>
-          <div className="social-reels-grid">
+        <section className="recent-drops social-work" aria-labelledby="social-work-heading">
+          <div className="drops-heading">
+            <h2 id="social-work-heading">{pageContent.work_heading || "Work"}</h2>
+          </div>
+          <div className="drop-track social-reels-grid">
             {reels.map((reel, index) => (
               <article
-                className="social-reel-card"
+                className="drop-wrap social-reel-card"
                 key={`${reel.client || "reel"}-${index}`}
               >
-                <div className="social-reel-frame">
+                <div className="drop-card social-reel-frame">
                   <ReelEmbed
                     url={reel.reel_url}
                     placeholderLabel={
                       pageContent.reel_placeholder_label || "Reel coming soon"
                     }
                   />
-                </div>
-                <div className="social-reel-details">
-                  <h3>{reel.client}</h3>
-                  <p>{reel.role}</p>
-                  <span>{reel.platform}</span>
+                  <div className="drop-caption social-reel-details">
+                    <strong>{reel.client}</strong>
+                    <span>{reel.role}</span>
+                    <small>{reel.platform}</small>
+                  </div>
                 </div>
               </article>
             ))}
@@ -104,17 +110,22 @@ export default function SocialMediaPage() {
         </section>
 
         <section
-          className="social-approach"
+          className="social-approach-section"
           aria-labelledby="social-approach-heading"
         >
-          <h2 id="social-approach-heading">
-            {pageContent.approach_heading || "What I bring"}
-          </h2>
-          <ul>
+          <div className="social-approach-heading">
+            <h2 id="social-approach-heading">
+              {pageContent.approach_heading || "What I bring"}
+            </h2>
+          </div>
+          <div className="social-approach-grid">
             {approachItems.map((item, index) => (
-              <li key={`${item}-${index}`}>{item}</li>
+              <div className="social-approach-item" key={`${item}-${index}`}>
+                <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                <p>{item}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
       </main>
       <SiteFooter />
