@@ -182,6 +182,34 @@
   font-size: 30px;
   text-transform: uppercase;
 }
+.drop-arrows {
+  display: flex;
+  gap: 14px;
+}
+.drop-arrows button {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+  color: var(--ink);
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+.drop-arrows button:last-child {
+  background: var(--cyan);
+}
+.social-reels-viewport {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.social-reels-viewport::-webkit-scrollbar {
+  display: none;
+}
 .drop-track {
   display: flex;
   gap: 30px;
@@ -192,7 +220,8 @@
   width: max-content;
 }
 .social-reel-card {
-  min-width: 0;
+  min-width: 255px;
+  flex: 0 0 255px;
 }
 .drop-wrap {
   position: relative;
@@ -281,7 +310,10 @@
 .social-approach-section {
   padding: 90px 5vw 110px;
   border-bottom: 4px solid var(--ink);
-  background: var(--paper);
+  background:
+    radial-gradient(circle at top left, rgba(255,235,59,.55), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(255,105,180,.2), transparent 22%),
+    var(--paper);
 }
 .social-approach-heading {
   display: flex;
@@ -301,18 +333,45 @@
   text-transform: uppercase;
 }
 .social-approach-list {
-  max-width: 900px;
+  max-width: 1040px;
   margin: 0;
   padding: 0;
-  border-top: 2px solid var(--ink);
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
 }
 .social-approach-list li {
-  padding: 22px 18px;
-  border-right: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  border-left: 2px solid var(--ink);
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: stretch;
+  border: 2px solid var(--ink);
   background: white;
+  box-shadow: 5px 5px 0 var(--ink);
+  transform: rotate(-1deg);
+}
+.social-approach-list li:nth-child(even) {
+  transform: rotate(1deg) translateY(10px);
+}
+.social-approach-list li:nth-child(2) {
+  background: var(--cyan);
+}
+.social-approach-list li:nth-child(3) {
+  background: var(--yellow);
+}
+.social-approach-list li:nth-child(4) {
+  background: #ffb4d9;
+}
+.social-approach-index {
+  display: grid;
+  place-items: center;
+  border-right: 2px solid var(--ink);
+  font: 800 12px "Space Grotesk", sans-serif;
+  letter-spacing: .12em;
+}
+.social-approach-list p {
+  margin: 0;
+  padding: 22px 18px;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.45;
@@ -459,6 +518,7 @@
 @media (max-width: 850px) {
   .social-hero { grid-template-columns: 1fr; padding-top: 55px; }
   .phone-stage { margin-top: 45px; }
+  .social-approach-list { grid-template-columns: 1fr; }
   .growth-grid,
   .management-grid,
   .project-exe { grid-template-columns: 1fr; }
@@ -470,15 +530,12 @@
   .social-copy h1 { font-size: 46px; }
   .social-intro { width: 100%; max-width: 100%; font-size: 16px; }
   .phone-stage { transform: scale(.87); margin: -10px -25px; }
-  .social-work .drop-track {
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 255px);
-    gap: 42px;
-  }
+  .drop-arrows { display: none; }
+  .social-work .drop-track { width: max-content; }
   .social-approach-section { padding-right: 25px; padding-left: 25px; }
   .social-approach-heading h2 { font-size: 25px; }
-  .social-approach-list li { padding: 18px 15px; font-size: 15px; }
+  .social-approach-list li { grid-template-columns: 50px 1fr; transform: none !important; }
+  .social-approach-list p { padding: 18px 15px; font-size: 15px; }
   .strategy-main { padding-top: 70px; }
   .strategy-hero h1 { font-size: 46px; }
   .strategy-hero p { font-size: 16px; }
