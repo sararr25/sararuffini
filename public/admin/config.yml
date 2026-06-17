@@ -4739,15 +4739,13 @@ collections:
       name: download_cv_text
       widget: string
       required: false
-    - label: Download CV Link
+    - label: Download CV File (PDF)
       name: download_cv_href
-      widget: string
+      widget: file
       required: false
-    - label: Download CV Link Preset
-      name: download_cv_href_page
-      widget: select
-      required: false
-      options: *internal_page_options
+      media_library:
+        config:
+          multiple: false
     - label: More About Heading
       name: more_about_heading
       widget: string
