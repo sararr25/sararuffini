@@ -167,10 +167,41 @@ collections:
       required: false
     - label: Default OG Image Crop Position
       name: default_og_image_crop_position
-      widget: string
+      widget: object
+      image_field: default_og_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Twitter Handle
       name: twitter_handle
       widget: string
@@ -224,10 +255,41 @@ collections:
         required: false
       - label: Hero Image Crop Position
         name: hero_image_crop_position
-        widget: string
+        widget: object
+        image_field: hero_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Timecode
         name: hero_timecode
         widget: string
@@ -359,6 +421,43 @@ collections:
         name: media_upload
         widget: file
         required: false
+      - label: Thumbnail Crop Position
+        name: image_crop_position
+        widget: object
+        image_field: media_upload
+        aspect_ratio: 16 / 9
+        collapsed: false
+        required: false
+        default: { x: 50, y: 50, zoom: 1 }
+        hint: Choose which part of the thumbnail stays visible inside video frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Title
         name: title
         widget: string
@@ -408,10 +507,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -448,10 +578,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -540,10 +701,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -571,10 +763,41 @@ collections:
         required: false
       - label: SEO Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -611,10 +834,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -723,10 +977,41 @@ collections:
       required: false
     - label: Hero Main Image Crop Position
       name: hero_main_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_main_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Main Image Alt
       name: hero_main_image_alt
       widget: string
@@ -737,10 +1022,41 @@ collections:
       required: false
     - label: Hero Polaroid Image Crop Position
       name: hero_polaroid_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_polaroid_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Polaroid Alt
       name: hero_polaroid_alt
       widget: string
@@ -755,10 +1071,41 @@ collections:
       required: false
     - label: Hero Accent Image Crop Position
       name: hero_accent_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_accent_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Accent Alt
       name: hero_accent_alt
       widget: string
@@ -814,10 +1161,41 @@ collections:
         required: false
       - label: Item Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Item Image Alt
         name: alt
         widget: string
@@ -841,10 +1219,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -881,10 +1290,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -974,10 +1414,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_left_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_left
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: SEO Title
       name: seo_title
       widget: string
@@ -992,10 +1463,41 @@ collections:
       required: false
     - label: SEO Image Crop Position
       name: seo_image_crop_position
-      widget: string
+      widget: object
+      image_field: seo_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Dynamic Media Blocks
       name: media_blocks
       widget: list
@@ -1032,10 +1534,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -1132,10 +1665,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1178,10 +1742,41 @@ collections:
       required: false
     - label: Step 1 Image Crop Position
       name: journey_step_1_image_crop_position
-      widget: string
+      widget: object
+      image_field: journey_step_1_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Step 1 Alt
       name: journey_step_1_alt
       widget: string
@@ -1200,10 +1795,41 @@ collections:
       required: false
     - label: Step 2 Image Crop Position
       name: journey_step_2_image_crop_position
-      widget: string
+      widget: object
+      image_field: journey_step_2_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Step 2 Alt
       name: journey_step_2_alt
       widget: string
@@ -1222,10 +1848,41 @@ collections:
       required: false
     - label: Step 3 Image Crop Position
       name: journey_step_3_image_crop_position
-      widget: string
+      widget: object
+      image_field: journey_step_3_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Step 3 Alt
       name: journey_step_3_alt
       widget: string
@@ -1257,10 +1914,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
 - name: project_pages
   label: Pages - Projects
   files:
@@ -1310,10 +1998,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1356,10 +2075,41 @@ collections:
       required: false
     - label: Step 1 Image Crop Position
       name: journey_step_1_image_crop_position
-      widget: string
+      widget: object
+      image_field: journey_step_1_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Step 1 Alt
       name: journey_step_1_alt
       widget: string
@@ -1378,10 +2128,41 @@ collections:
       required: false
     - label: Step 2 Image Crop Position
       name: journey_step_2_image_crop_position
-      widget: string
+      widget: object
+      image_field: journey_step_2_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Step 2 Alt
       name: journey_step_2_alt
       widget: string
@@ -1400,10 +2181,41 @@ collections:
       required: false
     - label: Step 3 Image Crop Position
       name: journey_step_3_image_crop_position
-      widget: string
+      widget: object
+      image_field: journey_step_3_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Step 3 Alt
       name: journey_step_3_alt
       widget: string
@@ -1435,10 +2247,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Webpage Portfolio
     name: webpage_portfolio
     file: public/content/pages/webpage-portfolio.json
@@ -1473,8 +2316,91 @@ collections:
       fields:
       - label: Icon
         name: icon
-        widget: string
+        widget: select
         required: false
+        options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
         hint: Material Symbols icon name, e.g. calendar_month
       - label: Label
         name: label
@@ -1490,10 +2416,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -1632,8 +2589,91 @@ collections:
       required: false
     - label: Tech Flow 1 Icon
       name: tech_flow_1_icon
-      widget: string
+      widget: select
       required: false
+      options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
     - label: Tech Flow 1 Title
       name: tech_flow_1_title
       widget: string
@@ -1644,8 +2684,91 @@ collections:
       required: false
     - label: Tech Flow 2 Icon
       name: tech_flow_2_icon
-      widget: string
+      widget: select
       required: false
+      options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
     - label: Tech Flow 2 Title
       name: tech_flow_2_title
       widget: string
@@ -1656,8 +2779,91 @@ collections:
       required: false
     - label: Tech Flow 3 Icon
       name: tech_flow_3_icon
-      widget: string
+      widget: select
       required: false
+      options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
     - label: Tech Flow 3 Title
       name: tech_flow_3_title
       widget: string
@@ -1668,8 +2874,91 @@ collections:
       required: false
     - label: Tech Flow 4 Icon
       name: tech_flow_4_icon
-      widget: string
+      widget: select
       required: false
+      options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
     - label: Tech Flow 4 Title
       name: tech_flow_4_title
       widget: string
@@ -1680,8 +2969,91 @@ collections:
       required: false
     - label: Tech Flow 5 Icon
       name: tech_flow_5_icon
-      widget: string
+      widget: select
       required: false
+      options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
     - label: Tech Flow 5 Title
       name: tech_flow_5_title
       widget: string
@@ -1767,10 +3139,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -1807,10 +3210,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Video Page V1
     name: video_v1
     file: public/content/pages/weber-grillinspiration.json
@@ -1863,10 +3297,41 @@ collections:
         required: false
       - label: Hero Image Crop Position
         name: hero_image_crop_position
-        widget: string
+        widget: object
+        image_field: hero_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Media Type
         name: hero_media_type
         widget: select
@@ -1999,6 +3464,43 @@ collections:
         name: media_upload
         widget: file
         required: false
+      - label: Thumbnail Crop Position
+        name: image_crop_position
+        widget: object
+        image_field: media_upload
+        aspect_ratio: 16 / 9
+        collapsed: false
+        required: false
+        default: { x: 50, y: 50, zoom: 1 }
+        hint: Choose which part of the thumbnail stays visible inside video frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Title
         name: title
         widget: string
@@ -2082,10 +3584,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Cocktail Photography Page
     name: cocktail_photography
     file: public/content/pages/cocktail-photography.json
@@ -2128,10 +3661,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Image Alt
       name: hero_image_alt
       widget: string
@@ -2178,10 +3742,41 @@ collections:
       required: false
     - label: Shot 1 Image Crop Position
       name: shot_1_image_crop_position
-      widget: string
+      widget: object
+      image_field: shot_1_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Shot 1 Alt
       name: shot_1_alt
       widget: string
@@ -2196,10 +3791,41 @@ collections:
       required: false
     - label: Shot 2 Image Crop Position
       name: shot_2_image_crop_position
-      widget: string
+      widget: object
+      image_field: shot_2_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Shot 2 Alt
       name: shot_2_alt
       widget: string
@@ -2214,10 +3840,41 @@ collections:
       required: false
     - label: Shot 3 Image Crop Position
       name: shot_3_image_crop_position
-      widget: string
+      widget: object
+      image_field: shot_3_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Shot 3 Alt
       name: shot_3_alt
       widget: string
@@ -2232,10 +3889,41 @@ collections:
       required: false
     - label: Shot 4 Image Crop Position
       name: shot_4_image_crop_position
-      widget: string
+      widget: object
+      image_field: shot_4_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Shot 4 Alt
       name: shot_4_alt
       widget: string
@@ -2250,10 +3938,41 @@ collections:
       required: false
     - label: Shot 5 Image Crop Position
       name: shot_5_image_crop_position
-      widget: string
+      widget: object
+      image_field: shot_5_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Shot 5 Alt
       name: shot_5_alt
       widget: string
@@ -2268,10 +3987,41 @@ collections:
       required: false
     - label: Shot 6 Image Crop Position
       name: shot_6_image_crop_position
-      widget: string
+      widget: object
+      image_field: shot_6_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Shot 6 Alt
       name: shot_6_alt
       widget: string
@@ -2335,10 +4085,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Shooting Cocktails Page
     name: shooting_cocktails
     file: public/content/pages/shooting-cocktails.json
@@ -2397,10 +4178,41 @@ collections:
       required: false
     - label: Hero Main Image Crop Position
       name: hero_main_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_main_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Main Image Alt
       name: hero_main_image_alt
       widget: string
@@ -2411,10 +4223,41 @@ collections:
       required: false
     - label: Hero Polaroid Image Crop Position
       name: hero_polaroid_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_polaroid_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Polaroid Alt
       name: hero_polaroid_alt
       widget: string
@@ -2429,10 +4272,41 @@ collections:
       required: false
     - label: Hero Accent Image Crop Position
       name: hero_accent_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_accent_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Hero Accent Alt
       name: hero_accent_alt
       widget: string
@@ -2488,10 +4362,41 @@ collections:
         required: false
       - label: Item Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Item Image Alt
         name: alt
         widget: string
@@ -2515,10 +4420,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Coming Soon Page
     name: coming_soon
     file: public/content/pages/coming-soon.json
@@ -2613,10 +4549,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -2694,10 +4661,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Video Page V2
     name: video_v2
     file: public/content/pages/video-v2.json
@@ -2753,10 +4751,41 @@ collections:
         required: false
       - label: Hero Image Crop Position
         name: hero_image_crop_position
-        widget: string
+        widget: object
+        image_field: hero_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Media Type
         name: hero_media_type
         widget: select
@@ -2812,6 +4841,26 @@ collections:
         name: spec_deliverables_label
         widget: string
         required: false
+      - label: Deliverables (Add / Edit / Reorder)
+        name: spec_deliverables
+        widget: list
+        required: false
+        collapsed: false
+        hint: New structured list. Deliverable 1-4 below remain as fallback.
+        field:
+          label: Deliverable
+          name: label
+          widget: string
+      - label: Tools (Add / Edit / Reorder)
+        name: spec_tools
+        widget: list
+        required: false
+        collapsed: false
+        hint: New structured list. Tools Value below remains as fallback.
+        field:
+          label: Tool
+          name: label
+          widget: string
       - label: Deliverable 1
         name: spec_deliverable_1
         widget: string
@@ -2873,6 +4922,43 @@ collections:
         name: media_upload
         widget: file
         required: false
+      - label: Thumbnail Crop Position
+        name: image_crop_position
+        widget: object
+        image_field: media_upload
+        aspect_ratio: 16 / 9
+        collapsed: false
+        required: false
+        default: { x: 50, y: 50, zoom: 1 }
+        hint: Choose which part of the thumbnail stays visible inside video frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Title
         name: title
         widget: string
@@ -2948,10 +5034,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: App Page V1
     name: app_v1
     file: public/content/pages/app-v1.json
@@ -2994,30 +5111,123 @@ collections:
       required: false
     - label: Left Phone Image (background) Crop Position
       name: hero_image_left_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_left
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Right Phone Image
       name: hero_image_right
       widget: image
       required: false
     - label: Right Phone Image Crop Position
       name: hero_image_right_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_right
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Center Phone Image
       name: hero_image_center
       widget: image
       required: false
     - label: Center Phone Image Crop Position
       name: hero_image_center_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_center
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Phase 2 Line 1
       name: phase2_title_main
       widget: string
@@ -3062,10 +5272,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3142,10 +5383,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       required: false
   - label: App Page V2
     name: app_v2
@@ -3243,10 +5515,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3323,10 +5626,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       required: false
   - label: Graphics Page
     name: graphics
@@ -3362,30 +5696,123 @@ collections:
       required: false
     - label: Polaroid Image Crop Position
       name: hero_image_polaroid_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_polaroid
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Detail Image
       name: hero_image_detail
       widget: image
       required: false
     - label: Detail Image Crop Position
       name: hero_image_detail_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_detail
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Wide Image
       name: hero_image_wide
       widget: image
       required: false
     - label: Wide Image Crop Position
       name: hero_image_wide_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image_wide
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Wide Image Overlay Text
       name: wide_image_overlay_text
       widget: string
@@ -3426,10 +5853,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3506,10 +5964,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       required: false
   - label: Social Media Page
     name: socialmedia_portfolio
@@ -3645,10 +6134,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -3726,10 +6246,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Social Media
     name: social_media
     file: public/content/pages/social-media.json
@@ -3819,10 +6370,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Social Media Strategy
     name: social_media_strategy
     file: public/content/pages/social-media-strategy.json
@@ -4129,10 +6711,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
   - label: Homepage
     name: homepage
     file: public/content/pages/homepage.json
@@ -4181,6 +6794,96 @@ collections:
       name: featured_subtitle
       widget: string
       required: false
+    - label: Featured Projects (Add / Edit / Reorder)
+      name: featured_projects
+      widget: list
+      required: false
+      collapsed: true
+      summary: "{{fields.label}}"
+      hint: New structured editor for the homepage sticker collage. Existing individual Featured fields below remain as fallback.
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Layout Slot
+        name: layout
+        widget: select
+        required: false
+        default: urban
+        options:
+        - label: Urban / large rounded
+          value: urban
+        - label: Pixel / wide
+          value: pixel
+        - label: App / phone
+          value: app
+        - label: Pasta / circle
+          value: pasta
+        - label: Phone / soft
+          value: phone
+        - label: Cocktail / pill
+          value: cocktail
+        - label: DNA / short
+          value: dna
+        - label: BBQ / square
+          value: bbq
+      - label: Link
+        name: href
+        widget: string
+        required: false
+      - label: Link Preset
+        name: href_page
+        widget: select
+        required: false
+        options: *internal_page_options
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Image Crop Position
+        name: image_crop_position
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
+        required: false
+        default: { x: 50, y: 50, zoom: 1 }
+        hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
+      - label: Alt Text
+        name: alt
+        widget: string
+        required: false
+      - label: Label
+        name: label
+        widget: string
+        required: false
     - label: Featured TV
       name: featured_tv
       widget: object
@@ -4200,10 +6903,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4232,10 +6966,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4264,10 +7029,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4296,10 +7092,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4328,10 +7155,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4368,10 +7226,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4400,10 +7289,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4432,10 +7352,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -4497,10 +7448,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -4577,10 +7559,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       required: false
   - label: About Page
     name: about
@@ -4660,10 +7673,41 @@ collections:
       required: false
     - label: Portrait Image Crop Position
       name: portrait_image_crop_position
-      widget: string
+      widget: object
+      image_field: portrait_image
+      aspect_ratio: 9 / 11
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Portrait Alt
       name: portrait_alt
       widget: string
@@ -4674,10 +7718,41 @@ collections:
       required: false
     - label: Console Sticker Image Crop Position
       name: decor_console_image_crop_position
-      widget: string
+      widget: object
+      image_field: decor_console_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Console Sticker Alt
       name: decor_console_alt
       widget: string
@@ -4688,10 +7763,41 @@ collections:
       required: false
     - label: Camera Sticker Image Crop Position
       name: decor_camera_image_crop_position
-      widget: string
+      widget: object
+      image_field: decor_camera_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Camera Sticker Alt
       name: decor_camera_alt
       widget: string
@@ -4719,10 +7825,41 @@ collections:
       required: false
     - label: Drink Image Crop Position
       name: drink_image_crop_position
-      widget: string
+      widget: object
+      image_field: drink_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Drink Image Alt
       name: drink_image_alt
       widget: string
@@ -4783,6 +7920,125 @@ collections:
       name: more_about_heading
       widget: string
       required: false
+    - label: More About Cards (Add / Edit / Reorder)
+      name: more_about_cards
+      widget: list
+      required: false
+      collapsed: true
+      summary: "{{fields.title}}"
+      hint: New structured editor for the cards. Existing More Card 1/2/3 fields below remain as fallback.
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Icon
+        name: icon
+        widget: select
+        required: false
+        options:
+        - label: account_tree
+          value: account_tree
+        - label: add
+          value: add
+        - label: arrow_back
+          value: arrow_back
+        - label: arrow_forward
+          value: arrow_forward
+        - label: arrow_outward
+          value: arrow_outward
+        - label: auto_awesome
+          value: auto_awesome
+        - label: calendar_month
+          value: calendar_month
+        - label: category
+          value: category
+        - label: code
+          value: code
+        - label: comment
+          value: comment
+        - label: database
+          value: database
+        - label: design_services
+          value: design_services
+        - label: download
+          value: download
+        - label: edit
+          value: edit
+        - label: feedback
+          value: feedback
+        - label: flash_on
+          value: flash_on
+        - label: flight_takeoff
+          value: flight_takeoff
+        - label: format_quote
+          value: format_quote
+        - label: headphones
+          value: headphones
+        - label: mail
+          value: mail
+        - label: map
+          value: map
+        - label: movie
+          value: movie
+        - label: movie_edit
+          value: movie_edit
+        - label: music_note
+          value: music_note
+        - label: north_east
+          value: north_east
+        - label: notifications
+          value: notifications
+        - label: palette
+          value: palette
+        - label: photo_camera
+          value: photo_camera
+        - label: play_arrow
+          value: play_arrow
+        - label: play_circle_filled
+          value: play_circle_filled
+        - label: psychology
+          value: psychology
+        - label: route
+          value: route
+        - label: shopping_bag
+          value: shopping_bag
+        - label: smart_display
+          value: smart_display
+        - label: star
+          value: star
+        - label: subdirectory_arrow_left
+          value: subdirectory_arrow_left
+        - label: terminal
+          value: terminal
+        - label: touch_app
+          value: touch_app
+        - label: travel_explore
+          value: travel_explore
+        - label: videocam
+          value: videocam
+        - label: web
+          value: web
+      - label: Icon Color Style
+        name: color_style
+        widget: select
+        required: false
+        default: primary
+        options:
+        - label: Cyan
+          value: primary
+        - label: Pink
+          value: pink
+        - label: Yellow
+          value: yellow
+        - label: Black
+          value: black
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Description
+        name: text
+        widget: text
+        required: false
     - label: More Card 1 Title
       name: more_card_1_title
       widget: string
@@ -4843,10 +8099,41 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: string
+        widget: object
+        image_field: media_upload_image
+        aspect_ratio: 16 / 9
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Video Upload
         name: media_upload_video
         widget: file
@@ -4923,10 +8210,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       required: false
   - label: Projects
     name: projects
@@ -4981,10 +8299,41 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: string
+        widget: object
+        image_field: image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       - label: Alt Text
         name: alt
         widget: string
@@ -5018,10 +8367,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
       required: false
   - label: Contact Page
     name: contact
@@ -5058,10 +8438,41 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: string
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
         required: false
-        default: 50,50
+        default: { x: 50, y: 50, zoom: 1 }
         hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
 - name: project_pages_entries
   label: Project Pages / Entries
   description: Create new project pages from existing templates
@@ -5137,10 +8548,41 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: string
+      widget: object
+      image_field: hero_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
   - label: Dynamic Media Blocks
     name: media_blocks
     widget: list
@@ -5177,10 +8619,41 @@ collections:
       required: false
     - label: Image Upload Crop Position
       name: media_upload_image_crop_position
-      widget: string
+      widget: object
+      image_field: media_upload_image
+      aspect_ratio: 16 / 9
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false
     - label: Video Upload
       name: media_upload_video
       widget: file
@@ -5259,7 +8732,38 @@ collections:
 
     - label: Preview Image Crop Position
       name: seo_image_crop_position
-      widget: string
+      widget: object
+      image_field: seo_image
+      aspect_ratio: 1 / 1
+      collapsed: false
       required: false
-      default: 50,50
+      default: { x: 50, y: 50, zoom: 1 }
       hint: Choose which part of the image stays visible inside cropped frames.
+      fields:
+      - label: Horizontal focal point (%)
+        name: x
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Vertical focal point (%)
+        name: y
+        widget: number
+        value_type: int
+        min: 0
+        max: 100
+        step: 1
+        default: 50
+        required: false
+      - label: Zoom
+        name: zoom
+        widget: number
+        value_type: float
+        min: 1
+        max: 3
+        step: 0.05
+        default: 1
+        required: false

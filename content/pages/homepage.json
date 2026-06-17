@@ -75,5 +75,74 @@
     "alt": "Vintage camcorder sticker",
     "caption": "Urban Chronicles",
     "href_page": "/pages/video-v2/index.html"
-  }
+  },
+  "featured_projects": [
+    {
+      "layout": "urban",
+      "href": "/pages/video-v2/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-urban-chronicles.png",
+      "alt": "Vintage camcorder sticker",
+      "caption": "Urban Chronicles",
+      "href_page": "/pages/video-v2/index.html",
+      "label": "Urban Chronicles"
+    },
+    {
+      "layout": "pixel",
+      "href": "/pages/webpage-portfolio/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-pixel-perfect.png",
+      "alt": "Website design and develop",
+      "label": "Website design",
+      "href_page": "/pages/webpage-portfolio/index.html"
+    },
+    {
+      "layout": "app",
+      "href": "/pages/app-v2/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-app-mobile.png",
+      "alt": "Vintage silver mobile phone app sticker",
+      "label": "Retro Call!",
+      "window_title": "PROJECT.EXE",
+      "window_button": "Open",
+      "href_page": "/pages/app-v2/index.html"
+    },
+    {
+      "layout": "pasta",
+      "href": "/pages/coming-soon/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-nonnas-kitchen.png",
+      "alt": "Pasta sticker",
+      "label": "Nonna's Kitchen",
+      "href_page": "/pages/coming-soon/index.html"
+    },
+    {
+      "layout": "phone",
+      "href": "/pages/contact/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-call-me.png",
+      "alt": "Retro phone sticker",
+      "label": "Call Me",
+      "href_page": "/pages/contact/index.html"
+    },
+    {
+      "layout": "cocktail",
+      "href": "/pages/shooting-cocktails/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-neon-nights.png",
+      "alt": "Cocktail sticker",
+      "label": "Neon Nights",
+      "href_page": "/pages/shooting-cocktails/index.html"
+    },
+    {
+      "layout": "dna",
+      "href": "/pages/coming-soon/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-biotech.png",
+      "alt": "DNA sticker",
+      "label": "Biotech",
+      "href_page": "/pages/coming-soon/index.html"
+    },
+    {
+      "layout": "bbq",
+      "href": "/pages/weber-grillinspiration/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-summer-heat.png",
+      "alt": "Barbecue sticker",
+      "label": "Summer Heat",
+      "href_page": "/pages/weber-grillinspiration/index.html"
+    }
+  ]
 }

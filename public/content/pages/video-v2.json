@@ -29,7 +29,32 @@
     "spec_deliverable_4": "Athlete Profiles",
     "spec_tools_label": "Tools",
     "spec_tools_value": "Premiere Pro, After Effects, DaVinci Resolve",
-    "spec_more_videos_label": "more videos ->"
+    "spec_more_videos_label": "more videos ->",
+    "spec_deliverables": [
+      {
+        "label": "TV Commercials"
+      },
+      {
+        "label": "Social Shorts"
+      },
+      {
+        "label": "Product Launches"
+      },
+      {
+        "label": "Athlete Profiles"
+      }
+    ],
+    "spec_tools": [
+      {
+        "label": "Premiere Pro"
+      },
+      {
+        "label": "After Effects"
+      },
+      {
+        "label": "DaVinci Resolve"
+      }
+    ]
   },
   "projects": [
     {
@@ -40,7 +65,12 @@
       "title": "",
       "description": "",
       "meta": "15s • Instagram Reels",
-      "tags": []
+      "tags": [],
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     },
     {
       "badge": "Product Reveal",
@@ -50,7 +80,12 @@
       "title": "",
       "description": "",
       "meta": "45s • Website Hero",
-      "tags": []
+      "tags": [],
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     },
     {
       "badge": "DOCU-STYLE",
@@ -60,7 +95,12 @@
       "title": "\"The Long Run\"",
       "description": "",
       "meta": "03:20 • YouTube",
-      "tags": []
+      "tags": [],
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     },
     {
       "badge": "Summer Events",
@@ -70,7 +110,12 @@
       "title": "",
       "description": "",
       "meta": "60s • Internal Recap",
-      "tags": []
+      "tags": [],
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     }
   ],
   "seo": {

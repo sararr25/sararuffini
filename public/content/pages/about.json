@@ -88,19 +88,35 @@
     }
   ],
   "portrait_image": "/assets/media/sara-pic.jpg",
-  "portrait_image_crop_position": "",
+  "portrait_image_crop_position": {
+    "x": 50,
+    "y": 50,
+    "zoom": 1
+  },
   "portrait_alt": "Portrait of Sara Ruffini",
   "decor_console_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-XNg4iZHZyqQfKL74kUiEK3RgWZbHZQK5z9hjWVZIaoka2NChAA8haceZ8dQANwEqvh0Y5z4QMnHh6Q3WnZnuBLl6V5j5wh3SCUQfOgxvkCGQe-AP2svdtPPOWonD9tif4zXvSinWvPU_1Kyonf29NF_Y7q221Pn7QfSYxr5g-l8sI54mmHupT2xPHdqEzy56rTHhcWcymuaeUsRdF-9Jjqs96FWMm96hHAshaG9v_GrVVcyXcPESDJDEQJVTH1xw1mH5MaDUQ9bX",
-  "decor_console_image_crop_position": "",
+  "decor_console_image_crop_position": {
+    "x": 50,
+    "y": 50,
+    "zoom": 1
+  },
   "decor_console_alt": "Vintage console",
   "decor_camera_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCE5qciSTkHFxpTdCrtQYD2sVPyiCRWemgVZzFxgb8xjmdXG8H_-CjF4I4IpiGdhqGgS-zNc1fWzPfWHYxHCvcUKtUDuVbVUm93n2lwW5ueWuSaTIZIzO3rOjup6S-c4L6X8XeaK2hO4Xr6Riz2WYrYsqPgWrE_eBYfxXm2-jkJfOQu5UBs7TE7r28kLc3pWRiCmf1wxWDR7mrv-yToCQ_JAC_74VMj2z3R8ss8N5PlRffAWYZdr4diR8BCcGr99-n69fQ7c4z1NwZo",
-  "decor_camera_image_crop_position": "",
+  "decor_camera_image_crop_position": {
+    "x": 50,
+    "y": 50,
+    "zoom": 1
+  },
   "decor_camera_alt": "Retro camera",
   "cta_text": "Start a Project",
   "cta_href": "/pages/contact/index.html",
   "drink_note": "Let's grab a drink?",
   "drink_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3mk86rePYe0vdDbIgiIekuyRv4k1-bRgyUjCIkSmTGOeqrnzHcMJlihdMC0C7mBHoxCpG4vfkut4Wbg-jxflAk84csrWw8_9gdw_N4eTrtKYWBjmqvefE4Y17KubXvhJRFaMtejgG4bL3Ake0s1p-BaImEurSYEfqWLNZi5GxXC0guINWwwbP7w3Bb-KvAyi3IXxM0LZDzFzGZ19TCx_I0NAj3be2obUVchMunnV7BApTG23dKtMae2iH8XaFv-t76R77SFEaIo0P",
-  "drink_image_crop_position": "",
+  "drink_image_crop_position": {
+    "x": 50,
+    "y": 50,
+    "zoom": 1
+  },
   "drink_image_alt": "Cocktail",
   "work_experiences": [
     {
@@ -154,5 +170,25 @@
   "timeline_3_years": "2022",
   "timeline_3_role": "Video Editor",
   "timeline_3_company": "Hide the Zebra",
-  "timeline_3_description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects."
+  "timeline_3_description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
+  "more_about_cards": [
+    {
+      "icon": "flight_takeoff",
+      "color_style": "primary",
+      "title": "Travel Junkie",
+      "text": "I’m endlessly curious about the world. New cities, new food, new languages, new tiny details most people overlook. Planning a trip for me is mapping experiences, researching neighborhoods, finding that local spot you won’t see on the first page of Google (or instagram). Traveling feeds my creativity and keeps my brain wide open and my stomach full of delicious food :P"
+    },
+    {
+      "icon": "photo_camera",
+      "color_style": "pink",
+      "title": "Pole Dance addicted",
+      "text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them"
+    },
+    {
+      "icon": "headphones",
+      "color_style": "yellow",
+      "title": "Tech Nerdy",
+      "text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app."
+    }
+  ]
 }

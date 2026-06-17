@@ -22,7 +22,11 @@
       "title": "Cook it!",
       "meta": "Social Media • Edit",
       "href_page": "/pages/socialmedia-portfolio/index.html",
-      "image_crop_position": "40,75,100,0"
+      "image_crop_position": {
+        "x": 40,
+        "y": 75,
+        "zoom": 1
+      }
     },
     {
       "href": "",

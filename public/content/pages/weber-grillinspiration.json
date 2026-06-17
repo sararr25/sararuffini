@@ -33,7 +33,12 @@
       "media_upload": "",
       "title": "",
       "description": "",
-      "tags": []
+      "tags": [],
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     },
     {
       "badge": "T-bone steak",
@@ -43,7 +48,12 @@
       "title": "",
       "description": "",
       "tags": [],
-      "award_note": ""
+      "award_note": "",
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     },
     {
       "badge": "Lammeskank",
@@ -52,7 +62,12 @@
       "media_upload": "",
       "title": "",
       "description": "",
-      "tags": []
+      "tags": [],
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      }
     }
   ],
   "closing_section": {
@@ -70,6 +85,29 @@
     "spec_duration_label": "Duration",
     "spec_duration_value": "6 months",
     "spec_deliverables_label": "Skills and programs",
-    "spec_deliverables_value": "Da Vinci Resolve, After Effects, Premiere, Editing, Post production, Motion Graphic, Color Grading"
+    "spec_deliverables_value": "Da Vinci Resolve, After Effects, Premiere, Editing, Post production, Motion Graphic, Color Grading",
+    "spec_deliverables": [
+      {
+        "label": "Da Vinci Resolve"
+      },
+      {
+        "label": "After Effects"
+      },
+      {
+        "label": "Premiere"
+      },
+      {
+        "label": "Editing"
+      },
+      {
+        "label": "Post production"
+      },
+      {
+        "label": "Motion Graphic"
+      },
+      {
+        "label": "Color Grading"
+      }
+    ]
   }
 }

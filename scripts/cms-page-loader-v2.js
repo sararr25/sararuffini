@@ -24,10 +24,26 @@
     if (!parts.length) return '';
     parts[parts.length - 1] = `${parts[parts.length - 1]}_crop_position`;
     const value = parts.reduce((curr, prop) => curr?.[prop], allData);
-    return typeof value === 'string' ? value : '';
+    return value || '';
+  }
+
+  function normalizeCropValue(value) {
+    const x = Math.max(0, Math.min(100, Number(value?.x)));
+    const y = Math.max(0, Math.min(100, Number(value?.y)));
+    const zoom = Math.max(1, Math.min(3, Number(value?.zoom) || 1));
+    return {
+      x: Number.isFinite(x) ? x : 50,
+      y: Number.isFinite(y) ? y : 50,
+      zoom: Math.round(zoom * 100),
+      rotate: Math.max(-180, Math.min(180, Number(value?.rotate) || 0)),
+    };
   }
 
   function parseCropPosition(rawCrop) {
+    if (rawCrop && typeof rawCrop === 'object' && !Array.isArray(rawCrop)) {
+      return normalizeCropValue(rawCrop);
+    }
+
     if (typeof rawCrop !== 'string' || !rawCrop.trim()) return null;
     const match = rawCrop.trim().match(/^(\d{1,3}),(\d{1,3})(?:,(\d{1,3}))?(?:,(-?\d{1,3}))?$/);
     if (!match) return null;
@@ -279,6 +295,59 @@
     });
   }
 
+  function normalizeListItem(item) {
+    if (typeof item === 'string') return item.trim();
+    if (item && typeof item === 'object') {
+      return String(item.label || item.value || item.item || item.name || '').trim();
+    }
+    return '';
+  }
+
+  function getStructuredListItems(allData, key) {
+    const value = getByPath(allData, key);
+    if (Array.isArray(value)) {
+      return value.map(normalizeListItem).filter(Boolean);
+    }
+
+    if (key === 'spec_deliverables') {
+      const items = [];
+      for (let index = 1; index <= 8; index += 1) {
+        const item = allData[`spec_deliverable_${index}`];
+        if (typeof item === 'string' && item.trim()) items.push(item.trim());
+      }
+      if (items.length) return items;
+      const legacyValue = typeof allData.spec_deliverables_value === 'string' ? allData.spec_deliverables_value : '';
+      return legacyValue.split(',').map(item => item.trim()).filter(Boolean);
+    }
+
+    if (key === 'spec_tools') {
+      const legacyValue = typeof allData.spec_tools_value === 'string' ? allData.spec_tools_value : '';
+      return legacyValue.split(',').map(item => item.trim()).filter(Boolean);
+    }
+
+    return [];
+  }
+
+  function applyStructuredLists(allData) {
+    document.querySelectorAll('[data-cms-list]').forEach(node => {
+      const key = node.getAttribute('data-cms-list');
+      const items = getStructuredListItems(allData, key);
+      if (!items.length) return;
+
+      if (node.tagName === 'UL' || node.tagName === 'OL') {
+        node.innerHTML = '';
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          node.appendChild(li);
+        });
+        return;
+      }
+
+      node.textContent = items.join(', ');
+    });
+  }
+
   function setAnchorLabel(anchor, label) {
     if (typeof label !== 'string') return;
 
@@ -448,6 +517,7 @@
       allData[`${prefix}_media_type`] = typeof project.media_type === 'string' ? project.media_type : '';
       allData[`${prefix}_media_url`] = typeof project.media_url === 'string' ? project.media_url : '';
       allData[`${prefix}_media_upload`] = typeof project.media_upload === 'string' ? project.media_upload : '';
+      allData[`${prefix}_image_crop_position`] = project.image_crop_position || '';
 
       // Apply tags
       if (Array.isArray(project.tags)) {
@@ -472,6 +542,7 @@
       const mediaType = getByPath(allData, `${containerName}_media_type`) || 'image';
       const mediaUrl = getByPath(allData, `${containerName}_media_url`) || '';
       const mediaUpload = getByPath(allData, `${containerName}_media_upload`) || '';
+      const mediaCrop = getByPath(allData, `${containerName}_image_crop_position`) || getByPath(allData, `${containerName}_media_crop_position`) || '';
 
       const imageNode = container.querySelector('[data-cms-media-image]') || container.querySelector('img');
       const videoNode = container.querySelector('[data-cms-media-video]') || container.querySelector('[data-cms-video-src]') || container.querySelector('video');
@@ -518,7 +589,7 @@
           } else {
             imageNode.style.backgroundImage = `url('${imageUrl}')`;
           }
-          applyImageCrop(imageNode, sourceUrl, item.image_crop_position || item.media_url_crop_position);
+          applyImageCrop(imageNode, sourceUrl, mediaCrop);
           imageNode.classList.remove('hidden');
           videoNode?.classList.add('hidden');
           embedNode?.classList.add('hidden');
@@ -613,6 +684,7 @@
       applyHtmlData(allData);
       applyBackgroundImage(allData);
       applyHref(allData);
+      applyStructuredLists(allData);
       applyMediaContainers(allData);
       bindMediaPlayButtons();
       applySelectorOverrides(allData);

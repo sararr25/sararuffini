@@ -240,10 +240,27 @@
       return acc[key];
     }, allData);
 
-    return typeof value === 'string' ? value : '';
+    return value || '';
+  }
+
+  function normalizeCropValue(value) {
+    var x = Math.max(0, Math.min(100, Number(value && value.x)));
+    var y = Math.max(0, Math.min(100, Number(value && value.y)));
+    var zoom = Math.max(1, Math.min(3, Number(value && value.zoom) || 1));
+
+    return {
+      x: Number.isFinite(x) ? x : 50,
+      y: Number.isFinite(y) ? y : 50,
+      zoom: Math.round(zoom * 100),
+      rotate: Math.max(-180, Math.min(180, Number(value && value.rotate) || 0))
+    };
   }
 
   function parseCropPosition(rawCrop) {
+    if (rawCrop && typeof rawCrop === 'object' && !Array.isArray(rawCrop)) {
+      return normalizeCropValue(rawCrop);
+    }
+
     if (typeof rawCrop !== 'string' || !rawCrop.trim()) {
       return null;
     }
@@ -1098,6 +1115,156 @@
     });
   }
 
+  function getMoreAboutCards(allData) {
+    if (Array.isArray(allData.more_about_cards) && allData.more_about_cards.length) {
+      return allData.more_about_cards;
+    }
+
+    return [
+      {
+        icon: 'flight_takeoff',
+        color_style: 'primary',
+        title: allData.more_card_1_title,
+        text: allData.more_card_1_text
+      },
+      {
+        icon: 'photo_camera',
+        color_style: 'pink',
+        title: allData.more_card_2_title,
+        text: allData.more_card_2_text
+      },
+      {
+        icon: 'headphones',
+        color_style: 'yellow',
+        title: allData.more_card_3_title,
+        text: allData.more_card_3_text
+      }
+    ].filter(function (item) {
+      return [item.title, item.text].some(function (value) {
+        return typeof value === 'string' && value.trim();
+      });
+    });
+  }
+
+  function getMoreAboutIconClasses(style) {
+    var styles = {
+      primary: { wrap: 'bg-primary', icon: 'text-black' },
+      pink: { wrap: 'bg-accent-pink', icon: 'text-white' },
+      yellow: { wrap: 'bg-accent-yellow', icon: 'text-black' },
+      black: { wrap: 'bg-black', icon: 'text-white' }
+    };
+    return styles[style] || styles.primary;
+  }
+
+  function renderMoreAboutCards(allData) {
+    var cards = getMoreAboutCards(allData);
+    if (!cards.length) return;
+
+    document.querySelectorAll('[data-cms-more-about-cards]').forEach(function (container) {
+      container.innerHTML = '';
+      cards.forEach(function (item) {
+        var colors = getMoreAboutIconClasses(item.color_style);
+        var card = document.createElement('div');
+        card.className = 'bg-white dark:bg-zinc-800 border-4 border-black dark:border-white p-8 rounded-2xl shadow-retro hover:-translate-y-2 transition-transform';
+
+        var iconWrap = document.createElement('div');
+        iconWrap.className = 'w-16 h-16 ' + colors.wrap + ' rounded-full flex items-center justify-center mb-6 border-4 border-black';
+        iconWrap.innerHTML = '<span class="material-symbols-outlined ' + colors.icon + ' text-3xl">' + escapeHtml(item.icon || 'star') + '</span>';
+        card.appendChild(iconWrap);
+
+        var title = document.createElement('h3');
+        title.className = 'text-2xl font-black uppercase mb-4';
+        title.textContent = item.title || '';
+        card.appendChild(title);
+
+        var text = document.createElement('p');
+        text.className = 'text-gray-600 dark:text-gray-300 font-medium leading-relaxed';
+        text.textContent = item.text || '';
+        card.appendChild(text);
+
+        container.appendChild(card);
+      });
+    });
+  }
+
+  function getFeaturedProjectFallback(allData) {
+    var keys = [
+      ['featured_polaroid', 'urban'],
+      ['featured_torn', 'pixel'],
+      ['featured_window', 'app'],
+      ['featured_round', 'pasta'],
+      ['featured_card', 'phone'],
+      ['featured_tv', 'cocktail'],
+      ['featured_dna', 'dna'],
+      ['featured_grill', 'bbq']
+    ];
+
+    return keys.map(function (entry) {
+      var item = allData[entry[0]] || {};
+      return Object.assign({ layout: entry[1] }, item);
+    }).filter(function (item) {
+      return item && (item.image || item.label || item.caption);
+    });
+  }
+
+  function getFeaturedLayout(layout) {
+    var layouts = {
+      urban: ['stitch-sticker--urban stitch-drift-1', 'stitch-frame--rounded', 'stitch-media--large', 'stitch-label--yellow'],
+      pixel: ['stitch-sticker--pixel stitch-drift-2', 'stitch-frame--rounded', 'stitch-media--wide stitch-media--contain', 'stitch-label--teal'],
+      app: ['stitch-sticker--app stitch-drift-2', 'stitch-frame--soft', 'stitch-media--app', 'stitch-label--pink'],
+      pasta: ['stitch-sticker--pasta stitch-drift-3', 'stitch-frame--circle', 'stitch-media--circle', 'stitch-label--orange'],
+      phone: ['stitch-sticker--phone stitch-drift-1', 'stitch-frame--soft', 'stitch-media--phone', 'stitch-label--green'],
+      cocktail: ['stitch-sticker--cocktail stitch-drift-2', 'stitch-frame--pill', 'stitch-media--cocktail', 'stitch-label--blue'],
+      dna: ['stitch-sticker--dna stitch-drift-3', 'stitch-frame--soft', 'stitch-media--short', 'stitch-label--yellow'],
+      bbq: ['stitch-sticker--bbq stitch-drift-1', 'stitch-frame--square', 'stitch-media--short', 'stitch-label--black']
+    };
+    return layouts[layout] || layouts.urban;
+  }
+
+  function renderFeaturedProjects(allData) {
+    var items = Array.isArray(allData.featured_projects) && allData.featured_projects.length
+      ? allData.featured_projects
+      : getFeaturedProjectFallback(allData);
+
+    if (!items.length) return;
+
+    document.querySelectorAll('[data-cms-featured-projects]').forEach(function (container) {
+      container.querySelectorAll('.stitch-sticker').forEach(function (node) {
+        node.remove();
+      });
+
+      items.forEach(function (item) {
+        var layout = getFeaturedLayout(item.layout);
+        var label = item.label || item.caption || '';
+        var anchor = document.createElement('a');
+        anchor.className = 'stitch-sticker ' + layout[0];
+        anchor.href = item.href || '#';
+        anchor.setAttribute('aria-label', 'Project: ' + label);
+
+        var frame = document.createElement('span');
+        frame.className = 'stitch-sticker-card stitch-frame ' + layout[1];
+
+        var media = document.createElement('span');
+        media.className = 'stitch-media ' + layout[2];
+
+        var image = document.createElement('img');
+        image.src = stripImageCrop(item.image || '');
+        image.alt = item.alt || label;
+        applyImageCrop(image, item.image || '', item.image_crop_position);
+        media.appendChild(image);
+        frame.appendChild(media);
+        anchor.appendChild(frame);
+
+        var labelNode = document.createElement('span');
+        labelNode.className = 'stitch-label ' + layout[3];
+        labelNode.textContent = label;
+        anchor.appendChild(labelNode);
+
+        container.appendChild(anchor);
+      });
+    });
+  }
+
   function applyContent(data) {
     // Merge with global data
     var allData = Object.assign({}, globalData, data);
@@ -1217,6 +1384,8 @@
     // Render About page sections that are CMS-managed lists.
     renderHeroIntroSegments(allData);
     renderWorkExperiences(allData);
+    renderMoreAboutCards(allData);
+    renderFeaturedProjects(allData);
 
     // Last pass: optional direct selector overrides from CMS.
     applySelectorOverrides(allData);

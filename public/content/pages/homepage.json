@@ -75,5 +75,74 @@
     "alt": "Vintage camcorder sticker",
     "caption": "Behind the camera",
     "href_page": "/pages/video-v2/index.html"
-  }
+  },
+  "featured_projects": [
+    {
+      "layout": "urban",
+      "href": "/pages/video-v2/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-urban-chronicles.png",
+      "alt": "Vintage camcorder sticker",
+      "caption": "Behind the camera",
+      "href_page": "/pages/video-v2/index.html",
+      "label": "Behind the camera"
+    },
+    {
+      "layout": "pixel",
+      "href": "/pages/webpage-portfolio/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-pixel-perfect.png",
+      "alt": "Website design and develop",
+      "label": "Website design",
+      "href_page": "/pages/webpage-portfolio/index.html"
+    },
+    {
+      "layout": "app",
+      "href": "/pages/app-v2/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-app-mobile.png",
+      "alt": "",
+      "label": "Travel app",
+      "window_title": "PROJECT.EXE",
+      "window_button": "Open",
+      "href_page": "/pages/app-v2/index.html"
+    },
+    {
+      "layout": "pasta",
+      "href": "",
+      "image": "/assets/stitch-homepage-featured/sticker-nonnas-kitchen.png",
+      "alt": "",
+      "label": "SMMx@potuschef",
+      "href_page": "/social-media-strategy"
+    },
+    {
+      "layout": "phone",
+      "href": "",
+      "image": "/assets/stitch-homepage-featured/sticker-call-me.png",
+      "alt": "Social media",
+      "label": "Reels!",
+      "href_page": "/social-media"
+    },
+    {
+      "layout": "cocktail",
+      "href": "/pages/shooting-cocktails/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-neon-nights.png",
+      "alt": "Cocktail sticker",
+      "label": "Enjoy",
+      "href_page": "/pages/shooting-cocktails/index.html"
+    },
+    {
+      "layout": "dna",
+      "href": "/pages/coming-soon/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-biotech.png",
+      "alt": "VideoxScience",
+      "label": "Søberg Institute",
+      "href_page": "/pages/coming-soon/index.html"
+    },
+    {
+      "layout": "bbq",
+      "href": "/pages/weber-grillinspiration/index.html",
+      "image": "/assets/stitch-homepage-featured/sticker-summer-heat.png",
+      "alt": "Barbecue sticker",
+      "label": "Weber collection",
+      "href_page": "/pages/weber-grillinspiration/index.html"
+    }
+  ]
 }

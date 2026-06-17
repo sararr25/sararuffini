@@ -141,5 +141,25 @@
   ],
   "drink_image_alt": "Cocktail",
   "more_card_3_text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app.",
-  "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them"
+  "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them",
+  "more_about_cards": [
+    {
+      "icon": "flight_takeoff",
+      "color_style": "primary",
+      "title": "Travel Junkie",
+      "text": "I’m endlessly curious about the world. New cities, new food, new languages, new tiny details most people overlook. Planning a trip for me is mapping experiences, researching neighborhoods, finding that local spot you won’t see on the first page of Google (or instagram). Traveling feeds my creativity and keeps my brain wide open and my stomach full of delicious food :P"
+    },
+    {
+      "icon": "photo_camera",
+      "color_style": "pink",
+      "title": "Pole Dance addicted",
+      "text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them"
+    },
+    {
+      "icon": "headphones",
+      "color_style": "yellow",
+      "title": "Tech Nerdy",
+      "text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app."
+    }
+  ]
 }
