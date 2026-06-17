@@ -1,6 +1,6 @@
 # sararuffini
 
-Portfolio site with Decap CMS and automation scripts for SEO metadata, media batching, and image optimization.
+Portfolio site with Sveltia CMS and automation scripts for SEO metadata, media batching, and image optimization.
 
 ## Setup
 

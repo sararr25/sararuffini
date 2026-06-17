@@ -167,7 +167,7 @@ collections:
       required: false
     - label: Default OG Image Crop Position
       name: default_og_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -224,7 +224,7 @@ collections:
         required: false
       - label: Hero Image Crop Position
         name: hero_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -408,7 +408,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -448,7 +448,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -540,7 +540,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -571,7 +571,7 @@ collections:
         required: false
       - label: SEO Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -611,7 +611,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -723,7 +723,7 @@ collections:
       required: false
     - label: Hero Main Image Crop Position
       name: hero_main_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -737,7 +737,7 @@ collections:
       required: false
     - label: Hero Polaroid Image Crop Position
       name: hero_polaroid_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -755,7 +755,7 @@ collections:
       required: false
     - label: Hero Accent Image Crop Position
       name: hero_accent_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -814,7 +814,7 @@ collections:
         required: false
       - label: Item Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -841,7 +841,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -881,7 +881,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -974,7 +974,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_left_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -992,7 +992,7 @@ collections:
       required: false
     - label: SEO Image Crop Position
       name: seo_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1032,7 +1032,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -1132,7 +1132,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1178,7 +1178,7 @@ collections:
       required: false
     - label: Step 1 Image Crop Position
       name: journey_step_1_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1200,7 +1200,7 @@ collections:
       required: false
     - label: Step 2 Image Crop Position
       name: journey_step_2_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1222,7 +1222,7 @@ collections:
       required: false
     - label: Step 3 Image Crop Position
       name: journey_step_3_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1257,7 +1257,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -1310,7 +1310,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1356,7 +1356,7 @@ collections:
       required: false
     - label: Step 1 Image Crop Position
       name: journey_step_1_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1378,7 +1378,7 @@ collections:
       required: false
     - label: Step 2 Image Crop Position
       name: journey_step_2_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1400,7 +1400,7 @@ collections:
       required: false
     - label: Step 3 Image Crop Position
       name: journey_step_3_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1435,7 +1435,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -1490,7 +1490,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -1767,7 +1767,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -1807,7 +1807,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -1863,7 +1863,7 @@ collections:
         required: false
       - label: Hero Image Crop Position
         name: hero_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2082,7 +2082,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2128,7 +2128,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2178,7 +2178,7 @@ collections:
       required: false
     - label: Shot 1 Image Crop Position
       name: shot_1_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2196,7 +2196,7 @@ collections:
       required: false
     - label: Shot 2 Image Crop Position
       name: shot_2_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2214,7 +2214,7 @@ collections:
       required: false
     - label: Shot 3 Image Crop Position
       name: shot_3_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2232,7 +2232,7 @@ collections:
       required: false
     - label: Shot 4 Image Crop Position
       name: shot_4_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2250,7 +2250,7 @@ collections:
       required: false
     - label: Shot 5 Image Crop Position
       name: shot_5_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2268,7 +2268,7 @@ collections:
       required: false
     - label: Shot 6 Image Crop Position
       name: shot_6_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2335,7 +2335,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2397,7 +2397,7 @@ collections:
       required: false
     - label: Hero Main Image Crop Position
       name: hero_main_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2411,7 +2411,7 @@ collections:
       required: false
     - label: Hero Polaroid Image Crop Position
       name: hero_polaroid_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2429,7 +2429,7 @@ collections:
       required: false
     - label: Hero Accent Image Crop Position
       name: hero_accent_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -2488,7 +2488,7 @@ collections:
         required: false
       - label: Item Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2515,7 +2515,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2613,7 +2613,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2694,7 +2694,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2753,7 +2753,7 @@ collections:
         required: false
       - label: Hero Image Crop Position
         name: hero_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2948,7 +2948,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -2994,7 +2994,7 @@ collections:
       required: false
     - label: Left Phone Image (background) Crop Position
       name: hero_image_left_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -3004,7 +3004,7 @@ collections:
       required: false
     - label: Right Phone Image Crop Position
       name: hero_image_right_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -3014,7 +3014,7 @@ collections:
       required: false
     - label: Center Phone Image Crop Position
       name: hero_image_center_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -3062,7 +3062,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3142,7 +3142,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3243,7 +3243,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3323,7 +3323,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3362,7 +3362,7 @@ collections:
       required: false
     - label: Polaroid Image Crop Position
       name: hero_image_polaroid_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -3372,7 +3372,7 @@ collections:
       required: false
     - label: Detail Image Crop Position
       name: hero_image_detail_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -3382,7 +3382,7 @@ collections:
       required: false
     - label: Wide Image Crop Position
       name: hero_image_wide_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -3426,7 +3426,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3506,7 +3506,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3645,7 +3645,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3726,7 +3726,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -3819,7 +3819,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4129,7 +4129,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4200,7 +4200,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4232,7 +4232,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4264,7 +4264,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4296,7 +4296,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4328,7 +4328,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4368,7 +4368,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4400,7 +4400,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4432,7 +4432,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4497,7 +4497,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4577,7 +4577,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4620,7 +4620,7 @@ collections:
       required: false
     - label: Portrait Image Crop Position
       name: portrait_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -4634,7 +4634,7 @@ collections:
       required: false
     - label: Console Sticker Image Crop Position
       name: decor_console_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -4648,7 +4648,7 @@ collections:
       required: false
     - label: Camera Sticker Image Crop Position
       name: decor_camera_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -4679,7 +4679,7 @@ collections:
       required: false
     - label: Drink Image Crop Position
       name: drink_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -4812,7 +4812,7 @@ collections:
         required: false
       - label: Image Upload Crop Position
         name: media_upload_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4892,7 +4892,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4950,7 +4950,7 @@ collections:
         required: false
       - label: Image Crop Position
         name: image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -4987,7 +4987,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -5027,7 +5027,7 @@ collections:
         required: false
       - label: Preview Image Crop Position
         name: seo_image_crop_position
-        widget: crop_position
+        widget: string
         required: false
         default: 50,50
         hint: Choose which part of the image stays visible inside cropped frames.
@@ -5106,7 +5106,7 @@ collections:
       required: false
     - label: Hero Image Crop Position
       name: hero_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -5146,7 +5146,7 @@ collections:
       required: false
     - label: Image Upload Crop Position
       name: media_upload_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
@@ -5228,7 +5228,7 @@ collections:
 
     - label: Preview Image Crop Position
       name: seo_image_crop_position
-      widget: crop_position
+      widget: string
       required: false
       default: 50,50
       hint: Choose which part of the image stays visible inside cropped frames.
