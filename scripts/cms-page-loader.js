@@ -1022,10 +1022,10 @@
 
     var card = document.createElement('article');
     card.className = [
-      'bg-white dark:bg-zinc-800 border-4 border-black dark:border-gray-200 p-6 shadow-retro rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-retro-lg relative group',
+      'self-start bg-white dark:bg-zinc-800 border-4 border-black dark:border-gray-200 p-6 shadow-retro rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-retro-lg relative group',
       index % 2 === 0 ? 'lg:col-start-1 lg:pr-8' : 'lg:col-start-2 lg:pl-8',
-      index > 1 ? 'mt-4' : '',
-      index % 2 === 1 ? 'lg:mt-16' : ''
+      index > 0 ? 'mt-8' : '',
+      index % 2 === 1 ? 'lg:mt-28' : ''
     ].filter(Boolean).join(' ');
 
     if (years) {
@@ -1074,7 +1074,7 @@
 
     document.querySelectorAll('[data-cms-work-experiences]').forEach(function (container) {
       container.innerHTML = '';
-      container.className = 'grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-x-12 relative';
+      container.className = 'grid grid-cols-1 lg:grid-cols-2 items-start gap-x-12 gap-y-20 lg:gap-y-28 relative';
 
       var line = document.createElement('div');
       line.className = 'hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-black dark:bg-white transform -translate-x-1/2 border-l-2 border-r-2 border-black border-dashed';
