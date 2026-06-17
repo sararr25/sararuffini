@@ -123,7 +123,7 @@
       "years": "Present",
       "role": "Video Editor & Social Media Manager",
       "company": "Freelance",
-      "description": "Managing social media strategy and content production for a\nCopenhagen-based chef, with the goal of growing account\nvisibility, attracting sponsorships, and promoting pop-up events\nand private dinners. Handling shooting, editing, content ideation,\nand social strategy.",
+      "description": "Managing the full creative and digital presence of a Copenhagen-based chef, covering everything from content strategy and production to day-to-day social media management. Responsible for shooting, editing, and publishing across platforms, with a strong focus on growing account visibility, landing brand sponsorships, and building hype around pop-up events and exclusive private dinners. Beyond content, I also handle the project's web presence end-to-end, including frontend development, backend setup, and interactive animations, built with modern AI-assisted development workflows. This collaboration sits at the intersection of storytelling, brand building, and tech, which is exactly where I like to work.",
       "badge_style": "yellow"
     },
     {
@@ -151,26 +151,6 @@
   "download_cv_text": "Download CV",
   "download_cv_href": "/assets/media/Sara Ruffini_CV.pdf",
   "more_about_heading": "More About Me",
-  "more_card_1_title": "Travel Junkie",
-  "more_card_1_text": "I’m endlessly curious about the world. New cities, new food, new languages, new tiny details most people overlook. Planning a trip for me is mapping experiences, researching neighborhoods, finding that local spot you won’t see on the first page of Google (or instagram). Traveling feeds my creativity and keeps my brain wide open and my stomach full of delicious food :P",
-  "more_card_2_title": "Pole Dance addicted",
-  "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them",
-  "more_card_3_title": "Tech Nerdy",
-  "more_card_3_text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app.",
-  "media_blocks": [],
-  "download_cv_href_page": "",
-  "timeline_1_years": "2025-2026",
-  "timeline_1_role": "Video Editor - Content Creator",
-  "timeline_1_company": "Søberg Institute",
-  "timeline_1_description": "Produced and shaped video content for the institute’s learning platform and digital presence, overseeing the full creative process from filming to post-production. Responsible for shooting, editing, sound design, motion graphics, and delivery.\n\nLed the production and post-production workflow of 12 video podcast episodes, contributing to the core creative and editorial development of the series. Final publication and finishing were completed after my time at the institute.",
-  "timeline_2_years": "2023-2024",
-  "timeline_2_role": "Video editor - content creator",
-  "timeline_2_company": "Multiscription",
-  "timeline_2_description": "Managed social media content production, overseeing video creation, motion graphics, and explainer formats across platforms.\n\nBuilt and executed a niche-focused content strategy, positioning unconventional gaming content effectively on Instagram and TikTok. Created engaging social videos blending motion graphics and explainer storytelling.",
-  "timeline_3_years": "2022",
-  "timeline_3_role": "Video Editor",
-  "timeline_3_company": "Hide the Zebra",
-  "timeline_3_description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
   "more_about_cards": [
     {
       "icon": "flight_takeoff",
@@ -190,5 +170,25 @@
       "title": "Tech Nerdy",
       "text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app."
     }
-  ]
+  ],
+  "more_card_1_title": "Travel Junkie",
+  "more_card_1_text": "I’m endlessly curious about the world. New cities, new food, new languages, new tiny details most people overlook. Planning a trip for me is mapping experiences, researching neighborhoods, finding that local spot you won’t see on the first page of Google (or instagram). Traveling feeds my creativity and keeps my brain wide open and my stomach full of delicious food :P",
+  "more_card_2_title": "Pole Dance addicted",
+  "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them",
+  "more_card_3_title": "Tech Nerdy",
+  "more_card_3_text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app.",
+  "media_blocks": [],
+  "download_cv_href_page": "",
+  "timeline_1_years": "2025-2026",
+  "timeline_1_role": "Video Editor - Content Creator",
+  "timeline_1_company": "Søberg Institute",
+  "timeline_1_description": "Produced and shaped video content for the institute’s learning platform and digital presence, overseeing the full creative process from filming to post-production. Responsible for shooting, editing, sound design, motion graphics, and delivery.\n\nLed the production and post-production workflow of 12 video podcast episodes, contributing to the core creative and editorial development of the series. Final publication and finishing were completed after my time at the institute.",
+  "timeline_2_years": "2023-2024",
+  "timeline_2_role": "Video editor - content creator",
+  "timeline_2_company": "Multiscription",
+  "timeline_2_description": "Managed social media content production, overseeing video creation, motion graphics, and explainer formats across platforms.\n\nBuilt and executed a niche-focused content strategy, positioning unconventional gaming content effectively on Instagram and TikTok. Created engaging social videos blending motion graphics and explainer storytelling.",
+  "timeline_3_years": "2022",
+  "timeline_3_role": "Video Editor",
+  "timeline_3_company": "Hide the Zebra",
+  "timeline_3_description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects."
 }
