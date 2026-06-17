@@ -90,7 +90,7 @@
   "portrait_image": "/assets/media/sara-pic.jpg",
   "portrait_image_crop_position": {
     "x": 50,
-    "y": 50,
+    "y": 52,
     "zoom": 1
   },
   "portrait_alt": "Portrait of Sara Ruffini",
@@ -121,30 +121,30 @@
   "work_experiences": [
     {
       "years": "Present",
-      "role": "Video Editor & Social Media Manager",
+      "role": "Video Editor, SMM & Web Developer",
       "company": "Freelance",
-      "description": "Managing the full creative and digital presence of a Copenhagen-based chef, covering everything from content strategy and production to day-to-day social media management. Responsible for shooting, editing, and publishing across platforms, with a strong focus on growing account visibility, landing brand sponsorships, and building hype around pop-up events and exclusive private dinners. Beyond content, I also handle the project's web presence end-to-end, including frontend development, backend setup, and interactive animations, built with modern AI-assisted development workflows. This collaboration sits at the intersection of storytelling, brand building, and tech, which is exactly where I like to work.",
+      "description": "Managing the full creative and digital presence of a Copenhagen-based chef, from content strategy to production. Responsible for shooting, editing, and social media management across platforms, with a focus on growing account visibility, attracting brand sponsorships, and promoting pop-up events and private dinners. Alongside content work, I also design and build websites for clients, handling frontend, backend, and animations end-to-end using AI-assisted development workflows.",
       "badge_style": "yellow"
     },
     {
       "years": "2025-2026",
       "role": "Video Editor - Content Creator",
       "company": "Søberg Institute",
-      "description": "Produced and shaped video content for the institute’s learning platform and digital presence, overseeing the full creative process from filming to post-production. Responsible for shooting, editing, sound design, motion graphics, and delivery.\n\nLed the production and post-production workflow of 12 video podcast episodes, contributing to the core creative and editorial development of the series. Final publication and finishing were completed after my time at the institute.",
+      "description": "Owned the full video production pipeline for the institute's digital learning platform, from concept to delivery. Handled filming, editing, sound design, motion graphics, and final output, making sure every piece felt polished and on-brand. The biggest project was a 12-episode video podcast series, where I led production and post-production and had a real hand in shaping the editorial direction and creative identity of the show.",
       "badge_style": "black"
     },
     {
       "years": "2023-2024",
       "role": "Video editor - content creator",
       "company": "Multiscription",
-      "description": "Managed social media content production, overseeing video creation, motion graphics, and explainer formats across platforms.\n\nBuilt and executed a niche-focused content strategy, positioning unconventional gaming content effectively on Instagram and TikTok. Created engaging social videos blending motion graphics and explainer storytelling.",
+      "description": "Managed the full content production workflow across Instagram and TikTok, from ideation to final cut. Built and executed a niche-focused content strategy around unconventional gaming content, finding an angle that worked on short-form platforms where standing out is genuinely hard. Produced social videos blending motion graphics and explainer storytelling, independently managing both the creative and the strategic side.",
       "badge_style": "cyan"
     },
     {
       "years": "2022",
       "role": "Video Editor",
       "company": "Hide the Zebra",
-      "description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
+      "description": "Edited branded video content for Weber during a six-month internship, using DaVinci Resolve, Premiere Pro, and After Effects. The core challenge was turning recipe content into something that felt like a story rather than a tutorial, thinking about pacing, mood, and desire rather than just steps. Also contributed to motion graphics and color grading across multiple campaigns, which gave me a solid foundation in high-quality branded production.",
       "badge_style": "pink"
     }
   ],
