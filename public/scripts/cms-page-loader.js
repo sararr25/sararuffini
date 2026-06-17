@@ -1109,7 +1109,7 @@
       });
 
       var download = document.createElement('div');
-      download.className = items.length % 2 === 0 ? 'flex justify-center items-center py-8 lg:col-span-2' : 'flex justify-center items-center py-8';
+      download.className = items.length % 2 === 0 ? 'work-timeline-download flex justify-center items-center lg:col-span-2' : 'work-timeline-download flex justify-center items-center';
       var downloadHref = typeof allData.download_cv_href === 'string' && allData.download_cv_href.trim() ? allData.download_cv_href.trim() : '../contact/index.html';
       var downloadText = typeof allData.download_cv_text === 'string' && allData.download_cv_text.trim() ? allData.download_cv_text.trim() : 'Download CV';
       download.innerHTML = '<a class="group relative inline-flex items-center justify-center px-8 py-4 font-black text-black transition-all duration-200 bg-accent-yellow border-4 border-black rounded-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px]" href="' + escapeHtml(downloadHref) + '" download><span class="mr-2 text-lg uppercase tracking-wider">' + escapeHtml(downloadText) + '</span><span class="material-symbols-outlined group-hover:animate-bounce">download</span></a>';

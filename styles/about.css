@@ -28,6 +28,41 @@
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
+        .about-hero-script {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 0.12em;
+            row-gap: 0.05em;
+            line-height: 0.9;
+        }
+
+        .about-hero-script-word {
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-hero-script-word--emphasis {
+            padding-bottom: 0.22em;
+        }
+
+        .about-hero-zigzag {
+            position: absolute;
+            left: -0.05em;
+            bottom: -0.06em;
+            width: 110%;
+            height: 0.24em;
+            pointer-events: none;
+        }
+
+        @media (min-width: 1024px) {
+            .about-hero-script {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                column-gap: 0.08em;
+            }
+        }
+
         .work-timeline {
             gap: 3rem 0;
         }
@@ -36,10 +71,15 @@
             max-width: 100%;
         }
 
+        .work-timeline-download {
+            padding-top: 0.75rem;
+            padding-bottom: 1.5rem;
+        }
+
         @media (min-width: 1024px) {
             .work-timeline {
                 column-gap: 7rem;
-                row-gap: 2.5rem;
+                row-gap: 1.25rem;
             }
 
             .work-timeline-card {
@@ -61,23 +101,29 @@
             }
 
             .work-timeline-stagger-2 {
-                margin-top: 6rem;
+                margin-top: 3.5rem;
             }
 
             .work-timeline-stagger-3 {
-                margin-top: 2.5rem;
+                margin-top: 1.25rem;
             }
 
             .work-timeline-stagger-4 {
-                margin-top: 9rem;
+                margin-top: 4.75rem;
             }
 
             .work-timeline-stagger-5 {
-                margin-top: 4rem;
+                margin-top: 2rem;
             }
 
             .work-timeline-stagger-6 {
-                margin-top: 11rem;
+                margin-top: 5.5rem;
+            }
+
+            .work-timeline-download {
+                padding-top: 0;
+                padding-bottom: 1rem;
+                margin-top: -0.25rem;
             }
         }
 
