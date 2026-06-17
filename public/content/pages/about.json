@@ -5,88 +5,6 @@
   "hero_title_highlight": "visually.emotionally.",
   "intro_paragraph_1_html": "I've been editing since I was <span class=\"bg-accent-yellow text-black px-1 transform -skew-x-6 inline-block font-bold\">13</span>. What started as a teenager obsessing over <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold\">YouTube cuts</span> became a career built around one belief: <span class=\"relative inline-block font-black text-black dark:text-white mx-1\">great content</span> makes people feel something before they even realize it.",
   "intro_paragraph_2_html": "Based in <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 bg-black text-white dark:bg-white dark:text-black font-bold\">Copenhagen</span>, I work across <span class=\"inline-block mx-1 border-b-4 border-accent-pink bg-accent-pink/20 font-black\">video editing</span>, <span class=\"relative inline-block font-black text-black dark:text-white mx-1\">motion graphics</span>, and <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold\">social media</span>, with a brain that's equal parts creative and nerdy about tech.",
-  "hero_intro_segments": [
-    {
-      "text": "I've been editing since I was ",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "13",
-      "style": "yellow_highlight",
-      "new_paragraph": false
-    },
-    {
-      "text": ". What started as a teenager obsessing over ",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "YouTube cuts",
-      "style": "outline",
-      "new_paragraph": false
-    },
-    {
-      "text": " became a career built around one belief: ",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "great content",
-      "style": "cyan_underline",
-      "new_paragraph": false
-    },
-    {
-      "text": " makes people feel something before they even realize it.",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "Based in ",
-      "style": "plain",
-      "new_paragraph": true
-    },
-    {
-      "text": "Copenhagen",
-      "style": "dark_badge",
-      "new_paragraph": false
-    },
-    {
-      "text": ", I work across ",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "video editing",
-      "style": "pink_marker",
-      "new_paragraph": false
-    },
-    {
-      "text": ", ",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "motion graphics",
-      "style": "cyan_underline",
-      "new_paragraph": false
-    },
-    {
-      "text": ", and ",
-      "style": "plain",
-      "new_paragraph": false
-    },
-    {
-      "text": "social media",
-      "style": "outline",
-      "new_paragraph": false
-    },
-    {
-      "text": ", with a brain that's equal parts creative and nerdy about tech.",
-      "style": "plain",
-      "new_paragraph": false
-    }
-  ],
   "portrait_image": "/assets/media/sara-pic.jpg",
   "portrait_image_crop_position": "",
   "portrait_alt": "Portrait of Sara Ruffini",
@@ -114,6 +32,99 @@
   "timeline_3_role": "Video Editor",
   "timeline_3_company": "Hide the Zebra",
   "timeline_3_description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
+  "download_cv_text": "Download CV",
+  "download_cv_href": "/assets/media/Sara Ruffini_CV.pdf",
+  "more_about_heading": "More About Me",
+  "more_card_1_title": "Travel Junkie",
+  "more_card_1_text": "I’m endlessly curious about the world. New cities, new food, new languages, new tiny details most people overlook. Planning a trip for me is mapping experiences, researching neighborhoods, finding that local spot you won’t see on the first page of Google (or instagram). Traveling feeds my creativity and keeps my brain wide open and my stomach full of delicious food :P",
+  "more_card_2_title": "Pole Dance addicted",
+  "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them",
+  "more_card_3_title": "Tech Nerdy",
+  "more_card_3_text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app.",
+  "media_blocks": [],
+  "download_cv_href_page": "",
+  "hero_intro_segments": [
+    {
+      "text": "I've been editing since I was",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "13",
+      "style": "yellow_highlight",
+      "new_paragraph": false
+    },
+    {
+      "text": ". What started as a teenager obsessing over",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "YouTube cuts",
+      "style": "outline",
+      "new_paragraph": false
+    },
+    {
+      "text": "became a career built around one belief:",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "great content",
+      "style": "cyan_underline",
+      "new_paragraph": false
+    },
+    {
+      "text": "makes people feel something before they even realize it.",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "Based in",
+      "style": "plain",
+      "new_paragraph": true
+    },
+    {
+      "text": "Copenhagen",
+      "style": "dark_badge",
+      "new_paragraph": false
+    },
+    {
+      "text": ", I work across",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "video editing",
+      "style": "pink_marker",
+      "new_paragraph": false
+    },
+    {
+      "text": ",",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "motion graphics",
+      "style": "cyan_underline",
+      "new_paragraph": false
+    },
+    {
+      "text": ", and",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "social media",
+      "style": "outline",
+      "new_paragraph": false
+    },
+    {
+      "text": ", with a brain that's equal parts creative and nerdy about tech.",
+      "style": "plain",
+      "new_paragraph": false
+    }
+  ],
   "work_experiences": [
     {
       "years": "2025-2026",
@@ -136,15 +147,5 @@
       "description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
       "badge_style": "pink"
     }
-  ],
-  "download_cv_text": "Download CV",
-  "download_cv_href": "file:///Users/sararuffini/Downloads/Lavoro_CV/Sara%20Ruffini_CV.pdf",
-  "download_cv_href_page": "",
-  "more_about_heading": "More About Me",
-  "more_card_1_title": "Travel Junkie",
-  "more_card_1_text": "I’m endlessly curious about the world. New cities, new food, new languages, new tiny details most people overlook. Planning a trip for me is mapping experiences, researching neighborhoods, finding that local spot you won’t see on the first page of Google (or instagram). Traveling feeds my creativity and keeps my brain wide open and my stomach full of delicious food :P",
-  "more_card_2_title": "Pole Dance addicted",
-  "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them",
-  "more_card_3_title": "Tech Nerdy",
-  "more_card_3_text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app."
+  ]
 }
