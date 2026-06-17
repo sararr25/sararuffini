@@ -917,6 +917,187 @@
     }
   }
 
+  function getHeroIntroSegmentClass(style) {
+    var styles = {
+      plain: '',
+      yellow_highlight: 'bg-accent-yellow text-black px-1 transform -skew-x-6 inline-block font-bold mx-1',
+      cyan_underline: 'inline-block font-black mx-1 px-1',
+      outline: 'inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold',
+      dark_badge: 'inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 bg-black text-white dark:bg-white dark:text-black font-bold',
+      pink_marker: 'inline-block mx-1 border-b-4 border-accent-pink bg-accent-pink/20 font-black'
+    };
+
+    return styles[style] || styles.plain;
+  }
+
+  function buildHeroIntroSegment(segment) {
+    var text = segment && typeof segment.text === 'string' ? segment.text : '';
+    if (!text) {
+      return null;
+    }
+
+    var style = segment && typeof segment.style === 'string' ? segment.style : 'plain';
+    var className = getHeroIntroSegmentClass(style);
+    if (!className) {
+      return document.createTextNode(text);
+    }
+
+    var span = document.createElement('span');
+    span.className = className;
+    span.textContent = text;
+
+    if (style === 'cyan_underline') {
+      span.style.backgroundImage = 'linear-gradient(transparent 58%, rgba(57, 230, 208, 0.55) 58%)';
+      span.style.transform = 'rotate(-1deg)';
+    }
+
+    return span;
+  }
+
+  function renderHeroIntroSegments(allData) {
+    var segments = allData.hero_intro_segments;
+    if (!Array.isArray(segments) || !segments.length) {
+      return;
+    }
+
+    document.querySelectorAll('[data-cms-hero-intro]').forEach(function (container) {
+      container.innerHTML = '';
+
+      var paragraph = null;
+      segments.forEach(function (segment, index) {
+        var node = buildHeroIntroSegment(segment);
+        if (!node) {
+          return;
+        }
+
+        if (!paragraph || segment.new_paragraph) {
+          paragraph = document.createElement('p');
+          paragraph.className = index === segments.length - 1 ? 'mb-8' : 'mb-6';
+          container.appendChild(paragraph);
+        }
+
+        paragraph.appendChild(node);
+      });
+    });
+  }
+
+  function getLegacyWorkExperiences(allData) {
+    var items = [];
+    for (var i = 1; i <= 6; i += 1) {
+      var years = allData['timeline_' + i + '_years'];
+      var role = allData['timeline_' + i + '_role'];
+      var company = allData['timeline_' + i + '_company'];
+      var description = allData['timeline_' + i + '_description'];
+      if ([years, role, company, description].some(function (value) {
+        return typeof value === 'string' && value.trim();
+      })) {
+        items.push({
+          years: years || '',
+          role: role || '',
+          company: company || '',
+          description: description || ''
+        });
+      }
+    }
+    return items;
+  }
+
+  function getExperienceBadgeClass(index, badgeStyle) {
+    var variants = {
+      yellow: 'bg-accent-yellow text-black right-4 rotate-6 group-hover:rotate-12',
+      cyan: 'bg-primary text-black right-4 -rotate-3 group-hover:-rotate-6',
+      pink: 'bg-accent-pink text-white left-4 -rotate-3 group-hover:-rotate-6',
+      black: 'bg-black text-white dark:bg-white dark:text-black right-4 rotate-2 group-hover:rotate-6'
+    };
+    var fallback = ['yellow', 'cyan', 'pink', 'black'][index % 4];
+    return variants[badgeStyle] || variants[fallback];
+  }
+
+  function buildWorkExperienceCard(item, index) {
+    var years = item && typeof item.years === 'string' ? item.years : '';
+    var role = item && typeof item.role === 'string' ? item.role : '';
+    var company = item && typeof item.company === 'string' ? item.company : '';
+    var description = item && typeof item.description === 'string' ? item.description : '';
+    var badgeStyle = item && typeof item.badge_style === 'string' ? item.badge_style : '';
+
+    var card = document.createElement('article');
+    card.className = [
+      'bg-white dark:bg-zinc-800 border-4 border-black dark:border-gray-200 p-6 shadow-retro rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-retro-lg relative group',
+      index % 2 === 0 ? 'lg:col-start-1 lg:pr-8' : 'lg:col-start-2 lg:pl-8',
+      index > 1 ? 'mt-4' : '',
+      index % 2 === 1 ? 'lg:mt-16' : ''
+    ].filter(Boolean).join(' ');
+
+    if (years) {
+      var badge = document.createElement('div');
+      badge.className = 'absolute -top-4 font-bold px-3 py-1 border-2 border-black rounded-lg transform transition-transform shadow-sm ' + getExperienceBadgeClass(index, badgeStyle);
+      badge.textContent = years;
+      card.appendChild(badge);
+    }
+
+    if (role) {
+      var title = document.createElement('h3');
+      title.className = 'text-2xl font-black mb-1';
+      title.textContent = role;
+      card.appendChild(title);
+    }
+
+    if (company) {
+      var companyNode = document.createElement('p');
+      companyNode.className = 'font-handwriting text-xl text-primary mb-3';
+      companyNode.textContent = company;
+      card.appendChild(companyNode);
+    }
+
+    if (description) {
+      var descriptionNode = document.createElement('p');
+      descriptionNode.className = 'font-medium text-gray-600 dark:text-gray-300 leading-relaxed';
+      descriptionNode.innerHTML = description
+        .split(/\n{2,}/)
+        .map(function (paragraph) { return escapeHtml(paragraph.trim()); })
+        .filter(Boolean)
+        .join('<br><br>');
+      card.appendChild(descriptionNode);
+    }
+
+    return card;
+  }
+
+  function renderWorkExperiences(allData) {
+    var items = Array.isArray(allData.work_experiences) && allData.work_experiences.length
+      ? allData.work_experiences
+      : getLegacyWorkExperiences(allData);
+
+    if (!items.length) {
+      return;
+    }
+
+    document.querySelectorAll('[data-cms-work-experiences]').forEach(function (container) {
+      container.innerHTML = '';
+      container.className = 'grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-x-12 relative';
+
+      var line = document.createElement('div');
+      line.className = 'hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-black dark:bg-white transform -translate-x-1/2 border-l-2 border-r-2 border-black border-dashed';
+      container.appendChild(line);
+
+      var icon = document.createElement('div');
+      icon.className = 'hidden lg:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-24 h-24 bg-black text-white rounded-full items-center justify-center border-4 border-white shadow-xl animate-spin-slow';
+      icon.innerHTML = '<span class="material-symbols-outlined text-4xl">movie_edit</span>';
+      container.appendChild(icon);
+
+      items.forEach(function (item, index) {
+        container.appendChild(buildWorkExperienceCard(item, index));
+      });
+
+      var download = document.createElement('div');
+      download.className = items.length % 2 === 0 ? 'flex justify-center items-center py-8 lg:col-span-2' : 'flex justify-center items-center py-8';
+      var downloadHref = typeof allData.download_cv_href === 'string' && allData.download_cv_href.trim() ? allData.download_cv_href.trim() : '../contact/index.html';
+      var downloadText = typeof allData.download_cv_text === 'string' && allData.download_cv_text.trim() ? allData.download_cv_text.trim() : 'Download CV';
+      download.innerHTML = '<a class="group relative inline-flex items-center justify-center px-8 py-4 font-black text-black transition-all duration-200 bg-accent-yellow border-4 border-black rounded-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[4px] hover:translate-y-[4px]" href="' + escapeHtml(downloadHref) + '" download><span class="mr-2 text-lg uppercase tracking-wider">' + escapeHtml(downloadText) + '</span><span class="material-symbols-outlined group-hover:animate-bounce">download</span></a>';
+      container.appendChild(download);
+    });
+  }
+
   function applyContent(data) {
     // Merge with global data
     var allData = Object.assign({}, globalData, data);
@@ -1032,6 +1213,10 @@
 
     // Render CMS-managed galleries after simple fields are applied.
     renderProjectGalleries(allData);
+
+    // Render About page sections that are CMS-managed lists.
+    renderHeroIntroSegments(allData);
+    renderWorkExperiences(allData);
 
     // Last pass: optional direct selector overrides from CMS.
     applySelectorOverrides(allData);

@@ -31,9 +31,114 @@
   "drink_note": "Let's grab a drink?",
   "cta_href": "/pages/contact/index.html",
   "decor_camera_image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCE5qciSTkHFxpTdCrtQYD2sVPyiCRWemgVZzFxgb8xjmdXG8H_-CjF4I4IpiGdhqGgS-zNc1fWzPfWHYxHCvcUKtUDuVbVUm93n2lwW5ueWuSaTIZIzO3rOjup6S-c4L6X8XeaK2hO4Xr6Riz2WYrYsqPgWrE_eBYfxXm2-jkJfOQu5UBs7TE7r28kLc3pWRiCmf1wxWDR7mrv-yToCQ_JAC_74VMj2z3R8ss8N5PlRffAWYZdr4diR8BCcGr99-n69fQ7c4z1NwZo",
-  "intro_paragraph_2_html": "My style is a chaotic blend of <span class=\"text-primary font-black uppercase\">bold</span> pop-culture references, retro nostalgia, and razor-sharp timing. Whether it's a <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1\"><span class=\"material-symbols-outlined text-sm mr-1\">movie</span> documentary</span> or a <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 bg-black text-white dark:bg-white dark:text-black\"><span class=\"material-symbols-outlined text-sm mr-1\">flash_on</span> social ad</span>, I make sure your audience can't look away.",
+  "intro_paragraph_2_html": "Based in <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 bg-black text-white dark:bg-white dark:text-black font-bold\">Copenhagen</span>, I work across <span class=\"inline-block mx-1 border-b-4 border-accent-pink bg-accent-pink/20 font-black\">video editing</span>, <span class=\"relative inline-block font-black text-black dark:text-white mx-1\">motion graphics</span>, and <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold\">social media</span>, with a brain that's equal parts creative and nerdy about tech.",
   "cta_text": "Start a Project",
-  "intro_paragraph_1_html": "Hi, I'm <span class=\"bg-accent-yellow text-black px-1 transform -skew-x-6 inline-block font-bold\">Sara</span>. I'm a video editor who believes in the rhythm of the cut. I don't just assemble clips; I orchestrate emotions.",
+  "intro_paragraph_1_html": "I've been editing since I was <span class=\"bg-accent-yellow text-black px-1 transform -skew-x-6 inline-block font-bold\">13</span>. What started as a teenager obsessing over <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold\">YouTube cuts</span> became a career built around one belief: <span class=\"relative inline-block font-black text-black dark:text-white mx-1\">great content</span> makes people feel something before they even realize it.",
+  "hero_intro_segments": [
+    {
+      "text": "I've been editing since I was ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "13",
+      "style": "yellow_highlight",
+      "new_paragraph": false
+    },
+    {
+      "text": ". What started as a teenager obsessing over ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "YouTube cuts",
+      "style": "outline",
+      "new_paragraph": false
+    },
+    {
+      "text": " became a career built around one belief: ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "great content",
+      "style": "cyan_underline",
+      "new_paragraph": false
+    },
+    {
+      "text": " makes people feel something before they even realize it.",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "Based in ",
+      "style": "plain",
+      "new_paragraph": true
+    },
+    {
+      "text": "Copenhagen",
+      "style": "dark_badge",
+      "new_paragraph": false
+    },
+    {
+      "text": ", I work across ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "video editing",
+      "style": "pink_marker",
+      "new_paragraph": false
+    },
+    {
+      "text": ", ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "motion graphics",
+      "style": "cyan_underline",
+      "new_paragraph": false
+    },
+    {
+      "text": ", and ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "social media",
+      "style": "outline",
+      "new_paragraph": false
+    },
+    {
+      "text": ", with a brain that's equal parts creative and nerdy about tech.",
+      "style": "plain",
+      "new_paragraph": false
+    }
+  ],
+  "work_experiences": [
+    {
+      "years": "2025-2026",
+      "role": "Video Editor - Content Creator",
+      "company": "Søberg Institute",
+      "description": "Produced and shaped video content for the institute’s learning platform and digital presence, overseeing the full creative process from filming to post-production. Responsible for shooting, editing, sound design, motion graphics, and delivery.\n\nLed the production and post-production workflow of 12 video podcast episodes, contributing to the core creative and editorial development of the series. Final publication and finishing were completed after my time at the institute.",
+      "badge_style": "yellow"
+    },
+    {
+      "years": "2023-2024",
+      "role": "Video editor - content creator",
+      "company": "Multiscription",
+      "description": "Managed social media content production, overseeing video creation, motion graphics, and explainer formats across platforms.\n\nBuilt and executed a niche-focused content strategy, positioning unconventional gaming content effectively on Instagram and TikTok. Created engaging social videos blending motion graphics and explainer storytelling.",
+      "badge_style": "cyan"
+    },
+    {
+      "years": "2022",
+      "role": "Video Editor",
+      "company": "Hide the Zebra",
+      "description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
+      "badge_style": "pink"
+    }
+  ],
   "drink_image_alt": "Cocktail",
   "more_card_3_text": "I’m a nerd, unapologetically. I love tech, new tools, new platforms, and especially the challenges that come with them. I get genuinely excited when something breaks and I get to figure it out. I started planning a Southeast Asia trip with an over-the-top Google Sheet… and somehow ended up designing and deploying my own travel-planning app.",
   "more_card_2_text": "I’ve been doing pole for over four years and I teach it with the same intensity I train. Even when my muscles are begging for mercy, I still want one more climb, one more spin, one more attempt at the trick that scared me yesterday. Pole is strength, discipline, bruises, music, and pure adrenaline. It’s the place where I test my limits and then move them"

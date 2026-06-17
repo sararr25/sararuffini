@@ -3,8 +3,90 @@
   "page_slug": "about",
   "hero_title_line1": "I tell stories",
   "hero_title_highlight": "visually.emotionally.",
-  "intro_paragraph_1_html": "Hi, I'm <span class=\"bg-accent-yellow text-black px-1 transform -skew-x-6 inline-block font-bold\">Sara</span>. I'm a video editor who believes in the rhythm of the cut. I don't just assemble clips; I orchestrate emotions.",
-  "intro_paragraph_2_html": "My style is a chaotic blend of <span class=\"text-primary font-black uppercase\">bold</span> pop-culture references, retro nostalgia, and razor-sharp timing. Whether it's a <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1\"><span class=\"material-symbols-outlined text-sm mr-1\">movie</span> documentary</span> or a <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 bg-black text-white dark:bg-white dark:text-black\"><span class=\"material-symbols-outlined text-sm mr-1\">flash_on</span> social ad</span>, I make sure your audience can't look away.",
+  "intro_paragraph_1_html": "I've been editing since I was <span class=\"bg-accent-yellow text-black px-1 transform -skew-x-6 inline-block font-bold\">13</span>. What started as a teenager obsessing over <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold\">YouTube cuts</span> became a career built around one belief: <span class=\"relative inline-block font-black text-black dark:text-white mx-1\">great content</span> makes people feel something before they even realize it.",
+  "intro_paragraph_2_html": "Based in <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 bg-black text-white dark:bg-white dark:text-black font-bold\">Copenhagen</span>, I work across <span class=\"inline-block mx-1 border-b-4 border-accent-pink bg-accent-pink/20 font-black\">video editing</span>, <span class=\"relative inline-block font-black text-black dark:text-white mx-1\">motion graphics</span>, and <span class=\"inline-flex items-center align-middle mx-1 border border-black dark:border-white rounded px-1 font-bold\">social media</span>, with a brain that's equal parts creative and nerdy about tech.",
+  "hero_intro_segments": [
+    {
+      "text": "I've been editing since I was ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "13",
+      "style": "yellow_highlight",
+      "new_paragraph": false
+    },
+    {
+      "text": ". What started as a teenager obsessing over ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "YouTube cuts",
+      "style": "outline",
+      "new_paragraph": false
+    },
+    {
+      "text": " became a career built around one belief: ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "great content",
+      "style": "cyan_underline",
+      "new_paragraph": false
+    },
+    {
+      "text": " makes people feel something before they even realize it.",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "Based in ",
+      "style": "plain",
+      "new_paragraph": true
+    },
+    {
+      "text": "Copenhagen",
+      "style": "dark_badge",
+      "new_paragraph": false
+    },
+    {
+      "text": ", I work across ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "video editing",
+      "style": "pink_marker",
+      "new_paragraph": false
+    },
+    {
+      "text": ", ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "motion graphics",
+      "style": "cyan_underline",
+      "new_paragraph": false
+    },
+    {
+      "text": ", and ",
+      "style": "plain",
+      "new_paragraph": false
+    },
+    {
+      "text": "social media",
+      "style": "outline",
+      "new_paragraph": false
+    },
+    {
+      "text": ", with a brain that's equal parts creative and nerdy about tech.",
+      "style": "plain",
+      "new_paragraph": false
+    }
+  ],
   "portrait_image": "/assets/media/sara-pic.jpg",
   "portrait_image_crop_position": "",
   "portrait_alt": "Portrait of Sara Ruffini",
@@ -32,6 +114,29 @@
   "timeline_3_role": "Video Editor",
   "timeline_3_company": "Hide the Zebra",
   "timeline_3_description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
+  "work_experiences": [
+    {
+      "years": "2025-2026",
+      "role": "Video Editor - Content Creator",
+      "company": "Søberg Institute",
+      "description": "Produced and shaped video content for the institute’s learning platform and digital presence, overseeing the full creative process from filming to post-production. Responsible for shooting, editing, sound design, motion graphics, and delivery.\n\nLed the production and post-production workflow of 12 video podcast episodes, contributing to the core creative and editorial development of the series. Final publication and finishing were completed after my time at the institute.",
+      "badge_style": "yellow"
+    },
+    {
+      "years": "2023-2024",
+      "role": "Video editor - content creator",
+      "company": "Multiscription",
+      "description": "Managed social media content production, overseeing video creation, motion graphics, and explainer formats across platforms.\n\nBuilt and executed a niche-focused content strategy, positioning unconventional gaming content effectively on Instagram and TikTok. Created engaging social videos blending motion graphics and explainer storytelling.",
+      "badge_style": "cyan"
+    },
+    {
+      "years": "2022",
+      "role": "Video Editor",
+      "company": "Hide the Zebra",
+      "description": "During my six-month internship at Hide The Zebra, I edited branded video content for Weber using DaVinci Resolve, Premiere, and After Effects.\n\nI turned recipe videos into engaging stories rather than just step-by-step instructions, and supported motion graphics and color grading across multiple projects.",
+      "badge_style": "pink"
+    }
+  ],
   "download_cv_text": "Download CV",
   "download_cv_href": "file:///Users/sararuffini/Downloads/Lavoro_CV/Sara%20Ruffini_CV.pdf",
   "download_cv_href_page": "",

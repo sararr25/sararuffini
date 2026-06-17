@@ -4606,14 +4606,54 @@ collections:
       name: hero_title_highlight
       widget: string
       required: false
-    - label: Intro Paragraph 1 (HTML Allowed)
+    - label: Intro Paragraph 1 HTML Fallback
       name: intro_paragraph_1_html
       widget: text
       required: false
-    - label: Intro Paragraph 2 (HTML Allowed)
+      hint: Legacy fallback only. Prefer editing "Hero Styled Text" below so you can style words without writing HTML.
+    - label: Intro Paragraph 2 HTML Fallback
       name: intro_paragraph_2_html
       widget: text
       required: false
+      hint: Legacy fallback only. Prefer editing "Hero Styled Text" below so you can style words without writing HTML.
+    - label: Hero Styled Text
+      name: hero_intro_segments
+      widget: list
+      required: false
+      collapsed: true
+      minimize_collapsed: true
+      summary: "{{fields.text}}"
+      hint: Add text segments in order. Choose a style from the dropdown to highlight, underline, or frame words without writing code. Enable "Start New Paragraph" on the first segment of a new paragraph.
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Text
+        name: text
+        widget: text
+        required: false
+      - label: Style
+        name: style
+        widget: select
+        required: false
+        default: plain
+        options:
+        - label: Plain
+          value: plain
+        - label: Yellow Highlight
+          value: yellow_highlight
+        - label: Cyan Underline
+          value: cyan_underline
+        - label: Outline Frame
+          value: outline
+        - label: Dark Badge
+          value: dark_badge
+        - label: Pink Marker
+          value: pink_marker
+      - label: Start New Paragraph
+        name: new_paragraph
+        widget: boolean
+        required: false
+        default: false
     - label: Portrait Image
       name: portrait_image
       widget: image
@@ -4687,54 +4727,47 @@ collections:
       name: drink_image_alt
       widget: string
       required: false
-    - label: Timeline 1 Years
-      name: timeline_1_years
-      widget: string
+    - label: Work Experiences
+      name: work_experiences
+      widget: list
       required: false
-    - label: Timeline 1 Role
-      name: timeline_1_role
-      widget: string
-      required: false
-    - label: Timeline 1 Company
-      name: timeline_1_company
-      widget: string
-      required: false
-    - label: Timeline 1 Description
-      name: timeline_1_description
-      widget: text
-      required: false
-    - label: Timeline 2 Years
-      name: timeline_2_years
-      widget: string
-      required: false
-    - label: Timeline 2 Role
-      name: timeline_2_role
-      widget: string
-      required: false
-    - label: Timeline 2 Company
-      name: timeline_2_company
-      widget: string
-      required: false
-    - label: Timeline 2 Description
-      name: timeline_2_description
-      widget: text
-      required: false
-    - label: Timeline 3 Years
-      name: timeline_3_years
-      widget: string
-      required: false
-    - label: Timeline 3 Role
-      name: timeline_3_role
-      widget: string
-      required: false
-    - label: Timeline 3 Company
-      name: timeline_3_company
-      widget: string
-      required: false
-    - label: Timeline 3 Description
-      name: timeline_3_description
-      widget: text
-      required: false
+      collapsed: true
+      minimize_collapsed: true
+      summary: "{{fields.years}} - {{fields.role}} at {{fields.company}}"
+      hint: Each item renders as one experience card. Use Add to create a fourth experience and drag items to reorder them.
+      allow_add: true
+      allow_delete: true
+      fields:
+      - label: Years
+        name: years
+        widget: string
+        required: false
+      - label: Role
+        name: role
+        widget: string
+        required: false
+      - label: Company
+        name: company
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Badge Style
+        name: badge_style
+        widget: select
+        required: false
+        default: yellow
+        options:
+        - label: Yellow
+          value: yellow
+        - label: Cyan
+          value: cyan
+        - label: Pink
+          value: pink
+        - label: Black
+          value: black
     - label: Download CV Text
       name: download_cv_text
       widget: string
