@@ -1,11 +1,7 @@
 /*
  * Visual crop editor for Sveltia CMS.
  * Keeps the native { x, y, zoom } object fields as hidden storage and exposes
- * one Edit crop button beside the matching image field.
- *
- * Sveltia CMS does not currently implement CMS.registerWidget/registerFieldType.
- * This standalone module therefore enhances the existing fields without
- * changing the CMS schema.
+ * one Crop button beside the matching image field.
  */
 (function () {
   var enhancedInputs = new WeakSet();
@@ -228,7 +224,7 @@
       '</div>',
       '<div class="sr-crop-modal__footer">',
       '<button type="button" class="sr-crop-modal__reset">Reset</button>',
-      '<div><button type="button" class="sr-crop-modal__cancel">Cancel</button><button type="button" class="sr-crop-modal__save">Confirm</button></div>',
+      '<div><button type="button" class="sr-crop-modal__cancel">Cancel</button><button type="button" class="sr-crop-modal__save">Save crop</button></div>',
       '</div>',
       '</div>'
     ].join('');
@@ -254,73 +250,32 @@
       renderDraft();
     }
 
-    var pointers = new Map();
-    var gesture = null;
-
-    function pointerDistance() {
-      var points = Array.from(pointers.values());
-      if (points.length < 2) return 0;
-      return Math.hypot(points[1].x - points[0].x, points[1].y - points[0].y);
-    }
-
     frame.addEventListener('pointerdown', function (event) {
       if (!imageUrl) return;
       event.preventDefault();
       frame.setPointerCapture(event.pointerId);
-      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-      gesture = {
-        startX: event.clientX,
-        startY: event.clientY,
-        startDistance: pointerDistance(),
-        startCrop: { x: draft.x, y: draft.y, zoom: draft.zoom }
-      };
-    });
+      var startX = event.clientX;
+      var startY = event.clientY;
+      var startCrop = { x: draft.x, y: draft.y, zoom: draft.zoom };
 
-    frame.addEventListener('pointermove', function (event) {
-      if (!pointers.has(event.pointerId) || !gesture) return;
-      event.preventDefault();
-      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-
-      if (pointers.size >= 2) {
-        var distance = pointerDistance();
-        if (!gesture.startDistance) {
-          gesture.startDistance = distance;
-          gesture.startCrop.zoom = draft.zoom;
-        }
-        setZoom(gesture.startCrop.zoom * (distance / Math.max(1, gesture.startDistance)));
-        return;
+      function move(moveEvent) {
+        var rect = frame.getBoundingClientRect();
+        draft.x = clamp(startCrop.x - ((moveEvent.clientX - startX) / Math.max(1, rect.width)) * 100, 0, 100, 50);
+        draft.y = clamp(startCrop.y - ((moveEvent.clientY - startY) / Math.max(1, rect.height)) * 100, 0, 100, 50);
+        renderDraft();
       }
 
-      var rect = frame.getBoundingClientRect();
-      draft.x = clamp(gesture.startCrop.x - ((event.clientX - gesture.startX) / Math.max(1, rect.width)) * 100, 0, 100, 50);
-      draft.y = clamp(gesture.startCrop.y - ((event.clientY - gesture.startY) / Math.max(1, rect.height)) * 100, 0, 100, 50);
-      draft.zoom = gesture.startCrop.zoom;
-      renderDraft();
-    });
-
-    function stopPointer(event) {
-      pointers.delete(event.pointerId);
-      if (frame.hasPointerCapture(event.pointerId)) frame.releasePointerCapture(event.pointerId);
-      if (!pointers.size) {
-        gesture = null;
-        return;
+      function stop(stopEvent) {
+        if (frame.hasPointerCapture(stopEvent.pointerId)) frame.releasePointerCapture(stopEvent.pointerId);
+        frame.removeEventListener('pointermove', move);
+        frame.removeEventListener('pointerup', stop);
+        frame.removeEventListener('pointercancel', stop);
       }
-      var remaining = Array.from(pointers.values())[0];
-      gesture = {
-        startX: remaining.x,
-        startY: remaining.y,
-        startDistance: 0,
-        startCrop: { x: draft.x, y: draft.y, zoom: draft.zoom }
-      };
-    }
 
-    frame.addEventListener('pointerup', stopPointer);
-    frame.addEventListener('pointercancel', stopPointer);
-    frame.addEventListener('wheel', function (event) {
-      if (!imageUrl) return;
-      event.preventDefault();
-      setZoom(draft.zoom + (event.deltaY < 0 ? 0.1 : -0.1));
-    }, { passive: false });
+      frame.addEventListener('pointermove', move);
+      frame.addEventListener('pointerup', stop);
+      frame.addEventListener('pointercancel', stop);
+    });
 
     range.addEventListener('input', function (event) {
       setZoom(event.target.value);
@@ -383,7 +338,7 @@
     trigger.type = 'button';
     trigger.className = 'sr-crop-trigger';
     trigger.dataset.srCropTrigger = 'true';
-    trigger.textContent = 'Edit crop';
+    trigger.textContent = 'Crop';
     trigger.addEventListener('click', function () {
       openEditor(record);
     });
