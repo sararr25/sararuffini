@@ -1,234 +1,11 @@
 /*
- * Visual image crop/zoom field for Sveltia CMS.
- * Stores { x: 0-100, y: 0-100, zoom: 1-3 } and previews the sibling image field.
+ * Visual crop editor for Sveltia CMS.
+ * Keeps the native { x, y, zoom } object fields as hidden storage and exposes
+ * one Crop button beside the matching image field.
  */
 (function () {
-  var CMS = window.CMS;
-  var React = window.React;
-  var register = CMS && (CMS.registerFieldType || CMS.registerWidget);
-
-  if (!CMS || !React || !register) {
-    return;
-  }
-
-  var h = React.createElement;
-
-  function clamp(value, min, max) {
-    var number = Number(value);
-    if (!Number.isFinite(number)) return min;
-    return Math.max(min, Math.min(max, number));
-  }
-
-  function getConfigValue(field, key, fallback) {
-    if (!field) return fallback;
-    if (typeof field.get === 'function') return field.get(key) || fallback;
-    return field[key] || fallback;
-  }
-
-  function getIn(value, path) {
-    if (!value) return undefined;
-    if (typeof value.getIn === 'function') return value.getIn(path);
-    return path.reduce(function (acc, key) {
-      return acc && acc[key];
-    }, value);
-  }
-
-  function parseCrop(value) {
-    if (value && typeof value === 'object' && !Array.isArray(value)) {
-      return {
-        x: clamp(value.x, 0, 100),
-        y: clamp(value.y, 0, 100),
-        zoom: clamp(value.zoom || 1, 1, 3)
-      };
-    }
-
-    if (typeof value === 'string') {
-      var match = value.trim().match(/^(\d{1,3}),(\d{1,3})(?:,(\d{1,3}))?/);
-      if (match) {
-        return {
-          x: clamp(match[1], 0, 100),
-          y: clamp(match[2], 0, 100),
-          zoom: clamp((Number(match[3]) || 100) / 100, 1, 3)
-        };
-      }
-    }
-
-    return { x: 50, y: 50, zoom: 1 };
-  }
-
-  function getAssetUrl(props, rawUrl) {
-    if (!rawUrl) return '';
-    if (props && typeof props.getAsset === 'function') {
-      return props.getAsset(rawUrl);
-    }
-    return rawUrl;
-  }
-
-  class ImageCropControl extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        dragging: false,
-        startX: 0,
-        startY: 0,
-        startCrop: parseCrop(props.value)
-      };
-      this.onPointerDown = this.onPointerDown.bind(this);
-      this.onPointerMove = this.onPointerMove.bind(this);
-      this.onPointerUp = this.onPointerUp.bind(this);
-      this.setCrop = this.setCrop.bind(this);
-    }
-
-    componentDidUpdate(prevProps) {
-      if (prevProps.value !== this.props.value && !this.state.dragging) {
-        this.setState({ startCrop: parseCrop(this.props.value) });
-      }
-    }
-
-    getCrop() {
-      return parseCrop(this.props.value);
-    }
-
-    getImageUrl() {
-      var imageField = getConfigValue(this.props.field, 'image_field', '');
-      var rawValue = imageField ? getIn(this.props.entry, ['data', imageField]) : '';
-      return getAssetUrl(this.props, rawValue);
-    }
-
-    setCrop(nextCrop) {
-      var crop = {
-        x: Math.round(clamp(nextCrop.x, 0, 100)),
-        y: Math.round(clamp(nextCrop.y, 0, 100)),
-        zoom: Math.round(clamp(nextCrop.zoom, 1, 3) * 100) / 100
-      };
-      this.props.onChange(crop);
-    }
-
-    onPointerDown(event) {
-      event.preventDefault();
-      event.currentTarget.setPointerCapture(event.pointerId);
-      this.setState({
-        dragging: true,
-        startX: event.clientX,
-        startY: event.clientY,
-        startCrop: this.getCrop()
-      });
-    }
-
-    onPointerMove(event) {
-      if (!this.state.dragging) return;
-      var rect = event.currentTarget.getBoundingClientRect();
-      var dx = ((event.clientX - this.state.startX) / Math.max(1, rect.width)) * 100;
-      var dy = ((event.clientY - this.state.startY) / Math.max(1, rect.height)) * 100;
-      this.setCrop({
-        x: this.state.startCrop.x - dx,
-        y: this.state.startCrop.y - dy,
-        zoom: this.state.startCrop.zoom
-      });
-    }
-
-    onPointerUp(event) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-      this.setState({ dragging: false });
-    }
-
-    render() {
-      var crop = this.getCrop();
-      var imageUrl = this.getImageUrl();
-      var aspectRatio = getConfigValue(this.props.field, 'aspect_ratio', '1 / 1');
-      var position = crop.x + '% ' + crop.y + '%';
-
-      return h('div', { className: 'sr-cms-crop' }, [
-        h('div', {
-          key: 'frame',
-          className: 'sr-cms-crop__frame',
-          style: { aspectRatio: aspectRatio },
-          onPointerDown: this.onPointerDown,
-          onPointerMove: this.onPointerMove,
-          onPointerUp: this.onPointerUp
-        }, imageUrl
-          ? h('img', {
-              alt: '',
-              draggable: false,
-              src: imageUrl,
-              style: {
-                objectPosition: position,
-                transform: 'scale(' + crop.zoom + ')',
-                transformOrigin: position
-              }
-            })
-          : h('span', null, 'Choose the image first, then drag here to crop.')),
-        h('label', { key: 'zoom', className: 'sr-cms-crop__control' }, [
-          h('span', { key: 'label' }, 'Zoom ' + crop.zoom.toFixed(2) + 'x'),
-          h('input', {
-            key: 'input',
-            type: 'range',
-            min: '1',
-            max: '3',
-            step: '0.05',
-            value: crop.zoom,
-            onChange: function (event) {
-              this.setCrop({ x: crop.x, y: crop.y, zoom: event.target.value });
-            }.bind(this)
-          })
-        ]),
-        h('div', { key: 'numbers', className: 'sr-cms-crop__numbers' }, [
-          h('label', { key: 'x' }, ['X', h('input', { type: 'number', min: 0, max: 100, value: crop.x, onChange: function (event) { this.setCrop({ x: event.target.value, y: crop.y, zoom: crop.zoom }); }.bind(this) })]),
-          h('label', { key: 'y' }, ['Y', h('input', { type: 'number', min: 0, max: 100, value: crop.y, onChange: function (event) { this.setCrop({ x: crop.x, y: event.target.value, zoom: crop.zoom }); }.bind(this) })])
-        ])
-      ]);
-    }
-  }
-
-  register.call(CMS, 'image_crop', ImageCropControl);
-
-  var style = document.createElement('style');
-  style.textContent = [
-    '.sr-cms-crop{display:grid;gap:12px;max-width:520px}',
-    '.sr-cms-crop__frame{position:relative;overflow:hidden;background:#111;border:2px solid #111;border-radius:8px;cursor:grab;touch-action:none}',
-    '.sr-cms-crop__frame:active{cursor:grabbing}',
-    '.sr-cms-crop__frame img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;transition:filter .15s ease}',
-    '.sr-cms-crop__frame span{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:600 13px/1.4 system-ui;padding:20px;text-align:center}',
-    '.sr-cms-crop__control{display:grid;gap:6px;font:600 13px/1.3 system-ui;color:#111}',
-    '.sr-cms-crop__control input{width:100%}',
-    '.sr-cms-crop__numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}',
-    '.sr-cms-crop__numbers label{display:grid;gap:4px;font:600 12px system-ui;color:#444}',
-    '.sr-cms-crop__numbers input{width:100%;box-sizing:border-box}'
-  ].join('\n');
-  document.head.appendChild(style);
-})();
-
-/*
- * Fallback for Sveltia builds without custom field globals:
- * add a compact visual preview beside built-in crop object fields when possible.
- */
-(function () {
-  function installFallbackStyles() {
-    if (document.getElementById('sr-cms-crop-fallback-styles')) return;
-    var style = document.createElement('style');
-    style.id = 'sr-cms-crop-fallback-styles';
-    style.textContent = [
-      '.sr-cms-crop{display:grid;gap:12px;max-width:520px;margin:0 0 16px}',
-      '.sr-cms-crop__title{font:700 13px/1.3 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#333}',
-      '.sr-cms-crop__frame{position:relative;overflow:hidden;background:#111;border:2px solid #111;border-radius:8px;cursor:grab;touch-action:none;min-height:160px}',
-      '.sr-cms-crop__frame:active{cursor:grabbing}',
-      '.sr-cms-crop__frame::before{content:"";position:absolute;inset:14%;z-index:2;border:2px solid rgba(255,255,255,.92);box-shadow:0 0 0 999px rgba(0,0,0,.22);pointer-events:none}',
-      '.sr-cms-crop__frame::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(90deg,transparent calc(33.333% - 1px),rgba(255,255,255,.42) calc(33.333% - 1px),rgba(255,255,255,.42) calc(33.333% + 1px),transparent calc(33.333% + 1px),transparent calc(66.666% - 1px),rgba(255,255,255,.42) calc(66.666% - 1px),rgba(255,255,255,.42) calc(66.666% + 1px),transparent calc(66.666% + 1px)),linear-gradient(0deg,transparent calc(33.333% - 1px),rgba(255,255,255,.42) calc(33.333% - 1px),rgba(255,255,255,.42) calc(33.333% + 1px),transparent calc(33.333% + 1px),transparent calc(66.666% - 1px),rgba(255,255,255,.42) calc(66.666% - 1px),rgba(255,255,255,.42) calc(66.666% + 1px),transparent calc(66.666% + 1px));pointer-events:none}',
-      '.sr-cms-crop__frame img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;transition:transform .12s ease,filter .15s ease;will-change:transform}',
-      '.sr-cms-crop__frame span{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:700 13px/1.4 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:20px;text-align:center;z-index:4;background:rgba(0,0,0,.72)}',
-      '.sr-cms-crop__frame:not(.is-empty) span{display:none}',
-      '.sr-cms-crop__control{display:grid;gap:6px;font:600 13px/1.3 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111}',
-      '.sr-cms-crop__control strong{font-weight:800}',
-      '.sr-cms-crop__control input{width:100%}',
-      '.sr-cms-crop__numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}',
-      '.sr-cms-crop__numbers label{display:grid;gap:4px;font:600 12px system-ui;color:#444}',
-      '.sr-cms-crop__numbers input{width:100%;box-sizing:border-box}',
-      '.sr-cms-crop-native-fields{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}'
-    ].join('\n');
-    document.head.appendChild(style);
-  }
-
-  installFallbackStyles();
+  var enhancedInputs = new WeakSet();
+  var activeEditor = null;
 
   function clamp(value, min, max, fallback) {
     var number = Number(value);
@@ -236,62 +13,80 @@
     return Math.max(min, Math.min(max, number));
   }
 
-  function getInputText(input) {
-    if (!input) return '';
-    var label = input.closest('label');
-    var labelledBy = input.getAttribute('aria-labelledby');
-    var labelledNode = labelledBy && document.getElementById(labelledBy);
-    return [
-      input.name || '',
-      input.id || '',
-      input.getAttribute('aria-label') || '',
-      label ? label.textContent || '' : '',
-      labelledNode ? labelledNode.textContent || '' : ''
-    ].join(' ');
+  function normalizeText(value) {
+    return String(value || '').replace(/\s+/g, ' ').trim();
   }
 
   function isNumericInput(input) {
     if (!input || input.disabled) return false;
     var type = (input.getAttribute('type') || 'text').toLowerCase();
-    if (['button', 'checkbox', 'file', 'hidden', 'image', 'radio', 'range', 'reset', 'submit'].indexOf(type) !== -1) return false;
-    return type === 'number' || /^-?\d+(?:\.\d+)?$/.test(input.value || '') || input.getAttribute('role') === 'spinbutton';
+    if (['button', 'checkbox', 'file', 'hidden', 'image', 'radio', 'range', 'reset', 'submit'].indexOf(type) !== -1) {
+      return false;
+    }
+    return type === 'number' || input.getAttribute('role') === 'spinbutton' || /^-?\d+(?:\.\d+)?$/.test(input.value || '');
   }
 
   function getInputContext(input, boundary) {
-    var parts = [getInputText(input)];
-    for (var node = input && input.parentElement; node && node !== boundary && node !== document.body; node = node.parentElement) {
+    var parts = [
+      input.name || '',
+      input.id || '',
+      input.getAttribute('aria-label') || ''
+    ];
+    var labelledBy = input.getAttribute('aria-labelledby');
+    if (labelledBy) {
+      var labelledNode = document.getElementById(labelledBy);
+      if (labelledNode) parts.push(labelledNode.textContent || '');
+    }
+
+    for (var node = input.parentElement; node && node !== boundary && node !== document.body; node = node.parentElement) {
       parts.push(node.textContent || '');
-      if (/horizontal focal point|vertical focal point|zoom/i.test(parts.join(' '))) break;
+      var numericCount = Array.from(node.querySelectorAll('input')).filter(isNumericInput).length;
+      if (numericCount === 1 && /horizontal focal point|vertical focal point|zoom/i.test(parts.join(' '))) break;
     }
-    if (boundary) {
-      parts.push(boundary.textContent || '');
-    }
-    return parts.join(' ').replace(/\s+/g, ' ');
+    return normalizeText(parts.join(' '));
   }
 
-  function getCropFromInputs(scope) {
+  function getCropInputs(scope) {
     var inputs = Array.from(scope.querySelectorAll('input')).filter(isNumericInput);
-    var x = inputs.find(function (input) { return /(^|[.[_-])x\]?$/.test(input.name || '') || /horizontal|focal point.*x|\bx\b/i.test(getInputContext(input, scope)); });
-    var y = inputs.find(function (input) { return /(^|[.[_-])y\]?$/.test(input.name || '') || /vertical|focal point.*y|\by\b/i.test(getInputContext(input, scope)); });
-    var zoom = inputs.find(function (input) { return /zoom/i.test(getInputContext(input, scope)); });
-    if ((!x || !y || !zoom) && inputs.length >= 3 && /horizontal focal point|vertical focal point|zoom|crop position/i.test(scope.textContent || '')) {
-      x = x || inputs[0];
-      y = y || inputs[1];
-      zoom = zoom || inputs[2];
+    var xInput = inputs.find(function (input) {
+      return /horizontal focal point|(^|[.[_-])x\]?$|\bfocal.*\bx\b/i.test(getInputContext(input, scope));
+    });
+    var yInput = inputs.find(function (input) {
+      return /vertical focal point|(^|[.[_-])y\]?$|\bfocal.*\by\b/i.test(getInputContext(input, scope));
+    });
+    var zoomInput = inputs.find(function (input) {
+      return /zoom/i.test(getInputContext(input, scope));
+    });
+
+    if (!xInput || !yInput || !zoomInput || new Set([xInput, yInput, zoomInput]).size !== 3) {
+      xInput = inputs[0];
+      yInput = inputs[1];
+      zoomInput = inputs[2];
     }
+
     return {
-      xInput: x,
-      yInput: y,
-      zoomInput: zoom,
-      x: clamp(x && x.value, 0, 100, 50),
-      y: clamp(y && y.value, 0, 100, 50),
-      zoom: clamp(zoom && zoom.value, 1, 3, 1)
+      xInput: xInput,
+      yInput: yInput,
+      zoomInput: zoomInput
     };
   }
 
-  function dispatchValue(input, value) {
+  function readCrop(record) {
+    return {
+      x: clamp(record.xInput.value, 0, 100, 50),
+      y: clamp(record.yInput.value, 0, 100, 50),
+      zoom: clamp(record.zoomInput.value, 1, 3, 1)
+    };
+  }
+
+  function setNativeValue(input, value) {
     if (!input) return;
-    input.value = value;
+    var descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value');
+    if (descriptor && descriptor.set) {
+      descriptor.set.call(input, String(value));
+    } else {
+      input.value = String(value);
+    }
     input.dispatchEvent(new Event('input', { bubbles: true }));
     input.dispatchEvent(new Event('change', { bubbles: true }));
   }
@@ -308,201 +103,296 @@
   function extractImageUrl(node) {
     if (!node) return '';
 
+    var textInput = Array.from(node.querySelectorAll('input[type="text"], input[type="url"], input:not([type])')).find(function (input) {
+      return /\.(png|jpe?g|webp|gif|avif|svg)(\?.*)?$/i.test(input.value || '');
+    });
+    if (textInput) return normalizeAssetUrl(textInput.value);
+
+    var pathMatch = (node.textContent || '').match(/(?:https?:\/\/|\/)[^\s"'<>]+\.(?:png|jpe?g|webp|gif|avif|svg)(?:\?[^\s"'<>]*)?/i);
+    if (pathMatch) return normalizeAssetUrl(pathMatch[0]);
+
     var image = Array.from(node.querySelectorAll('img')).find(function (img) {
-      return !img.closest('.sr-cms-crop--native') && /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(img.currentSrc || img.src || '');
+      return !img.closest('.sr-crop-modal') && !!(img.currentSrc || img.src);
     });
-    if (image) return normalizeAssetUrl(image.currentSrc || image.src || '');
-
-    var imageInput = Array.from(node.querySelectorAll('input[type="text"], input[type="url"], input:not([type])')).find(function (input) {
-      return /\.(png|jpe?g|webp|gif|svg)(\?.*)?$/i.test(input.value || '');
-    });
-    if (imageInput) return normalizeAssetUrl(imageInput.value);
-
-    var textMatch = (node.textContent || '').match(/(?:https?:\/\/|\/)[^\s"'<>]+\.(?:png|jpe?g|webp|gif|svg)(?:\?[^\s"'<>]*)?/i);
-    return textMatch ? normalizeAssetUrl(textMatch[0]) : '';
+    return image ? normalizeAssetUrl(image.currentSrc || image.src) : '';
   }
 
-  function findLikelyImageUrl(scope) {
-    for (var node = scope.previousElementSibling; node; node = node.previousElementSibling) {
-      var siblingUrl = extractImageUrl(node);
-      if (siblingUrl) return siblingUrl;
-    }
-
-    var container = scope.parentElement;
-    for (var depth = 0; container && depth < 7; depth += 1, container = container.parentElement) {
-      var url = extractImageUrl(container);
-      if (url) return url;
-    }
-    return '';
+  function getCropTitle(scope) {
+    var candidates = Array.from(scope.querySelectorAll('label, legend, h1, h2, h3, h4, h5, h6, p, span, div'))
+      .map(function (node) {
+        return { node: node, text: normalizeText(node.textContent) };
+      })
+      .filter(function (item) {
+        return /crop position$/i.test(item.text) && item.text.length < 120;
+      })
+      .sort(function (a, b) {
+        return a.text.length - b.text.length;
+      });
+    return candidates.length ? candidates[0].text : 'Image Crop Position';
   }
 
-  function getFieldTitle(scope) {
-    var text = (scope.textContent || '').replace(/\s+/g, ' ').trim();
-    var match = text.match(/([A-Z][A-Za-z0-9\s-]+ Crop Position)/);
-    return match ? match[1] : 'Image crop';
+  function getImageTitle(cropTitle) {
+    return normalizeText(cropTitle.replace(/\s+crop position$/i, ''));
   }
 
-  function inferAspectRatio(scope) {
-    var title = getFieldTitle(scope).toLowerCase();
-    if (/portrait/.test(title)) return '9 / 11';
-    if (/wide|browser|video|hero/.test(title)) return '16 / 9';
-    if (/polaroid|shot|detail/.test(title)) return '4 / 5';
-    return '4 / 3';
+  function isBefore(node, reference) {
+    return !!(node.compareDocumentPosition(reference) & Node.DOCUMENT_POSITION_FOLLOWING);
   }
 
-  function updatePreview(scope) {
-    var crop = getCropFromInputs(scope);
-    var frame = scope.querySelector('[data-sr-crop-preview-frame]');
-    var image = scope.querySelector('[data-sr-crop-preview-image]');
-    var zoomRange = scope.querySelector('[data-sr-crop-preview-zoom]');
-    var zoomValue = scope.querySelector('[data-sr-crop-preview-zoom-value]');
-    if (!frame || !image) return;
+  function findImageField(scope, imageTitle) {
+    var labels = Array.from(document.querySelectorAll('label, legend, h1, h2, h3, h4, h5, h6, p, span, div'))
+      .filter(function (node) {
+        var ownText = normalizeText(Array.from(node.childNodes).filter(function (child) {
+          return child.nodeType === Node.TEXT_NODE;
+        }).map(function (child) {
+          return child.textContent;
+        }).join(' '));
+        return isBefore(node, scope) && (ownText === imageTitle || normalizeText(node.textContent) === imageTitle);
+      })
+      .reverse();
 
-    var position = crop.x + '% ' + crop.y + '%';
-    image.style.objectPosition = position;
-    image.style.transformOrigin = position;
-    image.style.transform = 'scale(' + crop.zoom + ')';
-    if (zoomRange && Number(zoomRange.value) !== crop.zoom) {
-      zoomRange.value = crop.zoom;
-    }
-    if (zoomValue) {
-      zoomValue.textContent = crop.zoom.toFixed(2) + 'x';
-    }
-
-    var url = findLikelyImageUrl(scope);
-    if (url && image.getAttribute('src') !== url) {
-      image.setAttribute('src', url);
-      frame.classList.remove('is-empty');
-    } else if (!url) {
-      image.removeAttribute('src');
-      frame.classList.add('is-empty');
-    }
-  }
-
-  function findCropScope(input) {
-    for (var node = input && input.parentElement; node && node !== document.body; node = node.parentElement) {
-      if (node.dataset && node.dataset.srCropEnhanced === 'true') return null;
-      if (node.querySelector('.sr-cms-crop--native')) return null;
-
-      var crop = getCropFromInputs(node);
-      if (!crop.xInput || !crop.yInput || !crop.zoomInput) continue;
-
-      var numberCount = Array.from(node.querySelectorAll('input')).filter(isNumericInput).length;
-      var text = node.textContent || '';
-      if (numberCount <= 5 && /crop position|horizontal focal point|vertical focal point|zoom/i.test(text)) {
-        return node;
+    for (var index = 0; index < labels.length; index += 1) {
+      for (var node = labels[index]; node && node !== document.body; node = node.parentElement) {
+        if (node.contains(scope)) break;
+        if (extractImageUrl(node)) return node;
+        if (node.querySelectorAll('label, legend, h1, h2, h3, h4, h5, h6').length > 3) break;
       }
     }
     return null;
   }
 
-  function findCropScopesFromText() {
-    var scopes = [];
+  function inferAspectRatio(title) {
+    var normalized = title.toLowerCase();
+    if (/portrait|profile|avatar/.test(normalized)) return '4 / 5';
+    if (/polaroid|detail/.test(normalized)) return '4 / 5';
+    if (/logo|journey|seo|og image/.test(normalized)) return '1 / 1';
+    if (/hero|wide|browser|video|shot|media/.test(normalized)) return '16 / 9';
+    return '4 / 3';
+  }
+
+  function findCropScopes() {
     var candidates = Array.from(document.querySelectorAll('fieldset, [role="group"], section, article, div')).filter(function (node) {
-      if (node.dataset && node.dataset.srCropEnhanced === 'true') return false;
-      if (node.querySelector('.sr-cms-crop--native')) return false;
-      var text = node.textContent || '';
-      if (!/crop position/i.test(text) || !/horizontal focal point/i.test(text) || !/vertical focal point/i.test(text) || !/zoom/i.test(text)) return false;
-      var crop = getCropFromInputs(node);
-      return !!(crop.xInput && crop.yInput && crop.zoomInput);
-    });
-
-    candidates.forEach(function (candidate) {
-      if (candidates.some(function (other) { return other !== candidate && candidate.contains(other); })) return;
-      scopes.push(candidate);
-    });
-
-    return scopes;
-  }
-
-  function hideNativeCropFields(scope, crop) {
-    [crop.xInput, crop.yInput, crop.zoomInput].forEach(function (input) {
-      for (var node = input && input.parentElement; node && node !== scope && node !== document.body; node = node.parentElement) {
-        var text = node.textContent || '';
-        var inputs = node.querySelectorAll('input').length;
-        if (inputs === 1 && /horizontal focal point|vertical focal point|zoom/i.test(text)) {
-          node.classList.add('sr-cms-crop-native-fields');
-          return;
-        }
+      if (node.classList.contains('sr-crop-storage')) return false;
+      var text = normalizeText(node.textContent);
+      if (!/crop position/i.test(text) || !/horizontal focal point/i.test(text) || !/vertical focal point/i.test(text) || !/zoom/i.test(text)) {
+        return false;
       }
+      var inputs = Array.from(node.querySelectorAll('input')).filter(isNumericInput);
+      return inputs.length >= 3 && inputs.length <= 4;
+    });
+
+    return candidates.filter(function (candidate) {
+      return !candidates.some(function (other) {
+        return other !== candidate && candidate.contains(other);
+      });
     });
   }
 
-  function enhanceCropObject(scope) {
-    if (!scope || scope.dataset.srCropEnhanced === 'true') return;
-    var crop = getCropFromInputs(scope);
-    if (!crop.xInput || !crop.yInput || !crop.zoomInput) return;
+  function closeEditor() {
+    if (!activeEditor) return;
+    activeEditor.overlay.remove();
+    activeEditor = null;
+    document.documentElement.classList.remove('sr-crop-modal-open');
+  }
 
-    scope.dataset.srCropEnhanced = 'true';
-    var preview = document.createElement('div');
-    preview.className = 'sr-cms-crop sr-cms-crop--native';
-    preview.innerHTML = [
-      '<div class="sr-cms-crop__title">Drag to choose the visible area</div>',
-      '<div class="sr-cms-crop__frame is-empty" style="aspect-ratio:' + inferAspectRatio(scope) + '" data-sr-crop-preview-frame>',
-      '<img alt="" draggable="false" data-sr-crop-preview-image>',
-      '<span>Select or save an image URL first, then drag here to crop.</span>',
+  function openEditor(record) {
+    closeEditor();
+
+    var imageUrl = extractImageUrl(record.imageField);
+    var draft = readCrop(record);
+    var overlay = document.createElement('div');
+    overlay.className = 'sr-crop-modal';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Crop ' + record.imageTitle);
+    overlay.innerHTML = [
+      '<div class="sr-crop-modal__panel">',
+      '<div class="sr-crop-modal__header">',
+      '<div><strong>Crop image</strong><span>' + record.imageTitle + '</span></div>',
+      '<button type="button" class="sr-crop-modal__close" aria-label="Close crop editor">&times;</button>',
       '</div>',
-      '<label class="sr-cms-crop__control sr-cms-crop__control--range">',
-      '<span>Zoom <strong data-sr-crop-preview-zoom-value>1.00x</strong></span>',
-      '<input type="range" min="1" max="3" step="0.05" data-sr-crop-preview-zoom>',
-      '</label>'
+      '<div class="sr-crop-modal__body">',
+      '<div class="sr-crop-modal__frame' + (imageUrl ? '' : ' is-empty') + '" style="aspect-ratio:' + record.aspectRatio + '">',
+      '<img alt="" draggable="false"' + (imageUrl ? ' src="' + imageUrl.replace(/"/g, '&quot;') + '"' : '') + '>',
+      '<span>Select an image before cropping.</span>',
+      '</div>',
+      '<div class="sr-crop-modal__zoom">',
+      '<button type="button" data-crop-zoom-out aria-label="Zoom out">&minus;</button>',
+      '<label><span>Zoom <strong data-crop-zoom-value></strong></span><input type="range" min="1" max="3" step="0.05"></label>',
+      '<button type="button" data-crop-zoom-in aria-label="Zoom in">&plus;</button>',
+      '</div>',
+      '</div>',
+      '<div class="sr-crop-modal__footer">',
+      '<button type="button" class="sr-crop-modal__reset">Reset</button>',
+      '<div><button type="button" class="sr-crop-modal__cancel">Cancel</button><button type="button" class="sr-crop-modal__save">Save crop</button></div>',
+      '</div>',
+      '</div>'
     ].join('');
-    scope.insertBefore(preview, scope.firstChild);
+    document.body.appendChild(overlay);
+    document.documentElement.classList.add('sr-crop-modal-open');
 
-    var frame = preview.querySelector('[data-sr-crop-preview-frame]');
-    var zoomRange = preview.querySelector('[data-sr-crop-preview-zoom]');
-    hideNativeCropFields(scope, crop);
+    var frame = overlay.querySelector('.sr-crop-modal__frame');
+    var image = frame.querySelector('img');
+    var range = overlay.querySelector('input[type="range"]');
+    var zoomValue = overlay.querySelector('[data-crop-zoom-value]');
+
+    function renderDraft() {
+      var position = draft.x + '% ' + draft.y + '%';
+      image.style.objectPosition = position;
+      image.style.transformOrigin = position;
+      image.style.transform = 'scale(' + draft.zoom + ')';
+      range.value = String(draft.zoom);
+      zoomValue.textContent = draft.zoom.toFixed(2) + 'x';
+    }
+
+    function setZoom(value) {
+      draft.zoom = Math.round(clamp(value, 1, 3, draft.zoom) * 100) / 100;
+      renderDraft();
+    }
+
     frame.addEventListener('pointerdown', function (event) {
+      if (!imageUrl) return;
       event.preventDefault();
       frame.setPointerCapture(event.pointerId);
       var startX = event.clientX;
       var startY = event.clientY;
-      var startCrop = getCropFromInputs(scope);
+      var startCrop = { x: draft.x, y: draft.y, zoom: draft.zoom };
 
       function move(moveEvent) {
         var rect = frame.getBoundingClientRect();
-        dispatchValue(startCrop.xInput, Math.round(clamp(startCrop.x - ((moveEvent.clientX - startX) / Math.max(1, rect.width)) * 100, 0, 100, 50)));
-        dispatchValue(startCrop.yInput, Math.round(clamp(startCrop.y - ((moveEvent.clientY - startY) / Math.max(1, rect.height)) * 100, 0, 100, 50)));
-        updatePreview(scope);
+        draft.x = clamp(startCrop.x - ((moveEvent.clientX - startX) / Math.max(1, rect.width)) * 100, 0, 100, 50);
+        draft.y = clamp(startCrop.y - ((moveEvent.clientY - startY) / Math.max(1, rect.height)) * 100, 0, 100, 50);
+        draft.zoom = startCrop.zoom;
+        renderDraft();
       }
 
-      function up(upEvent) {
-        frame.releasePointerCapture(upEvent.pointerId);
+      function stop(stopEvent) {
+        if (frame.hasPointerCapture(stopEvent.pointerId)) frame.releasePointerCapture(stopEvent.pointerId);
         frame.removeEventListener('pointermove', move);
-        frame.removeEventListener('pointerup', up);
+        frame.removeEventListener('pointerup', stop);
+        frame.removeEventListener('pointercancel', stop);
       }
 
       frame.addEventListener('pointermove', move);
-      frame.addEventListener('pointerup', up);
+      frame.addEventListener('pointerup', stop);
+      frame.addEventListener('pointercancel', stop);
     });
 
-    [crop.xInput, crop.yInput, crop.zoomInput].forEach(function (input) {
-      if (input) input.addEventListener('input', function () { updatePreview(scope); });
+    range.addEventListener('input', function (event) {
+      setZoom(event.target.value);
     });
-    if (zoomRange) {
-      zoomRange.addEventListener('input', function (event) {
-        var current = getCropFromInputs(scope);
-        dispatchValue(current.zoomInput, Number(event.target.value).toFixed(2));
-        updatePreview(scope);
-      });
-    }
-    updatePreview(scope);
+    overlay.querySelector('[data-crop-zoom-out]').addEventListener('click', function () {
+      setZoom(draft.zoom - 0.1);
+    });
+    overlay.querySelector('[data-crop-zoom-in]').addEventListener('click', function () {
+      setZoom(draft.zoom + 0.1);
+    });
+    overlay.querySelector('.sr-crop-modal__reset').addEventListener('click', function () {
+      draft = { x: 50, y: 50, zoom: 1 };
+      renderDraft();
+    });
+    overlay.querySelector('.sr-crop-modal__save').addEventListener('click', function () {
+      setNativeValue(record.xInput, Math.round(draft.x));
+      setNativeValue(record.yInput, Math.round(draft.y));
+      setNativeValue(record.zoomInput, draft.zoom.toFixed(2));
+      closeEditor();
+    });
+    overlay.querySelector('.sr-crop-modal__cancel').addEventListener('click', closeEditor);
+    overlay.querySelector('.sr-crop-modal__close').addEventListener('click', closeEditor);
+    overlay.addEventListener('click', function (event) {
+      if (event.target === overlay) closeEditor();
+    });
+
+    activeEditor = { overlay: overlay, record: record };
+    renderDraft();
+    overlay.querySelector('.sr-crop-modal__close').focus();
+  }
+
+  function enhanceScope(scope) {
+    var inputs = getCropInputs(scope);
+    if (!inputs.xInput || !inputs.yInput || !inputs.zoomInput) return;
+    if (enhancedInputs.has(inputs.zoomInput)) return;
+
+    var cropTitle = getCropTitle(scope);
+    var imageTitle = getImageTitle(cropTitle);
+    var imageField = findImageField(scope, imageTitle);
+    if (!imageField) return;
+
+    var existingTrigger = imageField.querySelector('[data-sr-crop-trigger]');
+    scope.classList.add('sr-crop-storage');
+    scope.setAttribute('aria-hidden', 'true');
+    enhancedInputs.add(inputs.xInput);
+    enhancedInputs.add(inputs.yInput);
+    enhancedInputs.add(inputs.zoomInput);
+    if (existingTrigger) return;
+
+    var record = {
+      scope: scope,
+      imageField: imageField,
+      imageTitle: imageTitle,
+      aspectRatio: inferAspectRatio(imageTitle),
+      xInput: inputs.xInput,
+      yInput: inputs.yInput,
+      zoomInput: inputs.zoomInput
+    };
+    var trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'sr-crop-trigger';
+    trigger.dataset.srCropTrigger = 'true';
+    trigger.textContent = 'Crop';
+    trigger.addEventListener('click', function () {
+      openEditor(record);
+    });
+    imageField.appendChild(trigger);
   }
 
   function scan() {
-    var scopes = [];
-    Array.from(document.querySelectorAll('input')).filter(isNumericInput).forEach(function (input) {
-      if (!/zoom/i.test(getInputContext(input, null))) return;
-      var scope = findCropScope(input);
-      if (scope && scopes.indexOf(scope) === -1) scopes.push(scope);
-    });
-    findCropScopesFromText().forEach(function (scope) {
-      if (scopes.indexOf(scope) === -1) scopes.push(scope);
-    });
-    scopes.forEach(enhanceCropObject);
+    findCropScopes().forEach(enhanceScope);
   }
 
+  function installStyles() {
+    if (document.getElementById('sr-crop-editor-styles')) return;
+    var style = document.createElement('style');
+    style.id = 'sr-crop-editor-styles';
+    style.textContent = [
+      '.sr-crop-storage{display:none!important}',
+      '.sr-crop-trigger{display:inline-flex;align-items:center;justify-content:center;min-height:38px;margin:10px 0 0 10px;padding:7px 16px;border:1px solid #aeb3b7;border-radius:4px;background:#fff;color:#202124;font:600 14px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;cursor:pointer}',
+      '.sr-crop-trigger:hover{background:#f1f3f4;border-color:#777}',
+      '.sr-crop-modal-open{overflow:hidden}',
+      '.sr-crop-modal{position:fixed;inset:0;z-index:2147483646;display:grid;place-items:center;padding:20px;background:rgba(20,21,22,.62);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}',
+      '.sr-crop-modal__panel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;width:min(760px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:hidden;border-radius:8px;background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.28)}',
+      '.sr-crop-modal__header,.sr-crop-modal__footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px}',
+      '.sr-crop-modal__header{border-bottom:1px solid #ddd}',
+      '.sr-crop-modal__header>div{display:grid;gap:2px}',
+      '.sr-crop-modal__header strong{font-size:18px}',
+      '.sr-crop-modal__header span{color:#62676b;font-size:13px}',
+      '.sr-crop-modal__close{width:36px;height:36px;padding:0;border:0;border-radius:50%;background:transparent;font-size:28px;line-height:1;cursor:pointer}',
+      '.sr-crop-modal__close:hover{background:#eee}',
+      '.sr-crop-modal__body{display:grid;gap:18px;overflow:auto;padding:20px}',
+      '.sr-crop-modal__frame{position:relative;justify-self:center;width:min(100%,620px);max-height:60vh;overflow:hidden;border:2px solid #111;border-radius:6px;background:#111;cursor:grab;touch-action:none}',
+      '.sr-crop-modal__frame:active{cursor:grabbing}',
+      '.sr-crop-modal__frame::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,transparent calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% + 1px),transparent calc(33.333% + 1px),transparent calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% + 1px),transparent calc(66.666% + 1px)),linear-gradient(0deg,transparent calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% + 1px),transparent calc(33.333% + 1px),transparent calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% + 1px),transparent calc(66.666% + 1px));pointer-events:none}',
+      '.sr-crop-modal__frame img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;will-change:transform}',
+      '.sr-crop-modal__frame span{display:none;position:absolute;inset:0;place-items:center;padding:24px;color:#fff;text-align:center}',
+      '.sr-crop-modal__frame.is-empty span{display:grid}',
+      '.sr-crop-modal__zoom{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;align-items:end;gap:10px}',
+      '.sr-crop-modal__zoom label{display:grid;gap:7px;font-size:13px;font-weight:600}',
+      '.sr-crop-modal__zoom input{width:100%;margin:0}',
+      '.sr-crop-modal__zoom button{width:38px;height:38px;border:1px solid #bbb;border-radius:4px;background:#fff;font-size:22px;cursor:pointer}',
+      '.sr-crop-modal__footer{border-top:1px solid #ddd}',
+      '.sr-crop-modal__footer>div{display:flex;gap:10px}',
+      '.sr-crop-modal__footer button{min-height:40px;padding:8px 16px;border:1px solid #aaa;border-radius:4px;background:#fff;font-weight:700;cursor:pointer}',
+      '.sr-crop-modal__footer .sr-crop-modal__save{border-color:#111;background:#111;color:#fff}',
+      '@media(max-width:600px){.sr-crop-modal{padding:0}.sr-crop-modal__panel{width:100vw;max-height:100vh;min-height:100vh;border-radius:0}.sr-crop-modal__body{padding:14px}.sr-crop-modal__header,.sr-crop-modal__footer{padding:14px}.sr-crop-modal__footer{align-items:stretch}.sr-crop-modal__footer>div{display:grid;grid-template-columns:1fr 1fr;flex:1}}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
+  installStyles();
   new MutationObserver(scan).observe(document.body, { childList: true, subtree: true });
   window.addEventListener('load', scan);
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && activeEditor) closeEditor();
+  });
   scan();
 })();
