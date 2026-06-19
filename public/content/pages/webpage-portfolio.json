@@ -1,6 +1,6 @@
 {
-  "page_name": "Webpage Portfolio",
-  "page_slug": "webpage-portfolio",
+  "page_name": "Webdesign",
+  "page_slug": "webdesign-portfolio",
   "project_title": "3 Days of Design Event Map",
   "project_summary": "Every year at 3 Days of Design I waste too much time on the official site trying to figure out what to see and where. So I built my own. A personal, mobile-first event guide with filters by day, zone, time, and category, an interactive map, and a likes section to save the events I don't want to miss. Fast, no clutter, built in one day.",
   "meta_chips": [
