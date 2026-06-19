@@ -1,5 +1,5 @@
 /*
- * Visual crop editor for Sveltia CMS.
+ * Visual crop editor for Sveltia CMS – v6.
  * Keeps the native { x, y, zoom } object fields as hidden storage and exposes
  * one Crop button beside the matching image field.
  */
@@ -190,6 +190,7 @@
 
   function closeEditor() {
     if (!activeEditor) return;
+    if (activeEditor.resizeObserver) activeEditor.resizeObserver.disconnect();
     activeEditor.overlay.remove();
     activeEditor = null;
     document.documentElement.classList.remove('sr-crop-modal-open');
@@ -212,8 +213,11 @@
       '<button type="button" class="sr-crop-modal__close" aria-label="Close crop editor">&times;</button>',
       '</div>',
       '<div class="sr-crop-modal__body">',
-      '<div class="sr-crop-modal__frame' + (imageUrl ? '' : ' is-empty') + '" style="aspect-ratio:' + record.aspectRatio + '">',
-      '<img alt="" draggable="false"' + (imageUrl ? ' src="' + imageUrl.replace(/"/g, '&quot;') + '"' : '') + '>',
+      '<div class="sr-crop-modal__stage' + (imageUrl ? '' : ' is-empty') + '">',
+      '<img class="sr-crop-modal__backdrop" alt="" draggable="false"' + (imageUrl ? ' src="' + imageUrl.replace(/"/g, '&quot;') + '"' : '') + '>',
+      '<div class="sr-crop-modal__frame" style="aspect-ratio:' + record.aspectRatio + '" tabindex="0" role="application" aria-label="Drag the image to choose the visible crop">',
+      '<img class="sr-crop-modal__preview" alt="" draggable="false"' + (imageUrl ? ' src="' + imageUrl.replace(/"/g, '&quot;') + '"' : '') + '>',
+      '</div>',
       '<span>Select an image before cropping.</span>',
       '</div>',
       '<div class="sr-crop-modal__zoom">',
@@ -221,6 +225,7 @@
       '<label><span>Zoom <strong data-crop-zoom-value></strong></span><input type="range" min="1" max="3" step="0.05"></label>',
       '<button type="button" data-crop-zoom-in aria-label="Zoom in">&plus;</button>',
       '</div>',
+      '<p class="sr-crop-modal__hint"><span data-crop-position></span> &nbsp;&bull;&nbsp; Drag to reposition &nbsp;&bull;&nbsp; Scroll to zoom</p>',
       '</div>',
       '<div class="sr-crop-modal__footer">',
       '<button type="button" class="sr-crop-modal__reset">Reset</button>',
@@ -231,18 +236,39 @@
     document.body.appendChild(overlay);
     document.documentElement.classList.add('sr-crop-modal-open');
 
+    var stage = overlay.querySelector('.sr-crop-modal__stage');
     var frame = overlay.querySelector('.sr-crop-modal__frame');
-    var image = frame.querySelector('img');
+    var image = frame.querySelector('.sr-crop-modal__preview');
+    var backdrop = stage.querySelector('.sr-crop-modal__backdrop');
     var range = overlay.querySelector('input[type="range"]');
     var zoomValue = overlay.querySelector('[data-crop-zoom-value]');
+    var positionValue = overlay.querySelector('[data-crop-position]');
+
+    function fitCropFrame() {
+      var parts = String(record.aspectRatio).split('/');
+      var ratio = clamp(Number(parts[0]) / Number(parts[1]), 0.25, 4, 4 / 3);
+      var rect = stage.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      var width = rect.width * 0.78;
+      var height = width / ratio;
+      var maxHeight = rect.height * 0.78;
+      if (height > maxHeight) {
+        height = maxHeight;
+        width = height * ratio;
+      }
+      frame.style.width = Math.round(width) + 'px';
+      frame.style.height = Math.round(height) + 'px';
+    }
 
     function renderDraft() {
       var position = draft.x + '% ' + draft.y + '%';
+      image.style.objectFit = 'cover';
       image.style.objectPosition = position;
       image.style.transformOrigin = position;
       image.style.transform = 'scale(' + draft.zoom + ')';
       range.value = String(draft.zoom);
-      zoomValue.textContent = draft.zoom.toFixed(2) + 'x';
+      zoomValue.textContent = draft.zoom.toFixed(2) + '×';
+      positionValue.textContent = 'Position ' + Math.round(draft.x) + '% · ' + Math.round(draft.y) + '%';
     }
 
     function setZoom(value) {
@@ -260,8 +286,9 @@
 
       function move(moveEvent) {
         var rect = frame.getBoundingClientRect();
-        draft.x = clamp(startCrop.x - ((moveEvent.clientX - startX) / Math.max(1, rect.width)) * 100, 0, 100, 50);
-        draft.y = clamp(startCrop.y - ((moveEvent.clientY - startY) / Math.max(1, rect.height)) * 100, 0, 100, 50);
+        var sensitivity = 100 / Math.max(1, draft.zoom);
+        draft.x = clamp(startCrop.x - ((moveEvent.clientX - startX) / Math.max(1, rect.width)) * sensitivity, 0, 100, 50);
+        draft.y = clamp(startCrop.y - ((moveEvent.clientY - startY) / Math.max(1, rect.height)) * sensitivity, 0, 100, 50);
         renderDraft();
       }
 
@@ -275,6 +302,23 @@
       frame.addEventListener('pointermove', move);
       frame.addEventListener('pointerup', stop);
       frame.addEventListener('pointercancel', stop);
+    });
+
+    frame.addEventListener('wheel', function (event) {
+      if (!imageUrl) return;
+      event.preventDefault();
+      setZoom(draft.zoom - event.deltaY * 0.002);
+    }, { passive: false });
+
+    frame.addEventListener('keydown', function (event) {
+      if (!imageUrl || !/^Arrow/.test(event.key)) return;
+      event.preventDefault();
+      var step = event.shiftKey ? 5 : 1;
+      if (event.key === 'ArrowLeft') draft.x = clamp(draft.x - step, 0, 100, 50);
+      if (event.key === 'ArrowRight') draft.x = clamp(draft.x + step, 0, 100, 50);
+      if (event.key === 'ArrowUp') draft.y = clamp(draft.y - step, 0, 100, 50);
+      if (event.key === 'ArrowDown') draft.y = clamp(draft.y + step, 0, 100, 50);
+      renderDraft();
     });
 
     range.addEventListener('input', function (event) {
@@ -302,7 +346,19 @@
       if (event.target === overlay) closeEditor();
     });
 
-    activeEditor = { overlay: overlay, record: record };
+    var resizeObserver = typeof ResizeObserver === 'function' ? new ResizeObserver(fitCropFrame) : null;
+    if (resizeObserver) resizeObserver.observe(stage);
+    activeEditor = { overlay: overlay, record: record, resizeObserver: resizeObserver };
+    if (imageUrl) {
+      var applyImageRatio = function () {
+        var naturalRatio = backdrop.naturalWidth / Math.max(1, backdrop.naturalHeight);
+        stage.style.aspectRatio = String(clamp(naturalRatio, 0.72, 1.8, 4 / 3));
+        fitCropFrame();
+      };
+      backdrop.addEventListener('load', applyImageRatio);
+      if (backdrop.complete) applyImageRatio();
+    }
+    requestAnimationFrame(fitCropFrame);
     renderDraft();
     overlay.querySelector('.sr-crop-modal__close').focus();
   }
@@ -368,16 +424,21 @@
       '.sr-crop-modal__close{width:36px;height:36px;padding:0;border:0;border-radius:50%;background:transparent;font-size:28px;line-height:1;cursor:pointer}',
       '.sr-crop-modal__close:hover{background:#eee}',
       '.sr-crop-modal__body{display:grid;gap:18px;overflow:auto;padding:20px}',
-      '.sr-crop-modal__frame{position:relative;justify-self:center;width:min(100%,620px);max-height:60vh;overflow:hidden;border:2px solid #111;border-radius:6px;background:#111;cursor:grab;touch-action:none}',
+      '.sr-crop-modal__stage{position:relative;display:grid;place-items:center;justify-self:center;width:min(100%,680px);max-height:58vh;overflow:hidden;aspect-ratio:4/3;border:2px solid #171717;border-radius:8px;background:#171717}',
+      '.sr-crop-modal__backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.46);user-select:none;pointer-events:none}',
+      '.sr-crop-modal__frame{position:relative;z-index:2;overflow:hidden;border:3px solid #fff;border-radius:2px;background:#111;cursor:grab;touch-action:none;box-shadow:0 0 0 999px rgba(10,10,10,.18),0 4px 24px rgba(0,0,0,.28);outline:none}',
+      '.sr-crop-modal__frame:focus-visible{box-shadow:0 0 0 3px #1683ff,0 0 0 999px rgba(10,10,10,.18)}',
       '.sr-crop-modal__frame:active{cursor:grabbing}',
       '.sr-crop-modal__frame::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(90deg,transparent calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% + 1px),transparent calc(33.333% + 1px),transparent calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% + 1px),transparent calc(66.666% + 1px)),linear-gradient(0deg,transparent calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% - 1px),rgba(255,255,255,.5) calc(33.333% + 1px),transparent calc(33.333% + 1px),transparent calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% - 1px),rgba(255,255,255,.5) calc(66.666% + 1px),transparent calc(66.666% + 1px));pointer-events:none}',
-      '.sr-crop-modal__frame img{display:block;width:100%;height:100%;object-fit:cover;user-select:none;will-change:transform}',
-      '.sr-crop-modal__frame span{display:none;position:absolute;inset:0;place-items:center;padding:24px;color:#fff;text-align:center}',
-      '.sr-crop-modal__frame.is-empty span{display:grid}',
+      '.sr-crop-modal__preview{display:block;width:100%;height:100%;object-fit:cover;user-select:none;will-change:transform}',
+      '.sr-crop-modal__stage>span{display:none;position:absolute;inset:0;z-index:4;place-items:center;padding:24px;color:#fff;text-align:center}',
+      '.sr-crop-modal__stage.is-empty>span{display:grid}',
+      '.sr-crop-modal__stage.is-empty .sr-crop-modal__frame{display:none}',
       '.sr-crop-modal__zoom{display:grid;grid-template-columns:38px minmax(0,1fr) 38px;align-items:end;gap:10px}',
       '.sr-crop-modal__zoom label{display:grid;gap:7px;font-size:13px;font-weight:600}',
       '.sr-crop-modal__zoom input{width:100%;margin:0}',
       '.sr-crop-modal__zoom button{width:38px;height:38px;border:1px solid #bbb;border-radius:4px;background:#fff;font-size:22px;cursor:pointer}',
+      '.sr-crop-modal__hint{margin:0;color:#777;font-size:12px;text-align:center}',
       '.sr-crop-modal__footer{border-top:1px solid #ddd}',
       '.sr-crop-modal__footer>div{display:flex;gap:10px}',
       '.sr-crop-modal__footer button{min-height:40px;padding:8px 16px;border:1px solid #aaa;border-radius:4px;background:#fff;font-weight:700;cursor:pointer}',

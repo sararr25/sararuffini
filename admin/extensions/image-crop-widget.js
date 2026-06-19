@@ -1,5 +1,5 @@
 /*
- * Visual crop editor for Sveltia CMS – v5
+ * Visual crop editor for Sveltia CMS – v6
  * Adds an "Edit crop" button on every image field that has a matching
  * *_crop_position object (x / y / zoom sub-fields) in the CMS config.
  *
@@ -368,6 +368,7 @@
 
   function closeEditor() {
     if (!activeEditor) return;
+    if (activeEditor.resizeObserver) activeEditor.resizeObserver.disconnect();
     activeEditor.overlay.remove();
     activeEditor = null;
     document.documentElement.classList.remove('sr-crop-modal-open');
@@ -396,10 +397,14 @@
           '<button type="button" class="sr-crop-modal__close" aria-label="Close">&times;</button>',
         '</div>',
         '<div class="sr-crop-modal__body">',
-          '<div class="sr-crop-modal__frame', (hasImage ? '' : ' is-empty'),
-               '" style="aspect-ratio:', record.aspectRatio, '">',
-            '<img alt="" draggable="false"',
+          '<div class="sr-crop-modal__stage', (hasImage ? '' : ' is-empty'), '">',
+            '<img class="sr-crop-modal__backdrop" alt="" draggable="false"',
                  (hasImage ? ' src="' + imageUrl.replace(/"/g, '&quot;') + '"' : ''), '>',
+            '<div class="sr-crop-modal__frame" style="aspect-ratio:', record.aspectRatio,
+                 '" tabindex="0" role="application" aria-label="Drag the image to choose the visible crop">',
+              '<img class="sr-crop-modal__preview" alt="" draggable="false"',
+                   (hasImage ? ' src="' + imageUrl.replace(/"/g, '&quot;') + '"' : ''), '>',
+            '</div>',
             '<span>Select an image first.</span>',
           '</div>',
           '<div class="sr-crop-modal__zoom">',
@@ -408,7 +413,7 @@
               '<input type="range" min="1" max="3" step="0.05"></label>',
             '<button type="button" data-sr-zoom-in>&plus;</button>',
           '</div>',
-          '<p class="sr-crop-modal__hint">Drag to reposition &nbsp;&bull;&nbsp; Scroll to zoom</p>',
+          '<p class="sr-crop-modal__hint"><span data-sr-position></span> &nbsp;&bull;&nbsp; Drag to reposition &nbsp;&bull;&nbsp; Scroll to zoom</p>',
         '</div>',
         '<div class="sr-crop-modal__footer">',
           '<button type="button" class="sr-crop-modal__reset">Reset</button>',
@@ -423,10 +428,29 @@
     document.body.appendChild(overlay);
     document.documentElement.classList.add('sr-crop-modal-open');
 
+    var stage   = overlay.querySelector('.sr-crop-modal__stage');
     var frame   = overlay.querySelector('.sr-crop-modal__frame');
-    var img     = frame.querySelector('img');
+    var img     = frame.querySelector('.sr-crop-modal__preview');
+    var backdrop = stage.querySelector('.sr-crop-modal__backdrop');
     var range   = overlay.querySelector('input[type="range"]');
     var zoomVal = overlay.querySelector('[data-sr-zoom-val]');
+    var positionVal = overlay.querySelector('[data-sr-position]');
+
+    function fitCropFrame() {
+      var parts = String(record.aspectRatio).split('/');
+      var ratio = clamp(Number(parts[0]) / Number(parts[1]), 0.25, 4, 4 / 3);
+      var rect = stage.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      var width = rect.width * 0.78;
+      var height = width / ratio;
+      var maxHeight = rect.height * 0.78;
+      if (height > maxHeight) {
+        height = maxHeight;
+        width = height * ratio;
+      }
+      frame.style.width = Math.round(width) + 'px';
+      frame.style.height = Math.round(height) + 'px';
+    }
 
     function render() {
       img.style.objectFit       = 'cover';
@@ -435,6 +459,7 @@
       img.style.transform       = 'scale(' + draft.zoom + ')';
       range.value               = String(draft.zoom);
       zoomVal.textContent       = draft.zoom.toFixed(2) + '×';
+      positionVal.textContent   = 'Position ' + Math.round(draft.x) + '% · ' + Math.round(draft.y) + '%';
     }
 
     function setZoom(v) {
@@ -471,6 +496,17 @@
       setZoom(draft.zoom - e.deltaY * 0.002);
     }, { passive: false });
 
+    frame.addEventListener('keydown', function (e) {
+      if (!hasImage || !/^Arrow/.test(e.key)) return;
+      e.preventDefault();
+      var step = e.shiftKey ? 5 : 1;
+      if (e.key === 'ArrowLeft')  draft.x = clamp(draft.x - step, 0, 100, 50);
+      if (e.key === 'ArrowRight') draft.x = clamp(draft.x + step, 0, 100, 50);
+      if (e.key === 'ArrowUp')    draft.y = clamp(draft.y - step, 0, 100, 50);
+      if (e.key === 'ArrowDown')  draft.y = clamp(draft.y + step, 0, 100, 50);
+      render();
+    });
+
     range.addEventListener('input', function (e) { setZoom(e.target.value); });
     overlay.querySelector('[data-sr-zoom-out]').addEventListener('click', function () { setZoom(draft.zoom - 0.1); });
     overlay.querySelector('[data-sr-zoom-in]').addEventListener('click',  function () { setZoom(draft.zoom + 0.1); });
@@ -488,7 +524,19 @@
     overlay.querySelector('.sr-crop-modal__close').addEventListener('click',  closeEditor);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closeEditor(); });
 
-    activeEditor = { overlay: overlay, record: record };
+    var resizeObserver = typeof ResizeObserver === 'function' ? new ResizeObserver(fitCropFrame) : null;
+    if (resizeObserver) resizeObserver.observe(stage);
+    activeEditor = { overlay: overlay, record: record, resizeObserver: resizeObserver };
+    if (hasImage) {
+      var applyImageRatio = function () {
+        var naturalRatio = backdrop.naturalWidth / Math.max(1, backdrop.naturalHeight);
+        stage.style.aspectRatio = String(clamp(naturalRatio, 0.72, 1.8, 4 / 3));
+        fitCropFrame();
+      };
+      backdrop.addEventListener('load', applyImageRatio);
+      if (backdrop.complete) applyImageRatio();
+    }
+    requestAnimationFrame(fitCropFrame);
     render();
     overlay.querySelector('.sr-crop-modal__close').focus();
   }
@@ -593,9 +641,15 @@
         'background:transparent;font-size:26px;line-height:1;cursor:pointer;color:#444}',
       '.sr-crop-modal__close:hover{background:#f0f0f0}',
       '.sr-crop-modal__body{display:grid;gap:16px;overflow:auto;padding:20px}',
-      '.sr-crop-modal__frame{position:relative;justify-self:center;width:min(100%,620px);' +
-        'max-height:58vh;overflow:hidden;border:2px solid #1a1a1a;border-radius:6px;' +
-        'background:#111;cursor:grab;touch-action:none}',
+      '.sr-crop-modal__stage{position:relative;display:grid;place-items:center;justify-self:center;' +
+        'width:min(100%,680px);max-height:58vh;overflow:hidden;aspect-ratio:4/3;' +
+        'border:2px solid #171717;border-radius:8px;background:#171717}',
+      '.sr-crop-modal__backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;' +
+        'filter:brightness(.46);user-select:none;pointer-events:none}',
+      '.sr-crop-modal__frame{position:relative;z-index:2;overflow:hidden;border:3px solid #fff;' +
+        'border-radius:2px;background:#111;cursor:grab;touch-action:none;' +
+        'box-shadow:0 0 0 999px rgba(10,10,10,.18),0 4px 24px rgba(0,0,0,.28);outline:none}',
+      '.sr-crop-modal__frame:focus-visible{box-shadow:0 0 0 3px #1683ff,0 0 0 999px rgba(10,10,10,.18)}',
       '.sr-crop-modal__frame:active{cursor:grabbing}',
       '.sr-crop-modal__frame::after{content:"";position:absolute;inset:0;z-index:2;' +
         'pointer-events:none;' +
@@ -617,11 +671,12 @@
           'rgba(255,255,255,.3) calc(66.667% - .5px),' +
           'rgba(255,255,255,.3) calc(66.667% + .5px),' +
           'transparent calc(66.667% + .5px))}',
-      '.sr-crop-modal__frame img{display:block;width:100%;height:100%;' +
+      '.sr-crop-modal__preview{display:block;width:100%;height:100%;' +
         'object-fit:cover;user-select:none;will-change:transform}',
-      '.sr-crop-modal__frame span{display:none;position:absolute;inset:0;' +
+      '.sr-crop-modal__stage>span{display:none;position:absolute;inset:0;z-index:4;' +
         'place-items:center;padding:24px;color:#fff;text-align:center;font-size:15px}',
-      '.sr-crop-modal__frame.is-empty span{display:grid}',
+      '.sr-crop-modal__stage.is-empty>span{display:grid}',
+      '.sr-crop-modal__stage.is-empty .sr-crop-modal__frame{display:none}',
       '.sr-crop-modal__zoom{display:grid;grid-template-columns:38px 1fr 38px;align-items:end;gap:10px}',
       '.sr-crop-modal__zoom label{display:grid;gap:6px;font-size:13px;font-weight:600;color:#333}',
       '.sr-crop-modal__zoom input[type="range"]{width:100%;margin:0;accent-color:#111}',
