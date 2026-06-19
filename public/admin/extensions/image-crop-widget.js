@@ -1,5 +1,5 @@
 /*
- * Visual crop editor for Sveltia CMS – v6.
+ * Visual crop editor for Sveltia CMS – v7.
  * Keeps the native { x, y, zoom } object fields as hidden storage and exposes
  * one Crop button beside the matching image field.
  */
@@ -118,17 +118,20 @@
   }
 
   function getCropTitle(scope) {
-    var candidates = Array.from(scope.querySelectorAll('label, legend, h1, h2, h3, h4, h5, h6, p, span, div'))
-      .map(function (node) {
-        return { node: node, text: normalizeText(node.textContent) };
-      })
-      .filter(function (item) {
-        return /crop position$/i.test(item.text) && item.text.length < 120;
-      })
-      .sort(function (a, b) {
-        return a.text.length - b.text.length;
-      });
-    return candidates.length ? candidates[0].text : 'Image Crop Position';
+    for (var boundary = scope, depth = 0; boundary && boundary !== document.body && depth < 8; boundary = boundary.parentElement, depth += 1) {
+      var candidates = Array.from(boundary.querySelectorAll('label, legend, h1, h2, h3, h4, h5, h6, p, span, div'))
+        .map(function (node) {
+          return normalizeText(node.textContent);
+        })
+        .filter(function (text) {
+          return /crop position$/i.test(text) && text.length < 120;
+        })
+        .sort(function (a, b) {
+          return a.length - b.length;
+        });
+      if (candidates.length) return candidates[0];
+    }
+    return 'Image Crop Position';
   }
 
   function getImageTitle(cropTitle) {
@@ -158,7 +161,25 @@
         if (node.querySelectorAll('label, legend, h1, h2, h3, h4, h5, h6').length > 3) break;
       }
     }
-    return null;
+
+    var candidates = [];
+    Array.from(document.querySelectorAll('img')).forEach(function (image) {
+      if (image.closest('.sr-crop-modal') || !isBefore(image, scope)) return;
+      if (image.currentSrc || image.src) candidates.push(image);
+    });
+    Array.from(document.querySelectorAll('input[type="text"], input[type="url"], input:not([type])')).forEach(function (input) {
+      if (!isBefore(input, scope)) return;
+      if (/\.(png|jpe?g|webp|gif|avif|svg)(\?.*)?$/i.test(input.value || '')) candidates.push(input);
+    });
+    if (!candidates.length) return null;
+
+    var nearest = candidates[candidates.length - 1];
+    for (var ancestor = nearest; ancestor && ancestor !== document.body; ancestor = ancestor.parentElement) {
+      if (ancestor.contains(scope)) break;
+      var text = normalizeText(ancestor.textContent);
+      if ((imageTitle && text.indexOf(imageTitle) !== -1) || /replace|remove/i.test(text)) return ancestor;
+    }
+    return nearest.parentElement || nearest;
   }
 
   function inferAspectRatio(title) {
@@ -174,7 +195,7 @@
     var candidates = Array.from(document.querySelectorAll('fieldset, [role="group"], section, article, div')).filter(function (node) {
       if (node.classList.contains('sr-crop-storage')) return false;
       var text = normalizeText(node.textContent);
-      if (!/crop position/i.test(text) || !/horizontal focal point/i.test(text) || !/vertical focal point/i.test(text) || !/zoom/i.test(text)) {
+      if (!/horizontal focal point/i.test(text) || !/vertical focal point/i.test(text) || !/\bzoom\b/i.test(text)) {
         return false;
       }
       var inputs = Array.from(node.querySelectorAll('input')).filter(isNumericInput);
@@ -186,6 +207,16 @@
         return other !== candidate && candidate.contains(other);
       });
     });
+  }
+
+  function findStorageSection(scope) {
+    for (var node = scope; node && node !== document.body; node = node.parentElement) {
+      var text = normalizeText(node.textContent);
+      var numericInputs = Array.from(node.querySelectorAll('input')).filter(isNumericInput);
+      if (/crop position/i.test(text) && numericInputs.length >= 3 && numericInputs.length <= 4) return node;
+      if (numericInputs.length > 12) break;
+    }
+    return scope;
   }
 
   function closeEditor() {
@@ -368,21 +399,22 @@
     if (!inputs.xInput || !inputs.yInput || !inputs.zoomInput) return;
     if (enhancedInputs.has(inputs.zoomInput)) return;
 
-    var cropTitle = getCropTitle(scope);
+    var storageSection = findStorageSection(scope);
+    var cropTitle = getCropTitle(storageSection);
     var imageTitle = getImageTitle(cropTitle);
-    var imageField = findImageField(scope, imageTitle);
+    var imageField = findImageField(storageSection, imageTitle);
     if (!imageField) return;
 
     var existingTrigger = imageField.querySelector('[data-sr-crop-trigger]');
-    scope.classList.add('sr-crop-storage');
-    scope.setAttribute('aria-hidden', 'true');
+    storageSection.classList.add('sr-crop-storage');
+    storageSection.setAttribute('aria-hidden', 'true');
     enhancedInputs.add(inputs.xInput);
     enhancedInputs.add(inputs.yInput);
     enhancedInputs.add(inputs.zoomInput);
     if (existingTrigger) return;
 
     var record = {
-      scope: scope,
+      scope: storageSection,
       imageField: imageField,
       imageTitle: imageTitle,
       aspectRatio: inferAspectRatio(imageTitle),
@@ -394,7 +426,7 @@
     trigger.type = 'button';
     trigger.className = 'sr-crop-trigger';
     trigger.dataset.srCropTrigger = 'true';
-    trigger.textContent = 'Crop';
+    trigger.textContent = 'Edit crop';
     trigger.addEventListener('click', function () {
       openEditor(record);
     });

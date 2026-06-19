@@ -1,5 +1,5 @@
 /*
- * Visual crop editor for Sveltia CMS – v6
+ * Visual crop editor for Sveltia CMS – v7
  * Adds an "Edit crop" button on every image field that has a matching
  * *_crop_position object (x / y / zoom sub-fields) in the CMS config.
  *
