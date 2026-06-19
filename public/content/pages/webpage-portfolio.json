@@ -1,6 +1,31 @@
 {
   "page_name": "Webpage Portfolio",
   "page_slug": "webpage-portfolio",
+  "project_title": "3 Days of Design Event Map",
+  "project_summary": "Every year at 3 Days of Design I waste too much time on the official site trying to figure out what to see and where. So I built my own. A personal, mobile-first event guide with filters by day, zone, time, and category, an interactive map, and a likes section to save the events I don't want to miss. Fast, no clutter, built in one day.",
+  "meta_chips": [
+    {
+      "icon": "calendar_month",
+      "label": "2026"
+    },
+    {
+      "icon": "category",
+      "label": "Web app"
+    },
+    {
+      "icon": "code",
+      "label": "Web Design"
+    }
+  ],
+  "hero_browser_label": "3days schedule",
+  "hero_image": "/assets/media/desktop-01-event-list.png",
+  "hero_image_crop_position": {
+    "x": 46,
+    "y": 4,
+    "zoom": 1
+  },
+  "hero_image_alt": "Neon sign storefront hero shot",
+  "kit_title": "The Kit",
   "typography_card": {
     "heading": "Typography",
     "display": {
@@ -22,28 +47,7 @@
       "sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789"
     }
   },
-  "project_summary": "Every year at 3 Days of Design I waste too much time on the official site trying to figure out what to see and where. So I built my own. A personal, mobile-first event guide with filters by day, zone, time, and category, an interactive map, and a likes section to save the events I don't want to miss. Fast, no clutter, built in one day.",
-  "tech_flow_4_text": "Filters, saved likes, and mobile-first screens.",
-  "hero_image_alt": "Neon sign storefront hero shot",
-  "tech_flow_3_text": "Database plus API layer for the app.",
-  "tech_backend_text": "Supabase stores the event database and exposes the API layer used by the frontend.",
-  "tech_flow_2_text": "Collect, filter, and export the events as CSV.",
-  "tech_flow_1_title": "Official Site",
-  "tech_flow_1_text": "Source events and raw programme data.",
-  "tech_flow_2_title": "Python Scraper",
-  "tech_tag_1": "Next.js",
-  "experience_title": "Digital Experience",
-  "tech_intro": "I used a Python scraper to pull all events from the official site and export them as a CSV, filtered by my own criteria. That data lives in Supabase, which handles the database and API layer. The frontend is built in Next.js and deployed on Vercel via GitHub. The interactive map runs on Leaflet.js. I used AI tools inside VS Code to help with the code, since development isn't my main background.",
-  "tech_flow_3_title": "Supabase",
-  "tech_tag_2": "Leaflet.js",
-  "tech_backend_title": "Backend",
-  "cta_label": "See Website Live",
-  "tech_tag_3": "Vercel",
-  "tech_code_file": "scraper_to_supabase.py",
-  "tech_flow_4_title": "Next.js UI",
-  "typography_secondary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
-  "tech_tag_4": "Supabase",
-  "tech_flow_5_title": "Leaflet Map",
+  "colors_heading": "Colors",
   "color_swatches": [
     {
       "label": "Acid creen - Secondary",
@@ -62,105 +66,101 @@
       "value": "#ff8c00"
     }
   ],
-  "typography_secondary_name": "Christianshavn • Strandgade 91, 5th Floor",
+  "tech_kicker": "Build Notes",
+  "tech_title": "How I Built It",
+  "tech_intro": "I used a Python scraper to pull all events from the official site and export them as a CSV, filtered by my own criteria. That data lives in Supabase, which handles the database and API layer. The frontend is built in Next.js and deployed on Vercel via GitHub. The interactive map runs on Leaflet.js. I used AI tools inside VS Code to help with the code, since development isn't my main background.",
+  "tech_code_file": "scraper_to_supabase.py",
+  "tech_code_label": "Data Prep",
+  "tech_code_line_1": "events = scrape_official_site()",
+  "tech_code_line_2": "filtered = apply_my_criteria(events)",
+  "tech_code_line_3": "csv = export_to_csv(filtered)",
+  "tech_code_line_4": "supabase.table(\"events\").upsert(csv)",
+  "tech_code_line_5": "map = Leaflet(events + saved_likes)",
+  "tech_flow_title": "Architectural Flow",
+  "tech_flow_1_icon": "travel_explore",
+  "tech_flow_1_title": "Official Site",
+  "tech_flow_1_text": "Source events and raw programme data.",
+  "tech_flow_2_icon": "terminal",
+  "tech_flow_2_title": "Python Scraper",
+  "tech_flow_2_text": "Collect, filter, and export the events as CSV.",
+  "tech_flow_3_icon": "database",
+  "tech_flow_3_title": "Supabase",
+  "tech_flow_3_text": "Database plus API layer for the app.",
+  "tech_flow_4_icon": "web",
+  "tech_flow_4_title": "Next.js UI",
+  "tech_flow_4_text": "Filters, saved likes, and mobile-first screens.",
+  "tech_flow_5_icon": "map",
+  "tech_flow_5_title": "Leaflet Map",
+  "tech_flow_5_text": "Interactive map for zones and venues.",
+  "tech_frontend_title": "Frontend",
+  "tech_frontend_text": "Next.js handles the interface, filtering states, likes, and the mobile-first route structure.",
+  "tech_backend_title": "Backend",
+  "tech_backend_text": "Supabase stores the event database and exposes the API layer used by the frontend.",
+  "tech_tools_title": "Workflow",
+  "tech_tools_text": "GitHub connects the code to Vercel deployment, while AI tools inside VS Code helped me move faster through implementation.",
+  "tech_tag_1": "Next.js",
+  "tech_tag_2": "Leaflet.js",
+  "tech_tag_3": "Vercel",
+  "tech_tag_4": "Supabase",
   "tech_tag_5": "CSV import",
-  "typography_primary_label_font": "Hanken Grotesk",
-  "typography_secondary_label_size": 14,
-  "typography_primary_label": "Primary/body",
-  "typography_primary_name_size": 64,
-  "typography_secondary_name_font": "Inter",
   "tech_tag_6": "API",
-  "typography_secondary_sample_font": "Be Vietnam Pro",
   "tech_tag_7": "GitHub",
-  "typography_primary_sample_size": 18,
   "tech_tag_8": "VS Code",
   "tech_tag_9": "AI-assisted code",
-  "tech_flow_5_icon": "map",
-  "tech_tools_title": "Workflow",
-  "tech_code_label": "Data Prep",
-  "tech_flow_4_icon": "web",
-  "tech_flow_3_icon": "database",
-  "meta_chips": [
-    {
-      "icon": "calendar_month",
-      "label": "2026"
-    },
-    {
-      "icon": "category",
-      "label": "Web app"
-    },
-    {
-      "icon": "code",
-      "label": "Web Design"
-    }
-  ],
-  "tech_flow_2_icon": "terminal",
-  "tech_code_line_1": "events = scrape_official_site()",
-  "hero_image_crop_position": {
-    "x": 46,
-    "y": 4,
-    "zoom": 1
-  },
-  "tech_title": "How I Built It",
-  "kit_title": "The Kit",
-  "tech_flow_1_icon": "travel_explore",
-  "tech_code_line_2": "filtered = apply_my_criteria(events)",
-  "tech_flow_title": "Architectural Flow",
-  "tech_code_line_3": "csv = export_to_csv(filtered)",
-  "tech_frontend_text": "Next.js handles the interface, filtering states, likes, and the mobile-first route structure.",
-  "tech_code_line_4": "supabase.table(\"events\").upsert(csv)",
-  "project_title": "3 Days of Design Event Map",
-  "typography_heading": "Typography",
-  "tech_code_line_5": "map = Leaflet(events + saved_likes)",
-  "colors_heading": "Colors",
-  "tech_frontend_title": "Frontend",
-  "typography_secondary_label_font": "Inter",
-  "typography_primary_name_font": "Hanken Grotesk",
-  "hero_image": "/assets/media/desktop-01-event-list.png",
+  "experience_title": "Digital Experience",
   "site_views": [
     {
       "image": "/assets/media/desktop-02-event-map.png",
-      "alt": "Map view",
       "image_crop_position": {
         "x": 60,
         "y": 56,
         "zoom": 1
-      }
+      },
+      "alt": "Map view"
     },
     {
       "image": "/assets/media/mobile-01-schedule.png",
-      "alt": "Mobile view",
       "image_crop_position": {
         "x": 49,
-        "y": 34,
+        "y": 0,
         "zoom": 1
-      }
+      },
+      "alt": "Mobile view"
     },
     {
       "image": "/assets/media/desktop-03-favorites.png",
-      "alt": "Favourites",
       "image_crop_position": {
         "x": 44,
         "y": 30,
         "zoom": 1
-      }
+      },
+      "alt": "Favourites"
     }
   ],
-  "typography_primary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
-  "typography_primary_sample_font": "Epilogue",
-  "hero_browser_label": "3days schedule",
-  "typography_primary_name": "3 DAYS",
-  "typography_secondary_label": "Body fallbacks",
-  "typography_primary_label_size": 12,
-  "typography_secondary_name_size": 24,
-  "tech_tools_text": "GitHub connects the code to Vercel deployment, while AI tools inside VS Code helped me move faster through implementation.",
+  "cta_label": "See Website Live",
   "cta_href": "https://3days-dusky.vercel.app/",
-  "typography_secondary_sample_size": 16,
-  "tech_kicker": "Build Notes",
   "seo": {
     "seo_title": "Webpage Portfolio - Sara Ruffini",
     "seo_description": "A retro-pop web design case study by Sara Ruffini.",
     "seo_image": ""
   },
-  "tech_flow_5_text": "Interactive map for zones and venues."
+  "typography_secondary_sample_size": 16,
+  "typography_secondary_name_size": 24,
+  "typography_primary_label_size": 12,
+  "typography_secondary_label": "Body fallbacks",
+  "typography_primary_name": "3 DAYS",
+  "typography_primary_sample_font": "Epilogue",
+  "typography_primary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789",
+  "typography_primary_name_font": "Hanken Grotesk",
+  "typography_secondary_label_font": "Inter",
+  "typography_heading": "Typography",
+  "typography_primary_sample_size": 18,
+  "typography_secondary_sample_font": "Be Vietnam Pro",
+  "typography_secondary_name_font": "Inter",
+  "typography_primary_name_size": 64,
+  "typography_primary_label": "Primary/body",
+  "typography_secondary_label_size": 14,
+  "typography_primary_label_font": "Hanken Grotesk",
+  "typography_secondary_name": "Christianshavn • Strandgade 91, 5th Floor",
+  "typography_secondary_sample": "Aa Bb Cc Dd Ee Ff Gg 0123456789"
 }
