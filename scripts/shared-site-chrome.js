@@ -16,7 +16,7 @@
     nav_contact: "Contact",
     nav_contact_href: "/pages/contact/index.html",
     brand_role: "VIDEO EDITOR - CONTENT CREATOR",
-    footer_contact: "sararuffini@gmail.com | +45 52 70 85 28 | Copenhagen"
+    footer_contact: "hello@sararuffini.com | +45 52 70 85 28 | Copenhagen"
   };
 
   var NAV_ITEMS = [
