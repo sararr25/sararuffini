@@ -56,9 +56,6 @@
 <link rel="stylesheet" href="styles/mobile.css"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body min-h-screen relative overflow-x-hidden selection:bg-primary selection:text-white flex flex-col" data-cms-page="homepage">
-<div class="absolute top-0 right-0 w-[700px] h-[700px] blob-gradient-intense pointer-events-none z-0 opacity-100 dark:opacity-60 translate-x-1/4 -translate-y-1/4"></div>
-<div class="absolute top-[20%] right-[30%] w-[500px] h-[500px] blob-gradient-secondary pointer-events-none z-0 opacity-80 dark:opacity-40"></div>
-<div class="absolute top-[5%] right-[10%] w-[400px] h-[400px] blob-gradient-orange pointer-events-none z-0 opacity-70 dark:opacity-40"></div>
 <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center bg-background-light border-b-2 border-black sticky top-0 z-50 shared-site-nav">
 <a class="text-2xl font-black uppercase tracking-tight hover:text-primary transition-colors" href="index.html">Sara Ruffini</a>
 <div class="hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center text-black">
@@ -89,21 +86,25 @@
 </div>
 <button aria-label="Open menu" class="md:hidden text-3xl leading-none">☰</button>
 </nav>
-
+<div id="smooth-wrapper">
+<div id="smooth-content">
+<div class="absolute top-0 right-0 w-[700px] h-[700px] blob-gradient-intense pointer-events-none z-0 opacity-100 dark:opacity-60 translate-x-1/4 -translate-y-1/4" data-speed="clamp(0.78)"></div>
+<div class="absolute top-[20%] right-[30%] w-[500px] h-[500px] blob-gradient-secondary pointer-events-none z-0 opacity-80 dark:opacity-40" data-speed="0.9"></div>
+<div class="absolute top-[5%] right-[10%] w-[400px] h-[400px] blob-gradient-orange pointer-events-none z-0 opacity-70 dark:opacity-40" data-speed="clamp(1.12)"></div>
 <main class="relative z-10 px-6 md:px-12 pb-20 max-w-7xl mx-auto w-full flex-grow">
-<section class="mt-8 md:mt-16 mb-16 relative">
-<h1 class="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-display font-bold uppercase tracking-tight text-center md:text-left relative z-10">
-<span data-cms-text="hero_line_1">I talk fast</span><br/>
-<span class="homepage-hero-line-two"><span data-cms-text="hero_line_2_prefix">I edit</span> 
+<section class="homepage-hero mt-8 md:mt-16 mb-16 relative">
+<h1 class="homepage-hero-title text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] font-display font-bold uppercase tracking-tight text-center md:text-left relative z-10">
+<span class="homepage-hero-line" data-cms-text="hero_line_1">I talk fast</span><br/>
+<span class="homepage-hero-line homepage-hero-line-two"><span data-cms-text="hero_line_2_prefix">I edit</span>
                 <span class="word-faster relative inline-block text-primary tracking-wide lowercase transform -rotate-2 ml-2 text-[1.1em]">
-<span data-cms-text="hero_word_highlight">faster</span>
+<span class="homepage-text-accent" data-cms-text="hero_word_highlight">faster</span>
                     <svg class="absolute left-0 -bottom-4 w-[130%] -ml-[15%] h-auto text-black dark:text-white pointer-events-none scribble-underline z-[-1]" preserveAspectRatio="none" viewBox="0 0 260 70">
 <path d="M12 43 L86 35 L115 35 L92 50 L130 47 L172 42 L206 39 L194 41 L248 40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.5"></path>
 </svg>
 </span></span>
 </h1>
 </section>
-<section class="relative w-full max-w-5xl mx-auto mb-32">
+<section class="homepage-showreel relative w-full max-w-5xl mx-auto mb-32">
 <div class="border-4 border-black dark:border-white rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] bg-black transition-shadow hover:shadow-[12px_12px_0px_0px_rgba(59,222,200,1)]">
 <div class="bg-primary border-b-4 border-black dark:border-white h-8 flex items-center px-3 justify-between">
 <div class="flex space-x-1.5">
@@ -168,7 +169,7 @@
 </a>
 </div>
 </section>
-<section class="max-w-4xl mx-auto mb-32 px-6">
+<section class="homepage-about-card max-w-4xl mx-auto mb-32 px-6">
 <div class="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] relative overflow-hidden">
 <div class="absolute top-0 right-0 w-24 h-24 bg-primary/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
 <div class="absolute bottom-0 left-0 w-32 h-32 bg-yellow-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
@@ -220,6 +221,8 @@
 </div>
 </div>
 </footer>
+</div>
+</div>
 
 <script src="scripts/cms-page-loader.js"></script>
 <script>

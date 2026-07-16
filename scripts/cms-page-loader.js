@@ -1397,6 +1397,10 @@
 
     // Internal links stay in same tab, external links open in a new tab.
     applyLinkTargetPolicy(document);
+
+    document.dispatchEvent(new CustomEvent('cms:content-applied', {
+      detail: { page: document.body && document.body.dataset ? document.body.dataset.cmsPage : '' }
+    }));
   }
 
   function init() {
@@ -1437,7 +1441,10 @@
         })
         .then(applyContent)
         .catch(function () {
-          // Silent fallback to hardcoded HTML defaults.
+          // Keep the hardcoded HTML defaults and allow page enhancements to initialize.
+          document.dispatchEvent(new CustomEvent('cms:content-applied', {
+            detail: { page: page, fallback: true }
+          }));
         });
     });
   }

@@ -18,6 +18,36 @@
             stroke-dashoffset: 720;
             animation: scribbleDraw 1.2s cubic-bezier(0.37, 0, 0.63, 1) forwards 0.5s;
         }
+        #smooth-wrapper {
+            overflow: hidden;
+        }
+        #smooth-content {
+            position: relative;
+            overflow: visible;
+        }
+        .homepage-hero-line {
+            display: inline-block;
+        }
+        .gsap-enhanced .scribble-underline path,
+        .gsap-enhanced .stitch-sticker-card,
+        .gsap-enhanced .featured-stitch-sparkle {
+            animation: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            [data-cms-page="homepage"],
+            [data-cms-page="homepage"] *,
+            [data-cms-page="homepage"] *::before,
+            [data-cms-page="homepage"] *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            [data-cms-page="homepage"] .scribble-underline path {
+                stroke-dashoffset: 0;
+            }
+        }
         .word-faster {
             font-family: "Begum Semibold", "Instrument Serif", "Times New Roman", serif;
             font-style: normal;
@@ -30,6 +60,7 @@
         }
         .featured-stitch-section {
             overflow: hidden;
+            isolation: isolate;
         }
         .featured-stitch-header {
             position: relative;
