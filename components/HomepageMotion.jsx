@@ -3,11 +3,12 @@
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(DrawSVGPlugin, ScrollSmoother, ScrollTrigger, TextPlugin);
+gsap.registerPlugin(DrawSVGPlugin, MotionPathPlugin, ScrollSmoother, ScrollTrigger, TextPlugin);
 
 export default function HomepageMotion() {
   useLayoutEffect(() => {
@@ -84,7 +85,7 @@ export default function HomepageMotion() {
       const featuredTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".featured-stitch-section",
-          start: "top 76%",
+          start: "top 82%",
           once: true,
         },
         defaults: { ease: "expo.out" },
@@ -107,41 +108,112 @@ export default function HomepageMotion() {
           duration: 0.8,
           ease: "none",
         }, 0.18)
-        .from(".stitch-sticker", {
-          x: () => gsap.utils.random(-110, 110),
-          y: () => gsap.utils.random(45, 150),
-          scale: 0.45,
-          rotation: () => gsap.utils.random(-24, 24),
+        .from(".featured-scroll-hint", {
+          x: -24,
           autoAlpha: 0,
-          duration: 0.82,
-          stagger: { each: 0.065, from: "random" },
-          clearProps: "opacity,visibility",
-        }, 0.28)
-        .fromTo(".featured-stitch-doodles path", { drawSVG: "0%" }, {
-          drawSVG: "100%",
-          duration: 0.72,
-          stagger: 0.12,
-          ease: "power2.inOut",
-        }, 0.52)
-        .from(".featured-stitch-sparkle, .stitch-pop, .stitch-dot", {
-          scale: 0,
-          rotation: -35,
-          transformOrigin: "50% 50%",
-          duration: 0.5,
-          stagger: 0.07,
-        }, 0.62);
+          duration: 0.55,
+          clearProps: "transform,opacity,visibility",
+        }, 0.35);
 
-      gsap.utils.toArray(".stitch-sticker-card").forEach((card, index) => {
-        gsap.to(card, {
-          y: index % 2 === 0 ? -9 : -13,
-          rotation: index % 2 === 0 ? 0.8 : -0.7,
-          duration: 3.1 + (index % 3) * 0.55,
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          delay: index * 0.08,
+      const featuredSection = page.querySelector(".featured-stitch-section");
+      const featuredStage = page.querySelector(".featured-stitch-stage");
+      const featuredTrack = page.querySelector(".featured-stitch-track");
+      const motionRoute = page.querySelector(".featured-motion-route");
+      const motionRouteShadow = page.querySelector(".featured-motion-route-shadow");
+      const motionEcho = page.querySelector(".featured-motion-echo");
+      const playhead = page.querySelector(".featured-playhead");
+
+      if (featuredSection && featuredStage && featuredTrack && motionRoute && playhead) {
+        const getTravel = () => Math.max(0, featuredTrack.scrollWidth - featuredStage.clientWidth);
+        const getScrollDistance = () => Math.max(
+          getTravel() * 0.82,
+          window.innerHeight * 1.45,
+        );
+
+        const horizontalTimeline = gsap.timeline({
+          defaults: { ease: "none" },
+          scrollTrigger: {
+            trigger: featuredSection,
+            start: "top top",
+            end: () => `+=${getScrollDistance()}`,
+            scrub: 0.7,
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
         });
-      });
+
+        horizontalTimeline
+          .to(featuredTrack, {
+            x: () => -getTravel(),
+            duration: 1,
+          }, 0)
+          .fromTo([motionRouteShadow, motionRoute], {
+            drawSVG: "0%",
+          }, {
+            drawSVG: "100%",
+            duration: 1,
+          }, 0)
+          .fromTo(motionEcho, {
+            drawSVG: "0% 0%",
+          }, {
+            drawSVG: "20% 100%",
+            duration: 1,
+          }, 0)
+          .to(playhead, {
+            motionPath: {
+              path: motionRoute,
+              align: motionRoute,
+              alignOrigin: [0.5, 0.5],
+              autoRotate: true,
+            },
+            duration: 1,
+          }, 0)
+          .fromTo(".featured-svg-node > *", {
+            drawSVG: "0%",
+          }, {
+            drawSVG: "100%",
+            duration: 0.68,
+            stagger: 0.035,
+          }, 0.08)
+          .to(".featured-svg-node", {
+            rotation: (index) => index % 2 === 0 ? 190 : -150,
+            transformOrigin: "50% 50%",
+            duration: 1,
+            stagger: 0.04,
+          }, 0);
+
+        gsap.utils.toArray(".featured-stitch-track .stitch-sticker").forEach((card, index) => {
+          gsap.to(card, {
+            keyframes: [
+              { scale: 1.075, duration: 0.5, ease: "power2.out" },
+              { scale: 0.9, duration: 0.5, ease: "power2.in" },
+            ],
+            scrollTrigger: {
+              trigger: card,
+              containerAnimation: horizontalTimeline,
+              start: "left 84%",
+              end: "right 16%",
+              scrub: true,
+            },
+          });
+
+          const label = card.querySelector(".stitch-label");
+          if (label) {
+            gsap.to(label, {
+              y: index % 2 === 0 ? -11 : 11,
+              rotation: index % 2 === 0 ? 5 : -5,
+              scrollTrigger: {
+                trigger: card,
+                containerAnimation: horizontalTimeline,
+                start: "left 80%",
+                end: "right 20%",
+                scrub: true,
+              },
+            });
+          }
+        });
+      }
 
       const aboutCard = page.querySelector(".homepage-about-card");
       if (aboutCard) {
@@ -163,6 +235,15 @@ export default function HomepageMotion() {
       document.fonts?.ready.then(refresh);
       window.addEventListener("load", refresh, { once: true });
       cleanup.push(() => window.removeEventListener("load", refresh));
+
+      if (window.location.hash) {
+        const hashTarget = document.getElementById(window.location.hash.slice(1));
+        if (hashTarget) {
+          window.requestAnimationFrame(() => {
+            smoother.scrollTo(hashTarget, false, "top top");
+          });
+        }
+      }
 
         return () => {
           smoother.kill();

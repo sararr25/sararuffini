@@ -787,3 +787,319 @@
         .group:hover .nav-scribble path {
             stroke-dashoffset: 0;
         }
+
+        /* Scroll-driven Featured Projects sequence */
+        .featured-stitch-section {
+            width: 100vw !important;
+            max-width: none !important;
+            margin-right: calc(50% - 50vw);
+            margin-left: calc(50% - 50vw);
+            border-top: 4px solid #111;
+            border-bottom: 4px solid #111;
+            background: #0b0b0b;
+            overflow: clip;
+        }
+        .featured-stitch-stage {
+            position: relative;
+            width: 100%;
+            min-height: 42rem;
+            padding: clamp(2.5rem, 6vw, 5.5rem) clamp(1.25rem, 5vw, 5rem);
+            background:
+                radial-gradient(circle at 78% 28%, rgba(59, 222, 200, 0.19), transparent 23rem),
+                radial-gradient(circle at 18% 78%, rgba(242, 108, 13, 0.18), transparent 21rem),
+                #0b0b0b;
+        }
+        .featured-stitch-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 0.45rem 2rem;
+            align-items: end;
+            max-width: 90rem;
+            margin: 0 auto clamp(3rem, 7vw, 6rem);
+            padding: 0;
+            text-align: left;
+        }
+        .featured-stitch-title {
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            color: #fff;
+            font-size: clamp(3.25rem, 8vw, 7.5rem);
+            line-height: 0.82;
+            letter-spacing: -0.04em;
+        }
+        .featured-stitch-subtitle {
+            max-width: 40rem;
+            margin: 0.45rem 0 0;
+            color: #3bdec8;
+            font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+            line-height: 1.35;
+        }
+        .dark .featured-stitch-subtitle {
+            color: #3bdec8;
+        }
+        .featured-scroll-hint {
+            grid-row: 1 / span 2;
+            grid-column: 2;
+            align-self: center;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .featured-scroll-hint span {
+            display: inline-block;
+            margin-left: 0.45rem;
+            color: #3bdec8;
+            font-size: 1.35rem;
+        }
+        .featured-motion-map {
+            display: none;
+        }
+        .featured-stitch-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+            gap: clamp(2.5rem, 6vw, 5rem);
+            width: 100%;
+            min-height: 0;
+            padding: 0;
+            counter-reset: featured-project;
+        }
+        .featured-stitch-track .stitch-sticker {
+            position: relative;
+            top: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            left: auto !important;
+            width: 100%;
+            margin: 0;
+            counter-increment: featured-project;
+        }
+        .featured-stitch-track .stitch-sticker::before {
+            position: absolute;
+            top: -1.8rem;
+            left: 0;
+            color: #3bdec8;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            content: "0" counter(featured-project);
+        }
+        .featured-stitch-track .stitch-media {
+            height: clamp(13rem, 23vw, 19rem);
+        }
+        .featured-stitch-track .stitch-frame--circle,
+        .featured-stitch-track .stitch-frame--pill {
+            aspect-ratio: 1;
+        }
+        .featured-stitch-track .stitch-media--circle,
+        .featured-stitch-track .stitch-media--cocktail {
+            height: 100%;
+        }
+
+        .gsap-enhanced .featured-stitch-stage {
+            height: clamp(38rem, 78svh, 49rem);
+            min-height: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .gsap-enhanced .featured-stitch-header {
+            position: absolute;
+            top: clamp(2rem, 5vh, 4rem);
+            right: clamp(1.25rem, 5vw, 5rem);
+            left: clamp(1.25rem, 5vw, 5rem);
+            z-index: 6;
+            margin: 0;
+        }
+        .gsap-enhanced .featured-stitch-title {
+            font-size: clamp(3.2rem, 7.5vw, 7rem);
+        }
+        .gsap-enhanced .featured-motion-map {
+            position: absolute;
+            inset: 8rem 0 0;
+            z-index: 1;
+            display: block;
+            pointer-events: none;
+        }
+        .featured-motion-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .featured-motion-route-shadow,
+        .featured-motion-route,
+        .featured-motion-echo,
+        .featured-svg-node path,
+        .featured-svg-node circle,
+        .featured-svg-node rect {
+            fill: none;
+            vector-effect: non-scaling-stroke;
+        }
+        .featured-motion-route-shadow {
+            stroke: #000;
+            stroke-width: 18;
+        }
+        .featured-motion-route {
+            stroke: #3bdec8;
+            stroke-width: 7;
+            stroke-linecap: round;
+        }
+        .featured-motion-echo {
+            stroke: #f26c0d;
+            stroke-width: 3;
+            stroke-dasharray: 11 16;
+            opacity: 0.75;
+        }
+        .featured-svg-node {
+            color: #fff;
+            opacity: 0.42;
+        }
+        .featured-svg-node path,
+        .featured-svg-node circle,
+        .featured-svg-node rect {
+            stroke: currentColor;
+            stroke-width: 3;
+        }
+        .featured-svg-node--two {
+            color: #f26c0d;
+        }
+        .featured-svg-node--three {
+            color: #3bdec8;
+        }
+        .featured-playhead {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            width: clamp(2.8rem, 4vw, 4rem);
+            aspect-ratio: 1;
+            filter: drop-shadow(5px 5px 0 #000);
+        }
+        .featured-playhead svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        .featured-playhead circle {
+            fill: #fff;
+            stroke: #111;
+            stroke-width: 4;
+        }
+        .featured-playhead path {
+            fill: #f26c0d;
+            stroke: #111;
+            stroke-linejoin: round;
+            stroke-width: 2;
+        }
+        .gsap-enhanced .featured-stitch-track {
+            position: absolute;
+            top: clamp(11rem, 24vh, 14rem);
+            left: 0;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: clamp(3.5rem, 7vw, 8rem);
+            width: max-content;
+            height: calc(100% - clamp(11rem, 24vh, 14rem));
+            padding: 1.5rem 52vw 3rem 46vw;
+            will-change: transform;
+        }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker {
+            flex: 0 0 auto;
+            width: clamp(15rem, 22vw, 21rem);
+            margin-top: 0;
+        }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--urban { width: clamp(17rem, 25vw, 23rem); margin-top: -3rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--pixel { width: clamp(16rem, 23vw, 21rem); margin-top: 4rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--app { width: clamp(14rem, 19vw, 18rem); margin-top: -2rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--pasta { width: clamp(14rem, 19vw, 18rem); margin-top: 4rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--phone { width: clamp(13rem, 17vw, 16rem); margin-top: -3.5rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--cocktail { width: clamp(13rem, 17vw, 16rem); margin-top: 3rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--dna { width: clamp(14rem, 19vw, 18rem); margin-top: -2rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker--bbq { width: clamp(16rem, 23vw, 21rem); margin-top: 3rem; }
+        .gsap-enhanced .featured-stitch-track .stitch-media {
+            height: clamp(13rem, 25vh, 18rem);
+        }
+        .gsap-enhanced .featured-stitch-track .stitch-frame--circle,
+        .gsap-enhanced .featured-stitch-track .stitch-frame--pill {
+            aspect-ratio: 1;
+        }
+        .gsap-enhanced .featured-stitch-track .stitch-media--circle,
+        .gsap-enhanced .featured-stitch-track .stitch-media--cocktail {
+            height: 100%;
+        }
+        .gsap-enhanced .featured-stitch-track .stitch-sticker-card {
+            animation: none;
+        }
+
+        @media (max-width: 700px) {
+            .featured-stitch-stage {
+                padding: 3rem 1.25rem;
+            }
+            .featured-stitch-header {
+                grid-template-columns: 1fr;
+            }
+            .featured-stitch-title {
+                font-size: clamp(3rem, 16vw, 4.6rem);
+            }
+            .featured-scroll-hint {
+                display: none;
+            }
+            .featured-stitch-track {
+                grid-template-columns: 1fr;
+            }
+            .gsap-enhanced .featured-stitch-stage {
+                height: max(35rem, 72svh);
+            }
+            .gsap-enhanced .featured-stitch-header {
+                top: 2rem;
+            }
+            .gsap-enhanced .featured-stitch-title {
+                font-size: clamp(2.8rem, 15vw, 4.3rem);
+            }
+            .gsap-enhanced .featured-motion-map {
+                inset: 8rem -35% 0;
+            }
+            .gsap-enhanced .featured-stitch-track {
+                top: 10.5rem;
+                gap: 3.5rem;
+                height: calc(100% - 10.5rem);
+                padding-right: 28vw;
+                padding-left: 16vw;
+            }
+            .gsap-enhanced .featured-stitch-track .stitch-sticker,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--urban,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--pixel,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--app,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--pasta,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--phone,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--cocktail,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--dna,
+            .gsap-enhanced .featured-stitch-track .stitch-sticker--bbq {
+                width: min(74vw, 20rem);
+                margin-top: 0;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .featured-motion-map,
+            .featured-scroll-hint {
+                display: none !important;
+            }
+            .featured-stitch-stage {
+                min-height: 0;
+                overflow: visible;
+            }
+            .featured-stitch-track .stitch-sticker {
+                transform: none !important;
+            }
+        }

@@ -120,21 +120,36 @@
 </div>
 </div>
 </section>
-<section class="featured-stitch-section relative w-full max-w-7xl mx-auto mb-24">
+<section class="featured-stitch-section relative w-full max-w-7xl mx-auto mb-24" id="featured-projects">
+<div class="featured-stitch-stage">
 <header class="featured-stitch-header">
 <h3 class="featured-stitch-title font-display" data-cms-text="featured_title">Featured Projects</h3>
 <p class="featured-stitch-subtitle" data-cms-text="featured_subtitle">Handpicked selections from the cutting room floor</p>
-<div aria-hidden="true" class="featured-stitch-sparkle featured-stitch-sparkle--left"><span class="material-icons">auto_awesome</span></div>
-<div aria-hidden="true" class="featured-stitch-sparkle featured-stitch-sparkle--right"><span class="material-icons">star</span></div>
+<span aria-hidden="true" class="featured-scroll-hint">Scroll to explore <span>→</span></span>
 </header>
-<div class="featured-stitch-board" data-cms-featured-projects="featured_projects">
-<div aria-hidden="true" class="featured-stitch-doodles">
-<svg class="stitch-doodle stitch-doodle--squiggle" fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 100 100"><path d="M10,50 Q30,20 50,50 T90,50"></path></svg>
-<svg class="stitch-doodle stitch-doodle--star" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg>
-<span class="stitch-pop">POP!</span>
-<span class="stitch-dot stitch-dot--black"></span>
-<span class="stitch-dot stitch-dot--gold"></span>
+<div aria-hidden="true" class="featured-motion-map">
+<svg class="featured-motion-svg" preserveAspectRatio="none" viewBox="0 0 1600 600">
+<path class="featured-motion-route-shadow" d="M-70 378 C120 155 305 538 515 304 S905 82 1085 340 S1390 510 1670 190" pathLength="100"></path>
+<path class="featured-motion-route" d="M-70 378 C120 155 305 538 515 304 S905 82 1085 340 S1390 510 1670 190" pathLength="100"></path>
+<path class="featured-motion-echo" d="M-20 472 C250 245 390 580 650 390 S1010 125 1260 400 S1490 420 1640 300" pathLength="100"></path>
+<g class="featured-svg-node featured-svg-node--one" transform="translate(250 230)">
+<circle cx="0" cy="0" r="38"></circle><circle cx="0" cy="0" r="12"></circle>
+<path d="M-54 0H54M0-54V54"></path>
+</g>
+<g class="featured-svg-node featured-svg-node--two" transform="translate(820 205)">
+<rect x="-31" y="-31" width="62" height="62" rx="8"></rect>
+<path d="M-48-48L48 48M48-48L-48 48"></path>
+</g>
+<g class="featured-svg-node featured-svg-node--three" transform="translate(1320 365)">
+<path d="M0-48L13-13L48 0L13 13L0 48L-13 13L-48 0L-13-13Z"></path>
+<circle cx="0" cy="0" r="10"></circle>
+</g>
+</svg>
+<div class="featured-playhead">
+<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"></circle><path d="M20 15L33 24L20 33Z"></path></svg>
 </div>
+</div>
+<div class="featured-stitch-board featured-stitch-track" data-cms-featured-projects="featured_projects">
 <a aria-label="Project: Urban Chronicles" class="stitch-sticker stitch-sticker--urban stitch-drift-1" data-cms-href="featured_polaroid.href" href="pages/video-v2/index.html">
 <span class="stitch-sticker-card stitch-frame stitch-frame--rounded"><span class="stitch-media stitch-media--large"><img alt="Vintage camcorder sticker" data-cms-src="featured_polaroid.image" data-cms-alt="featured_polaroid.alt" src="assets/stitch-homepage-featured/sticker-urban-chronicles.png"/></span></span>
 <span class="stitch-label stitch-label--yellow" data-cms-text="featured_polaroid.caption">Urban Chronicles</span>
@@ -167,6 +182,7 @@
 <span class="stitch-sticker-card stitch-frame stitch-frame--square"><span class="stitch-media stitch-media--short"><img alt="Barbecue sticker" data-cms-src="featured_grill.image" data-cms-alt="featured_grill.alt" src="assets/stitch-homepage-featured/sticker-summer-heat.png"/></span></span>
 <span class="stitch-label stitch-label--black" data-cms-text="featured_grill.label">Summer Heat</span>
 </a>
+</div>
 </div>
 </section>
 <section class="homepage-about-card max-w-4xl mx-auto mb-32 px-6">
