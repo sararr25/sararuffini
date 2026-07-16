@@ -155,8 +155,8 @@
 </div>
 </div>
 </section>
-<section class="homepage-about-card max-w-4xl mx-auto mb-32 px-6">
-<div class="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] relative overflow-hidden">
+<section class="homepage-about-card max-w-4xl mx-auto mb-32 px-6" id="about-story">
+<div class="about-story-card bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] relative overflow-hidden">
 <div class="absolute top-0 right-0 w-24 h-24 bg-primary/20 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
 <div class="absolute bottom-0 left-0 w-32 h-32 bg-yellow-400/20 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
 <div class="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -166,13 +166,28 @@
 </div>
 </div>
 <div class="text-center md:text-left flex-1">
-<h4 class="text-2xl md:text-3xl font-bold font-sans tracking-tight text-black dark:text-white mb-6 leading-tight" data-cms-html="teaser_text_html">
+<h4 class="text-2xl md:text-3xl font-bold font-sans tracking-tight text-black dark:text-white mb-6 leading-tight" data-about-copy data-cms-html="teaser_text_html">
                             A collection of work crafted with <span class="text-primary">heart</span>, <span class="text-pink-500">creativity</span>, and <span class="text-yellow-500">storytelling</span>. Explore how I turn concepts into visuals that connect.
                         </h4>
-<a class="inline-flex items-center space-x-2 text-primary font-bold uppercase tracking-wider text-sm cursor-pointer hover:underline decoration-wavy decoration-black dark:decoration-white transition-all transform hover:translate-x-2" data-cms-href="teaser_link_href" href="../about/index.html">
+<a class="inline-flex items-center space-x-2 text-primary font-bold uppercase tracking-wider text-sm cursor-pointer hover:underline decoration-wavy decoration-black dark:decoration-white transition-all transform hover:translate-x-2" data-about-cta data-cms-href="teaser_link_href" href="../about/index.html">
 <span data-cms-text="teaser_link_text">Read More About Me</span>
-<span class="material-symbols-outlined text-lg">arrow_forward</span>
+<span class="about-cta-arrow material-symbols-outlined text-lg">arrow_forward</span>
 </a>
+</div>
+</div>
+</div>
+<div class="about-remix-timeline" data-about-remix>
+<div class="about-remix-heading">
+<span>Text remix</span>
+<span>Drag the playhead</span>
+</div>
+<div class="about-remix-rail" data-about-rail>
+<span class="about-remix-segment about-remix-segment--heart">Heart</span>
+<span class="about-remix-segment about-remix-segment--creativity">Creativity</span>
+<span class="about-remix-segment about-remix-segment--story">Storytelling</span>
+<div aria-label="Creative timeline: Heart" aria-orientation="horizontal" aria-valuemax="2" aria-valuemin="0" aria-valuenow="0" class="about-remix-playhead" data-about-playhead role="slider" tabindex="0">
+<span></span>
+<svg aria-hidden="true" viewBox="0 0 28 22"><path d="M7 4L20 11L7 18Z"></path></svg>
 </div>
 </div>
 </div>

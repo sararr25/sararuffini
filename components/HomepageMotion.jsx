@@ -2,13 +2,15 @@
 
 import { useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 import { TextPlugin } from "gsap/TextPlugin";
 
-gsap.registerPlugin(DrawSVGPlugin, MotionPathPlugin, ScrollSmoother, ScrollTrigger, TextPlugin);
+gsap.registerPlugin(Draggable, DrawSVGPlugin, MotionPathPlugin, ScrollSmoother, ScrollTrigger, SplitText, TextPlugin);
 
 export default function HomepageMotion() {
   useLayoutEffect(() => {
@@ -215,20 +217,169 @@ export default function HomepageMotion() {
         });
       }
 
-      const aboutCard = page.querySelector(".homepage-about-card");
-      if (aboutCard) {
-        gsap.from(aboutCard, {
-          scrollTrigger: {
-            trigger: aboutCard,
-            start: "top 84%",
-            once: true,
-          },
-          clipPath: "inset(0 0 100% 0 round 0.5rem)",
-          y: 36,
-          duration: 0.75,
-          ease: "expo.out",
-          clearProps: "clipPath,transform",
+      const aboutCard = page.querySelector(".about-story-card");
+      const aboutCopy = page.querySelector("[data-about-copy]");
+      const aboutCta = page.querySelector("[data-about-cta]");
+      const aboutCtaArrow = aboutCta?.querySelector(".about-cta-arrow");
+      const remixRail = page.querySelector("[data-about-rail]");
+      const remixPlayhead = page.querySelector("[data-about-playhead]");
+      let aboutSplit;
+      let remixDraggable;
+      let remixAutoplay;
+      let remixRestart;
+      let removeAboutListeners = () => {};
+
+      if (aboutCard && aboutCopy && remixRail && remixPlayhead) {
+        aboutSplit = SplitText.create(aboutCopy, {
+          type: "words",
+          wordsClass: "about-copy-word",
         });
+
+        const keywords = [
+          aboutCopy.querySelector(".text-primary"),
+          aboutCopy.querySelector(".text-pink-500"),
+          aboutCopy.querySelector(".text-yellow-500"),
+        ].filter(Boolean);
+        const keywordNames = ["Heart", "Creativity", "Storytelling"];
+        let activeKeyword = -1;
+
+        const remixCopy = () => {
+          gsap.fromTo(aboutSplit.words, {
+            yPercent: (index) => index % 2 === 0 ? 42 : -34,
+            rotation: (index) => index % 3 === 0 ? -3 : 2,
+            autoAlpha: 0.2,
+          }, {
+            yPercent: 0,
+            rotation: 0,
+            autoAlpha: 1,
+            duration: 0.52,
+            stagger: 0.018,
+            ease: "expo.out",
+            overwrite: true,
+          });
+        };
+
+        const activateKeyword = (index) => {
+          const nextIndex = Math.max(0, Math.min(keywords.length - 1, index));
+          if (nextIndex === activeKeyword || !keywords[nextIndex]) {
+            return;
+          }
+          activeKeyword = nextIndex;
+
+          remixPlayhead.setAttribute("aria-valuenow", String(nextIndex));
+          remixPlayhead.setAttribute("aria-label", `Creative timeline: ${keywordNames[nextIndex]}`);
+          gsap.to(keywords, {
+            y: 0,
+            scale: 1,
+            rotation: 0,
+            duration: 0.22,
+            ease: "power2.out",
+            overwrite: true,
+          });
+          gsap.timeline()
+            .to(keywords[nextIndex], {
+              y: -7,
+              scale: 1.11,
+              rotation: nextIndex === 1 ? 2 : -2,
+              duration: 0.28,
+              ease: "expo.out",
+            })
+            .to(keywords[nextIndex], {
+              y: 0,
+              scale: 1,
+              rotation: 0,
+              duration: 0.42,
+              ease: "power2.out",
+            });
+        };
+
+        const getMaxX = () => Math.max(0, remixRail.clientWidth - remixPlayhead.offsetWidth);
+        const updateFromPosition = (x) => {
+          const progress = getMaxX() ? gsap.utils.clamp(0, 1, x / getMaxX()) : 0;
+          activateKeyword(Math.min(2, Math.floor(progress * 3)));
+        };
+
+        const startRemixAutoplay = () => {
+          remixAutoplay?.kill();
+          const currentX = Number(gsap.getProperty(remixPlayhead, "x")) || 0;
+          const destination = currentX > getMaxX() / 2 ? 0 : getMaxX();
+          remixAutoplay = gsap.to(remixPlayhead, {
+            x: destination,
+            duration: 4.8,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            onUpdate: () => updateFromPosition(Number(gsap.getProperty(remixPlayhead, "x")) || 0),
+          });
+        };
+
+        [remixDraggable] = Draggable.create(remixPlayhead, {
+          type: "x",
+          bounds: { minX: 0, maxX: getMaxX() },
+          cursor: "grab",
+          activeCursor: "grabbing",
+          onPress() {
+            remixAutoplay?.kill();
+            remixRestart?.kill();
+          },
+          onDrag() {
+            updateFromPosition(this.x);
+          },
+          onRelease() {
+            remixRestart = gsap.delayedCall(0.8, startRemixAutoplay);
+          },
+        });
+
+        const handleAboutPointer = () => remixCopy();
+        const handleCtaEnter = () => {
+          remixCopy();
+          gsap.to(aboutCtaArrow, { x: 10, duration: 0.25, ease: "expo.out" });
+        };
+        const handleCtaLeave = () => {
+          gsap.to(aboutCtaArrow, { x: 0, duration: 0.32, ease: "expo.out" });
+        };
+        const handlePlayheadKeydown = (event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+            return;
+          }
+          event.preventDefault();
+          remixAutoplay?.kill();
+          remixRestart?.kill();
+          const direction = event.key === "ArrowRight" ? 1 : -1;
+          const nextIndex = gsap.utils.clamp(0, 2, activeKeyword + direction);
+          activateKeyword(nextIndex);
+          gsap.to(remixPlayhead, {
+            x: getMaxX() * (nextIndex / 2),
+            duration: 0.38,
+            ease: "expo.out",
+          });
+          remixRestart = gsap.delayedCall(1.4, startRemixAutoplay);
+        };
+        const handleRemixResize = () => {
+          const progress = activeKeyword < 0 ? 0 : activeKeyword / 2;
+          remixDraggable.applyBounds({ minX: 0, maxX: getMaxX() });
+          gsap.set(remixPlayhead, { x: getMaxX() * progress });
+          startRemixAutoplay();
+        };
+
+        aboutCard.addEventListener("pointerenter", handleAboutPointer);
+        aboutCta?.addEventListener("focus", handleCtaEnter);
+        aboutCta?.addEventListener("pointerenter", handleCtaEnter);
+        aboutCta?.addEventListener("pointerleave", handleCtaLeave);
+        remixPlayhead.addEventListener("keydown", handlePlayheadKeydown);
+        window.addEventListener("resize", handleRemixResize);
+
+        removeAboutListeners = () => {
+          aboutCard.removeEventListener("pointerenter", handleAboutPointer);
+          aboutCta?.removeEventListener("focus", handleCtaEnter);
+          aboutCta?.removeEventListener("pointerenter", handleCtaEnter);
+          aboutCta?.removeEventListener("pointerleave", handleCtaLeave);
+          remixPlayhead.removeEventListener("keydown", handlePlayheadKeydown);
+          window.removeEventListener("resize", handleRemixResize);
+        };
+
+        activateKeyword(0);
+        startRemixAutoplay();
       }
 
       const refresh = () => ScrollTrigger.refresh();
@@ -246,6 +397,11 @@ export default function HomepageMotion() {
       }
 
         return () => {
+          removeAboutListeners();
+          remixRestart?.kill();
+          remixAutoplay?.kill();
+          remixDraggable?.kill();
+          aboutSplit?.revert();
           smoother.kill();
         };
       });

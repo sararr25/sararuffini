@@ -1103,3 +1103,157 @@
                 transform: none !important;
             }
         }
+
+        /* Time-based About copy animation and draggable editing timeline */
+        .homepage-about-card {
+            position: relative;
+            isolation: isolate;
+            overflow: visible;
+        }
+        .about-story-card {
+            position: relative;
+            z-index: 2;
+        }
+        [data-about-copy] {
+            text-wrap: pretty;
+        }
+        .about-copy-word,
+        [data-about-copy] .text-primary,
+        [data-about-copy] .text-pink-500,
+        [data-about-copy] .text-yellow-500 {
+            display: inline-block;
+            transform-origin: 50% 80%;
+        }
+        .about-remix-timeline {
+            position: relative;
+            z-index: 3;
+            width: min(94%, 46rem);
+            margin: 2.35rem auto 0;
+            border: 4px solid #111;
+            background: #fff;
+            box-shadow: 7px 7px 0 #f26c0d;
+            color: #111;
+            transform: rotate(-1deg);
+        }
+        .about-remix-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 2.6rem;
+            padding: 0.45rem 0.75rem;
+            border-bottom: 4px solid #111;
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+        }
+        .about-remix-heading span:last-child {
+            color: #006b57;
+        }
+        .about-remix-rail {
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            height: 4.6rem;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+        .about-remix-segment {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 0.65rem 0.4rem;
+            border-right: 3px solid #111;
+            color: #111;
+            font-size: clamp(0.66rem, 1.3vw, 0.82rem);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+        .about-remix-segment:last-of-type {
+            border-right: 0;
+        }
+        .about-remix-segment--heart {
+            background: #3bdec8;
+        }
+        .about-remix-segment--creativity {
+            background: #ef69a4;
+        }
+        .about-remix-segment--story {
+            background: #ffd84d;
+        }
+        .about-remix-playhead {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            width: 2.2rem;
+            height: 100%;
+            cursor: grab;
+            outline: none;
+            filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.85));
+            will-change: transform;
+        }
+        .about-remix-playhead:active {
+            cursor: grabbing;
+        }
+        .about-remix-playhead:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: -5px;
+        }
+        .about-remix-playhead span {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #111;
+            transform: translateX(-50%);
+        }
+        .about-remix-playhead svg {
+            position: absolute;
+            top: 0.28rem;
+            left: 50%;
+            width: 1.8rem;
+            height: 1.45rem;
+            overflow: visible;
+            transform: translateX(-50%);
+        }
+        .about-remix-playhead path {
+            fill: #fff;
+            stroke: #111;
+            stroke-linejoin: round;
+            stroke-width: 3;
+        }
+        .about-cta-arrow {
+            display: inline-block;
+            will-change: transform;
+        }
+
+        @media (max-width: 640px) {
+            .about-remix-timeline {
+                width: 100%;
+                margin-top: 1.8rem;
+                transform: rotate(-0.5deg);
+            }
+            .about-remix-heading {
+                font-size: 0.64rem;
+            }
+            .about-remix-segment {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-remix-timeline {
+                display: none;
+            }
+            .about-copy-word,
+            [data-about-copy] .text-primary,
+            [data-about-copy] .text-pink-500,
+            [data-about-copy] .text-yellow-500,
+            .about-cta-arrow {
+                transform: none !important;
+            }
+        }
