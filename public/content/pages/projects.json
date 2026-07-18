@@ -64,6 +64,20 @@
       "alt": "3days of design planning website",
       "title": "3days of design planning website",
       "meta": "Web Design"
+    },
+    {
+      "href": "",
+      "href_page": "/social-media-strategy",
+      "badge": "Social Media Strategy",
+      "image": "/assets/media/ChatGPT Image Jul 18, 2026, 10_30_46 PM (1).png",
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "alt": "",
+      "title": "SMM",
+      "meta": ""
     }
   ],
   "seo": {
