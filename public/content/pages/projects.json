@@ -38,14 +38,6 @@
       "meta": "Video editing"
     },
     {
-      "href": "/pages/webpage-portfolio/index.html",
-      "badge": "Website",
-      "image": "/assets/webpage-portfolio/animated_web_showcase_hybrid_editorial/screen.png",
-      "alt": "Webpage portfolio project preview",
-      "title": "Webpage Portfolio",
-      "meta": "Web Design • Portfolio"
-    },
-    {
       "href": "",
       "href_page": "/pages/app-v1/index.html",
       "badge": "Playtribe",
@@ -60,7 +52,7 @@
       "meta": "UX/UI • Mobile App"
     },
     {
-      "href": "/pages/neon-vibes-web/index.html",
+      "href": "",
       "href_page": "/pages/webpage-portfolio/index.html",
       "badge": "Web design",
       "image": "/assets/media/desktop-01-event-list.png",
@@ -72,31 +64,6 @@
       "alt": "3days of design planning website",
       "title": "3days of design planning website",
       "meta": "Web Design"
-    },
-    {
-      "href": "",
-      "href_page": "/pages/coming-soon/index.html",
-      "badge": "Science affordable",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
-      "alt": "Video podcast",
-      "title": "Søberg Institute work",
-      "meta": "Video production"
-    },
-    {
-      "href": "/pages/cocktail-photography/index.html",
-      "badge": "Studio Light",
-      "image": "/assets/media/Cocktail-29.jpg",
-      "alt": "Cocktail photography project",
-      "title": "Mixology in Focus",
-      "meta": "Photography • 2025"
-    },
-    {
-      "href": "/pages/shooting-cocktails/index.html",
-      "badge": "Retro Pop",
-      "image": "/assets/media/Cocktail-123.jpg",
-      "alt": "Shooting Cocktails project cover",
-      "title": "Shooting Cocktails",
-      "meta": "Photography • Editorial"
     }
   ],
   "seo": {
