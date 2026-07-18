@@ -47,23 +47,6 @@
     },
     {
       "href": "",
-      "href_page": "/pages/coming-soon/index.html",
-      "badge": "Science affordable",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
-      "alt": "Video podcast",
-      "title": "Søberg Institute work",
-      "meta": "Video production"
-    },
-    {
-      "href": "/pages/neon-vibes-web/index.html",
-      "badge": "Neon Vibes",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
-      "alt": "Neon Vibes web project",
-      "title": "Neon Vibes",
-      "meta": "Web Design • 2024"
-    },
-    {
-      "href": "",
       "href_page": "/pages/app-v1/index.html",
       "badge": "Playtribe",
       "image": "/assets/media/Artboard6.png",
@@ -75,6 +58,29 @@
       "alt": "Retro Tech",
       "title": "Community and sport app",
       "meta": "UX/UI • Mobile App"
+    },
+    {
+      "href": "/pages/neon-vibes-web/index.html",
+      "href_page": "/pages/webpage-portfolio/index.html",
+      "badge": "Web design",
+      "image": "/assets/media/desktop-01-event-list.png",
+      "image_crop_position": {
+        "x": 52,
+        "y": 50,
+        "zoom": 1
+      },
+      "alt": "3days of design planning website",
+      "title": "3days of design planning website",
+      "meta": "Web Design"
+    },
+    {
+      "href": "",
+      "href_page": "/pages/coming-soon/index.html",
+      "badge": "Science affordable",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
+      "alt": "Video podcast",
+      "title": "Søberg Institute work",
+      "meta": "Video production"
     },
     {
       "href": "/pages/cocktail-photography/index.html",
@@ -94,8 +100,8 @@
     }
   ],
   "seo": {
-    "seo_title": "Portfolio - Sara Ruffini | Video & Motion Design",
-    "seo_description": "Explore a curated selection of video production, motion design, and creative direction projects.",
+    "seo_title": "Portfolio - Sara Ruffini | Video & Social Media & Web Design",
+    "seo_description": "Explore a curated selection of video production, web design, and creative direction projects.",
     "seo_image": "/assets/media/default-og-image.jpg"
   }
 }
