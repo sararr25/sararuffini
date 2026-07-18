@@ -7,52 +7,35 @@
   "gallery": [
     {
       "href": "",
+      "href_page": "/pages/cocktail-photography/index.html",
       "badge": "Enjoy!",
       "image": "/assets/media/Cocktail-3.jpg",
       "alt": "Drink it!",
       "title": "Cocktail shooting",
-      "meta": "2025",
-      "href_page": "/pages/cocktail-photography/index.html"
+      "meta": "2025"
     },
     {
       "href": "Food content",
+      "href_page": "/pages/socialmedia-portfolio/index.html",
       "badge": "Cook it!",
       "image": "/assets/media/screenshot-2026-06-04-at-13.21.16.png",
-      "alt": "",
-      "title": "Cook it!",
-      "meta": "Social Media • Edit",
-      "href_page": "/pages/socialmedia-portfolio/index.html",
       "image_crop_position": {
         "x": 40,
         "y": 75,
         "zoom": 1
-      }
+      },
+      "alt": "",
+      "title": "Cook it!",
+      "meta": "Social Media • Edit"
     },
     {
       "href": "",
+      "href_page": "/pages/weber-grillinspiration/index.html",
       "badge": "Grill it!",
       "image": "/assets/media/weber1.png",
       "alt": "Glitch Art",
       "title": "Weber Grilling series",
-      "meta": "Video editing",
-      "href_page": "/pages/weber-grillinspiration/index.html"
-    },
-    {
-      "href": "",
-      "badge": "Science affordable",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
-      "alt": "Video podcast",
-      "title": "Søberg Institute work",
-      "meta": "Video production",
-      "href_page": "/pages/coming-soon/index.html"
-    },
-    {
-      "href": "/pages/neon-vibes-web/index.html",
-      "badge": "Neon Vibes",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
-      "alt": "Neon Vibes web project",
-      "title": "Neon Vibes",
-      "meta": "Web Design • 2024"
+      "meta": "Video editing"
     },
     {
       "href": "/pages/webpage-portfolio/index.html",
@@ -63,11 +46,34 @@
       "meta": "Web Design • Portfolio"
     },
     {
-      "href": "/pages/app-v2/index.html",
-      "badge": "Retro Tech",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7",
+      "href": "",
+      "href_page": "/pages/coming-soon/index.html",
+      "badge": "Science affordable",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
+      "alt": "Video podcast",
+      "title": "Søberg Institute work",
+      "meta": "Video production"
+    },
+    {
+      "href": "/pages/neon-vibes-web/index.html",
+      "badge": "Neon Vibes",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
+      "alt": "Neon Vibes web project",
+      "title": "Neon Vibes",
+      "meta": "Web Design • 2024"
+    },
+    {
+      "href": "",
+      "href_page": "/pages/app-v1/index.html",
+      "badge": "Playtribe",
+      "image": "/assets/media/Artboard6.png",
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
       "alt": "Retro Tech",
-      "title": "Retro UI Design",
+      "title": "Community and sport app",
       "meta": "UX/UI • Mobile App"
     },
     {
