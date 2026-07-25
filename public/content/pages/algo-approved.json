@@ -1,0 +1,80 @@
+{
+  "page_name": "Algo Approved",
+  "page_slug": "algo-approved",
+  "hero": {
+    "sticker_text": "FOR YOU PAGE VIBES",
+    "sticker_icon": "local_fire_department",
+    "title_line_1": "THE",
+    "title_line_2": "ALGO",
+    "title_line_3": "APPROVED",
+    "title_line_4": "PORTFOLIO",
+    "scribble_word": "ALGO",
+    "intro_text": "Stop scrolling. Start converting. I create social-first creative that lives on the FYP and actually gets engagement.",
+    "cta_primary_label": "View Showreel",
+    "cta_primary_icon": "play_arrow",
+    "cta_primary_url": "",
+    "cta_secondary_label": "Stats & Analytics",
+    "cta_secondary_url": "",
+    "phone_image": "",
+    "phone_image_alt": "Vertical video style content showing a fast-paced creative process",
+    "floating_sticker_value": "1.2M",
+    "floating_sticker_label": "Views",
+    "phone_caption_author": "@sararuffini_creative",
+    "phone_caption_text": "How we shot the latest viral campaign for Brand X",
+    "phone_ui_likes": "124K",
+    "phone_ui_comments": "1.2K",
+    "phone_ui_shares": "800"
+  },
+  "drops": {
+    "title": "Recent",
+    "scribble_word": "Drops",
+    "subtitle": "High-performing social creative designed for maximum retention.",
+    "reels": [
+      {
+        "badge": "VIRAL",
+        "badge_color": "cyan",
+        "image": "",
+        "image_alt": "A trendy fashion shoot formatted for a vertical mobile screen",
+        "title": "Urban Style Co. Drop",
+        "meta": "2.4M Views | +15% CTR",
+        "rotation": "rotate-1"
+      },
+      {
+        "badge": "NEW",
+        "badge_color": "pink",
+        "image": "",
+        "image_alt": "Retro tech setup with neon lighting styled for a tech review",
+        "title": "Retro Tech Review",
+        "meta": "800K Views | Saved x500",
+        "has_play": true,
+        "rotation": "rotate-2"
+      },
+      {
+        "badge": "",
+        "badge_color": "",
+        "image": "",
+        "image_alt": "Abstract colorful paint or fluid simulation in vibrant yellow and cyan",
+        "title": "Oddly Satisfying ASMR",
+        "meta": "4.1M Views | 100% Retention",
+        "has_tape": true,
+        "rotation": "rotate-3"
+      },
+      {
+        "badge": "",
+        "badge_color": "",
+        "image": "",
+        "image_alt": "A cute pet dog looking at the camera, styled with bright, cheerful lighting",
+        "title": "BarkBox Campaign",
+        "meta": "1.1M Views | Top Performer",
+        "rotation": "rotate-4"
+      }
+    ],
+    "view_all_label": "View All Work",
+    "view_all_url": ""
+  },
+  "seo": {
+    "seo_title": "Algo Approved Portfolio | Sara Ruffini",
+    "seo_description": "Social-first creative portfolio that lives on the FYP. High-performing video content designed for maximum engagement.",
+    "seo_image": ""
+  }
+}

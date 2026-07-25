@@ -70,6 +70,8 @@ collections:
         value: /pages/webpage-portfolio/index.html
       - label: Coming Soon
         value: /pages/coming-soon/index.html
+      - label: Algo Approved
+        value: /algo-approved
     - label: Nav - Home
       name: nav_home
       widget: string
@@ -1895,6 +1897,254 @@ collections:
       name: cta_href
       widget: string
       required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
+        required: false
+        default: { x: 50, y: 50, zoom: 1 }
+        hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
+  - label: Algo Approved Template
+    name: algo_approved_template
+    file: public/content/templates/algo-approved-template.json
+    fields:
+    - label: Template Name
+      name: template_name
+      widget: string
+      default: "Algo Approved - Editorial Scrapbook"
+      required: false
+    - label: Hero Section
+      name: hero
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Sticker Text
+        name: sticker_text
+        widget: string
+        required: false
+      - label: Sticker Icon (Material Symbols)
+        name: sticker_icon
+        widget: string
+        required: false
+      - label: Title Line 1
+        name: title_line_1
+        widget: string
+        required: false
+      - label: Title Line 2
+        name: title_line_2
+        widget: string
+        required: false
+      - label: Title Line 3
+        name: title_line_3
+        widget: string
+        required: false
+      - label: Title Line 4
+        name: title_line_4
+        widget: string
+        required: false
+      - label: Scribble Word (highlighted)
+        name: scribble_word
+        widget: string
+        required: false
+      - label: Intro Text
+        name: intro_text
+        widget: text
+        required: false
+      - label: CTA Primary Label
+        name: cta_primary_label
+        widget: string
+        required: false
+      - label: CTA Primary Icon (Material Symbols)
+        name: cta_primary_icon
+        widget: string
+        required: false
+      - label: CTA Primary URL
+        name: cta_primary_url
+        widget: string
+        required: false
+      - label: CTA Secondary Label
+        name: cta_secondary_label
+        widget: string
+        required: false
+      - label: CTA Secondary URL
+        name: cta_secondary_url
+        widget: string
+        required: false
+      - label: Phone Image
+        name: phone_image
+        widget: image
+        required: false
+      - label: Phone Image Alt
+        name: phone_image_alt
+        widget: string
+        required: false
+      - label: Floating Sticker Value
+        name: floating_sticker_value
+        widget: string
+        required: false
+      - label: Floating Sticker Label
+        name: floating_sticker_label
+        widget: string
+        required: false
+      - label: Phone Caption Author
+        name: phone_caption_author
+        widget: string
+        required: false
+      - label: Phone Caption Text
+        name: phone_caption_text
+        widget: string
+        required: false
+      - label: Phone UI Likes Count
+        name: phone_ui_likes
+        widget: string
+        required: false
+      - label: Phone UI Comments Count
+        name: phone_ui_comments
+        widget: string
+        required: false
+      - label: Phone UI Shares Count
+        name: phone_ui_shares
+        widget: string
+        required: false
+    - label: Drops Section
+      name: drops
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Section Title
+        name: title
+        widget: string
+        required: false
+      - label: Scribble Word (highlighted)
+        name: scribble_word
+        widget: string
+        required: false
+      - label: Subtitle
+        name: subtitle
+        widget: text
+        required: false
+      - label: Reels
+        name: reels
+        widget: list
+        required: false
+        allow_add: true
+        allow_delete: true
+        collapsed: false
+        summary: "{{fields.title}}"
+        fields:
+        - label: Badge Text
+          name: badge
+          widget: string
+          required: false
+        - label: Badge Color
+          name: badge_color
+          widget: select
+          required: false
+          options:
+          - label: Cyan
+            value: cyan
+          - label: Pink
+            value: pink
+          - label: Yellow
+            value: yellow
+          - label: Orange
+            value: orange
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt
+          name: image_alt
+          widget: string
+          required: false
+        - label: Title
+          name: title
+          widget: string
+          required: false
+        - label: Meta (views/CTR etc.)
+          name: meta
+          widget: string
+          required: false
+        - label: Has Play Button
+          name: has_play
+          widget: boolean
+          required: false
+          default: false
+        - label: Has Tape Decoration
+          name: has_tape
+          widget: boolean
+          required: false
+          default: false
+        - label: Rotation
+          name: rotation
+          widget: select
+          required: false
+          options:
+          - label: Rotate 1 (-2deg)
+            value: rotate-1
+          - label: Rotate 2 (+1deg)
+            value: rotate-2
+          - label: Rotate 3 (-3deg)
+            value: rotate-3
+          - label: Rotate 4 (+2deg)
+            value: rotate-4
+      - label: View All Label
+        name: view_all_label
+        widget: string
+        required: false
+      - label: View All URL
+        name: view_all_url
+        widget: string
+        required: false
     - label: SEO
       name: seo
       widget: object
@@ -8473,6 +8723,261 @@ collections:
           step: 0.05
           default: 1
           required: false
+  - label: Algo Approved Page
+    name: algo_approved
+    file: public/content/pages/algo-approved.json
+    fields:
+    - label: Page Name
+      name: page_name
+      widget: string
+      required: false
+      default: Algo Approved
+      hint: Name shown in the CMS and used to generate the slug.
+    - label: Page Slug
+      name: page_slug
+      widget: string
+      required: false
+      default: algo-approved
+      hint: URL slug for this page. Changing it requires the matching page folder/route to exist.
+    - label: Hero Section
+      name: hero
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Sticker Text
+        name: sticker_text
+        widget: string
+        required: false
+      - label: Sticker Icon (Material Symbols)
+        name: sticker_icon
+        widget: string
+        required: false
+      - label: Title Line 1
+        name: title_line_1
+        widget: string
+        required: false
+      - label: Title Line 2
+        name: title_line_2
+        widget: string
+        required: false
+      - label: Title Line 3
+        name: title_line_3
+        widget: string
+        required: false
+      - label: Title Line 4
+        name: title_line_4
+        widget: string
+        required: false
+      - label: Scribble Word (highlighted)
+        name: scribble_word
+        widget: string
+        required: false
+      - label: Intro Text
+        name: intro_text
+        widget: text
+        required: false
+      - label: CTA Primary Label
+        name: cta_primary_label
+        widget: string
+        required: false
+      - label: CTA Primary Icon (Material Symbols)
+        name: cta_primary_icon
+        widget: string
+        required: false
+      - label: CTA Primary URL
+        name: cta_primary_url
+        widget: string
+        required: false
+      - label: CTA Secondary Label
+        name: cta_secondary_label
+        widget: string
+        required: false
+      - label: CTA Secondary URL
+        name: cta_secondary_url
+        widget: string
+        required: false
+      - label: Phone Image
+        name: phone_image
+        widget: image
+        required: false
+      - label: Phone Image Alt
+        name: phone_image_alt
+        widget: string
+        required: false
+      - label: Floating Sticker Value
+        name: floating_sticker_value
+        widget: string
+        required: false
+      - label: Floating Sticker Label
+        name: floating_sticker_label
+        widget: string
+        required: false
+      - label: Phone Caption Author
+        name: phone_caption_author
+        widget: string
+        required: false
+      - label: Phone Caption Text
+        name: phone_caption_text
+        widget: string
+        required: false
+      - label: Phone UI Likes Count
+        name: phone_ui_likes
+        widget: string
+        required: false
+      - label: Phone UI Comments Count
+        name: phone_ui_comments
+        widget: string
+        required: false
+      - label: Phone UI Shares Count
+        name: phone_ui_shares
+        widget: string
+        required: false
+    - label: Drops Section
+      name: drops
+      widget: object
+      collapsed: true
+      required: false
+      fields:
+      - label: Section Title
+        name: title
+        widget: string
+        required: false
+      - label: Scribble Word (highlighted)
+        name: scribble_word
+        widget: string
+        required: false
+      - label: Subtitle
+        name: subtitle
+        widget: text
+        required: false
+      - label: Reels
+        name: reels
+        widget: list
+        required: false
+        allow_add: true
+        allow_delete: true
+        collapsed: false
+        summary: "{{fields.title}}"
+        fields:
+        - label: Badge Text
+          name: badge
+          widget: string
+          required: false
+        - label: Badge Color
+          name: badge_color
+          widget: select
+          required: false
+          options:
+          - label: Cyan
+            value: cyan
+          - label: Pink
+            value: pink
+          - label: Yellow
+            value: yellow
+          - label: Orange
+            value: orange
+        - label: Image
+          name: image
+          widget: image
+          required: false
+        - label: Image Alt
+          name: image_alt
+          widget: string
+          required: false
+        - label: Title
+          name: title
+          widget: string
+          required: false
+        - label: Meta (views/CTR etc.)
+          name: meta
+          widget: string
+          required: false
+        - label: Has Play Button
+          name: has_play
+          widget: boolean
+          required: false
+          default: false
+        - label: Has Tape Decoration
+          name: has_tape
+          widget: boolean
+          required: false
+          default: false
+        - label: Rotation
+          name: rotation
+          widget: select
+          required: false
+          options:
+          - label: Rotate 1 (-2deg)
+            value: rotate-1
+          - label: Rotate 2 (+1deg)
+            value: rotate-2
+          - label: Rotate 3 (-3deg)
+            value: rotate-3
+          - label: Rotate 4 (+2deg)
+            value: rotate-4
+      - label: View All Label
+        name: view_all_label
+        widget: string
+        required: false
+      - label: View All URL
+        name: view_all_url
+        widget: string
+        required: false
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - label: Page Title
+        name: seo_title
+        widget: string
+        required: false
+      - label: Meta Description
+        name: seo_description
+        widget: text
+        required: false
+      - label: Preview Image
+        name: seo_image
+        widget: image
+        required: false
+      - label: Preview Image Crop Position
+        name: seo_image_crop_position
+        widget: object
+        image_field: seo_image
+        aspect_ratio: 1 / 1
+        collapsed: false
+        required: false
+        default: { x: 50, y: 50, zoom: 1 }
+        hint: Choose which part of the image stays visible inside cropped frames.
+        fields:
+        - label: Horizontal focal point (%)
+          name: x
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Vertical focal point (%)
+          name: y
+          widget: number
+          value_type: int
+          min: 0
+          max: 100
+          step: 1
+          default: 50
+          required: false
+        - label: Zoom
+          name: zoom
+          widget: number
+          value_type: float
+          min: 1
+          max: 3
+          step: 0.05
+          default: 1
+          required: false
 - name: project_pages_entries
   label: Project Pages / Entries
   description: Create new project pages from existing templates
@@ -8507,6 +9012,8 @@ collections:
       value: app
     - label: Photography Template (content/templates/photography-template.json)
       value: photography
+    - label: Algo Approved Template (content/templates/algo-approved-template.json)
+      value: algo_approved
   - label: Template Source Path
     name: template_source_path
     widget: string

@@ -14,6 +14,7 @@ import "../styles/shared-project-pager.css";
 import "../styles/shared-nav-footer.css";
 import "../styles/mobile.css";
 import "../styles/site.css";
+import "../styles/algo-approved.css";
 
 export const metadata = {
   title: "Sara Ruffini",
