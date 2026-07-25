@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SARA RUFFINI - Algo Approved</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#6b7a76",
+                        "on-tertiary-fixed-variant": "#484741",
+                        "on-primary-fixed": "#00201c",
+                        "accent-pink": "#FF69B4",
+                        "tertiary-container": "#cac7bf",
+                        "secondary": "#5f5e5e",
+                        "primary-fixed-dim": "#39ddc7",
+                        "on-tertiary-fixed": "#1c1c17",
+                        "ink": "#111111",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#006b5f",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed": "#e6e2d9",
+                        "on-tertiary-container": "#54534c",
+                        "on-surface-variant": "#3c4a46",
+                        "accent-cyan": "#3BDEC8",
+                        "surface-container": "#f0eded",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#656464",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#39ddc7",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-container": "#3bdec8",
+                        "accent-orange": "#FF6B6B",
+                        "surface-tint": "#006b5f",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#60fae3",
+                        "outline-variant": "#bacac5",
+                        "on-primary-fixed-variant": "#005047",
+                        "tertiary": "#605e58",
+                        "inverse-surface": "#313030",
+                        "tertiary-fixed-dim": "#c9c6be",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface": "#1c1b1b",
+                        "on-error": "#ffffff",
+                        "accent-yellow": "#FFEB3B",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-variant": "#e5e2e1",
+                        "secondary-container": "#e5e2e1",
+                        "paper-bg": "#FDF9F0",
+                        "on-primary-container": "#005e53",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "5vw",
+                        "stack-sm": "0.5rem",
+                        "gutter": "2rem",
+                        "section-v": "8rem",
+                        "stack-md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "sticker-label": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "sticker-label": ["12px", { "lineHeight": "1.0", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["72px", { "lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "body-lg": ["20px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    },
+                    "boxShadow": {
+                        "hard": "4px 4px 0px 0px #111111",
+                        "hard-hover": "2px 2px 0px 0px #111111",
+                        "sticker": "2px 2px 0px 0px #111111"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FDF9F0;
+            color: #111111;
+        }
+        .scribble-underline {
+            position: relative;
+            display: inline-block;
+        }
+        .scribble-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q 25 0, 50 5 T 100 5' stroke='%233BDEC8' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-size: 100% 100%;
+            z-index: -1;
+        }
+        .scribble-underline-yellow::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q 25 0, 50 5 T 100 5' stroke='%23FFEB3B' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+        }
+        
+        .tape-strip {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+        
+        /* Hide scrollbar for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .tilt-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tilt-card:hover {
+            transform: translate(2px, 2px) rotate(0deg) !important;
+            box-shadow: 2px 2px 0px 0px #111111;
+        }
+
+        /* New Animations */
+        @keyframes scrollHint {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5%); }
+        }
+        .scroll-hint-img {
+            height: 105%;
+            animation: scrollHint 8s ease-in-out infinite;
+        }
+
+        @keyframes glitchPulse {
+            0%, 100% { text-shadow: 2px 2px 0px rgba(255,105,180,0.6), -2px -2px 0px rgba(59,222,200,0.6); }
+            50% { text-shadow: -2px -2px 0px rgba(255,105,180,0.6), 2px 2px 0px rgba(59,222,200,0.6); }
+        }
+        .glitch-text {
+            animation: glitchPulse 3s infinite;
+        }
+
+        @keyframes stickerWiggle {
+            0%, 100% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) scale(1.05); }
+            33% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(calc(var(--tw-rotate) + 5deg)) scale(1.05); }
+            66% { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(calc(var(--tw-rotate) - 5deg)) scale(1.05); }
+        }
+        .sticker-hover {
+            transition: transform 0.2s ease;
+        }
+        .sticker-hover:hover {
+            animation: stickerWiggle 0.5s ease-in-out infinite;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden font-body-md text-body-md selection:bg-accent-cyan selection:text-ink">
+<!-- TopNavBar -->
+<nav class="bg-paper-bg dark:bg-ink w-full sticky top-0 z-50 border-b-2 border-ink dark:border-paper-bg flex justify-between items-center px-margin-page py-4 w-full">
+<a class="font-headline-md text-headline-md font-bold text-ink dark:text-paper-bg" href="#">SARA RUFFINI</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps uppercase text-accent-cyan underline decoration-2 underline-offset-4 hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">Work</a>
+<a class="font-label-caps text-label-caps uppercase text-ink dark:text-paper-bg hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">Process</a>
+<a class="font-label-caps text-label-caps uppercase text-ink dark:text-paper-bg hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">About</a>
+<a class="font-label-caps text-label-caps uppercase text-ink dark:text-paper-bg hover:text-accent-cyan transition-colors duration-200 active:translate-y-[1px]" href="#">Contact</a>
+</div>
+<button class="hidden md:block font-label-caps text-label-caps uppercase bg-accent-cyan text-ink border-2 border-ink py-2 px-6 shadow-hard hover:shadow-hard-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all active:translate-y-[1px]">
+            Hire Me
+        </button>
+<button class="md:hidden flex flex-col gap-1.5 p-2">
+<div class="w-6 h-0.5 bg-ink"></div>
+<div class="w-6 h-0.5 bg-ink"></div>
+<div class="w-6 h-0.5 bg-ink"></div>
+</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full min-h-[921px] px-margin-page py-section-v flex flex-col md:flex-row items-center justify-center overflow-hidden border-b-4 border-ink">
+<!-- Decorative Background Elements -->
+<div class="absolute top-20 left-10 w-32 h-32 bg-accent-pink rounded-full blur-3xl opacity-20 -z-10"></div>
+<div class="absolute bottom-20 right-10 w-64 h-64 bg-accent-yellow rounded-full blur-3xl opacity-20 -z-10"></div>
+<!-- Grid Pattern Overlay -->
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0iIzExMTExMSIgb3BhY2l0eT0iMC4xIj48L2NpcmNsZT4KPC9zdmc+')] -z-10"></div>
+<!-- Content Container -->
+<div class="w-full flex flex-col md:flex-row items-center justify-between relative z-10">
+<!-- Headline Side -->
+<div class="w-full md:w-1/2 flex flex-col items-start z-20 mb-12 md:mb-0">
+<!-- Sticker -->
+<div class="bg-accent-yellow border-2 border-ink px-4 py-1 rounded-full font-sticker-label text-sticker-label uppercase transform -rotate-3 mb-6 shadow-sticker flex items-center gap-2 sticker-hover cursor-default">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                    FOR YOU PAGE VIBES
+                </div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-ink uppercase mb-6 leading-none max-w-2xl relative">
+<span class="absolute -top-10 -left-10 w-24 h-8 bg-white/50 transform -rotate-12 z-10" style="box-shadow: 0 1px 3px rgba(0,0,0,0.1);"></span>
+                    THE <br/>
+<span class="glitch-text inline-block">
+<span class="scribble-underline">ALGO</span> <br/>
+                        APPROVED
+                    </span> <br/>
+                    PORTFOLIO
+                </h1>
+<p class="font-body-lg text-body-lg text-ink max-w-md mb-8 border-l-4 border-ink pl-4 py-2 bg-white/50 backdrop-blur-sm shadow-[2px_2px_0px_0px_#111111]">
+                    Stop scrolling. Start converting. I create social-first creative that lives on the FYP and actually gets engagement.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-accent-cyan text-ink font-label-caps text-label-caps uppercase border-2 border-ink py-4 px-8 shadow-hard hover:shadow-[0_0_15px_#3BDEC8] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center gap-2">
+                        View Showreel
+                        <span class="material-symbols-outlined">play_arrow</span>
+</button>
+<button class="bg-white text-ink font-label-caps text-label-caps uppercase border-2 border-ink py-4 px-8 shadow-hard hover:shadow-hard-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+                        Stats &amp; Analytics
+                    </button>
+</div>
+</div>
+<!-- Mockup Side -->
+<div class="w-full md:w-1/2 relative flex justify-center items-center mt-10 md:mt-0">
+<!-- Floating Sticker -->
+<div class="absolute top-10 right-0 md:right-10 bg-accent-pink border-2 border-ink px-4 py-2 rounded-full font-sticker-label text-sticker-label uppercase transform rotate-6 shadow-sticker z-30 flex flex-col items-center sticker-hover cursor-default">
+<span class="text-xl">1.2M</span>
+<span>Views</span>
+</div>
+<!-- iPhone Mockup Container -->
+<div class="relative w-[280px] h-[580px] md:w-[320px] md:h-[660px] transform rotate-3 transition-transform duration-500 hover:rotate-0 z-20">
+<!-- Phone Frame -->
+<div class="absolute inset-0 bg-ink rounded-[40px] border-4 border-ink shadow-[8px_8px_0px_0px_#111111]"></div>
+<div class="absolute inset-[6px] bg-white rounded-[34px] overflow-hidden">
+<!-- Screen Content (Video Placeholder) -->
+<div class="w-full h-full relative bg-gray-200">
+<img alt="Hero Reel Placeholder" class="w-full scroll-hint-img object-cover" data-alt="Vertical video style content showing a fast-paced creative process. A vibrant, high-energy scene typical of a viral TikTok or Reel. Bright colors, dynamic movement, and engaging visuals filling a mobile screen format. A modern, engaging social media clip." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvCwSICN-d744cq75IwvG3FbIGFwbEronv7Uwrb92HFvIMkxdAux8QUcji-4ep9i6NdbJPpXlUsech_4eDLC4BcmjQq0rQfAIslIbLmc0AGW1ZcTeXyL_LYoxl5qt4-Jlgl-CWE0tF_e8ua_9SxSI7-_EOV8wJW5iaVRvIZDo8T9bqdxT9hgp0df_n2D-o0cOmyiBb_nlH4UUG2j1paHEMYT4Em9cCZ086w1VV66d7LxoQL9Os4Ao-Tp8KHVAnijiPUdQVcw7ZUGR0"/>
+<!-- UI Overlay Mockup -->
+<div class="absolute right-4 bottom-20 flex flex-col gap-6 text-white items-center drop-shadow-md">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-xs font-bold mt-1">124K</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="text-xs font-bold mt-1">1.2K</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">share</span>
+<span class="text-xs font-bold mt-1">800</span>
+</div>
+</div>
+<!-- Caption Overlay -->
+<div class="absolute bottom-4 left-4 right-16 text-white drop-shadow-md">
+<p class="font-bold text-sm mb-1">@sararuffini_creative</p>
+<p class="text-xs">How we shot the latest viral campaign for Brand X 🎥🔥 #bts #creative</p>
+</div>
+</div>
+</div>
+<!-- Phone Details (Notch/Island) -->
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-6 bg-ink rounded-b-xl z-30"></div>
+</div>
+<!-- Background decorative shapes -->
+<div class="absolute -bottom-10 -left-10 w-48 h-48 border-4 border-ink rounded-full z-10 border-dashed animate-[spin_20s_linear_infinite]"></div>
+<!-- Tape -->
+<div class="absolute -top-4 left-1/2 w-32 h-10 bg-white/60 transform -rotate-6 z-30" style="box-shadow: 0 1px 3px rgba(0,0,0,0.1);"></div>
+</div>
+</div>
+</header>
+<!-- Horizontal Showcase Section -->
+<section class="w-full py-section-v bg-white border-b-4 border-ink relative overflow-hidden">
+<!-- Section Header -->
+<div class="px-margin-page mb-12 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md text-ink uppercase mb-2">
+                    Recent <span class="scribble-underline-yellow">Drops</span>
+</h2>
+<p class="font-body-md text-body-md text-secondary max-w-md">
+                    High-performing social creative designed for maximum retention.
+                </p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="w-12 h-12 border-2 border-ink bg-paper-bg flex items-center justify-center shadow-hard hover:shadow-hard-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-full">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 border-2 border-ink bg-accent-cyan flex items-center justify-center shadow-hard hover:shadow-hard-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all rounded-full">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="w-full overflow-x-auto no-scrollbar pl-margin-page pb-8 pt-4 snap-x snap-mandatory">
+<div class="flex gap-8 w-max pr-margin-page">
+<!-- Reel Card 1 -->
+<div class="relative w-[260px] shrink-0 transform -rotate-2 tilt-card cursor-pointer snap-center">
+<!-- Sticker Badge -->
+<div class="absolute -top-4 -right-4 bg-accent-cyan border-2 border-ink px-3 py-1 rounded-full font-sticker-label text-sticker-label uppercase z-20 shadow-sticker transform rotate-12 sticker-hover">
+                        VIRAL
+                    </div>
+<!-- Frame -->
+<div class="w-full h-[460px] bg-ink border-2 border-ink shadow-hard rounded-2xl overflow-hidden relative">
+<img alt="Fashion Campaign" class="w-full h-full object-cover" data-alt="A trendy fashion shoot formatted for a vertical mobile screen. Bright, punchy lighting highlights a stylish model in streetwear. The scene is energetic, capturing a mid-motion pose suitable for a fast-paced social media edit. Vibrant colors and high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKqruyC8UL3I7iTWmsFneFt3syWR9YELcMRSb1u7Xlojgd2MxTDCUsCdDSS_kWgbCkcXxdsg6ghQ9-znKjd_zu-fQaxDVmzqjPuNwPPNR2rdU2vd2MOeo9dmndyVhS24Vk6FoXgWNjnz3NkGOfScbChE7tyi89JwbPM6J310Q5JsmBTRqHsoAHtBIomQ7YNJrbI2d50ND-2MfzYdWNb1hkFaLAJnJHhm17j5MEhux91Sd-FWLvB3ra6Tlp3uiq2Wb_THz-kHvUAslP"/>
+<!-- Overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+<!-- Handwritten Caption Box -->
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm border-2 border-ink p-3 rounded-lg transform rotate-1">
+<p class="font-body-md text-sm font-bold text-ink">Urban Style Co. Drop</p>
+<p class="font-body-sm text-xs text-secondary mt-1">2.4M Views | +15% CTR</p>
+</div>
+</div>
+</div>
+<!-- Reel Card 2 -->
+<div class="relative w-[260px] shrink-0 transform rotate-1 tilt-card cursor-pointer mt-4 snap-center">
+<!-- Sticker Badge -->
+<div class="absolute -top-4 -left-4 bg-accent-pink border-2 border-ink px-3 py-1 rounded-full font-sticker-label text-sticker-label uppercase z-20 shadow-sticker transform -rotate-6 sticker-hover">
+                        NEW
+                    </div>
+<!-- Frame -->
+<div class="w-full h-[460px] bg-ink border-2 border-ink shadow-hard rounded-2xl overflow-hidden relative">
+<img alt="Tech Unboxing" class="w-full h-full object-cover" data-alt="Retro tech setup with neon lighting styled for a tech review or unboxing reel. A close-up, dynamic angle of vintage and modern gadgets. The lighting is moody with bright neon pink and cyan highlights. A visually arresting frame for social media scrolling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCui_wFRBVAUCqDCxSnmig5himIXmBCItt_G86MpY7ligpCH-u3zwWrDorEF-qEMfbM7yQ7BuCO0OB_dqqizyzXT0BhaO9evDP3b2zQ-yywIMqjgdRoiIoekG2c20spiIwGTt6rpgWx78ByIQ4fqQohTTVMU4a04ozAVUndd4v6cFsiI4xj5LTR5il-4YU4kJNJe8tnZaU9tj37W80cc_1TOiHTex7kLeShhTb8rcMv1odCxH1vwKOrZJsC2q_CfDBIjY7eZSEnCNjS"/>
+<!-- Overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+<!-- Play Icon Center -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<!-- Handwritten Caption Box -->
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm border-2 border-ink p-3 rounded-lg transform -rotate-1">
+<p class="font-body-md text-sm font-bold text-ink">Retro Tech Review</p>
+<p class="font-body-sm text-xs text-secondary mt-1">800K Views | Saved x500</p>
+</div>
+</div>
+</div>
+<!-- Reel Card 3 -->
+<div class="relative w-[260px] shrink-0 transform -rotate-3 tilt-card cursor-pointer snap-center">
+<!-- Frame -->
+<div class="w-full h-[460px] bg-ink border-2 border-ink shadow-hard rounded-2xl overflow-hidden relative">
+<img alt="Satisfying Loop" class="w-full h-full object-cover" data-alt="Abstract colorful paint or fluid simulation in vibrant yellow and cyan. A mesmerizing, satisfying visual loop designed to hold viewer attention on a platform like TikTok or Instagram. High saturation, macro photography style, extreme detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj2DmqeXvXksMpmAcc7W1htDue5zbksTZavSG1kbmPVIeFpQkZYgPcPxI10DKl9rPd5YUFzg9XdFarbBxrBsESAl1t9bnvSESwsQZyvORWehVZ8mJcKlDVy5PMGyhqof2vvwaXvHGdNbFqQdk9uZZ4cVKjtO7Syi0F3FDnRLRwesoQ7IQ3X_y2-kNfbx9qkGwiXxEbUT9tr2_KVL4LxdAsracFek686IPDMOyLFKI2ayFiad4pqBN0w-tyhVz7YA8DqhlIEuGaWJJQ"/>
+<!-- Overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+<!-- Tape overlay -->
+<div class="absolute top-4 right-4 w-20 h-6 bg-yellow-200/80 transform rotate-12" style="box-shadow: 0 1px 2px rgba(0,0,0,0.1);"></div>
+<!-- Handwritten Caption Box -->
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm border-2 border-ink p-3 rounded-lg transform rotate-2">
+<p class="font-body-md text-sm font-bold text-ink">Oddly Satisfying ASMR</p>
+<p class="font-body-sm text-xs text-secondary mt-1">4.1M Views | 100% Retention</p>
+</div>
+</div>
+</div>
+<!-- Reel Card 4 -->
+<div class="relative w-[260px] shrink-0 transform rotate-2 tilt-card cursor-pointer mt-6 snap-center">
+<!-- Frame -->
+<div class="w-full h-[460px] bg-ink border-2 border-ink shadow-hard rounded-2xl overflow-hidden relative">
+<img alt="Pet Care Brand" class="w-full h-full object-cover" data-alt="A cute pet dog looking at the camera, styled with bright, cheerful lighting and pop colors. A classic viral format focusing on relatable, heartwarming content. The visual style is crisp, clean, and highly engaging for a social feed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpb6SHY5pkpU-Z4jNCH8DU_MmfpVjy8VUzJerAEqO42dev7BZ2AIppVfs58evwC9VI8HYq5iKYWZPMKCOsgui2AvkPxxFRPcTYFfW3oZS8pHXjGc2j5wHgNB6nh07dvg0JarOHPF28BaOP2ZUI6MQ1sQkvNLmUdQYizFGTrW4quIw0ONz4bQSOr4Dk4nCrukUzzZZszqZ8AY0YA87nvPzu0yVX3xRKP5NCHMneUMVMSIi0zLNYGQRw-XN1dp39G1BdHcuQVJi1ujOS"/>
+<!-- Overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+<!-- Handwritten Caption Box -->
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm border-2 border-ink p-3 rounded-lg transform -rotate-2">
+<p class="font-body-md text-sm font-bold text-ink">BarkBox Campaign</p>
+<p class="font-body-sm text-xs text-secondary mt-1">1.1M Views | Top Performer</p>
+</div>
+</div>
+</div>
+<!-- View All Card -->
+<div class="relative w-[260px] shrink-0 flex items-center justify-center p-8 snap-center">
+<button class="w-full h-full border-4 border-dashed border-ink rounded-2xl flex flex-col items-center justify-center gap-4 hover:bg-paper-bg transition-colors group">
+<div class="w-16 h-16 bg-accent-cyan rounded-full border-2 border-ink flex items-center justify-center group-hover:scale-110 transition-transform shadow-hard">
+<span class="material-symbols-outlined text-ink text-3xl">add</span>
+</div>
+<span class="font-label-caps text-label-caps uppercase text-ink">View All Work</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-ink dark:bg-surface-container-lowest w-full pt-section-v pb-stack-md border-t-4 border-ink flex flex-col md:flex-row justify-between items-center px-margin-page w-full">
+<div class="font-headline-md text-headline-md text-accent-cyan mb-8 md:mb-0">SARA RUFFINI</div>
+<div class="flex flex-wrap justify-center gap-6 mb-8 md:mb-0">
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">Vimeo</a>
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink hover:text-accent-cyan transition-colors duration-300 hover:scale-105 transition-transform" href="#">Email</a>
+</div>
+<div class="font-label-caps text-label-caps uppercase text-surface-container-lowest dark:text-ink text-center md:text-right">
+            © 2024 SARA RUFFINI. MADE FOR THE SCREEN.
+        </div>
+</footer>
+</body></html>
