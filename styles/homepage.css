@@ -58,6 +58,95 @@
             display: inline-block;
             white-space: nowrap;
         }
+
+        .home-lab-teaser {
+            display: flex;
+            justify-content: flex-end;
+            width: min(100%, 72rem);
+            margin: -3.5rem auto 4.75rem;
+            padding: 0 1.5rem;
+        }
+
+        .home-lab-teaser__link {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: min(100%, 18rem);
+            padding: 1rem 1.15rem 1.05rem;
+            overflow: hidden;
+            background: #fff6b8;
+            border: 2px solid #111;
+            color: #111;
+            text-decoration: none;
+            box-shadow: 5px 5px 0 #111;
+            transform: rotate(2.2deg);
+            transition: transform 180ms ease, box-shadow 180ms ease;
+            clip-path: polygon(0 2%, 97% 0, 100% 94%, 82% 100%, 55% 96%, 26% 100%, 0 96%);
+        }
+
+        .home-lab-teaser__link::before {
+            content: "";
+            position: absolute;
+            top: 0.75rem;
+            right: 0.8rem;
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 50%;
+            background: #3bdec8;
+            box-shadow: 0 0 0 2px #111;
+        }
+
+        .home-lab-teaser__link:hover {
+            transform: translateY(-4px) rotate(-1deg);
+            box-shadow: 8px 8px 0 #111;
+        }
+
+        .home-lab-teaser__eyebrow,
+        .home-lab-teaser__body,
+        .home-lab-teaser__cta {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+
+        .home-lab-teaser__eyebrow {
+            margin-bottom: 0.65rem;
+            color: #168a9a;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .home-lab-teaser__title {
+            max-width: 13rem;
+            font-family: "Permanent Marker", cursive;
+            font-size: 1.25rem;
+            line-height: 1.05;
+        }
+
+        .home-lab-teaser__body {
+            margin-top: 0.55rem;
+            font-size: 0.7rem;
+            line-height: 1.35;
+        }
+
+        .home-lab-teaser__cta {
+            margin-top: 0.8rem;
+            color: #168a9a;
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 767px) {
+            .home-lab-teaser {
+                margin-top: -1.5rem;
+                margin-bottom: 3.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .home-lab-teaser__link {
+                width: min(100%, 17rem);
+            }
+        }
         .featured-stitch-section {
             overflow: hidden;
             isolation: isolate;

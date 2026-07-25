@@ -26,6 +26,8 @@
     { key: "contact", textKey: "nav_contact", hrefKey: "nav_contact_href" }
   ];
 
+  var LAB_LINK = { text: ">_ LAB", href: "https://lab.sararuffini.com" };
+
   function getActiveSection(pageKey) {
     if (pageKey === "homepage") {
       return "home";
@@ -72,6 +74,7 @@
       NAV_ITEMS.map(function (item) {
         return renderNavLink(item, content, activeSection);
       }).join(""),
+      '<a class="shared-site-nav__lab" href="' + LAB_LINK.href + '" target="_blank" rel="noopener noreferrer">' + LAB_LINK.text + '</a>',
       '</div>',
       '<button aria-label="Open menu" class="md:hidden text-3xl leading-none" type="button">☰</button>'
     ].join("");

@@ -83,6 +83,36 @@
     color: var(--shared-chrome-accent) !important;
 }
 
+.shared-site-nav__lab {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.75rem;
+    padding: 0.24rem 0.48rem 0.2rem;
+    border: 1px solid currentColor;
+    color: var(--shared-chrome-ink) !important;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-decoration: none !important;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shared-site-nav__lab:hover {
+    background: var(--shared-chrome-accent);
+    color: var(--shared-chrome-ink) !important;
+    box-shadow: 3px 3px 0 var(--shared-chrome-ink);
+    transform: translate(-1px, -1px);
+}
+
+.shared-site-nav__lab:focus-visible,
+.home-lab-teaser__link:focus-visible,
+.projects-lab-note:focus-visible {
+    outline: 3px solid var(--shared-chrome-ink);
+    outline-offset: 4px;
+}
+
 .shared-site-nav .scribble-hover:hover svg,
 .shared-site-nav .scribble-hover.active svg {
     opacity: 1;

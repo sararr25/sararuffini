@@ -16,6 +16,50 @@
     break-inside: avoid;
   }
 
+  .projects-lab-note {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 20rem);
+    margin: 5rem 0 1rem auto;
+    padding: 1.1rem 1.2rem 1.2rem;
+    background: #d9fff7;
+    border: 3px solid #111;
+    color: #111;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    text-decoration: none;
+    box-shadow: 6px 6px 0 #111;
+    transform: rotate(-1.7deg);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    clip-path: polygon(1% 0, 98% 2%, 100% 96%, 77% 100%, 43% 97%, 0 99%);
+  }
+
+  .projects-lab-note:hover {
+    transform: translateY(-4px) rotate(1deg);
+    box-shadow: 9px 9px 0 #111;
+  }
+
+  .projects-lab-note__title {
+    margin-bottom: 0.55rem;
+    color: #168a9a;
+    font-weight: 700;
+  }
+
+  .projects-lab-note__cta {
+    margin-top: 0.9rem;
+    color: #111;
+    font-weight: 700;
+  }
+
+  @media (max-width: 767px) {
+    .projects-lab-note {
+      width: min(100%, 18rem);
+      margin-top: 3.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
   .project-frame {
     position: relative;
     padding: 1rem;

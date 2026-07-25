@@ -24,6 +24,8 @@ const NAV_ITEMS = [
   { key: "contact", textKey: "nav_contact", hrefKey: "nav_contact_href" },
 ];
 
+const LAB_LINK = "https://lab.sararuffini.com";
+
 function activeSection(pageKey) {
   if (pageKey === "homepage") {
     return "home";
@@ -117,6 +119,14 @@ export function SiteNav({ pageKey }) {
             </a>
           );
         })}
+        <a
+          className="shared-site-nav__lab"
+          href={LAB_LINK}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          &gt;_ LAB
+        </a>
       </div>
       <button
         aria-label="Open menu"
