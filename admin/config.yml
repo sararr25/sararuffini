@@ -52,6 +52,8 @@ collections:
         value: /pages/app-v1/index.html
       - label: App Project V2
         value: /pages/app-v2/index.html
+      - label: App Showcase
+        value: /pages/app-showcase/index.html
       - label: Graphics Project
         value: /pages/graphics/index.html
       - label: Social Media Portfolio
@@ -1385,6 +1387,54 @@ collections:
         required: false
       allow_add: true
       allow_delete: true
+  - label: app-showcase-tmp
+    name: app_showcase_tmp
+    file: public/content/templates/app-showcase-tmp.json
+    fields:
+    - { label: Template Name, name: template_name, widget: string, required: false }
+    - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+    - { label: Main Title, name: title_main, widget: string, required: false }
+    - { label: Highlight Title, name: title_accent, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - { label: Project Label, name: project_label, widget: string, required: false }
+    - { label: Project Value, name: project_value, widget: string, required: false }
+    - { label: Role Label, name: role_label, widget: string, required: false }
+    - { label: Role Value, name: role_value, widget: string, required: false }
+    - { label: CTA Label, name: cta_label, widget: string, required: false }
+    - { label: CTA Link, name: cta_href, widget: string, required: false }
+    - { label: Carousel Label, name: carousel_label, widget: string, required: false }
+    - { label: Carousel Hint, name: carousel_hint, widget: string, required: false }
+    - { label: "Slide 1 — Kicker", name: slide_1_kicker, widget: string, required: false }
+    - { label: "Slide 1 — Title", name: slide_1_title, widget: string, required: false }
+    - { label: "Slide 1 — Description", name: slide_1_text, widget: text, required: false }
+    - { label: "Slide 1 — Image", name: slide_1_image, widget: image, required: false }
+    - { label: "Slide 1 — Alt Text", name: slide_1_alt, widget: string, required: false }
+    - { label: "Slide 2 — Kicker", name: slide_2_kicker, widget: string, required: false }
+    - { label: "Slide 2 — Title", name: slide_2_title, widget: string, required: false }
+    - { label: "Slide 2 — Description", name: slide_2_text, widget: text, required: false }
+    - { label: "Slide 2 — Image", name: slide_2_image, widget: image, required: false }
+    - { label: "Slide 2 — Alt Text", name: slide_2_alt, widget: string, required: false }
+    - { label: "Slide 3 — Kicker", name: slide_3_kicker, widget: string, required: false }
+    - { label: "Slide 3 — Title", name: slide_3_title, widget: string, required: false }
+    - { label: "Slide 3 — Description", name: slide_3_text, widget: text, required: false }
+    - { label: "Slide 3 — Image", name: slide_3_image, widget: image, required: false }
+    - { label: "Slide 3 — Alt Text", name: slide_3_alt, widget: string, required: false }
+    - { label: "Slide 4 — Kicker", name: slide_4_kicker, widget: string, required: false }
+    - { label: "Slide 4 — Title", name: slide_4_title, widget: string, required: false }
+    - { label: "Slide 4 — Description", name: slide_4_text, widget: text, required: false }
+    - { label: "Slide 4 — Image", name: slide_4_image, widget: image, required: false }
+    - { label: "Slide 4 — Alt Text", name: slide_4_alt, widget: string, required: false }
+    - { label: Outro Eyebrow, name: outro_eyebrow, widget: string, required: false }
+    - { label: Outro Title, name: outro_title, widget: string, required: false }
+    - { label: Outro Text, name: outro_text, widget: text, required: false }
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - { label: Page Title, name: seo_title, widget: string, required: false }
+      - { label: Meta Description, name: seo_description, widget: text, required: false }
+      - { label: Preview Image, name: seo_image, widget: image, required: false }
   - label: App Design Template
     name: app_template
     file: public/content/templates/app-template.json
@@ -5669,6 +5719,55 @@ collections:
           default: 1
           required: false
       required: false
+  - label: app-showcase
+    name: app_showcase
+    file: public/content/pages/app-showcase.json
+    fields:
+    - { label: Page Name, name: page_name, widget: string, required: false }
+    - { label: Page Slug, name: page_slug, widget: string, required: false }
+    - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+    - { label: Main Title, name: title_main, widget: string, required: false }
+    - { label: Highlight Title, name: title_accent, widget: string, required: false }
+    - { label: Intro, name: intro, widget: text, required: false }
+    - { label: Project Label, name: project_label, widget: string, required: false }
+    - { label: Project Value, name: project_value, widget: string, required: false }
+    - { label: Role Label, name: role_label, widget: string, required: false }
+    - { label: Role Value, name: role_value, widget: string, required: false }
+    - { label: CTA Label, name: cta_label, widget: string, required: false }
+    - { label: CTA Link, name: cta_href, widget: string, required: false }
+    - { label: Carousel Label, name: carousel_label, widget: string, required: false }
+    - { label: Carousel Hint, name: carousel_hint, widget: string, required: false }
+    - { label: "Slide 1 — Kicker", name: slide_1_kicker, widget: string, required: false }
+    - { label: "Slide 1 — Title", name: slide_1_title, widget: string, required: false }
+    - { label: "Slide 1 — Description", name: slide_1_text, widget: text, required: false }
+    - { label: "Slide 1 — Image", name: slide_1_image, widget: image, required: false }
+    - { label: "Slide 1 — Alt Text", name: slide_1_alt, widget: string, required: false }
+    - { label: "Slide 2 — Kicker", name: slide_2_kicker, widget: string, required: false }
+    - { label: "Slide 2 — Title", name: slide_2_title, widget: string, required: false }
+    - { label: "Slide 2 — Description", name: slide_2_text, widget: text, required: false }
+    - { label: "Slide 2 — Image", name: slide_2_image, widget: image, required: false }
+    - { label: "Slide 2 — Alt Text", name: slide_2_alt, widget: string, required: false }
+    - { label: "Slide 3 — Kicker", name: slide_3_kicker, widget: string, required: false }
+    - { label: "Slide 3 — Title", name: slide_3_title, widget: string, required: false }
+    - { label: "Slide 3 — Description", name: slide_3_text, widget: text, required: false }
+    - { label: "Slide 3 — Image", name: slide_3_image, widget: image, required: false }
+    - { label: "Slide 3 — Alt Text", name: slide_3_alt, widget: string, required: false }
+    - { label: "Slide 4 — Kicker", name: slide_4_kicker, widget: string, required: false }
+    - { label: "Slide 4 — Title", name: slide_4_title, widget: string, required: false }
+    - { label: "Slide 4 — Description", name: slide_4_text, widget: text, required: false }
+    - { label: "Slide 4 — Image", name: slide_4_image, widget: image, required: false }
+    - { label: "Slide 4 — Alt Text", name: slide_4_alt, widget: string, required: false }
+    - { label: Outro Eyebrow, name: outro_eyebrow, widget: string, required: false }
+    - { label: Outro Title, name: outro_title, widget: string, required: false }
+    - { label: Outro Text, name: outro_text, widget: text, required: false }
+    - label: SEO
+      name: seo
+      widget: object
+      required: false
+      fields:
+      - { label: Page Title, name: seo_title, widget: string, required: false }
+      - { label: Meta Description, name: seo_description, widget: text, required: false }
+      - { label: Preview Image, name: seo_image, widget: image, required: false }
   - label: App Page V2
     name: app_v2
     file: public/content/pages/app-v2.json
