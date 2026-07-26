@@ -10,7 +10,7 @@ import "../styles/video-v1.css";
 import "../styles/video-v2.css";
 import "../styles/app-v1.css";
 import "../styles/app-v2.css";
-import "../styles/app-showcase.css";
+import "../styles/app-showcase-next.css";
 import "../styles/shared-project-pager.css";
 import "../styles/shared-nav-footer.css";
 import "../styles/mobile.css";

@@ -53,7 +53,7 @@ collections:
       - label: App Project V2
         value: /pages/app-v2/index.html
       - label: App Showcase
-        value: /pages/app-showcase/index.html
+        value: /app-showcase
       - label: Graphics Project
         value: /pages/graphics/index.html
       - label: Social Media Portfolio
@@ -1392,41 +1392,66 @@ collections:
     file: public/content/templates/app-showcase-tmp.json
     fields:
     - { label: Template Name, name: template_name, widget: string, required: false }
-    - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-    - { label: Main Title, name: title_main, widget: string, required: false }
-    - { label: Highlight Title, name: title_accent, widget: string, required: false }
-    - { label: Intro, name: intro, widget: text, required: false }
-    - { label: Project Label, name: project_label, widget: string, required: false }
-    - { label: Project Value, name: project_value, widget: string, required: false }
-    - { label: Role Label, name: role_label, widget: string, required: false }
-    - { label: Role Value, name: role_value, widget: string, required: false }
-    - { label: CTA Label, name: cta_label, widget: string, required: false }
-    - { label: CTA Link, name: cta_href, widget: string, required: false }
-    - { label: Carousel Label, name: carousel_label, widget: string, required: false }
-    - { label: Carousel Hint, name: carousel_hint, widget: string, required: false }
-    - { label: "Slide 1 — Kicker", name: slide_1_kicker, widget: string, required: false }
-    - { label: "Slide 1 — Title", name: slide_1_title, widget: string, required: false }
-    - { label: "Slide 1 — Description", name: slide_1_text, widget: text, required: false }
-    - { label: "Slide 1 — Image", name: slide_1_image, widget: image, required: false }
-    - { label: "Slide 1 — Alt Text", name: slide_1_alt, widget: string, required: false }
-    - { label: "Slide 2 — Kicker", name: slide_2_kicker, widget: string, required: false }
-    - { label: "Slide 2 — Title", name: slide_2_title, widget: string, required: false }
-    - { label: "Slide 2 — Description", name: slide_2_text, widget: text, required: false }
-    - { label: "Slide 2 — Image", name: slide_2_image, widget: image, required: false }
-    - { label: "Slide 2 — Alt Text", name: slide_2_alt, widget: string, required: false }
-    - { label: "Slide 3 — Kicker", name: slide_3_kicker, widget: string, required: false }
-    - { label: "Slide 3 — Title", name: slide_3_title, widget: string, required: false }
-    - { label: "Slide 3 — Description", name: slide_3_text, widget: text, required: false }
-    - { label: "Slide 3 — Image", name: slide_3_image, widget: image, required: false }
-    - { label: "Slide 3 — Alt Text", name: slide_3_alt, widget: string, required: false }
-    - { label: "Slide 4 — Kicker", name: slide_4_kicker, widget: string, required: false }
-    - { label: "Slide 4 — Title", name: slide_4_title, widget: string, required: false }
-    - { label: "Slide 4 — Description", name: slide_4_text, widget: text, required: false }
-    - { label: "Slide 4 — Image", name: slide_4_image, widget: image, required: false }
-    - { label: "Slide 4 — Alt Text", name: slide_4_alt, widget: string, required: false }
-    - { label: Outro Eyebrow, name: outro_eyebrow, widget: string, required: false }
-    - { label: Outro Title, name: outro_title, widget: string, required: false }
-    - { label: Outro Text, name: outro_text, widget: text, required: false }
+    - label: Hero
+      name: hero
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string }, required: false }
+      - { label: Hero Screen, name: image, widget: image, required: false }
+      - { label: Hero Screen Alt Text, name: image_alt, widget: string, required: false }
+      - { label: Phone CTA, name: image_cta, widget: string, required: false }
+    - label: Design DNA
+      name: design_dna
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - label: Color Swatches
+        name: colors
+        widget: list
+        fields:
+        - { label: Name, name: name, widget: string }
+        - { label: Hex Label, name: value, widget: string }
+        - { label: Color, name: color, widget: color }
+      - label: Typography Samples
+        name: type_samples
+        widget: list
+        fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Display Text, name: value, widget: string }
+        - { label: Style, name: style, widget: select, options: [display, heading, body] }
+    - label: Tech Stack
+      name: tech_stack
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - label: Cards
+        name: cards
+        widget: list
+        fields:
+        - { label: Material Icon, name: icon, widget: string }
+        - { label: Title, name: title, widget: string }
+        - { label: Description, name: text, widget: text }
+        - { label: Technology Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
+        - { label: Background, name: tone, widget: select, options: [teal, paper] }
+        - { label: Rotation, name: tilt, widget: select, options: [none, right, left, more] }
+    - label: Product Carousel
+      name: action
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - { label: CTA Label, name: cta_label, widget: string, required: false }
+      - { label: CTA Link, name: cta_href, widget: string, required: false }
+      - label: Screens
+        name: slides
+        widget: list
+        fields:
+        - { label: Title, name: title, widget: string }
+        - { label: Image, name: image, widget: image }
+        - { label: Alt Text, name: alt, widget: string }
     - label: SEO
       name: seo
       widget: object
@@ -5725,41 +5750,66 @@ collections:
     fields:
     - { label: Page Name, name: page_name, widget: string, required: false }
     - { label: Page Slug, name: page_slug, widget: string, required: false }
-    - { label: Eyebrow, name: eyebrow, widget: string, required: false }
-    - { label: Main Title, name: title_main, widget: string, required: false }
-    - { label: Highlight Title, name: title_accent, widget: string, required: false }
-    - { label: Intro, name: intro, widget: text, required: false }
-    - { label: Project Label, name: project_label, widget: string, required: false }
-    - { label: Project Value, name: project_value, widget: string, required: false }
-    - { label: Role Label, name: role_label, widget: string, required: false }
-    - { label: Role Value, name: role_value, widget: string, required: false }
-    - { label: CTA Label, name: cta_label, widget: string, required: false }
-    - { label: CTA Link, name: cta_href, widget: string, required: false }
-    - { label: Carousel Label, name: carousel_label, widget: string, required: false }
-    - { label: Carousel Hint, name: carousel_hint, widget: string, required: false }
-    - { label: "Slide 1 — Kicker", name: slide_1_kicker, widget: string, required: false }
-    - { label: "Slide 1 — Title", name: slide_1_title, widget: string, required: false }
-    - { label: "Slide 1 — Description", name: slide_1_text, widget: text, required: false }
-    - { label: "Slide 1 — Image", name: slide_1_image, widget: image, required: false }
-    - { label: "Slide 1 — Alt Text", name: slide_1_alt, widget: string, required: false }
-    - { label: "Slide 2 — Kicker", name: slide_2_kicker, widget: string, required: false }
-    - { label: "Slide 2 — Title", name: slide_2_title, widget: string, required: false }
-    - { label: "Slide 2 — Description", name: slide_2_text, widget: text, required: false }
-    - { label: "Slide 2 — Image", name: slide_2_image, widget: image, required: false }
-    - { label: "Slide 2 — Alt Text", name: slide_2_alt, widget: string, required: false }
-    - { label: "Slide 3 — Kicker", name: slide_3_kicker, widget: string, required: false }
-    - { label: "Slide 3 — Title", name: slide_3_title, widget: string, required: false }
-    - { label: "Slide 3 — Description", name: slide_3_text, widget: text, required: false }
-    - { label: "Slide 3 — Image", name: slide_3_image, widget: image, required: false }
-    - { label: "Slide 3 — Alt Text", name: slide_3_alt, widget: string, required: false }
-    - { label: "Slide 4 — Kicker", name: slide_4_kicker, widget: string, required: false }
-    - { label: "Slide 4 — Title", name: slide_4_title, widget: string, required: false }
-    - { label: "Slide 4 — Description", name: slide_4_text, widget: text, required: false }
-    - { label: "Slide 4 — Image", name: slide_4_image, widget: image, required: false }
-    - { label: "Slide 4 — Alt Text", name: slide_4_alt, widget: string, required: false }
-    - { label: Outro Eyebrow, name: outro_eyebrow, widget: string, required: false }
-    - { label: Outro Title, name: outro_title, widget: string, required: false }
-    - { label: Outro Text, name: outro_text, widget: text, required: false }
+    - label: Hero
+      name: hero
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Description, name: description, widget: text, required: false }
+      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string }, required: false }
+      - { label: Hero Screen, name: image, widget: image, required: false }
+      - { label: Hero Screen Alt Text, name: image_alt, widget: string, required: false }
+      - { label: Phone CTA, name: image_cta, widget: string, required: false }
+    - label: Design DNA
+      name: design_dna
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - label: Color Swatches
+        name: colors
+        widget: list
+        fields:
+        - { label: Name, name: name, widget: string }
+        - { label: Hex Label, name: value, widget: string }
+        - { label: Color, name: color, widget: color }
+      - label: Typography Samples
+        name: type_samples
+        widget: list
+        fields:
+        - { label: Label, name: label, widget: string }
+        - { label: Display Text, name: value, widget: string }
+        - { label: Style, name: style, widget: select, options: [display, heading, body] }
+    - label: Tech Stack
+      name: tech_stack
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - label: Cards
+        name: cards
+        widget: list
+        fields:
+        - { label: Material Icon, name: icon, widget: string }
+        - { label: Title, name: title, widget: string }
+        - { label: Description, name: text, widget: text }
+        - { label: Technology Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
+        - { label: Background, name: tone, widget: select, options: [teal, paper] }
+        - { label: Rotation, name: tilt, widget: select, options: [none, right, left, more] }
+    - label: Product Carousel
+      name: action
+      widget: object
+      fields:
+      - { label: Title, name: title, widget: string, required: false }
+      - { label: Intro, name: intro, widget: text, required: false }
+      - { label: CTA Label, name: cta_label, widget: string, required: false }
+      - { label: CTA Link, name: cta_href, widget: string, required: false }
+      - label: Screens
+        name: slides
+        widget: list
+        fields:
+        - { label: Title, name: title, widget: string }
+        - { label: Image, name: image, widget: image }
+        - { label: Alt Text, name: alt, widget: string }
     - label: SEO
       name: seo
       widget: object
