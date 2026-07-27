@@ -3,14 +3,17 @@
   "page_slug": "app-showcase",
   "hero": {
     "title": "Playtribe",
-    "description": "Playtribe makes it easier to find or create local sports events, meet people who match your energy, and turn showing up into a real community.",
+    "description": "Playtribe is a social sports app for people who want to move more and meet better. It helps you find or create local events, join a game that fits your level and energy, and turn a spontaneous plan into a real community. From yoga by the water to beach volleyball at sunset, Playtribe makes the first step feel easy and showing up feel worthwhile.",
     "tags": ["CASE STUDY 04", "Flutter App", "Community Product"],
-    "image": "/assets/media/app-showcase/playtribe/explore.jpg",
+    "benefits": ["Find people to play with", "Create plans that fit your energy", "Build trust beyond the game"],
+    "image": "/assets/media/app-showcase/playtribe/explore.webp",
     "image_alt": "Playtribe Explore screen showing local sports events",
     "image_cta": "FIND YOUR TRIBE"
   },
   "design_dna": {
     "title": "Design DNA",
+    "logo": "/assets/media/app-showcase/playtribe/logo.png",
+    "logo_alt": "Playtribe logo",
     "colors": [
       { "name": "Sage", "value": "#5F6D4C", "color": "#5f6d4c" },
       { "name": "Cream", "value": "#FCF9F0", "color": "#fcf9f0" },
@@ -21,29 +24,38 @@
       { "label": "Display (Literata)", "value": "Find your people", "style": "display" },
       { "label": "Heading (Literata)", "value": "My events", "style": "heading" },
       { "label": "Body (Plus Jakarta Sans)", "value": "Join a game. Make it a habit.", "style": "body" }
-    ]
+    ],
+    "story": {
+      "eyebrow": "More than a sports directory",
+      "title": "A softer way into community",
+      "intro": "Playtribe is built around a simple truth: finding people to play with should not feel like networking, and joining a new group should not feel intimidating.",
+      "paragraphs": [
+        "The app solves the friction between wanting to be active and having no one to call. People can browse nearby activities, filter by sport and energy, or create the plan they wish existed. The result is a living, community-generated layer of sport around the city.",
+        "Participation does not stop at the join button. Event chat, friends, direct messages, weather, calendars, ratings, and a reliability score help a one-off game become a trusted social habit."
+      ]
+    }
   },
   "tech_stack": {
-    "title": "Tech Stack",
+    "title": "How Playtribe Works",
     "intro": "A community-first product system designed around spontaneous plans, trusted participation, and low-friction connection.",
     "cards": [
-      { "icon": "smartphone", "title": "Mobile", "text": "A warm, image-led mobile experience for browsing nearby sports, creating events, and managing your plans.", "tags": ["Flutter", "Android", "iOS"], "tone": "teal", "tilt": "right" },
-      { "icon": "groups", "title": "Community", "text": "Events are created by the community, with chat, friends, direct messages, and inclusive participation built into the flow.", "tags": ["Find or create", "Chat", "Friends"], "tone": "yellow", "tilt": "left" },
-      { "icon": "verified", "title": "Trust layer", "text": "Reliability scores, attendance confirmation, reporting, and ratings help people feel safer showing up with new players.", "tags": ["Reliability", "Ratings", "Supabase"], "tone": "pink", "tilt": "more" }
+      { "icon": "search", "title": "Find your people", "text": "Discover nearby activities by sport, date, location and energy, without needing an existing group to get started.", "tags": ["Explore", "Map view", "Filters"], "tone": "teal", "tilt": "right" },
+      { "icon": "add_circle", "title": "Make the plan", "text": "Create an event when the plan you want does not exist yet, then invite people into something that feels easy to join.", "tags": ["Create", "Join", "Chat"], "tone": "yellow", "tilt": "left" },
+      { "icon": "verified", "title": "Build trust", "text": "Attendance, ratings and reliability help meeting new people feel safer and turn a one-off game into a social habit.", "tags": ["Reliability", "Ratings", "Friends"], "tone": "pink", "tilt": "more" }
     ]
   },
   "action": {
-    "title": "Inside the Action",
-    "intro": "Explore the product flow from discovery to trust, participation, and community.",
-    "cta_label": "Explore Project",
+    "title": "See Playtribe in motion",
+    "intro": "From finding an event to becoming part of the community.",
+    "cta_label": "Visit Playtribe",
     "cta_href": "https://playtribeapp.com",
     "slides": [
-      { "title": "Explore", "image": "/assets/media/app-showcase/playtribe/explore.jpg", "alt": "Playtribe Explore feed with local yoga and beach volleyball events" },
-      { "title": "Map view", "image": "/assets/media/app-showcase/playtribe/map.jpg", "alt": "Playtribe map view showing sports events around Copenhagen" },
-      { "title": "My events", "image": "/assets/media/app-showcase/playtribe/events.jpg", "alt": "Playtribe My Events screen with upcoming events" },
-      { "title": "Event detail", "image": "/assets/media/app-showcase/playtribe/event-detail.jpg", "alt": "Playtribe event detail screen for a yoga event" },
-      { "title": "Profile", "image": "/assets/media/app-showcase/playtribe/profile.jpg", "alt": "Playtribe member profile with reliability score" }
+      { "title": "Explore", "caption": "Find nearby activities and people.", "image": "/assets/media/app-showcase/playtribe/explore.webp", "alt": "Playtribe Explore feed with local yoga and beach volleyball events" },
+      { "title": "Map view", "caption": "See what is happening around you.", "image": "/assets/media/app-showcase/playtribe/map.webp", "alt": "Playtribe map view showing sports events around Copenhagen" },
+      { "title": "Event detail", "caption": "Understand the vibe before you join.", "image": "/assets/media/app-showcase/playtribe/event-detail.webp", "alt": "Playtribe event detail screen for a yoga event" },
+      { "title": "My events", "caption": "Keep every plan in one place.", "image": "/assets/media/app-showcase/playtribe/events.webp", "alt": "Playtribe My Events screen with upcoming events" },
+      { "title": "Profile", "caption": "Build a reputation by showing up.", "image": "/assets/media/app-showcase/playtribe/profile.webp", "alt": "Playtribe member profile with reliability score" }
     ]
   },
-  "seo": { "seo_title": "Playtribe Showcase — Sara Ruffini", "seo_description": "Playtribe app showcase by Sara Ruffini.", "seo_image": "/assets/media/app-showcase/playtribe/explore.jpg" }
+  "seo": { "seo_title": "Playtribe Showcase — Sara Ruffini", "seo_description": "A case study of Playtribe, a social sports app for finding or creating local events, meeting people and building trust through community.", "seo_image": "/assets/media/app-showcase/playtribe/explore.webp" }
 }
