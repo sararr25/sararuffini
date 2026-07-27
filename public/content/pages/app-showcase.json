@@ -1,9 +1,49 @@
 {
   "page_name": "app-showcase",
   "page_slug": "app-showcase",
-  "hero": { "title": "Playtribe", "description": "The definitive social network for athletes. Discover local courts, seamlessly organize pickup games, and elevate your street cred.", "tags": ["CASE STUDY 04", "Mobile App", "Social Platform"], "image": "/assets/media/app-showcase/map-ui.png", "image_alt": "Playtribe Map UI Mockup", "image_cta": "JOIN TRIBE" },
-  "design_dna": { "title": "Design DNA", "colors": [{ "name": "Teal Accent", "value": "#00FFD1", "color": "#00ffd1" }, { "name": "Ink Black", "value": "#1B1B1B", "color": "#1b1b1b" }, { "name": "Paper White", "value": "#FFFFFF", "color": "#ffffff" }], "type_samples": [{ "label": "Display (Epilogue)", "value": "Aa Bb", "style": "display" }, { "label": "Heading (Epilogue)", "value": "Aa Bb Cc", "style": "heading" }, { "label": "Body (Be Vietnam Pro)", "value": "Aa Bb Cc Dd Ee Ff Gg", "style": "body" }] },
-  "tech_stack": { "title": "Tech Stack", "intro": "A high-performance stack engineered for real-time engagement and seamless cross-platform experiences.", "cards": [{ "icon": "smartphone", "title": "Frontend", "text": "Cross-platform mobile application ensuring fluid animations and responsive interfaces across iOS and Android.", "tags": ["React Native", "Expo", "Redux Toolkit"], "tone": "teal", "tilt": "right" }, { "icon": "dns", "title": "Backend", "text": "Robust microservices architecture supporting complex geospatial operations and high concurrency.", "tags": ["Node.js", "PostgreSQL", "GraphQL"], "tone": "paper", "tilt": "left" }, { "icon": "bolt", "title": "Real-Time", "text": "Event-driven websockets powering live chat, instant notifications, and dynamic leaderboard updates.", "tags": ["WebSockets", "Redis"], "tone": "paper", "tilt": "more" }] },
-  "action": { "title": "Inside the Action", "intro": "Dynamic interfaces engineered for peak athletic engagement.", "cta_label": "Explore Project", "cta_href": "https://playtribeapp.com", "slides": [{ "title": "Tribe Chat", "image": "/assets/media/app-showcase/tribe-chat.png", "alt": "Tribe Chat Screen" }, { "title": "Community Feed", "image": "/assets/media/app-showcase/community-feed.png", "alt": "Community Feed Screen" }, { "title": "Leaderboard", "image": "/assets/media/app-showcase/leaderboard.png", "alt": "Leaderboard Screen" }, { "title": "Profile", "image": "/assets/media/app-showcase/map-ui.png", "alt": "Profile Screen" }, { "title": "Settings", "image": "/assets/media/app-showcase/tribe-chat.png", "alt": "Settings Screen" }] },
-  "seo": { "seo_title": "Playtribe Showcase — Sara Ruffini", "seo_description": "Playtribe app showcase by Sara Ruffini.", "seo_image": "/assets/media/app-showcase/map-ui.png" }
+  "hero": {
+    "title": "Playtribe",
+    "description": "Playtribe makes it easier to find or create local sports events, meet people who match your energy, and turn showing up into a real community.",
+    "tags": ["CASE STUDY 04", "Flutter App", "Community Product"],
+    "image": "/assets/media/app-showcase/playtribe/explore.jpg",
+    "image_alt": "Playtribe Explore screen showing local sports events",
+    "image_cta": "FIND YOUR TRIBE"
+  },
+  "design_dna": {
+    "title": "Design DNA",
+    "colors": [
+      { "name": "Sage", "value": "#5F6D4C", "color": "#5f6d4c" },
+      { "name": "Cream", "value": "#FCF9F0", "color": "#fcf9f0" },
+      { "name": "Coral", "value": "#E8664E", "color": "#e8664e" },
+      { "name": "Night", "value": "#161511", "color": "#161511" }
+    ],
+    "type_samples": [
+      { "label": "Display (Literata)", "value": "Find your people", "style": "display" },
+      { "label": "Heading (Literata)", "value": "My events", "style": "heading" },
+      { "label": "Body (Plus Jakarta Sans)", "value": "Join a game. Make it a habit.", "style": "body" }
+    ]
+  },
+  "tech_stack": {
+    "title": "Tech Stack",
+    "intro": "A community-first product system designed around spontaneous plans, trusted participation, and low-friction connection.",
+    "cards": [
+      { "icon": "smartphone", "title": "Mobile", "text": "A warm, image-led mobile experience for browsing nearby sports, creating events, and managing your plans.", "tags": ["Flutter", "Android", "iOS"], "tone": "teal", "tilt": "right" },
+      { "icon": "groups", "title": "Community", "text": "Events are created by the community, with chat, friends, direct messages, and inclusive participation built into the flow.", "tags": ["Find or create", "Chat", "Friends"], "tone": "yellow", "tilt": "left" },
+      { "icon": "verified", "title": "Trust layer", "text": "Reliability scores, attendance confirmation, reporting, and ratings help people feel safer showing up with new players.", "tags": ["Reliability", "Ratings", "Supabase"], "tone": "pink", "tilt": "more" }
+    ]
+  },
+  "action": {
+    "title": "Inside the Action",
+    "intro": "Explore the product flow from discovery to trust, participation, and community.",
+    "cta_label": "Explore Project",
+    "cta_href": "https://playtribeapp.com",
+    "slides": [
+      { "title": "Explore", "image": "/assets/media/app-showcase/playtribe/explore.jpg", "alt": "Playtribe Explore feed with local yoga and beach volleyball events" },
+      { "title": "Map view", "image": "/assets/media/app-showcase/playtribe/map.jpg", "alt": "Playtribe map view showing sports events around Copenhagen" },
+      { "title": "My events", "image": "/assets/media/app-showcase/playtribe/events.jpg", "alt": "Playtribe My Events screen with upcoming events" },
+      { "title": "Event detail", "image": "/assets/media/app-showcase/playtribe/event-detail.jpg", "alt": "Playtribe event detail screen for a yoga event" },
+      { "title": "Profile", "image": "/assets/media/app-showcase/playtribe/profile.jpg", "alt": "Playtribe member profile with reliability score" }
+    ]
+  },
+  "seo": { "seo_title": "Playtribe Showcase — Sara Ruffini", "seo_description": "Playtribe app showcase by Sara Ruffini.", "seo_image": "/assets/media/app-showcase/playtribe/explore.jpg" }
 }

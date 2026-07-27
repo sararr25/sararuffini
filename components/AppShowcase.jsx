@@ -6,45 +6,46 @@ import { SiteFooter, SiteNav } from "./SiteChrome";
 const FALLBACK = {
   hero: {
     title: "Playtribe",
-    description: "The definitive social network for athletes. Discover local courts, seamlessly organize pickup games, and elevate your street cred.",
-    tags: ["CASE STUDY 04", "Mobile App", "Social Platform"],
-    image: "/assets/media/app-showcase/map-ui.png",
-    image_alt: "Playtribe Map UI Mockup",
-    image_cta: "JOIN TRIBE",
+    description: "Playtribe makes it easier to find or create local sports events, meet people who match your energy, and turn showing up into a real community.",
+    tags: ["CASE STUDY 04", "Flutter App", "Community Product"],
+    image: "/assets/media/app-showcase/playtribe/explore.jpg",
+    image_alt: "Playtribe Explore screen showing local sports events",
+    image_cta: "FIND YOUR TRIBE",
   },
   design_dna: {
     title: "Design DNA",
     colors: [
-      { name: "Teal Accent", value: "#00FFD1", color: "#00ffd1" },
-      { name: "Ink Black", value: "#1B1B1B", color: "#1b1b1b" },
-      { name: "Paper White", value: "#FFFFFF", color: "#ffffff" },
+      { name: "Sage", value: "#5F6D4C", color: "#5f6d4c" },
+      { name: "Cream", value: "#FCF9F0", color: "#fcf9f0" },
+      { name: "Coral", value: "#E8664E", color: "#e8664e" },
+      { name: "Night", value: "#161511", color: "#161511" },
     ],
     type_samples: [
-      { label: "Display (Epilogue)", value: "Aa Bb", style: "display" },
-      { label: "Heading (Epilogue)", value: "Aa Bb Cc", style: "heading" },
-      { label: "Body (Be Vietnam Pro)", value: "Aa Bb Cc Dd Ee Ff Gg", style: "body" },
+      { label: "Display (Literata)", value: "Find your people", style: "display" },
+      { label: "Heading (Literata)", value: "My events", style: "heading" },
+      { label: "Body (Plus Jakarta Sans)", value: "Join a game. Make it a habit.", style: "body" },
     ],
   },
   tech_stack: {
     title: "Tech Stack",
-    intro: "A high-performance stack engineered for real-time engagement and seamless cross-platform experiences.",
+    intro: "A community-first product system designed around spontaneous plans, trusted participation, and low-friction connection.",
     cards: [
-      { icon: "smartphone", title: "Frontend", text: "Cross-platform mobile application ensuring fluid animations and responsive interfaces across iOS and Android.", tags: ["React Native", "Expo", "Redux Toolkit"], tone: "teal", tilt: "right" },
-      { icon: "dns", title: "Backend", text: "Robust microservices architecture supporting complex geospatial operations and high concurrency.", tags: ["Node.js", "PostgreSQL", "GraphQL"], tone: "paper", tilt: "left" },
-      { icon: "bolt", title: "Real-Time", text: "Event-driven websockets powering live chat, instant notifications, and dynamic leaderboard updates.", tags: ["WebSockets", "Redis"], tone: "paper", tilt: "more" },
+      { icon: "smartphone", title: "Mobile", text: "A warm, image-led mobile experience for browsing nearby sports, creating events, and managing your plans.", tags: ["Flutter", "Android", "iOS"], tone: "teal", tilt: "right" },
+      { icon: "groups", title: "Community", text: "Events are created by the community, with chat, friends, direct messages, and inclusive participation built into the flow.", tags: ["Find or create", "Chat", "Friends"], tone: "yellow", tilt: "left" },
+      { icon: "verified", title: "Trust layer", text: "Reliability scores, attendance confirmation, reporting, and ratings help people feel safer showing up with new players.", tags: ["Reliability", "Ratings", "Supabase"], tone: "pink", tilt: "more" },
     ],
   },
   action: {
     title: "Inside the Action",
-    intro: "Dynamic interfaces engineered for peak athletic engagement.",
+    intro: "Explore the product flow from discovery to trust, participation, and community.",
     cta_label: "Explore Project",
     cta_href: "https://playtribeapp.com",
     slides: [
-      { title: "Tribe Chat", image: "/assets/media/app-showcase/tribe-chat.png", alt: "Tribe Chat Screen" },
-      { title: "Community Feed", image: "/assets/media/app-showcase/community-feed.png", alt: "Community Feed Screen" },
-      { title: "Leaderboard", image: "/assets/media/app-showcase/leaderboard.png", alt: "Leaderboard Screen" },
-      { title: "Profile", image: "/assets/media/app-showcase/map-ui.png", alt: "Profile Screen" },
-      { title: "Settings", image: "/assets/media/app-showcase/tribe-chat.png", alt: "Settings Screen" },
+      { title: "Explore", image: "/assets/media/app-showcase/playtribe/explore.jpg", alt: "Playtribe Explore feed with local yoga and beach volleyball events" },
+      { title: "Map view", image: "/assets/media/app-showcase/playtribe/map.jpg", alt: "Playtribe map view showing sports events around Copenhagen" },
+      { title: "My events", image: "/assets/media/app-showcase/playtribe/events.jpg", alt: "Playtribe My Events screen with upcoming events" },
+      { title: "Event detail", image: "/assets/media/app-showcase/playtribe/event-detail.jpg", alt: "Playtribe event detail screen for a yoga event" },
+      { title: "Profile", image: "/assets/media/app-showcase/playtribe/profile.jpg", alt: "Playtribe member profile with reliability score" },
     ],
   },
 };
@@ -63,7 +64,7 @@ function mergeContent(data) {
 export default function AppShowcase() {
   const [content, setContent] = useState(FALLBACK);
   const carouselRef = useRef(null);
-  const [activeSlide, setActiveSlide] = useState(1);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
     fetch("/content/pages/app-showcase.json", { cache: "no-store" })
@@ -126,7 +127,7 @@ export default function AppShowcase() {
 
         <section className="app-showcase-tech"><div className="app-showcase-wrap"><h2>{content.tech_stack.title}<span className="material-symbols-outlined">terminal</span></h2><p className="app-showcase-section-lead">{content.tech_stack.intro}</p><div className="app-showcase-tech__grid">{techCards.map((card) => <article className={`app-showcase-tech-card app-showcase-tech-card--${card.tone || "paper"} app-showcase-tech-card--${card.tilt || "none"}`} key={card.title}><div><span className="material-symbols-outlined">{card.icon}</span><h3>{card.title}</h3></div><p>{card.text}</p><ul>{(card.tags || []).map((tag) => <li key={tag}>{tag}</li>)}</ul></article>)}</div></div></section>
 
-        <section className="app-showcase-action"><div className="app-showcase-wrap"><h2>{content.action.title}</h2><p className="app-showcase-action__lead">{content.action.intro}</p></div><div className="app-showcase-carousel-shell"><button type="button" aria-label="Previous screen" onClick={() => moveCarousel(-1)} className="app-showcase-arrow app-showcase-arrow--prev"><span className="material-symbols-outlined">arrow_back</span></button><div className="app-showcase-carousel" onScroll={updateActiveSlide} ref={carouselRef} tabIndex="0" aria-label="Playtribe screens">{carouselItems.map((slide) => <article className={`app-showcase-carousel__item${activeSlide === slide.index ? " is-active" : ""}`} key={`${slide.title}-${slide.index}`}><div><div className="app-showcase-carousel__island" /><img src={slide.image} alt={slide.alt} /></div><p>{slide.title}</p></article>)}</div><button type="button" aria-label="Next screen" onClick={() => moveCarousel(1)} className="app-showcase-arrow app-showcase-arrow--next"><span className="material-symbols-outlined">arrow_forward</span></button></div><div className="app-showcase-action__cta"><a href={content.action.cta_href}>{content.action.cta_label}<span className="material-symbols-outlined">arrow_forward</span></a></div></section>
+        <section className="app-showcase-action"><div className="app-showcase-wrap"><h2>{content.action.title}</h2><p className="app-showcase-action__lead">{content.action.intro}</p></div><div className="app-showcase-carousel-shell"><button type="button" aria-label="Previous screen" onClick={() => moveCarousel(-1)} className="app-showcase-arrow app-showcase-arrow--prev"><span className="material-symbols-outlined">arrow_back</span></button><div className="app-showcase-carousel" onScroll={updateActiveSlide} ref={carouselRef} tabIndex="0" aria-label="Playtribe screens">{carouselItems.map((slide) => <article className={`app-showcase-carousel__item${activeSlide === slide.index ? " is-active" : ""}`} key={`${slide.title}-${slide.index}`}><div><div className="app-showcase-carousel__island" /><img src={slide.image} alt={slide.alt} /></div><p>{slide.title}</p></article>)}</div><button type="button" aria-label="Next screen" onClick={() => moveCarousel(1)} className="app-showcase-arrow app-showcase-arrow--next"><span className="material-symbols-outlined">arrow_forward</span></button></div><div className="app-showcase-action__cta"><a href={content.action.cta_href} target="_blank" rel="noopener noreferrer">{content.action.cta_label}<span className="material-symbols-outlined">arrow_forward</span></a></div></section>
       </main>
       <SiteFooter />
     </div>
