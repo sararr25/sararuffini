@@ -59,6 +59,15 @@
             white-space: nowrap;
         }
 
+        /* Keep the hero clear of the sticky nav; this is layout spacing only. */
+        [data-cms-page="homepage"] main {
+            padding-top: clamp(5rem, 8vw, 7rem);
+        }
+
+        [data-cms-page="homepage"] .homepage-hero {
+            margin-top: 0 !important;
+        }
+
         .home-lab-teaser {
             display: flex;
             justify-content: flex-end;
