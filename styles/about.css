@@ -144,3 +144,76 @@
                 margin-left: 2rem;
             }
         }
+
+        /* About page scale pass: preserve layout and motion, reduce visual bulk. */
+        [data-cms-page="about"] main > section {
+            padding-block: clamp(3.5rem, 6vw, 5.5rem) !important;
+        }
+
+        [data-cms-page="about"] main > section:first-of-type {
+            gap: clamp(2rem, 5vw, 4.5rem) !important;
+        }
+
+        [data-cms-page="about"] main > section:first-of-type h1 {
+            font-size: clamp(3.25rem, 6.2vw, 6.25rem) !important;
+            margin-bottom: clamp(1rem, 2vw, 1.5rem) !important;
+        }
+
+        [data-cms-page="about"] .about-hero-script {
+            font-size: 0.86em;
+        }
+
+        [data-cms-page="about"] main > section:first-of-type > div:nth-of-type(3) > div:first-of-type {
+            width: clamp(18rem, 30vw, 25rem) !important;
+            height: clamp(22rem, 37vw, 31rem) !important;
+        }
+
+        [data-cms-page="about"] .work-timeline-card > div[class*="bg-white"] {
+            padding: clamp(1.15rem, 1.8vw, 1.5rem) !important;
+        }
+
+        [data-cms-page="about"] .work-timeline-card h3 {
+            font-size: clamp(1.2rem, 1.8vw, 1.5rem) !important;
+        }
+
+        [data-cms-page="about"] .work-timeline-card p.text-primary {
+            font-size: clamp(1rem, 1.35vw, 1.15rem) !important;
+        }
+
+        [data-cms-page="about"] .work-timeline-card p.font-medium {
+            font-size: clamp(0.9rem, 1.1vw, 1rem) !important;
+        }
+
+        [data-cms-page="about"] [data-cms-more-about-cards] {
+            gap: clamp(1.25rem, 2.5vw, 2rem) !important;
+        }
+
+        [data-cms-page="about"] [data-cms-more-about-cards] > div {
+            padding: clamp(1.25rem, 2vw, 1.75rem) !important;
+        }
+
+        [data-cms-page="about"] [data-cms-more-about-cards] > div > div:first-child {
+            width: 3.5rem !important;
+            height: 3.5rem !important;
+            margin-bottom: 1.25rem !important;
+        }
+
+        [data-cms-page="about"] [data-cms-more-about-cards] h3 {
+            font-size: clamp(1.15rem, 1.7vw, 1.4rem) !important;
+            margin-bottom: 0.8rem !important;
+        }
+
+        [data-cms-page="about"] [data-cms-more-about-cards] p {
+            font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+        }
+
+        @media (max-width: 767px) {
+            [data-cms-page="about"] main > section:first-of-type > div:nth-of-type(3) > div:first-of-type {
+                width: min(19rem, 82vw) !important;
+                height: min(23rem, 100vw) !important;
+            }
+
+            [data-cms-page="about"] main > section:first-of-type h1 {
+                font-size: clamp(2.8rem, 13vw, 4.5rem) !important;
+            }
+        }
