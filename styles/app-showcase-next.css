@@ -1,15 +1,15 @@
 .app-showcase-page {
-  --showcase-bg: var(--color-background-light, #fdf9f0);
-  --showcase-surface: #f3eee5;
-  --showcase-paper: #fffdf8;
+  --showcase-bg: #f8f4ec;
+  --showcase-surface: #f8f4ec;
+  --showcase-paper: #ffffff;
   --showcase-ink: #111;
   --showcase-muted: #4b5048;
   --showcase-cyan: #3bdec8;
   --showcase-yellow: #ebff57;
   --showcase-pink: #ff69b4;
   --showcase-orange: #ff6b6b;
-  --showcase-site-display: var(--font-display, "Inter", sans-serif);
-  --showcase-site-body: var(--font-body, "Inter", sans-serif);
+  --showcase-site-display: "Inter", sans-serif;
+  --showcase-site-body: "Inter", sans-serif;
   --showcase-app-display: "Literata", Georgia, serif;
   --showcase-app-body: "Plus Jakarta Sans", sans-serif;
   color: var(--showcase-ink);

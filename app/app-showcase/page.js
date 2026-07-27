@@ -2,11 +2,11 @@ import AppShowcase from "../../components/AppShowcase";
 
 export const metadata = {
   metadataBase: new URL("https://www.sararuffini.com"),
-  title: "Playtribe App Showcase — Sara Ruffini",
-  description: "A case study of Playtribe, a social sports app for finding or creating local events, meeting people and building trust through community.",
+  title: "Playtribe Case Study — Sara Ruffini",
+  description: "A product design and development case study exploring the idea, visual system and Flutter implementation behind Playtribe.",
   openGraph: {
-    title: "Playtribe App Showcase — Sara Ruffini",
-    description: "A case study of Playtribe, a social sports app for finding or creating local events, meeting people and building trust through community.",
+    title: "Playtribe Case Study — Sara Ruffini",
+    description: "A product design and development case study exploring the idea, visual system and Flutter implementation behind Playtribe.",
     images: ["/assets/media/app-showcase/playtribe/explore.webp"],
   },
 };

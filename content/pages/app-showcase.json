@@ -3,9 +3,9 @@
   "page_slug": "app-showcase",
   "hero": {
     "title": "Playtribe",
-    "description": "Playtribe is a social sports app for people who want to move more and meet better. It helps you find or create local events, join a game that fits your level and energy, and turn a spontaneous plan into a real community. From yoga by the water to beach volleyball at sunset, Playtribe makes the first step feel easy and showing up feel worthwhile.",
+    "description": "Playtribe started from a simple observation: finding people to play with is still surprisingly difficult when you move to a new city, have an irregular schedule, or do not already belong to a sports group. I designed and developed the app as a social layer for local sport, exploring how a digital product could make the first step feel less awkward and a new connection feel more natural.",
     "tags": ["CASE STUDY 04", "Flutter App", "Community Product"],
-    "benefits": ["Find people to play with", "Create plans that fit your energy", "Build trust beyond the game"],
+    "benefits": ["Product concept and interaction design", "Cross-platform Flutter development", "A trust layer for new connections"],
     "image": "/assets/media/app-showcase/playtribe/explore.webp",
     "image_alt": "Playtribe Explore screen showing local sports events",
     "image_cta": "FIND YOUR TRIBE"
@@ -26,36 +26,37 @@
       { "label": "Body (Plus Jakarta Sans)", "value": "Join a game. Make it a habit.", "style": "body" }
     ],
     "story": {
-      "eyebrow": "More than a sports directory",
-      "title": "A softer way into community",
-      "intro": "Playtribe is built around a simple truth: finding people to play with should not feel like networking, and joining a new group should not feel intimidating.",
+      "eyebrow": "The idea behind the product",
+      "title": "Designing a lower-friction way to meet",
+      "intro": "The project began with a tension: people want to be more active and social, but the first step is often the hardest one.",
       "paragraphs": [
-        "The app solves the friction between wanting to be active and having no one to call. People can browse nearby activities, filter by sport and energy, or create the plan they wish existed. The result is a living, community-generated layer of sport around the city.",
-        "Participation does not stop at the join button. Event chat, friends, direct messages, weather, calendars, ratings, and a reliability score help a one-off game become a trusted social habit."
+        "I wanted to explore what a sports product could feel like if it started from social confidence rather than performance. The design needed to make a new activity feel approachable, while still giving people enough context to decide if a plan was right for them.",
+        "That led to a visual language built around warm surfaces, editorial typography and clear moments of action. The product combines discovery, event creation and community trust into one coherent experience, with the interface doing the work of reducing uncertainty."
       ]
     }
   },
   "tech_stack": {
-    "title": "How Playtribe Works",
-    "intro": "A community-first product system designed around spontaneous plans, trusted participation, and low-friction connection.",
+    "eyebrow": "Development & implementation",
+    "title": "How it was built",
+    "intro": "The project combined product thinking, interface design and cross-platform development. I worked across the experience from the first product idea to the interaction model and technical implementation.",
     "cards": [
-      { "icon": "search", "title": "Find your people", "text": "Discover nearby activities by sport, date, location and energy, without needing an existing group to get started.", "tags": ["Explore", "Map view", "Filters"], "tone": "teal", "tilt": "right" },
-      { "icon": "add_circle", "title": "Make the plan", "text": "Create an event when the plan you want does not exist yet, then invite people into something that feels easy to join.", "tags": ["Create", "Join", "Chat"], "tone": "yellow", "tilt": "left" },
-      { "icon": "verified", "title": "Build trust", "text": "Attendance, ratings and reliability help meeting new people feel safer and turn a one-off game into a social habit.", "tags": ["Reliability", "Ratings", "Friends"], "tone": "pink", "tilt": "more" }
+      { "icon": "code", "title": "Frontend", "text": "A cross-platform Flutter application with reusable widgets, responsive mobile screens, stateful navigation and interaction patterns shaped around the product flow.", "tags": ["Flutter", "Dart", "Riverpod"], "tone": "teal", "tilt": "right" },
+      { "icon": "storage", "title": "Backend", "text": "A Supabase-backed architecture for authentication, profiles, events, chat, realtime updates and secure access to product data.", "tags": ["Supabase", "Postgres", "Realtime"], "tone": "yellow", "tilt": "left" },
+      { "icon": "palette", "title": "Tools & process", "text": "The work moved between product definition, UI systems, prototyping, visual assets and release preparation, keeping the design and implementation in conversation.", "tags": ["Figma", "VS Code", "GitHub", "Shorebird"], "tone": "pink", "tilt": "more" }
     ]
   },
   "action": {
-    "title": "See Playtribe in motion",
-    "intro": "From finding an event to becoming part of the community.",
-    "cta_label": "Visit Playtribe",
-    "cta_href": "https://playtribeapp.com",
+    "title": "A closer look at the interface",
+    "intro": "A selection of screens showing how the visual system translates into real product decisions.",
+    "cta_label": "Back to Projects",
+    "cta_href": "/pages/projects",
     "slides": [
-      { "title": "Explore", "caption": "Find nearby activities and people.", "image": "/assets/media/app-showcase/playtribe/explore.webp", "alt": "Playtribe Explore feed with local yoga and beach volleyball events" },
-      { "title": "Map view", "caption": "See what is happening around you.", "image": "/assets/media/app-showcase/playtribe/map.webp", "alt": "Playtribe map view showing sports events around Copenhagen" },
-      { "title": "Event detail", "caption": "Understand the vibe before you join.", "image": "/assets/media/app-showcase/playtribe/event-detail.webp", "alt": "Playtribe event detail screen for a yoga event" },
-      { "title": "My events", "caption": "Keep every plan in one place.", "image": "/assets/media/app-showcase/playtribe/events.webp", "alt": "Playtribe My Events screen with upcoming events" },
-      { "title": "Profile", "caption": "Build a reputation by showing up.", "image": "/assets/media/app-showcase/playtribe/profile.webp", "alt": "Playtribe member profile with reliability score" }
+      { "title": "Explore", "caption": "The primary discovery view, balancing density with a calm first impression.", "image": "/assets/media/app-showcase/playtribe/explore.webp", "alt": "Playtribe Explore feed with local yoga and beach volleyball events" },
+      { "title": "Map view", "caption": "Geographic browsing adds context without taking over the interface.", "image": "/assets/media/app-showcase/playtribe/map.webp", "alt": "Playtribe map view showing sports events around Copenhagen" },
+      { "title": "Event detail", "caption": "A clear hierarchy turns the decision screen into a readable composition.", "image": "/assets/media/app-showcase/playtribe/event-detail.webp", "alt": "Playtribe event detail screen for a yoga event" },
+      { "title": "My events", "caption": "A focused overview for managing upcoming and past commitments.", "image": "/assets/media/app-showcase/playtribe/events.webp", "alt": "Playtribe My Events screen with upcoming events" },
+      { "title": "Profile", "caption": "Trust cues are treated as part of the product’s social identity.", "image": "/assets/media/app-showcase/playtribe/profile.webp", "alt": "Playtribe member profile with reliability score" }
     ]
   },
-  "seo": { "seo_title": "Playtribe Showcase — Sara Ruffini", "seo_description": "A case study of Playtribe, a social sports app for finding or creating local events, meeting people and building trust through community.", "seo_image": "/assets/media/app-showcase/playtribe/explore.webp" }
+  "seo": { "seo_title": "Playtribe Case Study — Sara Ruffini", "seo_description": "A product design and development case study exploring the idea, visual system and Flutter implementation behind Playtribe.", "seo_image": "/assets/media/app-showcase/playtribe/explore.webp" }
 }
