@@ -74,15 +74,7 @@ export default function HomepageMotion() {
           drawSVG: "100%",
           duration: 0.58,
           ease: "power2.inOut",
-        }, 0.53)
-        .from(".homepage-showreel", {
-          y: 70,
-          rotateX: 9,
-          transformPerspective: 900,
-          autoAlpha: 0,
-          duration: 0.85,
-          clearProps: "transform,opacity,visibility",
-        }, 0.35);
+        }, 0.53);
 
       const featuredTimeline = gsap.timeline({
         scrollTrigger: {
