@@ -184,6 +184,11 @@
             font-size: clamp(0.9rem, 1.1vw, 1rem) !important;
         }
 
+        [data-cms-page="about"] .work-timeline-card > div[class*="bg-white"] > div.absolute {
+            padding: 0.25rem 0.65rem !important;
+            font-size: clamp(0.7rem, 0.9vw, 0.82rem) !important;
+        }
+
         [data-cms-page="about"] [data-cms-more-about-cards] {
             gap: clamp(1.25rem, 2.5vw, 2rem) !important;
         }
