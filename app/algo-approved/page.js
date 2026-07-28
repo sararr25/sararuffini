@@ -49,13 +49,13 @@ const DEFAULT_REELS = [
   },
 ];
 
-const HERO_PHONE_IMAGE = "/assets/media/algo-approved-hero.png";
+const HERO_PHONE_IMAGE = "/assets/media/social-media-hero.png";
 
 const REEL_PLACEHOLDER_IMAGES = [
-  "/assets/media/algo-reel-1.jpg",
-  "/assets/media/algo-reel-2.jpg",
-  "/assets/media/algo-reel-3.jpg",
-  "/assets/media/algo-reel-4.jpg",
+  "/assets/media/home-reels.png",
+  "/assets/media/Artboard6.png",
+  "/assets/media/graphic-unleashd5.png",
+  "/assets/media/graphic-ruby3.png",
 ];
 
 function BadgeColorClass(color) {

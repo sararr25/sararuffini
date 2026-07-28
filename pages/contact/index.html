@@ -82,13 +82,13 @@
                     <span class="font-marker bg-accent-yellow text-black px-1 transform -rotate-1 inline-block dark:bg-primary">I'm your editor.</span>
 </p>
 <div class="flex items-center gap-4 pt-4">
-<div class="w-16 h-16 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro dark:shadow-retro-dark transform hover:-translate-y-1 transition-transform cursor-pointer">
+<div aria-hidden="true" class="contact-visual-icon w-16 h-16 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro dark:shadow-retro-dark">
 <span class="material-icons">mail</span>
 </div>
-<div class="w-16 h-16 bg-primary text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro border-2 border-black transform hover:-translate-y-1 transition-transform cursor-pointer">
+<div aria-hidden="true" class="contact-visual-icon w-16 h-16 bg-primary text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro border-2 border-black">
 <span class="material-icons">smart_display</span>
 </div>
-<div class="w-16 h-16 bg-accent-yellow text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro border-2 border-black transform hover:-translate-y-1 transition-transform cursor-pointer">
+<div aria-hidden="true" class="contact-visual-icon w-16 h-16 bg-accent-yellow text-black rounded-full flex items-center justify-center font-bold text-2xl shadow-retro border-2 border-black">
 <i class="material-icons">music_note</i>
 </div>
 </div>
@@ -172,18 +172,6 @@
 
 
 <script>
-        // Simple dark mode toggle functionality for demo purposes
-        // In a real app, this would check system preferences or local storage
-        const toggleMode = () => {
-            document.documentElement.classList.toggle('dark');
-        }
-        // Add a hidden toggle button for testing
-        const btn = document.createElement('button');
-        btn.innerHTML = '🌓';
-        btn.className = 'fixed bottom-4 left-4 z-50 bg-black text-white dark:bg-white dark:text-black p-3 rounded-full shadow-lg text-xl border-2 border-white dark:border-black hover:scale-110 transition-transform';
-        btn.onclick = toggleMode;
-        document.body.appendChild(btn);
-
         const contactForm = document.getElementById('contact-form');
         const submitButton = document.getElementById('contact-submit');
         const submitLabel = document.getElementById('contact-submit-label');

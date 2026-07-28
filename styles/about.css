@@ -213,12 +213,67 @@
         }
 
         @media (max-width: 767px) {
+            [data-cms-page="about"] main {
+                overflow-x: clip;
+            }
+
+            [data-cms-page="about"] main > section:first-of-type {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+                align-items: center !important;
+                overflow: hidden;
+            }
+
+            [data-cms-page="about"] main > section:first-of-type > div {
+                max-width: 100%;
+                min-width: 0;
+            }
+
+            [data-cms-page="about"] main > section:first-of-type > div:nth-of-type(4) {
+                width: calc(100vw - 2.5rem) !important;
+                max-width: calc(100vw - 2.5rem) !important;
+            }
+
             [data-cms-page="about"] main > section:first-of-type > div:nth-of-type(3) > div:first-of-type {
-                width: min(19rem, 82vw) !important;
-                height: min(23rem, 100vw) !important;
+                width: min(18rem, 74vw) !important;
+                height: min(22rem, 92vw) !important;
             }
 
             [data-cms-page="about"] main > section:first-of-type h1 {
-                font-size: clamp(2.8rem, 13vw, 4.5rem) !important;
+                max-width: 100%;
+                font-size: clamp(2.05rem, 9.8vw, 3rem) !important;
+                overflow-wrap: anywhere;
+            }
+
+            [data-cms-page="about"] .about-hero-script {
+                display: block;
+                max-width: 100%;
+                font-size: 0.72em;
+                line-height: 0.92;
+            }
+
+            [data-cms-page="about"] .about-hero-script-word {
+                max-width: 100%;
+                overflow-wrap: anywhere;
+                word-break: break-word;
+            }
+
+            [data-cms-page="about"] [data-cms-hero-intro] {
+                width: min(100%, 18rem) !important;
+                max-width: min(100%, 18rem) !important;
+                font-size: 0.8rem !important;
+                line-height: 1.55 !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            [data-cms-page="about"] [data-cms-hero-intro] p {
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+
+            [data-cms-page="about"] .prose span[class*="inline-flex"] {
+                max-width: 100%;
+                white-space: normal;
             }
         }

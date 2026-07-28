@@ -24,3 +24,73 @@
         .dark .stroke-text {
             -webkit-text-stroke: 1px white;
         }
+
+        [data-cms-page="contact"] input:focus-visible,
+        [data-cms-page="contact"] select:focus-visible,
+        [data-cms-page="contact"] textarea:focus-visible,
+        [data-cms-page="contact"] button:focus-visible {
+            outline: 3px solid var(--color-primary, #3BDEC8);
+            outline-offset: 3px;
+        }
+
+        [data-cms-page="contact"] .contact-visual-icon {
+            cursor: default;
+        }
+
+        @media (max-width: 767px) {
+            [data-cms-page="contact"] main {
+                min-height: auto;
+                justify-content: flex-start;
+                padding: 5rem 1rem 4rem !important;
+                overflow-x: clip;
+            }
+
+            [data-cms-page="contact"] main > .container {
+                width: 100%;
+                max-width: 100%;
+                gap: 2.5rem;
+            }
+
+            [data-cms-page="contact"] h1 {
+                max-width: 100%;
+                font-size: clamp(2.8rem, 14.8vw, 3.85rem) !important;
+                line-height: 0.82 !important;
+                letter-spacing: -0.045em !important;
+                overflow-wrap: anywhere;
+            }
+
+            [data-cms-page="contact"] h1 span {
+                max-width: 100%;
+            }
+
+            [data-cms-page="contact"] main p {
+                max-width: min(100%, 21rem);
+                font-size: clamp(1rem, 4.5vw, 1.16rem) !important;
+            }
+
+            [data-cms-page="contact"] form {
+                width: 100%;
+            }
+
+            [data-cms-page="contact"] main .relative:has(> #contact-form) {
+                width: 100%;
+                max-width: calc(100vw - 2rem);
+                padding: 1.5rem !important;
+                box-shadow: 5px 5px 0 #000000 !important;
+            }
+
+            [data-cms-page="contact"] label {
+                font-size: 1.15rem !important;
+            }
+
+            [data-cms-page="contact"] input,
+            [data-cms-page="contact"] select,
+            [data-cms-page="contact"] textarea {
+                font-size: 1rem !important;
+                min-width: 0;
+            }
+
+            [data-cms-page="contact"] #contact-submit {
+                font-size: clamp(1.55rem, 8vw, 2rem) !important;
+            }
+        }

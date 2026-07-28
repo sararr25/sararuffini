@@ -170,22 +170,50 @@
 
     .masonry-grid,
     .project-card {
-      width: calc(100% - 1.25rem) !important;
-      max-width: calc(100% - 1.25rem);
+      width: calc(100vw - 2.5rem) !important;
+      max-width: calc(100vw - 2.5rem);
       box-sizing: border-box;
+      break-inside: auto;
+    }
+
+    .project-card {
+      padding-left: 0.2rem;
+      padding-right: 0.2rem;
+      overflow: visible;
     }
 
     .project-frame {
       width: 100%;
-      max-width: 100%;
+      max-width: calc(100vw - 2.5rem);
       box-sizing: border-box;
     }
 
+    .project-frame--soft,
+    .project-frame--arch,
+    .project-frame--oval,
+    .project-frame--double {
+      box-shadow: 5px 5px 0 #1a1a1a;
+    }
+
+    .project-frame--arch,
+    .project-frame--oval {
+      min-width: 0;
+    }
+
     .project-badge {
+      left: 1rem !important;
+      right: auto !important;
       max-width: calc(100% - 1.5rem);
       padding: 0.45rem 0.75rem;
       font-size: 0.75rem;
       white-space: normal;
+    }
+
+    .projects-lab-note {
+      width: min(100%, 18rem);
+      max-width: calc(100vw - 3rem);
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .project-frame--oval {
