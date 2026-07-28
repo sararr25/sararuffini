@@ -23,6 +23,18 @@ export default function HomepageMotion() {
     const media = gsap.matchMedia();
     const cleanup = [];
     let started = false;
+    const previousScrollRestoration = window.history.scrollRestoration;
+
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+      cleanup.push(() => {
+        window.history.scrollRestoration = previousScrollRestoration;
+      });
+    }
+
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
 
     const startMotion = () => {
       if (started) {
@@ -32,6 +44,7 @@ export default function HomepageMotion() {
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
         document.documentElement.classList.add("gsap-enhanced");
+        ScrollTrigger.clearScrollMemory("manual");
 
       const smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
@@ -399,16 +412,22 @@ export default function HomepageMotion() {
       });
     };
 
-    const fallbackTimer = window.setTimeout(startMotion, 2500);
+    const fallbackTimer = window.setTimeout(startMotion, 450);
     const handleContentReady = () => {
+      window.clearTimeout(fallbackTimer);
+      startMotion();
+    };
+    const handleWindowLoad = () => {
       window.clearTimeout(fallbackTimer);
       startMotion();
     };
 
     document.addEventListener("cms:content-applied", handleContentReady, { once: true });
+    window.addEventListener("load", handleWindowLoad, { once: true });
     cleanup.push(() => {
       window.clearTimeout(fallbackTimer);
       document.removeEventListener("cms:content-applied", handleContentReady);
+      window.removeEventListener("load", handleWindowLoad);
     });
 
     return () => {
