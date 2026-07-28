@@ -39,17 +39,17 @@
     },
     {
       "href": "",
-      "href_page": "/pages/app-v1/index.html",
+      "href_page": "/app-showcase",
       "badge": "Playtribe",
-      "image": "/assets/media/Artboard6.png",
+      "image": "/assets/media/app-showcase/playtribe/explore.webp",
       "image_crop_position": {
         "x": 50,
         "y": 50,
         "zoom": 1
       },
-      "alt": "Retro Tech",
-      "title": "Community and sport app",
-      "meta": "UX/UI • Mobile App"
+      "alt": "Playtribe Explore screen showing local sports events",
+      "title": "Playtribe",
+      "meta": "UX/UI • Flutter App"
     },
     {
       "href": "",

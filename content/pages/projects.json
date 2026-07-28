@@ -47,6 +47,20 @@
       "href_page": "/pages/coming-soon/index.html"
     },
     {
+      "href": "",
+      "badge": "Playtribe",
+      "image": "/assets/media/app-showcase/playtribe/explore.webp",
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "alt": "Playtribe Explore screen showing local sports events",
+      "title": "Playtribe",
+      "meta": "UX/UI • Flutter App",
+      "href_page": "/app-showcase"
+    },
+    {
       "href": "/pages/neon-vibes-web/index.html",
       "badge": "Neon Vibes",
       "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
