@@ -163,7 +163,6 @@ export default function AppShowcase() {
               <div className="app-showcase-title-wrap">
                 <p className="app-showcase-kicker">Product design + development case study</p>
                 <h1>{content.hero.title}</h1>
-                <svg aria-hidden="true" className="app-showcase-squiggle" viewBox="0 0 100 50"><path d="M5 25Q25 5 50 25T95 25" /></svg>
               </div>
               <p className="app-showcase-lead">{content.hero.description}</p>
               <div className="app-showcase-hero__actions"><a className="app-showcase-button app-showcase-button--primary" href="#development">Explore the development<span aria-hidden="true" className="material-symbols-outlined">south</span></a><a className="app-showcase-button app-showcase-button--secondary" href="/pages/projects">Back to projects<span aria-hidden="true" className="material-symbols-outlined">arrow_forward</span></a></div>
@@ -172,7 +171,6 @@ export default function AppShowcase() {
             </div>
             <div className="app-showcase-hero-phone app-showcase-reveal app-showcase-reveal--delay">
               <div className="app-showcase-phone"><div className="app-showcase-phone__screen"><img src={content.hero.image} alt={content.hero.image_alt} fetchPriority="high" decoding="async" /></div></div>
-              <svg aria-hidden="true" className="app-showcase-star" viewBox="0 0 100 100"><polygon points="50,5 61,35 95,35 67,55 78,85 50,65 22,85 33,55 5,35 39,35" /></svg>
             </div>
           </div>
         </section>
