@@ -31,9 +31,16 @@
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3pjx-HaawTw",
       "media_upload": "",
-      "title": "",
-      "description": "",
-      "tags": [],
+      "title": "Salmon on the grill",
+      "description": "A clear recipe edit built around appetite, close-up texture and a rhythm that keeps each step easy to follow.",
+      "tags": [
+        {
+          "tag": "Food edit"
+        },
+        {
+          "tag": "Recipe pacing"
+        }
+      ],
       "image_crop_position": {
         "x": 50,
         "y": 50,
@@ -45,9 +52,16 @@
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=fHRBCvgVZ2Q&t=22s",
       "media_upload": "",
-      "title": "",
-      "description": "",
-      "tags": [],
+      "title": "T-bone steak",
+      "description": "A tighter, heat-led edit where cuts, timing and sound cues make the grill technique feel immediate.",
+      "tags": [
+        {
+          "tag": "Color grading"
+        },
+        {
+          "tag": "Short-form recipe"
+        }
+      ],
       "award_note": "",
       "image_crop_position": {
         "x": 50,
@@ -60,9 +74,16 @@
       "media_type": "embed",
       "media_url": "https://www.youtube.com/watch?v=3_OTHj-B6aI&t=96s",
       "media_upload": "",
-      "title": "",
-      "description": "",
-      "tags": [],
+      "title": "Lammeskank",
+      "description": "A slower recipe story with room for preparation, smoke and plating, balanced so the method stays readable.",
+      "tags": [
+        {
+          "tag": "Storytelling"
+        },
+        {
+          "tag": "Post production"
+        }
+      ],
       "image_crop_position": {
         "x": 50,
         "y": 50,
@@ -71,7 +92,7 @@
     }
   ],
   "closing_section": {
-    "closing_quote": ""
+    "closing_quote": "Edited to make barbecue feel practical, warm and worth pressing play."
   },
   "seo": {
     "seo_title": "Weber Grillinspiration",
