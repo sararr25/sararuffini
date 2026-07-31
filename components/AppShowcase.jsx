@@ -1,7 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SiteFooter, SiteNav } from "./SiteChrome";
+
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger);
 
 const LOGO = "/assets/media/app-showcase/playtribe/logo.png";
 
@@ -78,6 +83,7 @@ function mergeContent(data) {
 
 export default function AppShowcase() {
   const [content, setContent] = useState(FALLBACK);
+  const pageRef = useRef(null);
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -97,22 +103,137 @@ export default function AppShowcase() {
       .catch(() => {});
   }, []);
 
-  useEffect(() => {
-    const elements = document.querySelectorAll(".app-showcase-reveal");
-    if (!("IntersectionObserver" in window)) {
-      elements.forEach((element) => element.classList.add("is-visible"));
-      return undefined;
-    }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+  useLayoutEffect(() => {
+    const page = pageRef.current;
+    if (!page) return undefined;
+
+    page.querySelectorAll(".app-showcase-reveal").forEach((element) => element.classList.add("is-visible"));
+
+    const media = gsap.matchMedia();
+    const scribble = page.querySelector(".app-showcase-title-scribble path");
+
+    media.add("(prefers-reduced-motion: no-preference)", () => {
+      const ctx = gsap.context(() => {
+        const heroTimeline = gsap.timeline({ defaults: { ease: "expo.out" } });
+
+        heroTimeline
+          .from(".app-showcase-hero .app-showcase-kicker", {
+            y: 12,
+            autoAlpha: 0,
+            duration: 0.42,
+            clearProps: "opacity,visibility,transform",
+          })
+          .from(".app-showcase-hero h1", {
+            y: 28,
+            rotate: -1.2,
+            autoAlpha: 0,
+            duration: 0.72,
+            clearProps: "opacity,visibility,transform",
+          }, 0.08)
+          .fromTo(scribble, {
+            drawSVG: "0%",
+          }, {
+            drawSVG: "100%",
+            duration: 0.72,
+            ease: "power2.inOut",
+          }, 0.48)
+          .from(".app-showcase-lead", {
+            y: 18,
+            autoAlpha: 0,
+            duration: 0.56,
+            clearProps: "opacity,visibility,transform",
+          }, 0.42)
+          .from(".app-showcase-button", {
+            y: 12,
+            autoAlpha: 0,
+            duration: 0.38,
+            stagger: 0.07,
+            clearProps: "opacity,visibility,transform",
+          }, 0.58)
+          .from(".app-showcase-benefits li", {
+            x: -10,
+            autoAlpha: 0,
+            duration: 0.34,
+            stagger: 0.055,
+            clearProps: "opacity,visibility,transform",
+          }, 0.72)
+          .from(".app-showcase-tags span", {
+            y: 8,
+            autoAlpha: 0,
+            duration: 0.32,
+            stagger: 0.055,
+            clearProps: "opacity,visibility,transform",
+          }, 0.82)
+          .from(".app-showcase-hero-phone", {
+            y: 24,
+            rotate: 0.8,
+            autoAlpha: 0,
+            duration: 0.72,
+            clearProps: "opacity,visibility,transform",
+          }, 0.3);
+
+        gsap.utils.toArray([
+          ".app-showcase-dna__left .app-showcase-card",
+          ".app-showcase-dna__story",
+          ".app-showcase-tech .app-showcase-kicker",
+          ".app-showcase-tech h2",
+          ".app-showcase-section-lead",
+          ".app-showcase-tech-card",
+          ".app-showcase-action__intro",
+          ".app-showcase-carousel-shell",
+          ".app-showcase-action__cta",
+        ].join(", ")).forEach((element, index) => {
+          gsap.from(element, {
+            y: 26,
+            autoAlpha: 0,
+            duration: 0.64,
+            delay: Math.min((index % 3) * 0.035, 0.1),
+            ease: "expo.out",
+            clearProps: "opacity,visibility,transform",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 86%",
+              once: true,
+            },
+          });
+        });
+
+        gsap.from(".app-showcase-colors span", {
+          scaleX: 0,
+          transformOrigin: "left center",
+          duration: 0.45,
+          stagger: 0.045,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".app-showcase-colors",
+            start: "top 88%",
+            once: true,
+          },
+        });
+
+        gsap.from(".app-showcase-carousel__item", {
+          y: 18,
+          autoAlpha: 0,
+          duration: 0.52,
+          stagger: 0.06,
+          ease: "power3.out",
+          clearProps: "opacity,visibility,transform",
+          scrollTrigger: {
+            trigger: ".app-showcase-carousel",
+            start: "top 84%",
+            once: true,
+          },
+        });
+      }, page);
+
+      return () => ctx.revert();
+    });
+
+    media.add("(prefers-reduced-motion: reduce)", () => {
+      gsap.set(scribble, { drawSVG: "100%" });
+    });
+
+    return () => media.revert();
   }, [content]);
 
   const slides = content.action.slides?.length ? content.action.slides : FALLBACK.action.slides;
@@ -154,7 +275,7 @@ export default function AppShowcase() {
   }
 
   return (
-    <div className="app-showcase-page" data-cms-page="projects">
+    <div className="app-showcase-page" data-cms-page="projects" ref={pageRef}>
       <SiteNav pageKey="app-showcase" />
       <main>
         <section className="app-showcase-hero">
@@ -163,6 +284,9 @@ export default function AppShowcase() {
               <div className="app-showcase-title-wrap">
                 <p className="app-showcase-kicker">Product design + development case study</p>
                 <h1>{content.hero.title}</h1>
+                <svg className="app-showcase-title-scribble" viewBox="0 0 320 28" aria-hidden="true" focusable="false">
+                  <path d="M5 18C42 7 74 22 114 14C156 5 185 22 226 13C263 5 288 10 315 17" />
+                </svg>
               </div>
               <p className="app-showcase-lead">{content.hero.description}</p>
               <div className="app-showcase-hero__actions"><a className="app-showcase-button app-showcase-button--primary" href="#development">Explore the development<span aria-hidden="true" className="material-symbols-outlined">south</span></a><a className="app-showcase-button app-showcase-button--secondary" href="/pages/projects">Back to projects<span aria-hidden="true" className="material-symbols-outlined">arrow_forward</span></a></div>
