@@ -112,7 +112,9 @@ export default function AppShowcase() {
     const media = gsap.matchMedia();
     const scribble = page.querySelector(".app-showcase-title-scribble path");
 
-    media.add("(prefers-reduced-motion: no-preference)", () => {
+    // On small touch screens, content should be immediately available rather
+    // than depending on a scroll-triggered entrance to become readable.
+    media.add("(min-width: 641px) and (prefers-reduced-motion: no-preference)", () => {
       const ctx = gsap.context(() => {
         const heroTimeline = gsap.timeline({ defaults: { ease: "expo.out" } });
 
@@ -229,7 +231,7 @@ export default function AppShowcase() {
       return () => ctx.revert();
     });
 
-    media.add("(prefers-reduced-motion: reduce)", () => {
+    media.add("(max-width: 640px), (prefers-reduced-motion: reduce)", () => {
       gsap.set(scribble, { drawSVG: "100%" });
     });
 
@@ -278,6 +280,11 @@ export default function AppShowcase() {
     <div className="app-showcase-page" data-cms-page="projects" ref={pageRef}>
       <SiteNav pageKey="app-showcase" />
       <main>
+        <nav className="app-showcase-breadcrumb app-showcase-wrap" aria-label="Breadcrumb">
+          <a href="/pages/projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Playtribe</span>
+        </nav>
         <section className="app-showcase-hero">
           <div className="app-showcase-wrap app-showcase-hero__grid">
             <div className="app-showcase-hero__copy app-showcase-reveal">
@@ -289,8 +296,8 @@ export default function AppShowcase() {
                 </svg>
               </div>
               <p className="app-showcase-lead">{content.hero.description}</p>
-              <div className="app-showcase-hero__actions"><a className="app-showcase-button app-showcase-button--primary" href="#development">Explore the development<span aria-hidden="true" className="material-symbols-outlined">south</span></a><a className="app-showcase-button app-showcase-button--secondary" href="/pages/projects">Back to projects<span aria-hidden="true" className="material-symbols-outlined">arrow_forward</span></a></div>
-              <ul className="app-showcase-benefits" aria-label="Case study focus">{(content.hero.benefits || FALLBACK.hero.benefits).map((benefit) => <li key={benefit}><span aria-hidden="true" className="material-symbols-outlined">check</span>{benefit}</li>)}</ul>
+              <div className="app-showcase-hero__actions"><a className="app-showcase-button app-showcase-button--primary" href="#development">Explore the development<span aria-hidden="true" className="app-showcase-symbol">↓</span></a><a className="app-showcase-button app-showcase-button--secondary" href="/pages/projects">Back to projects<span aria-hidden="true" className="app-showcase-symbol">→</span></a></div>
+              <ul className="app-showcase-benefits" aria-label="Case study focus">{(content.hero.benefits || FALLBACK.hero.benefits).map((benefit) => <li key={benefit}><span aria-hidden="true" className="app-showcase-symbol">✓</span>{benefit}</li>)}</ul>
               <div className="app-showcase-tags">{(content.hero.tags || []).map((tag) => <span key={tag}>{tag}</span>)}</div>
             </div>
             <div className="app-showcase-hero-phone app-showcase-reveal app-showcase-reveal--delay">
@@ -323,7 +330,7 @@ export default function AppShowcase() {
 
         <section className="app-showcase-action">
           <div className="app-showcase-wrap app-showcase-action__intro"><p className="app-showcase-kicker">Selected interface screens</p><h2>{content.action.title}</h2><p className="app-showcase-action__lead">{content.action.intro}</p></div>
-          <div className="app-showcase-carousel-shell app-showcase-reveal"><button type="button" aria-label="Previous screen" onClick={() => moveCarousel(-1)} className="app-showcase-arrow app-showcase-arrow--prev"><span aria-hidden="true" className="material-symbols-outlined">arrow_back</span></button><div className="app-showcase-carousel" onScroll={updateActiveSlide} onKeyDown={handleCarouselKeyDown} ref={carouselRef} tabIndex="0" role="region" aria-roledescription="carousel" aria-label="Playtribe app screens">{carouselItems.map((slide) => <article className={`app-showcase-carousel__item${activeSlide === slide.index ? " is-active" : ""}`} key={`${slide.title}-${slide.index}`} role="group" aria-roledescription="slide" aria-label={`${slide.title}, screen ${slide.index + 1} of ${carouselItems.length}`}><div className="app-showcase-carousel__phone"><img src={slide.image} alt={slide.alt} loading={slide.index === 0 ? "eager" : "lazy"} decoding="async" /></div><div className="app-showcase-carousel__caption"><strong>{slide.title}</strong><span>{slide.caption}</span></div></article>)}</div><button type="button" aria-label="Next screen" onClick={() => moveCarousel(1)} className="app-showcase-arrow app-showcase-arrow--next"><span aria-hidden="true" className="material-symbols-outlined">arrow_forward</span></button><div className="app-showcase-carousel__status"><span aria-live="polite">{String(activeSlide + 1).padStart(2, "0")} / {String(carouselItems.length).padStart(2, "0")}</span>{carouselItems.map((slide) => <button key={slide.index} type="button" aria-label={`Show ${slide.title}`} aria-current={activeSlide === slide.index ? "true" : undefined} onClick={() => moveCarousel(slide.index - activeSlide)}><span /></button>)}</div></div>
+          <div className="app-showcase-carousel-shell app-showcase-reveal"><button type="button" aria-label="Previous screen" onClick={() => moveCarousel(-1)} className="app-showcase-arrow app-showcase-arrow--prev"><span aria-hidden="true" className="app-showcase-symbol">←</span></button><p className="app-showcase-carousel__hint"><span aria-hidden="true" className="app-showcase-symbol">↔</span>Swipe to explore screens</p><div className="app-showcase-carousel" onScroll={updateActiveSlide} onKeyDown={handleCarouselKeyDown} ref={carouselRef} tabIndex="0" role="region" aria-roledescription="carousel" aria-label="Playtribe app screens">{carouselItems.map((slide) => <article className={`app-showcase-carousel__item${activeSlide === slide.index ? " is-active" : ""}`} key={`${slide.title}-${slide.index}`} role="group" aria-roledescription="slide" aria-label={`${slide.title}, screen ${slide.index + 1} of ${carouselItems.length}`}><div className="app-showcase-carousel__phone"><img src={slide.image} alt={slide.alt} loading={slide.index === 0 ? "eager" : "lazy"} decoding="async" /></div><div className="app-showcase-carousel__caption"><strong>{slide.title}</strong><span>{slide.caption}</span></div></article>)}</div><button type="button" aria-label="Next screen" onClick={() => moveCarousel(1)} className="app-showcase-arrow app-showcase-arrow--next"><span aria-hidden="true" className="app-showcase-symbol">→</span></button><div className="app-showcase-carousel__status"><span aria-live="polite">{String(activeSlide + 1).padStart(2, "0")} / {String(carouselItems.length).padStart(2, "0")}</span>{carouselItems.map((slide) => <button key={slide.index} type="button" aria-label={`Show ${slide.title}`} aria-current={activeSlide === slide.index ? "true" : undefined} onClick={() => moveCarousel(slide.index - activeSlide)}><span /></button>)}</div></div>
           <div className="app-showcase-action__cta"><a href={content.action.cta_href}>{content.action.cta_label}<span aria-hidden="true" className="material-symbols-outlined">arrow_forward</span></a></div>
         </section>
       </main>
