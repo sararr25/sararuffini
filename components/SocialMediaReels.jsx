@@ -11,15 +11,30 @@ function ReelEmbed({ url, placeholderLabel }) {
     );
   }
 
-  return (
-    <blockquote
-      className="instagram-media"
-      data-instgrm-permalink={url.trim()}
-      data-instgrm-version="14"
-    >
-      <a href={url.trim()}>View this reel on Instagram</a>
-    </blockquote>
+  const embedUrl = instagramEmbedUrl(url);
+
+  return embedUrl ? (
+    <iframe
+      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="strict-origin-when-cross-origin"
+      src={embedUrl}
+      title="Instagram reel"
+    />
+  ) : (
+    <div className="social-reel-placeholder"><span>{placeholderLabel}</span></div>
   );
+}
+
+function instagramEmbedUrl(value) {
+  try {
+    const url = new URL(value.trim());
+    const match = url.pathname.match(/^\/(reel|p|tv)\/([^/]+)/i);
+    return match ? `https://www.instagram.com/${match[1]}/${match[2]}/embed/captioned/` : "";
+  } catch {
+    return "";
+  }
 }
 
 export default function SocialMediaReels({ reels, placeholderLabel }) {
@@ -43,7 +58,10 @@ export default function SocialMediaReels({ reels, placeholderLabel }) {
   return (
     <>
       <div className="drops-heading">
-        <h2 id="social-work-heading">Work</h2>
+        <div>
+          <p className="social-section-label">Selected social work</p>
+          <h2 id="social-work-heading">{reels.length} reels, built to be watched.</h2>
+        </div>
         <div className="drop-arrows" aria-label="Scroll reels">
           <button
             type="button"
@@ -79,6 +97,16 @@ export default function SocialMediaReels({ reels, placeholderLabel }) {
                   <span>{reel.role}</span>
                   <small>{reel.platform}</small>
                 </div>
+                {reel.reel_url ? (
+                  <a
+                    className="social-reel-open"
+                    href={reel.reel_url}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Open on Instagram <span aria-hidden="true">↗</span>
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}

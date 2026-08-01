@@ -1,46 +1,94 @@
 {
   "page_name": "Social Media",
   "page_slug": "social-media",
-  "headline": "Short-form content, from set to screen.",
-  "description": "I shoot and edit short-form video for social — food content, brand storytelling, behind-the-scenes. My work covers the full process: concept, camera, cut. Mostly Instagram Reels, always built around the platform.",
-  "work_heading": "Work",
+  "headline": "Social content that earns the next second.",
+  "description": "I create short-form video for people and brands with something worth stopping for. From the first hook to the final cut, every Reel is built for attention, personality and the way people actually watch.",
+  "work_heading": "Selected social work",
   "reel_placeholder_label": "Reel coming soon",
   "reels": [
     {
-      "client": "@potuschef",
-      "role": "Shot & edited",
+      "client": "Selected client work",
+      "role": "Concept · shoot · edit",
       "platform": "Instagram Reels",
-      "reel_url": ""
+      "reel_url": "https://www.instagram.com/p/DUyWChFCFM3/"
     },
     {
-      "client": "@potuschef",
-      "role": "Shot & edited",
+      "client": "Selected client work",
+      "role": "Concept · shoot · edit",
       "platform": "Instagram Reels",
-      "reel_url": ""
+      "reel_url": "https://www.instagram.com/reel/DS5TqO7CCDD/"
     },
     {
-      "client": "Søberg Institute",
-      "role": "Edited",
+      "client": "Selected client work",
+      "role": "Creative edit",
       "platform": "Instagram Reels",
-      "reel_url": ""
+      "reel_url": "https://www.instagram.com/reel/DSiG2pOCJ22/"
     },
     {
-      "client": "@potuschef",
-      "role": "Shot & edited",
+      "client": "Selected client work",
+      "role": "Creative edit",
       "platform": "Instagram Reels",
-      "reel_url": ""
+      "reel_url": "https://www.instagram.com/reel/DSc9gowCKXl/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Content creation",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DUYoufHiO9W/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Content creation",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DRj76-EDpF4/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Social-first edit",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DQL1qBViLLg/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Social-first edit",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DLSQs8KszMw/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Content creation",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DK_34ZlMmZg/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Content creation",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DKewrehIUJn/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Creative edit",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DI1Qw_7MtUT/"
+    },
+    {
+      "client": "Selected client work",
+      "role": "Creative edit",
+      "platform": "Instagram Reels",
+      "reel_url": "https://www.instagram.com/reel/DIOTD7vsqy2/"
     }
   ],
-  "approach_heading": "What I bring",
+  "approach_heading": "How I work",
   "approach_items": [
-    "End-to-end production — I shoot and edit",
-    "Short-form native formats: Reels, TikTok, Stories",
-    "Fast turnaround, content calendar support",
-    "Creative direction on set when needed"
+    "Concepts and hooks designed for the first three seconds",
+    "Shooting, directing and editing — from set to final export",
+    "Native formats for Reels, TikTok and Stories",
+    "A repeatable content rhythm, not one-off posts"
   ],
   "seo": {
-    "seo_title": "Social Media | Sara Ruffini",
-    "seo_description": "Short-form video production and editing by Sara Ruffini.",
+    "seo_title": "Social Content Creator | Sara Ruffini",
+    "seo_description": "Short-form social video, creative direction and editing by Sara Ruffini.",
     "seo_image": ""
   }
 }

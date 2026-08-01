@@ -1,42 +1,42 @@
-import Script from "next/script";
 import { SiteFooter, SiteNav } from "../../components/SiteChrome";
 import SocialMediaReels from "../../components/SocialMediaReels";
+import SocialMediaMotion from "../../components/SocialMediaMotion";
 import pageContent from "../../public/content/pages/social-media.json";
 
-const DEFAULT_HEADLINE = "Short-form content, from set to screen.";
+const DEFAULT_HEADLINE = "Social content that earns the next second.";
 const DEFAULT_DESCRIPTION =
-  "I shoot and edit short-form video for social — food content, brand storytelling, behind-the-scenes. My work covers the full process: concept, camera, cut. Mostly Instagram Reels, always built around the platform.";
+  "I create short-form video for people and brands with something worth stopping for. From the first hook to the final cut, every Reel is built for attention, personality and the way people actually watch.";
 const DEFAULT_REELS = [
   {
-    client: "@potuschef",
-    role: "Shot & edited",
+    client: "Selected client work",
+    role: "Concept · shoot · edit",
     platform: "Instagram Reels",
     reel_url: "",
   },
   {
-    client: "@potuschef",
-    role: "Shot & edited",
+    client: "Selected client work",
+    role: "Concept · shoot · edit",
     platform: "Instagram Reels",
     reel_url: "",
   },
   {
-    client: "Søberg Institute",
-    role: "Edited",
+    client: "Selected client work",
+    role: "Creative edit",
     platform: "Instagram Reels",
     reel_url: "",
   },
   {
-    client: "@potuschef",
-    role: "Shot & edited",
+    client: "Selected client work",
+    role: "Creative edit",
     platform: "Instagram Reels",
     reel_url: "",
   },
 ];
 const DEFAULT_APPROACH_ITEMS = [
-  "End-to-end production — I shoot and edit",
-  "Short-form native formats: Reels, TikTok, Stories",
-  "Fast turnaround, content calendar support",
-  "Creative direction on set when needed",
+  "Concepts and hooks designed for the first three seconds",
+  "Shooting, directing and editing — from set to final export",
+  "Native formats for Reels, TikTok and Stories",
+  "A repeatable content rhythm, not one-off posts",
 ];
 const HERO_IMAGE_URL = "/assets/media/social-media-hero.png";
 
@@ -54,14 +54,13 @@ export default function SocialMediaPage() {
   const approachItems = Array.isArray(pageContent.approach_items)
     ? pageContent.approach_items
     : DEFAULT_APPROACH_ITEMS;
-  const hasEmbeds = reels.some((reel) => reel.reel_url?.trim());
-
   return (
-    <div className="editorial-page">
+    <div className="editorial-page social-media-page">
       <SiteNav pageKey="projects" />
       <main>
         <header className="social-hero">
           <div className="social-copy">
+            <p className="social-eyebrow">Content creator · social-first video</p>
             <h1>{pageContent.headline || DEFAULT_HEADLINE}</h1>
             <p className="social-intro">
               {pageContent.description || DEFAULT_DESCRIPTION}
@@ -113,13 +112,7 @@ export default function SocialMediaPage() {
         </section>
       </main>
       <SiteFooter />
-      {hasEmbeds ? (
-        <Script
-          async
-          src="https://www.instagram.com/embed.js"
-          strategy="afterInteractive"
-        />
-      ) : null}
+      <SocialMediaMotion />
     </div>
   );
 }

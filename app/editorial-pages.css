@@ -77,6 +77,22 @@
   min-width: 0;
   max-width: 530px;
 }
+.social-eyebrow,
+.social-section-label {
+  margin: 0;
+  color: var(--ink);
+  font: 800 11px/1.2 "Space Grotesk", Inter, sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.social-eyebrow {
+  display: inline-flex;
+  padding: 8px 11px;
+  border: 2px solid var(--ink);
+  background: var(--yellow);
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(-2deg);
+}
 .social-copy h1 {
   margin: 22px 0 20px;
   font-size: clamp(46px, 4.8vw, 68px);
@@ -178,8 +194,11 @@
   align-items: center;
 }
 .social-work .drops-heading h2 {
-  margin: 0;
-  font-size: 30px;
+  max-width: 650px;
+  margin: 7px 0 0;
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: -.045em;
+  line-height: .98;
   text-transform: uppercase;
 }
 .drop-arrows {
@@ -252,6 +271,10 @@
   width: 255px;
   height: 455px;
 }
+.social-reel-frame:hover .social-reel-open,
+.social-reel-frame:focus-within .social-reel-open {
+  transform: translateY(0);
+}
 .social-reel-placeholder {
   width: 100%;
   height: 100%;
@@ -284,13 +307,38 @@
 .social-reel-details {
   position: absolute;
   z-index: 3;
-  right: 14px;
-  bottom: 15px;
+  right: 12px;
+  bottom: 12px;
   left: 14px;
   display: block;
   padding: 12px;
   border: 2px solid var(--ink);
   background: rgba(255,255,255,.94);
+}
+.social-reel-open {
+  position: absolute;
+  z-index: 4;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  gap: 6px;
+  padding: 8px 10px;
+  transform: translateY(-120%);
+  border: 2px solid var(--ink);
+  background: var(--cyan);
+  box-shadow: 2px 2px 0 var(--ink);
+  color: var(--ink);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: transform .22s ease;
+}
+.social-reel-open:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+  transform: translateY(0);
 }
 .social-reel-details strong,
 .social-reel-details span,
@@ -528,6 +576,9 @@
 @media (max-width: 540px) {
   .social-hero { min-width: 0; min-height: 625px; padding-right: 25px; padding-left: 25px; }
   .social-copy h1 { font-size: 46px; }
+  .social-eyebrow { font-size: 9px; }
+  .social-work .drops-heading h2 { font-size: 29px; }
+  .social-reel-open { transform: translateY(0); }
   .social-intro { width: 100%; max-width: 100%; font-size: 16px; }
   .phone-stage { transform: scale(.87); margin: -10px -25px; }
   .drop-arrows { display: none; }
