@@ -112,65 +112,66 @@ export default function AppShowcase() {
     const media = gsap.matchMedia();
     const scribble = page.querySelector(".app-showcase-title-scribble path");
 
-    // On small touch screens, content should be immediately available rather
-    // than depending on a scroll-triggered entrance to become readable.
-    media.add("(min-width: 641px) and (prefers-reduced-motion: no-preference)", () => {
+    media.add("(prefers-reduced-motion: no-preference)", () => {
       const ctx = gsap.context(() => {
+        const compactMotion = window.matchMedia("(max-width: 640px)").matches;
+        const entranceOpacity = compactMotion ? 0.86 : 0;
+        const entranceDistance = compactMotion ? 10 : 26;
         const heroTimeline = gsap.timeline({ defaults: { ease: "expo.out" } });
 
         heroTimeline
           .from(".app-showcase-hero .app-showcase-kicker", {
-            y: 12,
-            autoAlpha: 0,
-            duration: 0.42,
+            y: compactMotion ? 6 : 12,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.26 : 0.42,
             clearProps: "opacity,visibility,transform",
           })
           .from(".app-showcase-hero h1", {
-            y: 28,
-            rotate: -1.2,
-            autoAlpha: 0,
-            duration: 0.72,
+            y: compactMotion ? 12 : 28,
+            rotate: compactMotion ? -0.5 : -1.2,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.42 : 0.72,
             clearProps: "opacity,visibility,transform",
           }, 0.08)
           .fromTo(scribble, {
             drawSVG: "0%",
           }, {
             drawSVG: "100%",
-            duration: 0.72,
+            duration: compactMotion ? 0.82 : 1.05,
             ease: "power2.inOut",
           }, 0.48)
           .from(".app-showcase-lead", {
-            y: 18,
-            autoAlpha: 0,
-            duration: 0.56,
+            y: compactMotion ? 8 : 18,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.38 : 0.56,
             clearProps: "opacity,visibility,transform",
           }, 0.42)
           .from(".app-showcase-button", {
-            y: 12,
-            autoAlpha: 0,
-            duration: 0.38,
+            y: compactMotion ? 7 : 12,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.28 : 0.38,
             stagger: 0.07,
             clearProps: "opacity,visibility,transform",
           }, 0.58)
           .from(".app-showcase-benefits li", {
-            x: -10,
-            autoAlpha: 0,
-            duration: 0.34,
+            x: compactMotion ? -5 : -10,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.25 : 0.34,
             stagger: 0.055,
             clearProps: "opacity,visibility,transform",
           }, 0.72)
           .from(".app-showcase-tags span", {
-            y: 8,
-            autoAlpha: 0,
-            duration: 0.32,
+            y: compactMotion ? 5 : 8,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.24 : 0.32,
             stagger: 0.055,
             clearProps: "opacity,visibility,transform",
           }, 0.82)
           .from(".app-showcase-hero-phone", {
-            y: 24,
-            rotate: 0.8,
-            autoAlpha: 0,
-            duration: 0.72,
+            y: compactMotion ? 12 : 24,
+            rotate: compactMotion ? 0.3 : 0.8,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.46 : 0.72,
             clearProps: "opacity,visibility,transform",
           }, 0.3);
 
@@ -186,9 +187,9 @@ export default function AppShowcase() {
           ".app-showcase-action__cta",
         ].join(", ")).forEach((element, index) => {
           gsap.from(element, {
-            y: 26,
-            autoAlpha: 0,
-            duration: 0.64,
+            y: entranceDistance,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.42 : 0.64,
             delay: Math.min((index % 3) * 0.035, 0.1),
             ease: "expo.out",
             clearProps: "opacity,visibility,transform",
@@ -214,9 +215,9 @@ export default function AppShowcase() {
         });
 
         gsap.from(".app-showcase-carousel__item", {
-          y: 18,
-          autoAlpha: 0,
-          duration: 0.52,
+            y: compactMotion ? 8 : 18,
+            autoAlpha: entranceOpacity,
+            duration: compactMotion ? 0.38 : 0.52,
           stagger: 0.06,
           ease: "power3.out",
           clearProps: "opacity,visibility,transform",
@@ -231,7 +232,7 @@ export default function AppShowcase() {
       return () => ctx.revert();
     });
 
-    media.add("(max-width: 640px), (prefers-reduced-motion: reduce)", () => {
+    media.add("(prefers-reduced-motion: reduce)", () => {
       gsap.set(scribble, { drawSVG: "100%" });
     });
 
@@ -296,7 +297,7 @@ export default function AppShowcase() {
                 </svg>
               </div>
               <p className="app-showcase-lead">{content.hero.description}</p>
-              <div className="app-showcase-hero__actions"><a className="app-showcase-button app-showcase-button--primary" href="#development">Explore the development<span aria-hidden="true" className="app-showcase-symbol">↓</span></a><a className="app-showcase-button app-showcase-button--secondary" href="/pages/projects">Back to projects<span aria-hidden="true" className="app-showcase-symbol">→</span></a></div>
+              <div className="app-showcase-hero__actions"><a className="app-showcase-button app-showcase-button--primary" href="https://www.playtribeapp.com" target="_blank" rel="noopener noreferrer">Check the app<span aria-hidden="true" className="app-showcase-symbol">↗</span></a></div>
               <ul className="app-showcase-benefits" aria-label="Case study focus">{(content.hero.benefits || FALLBACK.hero.benefits).map((benefit) => <li key={benefit}><span aria-hidden="true" className="app-showcase-symbol">✓</span>{benefit}</li>)}</ul>
               <div className="app-showcase-tags">{(content.hero.tags || []).map((tag) => <span key={tag}>{tag}</span>)}</div>
             </div>
