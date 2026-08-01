@@ -2,31 +2,6 @@
 
 import { useRef } from "react";
 
-function ReelEmbed({ url, placeholderLabel }) {
-  if (!url?.trim()) {
-    return (
-      <div className="social-reel-placeholder">
-        <span>{placeholderLabel}</span>
-      </div>
-    );
-  }
-
-  const embedUrl = instagramEmbedUrl(url);
-
-  return embedUrl ? (
-    <iframe
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      allowFullScreen
-      loading="lazy"
-      referrerPolicy="strict-origin-when-cross-origin"
-      src={embedUrl}
-      title="Instagram reel"
-    />
-  ) : (
-    <div className="social-reel-placeholder"><span>{placeholderLabel}</span></div>
-  );
-}
-
 function instagramEmbedUrl(value) {
   try {
     const url = new URL(value.trim());
@@ -37,80 +12,79 @@ function instagramEmbedUrl(value) {
   }
 }
 
-export default function SocialMediaReels({ reels, placeholderLabel }) {
-  const reelsViewportRef = useRef(null);
+function ReelCard({ reel, account, index }) {
+  const embedUrl = instagramEmbedUrl(reel.reel_url || "");
 
-  function scrollReels(direction) {
-    const viewport = reelsViewportRef.current;
-    if (!viewport) {
-      return;
-    }
+  return (
+    <article className="social-reel-card">
+      <div className="social-reel-frame">
+        {embedUrl ? (
+          <iframe
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen
+            loading={index < 3 ? "eager" : "lazy"}
+            referrerPolicy="strict-origin-when-cross-origin"
+            src={embedUrl}
+            title={`${account} Instagram reel ${index + 1}`}
+          />
+        ) : <div className="social-reel-placeholder">Instagram Reel</div>}
+        <div className="social-reel-details">
+          <strong>{account}</strong>
+          <span>{reel.credit}</span>
+          <small>Instagram Reel · {String(index + 1).padStart(2, "0")}</small>
+        </div>
+        <a className="social-reel-open" href={reel.reel_url} rel="noreferrer" target="_blank">
+          Watch reel <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>
+  );
+}
 
-    const card = viewport.querySelector(".social-reel-card");
-    const step = card ? card.offsetWidth + 30 : 285;
+function ReelCollection({ study }) {
+  const viewportRef = useRef(null);
+  const reels = study.reels || [];
+  const scroll = (direction) => {
+    const viewport = viewportRef.current;
+    const card = viewport?.querySelector(".social-reel-card");
+    viewport?.scrollBy({ left: direction * ((card?.offsetWidth || 255) + 28), behavior: "smooth" });
+  };
 
-    viewport.scrollBy({
-      left: direction * step,
-      behavior: "smooth",
-    });
-  }
+  return (
+    <section className="social-client-section" aria-labelledby={`${study.slug}-heading`}>
+      <header className="social-client-heading">
+        <div>
+          <p className="social-section-label">Selected client</p>
+          <h3 id={`${study.slug}-heading`}>{study.account}</h3>
+          <p>{study.role}</p>
+        </div>
+        <div className="drop-arrows" aria-label={`Scroll ${study.account} reels`}>
+          <button type="button" aria-label="Scroll left" onClick={() => scroll(-1)}>←</button>
+          <button type="button" aria-label="Scroll right" onClick={() => scroll(1)}>→</button>
+        </div>
+      </header>
+      <p className="social-client-summary">{study.summary}</p>
+      <div className="social-reels-viewport" ref={viewportRef}>
+        <div className="social-reels-track">
+          {reels.map((reel, index) => <ReelCard account={study.account} index={index} key={reel.reel_url} reel={reel} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
 
+export default function SocialMediaReels({ studies }) {
   return (
     <>
       <div className="drops-heading">
         <div>
-          <p className="social-section-label">Selected social work</p>
-          <h2 id="social-work-heading">{reels.length} reels, built to be watched.</h2>
+          <p className="social-section-label">Portfolio</p>
+          <h2 id="social-work-heading">Selected reels</h2>
         </div>
-        <div className="drop-arrows" aria-label="Scroll reels">
-          <button
-            type="button"
-            aria-label="Scroll left"
-            onClick={() => scrollReels(-1)}
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            aria-label="Scroll right"
-            onClick={() => scrollReels(1)}
-          >
-            →
-          </button>
-        </div>
+        <p className="social-work-count">{studies.reduce((total, study) => total + (study.reels?.length || 0), 0)} pieces of social-first work</p>
       </div>
-
-      <div className="social-reels-viewport" ref={reelsViewportRef}>
-        <div className="drop-track social-reels-grid">
-          {reels.map((reel, index) => (
-            <article
-              className="drop-wrap social-reel-card"
-              key={`${reel.client || "reel"}-${index}`}
-            >
-              <div className="drop-card social-reel-frame">
-                <ReelEmbed
-                  url={reel.reel_url}
-                  placeholderLabel={placeholderLabel}
-                />
-                <div className="drop-caption social-reel-details">
-                  <strong>{reel.client}</strong>
-                  <span>{reel.role}</span>
-                  <small>{reel.platform}</small>
-                </div>
-                {reel.reel_url ? (
-                  <a
-                    className="social-reel-open"
-                    href={reel.reel_url}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Open on Instagram <span aria-hidden="true">↗</span>
-                  </a>
-                ) : null}
-              </div>
-            </article>
-          ))}
-        </div>
+      <div className="social-client-list">
+        {studies.map((study) => <ReelCollection key={study.slug} study={study} />)}
       </div>
     </>
   );

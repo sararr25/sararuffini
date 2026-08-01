@@ -1,94 +1,48 @@
 {
   "page_name": "Social Media",
   "page_slug": "social-media",
-  "headline": "Social content that earns the next second.",
-  "description": "I create short-form video for people and brands with something worth stopping for. From the first hook to the final cut, every Reel is built for attention, personality and the way people actually watch.",
-  "work_heading": "Selected social work",
-  "reel_placeholder_label": "Reel coming soon",
-  "reels": [
+  "headline": "Content creation with a point of view.",
+  "description": "I turn expertise, food and real personalities into social-first video. The work lives where strategy, production and sharp editing meet — designed to build a following, not just fill a feed.",
+  "case_studies": [
     {
-      "client": "Selected client work",
-      "role": "Concept · shoot · edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/p/DUyWChFCFM3/"
+      "slug": "potuschef",
+      "account": "@potuschef",
+      "role": "Social media strategist & lead content creator",
+      "summary": "A content system for an Italian chef in Copenhagen: original formats, daily community touchpoints, food storytelling and a gradual shift from Italian to an international audience.",
+      "reels": [
+        { "reel_url": "https://www.instagram.com/p/DUyWChFCFM3/", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DS5TqO7CCDD/", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DSiG2pOCJ22/", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DSc9gowCKXl/", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DUYoufHiO9W/", "credit": "Strategy · shooting · edit" }
+      ]
     },
     {
-      "client": "Selected client work",
-      "role": "Concept · shoot · edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DS5TqO7CCDD/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Creative edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DSiG2pOCJ22/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Creative edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DSc9gowCKXl/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Content creation",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DUYoufHiO9W/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Content creation",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DRj76-EDpF4/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Social-first edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DQL1qBViLLg/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Social-first edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DLSQs8KszMw/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Content creation",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DK_34ZlMmZg/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Content creation",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DKewrehIUJn/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Creative edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DI1Qw_7MtUT/"
-    },
-    {
-      "client": "Selected client work",
-      "role": "Creative edit",
-      "platform": "Instagram Reels",
-      "reel_url": "https://www.instagram.com/reel/DIOTD7vsqy2/"
+      "slug": "susanna-soeberg",
+      "account": "@susanna_soeberg",
+      "role": "Video editor & content creator · Søberg Institute",
+      "summary": "Social video production for a knowledge-led brand: clear editing, motion-led explainers and short-form formats that make complex subjects more immediate on Instagram and TikTok.",
+      "reels": [
+        { "reel_url": "https://www.instagram.com/reel/DRj76-EDpF4/", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DQL1qBViLLg/", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DLSQs8KszMw/", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DK_34ZlMmZg/", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DKewrehIUJn/", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DI1Qw_7MtUT/", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DIOTD7vsqy2/", "credit": "Editing · motion graphics" }
+      ]
     }
   ],
   "approach_heading": "How I work",
   "approach_items": [
-    "Concepts and hooks designed for the first three seconds",
-    "Shooting, directing and editing — from set to final export",
-    "Native formats for Reels, TikTok and Stories",
-    "A repeatable content rhythm, not one-off posts"
+    "Content strategy rooted in a clear audience and creative direction",
+    "Hands-on shooting and direction that keeps people comfortable on camera",
+    "Fast, social-native editing with pacing, captions and motion graphics",
+    "Repeatable formats that create recognition, community and momentum"
   ],
   "seo": {
     "seo_title": "Social Content Creator | Sara Ruffini",
-    "seo_description": "Short-form social video, creative direction and editing by Sara Ruffini.",
+    "seo_description": "Social media strategy, short-form production and editing by Sara Ruffini.",
     "seo_image": ""
   }
 }

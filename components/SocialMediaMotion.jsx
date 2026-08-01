@@ -32,6 +32,32 @@ export default function SocialMediaMotion() {
           yoyo: true,
         });
 
+        gsap.from(".social-proof-intro, .social-proof-stats", {
+          y: compact ? 14 : 28,
+          duration: compact ? 0.46 : 0.7,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: { trigger: ".social-proof", start: "top 78%", once: true },
+        });
+
+        gsap.from(".social-proof-stats div", {
+          scaleX: 0,
+          transformOrigin: "left center",
+          duration: 0.45,
+          stagger: 0.09,
+          ease: "power2.out",
+          scrollTrigger: { trigger: ".social-proof-stats", start: "top 82%", once: true },
+        });
+
+        gsap.utils.toArray(".social-client-section").forEach((section) => {
+          gsap.from(section.querySelector(".social-client-heading"), {
+            x: compact ? 10 : 24,
+            duration: compact ? 0.4 : 0.56,
+            ease: "power3.out",
+            scrollTrigger: { trigger: section, start: "top 82%", once: true },
+          });
+        });
+
         gsap.utils.toArray(".social-reel-card").forEach((card, index) => {
           gsap.from(card, {
             y: compact ? 16 : 34,

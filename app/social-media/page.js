@@ -3,9 +3,9 @@ import SocialMediaReels from "../../components/SocialMediaReels";
 import SocialMediaMotion from "../../components/SocialMediaMotion";
 import pageContent from "../../public/content/pages/social-media.json";
 
-const DEFAULT_HEADLINE = "Social content that earns the next second.";
+const DEFAULT_HEADLINE = "Content creation with a point of view.";
 const DEFAULT_DESCRIPTION =
-  "I create short-form video for people and brands with something worth stopping for. From the first hook to the final cut, every Reel is built for attention, personality and the way people actually watch.";
+  "I turn expertise, food and real personalities into social-first video. The work lives where strategy, production and sharp editing meet — designed to build a following, not just fill a feed.";
 const DEFAULT_REELS = [
   {
     client: "Selected client work",
@@ -48,9 +48,9 @@ export const metadata = {
 };
 
 export default function SocialMediaPage() {
-  const reels = Array.isArray(pageContent.reels)
-    ? pageContent.reels
-    : DEFAULT_REELS;
+  const studies = Array.isArray(pageContent.case_studies) && pageContent.case_studies.length
+    ? pageContent.case_studies
+    : [{ slug: "reels", account: "Selected work", role: "Content creator", summary: "", reels: DEFAULT_REELS }];
   const approachItems = Array.isArray(pageContent.approach_items)
     ? pageContent.approach_items
     : DEFAULT_APPROACH_ITEMS;
@@ -81,12 +81,22 @@ export default function SocialMediaPage() {
           </div>
         </header>
 
+        <section className="social-proof" aria-label="Content creation highlights">
+          <div className="social-proof-intro">
+            <p className="social-section-label">The work behind the feed</p>
+            <h2>Strategy when it matters. Hands-on production every time.</h2>
+            <p>I work from the early idea through shooting, editing and the publishing rhythm — so the content looks considered and still feels native to the platform.</p>
+          </div>
+          <dl className="social-proof-stats">
+            <div><dt>70K → 113K</dt><dd>@potuschef followers in six months</dd></div>
+            <div><dt>~40%</dt><dd>International audience, up from 10%</dd></div>
+            <div><dt>2</dt><dd>Brand collaborations: Weber and Mutti</dd></div>
+          </dl>
+        </section>
+
         <section className="recent-drops social-work" aria-labelledby="social-work-heading">
           <SocialMediaReels
-            reels={reels}
-            placeholderLabel={
-              pageContent.reel_placeholder_label || "Reel coming soon"
-            }
+            studies={studies}
           />
         </section>
 

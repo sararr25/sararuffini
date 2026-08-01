@@ -174,6 +174,39 @@
   border-radius: 0 0 16px 16px;
   background: #050505;
 }
+.social-proof {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  gap: clamp(32px, 7vw, 110px);
+  padding: 94px 5vw;
+  border-bottom: 4px solid var(--ink);
+  background: var(--cyan);
+}
+.social-proof-intro h2 {
+  max-width: 700px;
+  margin: 10px 0 18px;
+  font-size: clamp(34px, 4vw, 56px);
+  letter-spacing: -.05em;
+  line-height: .95;
+}
+.social-proof-intro > p:last-child {
+  max-width: 570px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+}
+.social-proof-stats {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border: 3px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+.social-proof-stats div { padding: 19px 22px; border-bottom: 2px solid var(--ink); }
+.social-proof-stats div:last-child { border-bottom: 0; }
+.social-proof-stats dt { font: 700 clamp(31px, 3vw, 44px)/1 "Space Grotesk", sans-serif; letter-spacing: -.06em; }
+.social-proof-stats dd { margin: 7px 0 0; font-size: 13px; font-weight: 600; line-height: 1.35; }
 .recent-drops {
   padding: 90px 0 105px;
   overflow: hidden;
@@ -201,6 +234,14 @@
   line-height: .98;
   text-transform: uppercase;
 }
+.social-work-count { max-width: 190px; margin: 0; color: #555; font-size: 12px; font-weight: 700; line-height: 1.35; text-align: right; text-transform: uppercase; }
+.social-client-list { padding: 0 5vw; }
+.social-client-section { padding: 52px 0 66px; border-top: 2px solid var(--ink); }
+.social-client-section:first-child { border-top: 0; padding-top: 0; }
+.social-client-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.social-client-heading h3 { margin: 7px 0 4px; font-size: clamp(30px, 4vw, 52px); letter-spacing: -.06em; line-height: .95; }
+.social-client-heading > div > p:last-child { margin: 0; font-size: 13px; font-weight: 700; text-transform: uppercase; }
+.social-client-summary { max-width: 680px; margin: 18px 0 22px; font-size: 16px; line-height: 1.5; }
 .drop-arrows {
   display: flex;
   gap: 14px;
@@ -224,6 +265,7 @@
 }
 .social-reels-viewport {
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
 .social-reels-viewport::-webkit-scrollbar {
@@ -238,10 +280,14 @@
 .social-work .drop-track {
   width: max-content;
 }
+.social-reels-track { display: flex; gap: 28px; width: max-content; padding: 14px 8px 24px 0; }
 .social-reel-card {
   min-width: 255px;
   flex: 0 0 255px;
+  scroll-snap-align: start;
 }
+.social-reel-card:nth-child(odd) { transform: rotate(-1.2deg); }
+.social-reel-card:nth-child(even) { transform: rotate(1.2deg) translateY(11px); }
 .drop-wrap {
   position: relative;
 }
@@ -268,8 +314,14 @@
   background: linear-gradient(transparent,rgba(0,0,0,.45));
 }
 .social-reel-frame {
+  position: relative;
   width: 255px;
   height: 455px;
+  overflow: hidden;
+  border: 3px solid var(--ink);
+  border-radius: 17px;
+  background: #111;
+  box-shadow: 6px 6px 0 var(--ink);
 }
 .social-reel-frame:hover .social-reel-open,
 .social-reel-frame:focus-within .social-reel-open {
@@ -566,6 +618,7 @@
 @media (max-width: 850px) {
   .social-hero { grid-template-columns: 1fr; padding-top: 55px; }
   .phone-stage { margin-top: 45px; }
+  .social-proof { grid-template-columns: 1fr; }
   .social-approach-list { grid-template-columns: 1fr; }
   .growth-grid,
   .management-grid,
@@ -578,6 +631,15 @@
   .social-copy h1 { font-size: 46px; }
   .social-eyebrow { font-size: 9px; }
   .social-work .drops-heading h2 { font-size: 29px; }
+  .social-work .drops-heading { align-items: flex-start; }
+  .social-work-count { display: none; }
+  .social-client-list { padding-right: 25px; padding-left: 25px; }
+  .social-client-section { padding-top: 38px; padding-bottom: 48px; }
+  .social-client-heading { align-items: flex-start; }
+  .social-client-heading .drop-arrows { display: none; }
+  .social-client-summary { font-size: 15px; }
+  .social-proof { padding: 62px 25px; }
+  .social-proof-intro h2 { font-size: 36px; }
   .social-reel-open { transform: translateY(0); }
   .social-intro { width: 100%; max-width: 100%; font-size: 16px; }
   .phone-stage { transform: scale(.87); margin: -10px -25px; }
