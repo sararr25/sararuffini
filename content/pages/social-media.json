@@ -10,11 +10,11 @@
       "role": "Social media strategist & lead content creator",
       "summary": "A content system for an Italian chef in Copenhagen: original formats, daily community touchpoints, food storytelling and a gradual shift from Italian to an international audience.",
       "reels": [
-        { "reel_url": "https://www.instagram.com/p/DUyWChFCFM3/", "credit": "Strategy · shooting · edit" },
-        { "reel_url": "https://www.instagram.com/reel/DS5TqO7CCDD/", "credit": "Strategy · shooting · edit" },
-        { "reel_url": "https://www.instagram.com/reel/DSiG2pOCJ22/", "credit": "Strategy · shooting · edit" },
-        { "reel_url": "https://www.instagram.com/reel/DSc9gowCKXl/", "credit": "Strategy · shooting · edit" },
-        { "reel_url": "https://www.instagram.com/reel/DUYoufHiO9W/", "credit": "Strategy · shooting · edit" }
+        { "reel_url": "https://www.instagram.com/p/DUyWChFCFM3/", "poster": "/assets/media/social-reels/reel-1.jpg", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DS5TqO7CCDD/", "poster": "/assets/media/social-reels/reel-2.jpg", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DSiG2pOCJ22/", "poster": "/assets/media/social-reels/reel-3.jpg", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DSc9gowCKXl/", "poster": "/assets/media/social-reels/reel-4.jpg", "credit": "Strategy · shooting · edit" },
+        { "reel_url": "https://www.instagram.com/reel/DUYoufHiO9W/", "poster": "/assets/media/social-reels/reel-5.jpg", "credit": "Strategy · shooting · edit" }
       ]
     },
     {
@@ -23,13 +23,13 @@
       "role": "Video editor & content creator · Søberg Institute",
       "summary": "Social video production for a knowledge-led brand: clear editing, motion-led explainers and short-form formats that make complex subjects more immediate on Instagram and TikTok.",
       "reels": [
-        { "reel_url": "https://www.instagram.com/reel/DRj76-EDpF4/", "credit": "Editing · motion graphics" },
-        { "reel_url": "https://www.instagram.com/reel/DQL1qBViLLg/", "credit": "Editing · motion graphics" },
-        { "reel_url": "https://www.instagram.com/reel/DLSQs8KszMw/", "credit": "Editing · motion graphics" },
-        { "reel_url": "https://www.instagram.com/reel/DK_34ZlMmZg/", "credit": "Editing · motion graphics" },
-        { "reel_url": "https://www.instagram.com/reel/DKewrehIUJn/", "credit": "Editing · motion graphics" },
-        { "reel_url": "https://www.instagram.com/reel/DI1Qw_7MtUT/", "credit": "Editing · motion graphics" },
-        { "reel_url": "https://www.instagram.com/reel/DIOTD7vsqy2/", "credit": "Editing · motion graphics" }
+        { "reel_url": "https://www.instagram.com/reel/DRj76-EDpF4/", "poster": "/assets/media/social-reels/reel-6.jpg", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DQL1qBViLLg/", "poster": "/assets/media/social-reels/reel-7.jpg", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DLSQs8KszMw/", "poster": "/assets/media/social-reels/reel-8.jpg", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DK_34ZlMmZg/", "poster": "/assets/media/social-reels/reel-9.jpg", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DKewrehIUJn/", "poster": "/assets/media/social-reels/reel-10.jpg", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DI1Qw_7MtUT/", "poster": "/assets/media/social-reels/reel-11.jpg", "credit": "Editing · motion graphics" },
+        { "reel_url": "https://www.instagram.com/reel/DIOTD7vsqy2/", "poster": "/assets/media/social-reels/reel-12.jpg", "credit": "Editing · motion graphics" }
       ]
     }
   ],

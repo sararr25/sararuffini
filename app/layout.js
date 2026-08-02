@@ -4,6 +4,7 @@ import "../styles/projects.css";
 import "../styles/about.css";
 import "../styles/contact.css";
 import "../styles/socialmedia-portfolio.css";
+import "../styles/social-media-page.css";
 import "../styles/graphics.css";
 import "../styles/shooting-cocktails.css";
 import "../styles/video-v1.css";
