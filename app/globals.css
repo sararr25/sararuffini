@@ -1,4 +1,5 @@
 @import "./editorial-pages.css";
+@import "../styles/social-media-page.css";
 
 @tailwind base;
 @tailwind components;

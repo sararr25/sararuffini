@@ -189,4 +189,10 @@
         padding-left: 3rem;
         padding-right: 3rem;
     }
+
+    /* Keep the original desktop navigation visible when a page-level utility
+       defines `.hidden` with !important. */
+    .shared-site-nav > .shared-site-nav__links.hidden.md\:flex {
+        display: flex !important;
+    }
 }
