@@ -7,47 +7,39 @@
   "gallery": [
     {
       "href": "",
+      "href_page": "/pages/cocktail-photography/index.html",
       "badge": "Enjoy!",
       "image": "/assets/media/Cocktail-3.jpg",
-      "alt": "Drink it!",
-      "title": "Cocktail shooting",
-      "meta": "2025",
-      "href_page": "/pages/cocktail-photography/index.html"
+      "alt": "Cocktail photography with a citrus garnish on a deep red background",
+      "title": "Cocktail photography",
+      "meta": "Photography • 2025"
     },
     {
       "href": "Food content",
+      "href_page": "/pages/socialmedia-portfolio/index.html",
       "badge": "Cook it!",
       "image": "/assets/media/screenshot-2026-06-04-at-13.21.16.png",
-      "alt": "",
-      "title": "Cook it!",
-      "meta": "Social Media • Edit",
-      "href_page": "/pages/socialmedia-portfolio/index.html",
       "image_crop_position": {
         "x": 40,
         "y": 75,
         "zoom": 1
-      }
+      },
+      "alt": "PotusChef food reel with plated pasta and a bold editorial treatment",
+      "title": "PotusChef social content",
+      "meta": "Social Media • Edit"
     },
     {
       "href": "",
+      "href_page": "/pages/weber-grillinspiration/index.html",
       "badge": "Grill it!",
       "image": "/assets/media/weber1.png",
-      "alt": "Glitch Art",
+      "alt": "Weber Grillinspiration video still with food on a barbecue",
       "title": "Weber Grilling series",
-      "meta": "Video editing",
-      "href_page": "/pages/weber-grillinspiration/index.html"
+      "meta": "Video editing"
     },
     {
       "href": "",
-      "badge": "Science affordable",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5oYqXW3_-kOOMtv3QfIGJ51wF-SZfD_UwAEQDmZrimBPYZALap5PRpdmHDLEVAbi6dN7kr6YkRZHm43OUVHGmqpyTeYjBqyb5knoqqbvlPNlTSjDkVpnhEVHHgCdEMN6AhX7AQ1822VNyJlwvb3w_F8S_JJ6uOQfMPs3KIvx3VTtmHfFzu3yC0WMhAFvmZ2Oqw8VnafGNIu23fqf7BoqOwLK-LGfvWU3jeYxTBBxEdVHfQi79ViJbGVjQBVtSdcosJWkp4cFWDIUP",
-      "alt": "Video podcast",
-      "title": "Søberg Institute work",
-      "meta": "Video production",
-      "href_page": "/pages/coming-soon/index.html"
-    },
-    {
-      "href": "",
+      "href_page": "/app-showcase",
       "badge": "Playtribe",
       "image": "/assets/media/app-showcase/playtribe/explore.webp",
       "image_crop_position": {
@@ -57,53 +49,40 @@
       },
       "alt": "Playtribe Explore screen showing local sports events",
       "title": "Playtribe",
-      "meta": "UX/UI • Flutter App",
-      "href_page": "/app-showcase"
+      "meta": "UX/UI • Flutter App"
     },
     {
-      "href": "/pages/neon-vibes-web/index.html",
-      "badge": "Neon Vibes",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBCRu1oN1bHpe172lM0yNlp2syETMQ45uGtGiH4IyjsFukc1b80vfzxWchphGJyCKVjMYNIvbYYzbPwNTLllNT0T1dzAVYcI7oKfAzPazIr_qAKfH04da7aS7OFRWnL9FNPD0juvYbmUWHbqMzDXceJie9Ul3A_OIyIig3eiVG-PIYJOvwm1H3kN3A1dQh3x2iHsnd-sjsIsVh43nqs5-j4-wMwkC4hzFioqQaR-D4ROVNqyxX8_P76_WTl6jjjC0ENQiB_M7qmaks6",
-      "alt": "Neon Vibes web project",
-      "title": "Neon Vibes",
-      "meta": "Web Design • 2024"
+      "href": "",
+      "href_page": "/pages/webpage-portfolio/index.html",
+      "badge": "Web design",
+      "image": "/assets/media/desktop-01-event-list.png",
+      "image_crop_position": {
+        "x": 52,
+        "y": 50,
+        "zoom": 1
+      },
+      "alt": "3days of design planning website",
+      "title": "3days of design planning website",
+      "meta": "Web Design"
     },
     {
-      "href": "/pages/webpage-portfolio/index.html",
-      "badge": "Website",
-      "image": "/assets/webpage-portfolio/animated_web_showcase_hybrid_editorial/screen.png",
-      "alt": "Webpage portfolio project preview",
-      "title": "Webpage Portfolio",
-      "meta": "Web Design • Portfolio"
-    },
-    {
-      "href": "/pages/app-v2/index.html",
-      "badge": "Retro Tech",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_4UvzCg6MWFEaFroN-Z7fDYfeEfaTpdf72vdy_iepfk0KL1pIalUH32tBumzQOLt_6kEoZgmQTwOeAF5iprrS3lCBpiSpN9p-Ri4Ez0HU63SYs85BDZqrbhOTRgmUpzXFMYHNON3NMS2ASYn5eNoj5M6Zl6059VbpQccD7l2F29k5TrRaL9XIff1zKdSLfuJI87Z2T_p7BLQe2ugsf6ESGEWQzDZpFNzm7Uu7r62y1oQVq-n747N-XYp6iOw4WGYNBEA4bTx2pWt7",
-      "alt": "Retro Tech",
-      "title": "Retro UI Design",
-      "meta": "UX/UI • Mobile App"
-    },
-    {
-      "href": "/pages/cocktail-photography/index.html",
-      "badge": "Studio Light",
-      "image": "/assets/media/Cocktail-29.jpg",
-      "alt": "Cocktail photography project",
-      "title": "Mixology in Focus",
-      "meta": "Photography • 2025"
-    },
-    {
-      "href": "/pages/shooting-cocktails/index.html",
-      "badge": "Retro Pop",
-      "image": "/assets/media/Cocktail-123.jpg",
-      "alt": "Shooting Cocktails project cover",
-      "title": "Shooting Cocktails",
-      "meta": "Photography • Editorial"
+      "href": "",
+      "href_page": "/social-media-strategy",
+      "badge": "Social Media Strategy",
+      "image": "/assets/media/ChatGPT Image Jul 18, 2026, 10_30_46 PM (1).png",
+      "image_crop_position": {
+        "x": 50,
+        "y": 50,
+        "zoom": 1
+      },
+      "alt": "Social media strategy case study cover for PotusChef",
+      "title": "PotusChef social media strategy",
+      "meta": "Strategy • Content • Growth"
     }
   ],
   "seo": {
-    "seo_title": "Portfolio - Sara Ruffini | Video & Motion Design",
-    "seo_description": "Explore a curated selection of video production, motion design, and creative direction projects.",
+    "seo_title": "Portfolio - Sara Ruffini | Video & Social Media & Web Design",
+    "seo_description": "Explore a curated selection of video production, web design, and creative direction projects.",
     "seo_image": "/assets/media/default-og-image.jpg"
   }
 }

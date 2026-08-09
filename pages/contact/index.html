@@ -156,11 +156,12 @@
 </div>
 </main>
 
-<div aria-hidden="true" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="contact-popup">
+<div aria-hidden="true" aria-modal="true" aria-labelledby="contact-popup-title" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="contact-popup" role="dialog">
 <div class="absolute inset-0 bg-black/70" id="contact-popup-backdrop"></div>
 <div class="relative w-full max-w-lg border-[3px] border-black dark:border-white bg-background-light dark:bg-[#1f1f1f] p-7 md:p-8 shadow-[8px_8px_0px_0px_#000000] dark:shadow-[8px_8px_0px_0px_#39FFCA]">
-<p class="font-display text-4xl uppercase tracking-wide text-black dark:text-primary">Transmission Received</p>
+<p class="font-display text-4xl uppercase tracking-wide text-black dark:text-primary" id="contact-popup-title">Transmission Received</p>
 <p class="mt-4 text-lg font-medium text-black dark:text-text-light" id="contact-popup-message">Thanks for reaching out. Your signal just landed in my inbox. I will patch you back ASAP.</p>
+<a class="mt-4 inline-flex font-bold text-black underline decoration-2 underline-offset-4 dark:text-primary hidden" href="mailto:sara.ruffini95@gmail.com" id="contact-popup-direct">Email Sara directly</a>
 <button class="mt-6 w-full bg-primary text-black font-display text-2xl uppercase tracking-wider py-3 border-2 border-black shadow-retro hover:shadow-retro-hover hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-200" id="contact-popup-close" type="button">Close</button>
 <div class="absolute -top-5 -right-4 bg-accent-yellow text-black border-2 border-black px-3 py-1 font-marker text-lg rotate-6">Ping!</div>
 </div>
@@ -179,22 +180,48 @@
         const popupMessage = document.getElementById('contact-popup-message');
         const popupClose = document.getElementById('contact-popup-close');
         const popupBackdrop = document.getElementById('contact-popup-backdrop');
+        const popupDirect = document.getElementById('contact-popup-direct');
+        let lastFocusedElement = null;
 
-        const openPopup = (message) => {
+        const openPopup = (message, isError = false) => {
+            lastFocusedElement = document.activeElement;
             popupMessage.textContent = message;
+            popupDirect.classList.toggle('hidden', !isError);
             popup.classList.remove('hidden');
             popup.classList.add('flex');
             popup.setAttribute('aria-hidden', 'false');
+            window.requestAnimationFrame(() => popupClose.focus());
         };
 
         const closePopup = () => {
             popup.classList.add('hidden');
             popup.classList.remove('flex');
             popup.setAttribute('aria-hidden', 'true');
+            lastFocusedElement?.focus();
         };
 
         popupClose.addEventListener('click', closePopup);
         popupBackdrop.addEventListener('click', closePopup);
+        document.addEventListener('keydown', (event) => {
+            if (popup.classList.contains('hidden')) return;
+            if (event.key === 'Escape') {
+                event.preventDefault();
+                closePopup();
+                return;
+            }
+            if (event.key !== 'Tab') return;
+            const focusable = popup.querySelectorAll('a[href], button:not([disabled])');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (!first || !last) return;
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        });
 
         contactForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -221,7 +248,7 @@
                 contactForm.reset();
                 openPopup('Thanks for reaching out. Your signal just landed in my inbox. I will patch you back ASAP.');
             } catch (error) {
-                openPopup('Oops, the transmission glitched. Please retry in a sec or ping me directly at sara.ruffini95@gmail.com.');
+                openPopup('Something went wrong while sending your message. Please try again or email Sara directly.', true);
             } finally {
                 submitButton.disabled = false;
                 submitButton.classList.remove('opacity-70', 'cursor-not-allowed');

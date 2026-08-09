@@ -21,12 +21,15 @@
     initializedNavs.add(nav);
 
     button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-haspopup", "true");
+    button.setAttribute("aria-controls", menu.id || "primary-navigation");
 
-    function closeMenu() {
+    function closeMenu(restoreFocus) {
       nav.classList.remove("mobile-open");
       button.setAttribute("aria-expanded", "false");
       button.textContent = "☰";
+      if (restoreFocus) {
+        button.focus();
+      }
     }
 
     button.addEventListener("click", function () {
@@ -38,6 +41,14 @@
       nav.classList.toggle("mobile-open", willOpen);
       button.setAttribute("aria-expanded", String(willOpen));
       button.textContent = willOpen ? "✕" : "☰";
+      if (willOpen) {
+        window.requestAnimationFrame(function () {
+          var firstLink = menu.querySelector("a");
+          if (firstLink) {
+            firstLink.focus();
+          }
+        });
+      }
     });
 
     window.addEventListener("resize", function () {
@@ -48,7 +59,7 @@
 
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") {
-        closeMenu();
+        closeMenu(nav.classList.contains("mobile-open"));
       }
     });
 

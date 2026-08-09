@@ -77,6 +77,9 @@ export default function AlgoApprovedPage() {
   const hero = pageContent.hero || {};
   const drops = pageContent.drops || {};
   const reels = Array.isArray(drops.reels) && drops.reels.length ? drops.reels : DEFAULT_REELS;
+  const primaryUrl = hero.cta_primary_url?.trim();
+  const secondaryUrl = hero.cta_secondary_url?.trim();
+  const viewAllUrl = drops.view_all_url?.trim();
 
   return (
     <div className="editorial-page" data-cms-page="algo-approved">
@@ -119,21 +122,23 @@ export default function AlgoApprovedPage() {
                 <p className="algo-hero__intro">{hero.intro_text}</p>
               ) : null}
 
-              <div className="algo-hero__actions">
-                {hero.cta_primary_label ? (
-                  <button className="algo-btn algo-btn--primary">
+              {primaryUrl || secondaryUrl ? (
+                <div className="algo-hero__actions">
+                {hero.cta_primary_label && primaryUrl ? (
+                  <a className="algo-btn algo-btn--primary" href={primaryUrl}>
                     {hero.cta_primary_label}
                     {hero.cta_primary_icon ? (
                       <span className="material-symbols-outlined">{hero.cta_primary_icon}</span>
                     ) : null}
-                  </button>
+                  </a>
                 ) : null}
-                {hero.cta_secondary_label ? (
-                  <button className="algo-btn algo-btn--secondary">
+                {hero.cta_secondary_label && secondaryUrl ? (
+                  <a className="algo-btn algo-btn--secondary" href={secondaryUrl}>
                     {hero.cta_secondary_label}
-                  </button>
+                  </a>
                 ) : null}
-              </div>
+                </div>
+              ) : null}
             </div>
 
             {/* Phone mockup side */}
@@ -196,14 +201,6 @@ export default function AlgoApprovedPage() {
               <p className="algo-drops__subtitle">
                 {drops.subtitle || "High-performing social creative designed for maximum retention."}
               </p>
-            </div>
-            <div className="algo-drops__arrows">
-              <button className="algo-drops__arrow" aria-label="Previous">
-                <span className="material-symbols-outlined">arrow_back</span>
-              </button>
-              <button className="algo-drops__arrow algo-drops__arrow--active" aria-label="Next">
-                <span className="material-symbols-outlined">arrow_forward</span>
-              </button>
             </div>
           </div>
 
@@ -273,17 +270,18 @@ export default function AlgoApprovedPage() {
                 );
               })}
 
-              {/* View All Card */}
-              <div className="algo-view-all">
-                <button className="algo-view-all-btn">
+              {viewAllUrl ? (
+              <a className="algo-view-all" href={viewAllUrl}>
+                <span className="algo-view-all-btn">
                   <div className="algo-view-all-icon">
                     <span className="material-symbols-outlined">add</span>
                   </div>
                   <span className="algo-view-all-label">
                     {drops.view_all_label || "View All Work"}
                   </span>
-                </button>
-              </div>
+                </span>
+              </a>
+              ) : null}
             </div>
           </div>
         </section>

@@ -360,6 +360,14 @@ export default function HomepageMotion() {
           });
           remixRestart = gsap.delayedCall(1.4, startRemixAutoplay);
         };
+        const handlePlayheadFocus = () => {
+          remixAutoplay?.kill();
+          remixRestart?.kill();
+        };
+        const handlePlayheadBlur = () => {
+          remixRestart?.kill();
+          remixRestart = gsap.delayedCall(0.8, startRemixAutoplay);
+        };
         const handleRemixResize = () => {
           const progress = activeKeyword < 0 ? 0 : activeKeyword / 2;
           remixDraggable.applyBounds({ minX: 0, maxX: getMaxX() });
@@ -372,6 +380,8 @@ export default function HomepageMotion() {
         aboutCta?.addEventListener("pointerenter", handleCtaEnter);
         aboutCta?.addEventListener("pointerleave", handleCtaLeave);
         remixPlayhead.addEventListener("keydown", handlePlayheadKeydown);
+        remixPlayhead.addEventListener("focus", handlePlayheadFocus);
+        remixPlayhead.addEventListener("blur", handlePlayheadBlur);
         window.addEventListener("resize", handleRemixResize);
 
         removeAboutListeners = () => {
@@ -380,6 +390,8 @@ export default function HomepageMotion() {
           aboutCta?.removeEventListener("pointerenter", handleCtaEnter);
           aboutCta?.removeEventListener("pointerleave", handleCtaLeave);
           remixPlayhead.removeEventListener("keydown", handlePlayheadKeydown);
+          remixPlayhead.removeEventListener("focus", handlePlayheadFocus);
+          remixPlayhead.removeEventListener("blur", handlePlayheadBlur);
           window.removeEventListener("resize", handleRemixResize);
         };
 

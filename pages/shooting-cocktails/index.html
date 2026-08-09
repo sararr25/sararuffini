@@ -297,6 +297,7 @@
       const fallbackAltNode = document.getElementById('collection-lightbox-fallback-alt');
       const closeBtn = document.querySelector('.lightbox-close');
       const previewButtons = document.querySelectorAll('[data-lightbox-image]');
+      let lastFocusedElement = null;
 
       function closeLightbox() {
         if (!lightbox) {
@@ -305,17 +306,20 @@
         lightbox.classList.add('hidden');
         lightbox.classList.remove('flex');
         lightbox.setAttribute('aria-hidden', 'true');
+        lastFocusedElement?.focus();
       }
 
       if (lightbox && lightboxImage && closeBtn && previewButtons.length) {
         previewButtons.forEach(function (button) {
           button.addEventListener('click', function () {
+            lastFocusedElement = button;
             const img = button.querySelector('img');
             lightboxImage.src = img ? img.src : '';
             lightboxImage.alt = img && img.alt ? img.alt : (fallbackAltNode ? fallbackAltNode.textContent.trim() : 'Cocktail image');
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
             lightbox.setAttribute('aria-hidden', 'false');
+            closeBtn.focus();
           });
         });
 
@@ -330,6 +334,10 @@
         document.addEventListener('keydown', function (event) {
           if (event.key === 'Escape') {
             closeLightbox();
+          }
+          if (event.key === 'Tab' && !lightbox.classList.contains('hidden')) {
+            event.preventDefault();
+            closeBtn.focus();
           }
         });
       }

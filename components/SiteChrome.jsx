@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 const DEFAULT_CONTENT = {
   brand_name: "Sara Ruffini",
@@ -72,6 +72,8 @@ function useGlobalContent() {
 export function SiteNav({ pageKey }) {
   const content = useGlobalContent();
   const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
+  const menuButtonRef = useRef(null);
   const section = useMemo(() => activeSection(pageKey), [pageKey]);
 
   useEffect(() => {
@@ -84,6 +86,7 @@ export function SiteNav({ pageKey }) {
     function handleKeyDown(event) {
       if (event.key === "Escape") {
         setOpen(false);
+        menuButtonRef.current?.focus();
       }
     }
 
@@ -104,7 +107,11 @@ export function SiteNav({ pageKey }) {
       >
         {content.brand_name || DEFAULT_CONTENT.brand_name}
       </a>
-      <div className="shared-site-nav__links hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center">
+      <div
+        className="shared-site-nav__links hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center"
+        id="primary-navigation"
+        ref={menuRef}
+      >
         {NAV_ITEMS.map((item) => {
           const active = item.key === section;
           return (
@@ -130,13 +137,18 @@ export function SiteNav({ pageKey }) {
       </div>
       <button
         aria-label="Open menu"
+        aria-controls="primary-navigation"
         aria-expanded={open}
-        aria-haspopup="true"
         className="md:hidden text-3xl leading-none"
+        ref={menuButtonRef}
         type="button"
         onClick={() => {
           if (window.innerWidth <= 767) {
-            setOpen((value) => !value);
+            const willOpen = !open;
+            setOpen(willOpen);
+            if (willOpen) {
+              window.requestAnimationFrame(() => menuRef.current?.querySelector("a")?.focus());
+            }
           }
         }}
       >

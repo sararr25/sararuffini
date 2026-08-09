@@ -10,9 +10,9 @@
       "href_page": "/pages/cocktail-photography/index.html",
       "badge": "Enjoy!",
       "image": "/assets/media/Cocktail-3.jpg",
-      "alt": "Drink it!",
-      "title": "Cocktail shooting",
-      "meta": "2025"
+      "alt": "Cocktail photography with a citrus garnish on a deep red background",
+      "title": "Cocktail photography",
+      "meta": "Photography • 2025"
     },
     {
       "href": "Food content",
@@ -24,8 +24,8 @@
         "y": 75,
         "zoom": 1
       },
-      "alt": "",
-      "title": "Cook it!",
+      "alt": "PotusChef food reel with plated pasta and a bold editorial treatment",
+      "title": "PotusChef social content",
       "meta": "Social Media • Edit"
     },
     {
@@ -33,7 +33,7 @@
       "href_page": "/pages/weber-grillinspiration/index.html",
       "badge": "Grill it!",
       "image": "/assets/media/weber1.png",
-      "alt": "Glitch Art",
+      "alt": "Weber Grillinspiration video still with food on a barbecue",
       "title": "Weber Grilling series",
       "meta": "Video editing"
     },
@@ -75,9 +75,9 @@
         "y": 50,
         "zoom": 1
       },
-      "alt": "",
-      "title": "SMM",
-      "meta": ""
+      "alt": "Social media strategy case study cover for PotusChef",
+      "title": "PotusChef social media strategy",
+      "meta": "Strategy • Content • Growth"
     }
   ],
   "seo": {
