@@ -242,8 +242,8 @@ export default function HomepageMotion() {
 
         const keywords = [
           aboutCopy.querySelector(".text-primary"),
-          aboutCopy.querySelector(".text-pink-500"),
-          aboutCopy.querySelector(".text-yellow-500"),
+          aboutCopy.querySelector(".brand-accent-pink"),
+          aboutCopy.querySelector(".brand-accent-yellow"),
         ].filter(Boolean);
         const keywordNames = ["Heart", "Creativity", "Storytelling"];
         let activeKeyword = -1;

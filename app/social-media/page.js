@@ -2,6 +2,9 @@ import { SiteFooter, SiteNav } from "../../components/SiteChrome";
 import SocialMediaMotion from "../../components/SocialMediaMotion";
 import SocialMediaReels from "../../components/SocialMediaReels";
 import pageContent from "../../public/content/pages/social-media.json";
+import "../../styles/app-tailwind.css";
+import "../editorial-pages.css";
+import "../../styles/social-media-page.css";
 
 const HERO_REEL = "/assets/media/social-reels/reel-2.jpg";
 const HERO_REEL_URL = "https://www.instagram.com/reel/DS5TqO7CCDD/";

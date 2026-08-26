@@ -1,5 +1,18 @@
 import { notFound } from "next/navigation";
 import LegacyPage from "../../../components/LegacyPage";
+import "../../../styles/legacy-tailwind.css";
+import "../../../styles/projects.css";
+import "../../../styles/about.css";
+import "../../../styles/contact.css";
+import "../../../styles/socialmedia-portfolio.css";
+import "../../../styles/graphics.css";
+import "../../../styles/shooting-cocktails.css";
+import "../../../styles/video-v1.css";
+import "../../../styles/video-v2.css";
+import "../../../styles/app-v1.css";
+import "../../../styles/app-v2.css";
+import "../../../styles/shared-project-pager.css";
+import "../../../styles/homepage.css";
 import {
   getLegacyMetadata,
   getLegacyPageByRoute,

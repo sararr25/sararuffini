@@ -1,4 +1,6 @@
 import AppShowcase from "../../components/AppShowcase";
+import "../../styles/app-tailwind.css";
+import "../../styles/app-showcase-next.css";
 
 export const metadata = {
   metadataBase: new URL("https://www.sararuffini.com"),

@@ -1,9 +1,6 @@
-@import "./editorial-pages.css";
-@import "../styles/social-media-page.css";
+@config "../tailwind.base.config.js";
 
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --brand-paper: #FDF9F0;

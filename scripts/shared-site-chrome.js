@@ -56,7 +56,7 @@
     var activeClass = isActive ? " active" : "";
 
     return [
-      '<a class="scribble-hover' + activeClass + ' relative inline-block transition-all" href="' + href + '">',
+      '<a class="scribble-hover' + activeClass + '" href="' + href + '">',
       label,
       '<svg preserveAspectRatio="none" viewBox="0 0 100 10" aria-hidden="true">',
       '<path d="M0 5 Q 50 10 100 5"></path>',
@@ -67,16 +67,16 @@
 
   function renderNav(nav, content, activeSection) {
     nav.innerHTML = [
-      '<a class="shared-site-nav__brand text-2xl font-black uppercase tracking-tight hover:text-[#39e6d0] transition-colors" href="' + escapeHtml(content.brand_href || DEFAULT_CONTENT.brand_href) + '">',
+      '<a class="shared-site-nav__brand" href="' + escapeHtml(content.brand_href || DEFAULT_CONTENT.brand_href) + '">',
       escapeHtml(content.brand_name || DEFAULT_CONTENT.brand_name),
       '</a>',
-      '<div class="shared-site-nav__links hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center" id="primary-navigation">',
+      '<div class="shared-site-nav__links" id="primary-navigation">',
       NAV_ITEMS.map(function (item) {
         return renderNavLink(item, content, activeSection);
       }).join(""),
       '<a class="shared-site-nav__lab" href="' + LAB_LINK.href + '" target="_blank" rel="noopener noreferrer">' + LAB_LINK.text + '</a>',
       '</div>',
-      '<button aria-label="Open menu" aria-controls="primary-navigation" class="md:hidden text-3xl leading-none" type="button">☰</button>'
+      '<button aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false" class="shared-site-nav__toggle" type="button">☰</button>'
     ].join("");
   }
 

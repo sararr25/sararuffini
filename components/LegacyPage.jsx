@@ -46,18 +46,18 @@ export default function LegacyPage({ page }) {
   }, [page.route, scripts]);
 
   return (
-    <div
-      className={page.bodyClass}
-      data-cms-page={page.pageKey}
-      ref={rootRef}
-      style={{ display: "contents" }}
-      suppressHydrationWarning
-    >
+    <>
       {page.inlineStyles.map((style, index) => (
         <style dangerouslySetInnerHTML={{ __html: style }} key={index} />
       ))}
-      <div dangerouslySetInnerHTML={{ __html: page.html }} />
-    </div>
+      <div
+        className={page.bodyClass}
+        data-cms-page={page.pageKey}
+        dangerouslySetInnerHTML={{ __html: page.html }}
+        ref={rootRef}
+        suppressHydrationWarning
+      />
+    </>
   );
 }
 

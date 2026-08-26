@@ -102,13 +102,13 @@ export function SiteNav({ pageKey }) {
   return (
     <nav className={`shared-site-nav${open ? " mobile-open" : ""}`}>
       <a
-        className="shared-site-nav__brand text-2xl font-black uppercase tracking-tight hover:text-[#39e6d0] transition-colors"
+        className="shared-site-nav__brand"
         href={content.brand_href || DEFAULT_CONTENT.brand_href}
       >
         {content.brand_name || DEFAULT_CONTENT.brand_name}
       </a>
       <div
-        className="shared-site-nav__links hidden md:flex gap-8 lg:gap-12 font-bold text-sm uppercase tracking-wider items-center"
+        className="shared-site-nav__links"
         id="primary-navigation"
         ref={menuRef}
       >
@@ -116,7 +116,7 @@ export function SiteNav({ pageKey }) {
           const active = item.key === section;
           return (
             <a
-              className={`scribble-hover${active ? " active" : ""} relative inline-block transition-all`}
+              className={`scribble-hover${active ? " active" : ""}`}
               href={content[item.hrefKey] || DEFAULT_CONTENT[item.hrefKey]}
               key={item.key}
               onClick={() => setOpen(false)}
@@ -139,7 +139,7 @@ export function SiteNav({ pageKey }) {
         aria-label="Open menu"
         aria-controls="primary-navigation"
         aria-expanded={open}
-        className="md:hidden text-3xl leading-none"
+        className="shared-site-nav__toggle"
         ref={menuButtonRef}
         type="button"
         onClick={() => {

@@ -1,25 +1,14 @@
 import "./globals.css";
-import "../styles/homepage.css";
-import "../styles/projects.css";
-import "../styles/about.css";
-import "../styles/contact.css";
-import "../styles/socialmedia-portfolio.css";
-import "../styles/graphics.css";
-import "../styles/shooting-cocktails.css";
-import "../styles/video-v1.css";
-import "../styles/video-v2.css";
-import "../styles/app-v1.css";
-import "../styles/app-v2.css";
-import "../styles/app-showcase-next.css";
-import "../styles/shared-project-pager.css";
 import "../styles/shared-nav-footer.css";
 import "../styles/mobile.css";
-import "../styles/site.css";
-import "../styles/algo-approved.css";
 
 export const metadata = {
+  metadataBase: new URL("https://www.sararuffini.com"),
   title: "Sara Ruffini",
   description: "Video editor and content creator portfolio.",
+  icons: {
+    icon: "/assets/stitch-homepage-featured/sticker-pixel-perfect.png",
+  },
 };
 
 export default function RootLayout({ children }) {

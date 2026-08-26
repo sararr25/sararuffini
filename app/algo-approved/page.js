@@ -1,5 +1,8 @@
 import { SiteFooter, SiteNav } from "../../components/SiteChrome";
 import pageContent from "../../public/content/pages/algo-approved.json";
+import "../../styles/app-tailwind.css";
+import "../editorial-pages.css";
+import "../../styles/algo-approved.css";
 
 export const metadata = {
   title: pageContent?.seo?.seo_title || "Algo Approved | Sara Ruffini",

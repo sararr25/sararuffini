@@ -1,5 +1,6 @@
 import LegacyPage from "../../components/LegacyPage";
 import { getLegacyMetadata, getLegacyPageByRoute } from "../../lib/legacy-pages";
+import "../../styles/site.css";
 
 export function generateMetadata() {
   return getLegacyMetadata("/workspace.html");

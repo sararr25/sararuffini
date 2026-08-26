@@ -30,7 +30,11 @@
     flex-shrink: 0;
     text-decoration: none;
     font-family: "Inter", sans-serif;
-    color: var(--shared-chrome-ink) !important;
+    color: var(--shared-chrome-ink);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
     transition: color 0.2s ease;
 }
 
@@ -38,11 +42,17 @@
     color: var(--shared-chrome-accent) !important;
 }
 
-.shared-site-nav__links,
-.shared-site-nav .hidden.md\:flex {
+.shared-site-nav__links {
+    display: none;
+    align-items: center;
+    gap: 2rem;
     margin-left: auto;
     color: var(--shared-chrome-ink);
     font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .shared-site-nav .scribble-hover {
@@ -90,7 +100,7 @@
     padding: 0.24rem 0.48rem 0.2rem;
     border: 1px solid currentColor;
     color: var(--shared-chrome-ink) !important;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-family: "Inter", sans-serif;
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -119,7 +129,7 @@
     transform: scaleX(1);
 }
 
-.shared-site-nav .md\:hidden[aria-label="Open menu"] {
+.shared-site-nav__toggle {
     appearance: none;
     border: 0;
     background: transparent;
@@ -141,7 +151,7 @@
 
 .shared-site-footer h2 {
     margin: 0;
-    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: clamp(2.4rem, 2rem + 1vw, 3.4rem);
     font-weight: 700;
     letter-spacing: -0.05em;
@@ -190,9 +200,18 @@
         padding-right: 3rem;
     }
 
-    /* Keep the original desktop navigation visible when a page-level utility
-       defines `.hidden` with !important. */
-    .shared-site-nav > .hidden.md\:flex {
-        display: flex !important;
+    .shared-site-nav__links {
+        display: flex;
+    }
+
+    .shared-site-nav__toggle {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .shared-site-nav__links {
+        gap: 3rem;
     }
 }

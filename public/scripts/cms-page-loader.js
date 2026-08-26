@@ -1243,19 +1243,15 @@
         anchor.href = item.href || '#';
         anchor.setAttribute('aria-label', 'Project: ' + label);
 
-        var frame = document.createElement('span');
-        frame.className = 'stitch-sticker-card stitch-frame ' + layout[1];
-
         var media = document.createElement('span');
-        media.className = 'stitch-media ' + layout[2];
+        media.className = 'stitch-sticker-card stitch-frame ' + layout[1] + ' stitch-media ' + layout[2];
 
         var image = document.createElement('img');
         image.src = stripImageCrop(item.image || '');
         image.alt = item.alt || label;
         applyImageCrop(image, item.image || '', item.image_crop_position);
         media.appendChild(image);
-        frame.appendChild(media);
-        anchor.appendChild(frame);
+        anchor.appendChild(media);
 
         var labelNode = document.createElement('span');
         labelNode.className = 'stitch-label ' + layout[3];

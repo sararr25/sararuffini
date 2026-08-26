@@ -1,5 +1,7 @@
 import { SiteFooter, SiteNav } from "../../components/SiteChrome";
 import pageContent from "../../public/content/pages/social-media-strategy.json";
+import "../../styles/app-tailwind.css";
+import "../editorial-pages.css";
 
 export const metadata = {
   title: pageContent?.seo?.seo_title || "Social Media Strategy | Sara Ruffini",
